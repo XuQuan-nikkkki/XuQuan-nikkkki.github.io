@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="freecodecamp,OOP," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="面向对象编程是JS里一个非常核心的思想，几乎所有面试的习题也都会涉及到这部分内容。这次FCC改版后的习题也单独把这部分内容做成了一个模块。以线性的创建父类和子类的顺序来讲解知识点。">
+<meta name="keywords" content="freecodecamp,OOP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象编程">
+<meta property="og:url" content="http://xuquan.site/2018/07/08/面向对象编程/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="面向对象编程是JS里一个非常核心的思想，几乎所有面试的习题也都会涉及到这部分内容。这次FCC改版后的习题也单独把这部分内容做成了一个模块。以线性的创建父类和子类的顺序来讲解知识点。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9240001-3b087188be2960ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9240001-9435ecc6f74e0484.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9240001-613e502f569c5588.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9240001-ff8d9dd7746b7f45.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9240001-235ed6c0cf602e21.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-08T09:45:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象编程">
+<meta name="twitter:description" content="面向对象编程是JS里一个非常核心的思想，几乎所有面试的习题也都会涉及到这部分内容。这次FCC改版后的习题也单独把这部分内容做成了一个模块。以线性的创建父类和子类的顺序来讲解知识点。">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9240001-3b087188be2960ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/07/08/面向对象编程/"/>
+
+
+
+
+
+  <title>面向对象编程 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/07/08/面向对象编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">面向对象编程</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-08T00:38:36+08:00">
+                2018-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index">
+                    <span itemprop="name">FreeCodeCamp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/08/面向对象编程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/07/08/面向对象编程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/07/08/面向对象编程/" class="leancloud_visitors" data-flag-title="面向对象编程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  7,511 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  30 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>面向对象编程</strong>是JS里一个非常核心的思想，几乎所有面试的习题也都会涉及到这部分内容。这次FCC改版后的习题也单独把这部分内容做成了一个模块。以线性的创建父类和子类的顺序来讲解知识点。</p>
+<a id="more"></a>
+<hr>
+<h3 id="1-第一个核心概念是对象"><a href="#1-第一个核心概念是对象" class="headerlink" title="1. 第一个核心概念是对象"></a>1. 第一个核心概念是<strong>对象</strong></h3><p>在JavaScript中，万物皆对象。所谓对象，就是<strong>一种特殊的数据类型</strong>，拥有<strong>属性</strong>和<strong>方法</strong>。</p>
+<ul>
+<li>第1题：创建JS对象，给对象添加属性</li>
+<li>第2题：通过<code>obj.property</code>获取对象的属性值</li>
+<li>第3题：为属性添加方法</li>
+<li>第4题：在属性的方法中使用<code>this</code>关键字指代对象本身</li>
+</ul>
+<hr>
+<h3 id="2-第二个知识点是构造函数constructor"><a href="#2-第二个知识点是构造函数constructor" class="headerlink" title="2. 第二个知识点是构造函数constructor"></a>2. 第二个知识点是<strong>构造函数</strong><code>constructor</code></h3><p>构造函数用来创建对象，它的属性、方法都定义在函数内。</p>
+<p>第5题：规范的构造函数写法（函数名首字母大写，<code>this</code>指代对象、用于定义对象）</p>
+<p>第6题：<code>new</code>关键字创建构造函数的实例对象</p>
+<p>第7题：构造函数可以接受参数</p>
+<blockquote>
+<p>这里需要搞清楚几个概念的区别：</p>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><pre><code class="js">function foo() {...}
+var foo = function() {...}
+</code></pre>
+<p>前者是<strong>函数声明</strong>，后者是<strong>函数表达式</strong>。两种写法的<code>typeof foo</code>结果都是<code>function</code></p>
+<h4 id="函数对象"><a href="#函数对象" class="headerlink" title="函数对象"></a>函数对象</h4><p>函数就是对象，代表函数的对象就是函数对象。在JavaScript的定义中，<strong>每一个函数实际上都是一个函数对象</strong>，JS代码中定义函数或者调用<code>Function</code>创建函数时，最终都以类似这样的形式调用<code>Function</code>函数： <code>var newFunc = new Function(funcArgs, funcBody)</code>。</p>
+<p>因此，在语法上，函数都称为函数对象。从用法上，如果我们单纯把它作为函数使用，那么它就是函数；<strong>如果我们通过它来实例化出对象来使用，那么它就可以当成一个函数对象来使用</strong>。在面向对象的范畴里面，函数对象类似于<strong>类</strong>的概念。</p>
+<pre><code class="js">let foo = new function() {...}
+typeof foo //object
+
+function Foo() {...}
+let foo = new Foo();
+typeof foo  //object
+</code></pre>
+<p>弄清楚函数和对象的概念能让我们更好地理解<code>__proto__</code>和<code>prototype</code></p>
+<p>还有两个对象的概念也需要我们了解：</p>
+<h4 id="本地对象"><a href="#本地对象" class="headerlink" title="本地对象"></a>本地对象</h4><p>本都对象（native object）被定义为<strong>独立于宿主环境的ECMAScript实现提供的对象</strong>，简单来说，就是ECMA-262定义的<strong>类（引用类型）</strong>，包括<code>Object, Function, Array, String, Boolean, Number, Date, RegExp, Error, EvalError, RangeError, ReferenceError, SyntaxError, TypeError, URIError</code>。</p>
+<pre><code class="js">typeof(Object);
+typeof(Array);
+typeof(String);
+...
+</code></pre>
+<p>以上返回结果都是<code>function</code>，即以上本地对象都是通过<code>function</code>建立起来的（比较容易理解的方法是这些对象在创建的过程中，都是可以通过类似<code>let str = new String()</code>这样的方法来创建的）。</p>
+<pre><code class="js">function Object() {...}
+</code></pre>
+<p>可以看出<code>Object</code>原本就是一个函数，通过<code>new Object()</code>实例化后创建对象。</p>
+<h4 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h4><p>内置对象(built-in object)即<strong>由ECMAScript实现提供的、独立于宿主环境的所有对象，在ECMAScript程序开始执行时出现</strong>，这意味着不必明确实例化内置对象，它们已经被实例化了。</p>
+<p>内置对象有两个，即<code>Global</code>和<code>Math</code>，此外，它们也是本地对象，<strong>每个内置对象都是本地对象</strong></p>
+</blockquote>
+<hr>
+<h3 id="3-用instanceof来判断构造函数的实例"><a href="#3-用instanceof来判断构造函数的实例" class="headerlink" title="3. 用instanceof来判断构造函数的实例"></a>3. 用<code>instanceof</code>来判断构造函数的实例</h3><p>使用方法是:<code>实例 instanceof 构造函数</code>，结果会返回一个布尔值。</p>
+<blockquote>
+<p>一般有两个常用的判断类型的方法：<code>typeof</code>和<code>instanceof</code></p>
+<h4 id="typeof用于判断变量的类型"><a href="#typeof用于判断变量的类型" class="headerlink" title="typeof用于判断变量的类型"></a><code>typeof</code>用于判断<em>变量</em>的类型</h4><p>我们可以用<code>typeof</code>来判断<code>number, string, object, boolean, function, undefined, symbol</code>这七种类型。</p>
+<p><strong>缺陷：</strong></p>
+<p>在判断不是<code>object</code>类型的数据的时候，<code>typeof</code>能够清楚地告诉我们具体是哪一类的数据，</p>
+<p>但是在判断<code>object</code>数据时，只能告诉我们这个数据是<code>object</code></p>
+<pre><code class="js">let str1 = &quot;hello&quot;;
+let str2 = new String(&quot;hello&quot;);
+typeof str1;   //string
+typeof str2;   //object
+</code></pre>
+<p>需要判断数据是具体哪一种<code>object</code>的时候，我们需要利用<code>instanceof</code>这个操作符。</p>
+<p><strong><code>typeof</code>的实现原理</strong></p>
+<p>JavaScript在底层存储变量时，不同对象在底层都表现为二进制，且<strong>会在变量的机器码的低位1-3位存储其类型信息</strong>，如：</p>
+<ul>
+<li>000： 对象</li>
+<li>010： 浮点数</li>
+<li>100： 字符串</li>
+<li>110： 布尔值</li>
+<li>1：     整数</li>
+</ul>
+<p>根据JS判断类型的代码，<code>typeof</code>会</p>
+<ul>
+<li>先判断是否为<code>undefined</code></li>
+<li>如果不是<code>undefined</code>，判断是否为对象</li>
+<li>如果不是对象，判断是否为数字</li>
+<li>…</li>
+</ul>
+<p>所以这里有一个bug，<code>null</code>的所有机器码均为0，如果用<code>typeof</code>来判断，会被判断为<code>object</code>。但用<code>instanceof</code>来判断又会出现矛盾的结果。</p>
+<pre><code class="js">typeof null;            //&quot;object&quot;
+null instanceof Object  //false
+null instanceof null    //TypeError: Right-hand side of &#39;instanceof&#39; is not an object
+</code></pre>
+<p>所以在使用<code>typeof</code>判断变量的时候，要注意，尽量使用<code>typeof</code>来判断基础数据类型，避免对<code>null</code>的判断。</p>
+<h5 id="替换方案"><a href="#替换方案" class="headerlink" title="替换方案"></a>替换方案</h5><p>我们可以利用<code>Object.prototype.toString.call()</code>方法来实现对变量类型的比较准确的判断</p>
+<pre><code class="js">Object.prototype.toString.call(1)            // &quot;[object Number]&quot;
+Object.prototype.toString.call(&#39;hi&#39;)         // &quot;[object String]&quot;
+Object.prototype.toString.call({a:&#39;hi&#39;})     // &quot;[object Object]&quot;
+Object.prototype.toString.call([1,&#39;a&#39;])      // &quot;[object Array]&quot;
+Object.prototype.toString.call(true)         // &quot;[object Boolean]&quot;
+Object.prototype.toString.call(()=&gt;{})       // &quot;[object Function]&quot;
+Object.prototype.toString.call(null)         // &quot;[object Null]&quot;
+Object.prototype.toString.call(undefined)    // &quot;[object Undefined]&quot;
+Object.prototype.toString.call(Symbol(1))    // &quot;[object Symbol]&quot;
+</code></pre>
+<h4 id="instanceof用于判断对象的具体类型"><a href="#instanceof用于判断对象的具体类型" class="headerlink" title="instanceof用于判断对象的具体类型"></a><code>instanceof</code>用于判断<em>对象</em>的具体类型</h4><p><code>instanceof</code>主要用于<strong>判断一个实例是否属于某个类型</strong>。如</p>
+<pre><code class="js">let Person = function() {
+
+}
+let ps1 = new Person();
+ps1 instanceof Person //true
+</code></pre>
+<p><code>instanceof</code>也可以判断一个实例是否是其父类或者祖父类的实例。</p>
+<pre><code class="js">let Person = function() {}
+let Programmer = function() {}
+Programmer.prototype = new Person();
+let ps1 = new Programmer();
+ps1 instanceof Person //true
+ps1 instanceof Programmer //true
+</code></pre>
+<h5 id="instanceof实现原理"><a href="#instanceof实现原理" class="headerlink" title="instanceof实现原理"></a><code>instanceof</code>实现原理</h5><p>这里引用<a href="https://tinycat2017.github.io/2018/05/28/%E6%B5%85%E8%B0%88-instanceof-%E5%92%8C-typeof-%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" target="_blank" rel="noopener">浅谈 instanceof 和 typeof 的实现原理</a>里的一段代码：</p>
+<pre><code class="js">function new_instance_of(leftVaule, rightVaule){
+    let rightProto = rightVaule.prototype;// 取右表达式的 prototype 值
+    leftVaule = leftVaule.__proto__;// 取左表达式的__proto__值
+    while(true){
+        if(leftVaule ===null){
+            return false;    
+        }
+        if(leftVaule === rightProto){
+            return true;    
+        }
+        leftVaule = leftVaule.__proto__ 
+    }
+}
+</code></pre>
+<p><code>instanceof</code>的实现原理就是<strong>只要右边变量的<code>prototype</code>在左边变量的原型链上即可</strong>,上面这段代码会遍历左边变量的原型链，直到找到右边变量的<code>prototype</code>，如果没有找到，则返回<code>false</code>.</p>
+<p>具体原型链如何实现继承，我们在后面会讲到。</p>
+</blockquote>
+<hr>
+<h3 id="4-对象的自有属性和原型属性"><a href="#4-对象的自有属性和原型属性" class="headerlink" title="4. 对象的自有属性和原型属性"></a>4. 对象的<strong>自有属性</strong>和<strong>原型属性</strong></h3><ul>
+<li>构造函数中定义的属性叫做<strong>自有属性</strong>，自有属性直接被定义给实例，即实例各自拥有这些属性的副本</li>
+<li>添加在原型<code>prototype</code>上的属性叫做<strong>原型属性</strong>，原型是实例共有的对象，添加在原型上的属性也能通过实例获取到</li>
+</ul>
+<p>通过<strong><code>for(let property in object)</code></strong>可以遍历对象的属性，通过<strong><code>hasOwnProperty(property)</code></strong>方法可用区分自有属性和原型属性</p>
+<hr>
+<h3 id="5-实例的constructor属性"><a href="#5-实例的constructor属性" class="headerlink" title="5. 实例的constructor属性"></a>5. 实例的<strong><code>constructor</code></strong>属性</h3><p>实例都拥有一个特殊的属性<code>constructor</code>，指向创建这个实例的构造函数。</p>
+<p>但是实例的<code>constructor</code>属性可以被改写，所以<code>object.constructor</code>来获得的结果不一定是<code>object</code>的构造函数，需要验证实例的构造函数时，还是使用<code>instanceof</code></p>
+<hr>
+<h3 id="6-修改构造函数原型"><a href="#6-修改构造函数原型" class="headerlink" title="6. 修改构造函数原型"></a>6. 修改构造函数原型</h3><p>当需要添加的原型属性太多时，我们可以直接<strong>给构造函数指定新的原型</strong>，在新的原型的对象中添加需要给原型的属性和方法。</p>
+<p>需要注意的是，这个过程中<strong>会抹去构造函数的<code>constructor</code>属性</strong>，所以需要我们手动地添加定义<code>constructor</code>的语句（可以在新的<code>prototype</code>对象中定义）</p>
+<hr>
+<h3 id="7-原型和原型链"><a href="#7-原型和原型链" class="headerlink" title="7. 原型和原型链"></a>7. <strong>原型和原型链</strong></h3><p>原型和原型链是面向对象编程部分的重点和难点。</p>
+<p><strong>首先需要辨析两个关于原型概念：</strong></p>
+<ul>
+<li><p><strong><code>prototype</code>属性</strong>：前面原型属性部分就提到了<code>prototype</code>，<strong><code>prototype</code>是每个函数都有的属性</strong>，但不是每个对象都有的属性</p>
+<pre><code class="js">function Foo() {...}  //Foo.prototype: Foo {}
+let foo = new Foo()   //foo.prototype: undefined, foo.__proto__: Foo {}
+</code></pre>
+</li>
+<li><p><strong><code>__proto__</code></strong>：<strong><code>__proto__</code>是每个函数和对象都隐含的一个属性</strong>，它指向创建它的构造函数的<code>prototype</code>,即<strong><code>Supertype.prototype === subtype.__proto__</code></strong>。</p>
+</li>
+</ul>
+<p><strong>其次，我们需要知道为什么存在<code>prototype</code>属性</strong></p>
+<p>JavaScript里所有的数据类型都是对象，为了实现面向对象的思想，就必须实现<strong>继承</strong>来把所有的对象都连接起来。JavaScript是通过<code>new</code>来创建实例的，比如我们创建两个实例：</p>
+<pre><code class="js">function Mother(name) {
+  this.name = name;
+  this.father = &quot;father&quot;;
+}
+let child1 = new Mother(&#39;c1&#39;);
+let child2 = new Mother(&quot;c2&quot;);
+</code></pre>
+<p>这时发现其实<code>child2</code>的父亲并不是<code>father</code>，而是<code>Father</code>，我们修改<code>child2</code>的<code>father</code>属性</p>
+<pre><code class="js">child2.father = &quot;Father&quot;;
+console.log(child1.father);   //father
+</code></pre>
+<p>当我们修改了<code>child2</code>的<code>father</code>属性之后，<code>child1</code>的<code>father</code>属性并没有改变，因为属性的值无法共享。</p>
+<p>而<code>prototype</code>属性所起的作用就是<strong>把需要共享的属性都放到构造函数的<code>prototype</code>上，这样每一个实例都能够获取到这些属性</strong>。</p>
+<p><strong>接着需要知道构造函数和实例原型之间的关系：</strong></p>
+<p>上面提到，每个函数都有<code>prototype</code>属性，每个对象（<code>null</code>除外）在创建的时候就会有一个与之关联的对象，这个对象就是我们说的原型，每一个对象都会从原型“继承”属性。</p>
+<p> <img src="https://upload-images.jianshu.io/upload_images/9240001-3b087188be2960ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="构造函数的prototype属性"></p>
+<pre><code class="js">function Person() {}
+Person.prototype.name = &quot;nikkkki&quot;;
+let person1 = new Person();
+let person2 = new Person();
+console.log(person1.name);   //nikkkki
+console.log(person2.name);   //nikkkki
+</code></pre>
+<p> <code>Person</code>作为构造函数，在创建<code>person1</code>和<code>person2</code>的时候，这两个实例都会与<code>Person</code>的<code>prototype</code>属性关联，并从它继承属性，<code>Person.prototype.name</code>给<code>prototype</code>属性添加了<code>name</code>值，于是两个实例都能够获取到这个值。</p>
+<p> 所有的对象都是<code>Object</code>衍生出来的，因此所有的对象原型链终点都是<code>Object.prototype</code>的实例。</p>
+<p> 每个JavaScript对象(除了<code>null</code>)还有<code>__proto__</code>属性，它指向该对象的原型。</p>
+<pre><code class="js">function Person() {}
+let person = new Person();
+console.log(Person.prototype === person.__proto__);   //true
+</code></pre>
+<p> 所以构造函数在构建实例时，除了有实例原型<code>prototype</code>，还让实例的原型<code>__proto__</code>指向了实力原型。</p>
+<p> <img src="https://upload-images.jianshu.io/upload_images/9240001-9435ecc6f74e0484.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="__proto__"></p>
+<p> 前面<code>5</code>提到每个实例都有<code>constructor</code>属性，并且该属性指向这个实例的构造函数。</p>
+<pre><code class="js"> function Person() {}
+ console.log(Person === Person.prototype.constructor);   //true
+</code></pre>
+<p> 所以我们在这里加上<code>constructor</code>属性与<code>prototype</code>属性对应。</p>
+<p> <img src="https://upload-images.jianshu.io/upload_images/9240001-613e502f569c5588.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="constructor"></p>
+<p> 这里我们记住<strong>原型的3大定律</strong>：</p>
+<pre><code class="js"> function Person() {}
+ let person = new Person();
+
+ console.log(person.__proto__ === Person.prototype)  //true
+ console.log(Person.prototype.constructor === Person)   //true
+ console.log(Object.getPrototypeOf(person) === Person.prototype)  //true
+</code></pre>
+<p> <strong>那么原型链是什么呢？</strong></p>
+<p> 所有对象的原型<code>__proto__</code>都指向构造函数的<code>prototype</code>属性，而所有的构造函数都是函数对象，所有的对象都是<code>Object</code>衍生出来的，也就是说所有的实例向上追溯<code>__proto__</code>，最终都会到达<code>Object.prototype</code></p>
+<pre><code class="js"> function Person() {}
+ let person = new Person();
+ console.log(person.name);  //undefined
+ Object.prototype.name = &quot;nikkkki&quot;;
+ console.log(person.name);  //nikkkki
+</code></pre>
+<p> 我们可以将<code>Object</code>加入到关系图中：<br> <img src="https://upload-images.jianshu.io/upload_images/9240001-ff8d9dd7746b7f45.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Object作为源头"></p>
+<p> 当查找实例的属性时，会现在实例本身查找，如果实例没有这个属性，就会在实例的构造函数的<code>prototype</code>上查找，一直到<code>Object.prototype</code>。</p>
+<p><strong><code>Object.prototype</code>的原型是<code>null</code></strong>，所以查找到这一步就是终点了，如果还是查找失败，那就会返回<code>null</code></p>
+<p> <img src="https://upload-images.jianshu.io/upload_images/9240001-235ed6c0cf602e21.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="原型链"></p>
+<p> 这里我们可以来做一个小的逻辑运算题，想象一个函数对象<code>A</code>的<code>prototype</code>是另一个函数对象<code>B</code>构建出的实例，<code>a</code>实例就可以通过<code>__proto__</code>和<code>B</code>的原型连接起来。</p>
+<p> 这里我们一定要记住<strong>原型3大定律的第一定律</strong></p>
+<pre><code class="js"> function Father() {}
+ let son = new Father();
+ console.log(Father.prototype === son.__proto__);   //true
+</code></pre>
+<p> 在记住这一关系的情况下，<code>A</code>和<code>B</code>的关系就很好理解了：</p>
+<pre><code class="js"> function A() {}
+ function B() {}    // B.__proto__ === Object.prototype
+ let b = new B();   // b.__proto__ === B.prototype
+ A.prototype = b;
+ let a = new A();   // a.__proto__ === A.prototype === b
+ console.log(a.__proto__ === b);   //true
+ console.log(a.__proto__.__proto__ === B.prototype)  //true
+ console.log(a.__proto__.__proto__.__proto__ === Object.prototype)  //true
+</code></pre>
+<p>总结一下：</p>
+<ul>
+<li>JS中所有东西都是对象，函数也是对象，是一种特殊的对象</li>
+<li>JS中所有东西都是由<code>Object</code>衍生而来，所有对象原型链的重点都指向<code>Object.prototype</code></li>
+<li>对象都有一个隐含的<code>__proto__</code>属性，它指向创建它的构造函数的原型，<code>Object.prototype.__proto__</code>指向<code>null</code></li>
+<li>实例的<code>__proto__</code>指向创建它的构造函数的<code>prototype</code>，构造函数的<code>__proto__</code>也指向它的构造函数的<code>prototype</code>，一级一级向上，知道<code>Object.prototype</code></li>
+</ul>
+<hr>
+<h3 id="8-Object-create创建实例"><a href="#8-Object-create创建实例" class="headerlink" title="8. Object.create创建实例"></a>8. <code>Object.create</code>创建实例</h3><p>####<strong>继承</strong></p>
+<p>基于上述原型链的关系，子类可以继承父类的属性和方法。</p>
+<p>但是继承是一种比较有迷惑性的说法，引用《你不知道的JavaScript》中的话：</p>
+<blockquote>
+<p>继承意味着复制操作，然而JavaScript默认并不会复制对象的属性，相反，JavaScript只是在两个对象之间创建一个关联，这样，一个对象就可以通过委托访问另一个对象的属性和函数，所以与其叫继承，委托的说法反而更准确些。</p>
+</blockquote>
+<p>这里需要注意的地方是，我们在创建实例时，常使用<code>new</code>关键字，这里建议使用<code>Object.create</code>来创建实例，那么这两者的区别是什么呢？</p>
+<h4 id="new-创建实例实现原理"><a href="#new-创建实例实现原理" class="headerlink" title="new()创建实例实现原理"></a><strong><code>new()</code>创建实例实现原理</strong></h4><pre><code class="js">let obj = {};
+obj.__proto__ = Father.prototype;
+Father.call(obj);
+</code></pre>
+<p><code>new</code>创建实例时经历了这样几步：</p>
+<ol>
+<li>创建一个空对象<code>obj</code></li>
+<li>将空对象的<code>__proto__</code>指向构造函数的原型属性，也就是说<code>obj</code>原型属性上拥有了<code>Father.prototype</code>中的属性和方法</li>
+<li>将构造函数中的<code>this</code>指针指向<code>obj</code></li>
+</ol>
+<h4 id="Object-create-创建实例实现原理"><a href="#Object-create-创建实例实现原理" class="headerlink" title="Object.create()创建实例实现原理"></a><strong><code>Object.create()</code>创建实例实现原理</strong></h4><pre><code class="js">Object.create = function(o) {
+  let F = function() {};
+  F.prototype = o;
+  return new F();
+}
+</code></pre>
+<p>它在内部定义了一个对象，并且让<code>F.prototype</code>对象赋值为引进的对象/函数<code>o</code>，然后返回新对象。</p>
+<h4 id="DRY原则"><a href="#DRY原则" class="headerlink" title="DRY原则"></a><strong>DRY原则</strong></h4><p>正是因为可以从原型链上继承也好，委托也好，父类的属性和方法，因此我们应该多利用这一的特性，将子类    上重复的方法尽量放到父类上，这一可以保持代码的简洁，同时增强可维护性。</p>
+<p>​    </p>
+<h4 id="继承父类的属性"><a href="#继承父类的属性" class="headerlink" title="继承父类的属性"></a><strong>继承父类的属性</strong></h4><p>当我们先创建父类，并制定父类的<code>prototype</code>后，如果再来创建实例，使用<code>new</code>会产生一些问题，所以建议采用<code>Object.create(supertype.prototype)</code>的方法。</p>
+<p>创建后，我们需要将子类的原型设置为父类原型的实例，即<code>Son.prototype = Object.create(Father.prototype)</code>，这样子类的原型就继承了父类原型的所有方法和属性。</p>
+<p>但此时继承父类的原型会造成子类同时继承父类的<code>constructor</code>，所以还需要手动地将子类的<code>Son.prototype.constructor = Son</code>。</p>
+<h4 id="自己的方法"><a href="#自己的方法" class="headerlink" title="自己的方法"></a><strong>自己的方法</strong></h4><p>在继承父类的属性方法后，子类也可以自己添加方法，或者修改父类已有的方法。方法都是直接在子类的原型上修改。</p>
+<hr>
+<p>###9. <code>Mixin</code>多继承</p>
+<p>用于实现两个不相关的对象共享方法</p>
+<hr>
+<h3 id="10-私有属性"><a href="#10-私有属性" class="headerlink" title="10. 私有属性"></a>10. <strong>私有属性</strong></h3><p>防止构造函数内部属性被修改，可以在构造函数内部创建变量来保存属性值。</p>
+<hr>
+<h3 id="11-立即执行函数"><a href="#11-立即执行函数" class="headerlink" title="11. 立即执行函数"></a>11. 立即执行函数</h3><p>立即执行函数的特征是即写即用。</p>
+<p>利用立即执行函数可以把相关功能组合成一个模块，模块返回一个对象，对象中可以包含<code>Mixin</code>，这样在调用模块的时候就可以同步调用<code>Mixin</code>.</p>
+<p><em>以下是这部分习题的解答，每题的知识点我都有些，有些知识点可能和上面的有些重复.</em></p>
+<hr>
+<h4 id="习题Introduction-to-the-Object-Oriented-Programming-Challenges"><a href="#习题Introduction-to-the-Object-Oriented-Programming-Challenges" class="headerlink" title="习题Introduction to the Object Oriented Programming Challenges"></a>习题<a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming" target="_blank" rel="noopener">Introduction to the Object Oriented Programming Challenges</a></h4><ul>
+<li><ol>
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/create-a-basic-javascript-object" target="_blank" rel="noopener">Create a Basic JavaScript Object</a> <strong>创建JS对象</strong></li>
+</ol>
+<pre><code class="js">let dog = {
+  name: &quot;Stone&quot;,
+  numLegs: 4
+};
+</code></pre>
+</li>
+<li><ol start="2">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/use-dot-notation-to-access-the-properties-of-an-object" target="_blank" rel="noopener">Use Dot Notation to Access the Properties of an Object</a> <strong>获取对象的属性值</strong></li>
+</ol>
+<pre><code class="js">let dog = {
+  name: &quot;Spot&quot;,
+  numLegs: 4
+};
+// Add your code below this line
+console.log(dog.name);
+console.log(dog.numLegs);
+</code></pre>
+</li>
+<li><ol start="3">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/create-a-method-on-an-object" target="_blank" rel="noopener">Create a Method on an Object</a> <strong>为对象创建方法</strong></li>
+</ol>
+<pre><code class="js">let dog = {
+  name: &quot;Spot&quot;,
+  numLegs: 4,
+  sayLegs: function() {
+    return &quot;This dog has 4 legs.&quot;
+  }
+};
+
+dog.sayLegs();
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/make-code-more-reusable-with-the-this-keyword" target="_blank" rel="noopener">Make Code More Reusable with the this Keyword</a> <strong><code>this</code>关键字</strong></p>
+<pre><code class="js">let dog = {
+  name: &quot;Spot&quot;,
+  numLegs: 4,
+  sayLegs: function() {return &quot;This dog has &quot; + this.numLegs + &quot; legs.&quot;;}
+};
+
+dog.sayLegs();
+</code></pre>
+</li>
+<li><ol start="4">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/define-a-constructor-function" target="_blank" rel="noopener">Define a Constructor Function</a> <strong>定义构造函数</strong></li>
+</ol>
+<p><strong><code>Constructors</code>构造函数用来构造新的对象</strong>。对象的属性、行为都被定义在构造函数内。</p>
+<p>构造函数的写法规范有：</p>
+<ul>
+<li>构造函数的<strong>函数名要首字母大写</strong></li>
+<li>构造函数<strong>用<code>this</code>来指代将要创建的对象本身</strong></li>
+<li>构造函数用来定义对象的属性和行为，而非像普通函数那样返回一个值</li>
+</ul>
+<pre><code class="js">function Dog() {
+  this.name = &quot;Stone&quot;;
+  this.color = &quot;white&quot;;
+  this.numLegs = 4;
+}
+</code></pre>
+</li>
+<li><ol start="5">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/use-a-constructor-to-create-objects" target="_blank" rel="noopener">Use a Constructor to Create Objects</a> <strong>利用构造函数创建对象</strong></li>
+</ol>
+<p><strong>用<code>new</code>关键字调用构造函数</strong>。当调用构造函数时，JS会创建一个类的实例（instance）。如果没有使用<code>new</code>，那么构造函数内的<code>this</code>将不会指向新创建的对象。</p>
+<p><strong>用<code>new</code>关键字创建的实例将拥有类所有的属性</strong>，这些属性都可以被获取及修改</p>
+<pre><code class="js">function Dog() {
+  this.name = &quot;Rupert&quot;;
+  this.color = &quot;brown&quot;;
+  this.numLegs = 4;
+}
+// Add your code below this line
+let hound = new Dog();
+</code></pre>
+</li>
+<li><ol start="6">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/extend-constructors-to-receive-arguments" target="_blank" rel="noopener">Extend Constructors to Receive Arguments</a> <strong>构造函数传参</strong></li>
+</ol>
+<p>构造函数可以接受参数来创建不同的实例，这样使得构造函数更为灵活。</p>
+<pre><code class="js">function Dog(name, color) {
+  this.name = name;
+  this.color = color;
+  this.numLegs = 4;
+}
+
+let terrier = new Dog();
+</code></pre>
+</li>
+<li><ol start="7">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/verify-an-objects-constructor-with-instanceof" target="_blank" rel="noopener">Verify an Object’s Constructor with instanceof</a> <strong><code>instanceof</code>验证构造函数的实例</strong></li>
+</ol>
+<p>构造函数创建的新的对象都叫做它的<strong>实例</strong>，检验一个对象是不是构造函数的实例可以使用<code>instanceof</code>方法，即<code>实例 instanceof 构造函数</code>，结果将返回一个布尔值。</p>
+<pre><code class="js">function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+}
+
+// Add your code below this line
+let myHouse = new House(12);
+myHouse instanceof House;
+</code></pre>
+</li>
+<li><ol start="8">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/understand-own-properties" target="_blank" rel="noopener">Understand Own Properties</a> <strong>自有属性</strong></li>
+</ol>
+<p>如构造函数<code>Bird(name)</code>中的<code>name</code>和<code>numLegs</code>属性都叫函数的<strong>自有属性（own property）</strong>，自有属性直接被定义给实例，即在构造函数中定义，这意味着构造函数<code>Bird</code>的实例都将各自拥有这些属性的副本。</p>
+<pre><code class="js">function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
+let canary = new Bird(&quot;Tweety&quot;);
+let ownProps = [];
+// Add your code below this line
+for(let property in canary) {
+  if(canary.hasOwnProperty(property)) {
+    ownProps.push(property);
+  }
+}
+</code></pre>
+</li>
+<li><ol start="9">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/use-prototype-properties-to-reduce-duplicate-code" target="_blank" rel="noopener">Use Prototype Properties to Reduce Duplicate Code</a> <strong>原型属性</strong></li>
+</ol>
+<p>构造函数的实例除了拥有<strong>自有属性</strong>，还拥有<strong>原型属性</strong>。</p>
+<p><strong>原型</strong>是所有实例共有的一个对象，这里形容它是“创建对象的‘菜谱’”。在JavaScript中，几乎所有对象都有原型，而且它们的原型是创建它们的构造函数的一部分，如下题中的<code>beagle</code>实例是由<code>Dog</code>构造函数创建的，<code>beagle</code>的原型就是<code>Dog</code>构造函数即<code>Dog.prototype</code>的一部分。</p>
+<pre><code class="js">function Dog(name) {
+  this.name = name;
+}
+Dog.prototype.numLegs = 4;
+// Add your code above this line
+let beagle = new Dog(&quot;Snoopy&quot;);
+</code></pre>
+</li>
+<li><ol start="10">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/iterate-over-all-properties" target="_blank" rel="noopener">Iterate Over All Properties</a> <strong>遍历属性</strong></li>
+</ol>
+<p>如上所说，对象有两种属性，一种是<strong>自有属性</strong>，是直接创建的实例本身就定义好的，即在构造函数中就定义了的，另一种是<strong>原型属性</strong>，是在原型上定义的。</p>
+<p>下面的例子中，在<code>Dog</code>构造函数中就定义了<code>name</code>属性，所以所有的<code>Dog</code>的实例，如<code>beagle</code>都在创建时就拥有<code>name</code>属性，在<code>let beagle = new Dog(&quot;snoopy&quot;);</code>时，<code>beagle</code>就有了<code>name</code>属性及赋予了自己的<code>name</code>属性的值<code>snoopy</code>，所以<strong><code>name</code>就是所有<code>Dog</code>实例的自有属性</strong>。此外，<code>Dog</code>还在自己的原型上添加了<code>numLegs</code>属性，即<code>Dog.prototype.numLegs = 4;</code>，实例同样拥有在原型上添加的属性，所以<code>beagle.numLegs</code>可以获得<code>4</code>而非<code>undefined</code>。<code>numLegs</code>这种&amp;&amp;直接添加在<code>Dog.prototype</code>上的属性就是原型属性**。</p>
+<p>实例同时拥有自有属性和原型属性，但是可以通过<code>instance.hasOwnProperty(property)</code>来判断是哪一类属性。这一题就通过这个方法将<code>beagle</code>的不同属性分别添加到<code>ownProps</code>自有属性数组和<code>prototypeProps</code>原型数组中。如果输出两个数组，得到的结果是<code>ownProps: [&#39;name&#39;] prototypeProps: [&#39;numLegs&#39;]</code></p>
+<pre><code class="js">function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog(&quot;Snoopy&quot;);
+
+let ownProps = [];
+let prototypeProps = [];
+
+// Add your code below this line 
+for(let property in beagle) {
+  if(beagle.hasOwnProperty(property)) {
+    ownProps.push(property);
+  } else {
+    prototypeProps.push(property);
+  }
+}
+</code></pre>
+</li>
+<li><ol start="11">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/understand-the-constructor-property" target="_blank" rel="noopener">Understand the Constructor Property</a> <strong>实例的<code>constructor</code>属性</strong></li>
+</ol>
+<p>实例都拥有一个特殊的属性<code>constructor</code>，这个属性指向创建这些实例的构造函数。如<code>candidate</code>是<code>Dog</code>创建的一个实例，<code>candidate.constructor</code>就是<code>[function: Dog]</code>，但是<code>constructor</code>属性是可以被改写的，所以如果需要验证一个实例的构造函数时，不建议使用下题中的<code>candidate.constructor === Dog</code>这种方法，而是使用前面提到过的<code>candidate instanceof Dog</code>。</p>
+<pre><code class="js">function Dog(name) {
+  this.name = name;
+}
+// Add your code below this line
+function joinDogFraternity(candidate) {
+  if(candidate.constructor === Dog) {
+    return true;
+  }
+  return false;
+}
+</code></pre>
+</li>
+<li><ol start="12">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/change-the-prototype-to-a-new-object" target="_blank" rel="noopener">Change the Prototype to a New Object</a> <strong>让原型指向新的对象</strong></li>
+</ol>
+<p>上面提到了构造函数有两种属性，自有属性和原型属性，我们可以通过添加原型属性来丰富构造函数的属性，但是如果需要添加的内容较多，代码就会看起来非常臃肿，这时我们可以采取为构造函数的原型指定一个新的对象的方法，在新的对象中包含所有我们需要添加给原型的属性或方法，这样代码会更简洁。</p>
+<pre><code class="js">function Dog(name) {
+  this.name = name; 
+}
+Dog.prototype = {
+  // Add your code below this line
+  numLegs: 4,
+  eat: function() {
+    console.log(&quot;yummy&quot;);
+  },
+  describe: function() {
+    console.log(&quot;My name is &quot; + this.name);
+  }
+};
+let dog = new Dog();
+</code></pre>
+</li>
+<li><ol start="13">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/remember-to-set-the-constructor-property-when-changing-the-prototype" target="_blank" rel="noopener">Remember to Set the Constructor Property when Changing the Prototype</a> <strong>在新对象内设置<code>constructor</code>属性</strong></li>
+</ol>
+<p>当我们人为地将原型指向一个新的对象时，有一个副作用就是这样会抹去构造函数的<code>constructor</code>属性。这时我们需要手动地添加上定义<code>constructor</code>属性的语句。如下题，在给<code>Dog</code>指定的新原型中加入了<code>constructor: Dog</code>来明确新原型的<code>constructor</code>属性还是<code>Dog</code>.</p>
+<pre><code class="js">function Dog(name) {
+  this.name = name; 
+}
+// Modify the code below this line
+Dog.prototype = {
+  constructor: Dog,
+  numLegs: 2, 
+  eat: function() {
+    console.log(&quot;nom nom nom&quot;); 
+  }, 
+  describe: function() {
+    console.log(&quot;My name is &quot; + this.name); 
+  }
+};
+</code></pre>
+</li>
+<li><ol start="14">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/understand-where-an-objects-prototype-comes-from" target="_blank" rel="noopener">Understand Where an Object’s Prototype Comes From</a> <strong>原型从何而来</strong></li>
+</ol>
+<p>对象的原型（<code>__proto__</code>）都继承自它的构造函数的原型属性（<code>prototype</code>）。如<code>beagle</code>是<code>Dog</code>的实例，<code>beagle</code>的原型就是在<code>let beagle = new Dog(&quot;snoopy&quot;)</code>创建它的时候从<code>Dog.prototype</code>继承来的。<code>isPrototypeOf</code>方法可用用于验证对象的原型。<code>Dog.prototype.isPrototypeOf(bealge)</code>就是验证<code>beagle</code>的原型是不是从<code>Dog.prototype</code>继承而来。</p>
+<pre><code class="js">function Dog(name) {
+  this.name = name;
+}
+
+let beagle = new Dog(&quot;Snoopy&quot;);
+
+// Add your code below this line
+Dog.prototype.isPrototypeOf(beagle);
+</code></pre>
+</li>
+<li><ol start="15">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/understand-the-prototype-chain" target="_blank" rel="noopener">Understand the Prototype Chain</a> <strong>原型链</strong></li>
+</ol>
+<p>几乎所有的JavaScript对象（除了null）都有原型<code>prototype</code>，这个<code>prototype</code>本身也是一个对象。因为对象的原型本身也是一个对象，也有它自己的原型<code>prototype</code>，如<code>Dog.prototype</code>的原型<code>prototype</code>就是<code>Object.prototype</code>。</p>
+<p>如前面提到的检测对象自有属性的<code>hasOwnProperty(property)</code>方法就是定义在<code>Object.prototype</code>上的方法，<code>Dog.prototype</code>也继承到了这个方法，这种继承关系就是<strong>原型链</strong>。在这个原型链中，<code>Dog</code>是<code>beagle</code>的父类（<strong><code>supertype</code></strong>），<code>beagle</code>是<code>Dog</code>的子类（<strong><code>subtype</code></strong>），<code>Object</code>既是<code>Dog</code>的父类，也是<code>beagle</code>的父类。</p>
+<p><code>Object</code>是JS中一切对象的父类，因此，任何对象都可以使用<code>hasOwnProperty</code>方法。</p>
+<pre><code class="js">function Dog(name) {
+  this.name = name;
+}
+
+let beagle = new Dog(&quot;Snoopy&quot;);
+
+Dog.prototype.isPrototypeOf(beagle);  // =&gt; true
+
+// Fix the code below so that it evaluates to true
+Object.prototype.isPrototypeOf(Dog.prototype);
+</code></pre>
+</li>
+<li><ol start="16">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/use-inheritance-so-you-dont-repeat-yourself" target="_blank" rel="noopener">Use Inheritance So You Don’t Repeat Yourself</a> <strong><code>DRY</code>原则</strong></li>
+</ol>
+<p>编程的一个原则叫做<code>Don&#39;t Repeat Yourself(DRY)</code>，意思是不要重复写你写过的内容，因为重复的代码会很难维护，一旦要修改某个内容，就需要修改多处，这样会增加工作量，而且也更容易出错。</p>
+<p>这里举了一个例子，有<code>Bird</code>和<code>Dog</code>两个构造函数，它们都有<code>describe()</code>这个方法，内容是重复的，想要遵从<code>DRY</code>原则避免重复，一个方法是为这两个构造函数增加一个父类<code>Animal</code>，并为父类定义<code>describe</code>函数，这样<code>Bird</code>和<code>Dog</code>都能从<code>Animal</code>继承<code>describe</code>方法。</p>
+<pre><code class="js">function Cat(name) {
+  this.name = name; 
+}
+
+Cat.prototype = {
+  constructor: Animal, 
+};
+
+function Bear(name) {
+  this.name = name; 
+}
+
+Bear.prototype = {
+  constructor: Animal, 
+};
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log(&quot;nom nom nom&quot;);
+  }
+};
+</code></pre>
+</li>
+<li><ol start="17">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/inherit-behaviors-from-a-supertype" target="_blank" rel="noopener">Inherit Behaviors from a Supertype</a> <strong>继承</strong></li>
+</ol>
+<p>像上一题中，我们先创建父类，然后让子类使用父类的方法的行为叫做<strong>继承</strong>。这一题的知识点在于如何创建父类的实例。通常我们会使用<code>new</code>关键字来创建实例，但是这样在继承父类的属性和方法时会有一些问题，所以更建议使用<code>Object.create(supertype.prototype)</code>。</p>
+<p><code>Object.create(obj)</code>方法会创建一个新的对象，然后将参数<code>obj</code>作为新创建的对象的原型<code>prototype</code>，这样就能让新创建的对象实例拥有原型的方法和属性。</p>
+<pre><code class="js">function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal, 
+  eat: function() {
+    console.log(&quot;nom nom nom&quot;);
+  }
+};
+
+// Add your code below this line
+
+let duck = Object.create(Animal.prototype); // Change this line
+let beagle = Object.create(Animal.prototype); // Change this line
+
+duck.eat(); // Should print &quot;nom nom nom&quot;
+beagle.eat(); // Should print &quot;nom nom nom&quot; 
+</code></pre>
+</li>
+<li><ol start="18">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/set-the-childs-prototype-to-an-instance-of-the-parent" target="_blank" rel="noopener">Set the Child’s Prototype to an Instance of the Parent</a> <strong>设置子类的原型</strong></li>
+</ol>
+<p>创建实例之后，我们需要将子类的原型设置为父类原型的实例。如我们将<code>Dog</code>的原型设置为<code>Animal</code>的原型的实例：<code>Dog.prototype = Object.create(Animal.prototype)</code>，这样<code>Dog</code>的原型就继承了<code>Animal</code>原型的所有方法和属性，<code>Dog</code>的实例如<code>beagle</code>就能继承<code>Animal</code>的方法如<code>eat</code>。</p>
+<pre><code class="js">function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log(&quot;nom nom nom&quot;);
+  }
+};
+
+function Dog() { }
+
+// Add your code below this line
+Dog.prototype = Object.create(Animal.prototype);
+
+let beagle = new Dog();
+beagle.eat();  // Should print &quot;nom nom nom&quot;
+</code></pre>
+</li>
+<li><ol start="19">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/reset-an-inherited-constructor-property" target="_blank" rel="noopener">Reset an Inherited Constructor Property</a> <strong>重设子类的<code>constructor</code>属性</strong></li>
+</ol>
+<p>当一个对象继承另一个对象的原型<code>prototype</code>时，它也继承了父类的<code>constructor</code>属性，如<code>Bird</code>的原型继承了<code>Animal</code>的原型，这时<code>Bird</code>的实例如<code>duck</code>的<code>constructor</code>属性就会指向<code>Animal</code>而不是<code>Bird</code>。但我们仍需要<code>duck</code>的<code>constructor</code>指向<code>Bird</code>，这时就需要我们手动将<code>Bird</code>的原型的<code>constructor</code>属性<code>Bird.prototype.constructor</code>指向回<code>Bird</code>。</p>
+<pre><code class="js">function Animal() { }
+function Bird() { }
+function Dog() { }
+
+Bird.prototype = Object.create(Animal.prototype);
+Dog.prototype = Object.create(Animal.prototype);
+
+// Add your code below this line
+Bird.prototype.constructor = Bird;
+Dog.prototype.constructor = Dog;
+
+let duck = new Bird();
+let beagle = new Dog();
+</code></pre>
+</li>
+<li><ol start="20">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/add-methods-after-inheritance" target="_blank" rel="noopener">Add Methods After Inheritance</a> <strong>构造函数添加方法</strong></li>
+</ol>
+<p>当构造函数继承父类的原型时，除了拥有父类的方法，还可以添加自己的方法。</p>
+<p>通过添加方法到子类的原型上，我们可以让子类拥有自己独特的方法，如<code>Bird</code>继承了<code>Animal</code>的方法，但通过<code>Bird.prototype.fly = function() {...}</code>可以给<code>Bird</code>添加<code>fly()</code>方法。</p>
+<p>此时，<code>Bird</code>的实例就拥有了<code>eat()</code>和<code>fly()</code>两个方法。</p>
+<pre><code class="js">function Animal() { }
+Animal.prototype.eat = function() { console.log(&quot;nom nom nom&quot;); };
+
+function Dog() { }
+
+// Add your code below this line
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+Dog.prototype.bark = function() {
+    console.log(&quot;Woof&quot;);
+}
+
+// Add your code above this line
+
+let beagle = new Dog();
+
+beagle.eat(); // Should print &quot;nom nom nom&quot;
+beagle.bark(); // Should print &quot;Woof!&quot;
+</code></pre>
+</li>
+<li><ol start="21">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/override-inherited-methods" target="_blank" rel="noopener">Override Inherited Methods</a> <strong>修改父类方法</strong></li>
+</ol>
+<p>前面我们提到了，子类可以通过复制父类的原型来继承父类的方法，也可以通过给自己的原型绑定方法来添加自己的方法。同样的，子类也可以通过给自己的原型绑定父类的方法来修改父类的方法。</p>
+<p>当我们使用<code>new</code>关键词来创建实例，并且调用构造函数的方法时，如<code>let duck = new Bird();  duck.eat()</code>，JavaScript对<code>duck&#39;s prototype</code>机制是这样的：</p>
+<ol>
+<li>先查看<code>duck</code>的原型属性是否有<code>eat()</code>方法，如果没有</li>
+<li>查看<code>Bird</code>的原型属性是否有<code>eat()</code>方法，有，那么执行并停止搜索</li>
+<li><code>Animal</code>也定义了<code>eat()</code>方法，但是因为JavaScript已经停止查找，所以无法达到这一层</li>
+<li><code>Object</code>层，JavaScript已经停止查找，无法到达这一层</li>
+</ol>
+<pre><code class="js">function Bird() { }
+
+Bird.prototype.fly = function() { return &quot;I am flying!&quot;; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+
+// Add your code below this line
+
+Penguin.prototype.fly = function() { return &quot;Alas, this is a flightless bird.&quot;}
+
+// Add your code above this line
+
+let penguin = new Penguin();
+console.log(penguin.fly());
+</code></pre>
+</li>
+<li><ol start="22">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/use-a-mixin-to-add-common-behavior-between-unrelated-objects" target="_blank" rel="noopener">Use a Mixin to Add Common Behavior Between Unrelated Objects</a> <strong><code>Mixin</code>实现多继承</strong></li>
+</ol>
+<p>继承能够将一个对象的方法传递给另一个对象，但是有时两个并不相关的对象也会拥有一样的方法，比如<code>Bird</code>和<code>Airplane</code>，这时无法用继承来共享方法，这时可以用<code>mixins</code>让不同的对象共享相同的方法。</p>
+<p>它的写法是：</p>
+<ol>
+<li>创建一个<code>mixin</code>，这一题创建的是一个翱翔的<code>glideMixin</code>，它的参数是<code>obj</code>，即会使用这个<code>mixin</code>的对象</li>
+<li>在<code>mixin</code>内创建<code>obj</code>的方法</li>
+<li>调用<code>mixin</code>，将需要共享方法的对象以参数的形式传给<code>mixin</code></li>
+</ol>
+<pre><code class="js">let bird = {
+  name: &quot;Donald&quot;,
+  numLegs: 2
+};
+
+let boat = {
+  name: &quot;Warrior&quot;,
+  type: &quot;race-boat&quot;
+};
+
+// Add your code below this line
+let glideMixin = function(obj) {
+    obj.glide = function() {
+        console.log(&quot;glide&quot;);
+    }
+}
+glideMixin(bird);
+glideMixin(boat);
+</code></pre>
+</li>
+<li><ol start="23">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/use-closure-to-protect-properties-within-an-object-from-being-modified-externally" target="_blank" rel="noopener">Use Closure to Protect Properties Within an Object from Being Modified Externally</a> <strong>防止属性被更改</strong></li>
+</ol>
+<p>在前面的习题中，实例的<code>name</code>属性是公开属性，即可以在定义<code>bird</code>实例的语句外部获取和修改属性。对于某些属性，如密码或者银行账户来说，这样实在太不安全了。</p>
+<p>最简单的创建私密属性的方法是在构造函数内部创建一个变量，这样能够将变量的作用域由全局转变为函数级作用域，变量只能在构造函数内部被获取和修改。</p>
+<pre><code class="js">function Bird() {
+  let weight = 15;
+  this.getWeight = function() {
+    return weight;
+  }
+}
+</code></pre>
+</li>
+<li><ol start="24">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/understand-the-immediately-invoked-function-expression-iife" target="_blank" rel="noopener">Understand the Immediately Invoked Function Expression (IIFE)</a> <strong>立即执行函数</strong></li>
+</ol>
+<p>立即执行函数（IIFE)在JavaScript中是非常常见的一种形式，它的特征包括：</p>
+<ul>
+<li><p>没有函数名，不用变量存储</p>
+<p>函数被<code>()</code>包围，且函数末尾有一对括号<code>()</code>表明函数在声明之后会被立即执行</p>
+</li>
+</ul>
+<pre><code class="js">(function() {
+  console.log(&quot;A cozy nest is ready&quot;);
+})()
+</code></pre>
+</li>
+<li><ol start="25">
+<li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming/use-an-iife-to-create-a-module" target="_blank" rel="noopener">Use an IIFE to Create a Module</a></li>
+</ol>
+<p>立即执行函数常被用来将相关的功能组合成一个对象或模块。比如我们可以创建一个对象模块，让它是立即执行函数，在函数内部返回一个或多个<code>mixin</code>，这样我们在调用模块的时候可以同步调用<code>mixin</code>，如下题中，我们可以<code>funModule.isCuteMixin(cat);    cat.isCute</code>，使代码更简洁。</p>
+<pre><code class="js">let funModule = (function() {
+  return {
+    isCuteMixin: function(obj) {
+      obj.isCute = function() {
+        return true;
+      };
+    },
+    singMixin: function(obj) {
+      obj.sing = function() {
+        console.log(&quot;Singing to an awesome tune&quot;);
+      };
+    }
+  }
+})()
+</code></pre>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/07/08/面向对象编程/" title="面向对象编程">http://xuquan.site/2018/07/08/面向对象编程/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/freecodecamp/" rel="tag"><i class="fa fa-tag"></i> freecodecamp</a>
+          
+            <a href="/tags/OOP/" rel="tag"><i class="fa fa-tag"></i> OOP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/06/ES6学习笔记之解构赋值/" rel="next" title="ES6学习笔记之解构赋值">
+                <i class="fa fa-chevron-left"></i> ES6学习笔记之解构赋值
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/10/算法中级/" rel="prev" title="算法中级">
+                算法中级 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-第一个核心概念是对象"><span class="nav-number">1.</span> <span class="nav-text">1. 第一个核心概念是对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-第二个知识点是构造函数constructor"><span class="nav-number">2.</span> <span class="nav-text">2. 第二个知识点是构造函数constructor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">2.1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数对象"><span class="nav-number">2.2.</span> <span class="nav-text">函数对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地对象"><span class="nav-number">2.3.</span> <span class="nav-text">本地对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内置对象"><span class="nav-number">2.4.</span> <span class="nav-text">内置对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-用instanceof来判断构造函数的实例"><span class="nav-number">3.</span> <span class="nav-text">3. 用instanceof来判断构造函数的实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof用于判断变量的类型"><span class="nav-number">3.1.</span> <span class="nav-text">typeof用于判断变量的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#替换方案"><span class="nav-number">3.1.1.</span> <span class="nav-text">替换方案</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof用于判断对象的具体类型"><span class="nav-number">3.2.</span> <span class="nav-text">instanceof用于判断对象的具体类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#instanceof实现原理"><span class="nav-number">3.2.1.</span> <span class="nav-text">instanceof实现原理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-对象的自有属性和原型属性"><span class="nav-number">4.</span> <span class="nav-text">4. 对象的自有属性和原型属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-实例的constructor属性"><span class="nav-number">5.</span> <span class="nav-text">5. 实例的constructor属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-修改构造函数原型"><span class="nav-number">6.</span> <span class="nav-text">6. 修改构造函数原型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-原型和原型链"><span class="nav-number">7.</span> <span class="nav-text">7. 原型和原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Object-create创建实例"><span class="nav-number">8.</span> <span class="nav-text">8. Object.create创建实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#new-创建实例实现原理"><span class="nav-number">8.1.</span> <span class="nav-text">new()创建实例实现原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-create-创建实例实现原理"><span class="nav-number">8.2.</span> <span class="nav-text">Object.create()创建实例实现原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DRY原则"><span class="nav-number">8.3.</span> <span class="nav-text">DRY原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承父类的属性"><span class="nav-number">8.4.</span> <span class="nav-text">继承父类的属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自己的方法"><span class="nav-number">8.5.</span> <span class="nav-text">自己的方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-私有属性"><span class="nav-number">9.</span> <span class="nav-text">10. 私有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-立即执行函数"><span class="nav-number">10.</span> <span class="nav-text">11. 立即执行函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#习题Introduction-to-the-Object-Oriented-Programming-Challenges"><span class="nav-number">10.1.</span> <span class="nav-text">习题Introduction to the Object Oriented Programming Challenges</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/07/08/面向对象编程/';
+          this.page.identifier = '2018/07/08/面向对象编程/';
+          this.page.title = '面向对象编程';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

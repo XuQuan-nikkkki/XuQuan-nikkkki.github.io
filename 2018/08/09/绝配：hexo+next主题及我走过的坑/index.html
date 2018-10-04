@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="hexo,blog,next," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="这篇内容详细记述了我在使用hexo搭载博客的过程中走过的路和跌过的坑。">
+<meta name="keywords" content="hexo,blog,next">
+<meta property="og:type" content="article">
+<meta property="og:title" content="绝配：hexo+next主题及我走过的坑">
+<meta property="og:url" content="http://xuquan.site/2018/08/09/绝配：hexo+next主题及我走过的坑/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="这篇内容详细记述了我在使用hexo搭载博客的过程中走过的路和跌过的坑。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fu3fdok69rj309i025dfy.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fu3fy153qlj30ra06fwg8.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fu3hcuot1kj30ms0b4403.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fu3hgugjahj30lo0fidj0.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fu3hico4uzj30tc0760tu.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fu3hj0272lj30ku0bjmyl.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fu3hljthg9j30f70253yi.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fu3hp2suohj31340ggjzb.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fu3hzmx0zyj306w02edfo.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fu3i066ttsj30hn0di758.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fu3jn983axj313g0iqaba.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fu3jo3nn7bj313g0iutb9.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fu3jprr92gj313j0itadi.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fu3jqrsv2qj313f0iutca.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fu3kuj3xjpj30mp019jr9.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fu3lif3vzoj302y00tgle.jpg">
+<meta property="og:updated_time" content="2018-08-09T10:41:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="绝配：hexo+next主题及我走过的坑">
+<meta name="twitter:description" content="这篇内容详细记述了我在使用hexo搭载博客的过程中走过的路和跌过的坑。">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fu3fdok69rj309i025dfy.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/08/09/绝配：hexo+next主题及我走过的坑/"/>
+
+
+
+
+
+  <title>绝配：hexo+next主题及我走过的坑 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/09/绝配：hexo+next主题及我走过的坑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">绝配：hexo+next主题及我走过的坑</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-09T11:20:42+08:00">
+                2018-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/利器/" itemprop="url" rel="index">
+                    <span itemprop="name">利器</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/09/绝配：hexo+next主题及我走过的坑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/09/绝配：hexo+next主题及我走过的坑/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/09/绝配：hexo+next主题及我走过的坑/" class="leancloud_visitors" data-flag-title="绝配：hexo+next主题及我走过的坑">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4,263 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  16 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这篇内容详细记述了我在使用hexo搭载博客的过程中走过的路和跌过的坑。</p>
+<a id="more"></a>
+<h3 id="从印象笔记到简书到Hexo"><a href="#从印象笔记到简书到Hexo" class="headerlink" title="从印象笔记到简书到Hexo"></a>从印象笔记到简书到Hexo</h3><p>我一直有收集资料的习惯，最开始把资料都放在印象笔记里，然后自己平时处理消化之后会添加一个Learning Card部分开资料开头，方便自己复习和记忆。但是时间一久，资料就特别多，加上处理过和没处理过的都积攒在一起就显得特别臃肿，于是我就考虑将消化过的内容发布到简书上，给自己做一个记录，也算是自己的技术博客。</p>
+<p>但使用了简书3个月之后，我就发现了一些问题：</p>
+<p>首先，我是用Typora来写内容的，简书虽然支持Markdown，但是自带的编辑器功能不是特别完善，有些时候还得反复切换Markdown和富文本模式，很麻烦麻烦；</p>
+<p>其次，直接复制Typora的内容到简书是无法同步图片的，因为Typora的图片是放在文件夹内的asset文件夹内的，复制到简书需要图片挨个重新上传，图片多的时候简直想放弃这一篇内容；</p>
+<p>另外，简书无法添加标签，只能分笔记本来写不同的内容，而且也不能添加置顶，功能比较单一；</p>
+<p>在综合考虑之后，我决定搭建一个自己的博客。正好看到有人推荐hexo搭建，而且大家搭建的博客都挺赏心悦目的，我就开始动手搭建自己的了。</p>
+<h3 id="Hexo部署"><a href="#Hexo部署" class="headerlink" title="Hexo部署"></a>Hexo部署</h3><p>hexo有中文的文档，这一点非常方便，但是在安装过程中还是很容易有疏忽的地方，导致安装失败。</p>
+<h4 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h4><p>安装Hexo之前，必须保证自己的电脑中<strong>已经安装好了Node.js和Git</strong>。因为这两个软件我之前都安装过，这里就不重复安装过程了，检验方式如下：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fu3fdok69rj309i025dfy.jpg" alt="image-20180809141924679"></p>
+<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>安装好node.js和git后，可以通过npm来安装Hexo。</p>
+<pre><code class="shell">npm install -g hexo-cli
+</code></pre>
+<h4 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h4><p>之后就可以在电脑里新建一个文件夹来作为存放博客全部内容的大本营了。我们直接用hexo命令来初始化博客文件夹：</p>
+<pre><code class="shell">hexo init &lt;folder&gt;
+cd &lt;folder&gt;
+npm install
+</code></pre>
+<p><code>&lt;folder&gt;</code>就是文件夹的名字，我们可以自己随意取这个名字，我的经验是，现在初始化应该不需要后面<code>npm install</code>这个步骤了，在创建的时候 ，文件夹初始化已经把需要的内容都下载进去了。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fu3fy153qlj30ra06fwg8.jpg" alt="文件夹开始初始化了"></p>
+<h4 id="站内内容"><a href="#站内内容" class="headerlink" title="站内内容"></a>站内内容</h4><p>新建好的文件夹目录如下：</p>
+<pre><code class="yaml">.
+├── _config.yml
+├── package.json
+├── scaffolds
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+</code></pre>
+<p>这里解释一下各个文件夹的作用：</p>
+<h5 id="config-yml"><a href="#config-yml" class="headerlink" title="config.yml"></a>config.yml</h5><p>博客的配置文件，博客的名称、关键词、作者、语言、博客主题…设置都在里面。</p>
+<h5 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h5><p>应用程序信息，新添加的插件内容也会出现在这里面，我们可以不修改这里的内容。</p>
+<h5 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h5><p>scaffolds就是脚手架的意思，这里放了三个模板文件，分别是新添加博客文章（posts）、新添加博客页（page）和新添加草稿（draft）的目标样式。</p>
+<p>这部分可以修改的内容是，我们可以在模板上添加比如categories等自定义内容</p>
+<h5 id="source"><a href="#source" class="headerlink" title="source"></a>source</h5><p>source是放置我们博客内容的地方，里面初始只有两个文件夹，一个是drafts（草稿），一个posts（文章），但之后我们通过命令新建tags（标签）还有categories（分类）页后，这里会相应地增加文件夹。</p>
+<h5 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h5><p>放置主题文件包的地方。Hexo会根据这个文件来生成静态页面。</p>
+<p>初始状态下只有landscape一个文件夹，后续我们可以添加自己喜欢的。</p>
+<h4 id="Hexo命令"><a href="#Hexo命令" class="headerlink" title="Hexo命令"></a>Hexo命令</h4><h5 id="init"><a href="#init" class="headerlink" title="init"></a><code>init</code></h5><p>新建一个网站。</p>
+<pre><code class="shell">hexo init &lt;folder&gt;
+</code></pre>
+<h5 id="new"><a href="#new" class="headerlink" title="new"></a><code>new</code></h5><p>新建文章或页面。</p>
+<pre><code class="shell">hexo new &lt;layout&gt; &quot;title&quot;
+</code></pre>
+<p>这里的<code>&lt;layout&gt;</code>对应我们要添加的内容，如果是<code>posts</code>就是添加新的文章，如果是<code>page</code>就是添加新的页面。</p>
+<p>默认是添加<code>posts</code>。</p>
+<p>然后我们就可以在对应的posts或drafts文件夹里找到我们新建的文件，然后在文件里用Markdown的格式来写作了。</p>
+<h5 id="generate"><a href="#generate" class="headerlink" title="generate"></a><code>generate</code></h5><p>生成静态页面</p>
+<pre><code class="shell">hexo generate
+</code></pre>
+<p>也可以简写成</p>
+<pre><code class="shell">hexo g
+</code></pre>
+<h5 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a><code>deploy</code></h5><p>将内容部署到网站</p>
+<pre><code class="shell">hexo deploy
+</code></pre>
+<p>也可以简写成</p>
+<pre><code class="shell">hexo -d
+</code></pre>
+<h5 id="publish"><a href="#publish" class="headerlink" title="publish"></a><code>publish</code></h5><p>发布内容，实际上是将内容从drafts（草稿）文件夹移到posts（文章）文件夹。</p>
+<pre><code class="shell">hexo publish &lt;layout&gt; &lt;filename&gt;
+</code></pre>
+<h5 id="server"><a href="#server" class="headerlink" title="server"></a><code>server</code></h5><p>启动服务器，默认情况下，访问网站为<code>http://localhost:4000/</code></p>
+<pre><code class="shell">hexo server
+</code></pre>
+<p>也可以简写成</p>
+<pre><code class="shell">hexo s
+</code></pre>
+<blockquote>
+<p>根据我的经验，除了第一次部署的时候，我们会重点用到<code>hexo init</code>这个命令外，在平时写博客和发布过程中最常用的就是：</p>
+<ul>
+<li><code>hexo n &lt;filename&gt;</code> 新建文章</li>
+<li><code>hexo s</code> 启动服务器，在本地查看内容</li>
+<li><code>hexo g</code> 生成静态页面</li>
+<li><code>hexo deploy</code> 部署到网站</li>
+</ul>
+<p>以上四个步骤。</p>
+</blockquote>
+<p>其实以上命令我觉得就足够了，文档里还有很多功能，但我在实际使用的过程中都还没有遇到。</p>
+<p>搭建好后我们在<code>localhost:4000</code>就可以看到这样的博客内容：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fu3hcuot1kj30ms0b4403.jpg" alt="image-20180809152743968"></p>
+<h4 id="实际操作"><a href="#实际操作" class="headerlink" title="实际操作"></a>实际操作</h4><p>我在新建博客之后，做了以下改动：</p>
+<h5 id="1-创建“分类”页面"><a href="#1-创建“分类”页面" class="headerlink" title="1. 创建“分类”页面"></a>1. 创建“分类”页面</h5><ul>
+<li><p>新建分类页面</p>
+<pre><code class="shell"> hexo new page categories
+</code></pre>
+</li>
+<li><p>给分类页面添加类型</p>
+<p> 我们在source文件夹中的categories文件夹下找到index.md文件，并在它的头部加上type属性。</p>
+<pre><code class="yaml"> ---
+ title: 文章分类
+ date: 2017-05-27 13:47:40
+ type: &quot;categories&quot;   #这部分是新添加的
+ ---
+</code></pre>
+</li>
+<li><p>给模板添加分类属性</p>
+<p> 现在我们打开scarffolds文件夹里的post.md文件，给它的头部加上<code>categories:</code>，这样我们创建的所有新的文章都会自带这个属性，我们只需要往里填分类，就可以自动在网站上形成分类了。</p>
+<pre><code class="yaml"> title: {{ title }}
+ date: {{ date }}
+ categories:
+ tags:
+</code></pre>
+</li>
+<li><p>给文章添加分类</p>
+<p> 现在我们可以找到一篇文章，然后尝试给它添加分类</p>
+<pre><code class="yaml"> layout: posts
+ title: 写给小白的express学习笔记1： express-static文件静态管理
+ date: 2018-06-07 00:38:36
+ categories: 学习笔记
+ tags: [node.js, express]
+</code></pre>
+</li>
+</ul>
+<h5 id="2-创建“标签”页面"><a href="#2-创建“标签”页面" class="headerlink" title="2. 创建“标签”页面"></a>2. 创建“标签”页面</h5><p>创建”标签”页的方式和创建“分类”一样。</p>
+<ul>
+<li><p>新建“标签”页面</p>
+<pre><code class="shell">hexo new page tags
+</code></pre>
+</li>
+<li><p>给标签页面添加类型</p>
+<p>我们在source文件夹中的tags文件夹下找到index.md文件，并在它的头部加上type属性。</p>
+<pre><code class="yaml">title: tags
+date: 2018-08-06 22:48:29
+type: &quot;tags&quot; #新添加的内容
+</code></pre>
+</li>
+<li><p>给文章添加标签</p>
+<p>有两种写法都可以，第一种是类似数组的写法，把标签放在中括号<code>[]</code>里，用英文逗号隔开</p>
+<pre><code class="yaml">layout: posts
+title: 写给小白的express学习笔记1： express-static文件静态管理
+date: 2018-06-07 00:38:36
+categories: 学习笔记
+tags: [node.js, express]
+</code></pre>
+<p>第二种写法是用<code>-</code>短划线列出来</p>
+<pre><code class="yaml">layout: posts
+title: 写给小白的express学习笔记1： express-static文件静态管理
+date: 2018-06-07 00:38:36
+categories: 学习笔记
+tags: 
+- node.js
+- express
+</code></pre>
+</li>
+</ul>
+<h3 id="部署域名"><a href="#部署域名" class="headerlink" title="部署域名"></a>部署域名</h3><p>紧接着我们就可以把这些内容添加到Github页面上，然后生成我们自己的博客了。</p>
+<h4 id="部署Github"><a href="#部署Github" class="headerlink" title="部署Github"></a>部署Github</h4><ul>
+<li><p>首先你必须有一个github账号</p>
+</li>
+<li><p>然后新建一个仓库，这一有第一个坑，我之前用了<code>hexoblog</code>来作为项目名称，一直没能搭建成功，后来看到其他大牛的经验，才发现项目名一定要是<code>用户名.github.io</code>的形式(README.md可选可不选)</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fu3hgugjahj30lo0fidj0.jpg" alt="image-20180809153134467"></p>
+</li>
+</ul>
+<ul>
+<li><p>然后在setting里添加生成页面的选项</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fu3hico4uzj30tc0760tu.jpg" alt="image-20180809153304980"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fu3hj0272lj30ku0bjmyl.jpg" alt="image-20180809153343362"></p>
+</li>
+<li><p>这个时候github页面其实就生成好了，但是我们的内容还需要同步到github上，所以打开hexo文件夹里的配置文件config.yml，添加部署路径</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fu3hljthg9j30f70253yi.jpg" alt="image-20180809153610047"></p>
+<p>这里注意两小点：</p>
+<ul>
+<li>属性和内容之间一定要有一个空格，配置文件有自己的格式规范</li>
+<li>如果你之前没有用git关联过自己的github库，需要配置SSH等参数，否则无法成功，这部分搜git就有很多相关教程</li>
+</ul>
+</li>
+<li><p>我们再用<code>hexo g &amp;&amp; hexo deploy</code>就能将内容推送到github上了，在github页面上也能看到自己的内容了</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fu3hp2suohj31340ggjzb.jpg" alt="image-20180809153933270"></p>
+</li>
+</ul>
+<h4 id="部署自己的域名"><a href="#部署自己的域名" class="headerlink" title="部署自己的域名"></a>部署自己的域名</h4><ul>
+<li><p>首先我们需要获取一个域名，我是在阿里云上购买了，上面可以根据自己想要的内容搜，比如我用了自己的名字，推荐给你的域名根据后缀不同会有价格上的区别，我选了一个不太贵的；</p>
+</li>
+<li><p>购买域名之后需要实名认证，这是另一个坑，我之前不知道实名认证审核完成前域名无法用，一直以为自己搭建失败了；</p>
+</li>
+<li><p>认证成功后需要解析域名</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fu3hzmx0zyj306w02edfo.jpg" alt="image-20180809154942783"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fu3i066ttsj30hn0di758.jpg" alt="image-20180809155013659"></p>
+<p>记录类型选CNAME，记录值是自己github生成页面的地址。</p>
+</li>
+<li><p>在博客的页面添加CNAME文件，并在里面记录自己域名的地址，将这个文件放在public文件夹下</p>
+</li>
+<li><p>这里还有一个小坑，CNAME文件经常被覆盖，导致我们重新部署博客后，链接就不可用了，这里可以下载一个叫<code>hexo-generator-cname</code>的插件，这样它会自动搞定CNAME的问题，只需要第一次手动将域名添加到文件里即可</p>
+<pre><code class="shell">npm i hexo-generator-cname --save
+</code></pre>
+</li>
+<li><p>最后<code>hexo g &amp;&amp; hexo deploy</code>就可以了</p>
+</li>
+</ul>
+<h3 id="NexT主题"><a href="#NexT主题" class="headerlink" title="NexT主题"></a>NexT主题</h3><p>hexo有很多开源的主题，我选了<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">NexT</a>，开始只是觉得很简洁清爽，后来发现它的功能挺齐全的，提前解决了很多搭建过程中会遇到的问题。这里强烈推荐一下。</p>
+<p>首先，NexT也有<a href="https://github.com/iissnan/hexo-theme-next/blob/master/README.cn.md" target="_blank" rel="noopener">中文文档</a>，然后我们就可以开始了。</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>我是用的<code>git clone</code>的方法，文档中还有其他方法</p>
+<pre><code class="shell">$ git clone https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre>
+<h4 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h4><p>在<strong>hexo根目录</strong>下的配置文件config.yml里设置主题</p>
+<pre><code>theme: next
+</code></pre><h4 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h4><p>接下来我们就可以来按需配置主题内容了，所有内容都在<strong>themes/next</strong>文件夹下的config.yml文件里修改。</p>
+<p>官方文档里写的是有些配置需要将一部分代码添加到配置文件中，但其实不用，我们逐行看配置文件就会发现，有很多功能都已经放在配置文件里了，只是注释掉了，我们只需要取消注释，把需要的相关信息补全即可使用</p>
+<h5 id="菜单栏-menu"><a href="#菜单栏-menu" class="headerlink" title="菜单栏 menu"></a>菜单栏 <code>menu</code></h5><p>原生菜单栏有主页、关于、分类、标签等数个选项，但是在配置文件中是注释掉的状态，这里我们自行修改注释就行</p>
+<pre><code class="yaml">menu:
+  home: / || home
+  # about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
+  archives: /archives/ || archive
+  # schedule: /schedule/ || calendar
+  # sitemap: /sitemap.xml || sitemap
+  # commonweal: /404/ || heartbeat
+</code></pre>
+<p>注意点：</p>
+<ul>
+<li>如果事先没有通过<code>hexo new page &lt;pageName&gt;</code>来创建页面的话，即使在配置文件中取消注释，页面也没法显示</li>
+<li>我们也可以添加自己想要添加的页面，不用局限在配置文件里提供的选择里</li>
+<li><code>||</code>后面是fontAwesome里的文件对应的名称</li>
+<li><code>menu_icons</code>记得选<code>enable: true</code>（默认应该是<code>true</code>）</li>
+</ul>
+<p>我在这部分添加了两个自定义的页面，后面在第三方插件部分我会再提到。</p>
+<pre><code class="yaml">menu:
+  home: / || home
+  # about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
+  读书: /books || book
+  电影: /movies || film
+  archives: /archives/ || archive
+  # schedule: /schedule/ || calendar
+  # sitemap: /sitemap.xml || sitemap
+  # commonweal: /404/ || heartbeat
+</code></pre>
+<h5 id="主题风格-schemes"><a href="#主题风格-schemes" class="headerlink" title="主题风格 schemes"></a>主题风格 <code>schemes</code></h5><p>主题提供了4个，我们把想要选择的取消注释，其他三个保持注释掉的状态即可。</p>
+<ul>
+<li><p><code>Muse</code></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fu3jn983axj313g0iqaba.jpg" alt="image-20180809164700600"></p>
+</li>
+<li><p>Mist</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fu3jo3nn7bj313g0iutb9.jpg" alt="image-20180809164749052"></p>
+</li>
+<li><p>Pisces </p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fu3jprr92gj313j0itadi.jpg" alt="image-20180809164925685"></p>
+</li>
+<li><p>Gemini </p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fu3jqrsv2qj313f0iutca.jpg" alt="image-20180809165023401"></p>
+</li>
+</ul>
+<p>选择主题后也可以自定义，不过我还没摸清楚有哪些地方可以自定义，等弄清楚了我再来更新。</p>
+<h5 id="底部建站时间和图标修改"><a href="#底部建站时间和图标修改" class="headerlink" title="底部建站时间和图标修改"></a>底部建站时间和图标修改</h5><p>修改主题的配置文件：</p>
+<pre><code class="yaml">footer:
+  # Specify the date when the site was setup.
+  # If not defined, current year will be used.
+  since: 2018
+
+  # Icon between year and copyright info.
+  icon: snowflake-o
+
+  # If not defined, will be used `author` from Hexo main config.
+  copyright:
+  # -------------------------------------------------------------
+  # Hexo link (Powered by Hexo).
+  powered: false
+
+  theme:
+    # Theme &amp; scheme info link (Theme - NexT.scheme).
+    enable: false
+    # Version info of NexT after scheme info (vX.X.X).
+    # version: false
+</code></pre>
+<p>我在这部分做了这样几件事：</p>
+<ul>
+<li>把用户的图标从小人<code>user</code>改成了雪花<code>snowflake-o</code></li>
+<li><code>copyright</code>留空，显示成页面<code>author</code>即我的名字</li>
+<li><code>powered: false</code>把hexo的授权图片取消了</li>
+<li><code>theme: enable:false</code> 把主题的内容也取消了</li>
+</ul>
+<p>这样底部信息比较简单。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fu3kuj3xjpj30mp019jr9.jpg" alt="image-20180809172835606"></p>
+<h5 id="个人社交信息-social"><a href="#个人社交信息-social" class="headerlink" title="个人社交信息 social"></a>个人社交信息 <code>social</code></h5><p>在<code>social</code>里我们可以自定义自己想要在个人信息部分展现的账号，同时给他们加上图标。</p>
+<pre><code class="yaml">social:
+  GitHub: https://github.com/XuQuan-nikkkki || github
+  E-Mail: mailto:xuquan1225@hotmail.com || envelope
+  #Google: https://plus.google.com/yourname || google
+  #Twitter: https://twitter.com/yourname || twitter
+  #FB Page: https://www.facebook.com/yourname || facebook
+</code></pre>
+<p>注意点：</p>
+<ul>
+<li><code>||</code>后面对应的名称是fontAwesome里图标的名称，如果我们选择的账号没有对应的图标（如豆瓣、知乎），我们可以在fontAwesome库里去选择自己喜欢的图标</li>
+<li>建议不要找太新的fontAwesome图标，主题关联的库版本没有那么新，很可能显示不了或者显示一个地球</li>
+</ul>
+<h5 id="网站动画效果"><a href="#网站动画效果" class="headerlink" title="网站动画效果"></a>网站动画效果</h5><p>为了网站响应速度我们可以把网站的动画关掉</p>
+<pre><code class="yaml">motion:
+  enable: false
+</code></pre>
+<p>但我觉得页面比较素，所以开了动画，选择了<code>canvas-nest</code>这一个，主题自带四种效果，可以选自己喜欢的。</p>
+<pre><code class="yaml">motion:
+  enable: true
+  async: true
+
+# Canvas-nest
+canvas_nest: true
+
+# three_waves
+three_waves: false
+
+# canvas_lines
+canvas_lines: false
+
+# canvas_sphere
+canvas_sphere: false
+</code></pre>
+<h5 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h5><p>NexT原生支持多说、Disqus、hypercomments等多种评论系统。我选择了Disqus。</p>
+<p>方法也非常简单。直接去Disqus注册，注册完了在配置的时候会给你一个名为shortname的ID，将这个ID填在配置文件里即可。</p>
+<pre><code class="yaml"># Disqus
+disqus:
+  enable: true
+  shortname: xuquan
+  count: true
+</code></pre>
+<h5 id="统计文章字数和阅读时间"><a href="#统计文章字数和阅读时间" class="headerlink" title="统计文章字数和阅读时间"></a>统计文章字数和阅读时间</h5><pre><code class="yaml">post_wordcount:
+  item_text: true
+  wordcount: true  # 文章字数
+  min2read: true   # 阅读时间
+  totalcount: true  # 总共字数
+  separated_meta: true
+</code></pre>
+<h5 id="统计阅读次数"><a href="#统计阅读次数" class="headerlink" title="统计阅读次数"></a>统计阅读次数</h5><p>这里我用的是leancloud的服务，具体方法参考NexT上的<a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="noopener">教程</a>,添加完之后效果如下：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fu3lif3vzoj302y00tgle.jpg" alt="image-20180809175133462"></p>
+<h3 id="第三方插件"><a href="#第三方插件" class="headerlink" title="第三方插件"></a>第三方插件</h3><h4 id="Hexo-admin"><a href="#Hexo-admin" class="headerlink" title="Hexo-admin"></a>Hexo-admin</h4><p>Hexo-admin插件允许我们直接在本地页面上修改文章内容。</p>
+<ul>
+<li><p>下载</p>
+<pre><code class="shell">npm i hexo-admin --save
+</code></pre>
+</li>
+<li><p>登录<code>http://localhost:4000/admin</code>即可看到我们所有的文章内容，并且在可视化界面中操作文章内容</p>
+</li>
+</ul>
+<h4 id="Hexo-douban"><a href="#Hexo-douban" class="headerlink" title="Hexo-douban"></a>Hexo-douban</h4><p><a href="https://github.com/mythsman/hexo-douban" target="_blank" rel="noopener"><code>hexo-douban</code></a>插件可以在博客中添加豆瓣电影、读书和游戏页面，关联我们自己的账号。</p>
+<ul>
+<li><p>下载</p>
+<pre><code class="shell">npm install hexo-douban --save
+</code></pre>
+</li>
+<li><p>配置</p>
+<p>在<strong>hexo根目录</strong>下的config.yml文件中添加如下内容</p>
+<pre><code class="yaml">douban:
+  user: 
+  builtin: false
+  book:
+    title: &#39;This is my book title&#39;
+    quote: &#39;This is my book quote&#39;
+  movie:
+    title: &#39;This is my movie title&#39;
+    quote: &#39;This is my movie quote&#39;
+  game:
+    title: &#39;This is my game title&#39;
+    quote: &#39;This is my game quote&#39;
+  timeout: 10000 
+</code></pre>
+<p>title和quote后面的内容会分别作为电影/读书/游戏页面的标题和副标题（引言）呈现在博客里。</p>
+<p><code>user</code>就写我们豆瓣的id，可以在“我的豆瓣”页面中找到，<code>builtin</code>指是否将生成页面功能嵌入<code>hexo s</code>和<code>hexo g</code>中，建议选<code>false</code>，因为<code>true</code>会导致页面每次启动本地服务器都需要很长时间生成豆瓣页面，长到怀疑人生。</p>
+</li>
+<li><p>生成页面</p>
+<pre><code class="shell">hexo douban   #生成读书、电影、游戏三个页面
+hexo douban -b  #生成读书页面
+hexo douban -m  #生成电影页面
+hexo douban -g  #生成游戏页面
+</code></pre>
+</li>
+<li><p>在博客中生成页面</p>
+<p>这里就需要用到我们前面提过的<code>hexo new</code>命令了。</p>
+<pre><code class="shell">hexo new page books
+hexo new page movies
+hexo new page games
+</code></pre>
+</li>
+<li><p>在博客中添加页面</p>
+<p>在<code>menu</code>部分添加我们需要添加的页面名称和相对路径</p>
+<pre><code class="yaml">menu:
+  Home: /
+  Archives: /archives
+  Books: /books     #This is your books page
+  Movies: /movies   #This is your movies page
+  Games: /games   #This is your games page
+</code></pre>
+</li>
+<li><p>部署到博客</p>
+<pre><code class="shell">hexo g &amp;&amp; hexo deploy
+</code></pre>
+</li>
+</ul>
+<h3 id="我踩过的坑"><a href="#我踩过的坑" class="headerlink" title="我踩过的坑"></a>我踩过的坑</h3><h4 id="iPic图片上传"><a href="#iPic图片上传" class="headerlink" title="iPic图片上传"></a>iPic图片上传</h4><p>hexo博客发布Typora写好的内容也会出现图片无法同步的问题，网上有大佬给出的解决方案是使用<code>hexo-asset-image</code>插件，这样在创建博客时会有一个与<code>.md</code>文件同名的文件夹，将图片同步到文件夹内即可。</p>
+<p>但时间下来还是比较麻烦，因为Typora并没有自定义图片路径的功能，它会放在与文件相关的asset文件夹内。</p>
+<p>我找到的最终方案是使用Typora自带的一个功能：图片上传iPic图床。这样在添加图片的时候，图片链接就自动更换成了图床的地址，这时同步到博客就没有问题了。</p>
+<h4 id="评论系统-1"><a href="#评论系统-1" class="headerlink" title="评论系统"></a>评论系统</h4><p>因为多说已经停止服务了，最开始看到有人说Disqus得翻墙，就选了一个韩国的评论服务，叫来必力，但事实证明墙外就没有稳定的服务，在我挂VPN的情况下也要加载好半天，后来就还是换成了Disqus，具体配置方法看前文。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/08/09/绝配：hexo+next主题及我走过的坑/" title="绝配：hexo+next主题及我走过的坑">http://xuquan.site/2018/08/09/绝配：hexo+next主题及我走过的坑/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+          
+            <a href="/tags/blog/" rel="tag"><i class="fa fa-tag"></i> blog</a>
+          
+            <a href="/tags/next/" rel="tag"><i class="fa fa-tag"></i> next</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/08/ES6总复习/" rel="next" title="ES6总复习">
+                <i class="fa fa-chevron-left"></i> ES6总复习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/10/nrm-npm镜像管理工具/" rel="prev" title="nrm: npm镜像管理工具">
+                nrm: npm镜像管理工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#从印象笔记到简书到Hexo"><span class="nav-number">1.</span> <span class="nav-text">从印象笔记到简书到Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo部署"><span class="nav-number">2.</span> <span class="nav-text">Hexo部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装前提"><span class="nav-number">2.1.</span> <span class="nav-text">安装前提</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.2.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建站"><span class="nav-number">2.3.</span> <span class="nav-text">建站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#站内内容"><span class="nav-number">2.4.</span> <span class="nav-text">站内内容</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#config-yml"><span class="nav-number">2.4.1.</span> <span class="nav-text">config.yml</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#package-json"><span class="nav-number">2.4.2.</span> <span class="nav-text">package.json</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#scaffolds"><span class="nav-number">2.4.3.</span> <span class="nav-text">scaffolds</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#source"><span class="nav-number">2.4.4.</span> <span class="nav-text">source</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#themes"><span class="nav-number">2.4.5.</span> <span class="nav-text">themes</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo命令"><span class="nav-number">2.5.</span> <span class="nav-text">Hexo命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#init"><span class="nav-number">2.5.1.</span> <span class="nav-text">init</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#new"><span class="nav-number">2.5.2.</span> <span class="nav-text">new</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#generate"><span class="nav-number">2.5.3.</span> <span class="nav-text">generate</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#deploy"><span class="nav-number">2.5.4.</span> <span class="nav-text">deploy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#publish"><span class="nav-number">2.5.5.</span> <span class="nav-text">publish</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#server"><span class="nav-number">2.5.6.</span> <span class="nav-text">server</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实际操作"><span class="nav-number">2.6.</span> <span class="nav-text">实际操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-创建“分类”页面"><span class="nav-number">2.6.1.</span> <span class="nav-text">1. 创建“分类”页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-创建“标签”页面"><span class="nav-number">2.6.2.</span> <span class="nav-text">2. 创建“标签”页面</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署域名"><span class="nav-number">3.</span> <span class="nav-text">部署域名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#部署Github"><span class="nav-number">3.1.</span> <span class="nav-text">部署Github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署自己的域名"><span class="nav-number">3.2.</span> <span class="nav-text">部署自己的域名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NexT主题"><span class="nav-number">4.</span> <span class="nav-text">NexT主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">4.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置主题"><span class="nav-number">4.2.</span> <span class="nav-text">设置主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置主题"><span class="nav-number">4.3.</span> <span class="nav-text">配置主题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#菜单栏-menu"><span class="nav-number">4.3.1.</span> <span class="nav-text">菜单栏 menu</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主题风格-schemes"><span class="nav-number">4.3.2.</span> <span class="nav-text">主题风格 schemes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#底部建站时间和图标修改"><span class="nav-number">4.3.3.</span> <span class="nav-text">底部建站时间和图标修改</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#个人社交信息-social"><span class="nav-number">4.3.4.</span> <span class="nav-text">个人社交信息 social</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#网站动画效果"><span class="nav-number">4.3.5.</span> <span class="nav-text">网站动画效果</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#评论系统"><span class="nav-number">4.3.6.</span> <span class="nav-text">评论系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#统计文章字数和阅读时间"><span class="nav-number">4.3.7.</span> <span class="nav-text">统计文章字数和阅读时间</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#统计阅读次数"><span class="nav-number">4.3.8.</span> <span class="nav-text">统计阅读次数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三方插件"><span class="nav-number">5.</span> <span class="nav-text">第三方插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo-admin"><span class="nav-number">5.1.</span> <span class="nav-text">Hexo-admin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo-douban"><span class="nav-number">5.2.</span> <span class="nav-text">Hexo-douban</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我踩过的坑"><span class="nav-number">6.</span> <span class="nav-text">我踩过的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#iPic图片上传"><span class="nav-number">6.1.</span> <span class="nav-text">iPic图片上传</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#评论系统-1"><span class="nav-number">6.2.</span> <span class="nav-text">评论系统</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/08/09/绝配：hexo+next主题及我走过的坑/';
+          this.page.identifier = '2018/08/09/绝配：hexo+next主题及我走过的坑/';
+          this.page.title = '绝配：hexo+next主题及我走过的坑';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

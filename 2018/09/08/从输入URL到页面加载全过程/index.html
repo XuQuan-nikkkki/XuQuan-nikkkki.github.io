@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="TCP,IP,HTTP," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="从输入URL到页面加载的全过程是一道经典面试题，也是一道痕宏大的面试题。它可以用简单几句话就把大概流程说完，但是每一个流程都能够展开成一本书。所以想要把这个过程理解透，需要下很大的功夫。 这里我们用先把大致流程列出来，然后按照每一个步骤中能够涉及到的知识点来慢慢展开。">
+<meta name="keywords" content="TCP,IP,HTTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从输入URL到页面加载全过程">
+<meta property="og:url" content="http://xuquan.site/2018/09/08/从输入URL到页面加载全过程/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="从输入URL到页面加载的全过程是一道经典面试题，也是一道痕宏大的面试题。它可以用简单几句话就把大概流程说完，但是每一个流程都能够展开成一本书。所以想要把这个过程理解透，需要下很大的功夫。 这里我们用先把大致流程列出来，然后按照每一个步骤中能够涉及到的知识点来慢慢展开。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fv3aixix3dj30iy0cvwey.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fv3aoa24lhj30jj0dbjv0.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fv3dghpqkgj30d60ekack.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdly1fv3kgflvkvj30il0j6wum.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fv3m56jdqbj30ly06876q.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdgy1fv3m62s3jzj30lb05kgmt.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fv3mb3jhgjj30c306st93.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdgy1fv3nahtikrj30h40cste6.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fv3nboaxscj30jc0gwabr.jpg">
+<meta property="og:updated_time" content="2018-09-09T15:29:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从输入URL到页面加载全过程">
+<meta name="twitter:description" content="从输入URL到页面加载的全过程是一道经典面试题，也是一道痕宏大的面试题。它可以用简单几句话就把大概流程说完，但是每一个流程都能够展开成一本书。所以想要把这个过程理解透，需要下很大的功夫。 这里我们用先把大致流程列出来，然后按照每一个步骤中能够涉及到的知识点来慢慢展开。">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fv3aixix3dj30iy0cvwey.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/09/08/从输入URL到页面加载全过程/"/>
+
+
+
+
+
+  <title>从输入URL到页面加载全过程 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/09/08/从输入URL到页面加载全过程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">从输入URL到页面加载全过程</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-08T21:00:41+08:00">
+                2018-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/08/从输入URL到页面加载全过程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/08/从输入URL到页面加载全过程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/08/从输入URL到页面加载全过程/" class="leancloud_visitors" data-flag-title="从输入URL到页面加载全过程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,464 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>从输入URL到页面加载的全过程是一道经典面试题，也是一道痕宏大的面试题。它可以用简单几句话就把大概流程说完，但是每一个流程都能够展开成一本书。所以想要把这个过程理解透，需要下很大的功夫。</p>
+<p>这里我们用先把大致流程列出来，然后按照每一个步骤中能够涉及到的知识点来慢慢展开。</p>
+<a id="more"></a>
+<p><a href="https://xuquan.site/2018/09/07/%E3%80%8C%E7%BF%BB%E8%AF%91%E3%80%8D%E4%BA%92%E8%81%94%E7%BD%91%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84%EF%BC%9F/">「翻译」互联网是如何运作的？</a>这篇文章中也提到了在浏览器输入URL地址后会发生什么，文章列出了浏览器会做的事情，主要内容围绕浏览器和服务器之间的通信展开，没有细化浏览器接内部机制，这里我们先把步骤列出来，再来细化知识点。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>内容</th>
+<th>知识点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>从浏览器接收url到开启网络请求线程</td>
+<td>浏览器机制，进程与线程之间的关系</td>
+</tr>
+<tr>
+<td>2</td>
+<td>开启网络线程到发出一个完整的http请求</td>
+<td>DNS查询，TCP/IP请求，协议栈</td>
+</tr>
+<tr>
+<td>3</td>
+<td>从服务器接收到请求到对应后台接收到请求</td>
+<td>负载均衡，安全拦截，后台内部处理</td>
+</tr>
+<tr>
+<td>4</td>
+<td>后台和前台的http交互</td>
+<td>http协议，http报文，cookie</td>
+</tr>
+<tr>
+<td>5</td>
+<td>http缓存</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>浏览器接收到http数据包后的解析流程</td>
+<td>html解析，css解析，布局，绘制，复合图层的合成，<br>GPU绘制，外链资源的处理</td>
+</tr>
+<tr>
+<td>7</td>
+<td>CSS的可视化格式模型</td>
+<td>元素的渲染规则</td>
+</tr>
+<tr>
+<td>8</td>
+<td>JS引擎解析过程</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="从浏览器接收URL到开启网络请求进程"><a href="#从浏览器接收URL到开启网络请求进程" class="headerlink" title="从浏览器接收URL到开启网络请求进程"></a>从浏览器接收URL到开启网络请求进程</h2><h3 id="多进程的浏览器"><a href="#多进程的浏览器" class="headerlink" title="多进程的浏览器"></a>多进程的浏览器</h3><p>详见：<a href="https://xuquan.site/2018/08/05/%E3%80%8CLearning%E3%80%8D%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%9A%E8%BF%9B%E7%A8%8B%E4%B8%8EJS%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">「Learning」浏览器多进程与JS运行机制</a></p>
+<ul>
+<li>浏览器是多进程的，有一个主进程，每个tab页有一个独立的进程</li>
+<li>进程包括<ul>
+<li>Browser主进程（只有一个）</li>
+<li>第三方插件进程（仅当使用时创建）</li>
+<li>GPU进程（最多一个，用于3D绘制）</li>
+<li>浏览器渲染进程（默认每个tab一个）</li>
+</ul>
+</li>
+</ul>
+<h3 id="多线程的浏览器内核"><a href="#多线程的浏览器内核" class="headerlink" title="多线程的浏览器内核"></a>多线程的浏览器内核</h3><p>详见：<a href="https://xuquan.site/2018/09/05/%E5%89%8D%E7%AB%AF%E5%A4%8D%E4%B9%A0%E4%B9%8B%E4%BA%8B%E4%BB%B6%E7%B3%BB%E7%BB%9F/">前端复习之事件系统</a></p>
+<p>浏览器渲染进程是浏览器内核，页面渲染、JS执行、时间循环都在这个进程中进行。它是多线程的，包括：</p>
+<ul>
+<li>GUI渲染进程 （负责渲染界面，与JS线程互斥）</li>
+<li>JS引擎线程（负责处理JS脚本）</li>
+<li>事件触发线程（用来控制时间循环）</li>
+<li>定时触发器线程（<code>setTimeout</code>和<code>setInterval</code>所在线程）</li>
+<li>异步http请求线程</li>
+</ul>
+<h3 id="解析URL"><a href="#解析URL" class="headerlink" title="解析URL"></a>解析URL</h3><p>输入URL后，会进行解析。URL一般包括：</p>
+<ul>
+<li><code>protocol</code> 协议头，如http, ftp等</li>
+<li><code>host</code> 主机域名或IP地址</li>
+<li><code>port</code> 端口号</li>
+<li><code>path</code> 目录路径</li>
+<li><code>query</code> 查询参数</li>
+<li><code>fragment</code> 即<code>#</code>后的hash值，一般用来定位到某个位置</li>
+</ul>
+<h2 id="开启网络线程到发出一个完整的HTTP请求"><a href="#开启网络线程到发出一个完整的HTTP请求" class="headerlink" title="开启网络线程到发出一个完整的HTTP请求"></a>开启网络线程到发出一个完整的HTTP请求</h2><h3 id="DNS查询得到IP"><a href="#DNS查询得到IP" class="headerlink" title="DNS查询得到IP"></a>DNS查询得到IP</h3><p>详见：<a href="https://xuquan.site/2018/09/07/%E3%80%8C%E7%BF%BB%E8%AF%91%E3%80%8D%E4%BA%92%E8%81%94%E7%BD%91%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84%EF%BC%9F/">「翻译」互联网是如何运作的？</a></p>
+<p>DNS全称是Domain Name Service，域名服务。它是一个记录互联网中各计算机名称和与之对应的IP地址的分布式数据库。每个DNS服务器都是数据库的一部分，如果没有查找到域名，就会逐级向上重定向请求，直到找到域名，再连接到服务器。</p>
+<p><strong>浏览器会先与服务器建立连接，再发送HTTP请求。</strong></p>
+<h3 id="TCP-IP请求"><a href="#TCP-IP请求" class="headerlink" title="TCP/IP请求"></a>TCP/IP请求</h3><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><p>浏览器和服务器连接的方式是三次握手。</p>
+<ul>
+<li>第一次握手：建立连接。客户端发送连接请求报文段</li>
+<li>第二次握手：服务器接收到报文段，对报文段进行确认，并发送自己的请求信息</li>
+<li>第三次握手：客户端收到服务器的报文段，向服务器返回报文</li>
+</ul>
+<p>简单理解就是：</p>
+<ul>
+<li>第一次：客户端给服务器发送消息“我想和你聊会天”</li>
+<li>第二次：服务端收到消息，把自己的状态改为聊天状态，并告诉服务器“我听见了，你能听见我吗？”</li>
+<li>第三次：客户端收到服务器的消息，回复服务器“我能听见你”</li>
+</ul>
+<p>三次握手确保双方发送的信息对方都能收到。</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fv3aixix3dj30iy0cvwey.jpg" alt="image-20180909145147755"></p>
+<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4><p>断开连接时，需要经历四次挥手。</p>
+<ul>
+<li>第一次挥手：客户端给服务端发送报文，告诉服务端要结束连接了，此时客户端进入等待结束状态，表示客户端没有数据要发给服务端了</li>
+<li>第二次挥手：服务器收到客户端的报文，给客户端回复报文，表示同意关闭请求</li>
+<li>第三次挥手：服务器向客户端发送报文，请求关闭连接</li>
+<li>第四次挥手：客户端收到服务器的报文，回复给服务器一个OK的消息，进入倒计时关闭状态，服务器收到OK消息后就关闭连接；此时客户端没有收到回复，表示服务器正常关闭了，于是客户端也关闭连接</li>
+</ul>
+<p>简单来说，就是：</p>
+<ul>
+<li>第一次：客户端说“我要挂电话了”</li>
+<li>第二次：服务端收到消息，告诉客户端“我同意”</li>
+<li>第三次：服务端说“那我挂了哦”，就开始举着电话准备挂</li>
+<li>第四次：客户端说”好，你挂吧“，就开始等着服务端挂电话；服务端听到后就挂了电话；客户端等了一会儿发现没有声音，确定服务端挂了，自己也挂了</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fv3aoa24lhj30jj0dbjv0.jpg" alt="image-20180909145655904"></p>
+<h3 id="网络模型和协议栈"><a href="#网络模型和协议栈" class="headerlink" title="网络模型和协议栈"></a>网络模型和协议栈</h3><p>详见：<a href="https://xuquan.site/2018/09/09/%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%A8%A1%E5%9E%8B-4%E5%B1%82-5%E5%B1%82-%E8%BF%98%E6%98%AF7%E5%B1%82/">网络体系结构模型:4层?5层?还是7层?</a></p>
+<p>HTTP即超文本传输协议，是应用层协议，它位于协议栈的顶层。当数据包从一个电脑传递到另一个电脑时，数据包会从发送信息的电脑协议栈的顶层开始逐级向下，直到网络接口层将数据从文本信息转化成电子信号，接收信息的电脑则从协议栈的底部开始，数据会逐级向上传递，最终到达应用层。</p>
+<p>在协议栈中，TCP和IP依次位于应用层的下面，因此HTTP请求在传递过程中也会逐级通过TCP层和IP层，</p>
+<h2 id="从服务器接收到请求到对应后台接收到请求"><a href="#从服务器接收到请求到对应后台接收到请求" class="headerlink" title="从服务器接收到请求到对应后台接收到请求"></a>从服务器接收到请求到对应后台接收到请求</h2><h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p>详见：<a href="https://xuquan.site/2018/09/09/%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/">简单了解负载均衡</a></p>
+<h3 id="HTTP交互"><a href="#HTTP交互" class="headerlink" title="HTTP交互"></a>HTTP交互</h3><p>前后端交互时，HTTP报文作为信息的载体。</p>
+<h4 id="HTTP报文结构"><a href="#HTTP报文结构" class="headerlink" title="HTTP报文结构"></a>HTTP报文结构</h4><p>报文一般包括： 通用头部，请求/响应头部，请求/响应体</p>
+<h5 id="通用头部"><a href="#通用头部" class="headerlink" title="通用头部"></a>通用头部</h5><p>组成部分：</p>
+<ul>
+<li><code>Request URL</code>:请求的web服务器地址</li>
+<li><code>Request Method</code>：请求方法（<code>GET,POST,OPTIONS,PUT,HEAD,DELET,CONNECT,TRACE</code>)</li>
+<li><code>Status Code</code>：请求返回的状态码</li>
+<li><code>Remote Address</code>：请求的远程服务器地址</li>
+</ul>
+<h6 id="请求方法"><a href="#请求方法" class="headerlink" title="请求方法"></a>请求方法</h6><ul>
+<li>HTTP 1.0定义了三种请求方法：<code>GET, POST, HEAD</code></li>
+<li>HTTP 1.1新增了五种请求方法：<code>OPTIONS, PUT, DELETE, TRACE, CONNECT</code></li>
+</ul>
+<h6 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h6><p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fv3dghpqkgj30d60ekack.jpg" alt="image-20180909163314773"></p>
+<ul>
+<li>1xx：请求已接受，继续处理</li>
+<li>2xx：请求被成功接收<ul>
+<li>200： 请求被成功完成，所请求的资源发送回客户端</li>
+</ul>
+</li>
+<li>3xx：重定向，要完成请求必须进行更进一步的操作<ul>
+<li>304：自从上次请求后，请求的网页未修改过，请客户端使用本地缓存</li>
+</ul>
+</li>
+<li>4xx：客户端错误<ul>
+<li>401：请求未经授权</li>
+<li>403：禁止访问</li>
+<li>404：资源未找到</li>
+</ul>
+</li>
+<li>5xx：服务器端错误<ul>
+<li>500：服务器内部错误</li>
+<li>503：服务不可用</li>
+</ul>
+</li>
+</ul>
+<h5 id="请求-响应头部"><a href="#请求-响应头部" class="headerlink" title="请求/响应头部"></a>请求/响应头部</h5><h6 id="常用请求头"><a href="#常用请求头" class="headerlink" title="常用请求头"></a>常用请求头</h6><ul>
+<li><code>Accept</code>： 接受类型，表示浏览器支持的MIME类型</li>
+<li><code>Accept-Encoding</code>： 浏览器支持的压缩类型</li>
+<li><code>Content-ype</code>：实体内容的类型</li>
+<li><code>Cache-Control</code>：指定请求和响应遵循的缓存机制</li>
+<li><code>If-Modified-Since</code>：对应服务端的<code>Last-Modified</code>，用来查看文件是否变动</li>
+<li><code>Expires</code>：缓存控制，这个时间内不会请求，直接使用缓存</li>
+<li><code>Max-age</code>：代表资源在本地缓存多少秒</li>
+<li><code>Cookie</code>:有cookie并且同域访问会自动带上</li>
+<li><code>Connection</code>：浏览器与服务器通信时对于长连接如何处理</li>
+<li><code>Host</code>：请求的服务器URL</li>
+<li><code>Origin</code>：最初的请求从哪里发起（源）</li>
+<li><code>Referer</code>：该页面的来源URL</li>
+<li><code>User-Agent</code>：用户客户端的一些必要信息</li>
+</ul>
+<h6 id="常见响应头"><a href="#常见响应头" class="headerlink" title="常见响应头"></a>常见响应头</h6><ul>
+<li><code>Access-Control-Allow-Headers</code>：服务器允许请求的Headers</li>
+<li><code>Access-Control-Allow-Methods</code>：服务器允许的请求方法</li>
+<li><code>Access-Control-Allow-Origin</code>：服务器允许的请求Origin头部</li>
+<li><code>Content-Type</code>:服务器返回的实体内容的类型</li>
+<li><code>Date</code>：数据从服务器发送的事件</li>
+<li><code>Cache-Control</code>：告诉浏览器或其他客户，什么环境可以安全地缓存文档</li>
+<li><code>Last-Modified</code>：请求资源的最后修改时间</li>
+<li><code>Expires</code>：应该在什么时候认为文档已经过期，从而不再缓存它</li>
+<li><code>Max-age</code>：客户端的本地资源应该缓存多少秒</li>
+<li><code>Set-Cookie</code>：设置页面cookie</li>
+<li><code>Keep-Alive</code>：如果客户端有keep-alive，服务端也会有相应</li>
+<li><code>Server</code>：服务器的一些相关信息</li>
+</ul>
+<h6 id="请求头和响应头匹配"><a href="#请求头和响应头匹配" class="headerlink" title="请求头和响应头匹配"></a>请求头和响应头匹配</h6><p>一般来说，请求头和响应头应该匹配分析。</p>
+<ul>
+<li>请求头的<code>Accept</code>和响应头的<code>Content-Type</code>匹配</li>
+<li>跨域请求时，请求头的<code>Origin</code>和响应头的<code>Access-Control-Allow-Origin</code>要匹配</li>
+<li>使用缓存时，请求头的<code>If-Modified-Since</code>,<code>If-None-Match</code>分别和响应头的<code>Last-Modified</code>,<code>ETag</code>对应</li>
+</ul>
+<h5 id="请求-响应实体"><a href="#请求-响应实体" class="headerlink" title="请求/响应实体"></a>请求/响应实体</h5><p>HTTP请求中，除了头部，还有消息实体。消息头和实体之间会有一个分隔符。</p>
+<p>请求头体示例：</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdly1fv3kgflvkvj30il0j6wum.jpg" alt="image-20180909203522641"></p>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>详见：<a href="https://xuquan.site/2018/09/04/%E5%89%8D%E7%AB%AF%E5%A4%8D%E4%B9%A0%E4%B9%8BBOM/#6-cookies">BOM之cookie</a></p>
+<h4 id="优化cookie"><a href="#优化cookie" class="headerlink" title="优化cookie"></a>优化cookie</h4><p>在一个页面下，如果有许多依赖的静态资源，这些资源的HTTP请求都会携带cookie，而这些静态资源并不需要cookie验证，就会造成验证的资源浪费。针对这种场景，可以多域名拆分：</p>
+<ul>
+<li>将静态资源分组，放到不同的子域名下</li>
+<li>子域名请求时，不会带上父级域名的cookie，避免浪费资源</li>
+</ul>
+<h3 id="长连接和短连接"><a href="#长连接和短连接" class="headerlink" title="长连接和短连接"></a>长连接和短连接</h3><h4 id="TCP-IP层面"><a href="#TCP-IP层面" class="headerlink" title="TCP/IP层面"></a>TCP/IP层面</h4><ul>
+<li>长连接：一个TCP/IP连接上可以连续发送多个数据包，如果连接期间没有数据包发送，需要双发发送检测包来维持连接</li>
+<li>短连接：通信双方有数据交互时，就建立一个TCP连接，数据发送完成后断开连接</li>
+</ul>
+<h4 id="HTTP层面"><a href="#HTTP层面" class="headerlink" title="HTTP层面"></a>HTTP层面</h4><ul>
+<li>HTTP 1.0：默认使用短连接，浏览器每进行一次HTTP操作，就建立一次连接，任务结束就断开</li>
+<li>HTTP 1.1开始：默认使用长连接，长连接中会有<code>Connection: keep-alive</code>。长连接情况下，一个网页打开完成后，客户端和服务端之间用于传输HTTP的TCP连接不会关闭。如果客户端再次访问这个服务器页面，会继续使用这一条已经建立的连接</li>
+</ul>
+<h3 id="HTTP-2-0"><a href="#HTTP-2-0" class="headerlink" title="HTTP 2.0"></a>HTTP 2.0</h3><p>HTTP 2.0是HTTP的下一代规范，它为提升加载速度提供了空间。HTTP 2.0和HTTP 1.x相比，无论在资源加载速度还是CPU占用上都有了很大的提升。</p>
+<h4 id="HTTP版本"><a href="#HTTP版本" class="headerlink" title="HTTP版本"></a>HTTP版本</h4><p>HTTP协议目前已有3个版本：</p>
+<ul>
+<li>HTTP 1.0</li>
+<li>HTTP 1.1</li>
+<li>HTTP 2.0</li>
+</ul>
+<h4 id="版本之间的区别"><a href="#版本之间的区别" class="headerlink" title="版本之间的区别"></a>版本之间的区别</h4><h5 id="HTTP-1-0-VS-HTTP-1-1"><a href="#HTTP-1-0-VS-HTTP-1-1" class="headerlink" title="HTTP 1.0 VS HTTP 1.1"></a>HTTP 1.0 VS HTTP 1.1</h5><p><strong>HTTP 1.0和HTTP 1.1之间最主要的区别是：HTTP 1.0默认是短连接，HTTP 1.1默认是长连接</strong>。</p>
+<ul>
+<li><p>HTTP 1.0（每次请求资源都要建立连接，每次连接都要三次握手，四次挥手）</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fv3m56jdqbj30ly06876q.jpg" alt="image-20180909213345886"></p>
+</li>
+</ul>
+<ul>
+<li><p>HTTP 1.1（建立一次连接，多次请求均由这个连接完成）</p>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fv3m62s3jzj30lb05kgmt.jpg" alt="image-20180909213438093"></p>
+</li>
+</ul>
+<p>除此之外，还有以下改动：</p>
+<ul>
+<li><p>HTTP 1.1增加Host字段</p>
+</li>
+<li><p>HTTP 1.1引入<code>Chunked transfer-coding</code>，实现断点续传</p>
+</li>
+<li><p>HTTP 1.1.管线化（pipelining）理论，可以同时发出多个HTTP请求（但实际操作中还是会多开TCP，而不是HTTP pipelining，下图是管线化和非管线化的区别）</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fv3mb3jhgjj30c306st93.jpg" alt="image-20180909213912272"></p>
+</li>
+</ul>
+<h5 id="HTTP-2-0-1"><a href="#HTTP-2-0-1" class="headerlink" title="HTTP 2.0"></a>HTTP 2.0</h5><p>无论HTTP 1.0还是1.1都会出现阻塞的情况，因为无论是一次发送一个请求，还是同时发送多个请求，返回的数据都需要按照响应顺序一一接收。这个阻塞的情况叫做<strong>线头阻塞（Head of line blocking）</strong>。</p>
+<ol>
+<li>HTTP 2.0解决了线头阻塞的问题，它实现<strong>多路复用</strong>，即一个TCP/IP连接可以请求多个资源。</li>
+</ol>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fv3nahtikrj30h40cste6.jpg" alt="image-20180909221328265"></p>
+<ol start="2">
+<li><p>HTTP采用新的二进制分帧层（应用层与传输层中间），不再以文本格式传输，定义了如何封装http消息，并在客户端和服务器之间传输。</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fv3nboaxscj30jc0gwabr.jpg" alt="image-20180909221436617"></p>
+<p>传输的每个帧都关联到一个“流”，双休的帧序列可以通过一个HTTP2的连接在服务端和客户端之间不断的交换数据。</p>
+</li>
+<li><p>使用HPACK对头部进行压缩</p>
+</li>
+<li><p>服务器推送，服务端可以退客户端的一个请求发出多个响应，主动通知客户端</p>
+</li>
+<li><p>请求优先级（如果流被赋予优先级，就会基于优先级来处理）</p>
+</li>
+</ol>
+<h3 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h3><p>https就是安全版的HTTP。</p>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><p>请求前建立SSL连接，确保接下来的通信都是加密的，无法被轻易截取分析。</p>
+<p>HTTPS的运行机制见：<a href="https://xuquan.site/2018/09/09/%E7%94%A8%E4%BF%A1%E9%B8%BD%E8%A7%A3%E9%87%8AHTTPS/">用信鸽解释HTTPS</a></p>
+<h2 id="解析页面流程"><a href="#解析页面流程" class="headerlink" title="解析页面流程"></a>解析页面流程</h2><p>浏览器渲染的大体步骤：</p>
+<ol>
+<li>解析HTML，构建DOM树</li>
+<li>解析CSS，生成CSS规则树</li>
+<li>合并DOM树和CSS规则，生成render树</li>
+<li>布局render树（Layout/reflow），负责各元素尺寸、位置的计算</li>
+<li>绘制render树（paint），绘制页面像素信息</li>
+<li>浏览器会将各层的信息发送给GPU，GPU会将各层合成（composite），显示在屏幕上</li>
+</ol>
+<p>详见：<a href="https://xuquan.site/2018/09/06/HTML%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B%E5%85%A8%E8%A7%A3/">HTML解析过程全解</a></p>
+<blockquote>
+<p>参考：</p>
+<p><a href="https://www.jianshu.com/p/7e7c8b8a3d0e" target="_blank" rel="noopener">从输入URL到页面加载的过程？由一道题完善自己的前端知识体系！</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5NzM0MjcyMQ==&amp;mid=2650082773&amp;idx=2&amp;sn=cc05350fb36f04473c91ea4490b1b59d&amp;chksm=bedad6bb89ad5fade87f5a2a2d00bca07d3a5c22e4c7f12027c150fd76580951979eb1069df4&amp;mpshare=1&amp;scene=1&amp;srcid=0803rC9KKvvue0sp4VrWroar%23rd" target="_blank" rel="noopener">关于 HTTP2 和 HTTPS，这些你必须要知道</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/09/08/从输入URL到页面加载全过程/" title="从输入URL到页面加载全过程">http://xuquan.site/2018/09/08/从输入URL到页面加载全过程/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TCP/" rel="tag"><i class="fa fa-tag"></i> TCP</a>
+          
+            <a href="/tags/IP/" rel="tag"><i class="fa fa-tag"></i> IP</a>
+          
+            <a href="/tags/HTTP/" rel="tag"><i class="fa fa-tag"></i> HTTP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/07/「翻译」互联网是如何运行的？/" rel="next" title="「翻译」互联网是如何运作的？">
+                <i class="fa fa-chevron-left"></i> 「翻译」互联网是如何运作的？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/08/Nikkkki的一周分享007/" rel="prev" title="Nikkkki的一周分享007">
+                Nikkkki的一周分享007 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#从浏览器接收URL到开启网络请求进程"><span class="nav-number">1.</span> <span class="nav-text">从浏览器接收URL到开启网络请求进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多进程的浏览器"><span class="nav-number">1.1.</span> <span class="nav-text">多进程的浏览器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程的浏览器内核"><span class="nav-number">1.2.</span> <span class="nav-text">多线程的浏览器内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析URL"><span class="nav-number">1.3.</span> <span class="nav-text">解析URL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启网络线程到发出一个完整的HTTP请求"><span class="nav-number">2.</span> <span class="nav-text">开启网络线程到发出一个完整的HTTP请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS查询得到IP"><span class="nav-number">2.1.</span> <span class="nav-text">DNS查询得到IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP请求"><span class="nav-number">2.2.</span> <span class="nav-text">TCP/IP请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">2.2.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.2.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络模型和协议栈"><span class="nav-number">2.3.</span> <span class="nav-text">网络模型和协议栈</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从服务器接收到请求到对应后台接收到请求"><span class="nav-number">3.</span> <span class="nav-text">从服务器接收到请求到对应后台接收到请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#负载均衡"><span class="nav-number">3.1.</span> <span class="nav-text">负载均衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP交互"><span class="nav-number">3.2.</span> <span class="nav-text">HTTP交互</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP报文结构"><span class="nav-number">3.2.1.</span> <span class="nav-text">HTTP报文结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#通用头部"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">通用头部</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#请求方法"><span class="nav-number">3.2.1.1.1.</span> <span class="nav-text">请求方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#状态码"><span class="nav-number">3.2.1.1.2.</span> <span class="nav-text">状态码</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#请求-响应头部"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">请求/响应头部</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#常用请求头"><span class="nav-number">3.2.1.2.1.</span> <span class="nav-text">常用请求头</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#常见响应头"><span class="nav-number">3.2.1.2.2.</span> <span class="nav-text">常见响应头</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#请求头和响应头匹配"><span class="nav-number">3.2.1.2.3.</span> <span class="nav-text">请求头和响应头匹配</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#请求-响应实体"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">请求/响应实体</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">3.3.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优化cookie"><span class="nav-number">3.3.1.</span> <span class="nav-text">优化cookie</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#长连接和短连接"><span class="nav-number">3.4.</span> <span class="nav-text">长连接和短连接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP层面"><span class="nav-number">3.4.1.</span> <span class="nav-text">TCP/IP层面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP层面"><span class="nav-number">3.4.2.</span> <span class="nav-text">HTTP层面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-2-0"><span class="nav-number">3.5.</span> <span class="nav-text">HTTP 2.0</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP版本"><span class="nav-number">3.5.1.</span> <span class="nav-text">HTTP版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本之间的区别"><span class="nav-number">3.5.2.</span> <span class="nav-text">版本之间的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#HTTP-1-0-VS-HTTP-1-1"><span class="nav-number">3.5.2.1.</span> <span class="nav-text">HTTP 1.0 VS HTTP 1.1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTTP-2-0-1"><span class="nav-number">3.5.2.2.</span> <span class="nav-text">HTTP 2.0</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS"><span class="nav-number">3.6.</span> <span class="nav-text">HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#区别"><span class="nav-number">3.6.1.</span> <span class="nav-text">区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析页面流程"><span class="nav-number">4.</span> <span class="nav-text">解析页面流程</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/09/08/从输入URL到页面加载全过程/';
+          this.page.identifier = '2018/09/08/从输入URL到页面加载全过程/';
+          this.page.title = '从输入URL到页面加载全过程';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

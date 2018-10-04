@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="翻译,jwt,token,auth," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="原文地址： 10 Things You Should Know about Tokens 几周前，我们发表了一篇《在AngularJS框架下，单页面应用中的cookies和tokens》的文章。显然这个话题很受欢迎，因此我们发表了第二篇文章《实时通讯框架（如socket.io)如何基于token实现身份验证》。出于对这个话题的强烈兴趣，我们决定在这篇文章中继续探索更多关于基于token实现身份认证">
+<meta name="keywords" content="翻译,jwt,token,auth">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「翻译」你应该知道这十件关于token的事">
+<meta property="og:url" content="http://xuquan.site/2018/08/13/「翻译」你应该知道这十件关于token的事/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="原文地址： 10 Things You Should Know about Tokens 几周前，我们发表了一篇《在AngularJS框架下，单页面应用中的cookies和tokens》的文章。显然这个话题很受欢迎，因此我们发表了第二篇文章《实时通讯框架（如socket.io)如何基于token实现身份验证》。出于对这个话题的强烈兴趣，我们决定在这篇文章中继续探索更多关于基于token实现身份认证">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-14T04:12:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="「翻译」你应该知道这十件关于token的事">
+<meta name="twitter:description" content="原文地址： 10 Things You Should Know about Tokens 几周前，我们发表了一篇《在AngularJS框架下，单页面应用中的cookies和tokens》的文章。显然这个话题很受欢迎，因此我们发表了第二篇文章《实时通讯框架（如socket.io)如何基于token实现身份验证》。出于对这个话题的强烈兴趣，我们决定在这篇文章中继续探索更多关于基于token实现身份认证">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/08/13/「翻译」你应该知道这十件关于token的事/"/>
+
+
+
+
+
+  <title>「翻译」你应该知道这十件关于token的事 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/13/「翻译」你应该知道这十件关于token的事/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">「翻译」你应该知道这十件关于token的事</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T11:11:56+08:00">
+                2018-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/跟着大佬学编程/" itemprop="url" rel="index">
+                    <span itemprop="name">跟着大佬学编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/13/「翻译」你应该知道这十件关于token的事/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/13/「翻译」你应该知道这十件关于token的事/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/13/「翻译」你应该知道这十件关于token的事/" class="leancloud_visitors" data-flag-title="「翻译」你应该知道这十件关于token的事">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,138 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>原文地址： <a href="https://auth0.com/blog/ten-things-you-should-know-about-tokens-and-cookies//#token-storage" target="_blank" rel="noopener">10 Things You Should Know about Tokens</a></p>
+<p>几周前，我们发表了一篇<em>《在AngularJS框架下，单页面应用中的cookies和tokens》</em>的文章。显然这个话题很受欢迎，因此我们发表了第二篇文章<em>《实时通讯框架（如socket.io)如何基于token实现身份验证》</em>。出于对这个话题的强烈兴趣，我们决定在这篇文章中继续探索更多关于基于token实现身份认证的问题和实现细节。那我们开始吧：</p>
+<ol>
+<li>tokens需要被储存起来（在local/session storage或cookies里）</li>
+<li>tokens可以和cookies一样设置过期时间，但更容易掌控</li>
+<li>local/session storage无法跨域，所以需要一个标记cookie</li>
+<li>CORS请求会发送预检请求</li>
+<li>当你需要使用流传送时，使用token来获取已签名的请求</li>
+<li>XSS比XSRF更好预防</li>
+<li>每一个请求都会发送token，所以要注意它的大小</li>
+<li>如果你要保存机密信息，对token加密</li>
+<li>JSON Web Tokens可以在OAuth中使用</li>
+<li>tokens不是万能的，根据你的验证需求谨慎使用</li>
+</ol>
+<a id="more"></a>
+<h4 id="1-tokens需要被储存起来（在local-session-storage或cookies里）"><a href="#1-tokens需要被储存起来（在local-session-storage或cookies里）" class="headerlink" title="1. tokens需要被储存起来（在local/session storage或cookies里）"></a>1. tokens需要被储存起来（在local/session storage或cookies里）</h4><p>在单页面应用情景下使用token的问题上，有些人会有“刷新浏览器之后，tokens去哪儿了”的疑惑，答案很简单：你需要把token保存在某个地方，无论是session storage, local storage还是客户端的cookie里。当浏览器不支持session storage时，浏览器会把数据转存到cookies里。</p>
+<p>也许你会有“但是如果我把token存在cookie里和以前的做法有什么区别？”的疑问。其实并不尽然，这里你其实是将cookies作为一个存储机制，而<u>非验证机制</u>（也就是说，cookie不会被浏览器用来验证用户的身份，因此也不会有XSRF攻击的潜在威胁）。</p>
+<h4 id="2-tokens可以和cookies一样设置过期时间，但更容易掌控"><a href="#2-tokens可以和cookies一样设置过期时间，但更容易掌控" class="headerlink" title="2.  tokens可以和cookies一样设置过期时间，但更容易掌控"></a>2.  tokens可以和cookies一样设置过期时间，但更容易掌控</h4><p>tokens也有过期时间（JSON Web Tokens中的<code>exp</code>属性），否则用户在登录过一次后就可以永久无限地通过身份验证了。cookies同样有过期时间。</p>
+<p>但使用cookie时，我们通过不同的方法来控制cookie的使用时限：</p>
+<ol>
+<li>cookies可以在浏览器关闭后立即被销毁（session cookies)</li>
+<li>此外你还可以设置服务器端检查（通常由你的web框架来替你完成），也可以设置绝对过期时间或有效时长</li>
+<li>cookies可以在过期时间前长期有效（浏览器关闭后不销毁）</li>
+</ol>
+<p>在使用token时，当token过期了，你仅仅需要获取一个新的。你可以在端口刷新token，这样就可以：</p>
+<ol>
+<li>激活旧的token</li>
+<li>检查用户是否还存在，或者权限是否被激活，或者任何其他必要的操作</li>
+<li>授权一个新的token，并更新它的过期时间</li>
+</ol>
+<p>你甚至可以在token中储存最初的授权时间，实现14天免登陆等操作。</p>
+<pre><code class="js">app.post(&#39;/refresh_token&#39;, function (req, res) {
+  // verify the existing token
+  var profile = jwt.verify(req.body.token, secret);
+
+  // if more than 14 days old, force login
+  if (profile.original_iat - new Date() &gt; 14) { // iat == issued at
+    return res.send(401); // re-logging
+  }
+
+  // check if the user still exists or if authorization hasn&#39;t been revoked
+  if (!valid) return res.send(401); // re-logging
+
+  // issue a new token
+  var refreshed_token = jwt.sign(profile, secret, { expiresInMinutes: 60*5 });
+  res.json({ token: refreshed_token });
+});
+</code></pre>
+<p>如果你需要重新激活tokens（长期有效的tokens是很有用的设置），你需要设置一些注册授权的操作来检测用户的tokens。</p>
+<h4 id="3-local-session-storage无法跨域，所以需要一个标记cookie"><a href="#3-local-session-storage无法跨域，所以需要一个标记cookie" class="headerlink" title="3. local/session storage无法跨域，所以需要一个标记cookie"></a>3. local/session storage无法跨域，所以需要一个标记cookie</h4><p>如果你将一个cookie的域名设置为<code>.yourdomain.com</code>，那么从<code>yourdomain.com</code>和<code>app.youdomain.com</code>路径都可以获取到这个cookie，我们假设用户在你的购物网站上，就能很容易地检测到他/她已经在主页面上登录，从而重定向到移动端<code>app.youdoumain.com</code>。</p>
+<p>但另一方面，存储在local/session storage中的tokens无法跨域获取，就算是子域也不可以。那么我们该怎么办呢？</p>
+<p>一个可行的方法是，当用户在<code>app.domain.com</code>上进行身份验证时，你可以生成一个token，同时还设置一个用于<code>.youdomain.com</code>的cookie。</p>
+<pre><code class="js">$.post(&#39;/authenticate&#39;, function() {
+  // store token on local/session storage or cookie
+    ....
+
+    // create a cookie signaling that user is logged in
+  $.cookie(&#39;loggedin&#39;, profile.name, &#39;.yourdomain.com&#39;);
+});
+</code></pre>
+<p>那么， 在<code>domain.com</code>上，你就能检测是否有用于这个域名的cookie，如果有，就可以重定向到<code>app.yourdomain.com</code>。token就可以在app的子域上使用，接下来就可以进行常规操作了（如果token仍然有效，就继续使用这个token，如果距离上次登录的时间已经超过了你设置的使用token的有效时长，那么久需要获取一个新的token）。</p>
+<p>有时会有cookie仍然存在，但是token被删除或者有其他误操作的情况发生。如果出现这样的状况，用户需要重新登录。但需要强调的是，正如我们前面提到的，我们并没有将cookie作为验证机制去使用，而是仅仅将它作为一种存储机制，协助我们在跨域的情况下完成信息的存储。</p>
+<h4 id="4-CORS请求会发送预检请求"><a href="#4-CORS请求会发送预检请求" class="headerlink" title="4. CORS请求会发送预检请求"></a>4. CORS请求会发送预检请求</h4><p>有人提出验证请求的头信息不满足简单请求的头信息要求，所以发送到特定地址的所有的请求都需要先发送预检请求。</p>
+<pre><code class="yaml">OPTIONS https://api.foo.com/bar
+GET https://api.foo.com/bar
+   Authorization: Bearer ....
+
+OPTIONS https://api.foo.com/bar2
+GET https://api.foo.com/bar2
+   Authorization: Bearer ....
+
+GET https://api.foo.com/bar
+   Authorization: Bearer ....
+</code></pre>
+<p>但这种情况只在你设置了<code>Content-Type: application/json</code>的情况下会发生。尽管对于绝大多数情况下都有这一设置。</p>
+<p>一个小的警告是，<code>OPTIONS</code>请求头信息本身并没有包含验证(Authorization)，所以你的web框架在处理<code>OPTION</code>请求和后续请求的时候应该区别对待（注意：Microsoft IIS在处理这个情况时会有一些问题）。</p>
+<h4 id="5-当你需要使用流传送时，使用token来获取已签名的请求"><a href="#5-当你需要使用流传送时，使用token来获取已签名的请求" class="headerlink" title="5. 当你需要使用流传送时，使用token来获取已签名的请求"></a>5. 当你需要使用流传送时，使用token来获取已签名的请求</h4><p>当使用cookie时，你可以很容易地触发文件下载并且对其内容进行流传送操作。但使用token时，因为它的请求是通过XHR实现的，你不能依赖它实现。解决方法是像AWS一样，生成一个签名的请求，<a href="https://github.com/hueniverse/hawk" target="_blank" rel="noopener">Hawk Bewits</a>就是一个很好的实现框架：</p>
+<p><strong>请求</strong></p>
+<pre><code class="yaml">POST /download-file/123
+Authorization: Bearer...
+</code></pre>
+<p><strong>响应</strong></p>
+<pre><code class="yaml">ticket=lahdoiasdhoiwdowijaksjdoaisdjoasidja
+</code></pre>
+<p>这个ticket是无状态的，而且基于地址URL来生成：域名+路径+请求+头信息+时间戳+HMAC，并且有过期时间。因此可以在有效期内，比如接下来的5分钟内，用于下载文件。</p>
+<p>接下来你可以重定向到<code>/download-file/123?ticket=lahdoiasdhoiwdowijaksjdoaisdjoasidja</code>。服务器会检查ticke是否有效，从而执行接下来的操作。</p>
+<h4 id="6-XSS比XSRF更好预防"><a href="#6-XSS比XSRF更好预防" class="headerlink" title="6. XSS比XSRF更好预防"></a>6. XSS比XSRF更好预防</h4><p>cookie可以在服务器端设置<code>HttpOnly</code>属性，从而使它只能在服务器端被获取，而不能通过JavaScript获取。这能够有效防范植入浏览器端的代码窃取cookie内容（XSS 跨站脚本攻击）。</p>
+<p>由于token是存储在local/session storage或客户端的cookie中的，攻击者很容易获取token实现XSS跨站脚本攻击。这是一个很现实的考虑，基于此，你应该让你的token的有效期尽量短一些。</p>
+<p>如果从防范攻击的层面去考虑，一个主要的隐患是XSRF。事实上，XSRF是最被误解的一种攻击，对于普通开发者来说，他们也许还没有意识到这个风险，所以很多应用都没有防范XSRF的机制。但不管怎么说，谁都明白注入代码是什么意思。简单来说，如果你允许在你的网站上植入一段代码，并且将它一同渲染出来，你就对XSS打开了大门。因此基于我们的经验，防范XSS比防范XSRF更容易。除此之外，防范XSRF并没有在每一个网页框架上实现。换句话说，防范XSS更容易因为大部分模板引擎已经默认对代码进行转义处理了。</p>
+<h4 id="7-每一个请求都会发送token，所以要注意它的大小"><a href="#7-每一个请求都会发送token，所以要注意它的大小" class="headerlink" title="7. 每一个请求都会发送token，所以要注意它的大小"></a>7. 每一个请求都会发送token，所以要注意它的大小</h4><p>每次你发送一个API请求时，你都需要在验证头信息中发送token。</p>
+<pre><code class="yaml">GET /foo
+Authorization: Bearer ...2kb token...
+</code></pre>
+<p>VS</p>
+<pre><code class="yaml">GET /foo
+connect.sid: ...20 bytes cookie...
+</code></pre>
+<p>取决于你在token中存储多少信息，它也可以变得很大。另一方面，session cookies只是一个标识符（如connect.sid, PHPSESSID），其余的内容都存储在服务器上（如果你只有一台服务器，那么它就在你的内存中，如果你有一个服务器集群，它就会在一个数据库里）。</p>
+<p>现在，没什么能够阻止你利用token实现一个简单的机制了。token包含了所需的基本信息，同时在服务器端，你可以在每一次请求中丰富token信息。cookie也会这么做，只不过现在由你来决定增加哪些信息，你能在代码中完全掌控这一步骤。</p>
+<pre><code class="yaml">GET /foo
+Authorization: Bearer ……500 bytes token….
+</code></pre>
+<p>接着服务器：</p>
+<pre><code class="js">app.use(&#39;/api&#39;,
+  // validate token first
+  expressJwt({secret: secret}),
+
+  // enrich req.user with more data from db
+  function(req, res, next) {
+    req.user.extra_data = get_from_db();
+    next();
+  });
+</code></pre>
+<p>值得注意的是，你也可以将session完全存储在cookie中（而不是只将cookie作为标识符）。有些web平台支持这一做法，有些则不行。比如，在node.js中，你也可以使用<a href="https://github.com/mozilla/node-client-sessions" target="_blank" rel="noopener">mozilla/node-client-sessions</a>。</p>
+<h4 id="8-如果你要保存机密信息，对token加密"><a href="#8-如果你要保存机密信息，对token加密" class="headerlink" title="8. 如果你要保存机密信息，对token加密"></a>8. 如果你要保存机密信息，对token加密</h4><p>token签名能够防止它被篡改。TLS/SSL防止使用过程中用户收到攻击。但如果有效载荷中包括用户的敏感信息（如SSN或其他），你可以对他们加密。JWT和JWE规范，但是大部分库都没有支持JWE，因此最简单的方法就是利用AES-CBC加密：</p>
+<pre><code class="js">app.post(&#39;/authenticate&#39;, function (req, res) {
+  // validate user
+
+  // encrypt profile
+  var encrypted = { token: encryptAesSha256(&#39;shhhh&#39;, JSON.stringify(profile)) };
+
+  // sing the token
+  var token = jwt.sign(encrypted, secret, { expiresInMinutes: 60*5 });
+
+  res.json({ token: token });
+}
+
+function encryptAesSha256 (password, textToEncrypt) {
+  var cipher = crypto.createCipher(&#39;aes-256-cbc&#39;, password);
+  var crypted = cipher.update(textToEncrypt, &#39;utf8&#39;, &#39;hex&#39;);
+  crypted += cipher.final(&#39;hex&#39;);
+  return crypted;
+}
+</code></pre>
+<p>当然，你也可以使用第7条中的方法，将机密信息保存在数据库中。</p>
+<h4 id="9-JSON-Web-Tokens可以在OAuth中使用"><a href="#9-JSON-Web-Tokens可以在OAuth中使用" class="headerlink" title="9. JSON Web Tokens可以在OAuth中使用"></a>9. JSON Web Tokens可以在OAuth中使用</h4><p>tokens经常与OAuth一起使用。OAuth 2是用于解决身份认证的授权协议。用户在获取他们的数据时，认证服务器会返回一个<code>access_token</code>用于让接口记住用户。</p>
+<p>通常这些token是不透明的，他们被称为<code>bearer</code>tokens，是通过某种形式的哈希表保存在服务器上的随机字符串，并配有过期时间。服务器请求数据（如关联用户的通讯录），用户同意。下一次使用这个API时，token被发送给服务器，服务器在哈希表中查询，根据当下情景（token有没有过期？token是否有权获取相关数据？）决定是否通过验证。</p>
+<p>这类token和我们前面讨论的token最大的区别就是签名的token（如JWT）是”无状态的“。他们不需要保存在哈希表在，因此是一种更轻量级的方法。OAuth2没有要求<code>access_token</code>的格式，因此你可以返回一个包含权限和过期时间的JWT。</p>
+<h4 id="10-tokens不是万能的，根据你的验证需求谨慎使用"><a href="#10-tokens不是万能的，根据你的验证需求谨慎使用" class="headerlink" title="10. tokens不是万能的，根据你的验证需求谨慎使用"></a>10. tokens不是万能的，根据你的验证需求谨慎使用</h4><p>几年之前，我们帮一个大公司完成了一个基于token的架构项目。这个公司拥有超过10万名员工及大量的信息需要维护。他们希望有一个集中式的企业级的验证存储系统。想象一下“用户W可以获取在X国的Y医院中的Z床位的用户id和姓名”。对于这个密集度的认证系统，你能想象，无论从技术层面还是行政层面，都将很快变得无法管理。</p>
+<ul>
+<li>token会变得非常大</li>
+<li>应用或接口都会变得非常复杂</li>
+<li>无论谁想要获取这些权限都需要花很长时间管理它们</li>
+</ul>
+<p>我们最终将工作集中在信息架构方面，以保障创建正确的权限。</p>
+<p>总结：抑制住将所有东西都放进token的想法，在使用token前做一些分析和大小预估。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/08/13/「翻译」你应该知道这十件关于token的事/" title="「翻译」你应该知道这十件关于token的事">http://xuquan.site/2018/08/13/「翻译」你应该知道这十件关于token的事/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/翻译/" rel="tag"><i class="fa fa-tag"></i> 翻译</a>
+          
+            <a href="/tags/jwt/" rel="tag"><i class="fa fa-tag"></i> jwt</a>
+          
+            <a href="/tags/token/" rel="tag"><i class="fa fa-tag"></i> token</a>
+          
+            <a href="/tags/auth/" rel="tag"><i class="fa fa-tag"></i> auth</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/12/node.js学习笔记: jsonwebtoken中间件加密token/" rel="next" title="node.js学习笔记: jsonwebtoken中间件加密token">
+                <i class="fa fa-chevron-left"></i> node.js学习笔记: jsonwebtoken中间件加密token
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/13/「Learning」JSON-Web-Token-入门教程/" rel="prev" title="「Learning」JSON Web Token 入门教程">
+                「Learning」JSON Web Token 入门教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-tokens需要被储存起来（在local-session-storage或cookies里）"><span class="nav-number">1.</span> <span class="nav-text">1. tokens需要被储存起来（在local/session storage或cookies里）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-tokens可以和cookies一样设置过期时间，但更容易掌控"><span class="nav-number">2.</span> <span class="nav-text">2.  tokens可以和cookies一样设置过期时间，但更容易掌控</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-local-session-storage无法跨域，所以需要一个标记cookie"><span class="nav-number">3.</span> <span class="nav-text">3. local/session storage无法跨域，所以需要一个标记cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-CORS请求会发送预检请求"><span class="nav-number">4.</span> <span class="nav-text">4. CORS请求会发送预检请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-当你需要使用流传送时，使用token来获取已签名的请求"><span class="nav-number">5.</span> <span class="nav-text">5. 当你需要使用流传送时，使用token来获取已签名的请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-XSS比XSRF更好预防"><span class="nav-number">6.</span> <span class="nav-text">6. XSS比XSRF更好预防</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-每一个请求都会发送token，所以要注意它的大小"><span class="nav-number">7.</span> <span class="nav-text">7. 每一个请求都会发送token，所以要注意它的大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-如果你要保存机密信息，对token加密"><span class="nav-number">8.</span> <span class="nav-text">8. 如果你要保存机密信息，对token加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-JSON-Web-Tokens可以在OAuth中使用"><span class="nav-number">9.</span> <span class="nav-text">9. JSON Web Tokens可以在OAuth中使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-tokens不是万能的，根据你的验证需求谨慎使用"><span class="nav-number">10.</span> <span class="nav-text">10. tokens不是万能的，根据你的验证需求谨慎使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/08/13/「翻译」你应该知道这十件关于token的事/';
+          this.page.identifier = '2018/08/13/「翻译」你应该知道这十件关于token的事/';
+          this.page.title = '「翻译」你应该知道这十件关于token的事';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

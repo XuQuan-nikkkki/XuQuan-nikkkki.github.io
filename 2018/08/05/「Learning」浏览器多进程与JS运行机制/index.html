@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="computer science,线程 进程,浏览器," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="主要内容：  区分进程和线程 浏览器是多进程的（哪些进程，优势是什么，渲染进程的常驻线程，内核通信过程） 梳理浏览器内核中线程之间的关系 JS运行机制 宏任务与微任务   学习内容：《 从浏览器多进程到JS单线程，JS运行机制最全面的一次梳理》By 撒网要见鱼">
+<meta name="keywords" content="computer science,线程 进程,浏览器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「Learning」浏览器多进程与JS运行机制">
+<meta property="og:url" content="http://xuquan.site/2018/08/05/「Learning」浏览器多进程与JS运行机制/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="主要内容：  区分进程和线程 浏览器是多进程的（哪些进程，优势是什么，渲染进程的常驻线程，内核通信过程） 梳理浏览器内核中线程之间的关系 JS运行机制 宏任务与微任务   学习内容：《 从浏览器多进程到JS单线程，JS运行机制最全面的一次梳理》By 撒网要见鱼">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9240001-03fe278d60caa5aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9240001-81fdbcf310ec2518.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9240001-54388c11c30f0540.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/550">
+<meta property="og:updated_time" content="2018-08-08T08:42:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="「Learning」浏览器多进程与JS运行机制">
+<meta name="twitter:description" content="主要内容：  区分进程和线程 浏览器是多进程的（哪些进程，优势是什么，渲染进程的常驻线程，内核通信过程） 梳理浏览器内核中线程之间的关系 JS运行机制 宏任务与微任务   学习内容：《 从浏览器多进程到JS单线程，JS运行机制最全面的一次梳理》By 撒网要见鱼">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9240001-03fe278d60caa5aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/08/05/「Learning」浏览器多进程与JS运行机制/"/>
+
+
+
+
+
+  <title>「Learning」浏览器多进程与JS运行机制 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/05/「Learning」浏览器多进程与JS运行机制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">「Learning」浏览器多进程与JS运行机制</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-05T00:38:36+08:00">
+                2018-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/跟着大佬学编程/" itemprop="url" rel="index">
+                    <span itemprop="name">跟着大佬学编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/05/「Learning」浏览器多进程与JS运行机制/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/05/「Learning」浏览器多进程与JS运行机制/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/05/「Learning」浏览器多进程与JS运行机制/" class="leancloud_visitors" data-flag-title="「Learning」浏览器多进程与JS运行机制">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,992 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>主要内容：</p>
+<ol>
+<li>区分进程和线程</li>
+<li>浏览器是多进程的（哪些进程，优势是什么，渲染进程的常驻线程，内核通信过程）</li>
+<li>梳理浏览器内核中线程之间的关系</li>
+<li>JS运行机制</li>
+<li>宏任务与微任务</li>
+</ol>
+</blockquote>
+<p>学习内容：《 <a href="https://segmentfault.com/a/1190000012925872" target="_blank" rel="noopener">从浏览器多进程到JS单线程，JS运行机制最全面的一次梳理</a>》By 撒网要见鱼</p>
+<a id="more"></a>
+<h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><h4 id="1-区分进程和线程"><a href="#1-区分进程和线程" class="headerlink" title="1. 区分进程和线程"></a>1. 区分进程和线程</h4><table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">进程</th>
+<th style="text-align:center">线程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">有系统分配的内存（独立资源）</td>
+<td style="text-align:center">有</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">进程/线程之间相互独立</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<h5 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h5><ul>
+<li>是<strong>cpu资源分配</strong>的最小单位（是能<strong>拥有资源和独立运行</strong>的最小单位）</li>
+<li>进程之间相互独立</li>
+<li>一个进程由一个或多个线程组成</li>
+</ul>
+<h5 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h5><ul>
+<li>是<strong>cpu调度</strong>的最小单位（线程是建立在进程的基础上的一次程序运行单位）</li>
+<li>多个线程在进程中协作完成任务</li>
+<li>同一个进程下的各个线程之间共享程序的内存空间</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>我的理解：</strong></p>
+<p>其实可以用一个比较常用的软件来打比方。我们把CPU想象成我们自己，把程序都想象成EXCEL表格。一个<strong>进程</strong>就是一个excel文件，每个excel文件之间是相互独立的。打开一个excel文件，里面会有sheet，这个sheet就是<strong>线程</strong>。一个excel文件里可能有1个sheet，也可能有多个sheet，这就是<strong>单线程和多线程</strong>。</p>
+<p>我们可以同时打开很多个excel文件，但是一次只能处理一个，这就是<strong>并发</strong>。也许有一天，人工智能发展到一定的阶段，可以虚拟出一个“我”，这时，好几个我可以同时处理不同的Excel文件，这就是<strong>并行</strong>。</p>
+</blockquote>
+<hr>
+<h4 id="2-浏览器是多进程的"><a href="#2-浏览器是多进程的" class="headerlink" title="2. 浏览器是多进程的"></a>2. 浏览器是多进程的</h4><blockquote>
+<ul>
+<li>浏览器是多进程的</li>
+<li>浏览器有一个主进程</li>
+<li>每个tab页有一个独立的进程（浏览器的优化机制可能会合并进程，这一条并不绝对）</li>
+</ul>
+</blockquote>
+<h5 id="浏览器包含哪些进程"><a href="#浏览器包含哪些进程" class="headerlink" title="浏览器包含哪些进程"></a>浏览器包含哪些进程</h5><blockquote>
+<ol>
+<li>Browser主进程（只有一个）</li>
+<li>第三方插件进程（仅当使用时创建）</li>
+<li>GPU进程（最多一个，用于3D绘制）</li>
+<li>浏览器渲染进程（默认每个tab一个）</li>
+</ol>
+</blockquote>
+<h5 id="浏览器多进程的优势"><a href="#浏览器多进程的优势" class="headerlink" title="浏览器多进程的优势"></a>浏览器多进程的优势</h5><blockquote>
+<ul>
+<li>避免单个页面或插件crash影响整个浏览器</li>
+<li>充分利用多核优势（避免资源浪费）</li>
+<li>方便使用沙盒模型隔离插件等进程</li>
+</ul>
+</blockquote>
+<h5 id="浏览器内核（渲染进程）的常驻线程"><a href="#浏览器内核（渲染进程）的常驻线程" class="headerlink" title="浏览器内核（渲染进程）的常驻线程"></a>浏览器内核（渲染进程）的常驻线程</h5><blockquote>
+<ol>
+<li>GUI渲染线程（渲染界面，重绘和回流）</li>
+<li>JS引擎线程（解析JS代码）</li>
+<li>事件触发线程（控制事件循环，如AJAX等）</li>
+<li>定时器触发线程（setTimeOut, setInterval，用来计时并触发定时）</li>
+<li>异步HTTP请求线程（XMLHttpRequest连接）</li>
+</ol>
+</blockquote>
+<p>注意点：</p>
+<ol>
+<li>GUI渲染线程与JS引擎线程是互斥的。JS引擎执行时GUI会被挂起，GUI更新会保存在一个队列中等JS引擎空闲时立即被执行；同样，JS执行时间过长会导致页面渲染不连贯</li>
+<li>事件触发线程归属于浏览器而不是JS引擎</li>
+</ol>
+<blockquote>
+<p><strong>我的理解：</strong></p>
+<ol>
+<li>GUI渲染线程负责解析HTML,CSS，形成界面</li>
+<li>JS引擎线程负责解析JS代码，如果是可以直接处理的代码，JS引擎会直接解析，如JS代码创建一个新的元素，添加在原有的div里</li>
+<li>JS引擎线程遇到无法立即处理的代码（异步操作，如setTimeOut, AJAX等），则放入事件处理线程，事件处理线程并不实际处理它们，只在事件符合触发条件时，将事件放入待处理队列，JS引擎空闲时会处理待处理队列</li>
+<li>可以理解为JS引擎线程用于处理事件，事件触发线程用于安排事件如何排队</li>
+<li>定时器触发用于计时和触发定时，等事件符合触发的时间时，将事件加入到待处理队列中，它同样是用来规定如何排队的，只是排队方式和事件处理线程不太一样（这也可以解释为什么setTimeOut并不是规定几秒之后执行，而是规定几秒之后加入到待处理队列中，如此时JS引擎线程并不空闲，那么时间并不会被马上处理，因此事件被处理的时间可能是长于我们预设的时间的）</li>
+<li>异步http请求线程也是一样，它在XMLHttpRequest连接之后，检测到状态改变，将回调函数放入到事件队列中</li>
+<li>可以看到事件处理线程、定时触发器线程、异步http请求线程本质上都是安排对应事件在符合触发条件之后，将反馈的，即需要处理的事件放入到待处理事件队列中，由JS引擎来执行</li>
+</ol>
+</blockquote>
+<p>或许这样说更容易理解：</p>
+<p>我们把这些线程理解成做菜的厨子。</p>
+<ul>
+<li>GUI渲染线程就是负责摆盘的，JS引擎线程是负责做菜的主厨，他们互相不能干预对方</li>
+<li>JS引擎线程遇到可以直接做的原料就自己动手把菜给炒了</li>
+<li>有些原料不能马上做，可能需要等原料温度降到0度才可以动手，于是事件处理线程就等原料温度降到对应温度再交给主厨——JS引擎线程</li>
+<li>有些原料必须腌制10分钟之后才能做，于是就该定时触发器线程负责，等到10分钟后把原料交给JS引擎线程</li>
+<li>还有些原料必须打电话联系供应商送来才能做，于是就先给他们打电话确认可以送货（XMLHttpRequest），等到货送到了（状态改变），再烧高汤并把高汤交给主厨来做，这个对应的高汤就是异步http请求的回调函数</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/9240001-03fe278d60caa5aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620" alt="浏览器的进程与线程"></p>
+<h5 id="Browser进程和浏览器内核（Renderer进程）的通信过程"><a href="#Browser进程和浏览器内核（Renderer进程）的通信过程" class="headerlink" title="Browser进程和浏览器内核（Renderer进程）的通信过程"></a>Browser进程和浏览器内核（Renderer进程）的通信过程</h5><p><img src="https://upload-images.jianshu.io/upload_images/9240001-81fdbcf310ec2518.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620" alt="浏览器进程与渲染进程的通信"></p>
+<h4 id="3-梳理浏览器内核中线程之间的关系"><a href="#3-梳理浏览器内核中线程之间的关系" class="headerlink" title="3. 梳理浏览器内核中线程之间的关系"></a>3. 梳理浏览器内核中线程之间的关系</h4><h5 id="GUI渲染线程与JS引擎线程互斥"><a href="#GUI渲染线程与JS引擎线程互斥" class="headerlink" title="GUI渲染线程与JS引擎线程互斥"></a>GUI渲染线程与JS引擎线程互斥</h5><ul>
+<li>JS可以操作DOM，如果边操作DOM边渲染会出错</li>
+</ul>
+<h5 id="JS阻塞页面加载"><a href="#JS阻塞页面加载" class="headerlink" title="JS阻塞页面加载"></a>JS阻塞页面加载</h5><ul>
+<li>JS操作时，GUI渲染线程被挂起</li>
+<li>JS操作时间过长，看起来就像GUI渲染卡住了</li>
+</ul>
+<h5 id="WebWorker"><a href="#WebWorker" class="headerlink" title="WebWorker"></a>WebWorker</h5><ul>
+<li>创建一个Worker()对象来运行命名的JS文件，即申请开一个子线程</li>
+<li>workers在另一个全局上下文中，不同于当前的window</li>
+<li>JS还是单线程，但Worker线程里面不会影响JS引擎主线程</li>
+</ul>
+<h5 id="WebWorker与SharedWorkder"><a href="#WebWorker与SharedWorkder" class="headerlink" title="WebWorker与SharedWorkder"></a>WebWorker与SharedWorkder</h5><ul>
+<li>WebWorker是tab页即render进程下的线程</li>
+<li>SharedWorker是浏览器的一个进程</li>
+</ul>
+<blockquote>
+<p><strong>我的理解：</strong></p>
+<ul>
+<li>JS是单线程</li>
+<li>JS引擎和GUI渲染一次只能执行一个，另一个被挂起</li>
+<li>这样会导致如果JS引擎执行时间太长，GUI看起来就卡住不动了</li>
+<li>为了解决这个问题，提出了WebWorker这个解决方案</li>
+<li>WebWorker是一个子线程，专门用来计算运行JS文件</li>
+</ul>
+</blockquote>
+<h4 id="4-JS运行机制"><a href="#4-JS运行机制" class="headerlink" title="4. JS运行机制"></a>4. JS运行机制</h4><blockquote>
+<ul>
+<li>同步任务都在主线程上执行</li>
+<li>主线程运行时产生执行栈</li>
+<li>事件触发线程管理着一个任务队列，异步任务有了运行结果，就在任务队列尾部放置事件</li>
+<li>栈中任务执行完毕，回去读取事件队列中的事件</li>
+</ul>
+</blockquote>
+<h5 id="setInterval的问题"><a href="#setInterval的问题" class="headerlink" title="setInterval的问题"></a><code>setInterval</code>的问题</h5><blockquote>
+<ul>
+<li>累计效应：执行时间比预期小，可能导致连续运行没有间隔</li>
+</ul>
+</blockquote>
+<h4 id="5-macrotask和microtask"><a href="#5-macrotask和microtask" class="headerlink" title="5. macrotask和microtask"></a>5. macrotask和microtask</h4><h5 id="宏任务"><a href="#宏任务" class="headerlink" title="宏任务"></a>宏任务</h5><ul>
+<li><p>每次执行栈执行的代码就是一个宏任务</p>
+</li>
+<li><p>完成后渲染，再执行下一个</p>
+</li>
+</ul>
+<h5 id="微任务"><a href="#微任务" class="headerlink" title="微任务"></a>微任务</h5><ul>
+<li><p>宏任务执行结束后立即执行的任务</p>
+</li>
+<li><p>在渲染之前执行</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">宏任务</td>
+<td style="text-align:center">setTimeOut, setInterval</td>
+</tr>
+<tr>
+<td style="text-align:center">微任务</td>
+<td style="text-align:center">Promise, process.nextTick</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://upload-images.jianshu.io/upload_images/9240001-54388c11c30f0540.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/550" alt="宏任务、微任务.png"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/08/05/「Learning」浏览器多进程与JS运行机制/" title="「Learning」浏览器多进程与JS运行机制">http://xuquan.site/2018/08/05/「Learning」浏览器多进程与JS运行机制/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/computer-science/" rel="tag"><i class="fa fa-tag"></i> computer science</a>
+          
+            <a href="/tags/线程-进程/" rel="tag"><i class="fa fa-tag"></i> 线程 进程</a>
+          
+            <a href="/tags/浏览器/" rel="tag"><i class="fa fa-tag"></i> 浏览器</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/04/ES6学习笔记之Promise/" rel="next" title="ES6学习笔记之Promise">
+                <i class="fa fa-chevron-left"></i> ES6学习笔记之Promise
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/05/ES6学习笔记之Generator函数/" rel="prev" title="ES6学习笔记之Generator函数">
+                ES6学习笔记之Generator函数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Learning-Card"><span class="nav-number">1.</span> <span class="nav-text">Learning Card</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-区分进程和线程"><span class="nav-number">1.1.</span> <span class="nav-text">1. 区分进程和线程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程"><span class="nav-number">1.1.1.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#线程"><span class="nav-number">1.1.2.</span> <span class="nav-text">线程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-浏览器是多进程的"><span class="nav-number">1.2.</span> <span class="nav-text">2. 浏览器是多进程的</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器包含哪些进程"><span class="nav-number">1.2.1.</span> <span class="nav-text">浏览器包含哪些进程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器多进程的优势"><span class="nav-number">1.2.2.</span> <span class="nav-text">浏览器多进程的优势</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器内核（渲染进程）的常驻线程"><span class="nav-number">1.2.3.</span> <span class="nav-text">浏览器内核（渲染进程）的常驻线程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Browser进程和浏览器内核（Renderer进程）的通信过程"><span class="nav-number">1.2.4.</span> <span class="nav-text">Browser进程和浏览器内核（Renderer进程）的通信过程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-梳理浏览器内核中线程之间的关系"><span class="nav-number">1.3.</span> <span class="nav-text">3. 梳理浏览器内核中线程之间的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#GUI渲染线程与JS引擎线程互斥"><span class="nav-number">1.3.1.</span> <span class="nav-text">GUI渲染线程与JS引擎线程互斥</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JS阻塞页面加载"><span class="nav-number">1.3.2.</span> <span class="nav-text">JS阻塞页面加载</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#WebWorker"><span class="nav-number">1.3.3.</span> <span class="nav-text">WebWorker</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#WebWorker与SharedWorkder"><span class="nav-number">1.3.4.</span> <span class="nav-text">WebWorker与SharedWorkder</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-JS运行机制"><span class="nav-number">1.4.</span> <span class="nav-text">4. JS运行机制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#setInterval的问题"><span class="nav-number">1.4.1.</span> <span class="nav-text">setInterval的问题</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-macrotask和microtask"><span class="nav-number">1.5.</span> <span class="nav-text">5. macrotask和microtask</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#宏任务"><span class="nav-number">1.5.1.</span> <span class="nav-text">宏任务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#微任务"><span class="nav-number">1.5.2.</span> <span class="nav-text">微任务</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/08/05/「Learning」浏览器多进程与JS运行机制/';
+          this.page.identifier = '2018/08/05/「Learning」浏览器多进程与JS运行机制/';
+          this.page.title = '「Learning」浏览器多进程与JS运行机制';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

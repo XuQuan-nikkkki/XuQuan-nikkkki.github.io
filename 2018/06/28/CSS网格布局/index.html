@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,freecodecamp,grid," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="这一部分详细介绍了网格布局的用法。">
+<meta name="keywords" content="css,freecodecamp,grid">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS网格布局">
+<meta property="og:url" content="http://xuquan.site/2018/06/28/CSS网格布局/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="这一部分详细介绍了网格布局的用法。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9240001-8bc6d14907e80775.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-09-13T06:21:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS网格布局">
+<meta name="twitter:description" content="这一部分详细介绍了网格布局的用法。">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9240001-8bc6d14907e80775.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/06/28/CSS网格布局/"/>
+
+
+
+
+
+  <title>CSS网格布局 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/06/28/CSS网格布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">CSS网格布局</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T00:38:36+08:00">
+                2018-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index">
+                    <span itemprop="name">FreeCodeCamp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/28/CSS网格布局/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/28/CSS网格布局/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/06/28/CSS网格布局/" class="leancloud_visitors" data-flag-title="CSS网格布局">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,682 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这一部分详细介绍了网格布局的用法。</p>
+<a id="more"></a>
+<h5 id="通过设置父元素来搭建整体结构"><a href="#通过设置父元素来搭建整体结构" class="headerlink" title="通过设置父元素来搭建整体结构"></a>通过设置父元素来搭建整体结构</h5><ul>
+<li>父元素设置为<code>display: grid</code></li>
+<li><code>grid-template-rows</code>和<code>grid-template-columns</code>来设定有多少行/列，每行/列的宽高是多少，如<code>grid-template-rows: 50px 50px</code>即总共两行，每行高50px<ul>
+<li>每行/列的宽高可以设置为px,em这类<strong>固定长度单位</strong>，也可以设置为<strong>百分比</strong>，或者<strong>auto</strong>自适应，以及<strong>fr</strong>（fr是CSS3加入的新的长度单位，是一个自适应单位，表示按比例分配剩余空间，如<code>grid-template-rows: 1fr 1fr 1fr</code>即总共3行，每行高度为父元素高度的1/3）</li>
+<li>如果有多行内容，且宽高设置重复，可以使用repeat来设置，如<code>grid-template-rows: repeat(100, 50px)</code>即有100行，每行高度50px</li>
+<li>当使用repeat设置多行/列内容的宽高时，可以限制单个网格的宽高来实现响应式布局<ul>
+<li>使用<code>minmax</code>来限制最大最小值，例：<code>grid-template-rows: repeat(3, minmax(30px 100px))</code></li>
+<li>使用<code>autofill</code>或<code>autofit</code>来规定父元素宽高大于子元素之和时，子元素的大小是否随着父元素变化（<code>autofill</code>表示使用空元素补充多余空间，子元素大小不变；<code>autofit</code>表示子元素宽度按比例变化，撑满父元素）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>grid-column-gap</code>和<code>grid-row-gap</code>用于规定行/列之间的距离，也可以通过<code>grid-gap</code>一次性设置</li>
+<li><code>justify-items</code>和<code>align-items</code>设置所有元素在列/行上如何对齐，相当于设置所有元素的<code>justify-self</code>和<code>align-self</code>属性</li>
+</ul>
+<h5 id="通过设置子元素来调整单个网格的布局"><a href="#通过设置子元素来调整单个网格的布局" class="headerlink" title="通过设置子元素来调整单个网格的布局"></a>通过设置子元素来调整单个网格的布局</h5><ul>
+<li>除了通过设置父元素的<code>grid-template-rows</code>和<code>grid-template-columns</code>来确定单个网格的宽高，还可以通过设置单个网格的<code>grid-column</code>和<code>grid-row</code>来确定宽高，如<code>grid-column：1/3</code>表示网格宽度从表示列的第一根线条（即最左侧线条）开始，到第三条线条（第二个网格右边的线条）结束</li>
+<li><code>justify-self</code>和<code>align-self</code>两个属性分别规定单个网格沿列和行在网格中的内容对齐方式，默认属性均为stretch，即占满网格区域，其他值包括start, end, center</li>
+</ul>
+<h5 id="对网格的位置进行布局"><a href="#对网格的位置进行布局" class="headerlink" title="对网格的位置进行布局"></a>对网格的位置进行布局</h5><ul>
+<li><p>可以设置父元素的<code>grid-template-areas</code>，即作为目标设置每一行的每一列均为什么内容，可以对这一内容进行命名，通过设置子元素的<code>grid-area</code>来让子元素对应到父元素中的理想位置，如</p>
+<pre><code>grid-template-areas: 
+  &quot;header header header&quot;
+  &quot;advert content content&quot;
+  &quot;footer footer footer&quot;;
+</code></pre></li>
+<li><p>也可以不通过命名模板来设置单个网格的布局，即通过设置网格上下左右四根线条对应的横向和纵向起始线条来确定网格的位置和宽高，如`grid-area: 1/1/2/4”即高度从横向第一根线条开始，到第2根线条结束，宽度从纵向第一根线条开始，到第4根线条结束</p>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/9240001-8bc6d14907e80775.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="grid布局"></p>
+<h2 id="以下是这一部分习题的解答："><a href="#以下是这一部分习题的解答：" class="headerlink" title="以下是这一部分习题的解答："></a><em>以下是这一部分习题的解答：</em></h2><h4 id="Introduction-to-the-CSS-Grid-Challenges"><a href="#Introduction-to-the-CSS-Grid-Challenges" class="headerlink" title="Introduction to the CSS Grid Challenges"></a><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid" target="_blank" rel="noopener">Introduction to the CSS Grid Challenges</a></h4><ul>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/create-your-first-css-grid" target="_blank" rel="noopener">Create Your First CSS Grid</a></p>
+<pre><code class="css">.container {
+  font-size: 40px;
+  width: 100%;
+  background: LightGray;
+  /* add your code below this line */
+  display: grid;
+  /* add your code above this line */
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/add-columns-with-grid-template-columns" target="_blank" rel="noopener">Add Columns with grid-template-columns</a></p>
+<pre><code class="html">&lt;style&gt;
+    .container {
+    font-size: 40px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* add your code below this line */
+    grid-template-columns: 100px 100px 100px;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/add-rows-with-grid-template-rows" target="_blank" rel="noopener">Add Rows with grid-template-rows</a></p>
+<pre><code class="html">&lt;style&gt;
+    .container {
+    font-size: 40px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    /* add your code below this line */
+    grid-template-rows: 50px 50px;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/use-css-grid-units-to-change-the-size-of-columns-and-rows" target="_blank" rel="noopener">Use CSS Grid units to Change the Size of Columns and Rows</a></p>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* modify the code below this line */
+
+    grid-template-columns: 1fr 100px 2fr;
+
+    /* modify the code above this line */
+    grid-template-rows: 50px 50px;
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/create-a-column-gap-using-grid-column-gap" target="_blank" rel="noopener">Create a Column Gap Using grid-column-gap</a></p>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* add your code below this line */
+    grid-column-gap: 20px;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/create-a-row-gap-using-grid-row-gap" target="_blank" rel="noopener">Create a Row Gap using grid-row-gap</a></p>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* add your code below this line */
+
+    grid-row-gap: 5px;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/add-gaps-faster-with-grid-gap" target="_blank" rel="noopener">Add Gaps Faster with grid-gap</a></p>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* add your code below this line */
+    grid-gap: 10px 20px;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/use-grid-column-to-control-spacing" target="_blank" rel="noopener">Use grid-column to Control Spacing</a></p>
+<pre><code class="html">&lt;style&gt;
+  .item5 {
+    background: PaleGreen;
+    /* add your code below this line */
+    grid-column: 2/4;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/use-grid-row-to-control-spacing" target="_blank" rel="noopener">Use grid-row to Control Spacing</a></p>
+<pre><code class="html">&lt;style&gt;
+  .item5 {
+    background: PaleGreen;
+    grid-column: 2 / 4;
+    /* add your code below this line */
+    grid-row: 2/4;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/align-an-item-horizontally-using-justify-self" target="_blank" rel="noopener">Align an Item Horizontally using justify-self</a></p>
+<pre><code class="html">&lt;style&gt;
+  .item2 {
+    background: LightSalmon;
+    /* add your code below this line */
+    justify-self: center;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/align-an-item-vertically-using-align-self" target="_blank" rel="noopener">Align an Item Vertically using align-self</a></p>
+<pre><code class="html">&lt;style&gt;
+  .item3 {
+    background: PaleTurquoise;
+    /* add your code below this line */
+    align-self: end;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/align-all-items-horizontally-using-justify-items" target="_blank" rel="noopener">Align All Items Horizontally using justify-items</a></p>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    /* add your code below this line */
+    justify-items: center;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/align-all-items-vertically-using-align-items" target="_blank" rel="noopener">Align All Items Vertically using align-items</a></p>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    /* add your code below this line */
+    align-items: end;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/divide-the-grid-into-an-area-template" target="_blank" rel="noopener">Divide the Grid Into an Area Template</a></p>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    /* change code below this line */
+
+    grid-template-areas:
+      &quot;header header header&quot;
+      &quot;. content content&quot;
+      &quot;footer footer footer&quot;;
+    /* change code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/place-items-in-grid-areas-using-the-grid-area-property" target="_blank" rel="noopener">Place Items in Grid Areas Using the grid-area Property</a></p>
+<pre><code class="html">&lt;style&gt;
+  .item5 {
+    background: PaleGreen;
+    /* add your code below this line */
+    grid-area: footer;  
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/use-grid-area-without-creating-an-areas-template" target="_blank" rel="noopener">Use grid-area Without Creating an Areas Template</a></p>
+<pre><code class="html">&lt;style&gt;
+  .item5 {
+    background: PaleGreen;
+    /* add your code below this line */
+    grid-area:3/1/4/4;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/reduce-repetition-using-the-repeat-function" target="_blank" rel="noopener">Reduce Repetition Using the repeat Function</a></p>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* change the code below this line */
+
+    grid-template-columns: repeat(3, 1fr);;
+
+    /* change the code above this line */
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/limit-item-size-using-the-minmax-function" target="_blank" rel="noopener">Limit Item Size Using the minmax Function</a></p>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* change the code below this line */
+
+    grid-template-columns: repeat(3, minmax(90px, 1fr));
+
+    /* change the code above this line */
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/create-flexible-layouts-using-auto-fill" target="_blank" rel="noopener">Create Flexible Layouts Using auto-fill</a></p>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 100px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* change the code below this line */
+
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+
+    /* change the code above this line */
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/create-flexible-layouts-using-auto-fit" target="_blank" rel="noopener">Create Flexible Layouts Using auto-fit</a></p>
+<pre><code class="html">&lt;style&gt;
+  .container2 {
+    font-size: 40px;
+    min-height: 100px;
+    width: 100%;
+    background: Silver;
+    display: grid;
+    /* change the code below this line */
+
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+
+    /* change the code above this line */
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/use-media-queries-to-create-responsive-layouts" target="_blank" rel="noopener">Use Media Queries to Create Responsive Layouts</a></p>
+<pre><code class="html">&lt;style&gt;
+  @media (min-width: 400px){
+    .container{
+      /* change the code below this line */
+
+      grid-template-areas:
+        &quot;header header&quot;
+        &quot;advert content&quot;
+        &quot;footer footer&quot;;
+
+    /* change the code above this line */
+    }
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/create-grids-within-grids" target="_blank" rel="noopener">Create Grids within Grids</a></p>
+<pre><code class="html">&lt;style&gt;
+  .item3 {
+    background: PaleTurquoise;
+    grid-area: content;
+    /* enter your code below this line */
+    display:grid;
+    grid-template-column: auto 1fr;
+
+    /* enter your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/06/28/CSS网格布局/" title="CSS网格布局">http://xuquan.site/2018/06/28/CSS网格布局/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+          
+            <a href="/tags/freecodecamp/" rel="tag"><i class="fa fa-tag"></i> freecodecamp</a>
+          
+            <a href="/tags/grid/" rel="tag"><i class="fa fa-tag"></i> grid</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/28/CSS Flex布局/" rel="next" title="CSS Flex布局">
+                <i class="fa fa-chevron-left"></i> CSS Flex布局
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/28/响应式页面设计准则/" rel="prev" title="响应式页面设计准则">
+                响应式页面设计准则 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#通过设置父元素来搭建整体结构"><span class="nav-number">1.</span> <span class="nav-text">通过设置父元素来搭建整体结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过设置子元素来调整单个网格的布局"><span class="nav-number">2.</span> <span class="nav-text">通过设置子元素来调整单个网格的布局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对网格的位置进行布局"><span class="nav-number">3.</span> <span class="nav-text">对网格的位置进行布局</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以下是这一部分习题的解答："><span class="nav-number"></span> <span class="nav-text">以下是这一部分习题的解答：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Introduction-to-the-CSS-Grid-Challenges"><span class="nav-number"></span> <span class="nav-text">Introduction to the CSS Grid Challenges</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/06/28/CSS网格布局/';
+          this.page.identifier = '2018/06/28/CSS网格布局/';
+          this.page.title = 'CSS网格布局';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

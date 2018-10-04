@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,ES6," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Learning Card 扩展运算符 写法： ... 用途：将数组转为参数序列 应用 复制数组 合并数组 转换字符串     数组的新方法 Array.from() 将类似数组的及有遍历接口的对象转换成数组   Array.of()   数组实例的新方法 copyWith(target, start, end) 复制数组内的元素到特定位置   find 找到第一个符合条件的元素   findIn">
+<meta name="keywords" content="JavaScript,ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6学习笔记之数组的扩展">
+<meta property="og:url" content="http://xuquan.site/2018/08/03/ES6学习笔记之数组的扩展/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="Learning Card 扩展运算符 写法： ... 用途：将数组转为参数序列 应用 复制数组 合并数组 转换字符串     数组的新方法 Array.from() 将类似数组的及有遍历接口的对象转换成数组   Array.of()   数组实例的新方法 copyWith(target, start, end) 复制数组内的元素到特定位置   find 找到第一个符合条件的元素   findIn">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-08T08:16:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6学习笔记之数组的扩展">
+<meta name="twitter:description" content="Learning Card 扩展运算符 写法： ... 用途：将数组转为参数序列 应用 复制数组 合并数组 转换字符串     数组的新方法 Array.from() 将类似数组的及有遍历接口的对象转换成数组   Array.of()   数组实例的新方法 copyWith(target, start, end) 复制数组内的元素到特定位置   find 找到第一个符合条件的元素   findIn">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/08/03/ES6学习笔记之数组的扩展/"/>
+
+
+
+
+
+  <title>ES6学习笔记之数组的扩展 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/03/ES6学习笔记之数组的扩展/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">ES6学习笔记之数组的扩展</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-03T23:56:24+08:00">
+                2018-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/03/ES6学习笔记之数组的扩展/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/03/ES6学习笔记之数组的扩展/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/03/ES6学习笔记之数组的扩展/" class="leancloud_visitors" data-flag-title="ES6学习笔记之数组的扩展">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  995 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><ul>
+<li>扩展运算符<ul>
+<li>写法： <code>...</code></li>
+<li>用途：将数组转为参数序列</li>
+<li>应用<ul>
+<li>复制数组</li>
+<li>合并数组</li>
+<li>转换字符串</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数组的新方法<ul>
+<li><code>Array.from()</code><ul>
+<li>将类似数组的及有遍历接口的对象转换成数组</li>
+</ul>
+</li>
+<li><code>Array.of()</code></li>
+</ul>
+</li>
+<li>数组实例的新方法<ul>
+<li><code>copyWith(target, start, end)</code><ul>
+<li>复制数组内的元素到特定位置</li>
+</ul>
+</li>
+<li><code>find</code><ul>
+<li>找到第一个符合条件的元素</li>
+</ul>
+</li>
+<li><code>findIndex</code><ul>
+<li>找到第一个符合条件的元素的位置</li>
+</ul>
+</li>
+<li><code>fill()</code><ul>
+<li>填充数组</li>
+</ul>
+</li>
+<li><code>keys(), values(), entries()</code><ul>
+<li>遍历数组的键名、键值、键值对</li>
+</ul>
+</li>
+<li><code>includes</code><ul>
+<li>检查数组中是否包含某个元素</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<hr>
+<h3 id="1-扩展运算符"><a href="#1-扩展运算符" class="headerlink" title="1. 扩展运算符"></a>1. 扩展运算符</h3><p>扩展运算符的写法是<code>...</code>三个点，用于将一个数组转为用逗号分隔的参数序列</p>
+<pre><code class="js">console.log(...[1,2,3]);  // 1 2 3
+
+function push(array, ...items) {
+  array.push(...items);
+}
+function add(x, y) {
+  return x + y;
+}
+const numbers = [4, 38];
+add(...numbers) //42
+</code></pre>
+<h4 id="辨析：扩展运算符-VS-rest参数"><a href="#辨析：扩展运算符-VS-rest参数" class="headerlink" title="辨析：扩展运算符 VS rest参数"></a>辨析：扩展运算符 VS rest参数</h4><p>扩展运算符与rest参数正好相反。扩展运算符用于将数组转换为参数序列，即<code>...array</code>；rest参数的写法是<code>...变量</code>，传入的变量是一系列参数，但是rest参数整体作为数组使用。</p>
+<p>扩展运算符可以直接将数组转换为参数，因此不用使用<code>apply</code>方法。</p>
+<p>####应用</p>
+<ol>
+<li><p>复制数组</p>
+<p>数组是复合数据类型，直接复制只能复制指向底层数据结构的指针，而不能真正克隆数组（浅拷贝和深拷贝的区别）；扩展运算符可以简便地复制数组</p>
+<pre><code class="js">const a1 = [1, 2];
+//写法1
+const a2 = [...a1];
+//写法2
+const [...a2] = a1;
+</code></pre>
+</li>
+<li><p>合并数组</p>
+<p>ES5使用<code>concat</code>方法来合并数组，ES6利用扩展运算符可以更方便地合并数组</p>
+<pre><code class="js">[...arr1, ...arr2, ...arr3]
+</code></pre>
+</li>
+<li><p>转换字符串为数组</p>
+<pre><code class="js">[...&#39;hello&#39;]  // [&#39;h&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;]
+</code></pre>
+</li>
+</ol>
+<h3 id="数组的新方法"><a href="#数组的新方法" class="headerlink" title="数组的新方法"></a>数组的新方法</h3><h4 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from()"></a><code>Array.from()</code></h4><p><code>Array.from()</code>方法用于将类似数组的对象（array-like object）和可遍历的对象转成真正的数组。</p>
+<pre><code class="js">let nameSet = new Set([&#39;a&#39;, &#39;b&#39;]);
+Array.from(nameSet) //[&#39;a&#39;, &#39;b&#39;]
+</code></pre>
+<p><code>Array.from()</code>还可以接受第二个参数，起到类似于<code>map</code>的作用，对每个元素进行处理，最终返回到新的数组中</p>
+<pre><code class="js">Array.from([1, 2, 3], (x)=&gt; x * x)  //[1, 4, 9]
+</code></pre>
+<h4 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of()"></a><code>Array.of()</code></h4><p><code>Array.of()</code>用于将一组值转换为数组。</p>
+<pre><code class="js">Array.of(1, 2, 3)  //[1, 2, 3]
+</code></pre>
+<p>这个方法用于弥补<code>Array()</code>方法在参数较少时，无法生成由参数构成的数组的缺陷。</p>
+<pre><code class="js">Array() //[]
+Array(3) //[, , ,]
+Array(1, 2, 3) //[1, 2, 3]
+
+Array.of() //[]
+Array.of(undefined) //[undefined]
+Array.of(1) //[1]
+Array.of(1, 2, 3) [1, 2, 3]
+</code></pre>
+<h3 id="数组实例的新方法"><a href="#数组实例的新方法" class="headerlink" title="数组实例的新方法"></a>数组实例的新方法</h3><h4 id="copyWithin"><a href="#copyWithin" class="headerlink" title="copyWithin()"></a><code>copyWithin()</code></h4><p>将指定位置的成员复制到其他位置，覆盖原有元素。</p>
+<pre><code class="js">Array.prototype.copyWithin(target, start = 0, end = this.length);
+</code></pre>
+<ul>
+<li>target(必需): 从该位置开始替换数据</li>
+<li>start(可选)：从该位置开始读取数据</li>
+<li>end(可选)： 到该位置前停止读取数据</li>
+</ul>
+<pre><code class="js">[1, 2, 3, 4, 5].copyWithin(0, 3)  //[4, 5, 3, 4, 5]
+</code></pre>
+<h4 id="find-和findIndex"><a href="#find-和findIndex" class="headerlink" title="find()和findIndex"></a><code>find()</code>和<code>findIndex</code></h4><p><code>find</code>用于找出第一个符合条件的数组成员</p>
+<pre><code class="js">[1, 2, 3].find((n) =&gt; n &gt; 2)  // 3
+</code></pre>
+<p><code>findIndex</code>用于找到第一个符合条件的数组成员的位置</p>
+<pre><code class="js">[1, 2, 3].findIndex((n) =&gt; n &gt; 2)  // 2
+</code></pre>
+<p>这两个方法都可以识别<code>NaN</code>，弥补<code>indexOf</code>的不足。</p>
+<h4 id="fill"><a href="#fill" class="headerlink" title="fill()"></a><code>fill()</code></h4><p>使用给定值填充数组。用于初始化空数组非常方便</p>
+<pre><code class="js">new Array(3).fill(7) //[7, 7, 7]
+</code></pre>
+<p>也可以指定填充的起始位置和结束位置</p>
+<pre><code class="js">[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].fill(7, 1, 2)  //[&#39;a&#39;, 7, &#39;b&#39;]
+</code></pre>
+<h4 id="entries-keys-values"><a href="#entries-keys-values" class="headerlink" title="entries(), keys(), values()"></a><code>entries(), keys(), values()</code></h4><p>分别对键名、键值、键值对进行遍历。</p>
+<p>可以用<code>for...of</code>循环，也可以手动调用遍历器对象的<code>next</code>方法。</p>
+<pre><code class="js">for(let index of [&#39;a&#39;, &#39;b&#39;].keys()) {
+  console.log(index);
+}
+//0 
+//1
+</code></pre>
+<h4 id="includes"><a href="#includes" class="headerlink" title="includes"></a><code>includes</code></h4><p>返回一个布尔值，表示数组是否包含特定的值</p>
+<pre><code class="js">[1, 2, 3].includes(2)  //true
+</code></pre>
+<p>可以添加第二个参数，规定开始搜索的起始位置</p>
+<pre><code class="js">[1, 2, 3].includes(3, 3) //false
+</code></pre>
+<hr>
+<blockquote>
+<p>ES6学习笔记的内容主要基于阮一峰老师的<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">《ECMAScript 6入门》</a>，原文请见<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">链接</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/08/03/ES6学习笔记之数组的扩展/" title="ES6学习笔记之数组的扩展">http://xuquan.site/2018/08/03/ES6学习笔记之数组的扩展/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/tags/ES6/" rel="tag"><i class="fa fa-tag"></i> ES6</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/03/ES6学习笔记之对象的扩展/" rel="next" title="ES6学习笔记之对象的扩展">
+                <i class="fa fa-chevron-left"></i> ES6学习笔记之对象的扩展
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/03/ES6学习笔记之Set和Map/" rel="prev" title="ES6学习笔记之Set和Map">
+                ES6学习笔记之Set和Map <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Learning-Card"><span class="nav-number">1.</span> <span class="nav-text">Learning Card</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-扩展运算符"><span class="nav-number">2.</span> <span class="nav-text">1. 扩展运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#辨析：扩展运算符-VS-rest参数"><span class="nav-number">2.1.</span> <span class="nav-text">辨析：扩展运算符 VS rest参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的新方法"><span class="nav-number">3.</span> <span class="nav-text">数组的新方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-from"><span class="nav-number">3.1.</span> <span class="nav-text">Array.from()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-of"><span class="nav-number">3.2.</span> <span class="nav-text">Array.of()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组实例的新方法"><span class="nav-number">4.</span> <span class="nav-text">数组实例的新方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#copyWithin"><span class="nav-number">4.1.</span> <span class="nav-text">copyWithin()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find-和findIndex"><span class="nav-number">4.2.</span> <span class="nav-text">find()和findIndex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fill"><span class="nav-number">4.3.</span> <span class="nav-text">fill()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#entries-keys-values"><span class="nav-number">4.4.</span> <span class="nav-text">entries(), keys(), values()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#includes"><span class="nav-number">4.5.</span> <span class="nav-text">includes</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/08/03/ES6学习笔记之数组的扩展/';
+          this.page.identifier = '2018/08/03/ES6学习笔记之数组的扩展/';
+          this.page.title = 'ES6学习笔记之数组的扩展';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

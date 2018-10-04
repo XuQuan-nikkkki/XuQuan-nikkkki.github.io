@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="OIS,TCP,IP,HTTP," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="经常看到的4层、5层和7层网络体系结构模型分别有什么区别呢？">
+<meta name="keywords" content="OIS,TCP,IP,HTTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络体系结构模型:4层?5层?还是7层?">
+<meta property="og:url" content="http://xuquan.site/2018/09/09/网络体系结构模型-4层-5层-还是7层/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="经常看到的4层、5层和7层网络体系结构模型分别有什么区别呢？">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdgy1fv36oaav1tj30xc1380y2.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fv37jrv7pjj30i30ac0vc.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fv37r0kpc6j30qg0a00uf.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fv37vbs72lj30lg08rwf2.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdgy1fv37x3f40fg30v4183wkt.gif">
+<meta property="og:updated_time" content="2018-09-13T12:08:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络体系结构模型:4层?5层?还是7层?">
+<meta name="twitter:description" content="经常看到的4层、5层和7层网络体系结构模型分别有什么区别呢？">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/0069RVTdgy1fv36oaav1tj30xc1380y2.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/09/09/网络体系结构模型-4层-5层-还是7层/"/>
+
+
+
+
+
+  <title>网络体系结构模型:4层?5层?还是7层? | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/09/09/网络体系结构模型-4层-5层-还是7层/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">网络体系结构模型:4层?5层?还是7层?</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-09T12:12:12+08:00">
+                2018-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/09/网络体系结构模型-4层-5层-还是7层/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/09/网络体系结构模型-4层-5层-还是7层/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/09/网络体系结构模型-4层-5层-还是7层/" class="leancloud_visitors" data-flag-title="网络体系结构模型:4层?5层?还是7层?">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,786 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>经常看到的4层、5层和7层网络体系结构模型分别有什么区别呢？</p>
+<a id="more"></a>
+<p>网络体系结构有两个重要的模型：OSI参考模型（七层模型）和TCP/IP模型（四层模型）。在某些地方还能看到综合OSI模型和TCP/IP的五层因特网协议模型。它们彼此能对应起来，也就是说，这3套模型其实指的是一样的内容，只是划分标准不同。</p>
+<h3 id="OSI七层协议模型"><a href="#OSI七层协议模型" class="headerlink" title="OSI七层协议模型"></a>OSI七层协议模型</h3><p>OSI模型是<strong>标准版组织制定的理论规范</strong>，事实上与OSI模型相关的协议<strong>没有被任何人用到</strong>，但是这个模型本身具有相当普遍的一样，且仍然有效，它对讨论网络体系结构中的每一层功能仍然很重要。</p>
+<p><strong>OSI（Open Systems Interconnection）模型</strong>的全称是<strong>开放系统互联参考模型</strong>，它有7层，适用于这7层的基本元素可以简要概括如下：</p>
+<ol>
+<li>应该在需要一个<strong>不同抽象体</strong>的地方创建一层</li>
+<li>每一层都应该执行一个<strong>明确定义的功能</strong></li>
+<li>每一层功能的选择应该向定义<strong>国际标准化协议的目标看齐</strong></li>
+<li>层与层边界的选择应该<strong>使跨越接口的信息流最小</strong></li>
+<li>层数应该足够多，保证不同的功能不会被混杂在同一层中，但同时层数又不能太多，以免体系结构变得过于庞大</li>
+</ol>
+<blockquote>
+<p>OSI模型本身不是一个网络体系结构，因为它没有定义每一层的服务和所用的协议。它只是指明了每一层应该做什么事情。</p>
+<p>每一层的标准并不属于参考模型本身，它们是作为单独的国际标准发布的。</p>
+</blockquote>
+<p>我们从下往上来看每一层：</p>
+<h4 id="物理层-Physical-Layer"><a href="#物理层-Physical-Layer" class="headerlink" title="物理层 Physical Layer"></a>物理层 Physical Layer</h4><p>物理层关注在一条通信信道上传输原始比特。即一方发送了比特1，另一方收到的也是比特1。</p>
+<p>典型问题包括：用什么电子信号来表示1和0；一个比特持续多少纳秒；传输是否可以在两个方向上同时进行等；</p>
+<p>这些问题涉及机械、电子和时序接口，以及物理层一下的物理传输介质等。</p>
+<h4 id="数据链路层-Data-Link-Layer"><a href="#数据链路层-Data-Link-Layer" class="headerlink" title="数据链路层 Data Link Layer"></a>数据链路层 Data Link Layer</h4><p>数据链路层的主要任务是将一个原始的传输设备转变成一条没有漏检传输错误的线路（物理寻址）。发送方将输入的数据拆分成数据帧（data frame），顺序发送这些数据帧。如果服务是可靠的，则接收方必须确认正确几首到每一帧，即给发送方回复一个确认帧（acknowledgement frame）。</p>
+<h4 id="网络层-Network-Layer"><a href="#网络层-Network-Layer" class="headerlink" title="网络层 Network Layer"></a>网络层 Network Layer</h4><p>主要功能是控制子网的运行。关键的设计问题是如何将数据包从源端路由到接收方。</p>
+<h4 id="传输层-Transport-Layer"><a href="#传输层-Transport-Layer" class="headerlink" title="传输层 Transport Layer"></a>传输层 Transport Layer</h4><p>传输层接收来自上一层的数据，在必要的时候把这些数据分割成较小的单元，然后将这些数据单元传输给网络层，并且确保这些数据单元正确到达另一端。</p>
+<p>传输层还决定了数据传递到会话层的路径。</p>
+<h4 id="会话层-Session-Layer"><a href="#会话层-Session-Layer" class="headerlink" title="会话层 Session Layer"></a>会话层 Session Layer</h4><p>会话层允许不同机器上的用户建立会话。会话提供各种服务，包括对话控制（记录该由谁来传递数据）、令牌管理（禁止双方同时执行同一个关键操作），以及同步功能。</p>
+<h4 id="表示层-Presentation-Layer"><a href="#表示层-Presentation-Layer" class="headerlink" title="表示层 Presentation Layer"></a>表示层 Presentation Layer</h4><p>表示层关注传递信息的语法和语义，管理这些抽象的数据结构，并允许定义和交换更高层的数据结构。</p>
+<h4 id="应用层-Application-Layer"><a href="#应用层-Application-Layer" class="headerlink" title="应用层 Application Layer"></a>应用层 Application Layer</h4><p>应用层包含了用户通常需要的各种各样的协议，比如HTTP。</p>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fv36oaav1tj30xc1380y2.jpg" width="60%"></p>
+<h3 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP/IP模型"></a>TCP/IP模型</h3><p>TCP/IP协议模型则正好相反，它是TCP/IP技术的实际模型，《计算机网络》中这样形容这一模型：“模型本身没有多大用处，但它的协议却已广为流传”。因此四层模型也用来指TCP/IP协议栈，每一层对应不同的网络通信协议。</p>
+<p>TCP/IP模型被ARPANET和Internet在全球范围使用。它最初的设计目的是为了以无缝的方式将多个网络连接起来，因此以其中最主要的两个协议命名。</p>
+<p>TCP/IP模型包含四层：</p>
+<h4 id="链路层-Link-Layer"><a href="#链路层-Link-Layer" class="headerlink" title="链路层 Link Layer"></a>链路层 Link Layer</h4><p>链路层描述了链路必须完成什么功能才能满足无连接的互联网络层需求，比如串行线和经典以太链路。</p>
+<p>这不是一个真正意义上的层，而是主机与传输线路之间的一个接口。</p>
+<blockquote>
+<p>TCP/IP模型的设计目的包括：</p>
+<ul>
+<li>美国国防部担心贵重的主机、路由器和互联网络的网关可能会在片刻间被来自前苏联的攻击而突然崩溃</li>
+<li>在损失子网硬件的情况下网络还能继续工作，原有的会话不能被打断</li>
+</ul>
+</blockquote>
+<h4 id="互联网层-Internet-Layer"><a href="#互联网层-Internet-Layer" class="headerlink" title="互联网层 Internet Layer"></a>互联网层 Internet Layer</h4><p>TCP/IP中的互联网层大致对应OSI中的网络层。</p>
+<p>互联网层的任务是允许主机将数据包注入到任何网络，并且让这些数据包独立地到底接收方。</p>
+<p>互联网层定义了官网的数据包格式和协议，即因特网协议（Internet Protocol, IP），与之相伴的还有一个辅助协议，成为因特网控制报文协议（Internet Control Message Protocol, ICMP）。</p>
+<h4 id="传输层-Transport-Layer-1"><a href="#传输层-Transport-Layer-1" class="headerlink" title="传输层 Transport Layer"></a>传输层 Transport Layer</h4><p>传输层的设计目的是允许源主机和目标主机上的对等实体进行对话。它定义了两个端对端的传输协议。</p>
+<ul>
+<li>传输控制协议（Transport Control Protocol, TCP）：它是一个可靠的、面向连接的协议，允许从一台机器发出的字节流正确无误地交付到互联网的另一台机器，</li>
+<li>用户数据报协议（User Datagram Protocol, UDP）：它是一个不可靠的、无连接协议，适用于那些不想要TCP的有序性或流量控制功能。被广泛用于哪些一次性的基于客户机-服务器类型的”请求-应答“查询应用。</li>
+</ul>
+<h4 id="应用层-Application-Layer-1"><a href="#应用层-Application-Layer-1" class="headerlink" title="应用层 Application Layer"></a>应用层 Application Layer</h4><p>TCP/IP模型没有会话层和表示层，应用层简单包含了所需的任何会话和表示功能。</p>
+<p>应用层包含了所有的高层协议，包括虚拟终端协议（TELNET）、文件传输协议（FTP）、电子邮件协议（SMTP）、域名系统（DNS）和超文本传输协议（HTTP）等。</p>
+<p>下图是OSI模型与TCP/IP模型的对比：</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fv37jrv7pjj30i30ac0vc.jpg" alt="Image result for tcp/ip osi"></p>
+<h3 id="混合模型"><a href="#混合模型" class="headerlink" title="混合模型"></a>混合模型</h3><p>因特网协议栈五层模型是OSI和TCP/IP模型的综合。包括物理层、数据链路层、网络层、传输层和应用层。</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fv37r0kpc6j30qg0a00uf.jpg" alt="Image result for osi 5 layer"></p>
+<p>三个模型的对比如下：</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fv37vbs72lj30lg08rwf2.jpg" alt="Image result for osi 5 layer tcp/ip"></p>
+<p>这里附一个网上看到的非常详细的层级与协议图：</p>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fv37x3f40fg30v4183wkt.gif" alt="20180115133703203"></p>
+<blockquote>
+<p>参考：</p>
+<p>《计算机网络》第5版，清华大学出版社，Andrew S.Tanenbaum, David J.Wetherall著</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/09/09/网络体系结构模型-4层-5层-还是7层/" title="网络体系结构模型:4层?5层?还是7层?">http://xuquan.site/2018/09/09/网络体系结构模型-4层-5层-还是7层/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OIS/" rel="tag"><i class="fa fa-tag"></i> OIS</a>
+          
+            <a href="/tags/TCP/" rel="tag"><i class="fa fa-tag"></i> TCP</a>
+          
+            <a href="/tags/IP/" rel="tag"><i class="fa fa-tag"></i> IP</a>
+          
+            <a href="/tags/HTTP/" rel="tag"><i class="fa fa-tag"></i> HTTP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/08/Nikkkki的一周分享007/" rel="next" title="Nikkkki的一周分享007">
+                <i class="fa fa-chevron-left"></i> Nikkkki的一周分享007
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/09/简单了解负载均衡/" rel="prev" title="简单了解负载均衡">
+                简单了解负载均衡 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI七层协议模型"><span class="nav-number">1.</span> <span class="nav-text">OSI七层协议模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#物理层-Physical-Layer"><span class="nav-number">1.1.</span> <span class="nav-text">物理层 Physical Layer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据链路层-Data-Link-Layer"><span class="nav-number">1.2.</span> <span class="nav-text">数据链路层 Data Link Layer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络层-Network-Layer"><span class="nav-number">1.3.</span> <span class="nav-text">网络层 Network Layer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传输层-Transport-Layer"><span class="nav-number">1.4.</span> <span class="nav-text">传输层 Transport Layer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#会话层-Session-Layer"><span class="nav-number">1.5.</span> <span class="nav-text">会话层 Session Layer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表示层-Presentation-Layer"><span class="nav-number">1.6.</span> <span class="nav-text">表示层 Presentation Layer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用层-Application-Layer"><span class="nav-number">1.7.</span> <span class="nav-text">应用层 Application Layer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP模型"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#链路层-Link-Layer"><span class="nav-number">2.1.</span> <span class="nav-text">链路层 Link Layer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#互联网层-Internet-Layer"><span class="nav-number">2.2.</span> <span class="nav-text">互联网层 Internet Layer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传输层-Transport-Layer-1"><span class="nav-number">2.3.</span> <span class="nav-text">传输层 Transport Layer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用层-Application-Layer-1"><span class="nav-number">2.4.</span> <span class="nav-text">应用层 Application Layer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合模型"><span class="nav-number">3.</span> <span class="nav-text">混合模型</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/09/09/网络体系结构模型-4层-5层-还是7层/';
+          this.page.identifier = '2018/09/09/网络体系结构模型-4层-5层-还是7层/';
+          this.page.title = '网络体系结构模型:4层?5层?还是7层?';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

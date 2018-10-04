@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="node.js," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="所谓跨域，就是浏览器对于JavaScript的同源策略的限制。 浏览器认为跨域情况下的数据请求是不安全的。  那么同源策略是什么呢？">
+<meta name="keywords" content="node.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node.js学习笔记: 搞定跨域问题">
+<meta property="og:url" content="http://xuquan.site/2018/08/10/写给小白的node-js学习笔记15-搞定跨域问题/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="所谓跨域，就是浏览器对于JavaScript的同源策略的限制。 浏览器认为跨域情况下的数据请求是不安全的。  那么同源策略是什么呢？">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fu5s7x3gx5j30dc02h0t0.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu5s8t1qguj30gw021q3g.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdgy1fu5u1s8n9aj30gn01bt8j.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fu5u99xcd6j30h70243yi.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu5w999kplj31kw0ffgoy.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu61digye0j30h001ymx7.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu62rws290j30ma07cdi3.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62l7jztxj30a90290su.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu62ngkp80j30ab01z3yn.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62pds4g4j30a302dt8v.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fu62tp6s8zj30gm019jr8.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62x0co2sj30cq08mgmq.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62y5yo9tj30bp08mab4.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu666k0ic8j30id074dgm.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu66ghc7v6j30qp0li42f.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu67ntgwh1j308003ejrk.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu67ov99a5j30d208ojt4.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdgy1fu67v5inboj317u0oin18.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu680t7tv8j30l00d10tm.jpg">
+<meta property="og:updated_time" content="2018-08-14T03:59:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node.js学习笔记: 搞定跨域问题">
+<meta name="twitter:description" content="所谓跨域，就是浏览器对于JavaScript的同源策略的限制。 浏览器认为跨域情况下的数据请求是不安全的。  那么同源策略是什么呢？">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fu5s7x3gx5j30dc02h0t0.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/08/10/写给小白的node-js学习笔记15-搞定跨域问题/"/>
+
+
+
+
+
+  <title>node.js学习笔记: 搞定跨域问题 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/10/写给小白的node-js学习笔记15-搞定跨域问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">node.js学习笔记: 搞定跨域问题</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T22:38:00+08:00">
+                2018-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/10/写给小白的node-js学习笔记15-搞定跨域问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/10/写给小白的node-js学习笔记15-搞定跨域问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/10/写给小白的node-js学习笔记15-搞定跨域问题/" class="leancloud_visitors" data-flag-title="node.js学习笔记: 搞定跨域问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,464 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>所谓<strong>跨域</strong>，就是<strong>浏览器对于JavaScript的同源策略的限制</strong>。</p>
+<p>浏览器认为跨域情况下的数据请求是不安全的。</p>
+</blockquote>
+<p>那么同源策略是什么呢？</p>
+<a id="more"></a>
+<h3 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h3><p><strong>同源</strong>保证指A网页设置的Cookie，B网页不能打开，除非这两个网页同源，同源指的是：</p>
+<blockquote>
+<ul>
+<li>协议相同（protocol）</li>
+<li>域名相同（host）</li>
+<li>端口相同（port）</li>
+</ul>
+</blockquote>
+<p>这三个中任意一个不同，网站间的数据请求与传输就构成了跨域调用，会受到同源策略的限制。</p>
+<p>举例来说，<a href="http://www.example.com，`http://`就是协议，`www.example.com`就是域名，端口是`80`（默认端口可以省略）" target="_blank" rel="noopener">http://www.example.com，`http://`就是协议，`www.example.com`就是域名，端口是`80`（默认端口可以省略）</a></p>
+<blockquote>
+<p><strong>同源策略</strong>限制了从一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的关键安全机制。</p>
+</blockquote>
+<h3 id="解决跨域"><a href="#解决跨域" class="headerlink" title="解决跨域"></a>解决跨域</h3><p>虽然同源策略是出于安全考虑，但是在使用时会有很多麻烦，所以我们还是会想办法规避它的限制。</p>
+<p>我们可以写一个简单的ajax请求作为请求失败的例子：</p>
+<ul>
+<li>html部分就只有一个按钮，点击按钮会向<code>http://localhost:9000</code>发送一个ajax请求</li>
+</ul>
+<pre><code class="html">&lt;input type=&quot;submit&quot; id=&quot;submit&quot; value=&quot;提交&quot; /&gt;
+&lt;script&gt;
+    let oBtn = document.getElementById(&quot;submit&quot;);
+  oBtn.onclick = function() {
+    var xhr = new XMLHttpRequest();
+    xhr.open(&quot;GET&quot;, &quot;http://localhost:9000&quot;, true);
+    xhr.send();
+    xhr.onreadystatechange = function() {
+      if(xhr.readyState === 4) {
+        if(xhr.status === 200) {
+          console.log(&quot;succeed: &quot; + xhr.responseText);
+        } else {
+          console.log(&quot;failed: &quot; + xhr.status);
+        }
+      }
+    }
+  }
+&lt;/script&gt;
+</code></pre>
+<ul>
+<li>后端部分是一个简单的服务器，只要接收到请求，就回复一个字符串</li>
+</ul>
+<pre><code class="js">const http = require(&quot;http&quot;);
+let server = http.createServer((req, res) =&gt; {
+  res.end(&quot;hello world&quot;);
+})
+server.listen(9000, () =&gt; {
+  console.log(&quot;server running at 9000&quot;);
+})
+</code></pre>
+<p>页面如下：</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fu5s7x3gx5j30dc02h0t0.jpg" alt="image-20180811151447726"></p>
+<p>点击后我们可以在控制台看到报错信息：</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu5s8t1qguj30gw021q3g.jpg" alt="image-20180811151531666"></p>
+<p>那么解决方法有哪些呢？</p>
+<h4 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h4><p>在HTML标签里，有一些标签比如img, script是不受跨域限制的，所以我们可以利用这一点绕过限制。</p>
+<ul>
+<li>前端</li>
+</ul>
+<pre><code class="html">&lt;button id=&#39;btn&#39;&gt;点我发送ajax请求&lt;/button&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+  // 1. 创建一个script标签
+    var script = document.createElement(&#39;script&#39;);
+  // 2. 挂载一个全局函数，我们先给函数一个函数名
+  var callbackName = &#39;callback_&#39; + Date.now();
+  // 3. 服务器会返回数据，这个数据会在函数中执行
+  window[callbackName] = function(data) {
+    console.log(data);
+  }
+  // 4. 把函数名传递给服务器
+  script.scr = &#39;http://localhost:9000/?callback=&#39; + callbackName;
+  // 5. 把script标签插入到body中
+  document.body.appendChild(script);
+&lt;/script&gt;
+</code></pre>
+<ul>
+<li>后端</li>
+</ul>
+<pre><code class="js">// 1. 引入必要模块
+const http = require(&quot;http&quot;);
+const url = require(&#39;url&#39;);
+// 2. 创建服务器
+let server = http.createServer((req, res) =&gt; {
+  // 3. 获取请求的url，解析出函数名
+  let fnName = url.parse(req.url, true).query.callback;
+  // 4. 将函数数据返回给前端
+  res.end(fnName + &#39;(&quot;hello world)&#39;);
+})
+// 5. 服务器监听
+server.listen(9000, () =&gt; {
+  console.log(&quot;server running at 9000&quot;);
+})
+</code></pre>
+<p>我们做了这样几件事：</p>
+<ol>
+<li><p>我们在前端代码中写了一个<code>script</code>文件的内容，并且插入到body当中，这个文件会和其他<code>script</code>文件一样被执行，这里如果写成平时嵌入的script文件的形式，应该是这样的(我们假设callback函数名是callback_1234）：</p>
+<pre><code class="html">&lt;script src=&quot;http://localhost:9000?calback=callback_1234&quot;&gt;
+    //现在已有一个定义好的全局函数，即callback_1234
+  //现在要执行的内容就是返回回来的data
+  ${data}
+&lt;/script&gt;
+</code></pre>
+</li>
+<li><p>前端的请求发送到了<code>http://localhost:9000</code>，后端拿到的完整<code>req.url</code>是<code>http://localhost:9000/?callback=callback_1234</code>，我们用<code>url</code>模块解析url，可以获取到<code>query</code>是一个json数据</p>
+<pre><code class="json">{callback: callback_1234}
+</code></pre>
+<p>我们将获取到的<code>callback</code>数据保存为<code>fnName</code>，这样方便我们加入我们想要返回给前端的数据，然后让前端依照这个函数执行</p>
+</li>
+<li><p>我们先尝试只返回给前端一个字符串，我们希望前端能输出这个字符串：</p>
+<pre><code class="js">res.end(fnName + &quot;(&#39;hello world&#39;)&quot;);
+//实际返回给前端的内容就是callback_1234(&quot;hello world&quot;)
+</code></pre>
+</li>
+<li><p>前端收到了这个字符串<code>callback_1234(&quot;hello world&quot;)</code>，前面提到前端已经有这个<code>callback_1234</code>的全局函数了，那么前端要执行的<code>${data}</code>就是：</p>
+<pre><code class="js">&lt;script src=&quot;http://localhost:9000?calback=callback_1234&quot;&gt;
+    callback_1234(&quot;hello world&quot;);
+&lt;/script&gt;
+</code></pre>
+<p>即：</p>
+<pre><code class="js">console.log(&quot;hello world&quot;);
+</code></pre>
+<p>我们再看一看浏览器的控制台</p>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fu5u1s8n9aj30gn01bt8j.jpg" alt="image-20180811161805232"></p>
+</li>
+</ol>
+<p>这样我们就实现了用jsonp的方法来解决跨域。</p>
+<p>需要注意的是，<code>response.end()</code>方法只能传输字符串或者Buffer，如果我们需要传输其他数据结构，还需要添加解析的步骤：</p>
+<pre><code class="html">&lt;button id=&quot;btn&quot;&gt;点我发ajax请求&lt;/button&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+  var script = document.createElement(&#39;script&#39;);
+  var callbackName = &#39;callback_&#39; + Date.now();
+  window[callbackName] = function (data) {
+    console.log(JSON.parse(data)); //把字符串解析成data
+  }
+  script.src = &#39;http://localhost:9000?callback=&#39; + callbackName;
+  document.body.appendChild(script);
+&lt;/script&gt;
+</code></pre>
+<pre><code class="js">const http = require(&#39;http&#39;);
+const url = require(&#39;url&#39;);
+let server = http.createServer((req,res)=&gt;{
+  let fnName = url.parse(req.url,true).query.callback;
+  let data = JSON.stringify({msg:&#39;hello world&#39;}); //json解析成字符串
+  let str = fnName + `(&#39;${data}&#39;)`;      
+  res.end(str);
+});
+
+server.listen(9000,()=&gt;{
+ console.log(&quot;server running at 9000&quot;); 
+})
+</code></pre>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fu5u99xcd6j30h70243yi.jpg" alt="image-20180811162517851"></p>
+<blockquote>
+<p>jsonp总结：</p>
+<ol>
+<li>前端代码<ul>
+<li>创建<strong>script标签</strong></li>
+<li>添加<strong>全局函数</strong></li>
+<li><strong>传递函数名</strong>到后端</li>
+</ul>
+</li>
+<li>后端代码<ul>
+<li>获取<strong>响应数据</strong></li>
+<li>返回<strong>函数名（“数据”）</strong>的<strong>字符串</strong>给前端script执行</li>
+</ul>
+</li>
+</ol>
+<p>特征：</p>
+<ul>
+<li>jsonp的请求方式是GET</li>
+<li>没有兼容性问题</li>
+</ul>
+</blockquote>
+<h4 id="CORS（跨域资源共享）"><a href="#CORS（跨域资源共享）" class="headerlink" title="CORS（跨域资源共享）"></a>CORS（跨域资源共享）</h4><p>CORS，跨域资源共享（Cross-Origin Resource Sharing)， 是一个W3C标准。它允许浏览器向跨源服务器发出<code>XMLHttpRequest</code>请求，从而克服了AJAX只能同源使用的限制。</p>
+<p>完成CORS通信需要浏览器和服务器同时支持，目前浏览器都支持该功能，IE浏览器不能低于IE10。服务器则需要实现CORS接口。</p>
+<h5 id="CORS的两种请求"><a href="#CORS的两种请求" class="headerlink" title="CORS的两种请求"></a>CORS的两种请求</h5><p>浏览器将CORS请求分为两种：简单请求和非简单请求。</p>
+<ol>
+<li><p><strong>简单请求</strong></p>
+<p>满足：</p>
+<ul>
+<li>方法： HEAD / GET / POST</li>
+<li>HTTP头信息不超出以下几种字段<ul>
+<li>Accept</li>
+<li>Accept-Language</li>
+<li>Content-Language</li>
+<li>Last-Event-ID</li>
+<li>Content-Type(只接受以下3个值)<ul>
+<li>application/x-www-form-urlencoded</li>
+<li>multipart/form-data</li>
+<li>text/plain</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu5w999kplj31kw0ffgoy.jpg" alt="image-20180811173426777"></p>
+<p>通信条件：</p>
+<ul>
+<li>服务器设置的<code>Access-Control-Allow-Origin</code>中包含CORS请求，这样有两种方式，一个是设置成CORS请求中的<code>origin</code>，还有一种是设置成<code>*</code>，即接受任意域名的请求；</li>
+<li><code>Access-Control-Allow-Credentials</code>设置一个布尔值，表示是否允许浏览器发送Cookie给服务器。设置成<code>true</code>表示服务器明确允许浏览器把Cookie放在请求中一起发给服务器。事实上，这个值也只能设为<code>true</code>，服务器如果不需要cookie，删除该字段即可；</li>
+<li>CORS请求默认不发送Cookie和HTTP认证信息，所以服务器即使设置<code>Access-Control-Allow-Credentials: true</code>也不表示浏览器就会发送cookie，因为还需要开发者在AJAX请求中打开<code>withCredentials</code>属性，将其设置为<code>true</code></li>
+<li>需要注意，如果要发送cookie,<code>Access-Control-Allow-Origin</code>就不能设置为<code>*</code>，必须指定请求中的域名（如果所有域名都可以获取cookie，那也是挺危险的）</li>
+<li>同样地，cookie也会遵循同源策略，只会将设置为服务器域名的cookie发送给服务器，其他域名下的cookie不会发送</li>
+<li><code>Access-Control-Expose-Headers</code>用来指定特定字段</li>
+</ul>
+<pre><code class="html">&lt;button id=&quot;btn&quot;&gt;点我发ajax请求&lt;/button&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        let oBtn = document.getElementById(&quot;btn&quot;);
+        oBtn.onclick = function() {
+            let xhr = new XMLHttpRequest();
+            xhr.open(&quot;get&quot;, &quot;http://localhost:9000&quot;, true);
+            xhr.send();
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
+                    console.log(&quot;succeed: &quot; + xhr.responseText);
+                }
+            }
+        }
+    &lt;/script&gt;
+</code></pre>
+<pre><code class="js">const http = require(&#39;http&#39;);
+
+let server = http.createServer((req,res)=&gt;{
+  res.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;);
+  res.setHeader(&#39;Access-Control-Allow-Credentials&#39;, true);
+  res.end(&quot;hello world&quot;);
+});
+
+server.listen(9000,()=&gt;{
+ console.log(&quot;server running at 9000&quot;); 
+})
+</code></pre>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu61digye0j30h001ymx7.jpg" alt="image-20180811203127014"></p>
+<ol start="2">
+<li><p><strong>非简单请求</strong></p>
+<p>非简单请求即不满足上面简单请求的两个要求，一般有三种情况：</p>
+<ul>
+<li>请求方法是<code>GET</code>或<code>POST</code>之外的方法，如<code>PUT</code>或<code>DELETE</code></li>
+<li>请求头里包含自定义头</li>
+<li><code>Content-Type</code>是<code>application/json</code></li>
+</ul>
+<p>非简单请求会在正式通信前请示服务器，发送一个OPTIONS预检请求（preflight），询问服务器当前页面所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有服务器许可之后，浏览器才会发出正式的<code>XMLHttpRequest</code>请求，否则就会报错。</p>
+<p>预检请求的请求方法是<code>OPTIONS</code>，表明这个请求是用来询问的。</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu62rws290j30ma07cdi3.jpg" alt="image-20180811211959958"></p>
+<p>我们还是用上面的例子做演示：</p>
+<pre><code class="html">&lt;button id=&quot;btn&quot;&gt;点我发ajax请求&lt;/button&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+  let oBtn = document.getElementById(&quot;btn&quot;);
+  oBtn.onclick = function() {
+    let xhr = new XMLHttpRequest();
+    xhr.open(&quot;get&quot;, &quot;http://localhost:9000&quot;, true);
+    xhr.send();
+    xhr.onreadystatechange = function() {
+      if(xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
+        console.log(&quot;succeed: &quot; + xhr.responseText);
+      }
+    }
+  }
+&lt;/script&gt;
+</code></pre>
+<pre><code class="js">const http = require(&#39;http&#39;);
+let server = http.createServer((req,res)=&gt;{
+  res.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;);
+  res.setHeader(&#39;Access-Control-Allow-Credentials&#39;, true);
+  res.end(&quot;hello world&quot;);
+});
+server.listen(9000,()=&gt;{
+ console.log(&quot;server running at 9000&quot;); 
+})
+</code></pre>
+<ol>
+<li><p>第一个触发点（get/post方法之外）</p>
+<pre><code class="js">//xhr.open(&quot;get&quot;, &quot;http://localhost:9000&quot;, true);
+xhr.open(&quot;put&quot;, &quot;http://localhost:9000&quot;, true);
+</code></pre>
+<p>结果：</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62l7jztxj30a90290su.jpg" alt="image-20180811211333327"></p>
+</li>
+<li><p>第二个触发点（加入自定义头）</p>
+<pre><code class="js">xhr.open(&quot;get&quot;, &quot;http://localhost:9000&quot;, true);
+xhr.setRequestHeader(&#39;my-token&#39;, &#39;abc&#39;);
+xhr.send();
+</code></pre>
+<p>结果：</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu62ngkp80j30ab01z3yn.jpg" alt="image-20180811211543137"></p>
+</li>
+<li><p>第三个触发点（<code>Content-Type</code>是<code>application/json</code>)</p>
+<pre><code class="js">xhr.open(&quot;get&quot;, &quot;http://localhost:9000&quot;, true);
+xhr.setRequestHeader(&#39;Content-Type&#39;, &#39;application/json&#39;);
+xhr.send();
+</code></pre>
+<p>结果：</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62pds4g4j30a302dt8v.jpg" alt="image-20180811211734111"></p>
+</li>
+</ol>
+<p>我们可以从报错的信息里看到，预检请求的头信息中有两个重要的特殊字段：</p>
+<ul>
+<li><code>Access-Control-Request-Methods</code>：用来列出CORS请求用到哪些HTTP方法</li>
+<li><code>Access-Control-Request-Headers</code>：指定CORS请求会额外发送的头字段信息</li>
+</ul>
+<p>我们在例子中加入这两个设置：</p>
+<pre><code class="js">let oBtn = document.getElementById(&quot;btn&quot;);
+oBtn.onclick = function() {
+  let xhr = new XMLHttpRequest();
+  xhr.open(&quot;get&quot;, &quot;http://localhost:9000&quot;, true);
+  xhr.setRequestHeader(&#39;my-token&#39;, &#39;abc&#39;)
+  xhr.setRequestHeader(&#39;Content-Type&#39;, &#39;application/json&#39;)
+  xhr.send();
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
+      console.log(&quot;succeed: &quot; + xhr.responseText);
+    }
+  }
+}
+</code></pre>
+<pre><code class="js">const http = require(&#39;http&#39;);
+let server = http.createServer((req,res)=&gt;{
+  res.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;);
+  res.setHeader(&#39;Access-Control-Allow-Credentials&#39;, true);
+  res.setHeader(&#39;Access-Control-Allow-Methods&#39;, &#39;GET, POST, PUT, DELETE&#39;);
+  res.setHeader(&#39;Access-Control-Allow-Headers&#39;, &#39;my-token, content-type&#39;)
+  res.end(&quot;hello world&quot;);
+});
+server.listen(9000,()=&gt;{
+ console.log(&quot;server running at 9000&quot;);
+</code></pre>
+<p>结果：</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fu62tp6s8zj30gm019jr8.jpg" alt="image-20180811212142934"></p>
+<p>这时我们可以在NETWORK里看到两次请求：</p>
+<ul>
+<li><p>预检请求</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62x0co2sj30cq08mgmq.jpg" alt="image-20180811212451993"></p>
+</li>
+<li><p><code>XMLHttpRequest</code>请求</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62y5yo9tj30bp08mab4.jpg" alt="image-20180811212600259"></p>
+</li>
+</ul>
+</li>
+</ol>
+<p>总结：</p>
+<ul>
+<li>CORS需要在服务器端编写代码，浏览器端正常发送ajax请求</li>
+<li>和JSONP相比，CORS支持所有类型的HTTP请求，JSONP的优势则在于支持老式浏览器，以及可以向不支持CORS的网站请求数据</li>
+</ul>
+<h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h4><p>服务器本身不受浏览器同源策略的影响，所以我们可以通过代理来实现跨域数据请求。</p>
+<blockquote>
+<p><strong>核心思路：</strong></p>
+<p>跨域的本质是浏览器向服务器请求数据，浏览器和服务器不同源，导致请求被拒。那么如果我们能让服务器代为发送请求，再由服务器把数据返回给浏览器的话，就可以规避限制了。所以我们实现代理要做的就是：</p>
+<ol>
+<li>浏览器将需要发送的请求告诉服务器（而不是自己发送请求）</li>
+<li>服务器接收到浏览器告诉自己的请求要求并替浏览器发送请求</li>
+<li>服务器获取到请求返回的数据，再回传给浏览器</li>
+</ol>
+</blockquote>
+<h5 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h5><p>我们首先需要配置nginx。</p>
+<ol>
+<li><p>下载</p>
+<pre><code class="bash">brew install nginx
+</code></pre>
+</li>
+<li><p>启动</p>
+<pre><code class="bash">nginx
+</code></pre>
+</li>
+</ol>
+<p>nginx安装后，我们可以在浏览器访问，默认端口是8080，在<code>http://localhost:8080</code>我们会看到这样的界面：</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu666k0ic8j30id074dgm.jpg" alt="image-20180811231751868"></p>
+<p>接着需要配置，我在mac上的配置文件路径是<code>/usr/local/etc/nginx</code>，找到nginx.config文件。</p>
+<pre><code class="python">location /apis {
+            rewrite  ^/apis/(.*)$ /$1 break; #重写URL
+            include  uwsgi_params; # 携带请求参数
+            proxy_pass   http://localhost:8888;
+            # 服务器回写的cookie的domain是 代理服务器,
+            # 如此操作可以修改cookie的domain为 浏览器 
+            # 浏览器cookie -&gt; 代理服务器cookie -&gt; 自动到目标服务器
+            proxy_cookie_domain domino_server nginx_server;
+        }
+</code></pre>
+<p>配置好之后，我们可以开始写代理服务器的代码。这里我们拿豆瓣api来做例子。</p>
+<ul>
+<li><p>豆瓣api接口：<a href="https://api.douban.com" target="_blank" rel="noopener">https://api.douban.com</a></p>
+</li>
+<li><p>正在热映： <code>/v2/movie/in_theaters</code></p>
+</li>
+</ul>
+<p>我们请求正在热映的电影信息就是输入以上两部分地址，直接在地址输入<code>https://api.douban.com/v2/movie/in_theaters</code>，可以看到：</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu66ghc7v6j30qp0li42f.jpg" alt="image-20180811232724024"></p>
+<p>（有可能会是写成一堆的json数据，我安装了插件，所以信息美化了）</p>
+<p>确认好地址无误后，我们在html页面里用XMLHttpRequest将地址发送给服务器。</p>
+<pre><code class="html">&lt;button id=&quot;btn&quot;&gt;点我发本服务器的node代理&lt;/button&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+  let oBtn = document.getElementById(&quot;btn&quot;);
+  oBtn.onclick = function () {
+    // 发请求
+    var xhr = new XMLHttpRequest();
+    // 将请求地址放在url中发送给服务器
+    // 因为要区分登录和发送请求，这里我们用&#39;/proxy&#39;来区分
+    xhr.open(&#39;get&#39;,&#39;/proxy?url=http://api.douban.com/v2/movie/in_theaters&#39;);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+      if(xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
+        alert(xhr.responseText);
+      }
+    }
+  }
+&lt;/script&gt;
+</code></pre>
+<pre><code class="js">// 1. 引入模块
+const http = require(&#39;http&#39;);
+const url = require(&#39;url&#39;);
+const fs = require(&#39;fs&#39;);
+// 这里需要用到一个新的插件request
+const request = require(&#39;request&#39;);
+
+// 2. 创建服务器
+let server = http.createServer();
+// 3. 为服务器接受请求绑定事件
+server.on(&#39;request&#39;, (req, res) =&gt; {
+  // 判断请求和登录
+  if(req.url === &#39;/&#39;) {
+    // 如果是访问localhost:8888就返回html页面
+    // 注意这里要用同步，否则会直接读取nginx的index页面
+    let data = fs.readFileSync(&#39;./proxy.html&#39;);
+    res.end(data);
+  } else if(req.url.startsWith(&#39;/proxy&#39;)) {
+    // 如果发送的是请求(以&#39;/proxy‘开头)
+    // 解析出请求地址 req.query是{url: 豆瓣api地址}
+    let obj = url.parse(req.url, true);
+    // 新建对象x 它是一个请求
+    let x = request(obj.query.url);
+    // 将req中的数据通过“管道”流给x
+    req.pipe(x);
+    // 返回给x的数据通过“管道”流给res用于返回给浏览器
+    x.pipe(res);  
+  }
+})
+server.listen(8888, () =&gt; {
+  console.log(&quot;server running at 8888&quot;);
+})
+</code></pre>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu67ntgwh1j308003ejrk.jpg" alt="image-20180812000903565"></p>
+<p>点击按钮会返回豆瓣数据：</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu67ov99a5j30d208ojt4.jpg" alt="image-20180812001003822"></p>
+<p>我们可以解析一下这些步骤</p>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fu67v5inboj317u0oin18.jpg" alt="image-20180812001606364"></p>
+<p>登录的时候，直接到<code>localhost:8888</code>页面，服务器解析到url是<code>/</code>，于是把proxy.html页面的代码返回给浏览器，浏览器解析出来，呈现在页面上。</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu680t7tv8j30l00d10tm.jpg" alt="image-20180812002132380"></p>
+<p>请求数据则是浏览器只把请求内容告诉服务器，服务器代为请求。这里可以把前端代码中的豆瓣api地址部分替换成任何其他我们想要请求的数据地址。</p>
+<p>以上就是常见的解决跨域的三种方法：</p>
+<ul>
+<li>JSONP</li>
+<li>CORS</li>
+<li>代理</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/08/10/写给小白的node-js学习笔记15-搞定跨域问题/" title="node.js学习笔记: 搞定跨域问题">http://xuquan.site/2018/08/10/写给小白的node-js学习笔记15-搞定跨域问题/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/node-js/" rel="tag"><i class="fa fa-tag"></i> node.js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/10/写给小白的node-js学习笔记14: req-header获取请求头信息/" rel="next" title="node.js学习笔记14:读写请求/响应头体">
+                <i class="fa fa-chevron-left"></i> node.js学习笔记14:读写请求/响应头体
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/12/Nikkkki的一周分享003/" rel="prev" title="Nikkkki的一周分享003">
+                Nikkkki的一周分享003 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#同源策略"><span class="nav-number">1.</span> <span class="nav-text">同源策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决跨域"><span class="nav-number">2.</span> <span class="nav-text">解决跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSONP"><span class="nav-number">2.1.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CORS（跨域资源共享）"><span class="nav-number">2.2.</span> <span class="nav-text">CORS（跨域资源共享）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CORS的两种请求"><span class="nav-number">2.2.1.</span> <span class="nav-text">CORS的两种请求</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代理"><span class="nav-number">2.3.</span> <span class="nav-text">代理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#配置nginx"><span class="nav-number">2.3.1.</span> <span class="nav-text">配置nginx</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/08/10/写给小白的node-js学习笔记15-搞定跨域问题/';
+          this.page.identifier = '2018/08/10/写给小白的node-js学习笔记15-搞定跨域问题/';
+          this.page.title = 'node.js学习笔记: 搞定跨域问题';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="freecodecamp,函数式编程," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="函数式编程是新添加的一个模块，其中重点讲了函数式编程的特点以及一些能用于函数式编程的方法。 函数式编程的特色 方法独立：对于环境变量的依赖小 用法单纯：输入相同的参数总是产生相同的结果 对环境污染小：会谨慎控制对函数外部数据产生的影响  函数式编程的准则 不改变任何东西，无论是全局变量还是对象 明确依赖，把函数依赖的对象直接作为参数传递给函数  函数式编程相关的概念 callback回调函数 fi">
+<meta name="keywords" content="freecodecamp,函数式编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数式编程">
+<meta property="og:url" content="http://xuquan.site/2018/07/11/函数式编程/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="函数式编程是新添加的一个模块，其中重点讲了函数式编程的特点以及一些能用于函数式编程的方法。 函数式编程的特色 方法独立：对于环境变量的依赖小 用法单纯：输入相同的参数总是产生相同的结果 对环境污染小：会谨慎控制对函数外部数据产生的影响  函数式编程的准则 不改变任何东西，无论是全局变量还是对象 明确依赖，把函数依赖的对象直接作为参数传递给函数  函数式编程相关的概念 callback回调函数 fi">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-07T06:53:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="函数式编程">
+<meta name="twitter:description" content="函数式编程是新添加的一个模块，其中重点讲了函数式编程的特点以及一些能用于函数式编程的方法。 函数式编程的特色 方法独立：对于环境变量的依赖小 用法单纯：输入相同的参数总是产生相同的结果 对环境污染小：会谨慎控制对函数外部数据产生的影响  函数式编程的准则 不改变任何东西，无论是全局变量还是对象 明确依赖，把函数依赖的对象直接作为参数传递给函数  函数式编程相关的概念 callback回调函数 fi">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/07/11/函数式编程/"/>
+
+
+
+
+
+  <title>函数式编程 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/07/11/函数式编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">函数式编程</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T00:38:36+08:00">
+                2018-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index">
+                    <span itemprop="name">FreeCodeCamp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/11/函数式编程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/07/11/函数式编程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/07/11/函数式编程/" class="leancloud_visitors" data-flag-title="函数式编程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5,011 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  23 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>函数式编程是新添加的一个模块，其中重点讲了函数式编程的特点以及一些能用于函数式编程的方法。</p>
+<h4 id="函数式编程的特色"><a href="#函数式编程的特色" class="headerlink" title="函数式编程的特色"></a>函数式编程的特色</h4><ul>
+<li><strong>方法独立</strong>：对于环境变量的依赖小</li>
+<li><strong>用法单纯</strong>：输入相同的参数总是产生相同的结果</li>
+<li><strong>对环境污染小</strong>：会谨慎控制对函数外部数据产生的影响</li>
+</ul>
+<h4 id="函数式编程的准则"><a href="#函数式编程的准则" class="headerlink" title="函数式编程的准则"></a>函数式编程的准则</h4><ul>
+<li><strong>不改变任何东西</strong>，无论是全局变量还是对象</li>
+<li><strong>明确依赖</strong>，把函数依赖的对象直接作为参数传递给函数</li>
+</ul>
+<h4 id="函数式编程相关的概念"><a href="#函数式编程相关的概念" class="headerlink" title="函数式编程相关的概念"></a>函数式编程相关的概念</h4><ul>
+<li><strong><code>callback</code>回调函数</strong></li>
+<li><strong><code>first class function</code>一级函数</strong></li>
+<li><strong><code>high-order function</code>高阶函数</strong></li>
+<li><strong><code>lambda</code>函数</strong></li>
+</ul>
+<a id="more"></a>
+<h4 id="适用函数方法"><a href="#适用函数方法" class="headerlink" title="适用函数方法"></a>适用函数方法</h4><ul>
+<li><strong><code>map</code></strong>：遍历数组，执行特定操作，并返回新数组</li>
+<li><strong><code>filter</code></strong>：按照特定标准筛选数组中符合标准的元素，返回新数组</li>
+<li><strong><code>slice</code></strong>：切分数组，返回特定元素的拷贝，不改变原数组</li>
+<li><strong><code>concat</code></strong>：连接数组或字符串，返回原数组的副本，不改变原数组</li>
+<li><strong><code>reduce</code></strong>：遍历数组，执行特定操作，最终返回一个值</li>
+<li><strong><code>sort</code></strong>：按照特定规则给数组排序，会改变原数组的顺序，所以建议先用<code>[].concat(array)</code>再排序</li>
+<li><strong><code>split</code></strong>：切分字符串，返回一个新的数组</li>
+<li><strong><code>join</code></strong>：将数组按照特定分界符连接成字符串</li>
+<li><strong><code>every</code></strong>：检测数组内的每个元素是否都符合特定要求，返回一个布尔值</li>
+<li><strong><code>some</code></strong>：检测数组内的部分元素是否符合特定要求，返回一个布尔值</li>
+<li><strong><code>curring</code>柯里化</strong>：将一个接受n个参数的函数转换为n个只接受一个参数的函数</li>
+<li><strong><code>partial application</code>偏函数</strong>：接受部分参数，并返回一个接受余下参数的函数的函数</li>
+</ul>
+<p>以下是这部分的习题，及根据习题的知识点记录：</p>
+<hr>
+<h4 id="Introduction-to-the-Functional-Programming-Challenges"><a href="#Introduction-to-the-Functional-Programming-Challenges" class="headerlink" title="Introduction to the Functional Programming Challenges"></a><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming" target="_blank" rel="noopener">Introduction to the Functional Programming Challenges</a></h4><ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/learn-about-functional-programming" target="_blank" rel="noopener">Learn About Functional Programming</a></p>
+<p>函数式编程是编程风格的一种，它的方法简单、独立，对编程环境的影响小。</p>
+<blockquote>
+<p>INPUT =&gt; PROCESS =&gt; OUTPUT</p>
+</blockquote>
+<p>函数式编程的风格包括：</p>
+<ol>
+<li>方法独立：对编程环境依赖较弱，如果修改全局变量，对方法的没有影响</li>
+<li>用法单纯：一样的参数总是产生一样的结果</li>
+<li>方法副作用小：函数会谨慎控制其对函数外部产生的影响</li>
+</ol>
+</li>
+</ul>
+<p>  这道习题首先提出了<code>prepareTea</code>方法，内容是输出<code>greenTea</code>，然后是<code>getTea</code>方法，接受一个数字作为参数，输出一个长度等于参数的数组。</p>
+<pre><code class="js">  /**
+   * A long process to prepare tea.
+   * @return {string} A cup of tea.
+   **/
+  const prepareTea = () =&gt; &#39;greenTea&#39;;
+
+  /**
+   * Get given number of cups of tea.
+   * @param {number} numOfCups Number of required cups of tea.
+   * @return {Array&lt;string&gt;} Given amount of tea cups.
+   **/
+  const getTea = (numOfCups) =&gt; {
+    const teaCups = [];
+
+    for(let cups = 1; cups &lt;= numOfCups; cups += 1) {
+      const teaCup = prepareTea();
+      teaCups.push(teaCup);
+    }
+
+    return teaCups;
+  };
+
+  // Add your code below this line
+
+  const tea4TeamFCC = getTea(40); // :(
+
+  // Add your code above this line
+
+  console.log(tea4TeamFCC);
+</code></pre>
+<hr>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/understand-functional-programming-terminology" target="_blank" rel="noopener">Understand Functional Programming Terminology</a></p>
+<p>关于函数式编程有一些需要注意的概念：</p>
+<ul>
+<li><strong><code>callback</code>回调函数</strong>：回调函数是一个方法，它通常被作为参数传递到另一个方法内部，用于控制在合适的时候调用</li>
+<li><strong><code>first class function</code>一级函数</strong>：有些函数可以赋值给变量，或者传递给另一个方法使用，或者作为函数的返回值，这样的函数叫做一级函数。在JavaScript中，所有的函数都是一级函数</li>
+<li><strong><code>high-order function</code>高阶函数</strong>：可以作为函数参数的，或者作为函数返回值的函数叫做高阶函数</li>
+<li><strong><code>lambda</code></strong>：当函数被作为参数传递或作为函数结果返回时，这个函数被称为<code>lambda</code></li>
+</ul>
+<pre><code class="js">const prepareGreenTea = () =&gt; &#39;greenTea&#39;;
+
+/**
+ * A long process to prepare black tea.
+ * @return {string} A cup of black tea.
+ **/
+const prepareBlackTea = () =&gt; &#39;blackTea&#39;;
+
+/**
+ * Get given number of cups of tea.
+ * @param {function():string} prepareTea The type of tea preparing function.
+ * @param {number} numOfCups Number of required cups of tea.
+ * @return {Array&lt;string&gt;} Given amount of tea cups.
+ **/
+const getTea = (prepareTea, numOfCups) =&gt; {
+  const teaCups = [];
+
+  for(let cups = 1; cups &lt;= numOfCups; cups += 1) {
+    const teaCup = prepareTea();
+    teaCups.push(teaCup);
+  }
+
+  return teaCups;
+};
+
+// Add your code below this line
+
+const tea4GreenTeamFCC = getTea(prepareGreenTea, 27); // :(
+const tea4BlackTeamFCC = getTea(prepareBlackTea, 13); // :(
+
+// Add your code above this line
+
+console.log(
+  tea4GreenTeamFCC,
+  tea4BlackTeamFCC
+);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/understand-the-hazards-of-using-imperative-code" target="_blank" rel="noopener">Understand the Hazards of Using Imperative Code</a></p>
+<ul>
+<li><strong>命令式编程</strong>： 命令式编程就是一步一步告诉计算你接下来要做什么操作。这些操作经常会改变编程环境，如更新全局变量。一个典型的例子就是使用<code>for</code>循环利用遍历<code>i</code>指代索引遍历数组</li>
+<li><strong>函数式编程</strong>：函数式编程是一种声明式的编程，你告诉计算机你喜欢通过什么方法来获得什么结果。</li>
+</ul>
+</li>
+</ul>
+<p>  JavaScript语言有需要内置的方法来帮你完成操作，不需要你单独写一个方法，例如<code>for</code>循环操作，你可以使用<code>map</code>方法来完成遍历，这样可以帮助你避免如“差一错误”之类的语法错误。</p>
+<p>  这题主要是学习代码风格，并不需要你自己改动哪里。</p>
+<p>  代码模拟了一个浏览器也没保存打开标签的名称的功能，假设每个窗口都有一个<code>tabs</code>数组，用于保存打开的标签名，同时有<code>join</code>,<code>tabOpen</code>, <code>tabClose</code>功能。</p>
+<pre><code class="js">  // tabs is an array of titles of each site open within the window
+  var Window = function(tabs) {
+    this.tabs = tabs; // we keep a record of the array inside the object
+  };
+
+  // When you join two windows into one window
+  Window.prototype.join = function (otherWindow) {
+    this.tabs = this.tabs.concat(otherWindow.tabs);
+    return this;
+  };
+
+  // When you open a new tab at the end
+  Window.prototype.tabOpen = function (tab) {
+    this.tabs.push(&#39;new tab&#39;); // let&#39;s open a new tab for now
+    return this;
+  };
+
+  // When you close a tab
+  Window.prototype.tabClose = function (index) {
+    var tabsBeforeIndex = this.tabs.splice(0, index); // get the tabs before the tab
+    var tabsAfterIndex = this.tabs.splice(index); // get the tabs after the tab
+
+    this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // join them together 
+    return this;
+   };
+
+  // Let&#39;s create three browser windows
+  var workWindow = new Window([&#39;GMail&#39;, &#39;Inbox&#39;, &#39;Work mail&#39;, &#39;Docs&#39;, &#39;freeCodeCamp&#39;]); // Your mailbox, drive, and other work sites
+  var socialWindow = new Window([&#39;FB&#39;, &#39;Gitter&#39;, &#39;Reddit&#39;, &#39;Twitter&#39;, &#39;Medium&#39;]); // Social sites
+  var videoWindow = new Window([&#39;Netflix&#39;, &#39;YouTube&#39;, &#39;Vimeo&#39;, &#39;Vine&#39;]); //  Entertainment sites
+
+  // Now perform the tab opening, closing, and other operations
+  var finalTabs = socialWindow
+                      .tabOpen() // Open a new tab for cat memes
+                      .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
+                      .join(workWindow.tabClose(1).tabOpen());
+
+  alert(finalTabs.tabs);
+</code></pre>
+<hr>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/avoid-mutations-and-side-effects-using-functional-programming" target="_blank" rel="noopener">Avoid Mutations and Side Effects Using Functional Programming</a></p>
+<p>上面例子中有一个错误是代码希望我们能够发现的，就是代码中对数组进行切分时使用了<code>splice</code>方法，<code>splice</code>方法会改变原数组，从而导致结果和预期不一样。</p>
+<p>以小见大，我们很容易在函数中使用某个变量、数组或对象，而这个函数悄悄改变了原来的数据。</p>
+<p>函数式编程的一个核心准则就是<strong>「不改变任何东西」</strong>，改变会导致bug。当你明确自己的函数不会改变任何数据，包括函数参数或全局变量时，能够更好地防止bug的产生。</p>
+<p>像上面一题，其实代码没有做任何复杂的操作，只是<code>splice</code>方法修改了原始数组，并且导致bug。</p>
+<p>在函数式编程中，修改事物被称为<strong><code>mutation</code>变动</strong>，产生的结果叫做<strong><code>side effect</code>副作用</strong>。函数应该只是单纯的函数，不应该造成任何副作用。</p>
+</li>
+</ul>
+<pre><code class="js">  // the global variable
+  var fixedValue = 4;
+
+  function incrementer () {
+    // Add your code below this line
+    let result = 0;
+    return result = fixedValue + 1;
+    // Add your code above this line
+  }
+
+  var newValue = incrementer(); // Should equal 5
+  console.log(fixedValue); // Should print 4
+</code></pre>
+<hr>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/pass-arguments-to-avoid-external-dependence-in-a-function" target="_blank" rel="noopener">Pass Arguments to Avoid External Dependence in a Function</a></p>
+<p>上一道题中，我们需要获得一个累加器，返回的结果是全局变量+1，但是全局变量的值不能变。我们在解答的过程中并没有改变全局变量的值，但是还是用到了全局变量的值。</p>
+<p>函数式编程的另一个准则就是<strong>「明确依赖」</strong>，也就是说，<strong>当函数需要依赖一个存在的变量或对象时，直接将这个变量或者对象作为参数传递给函数</strong>。</p>
+<p>这么做有很多好处，函数会更容易调试，也更容易明确到底传递了什么内容给函数内部，而且函数本身不必依赖程序里的其他任何东西。这样当你需要修改、删除或者添加代码时，你会更清楚哪些能改哪些不能，而且也更清晰地知道哪些地方更容易造成bug。</p>
+<p>最终，这个函数能够实现无论代码的其他部分如何改变，函数总是同样的输入产生同样的结果，</p>
+<pre><code class="js">// the global variable
+var fixedValue = 4;
+
+// Add your code below this line
+function incrementer (fixedValue) {
+  return fixedValue + 1;
+
+  // Add your code above this line
+}
+
+var newValue = incrementer(fixedValue); // Should equal 5
+console.log(fixedValue); // Should print 4
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/refactor-global-variables-out-of-functions" target="_blank" rel="noopener">Refactor Global Variables Out of Functions</a></p>
+<p>所以我们明确了函数式编程的两个准则：</p>
+<ul>
+<li>不要修改变量或对象：当函数需要变量或对象时，创建新的变量或对象</li>
+<li>声明函数的参数：函数内部的操作仅依赖参数，而不是任何全局对象或变量</li>
+</ul>
+<pre><code class="js">// the global variable
+var bookList = [&quot;The Hound of the Baskervilles&quot;, &quot;On The Electrodynamics of Moving Bodies&quot;, &quot;Philosophiæ Naturalis Principia Mathematica&quot;, &quot;Disquisitiones Arithmeticae&quot;];
+
+/* This function should add a book to the list and return the list */
+// New parameters should come before the bookName one
+
+// Add your code below this line
+function add (bookList, bookName) {
+
+  return bookList.concat(bookName);
+
+  // Add your code above this line
+}
+
+/* This function should remove a book from the list and return the list */
+// New parameters should come before the bookName one
+
+// Add your code below this line
+function remove (bookList, bookName) {
+  if (bookList.indexOf(bookName) &gt;= 0) {
+    let beforeBooks = bookList.slice(0, bookList.indexOf(bookName));
+    let afterBooks = bookList.slice(bookList.indexOf(bookName)+1);
+    return beforeBooks.concat(afterBooks);
+
+    // Add your code above this line
+    }
+}
+
+var newBookList = add(bookList, &#39;A Brief History of Time&#39;);
+var newerBookList = remove(bookList, &#39;On The Electrodynamics of Moving Bodies&#39;);
+var newestBookList = remove(add(bookList, &#39;A Brief History of Time&#39;), &#39;On The Electrodynamics of Moving Bodies&#39;);
+
+console.log(bookList);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/use-the-map-method-to-extract-data-from-an-array" target="_blank" rel="noopener">Use the map Method to Extract Data from an Array</a></p>
+<p>函数式编程如其名，核心围绕函数思想。在JavaScript中，函数作为<strong>一级对象</strong>，可以被作为参数传入其他函数，也可以作为结果被其他函数返回，可以被保存在变量中或者对象中。</p>
+<pre><code class="js">// the global variable
+var watchList = [
+                 {  
+                   &quot;Title&quot;: &quot;Inception&quot;,
+                   &quot;Year&quot;: &quot;2010&quot;,
+                   &quot;Rated&quot;: &quot;PG-13&quot;,
+                   &quot;Released&quot;: &quot;16 Jul 2010&quot;,
+                   &quot;Runtime&quot;: &quot;148 min&quot;,
+                   &quot;Genre&quot;: &quot;Action, Adventure, Crime&quot;,
+                   &quot;Director&quot;: &quot;Christopher Nolan&quot;,
+                   &quot;Writer&quot;: &quot;Christopher Nolan&quot;,
+                   &quot;Actors&quot;: &quot;Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy&quot;,
+                   &quot;Plot&quot;: &quot;A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.&quot;,
+                   &quot;Language&quot;: &quot;English, Japanese, French&quot;,
+                   &quot;Country&quot;: &quot;USA, UK&quot;,
+                   &quot;Awards&quot;: &quot;Won 4 Oscars. Another 143 wins &amp; 198 nominations.&quot;,
+                   &quot;Poster&quot;: &quot;http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg&quot;,
+                   &quot;Metascore&quot;: &quot;74&quot;,
+                   &quot;imdbRating&quot;: &quot;8.8&quot;,
+                   &quot;imdbVotes&quot;: &quot;1,446,708&quot;,
+                   &quot;imdbID&quot;: &quot;tt1375666&quot;,
+                   &quot;Type&quot;: &quot;movie&quot;,
+                   &quot;Response&quot;: &quot;True&quot;
+                },
+                {  
+                   &quot;Title&quot;: &quot;Interstellar&quot;,
+                   &quot;Year&quot;: &quot;2014&quot;,
+                   &quot;Rated&quot;: &quot;PG-13&quot;,
+                   &quot;Released&quot;: &quot;07 Nov 2014&quot;,
+                   &quot;Runtime&quot;: &quot;169 min&quot;,
+                   &quot;Genre&quot;: &quot;Adventure, Drama, Sci-Fi&quot;,
+                   &quot;Director&quot;: &quot;Christopher Nolan&quot;,
+                   &quot;Writer&quot;: &quot;Jonathan Nolan, Christopher Nolan&quot;,
+                   &quot;Actors&quot;: &quot;Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow&quot;,
+                   &quot;Plot&quot;: &quot;A team of explorers travel through a wormhole in space in an attempt to ensure humanity&#39;s survival.&quot;,
+                   &quot;Language&quot;: &quot;English&quot;,
+                   &quot;Country&quot;: &quot;USA, UK&quot;,
+                   &quot;Awards&quot;: &quot;Won 1 Oscar. Another 39 wins &amp; 132 nominations.&quot;,
+                   &quot;Poster&quot;: &quot;http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg&quot;,
+                   &quot;Metascore&quot;: &quot;74&quot;,
+                   &quot;imdbRating&quot;: &quot;8.6&quot;,
+                   &quot;imdbVotes&quot;: &quot;910,366&quot;,
+                   &quot;imdbID&quot;: &quot;tt0816692&quot;,
+                   &quot;Type&quot;: &quot;movie&quot;,
+                   &quot;Response&quot;: &quot;True&quot;
+                },
+                {
+                   &quot;Title&quot;: &quot;The Dark Knight&quot;,
+                   &quot;Year&quot;: &quot;2008&quot;,
+                   &quot;Rated&quot;: &quot;PG-13&quot;,
+                   &quot;Released&quot;: &quot;18 Jul 2008&quot;,
+                   &quot;Runtime&quot;: &quot;152 min&quot;,
+                   &quot;Genre&quot;: &quot;Action, Adventure, Crime&quot;,
+                   &quot;Director&quot;: &quot;Christopher Nolan&quot;,
+                   &quot;Writer&quot;: &quot;Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)&quot;,
+                   &quot;Actors&quot;: &quot;Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine&quot;,
+                   &quot;Plot&quot;: &quot;When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.&quot;,
+                   &quot;Language&quot;: &quot;English, Mandarin&quot;,
+                   &quot;Country&quot;: &quot;USA, UK&quot;,
+                   &quot;Awards&quot;: &quot;Won 2 Oscars. Another 146 wins &amp; 142 nominations.&quot;,
+                   &quot;Poster&quot;: &quot;http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg&quot;,
+                   &quot;Metascore&quot;: &quot;82&quot;,
+                   &quot;imdbRating&quot;: &quot;9.0&quot;,
+                   &quot;imdbVotes&quot;: &quot;1,652,832&quot;,
+                   &quot;imdbID&quot;: &quot;tt0468569&quot;,
+                   &quot;Type&quot;: &quot;movie&quot;,
+                   &quot;Response&quot;: &quot;True&quot;
+                },
+                {  
+                   &quot;Title&quot;: &quot;Batman Begins&quot;,
+                   &quot;Year&quot;: &quot;2005&quot;,
+                   &quot;Rated&quot;: &quot;PG-13&quot;,
+                   &quot;Released&quot;: &quot;15 Jun 2005&quot;,
+                   &quot;Runtime&quot;: &quot;140 min&quot;,
+                   &quot;Genre&quot;: &quot;Action, Adventure&quot;,
+                   &quot;Director&quot;: &quot;Christopher Nolan&quot;,
+                   &quot;Writer&quot;: &quot;Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)&quot;,
+                   &quot;Actors&quot;: &quot;Christian Bale, Michael Caine, Liam Neeson, Katie Holmes&quot;,
+                   &quot;Plot&quot;: &quot;After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.&quot;,
+                   &quot;Language&quot;: &quot;English, Urdu, Mandarin&quot;,
+                   &quot;Country&quot;: &quot;USA, UK&quot;,
+                   &quot;Awards&quot;: &quot;Nominated for 1 Oscar. Another 15 wins &amp; 66 nominations.&quot;,
+                   &quot;Poster&quot;: &quot;http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg&quot;,
+                   &quot;Metascore&quot;: &quot;70&quot;,
+                   &quot;imdbRating&quot;: &quot;8.3&quot;,
+                   &quot;imdbVotes&quot;: &quot;972,584&quot;,
+                   &quot;imdbID&quot;: &quot;tt0372784&quot;,
+                   &quot;Type&quot;: &quot;movie&quot;,
+                   &quot;Response&quot;: &quot;True&quot;
+                },
+                {
+                   &quot;Title&quot;: &quot;Avatar&quot;,
+                   &quot;Year&quot;: &quot;2009&quot;,
+                   &quot;Rated&quot;: &quot;PG-13&quot;,
+                   &quot;Released&quot;: &quot;18 Dec 2009&quot;,
+                   &quot;Runtime&quot;: &quot;162 min&quot;,
+                   &quot;Genre&quot;: &quot;Action, Adventure, Fantasy&quot;,
+                   &quot;Director&quot;: &quot;James Cameron&quot;,
+                   &quot;Writer&quot;: &quot;James Cameron&quot;,
+                   &quot;Actors&quot;: &quot;Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang&quot;,
+                   &quot;Plot&quot;: &quot;A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.&quot;,
+                   &quot;Language&quot;: &quot;English, Spanish&quot;,
+                   &quot;Country&quot;: &quot;USA, UK&quot;,
+                   &quot;Awards&quot;: &quot;Won 3 Oscars. Another 80 wins &amp; 121 nominations.&quot;,
+                   &quot;Poster&quot;: &quot;http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg&quot;,
+                   &quot;Metascore&quot;: &quot;83&quot;,
+                   &quot;imdbRating&quot;: &quot;7.9&quot;,
+                   &quot;imdbVotes&quot;: &quot;876,575&quot;,
+                   &quot;imdbID&quot;: &quot;tt0499549&quot;,
+                   &quot;Type&quot;: &quot;movie&quot;,
+                   &quot;Response&quot;: &quot;True&quot;
+                }
+];
+
+// Add your code below this line
+
+var rating = [];
+watchList.map(obj =&gt; rating.push({&quot;title&quot;: obj.Title, &quot;rating&quot;: obj.imdbRating}));
+
+// Add your code above this line
+
+console.log(rating); 
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/implement-map-on-a-prototype" target="_blank" rel="noopener">Implement map on a Prototype</a></p>
+<p>像<code>map</code>这样返回一个与原数组等长的新数组，遍历原数组的每个元素，并且不改变原数组的方法，我们称之为<code>pure function</code>，而且它只依赖它输入的参数。</p>
+<p>需要注意的是，<code>pure function</code>可以改变它自身函数作用域中的本地变量，但是同样不建议这么做。</p>
+<pre><code class="js">var s = [23, 65, 98, 5];
+
+Array.prototype.myMap = function(callback){
+  var newArray = [];
+  // Add your code below this line
+  this.forEach(ele =&gt; newArray.push(callback(ele)))
+  // Add your code above this line
+  return newArray;
+
+};
+
+var new_s = s.myMap(function(item){
+  return item * 2;
+});
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/use-the-filter-method-to-extract-data-from-an-array" target="_blank" rel="noopener">Use the filter Method to Extract Data from an Array</a></p>
+<p>另一个非常有用的函数是<code>Array.prototype.filter()</code>，它能够返回一个新的数组，新数组的长度可以和原数组等长，但通常情况下新数组长度都会少于原数组。</p>
+<p><code>filter</code>有一个回调函数作为参数，如果数组元素在回调函数中返回<code>true</code>则可以被添加到新数组中。</p>
+<pre><code class="js">var filteredList = []; 
+watchList.filter(movie =&gt; movie.imdbRating &gt;= 8).map(movie =&gt; filteredList.push({&quot;title&quot;: movie.Title, &quot;rating&quot;: movie.imdbRating}));
+
+// Add your code above this line
+
+console.log(filteredList); 
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/implement-the-filter-method-on-a-prototype" target="_blank" rel="noopener">Implement the filter Method on a Prototype</a></p>
+<p>同样地，我们可以用<code>for</code>循环或者<code>forEach</code>来实现我们自己的<code>filter</code>方法，并添加到数组的原型上</p>
+<pre><code class="js">var s = [23, 65, 98, 5];
+
+Array.prototype.myFilter = function(callback){
+  var newArray = [];
+  // Add your code below this line
+  this.forEach(ele =&gt; callback(ele)? newArray.push(ele): newArray);
+  // Add your code above this line
+  return newArray;
+
+};
+
+var new_s = s.myFilter(function(item){
+  return item % 2 === 1;
+});
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/return-part-of-an-array-using-the-slice-method" target="_blank" rel="noopener">Return Part of an Array Using the slice Method</a></p>
+<p><code>slice</code>方法会返回数组中特定元素的拷贝。它接受两个参数，一个是开始切分数组的索引，另一个是结束切分的索引（不包括这一个元素）如果第二个元素没有传入，默认切分到数组结束。这样很容易帮我们拷贝整个数组。<code>slice</code>方法不会改变原数组，只会返回一个新的。</p>
+<pre><code class="js">function sliceArray(anim, beginSlice, endSlice) {
+  // Add your code below this line
+  return anim.slice(beginSlice, endSlice);
+
+  // Add your code above this line
+}
+var inputAnim = [&quot;Cat&quot;, &quot;Dog&quot;, &quot;Tiger&quot;, &quot;Zebra&quot;, &quot;Ant&quot;];
+sliceArray(inputAnim, 1, 3);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/remove-elements-from-an-array-using-slice-instead-of-splice" target="_blank" rel="noopener">Remove Elements from an Array Using slice Instead of splice</a></p>
+<p>当我们需要从一个数组中移除一个元素时，我们会经常使用<code>splice</code>方法，它接受两个参数，第一个是开始移除元素的索引，第二个是移除的个数，如果第二个参数没有传入，则默认移除之后的所有元素。但是<code>splice</code>有一个问题是它会修改原数组。</p>
+<p>如上题，我们可以通过<code>slice</code>方法来获取数组拷贝，而不修改原数组。</p>
+<pre><code class="js">function nonMutatingSplice(cities) {
+  // Add your code below this line
+  return cities.slice(0,3);
+
+  // Add your code above this line
+}
+var inputCities = [&quot;Chicago&quot;, &quot;Delhi&quot;, &quot;Islamabad&quot;, &quot;London&quot;, &quot;Berlin&quot;];
+nonMutatingSplice(inputCities);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/combine-two-arrays-using-the-concat-method" target="_blank" rel="noopener">Combine Two Arrays Using the concat Method</a></p>
+<p><code>concat</code>方法可以连接数组或者字符串</p>
+<pre><code class="js">function nonMutatingConcat(original, attach) {
+  // Add your code below this line
+
+  return original.concat(attach);
+  // Add your code above this line
+}
+var first = [1, 2, 3];
+var second = [4, 5];
+nonMutatingConcat(first, second);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/add-elements-to-the-end-of-an-array-using-concat-instead-of-push" target="_blank" rel="noopener">Add Elements to the End of an Array Using concat Instead of push</a></p>
+<p>函数式编程围绕创建函数和使用不污染环境的函数展开。</p>
+<p>上题提到的<code>concat</code>方法和<code>push</code>比较会发现，<code>concat</code>可以连接两个数组，并返回一个副本，原数组不受影响。因此，<code>concat</code>可以作为没有副作用的为数组添加新元素的方法</p>
+<pre><code class="js">function nonMutatingPush(original, newItem) {
+  // Add your code below this line
+  return original.concat(newItem);
+
+  // Add your code above this line
+}
+var first = [1, 2, 3];
+var second = [4, 5];
+nonMutatingPush(first, second);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/use-the-reduce-method-to-analyze-data" target="_blank" rel="noopener">Use the reduce Method to Analyze Data</a></p>
+<p><code>reduce</code>是JavaScript中几乎使用最广泛的处理数组的方法。它能解决大部分的数组问题。</p>
+<p>像<code>map</code>和<code>filter</code>方法都无法处理两个数组元素之间的操作，如比较大小或求和，相比之下，<code>reduce</code>能够用来解决更为广泛的数组处理。我们可以理解成<code>filter</code>和<code>map</code>都是源于<code>reduce</code>的一种特别应用。</p>
+<pre><code class="js">let movies = watchList.filter(movie =&gt; movie.Director === &quot;Christopher Nolan&quot;);
+var averageRating=movies.reduce((acc, cur) =&gt; acc + parseFloat(cur.imdbRating), 0)/movies.length;
+
+// Add your code above this line
+
+console.log(averageRating);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/sort-an-array-alphabetically-using-the-sort-method" target="_blank" rel="noopener">Sort an Array Alphabetically using the sort Method</a></p>
+<p><code>sort</code>方法用于按照参数<code>callback</code>的规则给数组排序。</p>
+<p>在实际使用<code>sort时</code>，建议使用<code>callback</code>回调函数来明确排序的方法，因为<code>sort</code>方法的默认排序是Unicode编码，使用默认排序可能会造成预期外的结果。</p>
+<pre><code class="js">function alphabeticalOrder(arr) {
+  // Add your code below this line
+  return arr.sort();
+
+  // Add your code above this line
+}
+alphabeticalOrder([&quot;a&quot;, &quot;d&quot;, &quot;c&quot;, &quot;a&quot;, &quot;z&quot;, &quot;g&quot;]);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/return-a-sorted-array-without-changing-the-original-array" target="_blank" rel="noopener">Return a Sorted Array Without Changing the Original Array</a></p>
+<p><code>sort</code>方法的一个副作用是会改变原数组中的顺序，换句话说，它污染了数组数据。规避这一问题可以使用一个空数组，让它使用<code>concat</code>方法去连接需要排序的原数组，这样就能在<code>concat</code>方法返回的新数组上修改顺序了。</p>
+<pre><code class="js">var globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+  // Add your code below this line
+  return [].concat(globalArray).sort((a, b) =&gt; a-b);
+
+  // Add your code above this line
+}
+nonMutatingSort(globalArray);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/split-a-string-into-an-array-using-the-split-method" target="_blank" rel="noopener">Split a String into an Array Using the split Method</a></p>
+<p><code>split</code>方法能够将一个字符串切分成一个由字符串组成的数组。<code>split</code>方法接受一个参数作为切分字符串的分界符，这个参数可以是字符串也可以是正则表达式。</p>
+<p>因为字符串本身不可遍历，<code>split</code>方法让字符串转换成数组从而可以遍历。</p>
+<pre><code class="js">function splitify(str) {
+  // Add your code below this line
+  return str.split(/[^A-Za-z]/);
+
+  // Add your code above this line
+}
+splitify(&quot;Hello World,I-am code&quot;);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/combine-an-array-into-a-string-using-the-join-method" target="_blank" rel="noopener">Combine an Array into a String Using the join Method</a></p>
+<p><code>join</code>方法用来将数组连接成一个字符串。它同样接受一个参数作为连接字符串的分界符。</p>
+<pre><code class="js">function sentensify(str) {
+  // Add your code below this line
+  return str.split(/[^A-Za-z]/).join(&quot; &quot;);
+
+  // Add your code above this line
+}
+sentensify(&quot;May-the-force-be-with-you&quot;);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/apply-functional-programming-to-convert-strings-to-url-slugs" target="_blank" rel="noopener">Apply Functional Programming to Convert Strings to URL Slugs</a></p>
+<pre><code class="js">// the global variable
+var globalTitle = &quot;Winter Is Coming&quot;;
+
+// Add your code below this line
+function urlSlug(title) {
+  return title.toLowerCase().split(/[^A-Za-z]/).filter(str =&gt; str!== &quot;&quot;).reduce((acc, cur) =&gt; acc+&quot;-&quot;+cur);
+
+}
+// Add your code above this line
+
+var winterComing = urlSlug(globalTitle); // Should be &quot;winter-is-coming&quot;
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/use-the-every-method-to-check-that-every-element-in-an-array-meets-a-criteria" target="_blank" rel="noopener">Use the every Method to Check that Every Element in an Array Meets a Criteria</a></p>
+<p><code>every</code>方法用于测试数组内的每个元素是不是都能通过特定的测试。它最终返回一个布尔值作为结果。如果所有元素都满足特定要求则返回<code>true</code>，否则返回<code>false</code></p>
+<pre><code class="js">function checkPositive(arr) {
+  // Add your code below this line
+  return arr.every(val =&gt; val &gt; 0)
+
+  // Add your code above this line
+}
+checkPositive([1, 2, 3, -4, 5]);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/use-the-some-method-to-check-that-any-elements-in-an-array-meet-a-criteria" target="_blank" rel="noopener">Use the some Method to Check that Any Elements in an Array Meet a Criteria</a></p>
+<p><code>some</code>方法用于测试数组中的一些元素是否能通过特定的测试。即只要元素中有一个元素满足要求则返回<code>true</code>，如果所有元素都不满足要求则返回<code>false</code></p>
+<pre><code class="js">function checkPositive(arr) {
+  // Add your code below this line
+  return arr.some(val =&gt; val &gt; 0);
+
+  // Add your code above this line
+}
+checkPositive([1, 2, 3, -4, 5]);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/introduction-to-currying-and-partial-application" target="_blank" rel="noopener">Introduction to Currying and Partial Application</a></p>
+<p><code>arity</code>参数个数指函数所需要的参数个数。<code>currying</code>柯里化函数把一个需要n个参数的函数转换成n个只需要1个参数的函数。换句话说，<code>curring</code>函数会重构函数，将函数转变成一个值需要一个参数的函数，并且返回结果是需要另一个接受余下参数的函数，一直延续向下。</p>
+<pre><code class="js">//例：
+//Un-curried function
+function unCurried(x, y) {
+  return x + y;
+}
+
+//curried function 
+function curried(x) {
+  return function(y) {
+    return x + y;
+  }
+}
+curried(1)(2)
+</code></pre>
+<p><code>curring</code>函数在无法一次性提供所有参数的情况下非常有用。可以用变量来保存每一次函数，等到函数需要的参数能够提供的时候再通过变量来调用它。</p>
+<p>同样地，<code>partial application</code>偏函数接受部分参数，但不是全部参数，同时返回一个能够接受余下参数的函数。</p>
+<pre><code class="js">//例
+function impartial(x, y, z) {
+  return x + y + z;
+}
+var partialFn = impartial/bind(this, 1, 2);
+partialFn(10);   //returns 13
+</code></pre>
+<pre><code class="js">function add(x) {
+  // Add your code below this line
+  return function(y) {
+    return function(z) {
+      return x + y + z;
+    }
+  }
+  // Add your code above this line
+}
+add(10)(20)(30);
+</code></pre>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/07/11/函数式编程/" title="函数式编程">http://xuquan.site/2018/07/11/函数式编程/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/freecodecamp/" rel="tag"><i class="fa fa-tag"></i> freecodecamp</a>
+          
+            <a href="/tags/函数式编程/" rel="tag"><i class="fa fa-tag"></i> 函数式编程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/11/JavaScript算法项目/" rel="next" title="JavaScript算法项目">
+                <i class="fa fa-chevron-left"></i> JavaScript算法项目
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/12/FCC: 前端框架证书/" rel="prev" title="FCC: 前端框架证书">
+                FCC: 前端框架证书 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数式编程的特色"><span class="nav-number">1.</span> <span class="nav-text">函数式编程的特色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数式编程的准则"><span class="nav-number">2.</span> <span class="nav-text">函数式编程的准则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数式编程相关的概念"><span class="nav-number">3.</span> <span class="nav-text">函数式编程相关的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#适用函数方法"><span class="nav-number">4.</span> <span class="nav-text">适用函数方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Introduction-to-the-Functional-Programming-Challenges"><span class="nav-number">5.</span> <span class="nav-text">Introduction to the Functional Programming Challenges</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/07/11/函数式编程/';
+          this.page.identifier = '2018/07/11/函数式编程/';
+          this.page.title = '函数式编程';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

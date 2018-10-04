@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="koa,ndoe.js," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="在完成了基本的后端功能后，我们开始将前后端的内容连接起来。这一部分的内容会比较细碎。">
+<meta name="keywords" content="koa,ndoe.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="koa项目：云音乐应用5——注册页面前端渲染">
+<meta property="og:url" content="http://xuquan.site/2018/08/20/koa项目：云音乐应用5——页面前端渲染/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="在完成了基本的后端功能后，我们开始将前后端的内容连接起来。这一部分的内容会比较细碎。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fug7gflnjnj31860liqjr.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fuggd69j1uj307u02nmx4.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fuggfpkx5gj308001ljrb.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fugilg6h9dj30bh08p0sz.jpg">
+<meta property="og:updated_time" content="2018-08-21T03:46:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="koa项目：云音乐应用5——注册页面前端渲染">
+<meta name="twitter:description" content="在完成了基本的后端功能后，我们开始将前后端的内容连接起来。这一部分的内容会比较细碎。">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fug7gflnjnj31860liqjr.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/08/20/koa项目：云音乐应用5——页面前端渲染/"/>
+
+
+
+
+
+  <title>koa项目：云音乐应用5——注册页面前端渲染 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/20/koa项目：云音乐应用5——页面前端渲染/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">koa项目：云音乐应用5——注册页面前端渲染</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T15:32:38+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/20/koa项目：云音乐应用5——页面前端渲染/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/20/koa项目：云音乐应用5——页面前端渲染/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/20/koa项目：云音乐应用5——页面前端渲染/" class="leancloud_visitors" data-flag-title="koa项目：云音乐应用5——注册页面前端渲染">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,616 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在完成了基本的后端功能后，我们开始将前后端的内容连接起来。这一部分的内容会比较细碎。</p>
+<a id="more"></a>
+<h3 id="注册页面功能"><a href="#注册页面功能" class="headerlink" title="注册页面功能"></a>注册页面功能</h3><p><em>由于页面已经引入了jQuery，我们可以直接使用jQuery的语法。</em></p>
+<h4 id="补全头部按钮功能"><a href="#补全头部按钮功能" class="headerlink" title="补全头部按钮功能"></a>补全头部按钮功能</h4><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fug7gflnjnj31860liqjr.jpg" alt="image-20180820153735231"></p>
+<p>我们要实现的第一个小功能是登录和注册页面右上角的两个小按钮，点击他们跳转到各自页面。两行代码就可以搞定：</p>
+<pre><code class="html">// 这是头部的部分代码
+&lt;!-- 登陆&amp;注册栏 --&gt;
+&lt;span&gt;
+  &lt;a class=&quot;register btn btn-normal btn-success&quot; href=&quot;&quot; id=&quot;register&quot;&gt;注册&lt;/a&gt;
+  &lt;a class=&quot;login btn btn-normal btn-primary&quot; href=&quot;&quot; id=&quot;login&quot;&gt;登录&lt;/a&gt;
+&lt;/span&gt;
+&lt;!-- end 登陆&amp;注册栏 --&gt;
+</code></pre>
+<pre><code class="js">$(&quot;#register&quot;).attr(&quot;href&quot;, &quot;/user/register&quot;);
+$(&quot;#login&quot;).attr(&quot;href&quot;,&quot;/user/login&quot;);
+</code></pre>
+<h4 id="注册页面检测用户名是否可用"><a href="#注册页面检测用户名是否可用" class="headerlink" title="注册页面检测用户名是否可用"></a>注册页面检测用户名是否可用</h4><blockquote>
+<p>老师的思路：</p>
+<p>用户名输入框的值产生变化时，发送ajax请求检测用户名是否可用。</p>
+<p>会产生的问题：</p>
+<ol>
+<li>每输入一个字符都会发送一次请求，很影响用户体验</li>
+<li>如果用户输入完成前，前半部分输入的值与注册过的用户名重名，会提示不可用</li>
+<li>如果选中用户名进行复制或者其他操作，也会触发请求</li>
+</ol>
+<p>解决方案：</p>
+<ol>
+<li>减少提交请求的次数，设置定时器</li>
+<li>把每次输入的值保存在一个临时变量中，每次发送请求前检测是否和保存的值相同，如果相同则不发送请求，以免重复请求</li>
+</ol>
+</blockquote>
+<pre><code class="js">(function(){
+  function sendAjax() {
+    var timer;
+    var username;
+    return function(e) {
+      clearTimeout(timer);
+      if(username === $(&quot;#username&quot;).val()){
+        return;   // 如果值没有变化，就不发送请求
+      }
+      timer = setTimeout(function(){
+        $.ajax({
+          url: &quot;/user/check-username&quot;,
+          type: &quot;post&quot;,
+          data: &quot;username=&quot; + $(&quot;#username&quot;).val(),
+          dataType: &quot;json&quot;,
+          success: function(data){
+            username = $(&quot;#username&quot;).val();
+            alert(data.msg);
+          }
+        })
+      }, 500)
+    }
+  }
+
+  $(&quot;#username&quot;).on(&quot;keyup&quot;, sendAjax());
+}){window}
+</code></pre>
+<blockquote>
+<p>我的思路：</p>
+<ol>
+<li>用户焦点离开用户名再检查，即只在用户完成输入后检查</li>
+<li>只返回用户名不可用时的提示信息</li>
+</ol>
+</blockquote>
+<pre><code class="js">(function(){
+  let username;
+  $(&quot;#username&quot;).on(&quot;blur&quot;, function(){
+    if(username === $(&quot;#username&quot;).val()){
+      return;
+    }
+    $.ajax({
+      url: &quot;/user/check-username&quot;,
+      method: &quot;post&quot;,
+      data: &quot;username=&quot; + $(&quot;#username&quot;).val(),
+      dataType: &quot;json&quot;,
+      success: function(data) {
+        if
+      }
+    })
+  })
+})(window)
+</code></pre>
+<blockquote>
+<p>最开始我直接用<code>on(&quot;blur&quot;, fn)</code>来实现判断用户名，这样的确是没问题的。</p>
+<p>但是在尝试老师提到的选中文字复制会重复触发请求这一点上，同样有这一问题。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuggd69j1uj307u02nmx4.jpg" alt="image-20180820204549790"></p>
+<p>所以我也加上了对用户名的值的判断，这样就不会重复提交了。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fuggfpkx5gj308001ljrb.jpg" alt="image-20180820204818591"></p>
+</blockquote>
+<h4 id="显示密码强度"><a href="#显示密码强度" class="headerlink" title="显示密码强度"></a>显示密码强度</h4><p>密码的强度测试三个维度</p>
+<ul>
+<li>是否包含字母</li>
+<li>是否包含数字</li>
+<li>是否包含特殊字符</li>
+</ul>
+<p>如果我们假定一开始的安全值为0的话，每符合上述一条要求则加1，最终的数字为密码强度。我们为显示密码强度的地方留了三个空的<code>div</code>元素，对应密码强度，会有相应个数的<code>div</code>变成红色。</p>
+<pre><code class="js">// 先明确如何判断强度
+function checkPass(str) {
+  let level = 0;
+  let reg1 = /[A-Za-z]/;   //判断是否包含字母
+  let reg2 = /\d/;         //判断是否包含数字
+  let reg3 = /\W/;         //判断是否包含特殊字符
+  if(reg1.test(str)) level++;
+  if(reg2.test(str)) level++;
+  if(reg3.test(str)) level++;
+  return level;
+}
+
+// 再对密码进行动态判断(即每次密码值的变化都会进行一次判断)
+$(&quot;#password&quot;).on(&quot;keyup&quot;, function(e){
+  let divs = $(&quot;#pwd-level&quot;).find(&quot;div&quot;);
+  for(let i = 0； i&lt;divs.length; i++){
+    divs[i].style.backgroundColor = &#39;&#39;;
+  }
+  let pass = e.target.value;
+  let level = checkPass(pass);
+  for(let i = 0; i &lt; level; i ++) {
+    divs[i].style.backgroundColor = &quot;red&quot;;
+  }
+})
+</code></pre>
+<h4 id="验证码功能"><a href="#验证码功能" class="headerlink" title="验证码功能"></a>验证码功能</h4><p>发送彩色验证码需要用到一个叫做<code>captchapng2</code>的中间件，它会随机生成一个4位的数字，然后会渲染成图片。</p>
+<p>我们先在模板文件中将图片的<code>src</code>给补上</p>
+<pre><code class="html">&lt;li class=&quot;aw-register-verify&quot;&gt;
+  &lt;img class=&quot;pull-right&quot; width=&quot;120&quot; src=&quot;/user/captcha&quot; &gt;
+  &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;vcode&quot; placeholder=&quot;验证码&quot; /&gt;
+&lt;/li&gt;
+</code></pre>
+<p>然后给用户路由加上对应的内容</p>
+<pre><code class="js">router.get(&#39;/user/register&#39;, ctx =&gt; {
+  ctx.render(&#39;register&#39;);
+})
+.get(&#39;/user/login&#39;, ctx =&gt; {
+    ctx.render(&#39;login&#39;);
+})
+.post(&#39;/user/check-username&#39;, userController.checkUsername)
+.post(&#39;/user/do-register&#39;, userController.doRegister)
+.post(&#39;/user/do-login&#39;, userController.doLogin)
+.post(&#39;/user/test-session&#39;,userController.test)
+.get(&quot;/user/captcha&quot;,userController.getPic)  //加载验证码
+</code></pre>
+<p>再根据中间件来写<code>getPic</code>函数</p>
+<pre><code class="bash">npm i captchapng2 -S
+</code></pre>
+<pre><code class="js">const captchapng = require(&quot;captchapng2&quot;);
+exports.getPic = async ctx =&gt; {
+  let rand = parseInt(Math.random() * 9000 + 1000);
+  let png = new captchapng(80, 30, rand);  // 宽、高、图片数字
+
+  ctx.session.vcode = rand;
+  ctx.response.set(&quot;Content-Type&quot;, &quot;image/png&quot;);
+  ctx.body = png.getBuffer();
+}
+</code></pre>
+<p>这时我们的注册页面上就有验证码了：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fugilg6h9dj30bh08p0sz.jpg" alt="image-20180820220300970"></p>
+<p>但是还有一个问题，就是我们经常会遇见的验证码看不清需要点击换一个，所以我们还需要给验证码图片加上一个点击事件。</p>
+<pre><code class="html">&lt;img class=&quot;pull-right&quot; width=&quot;120&quot; src=&quot;/user/captcha&quot; onclick=&quot;this.src=&#39;/user/captcha?&#39; +Date.now()&quot;&gt;
+</code></pre>
+<p>这样每次点击就会发送一个带时间戳的请求到<code>user/captcha</code>，从而请求到不同的图片了。</p>
+<p>此外，我们还需要将验证码的验证加入到验证注册这一步骤中：</p>
+<pre><code class="js">//user_controller.js
+exports.doRegister = async ctx =&gt; {
+  let {username, password, email, vcode} = ctx.request.body;
+  if(vcode != ctx.session.vcode) {  // 注意vcode是数字，ctx.session.vcode是字符串，需要隐性转换类型
+    return ctx.body = {code:&quot;003&quot;, msg: &quot;验证码不正确&quot;};
+  }
+}
+</code></pre>
+<h4 id="邮箱验证"><a href="#邮箱验证" class="headerlink" title="邮箱验证"></a>邮箱验证</h4><blockquote>
+<p>发现这里还有个小bug是邮箱没有验证。</p>
+<p>我刚开始的做法是在模板文件里添加了一个正则验证邮箱的步骤，但是后来发现这样其实点击提示框之后还是可以继续完成注册，所以就学测试用户名是否可用那一部分一样，把验证邮箱加到了<code>user_controller</code>里，同时在验证注册的步骤里再验证一次邮箱。</p>
+</blockquote>
+<pre><code class="js">// register.html模板文件的验证用户名部分添加验证邮箱的代码
+(function(){
+  let email;
+  $(&quot;#email&quot;).on(&quot;blur&quot;, function() {
+    if(email === $(&quot;#email&quot;).val()){
+      return;
+    }
+    $.ajax({
+      url:&quot;user/check-email&quot;,
+      method:&quot;post&quot;,
+      data: &quot;email=&quot;+$(&quot;#email&quot;).val(),
+      dataType: &quot;json&quot;,
+      success: function(data){
+        email = $(&quot;#email&quot;).val();
+        if(data.code === &quot;001&quot;) {
+          alert(data.msg);
+        }
+      }
+    })
+  })
+})(window)
+</code></pre>
+<pre><code class="js">// user_router.js
+router.get(&#39;/user/register&#39;, ctx =&gt; {
+  ctx.render(&#39;register&#39;);
+})
+.get(&#39;/user/login&#39;, ctx =&gt; {
+    ctx.render(&#39;login&#39;);
+})
+.post(&#39;/user/check-username&#39;, userController.checkUsername)
+.post(&quot;/user/check-email&quot;,userController.checkEmail)  //添加验证邮箱
+</code></pre>
+<pre><code class="js">// user_controller.js
+// 验证邮箱格式是否正确
+exports.checkEmail = async ctx =&gt; {
+    let {email} = ctx.request.body;
+    let reg = /\w+@\w+.\w{2,3}/;
+    if(!reg.test(email)){
+        return ctx.body = {code: &quot;001&quot;, msg: &quot;请输入正确的邮箱&quot;};
+    }
+}
+
+exports.doRegister = async ctx =&gt; {
+  let {username, password, email, vcode} = ctx.request.body;
+    // 验证邮箱格式，格式不正确无法完成注册
+    let reg = /\w+@\w+.\w{2,3}/;
+    if(!reg.test(email)){
+        return ctx.body = {code: &quot;003&quot;, msg: &quot;请输入正确的邮箱&quot;};
+    }
+}
+</code></pre>
+<p>这样注册页面需要的功能就全都补上了接下来处理登录页面。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/08/20/koa项目：云音乐应用5——页面前端渲染/" title="koa项目：云音乐应用5——注册页面前端渲染">http://xuquan.site/2018/08/20/koa项目：云音乐应用5——页面前端渲染/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/koa/" rel="tag"><i class="fa fa-tag"></i> koa</a>
+          
+            <a href="/tags/ndoe-js/" rel="tag"><i class="fa fa-tag"></i> ndoe.js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/19/koa项目：云音乐应用4——音乐上传与列表显示/" rel="next" title="koa项目：云音乐应用4——音乐上传与列表显示">
+                <i class="fa fa-chevron-left"></i> koa项目：云音乐应用4——音乐上传与列表显示
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/21/koa项目：云音乐应用6——登录页面前端渲染/" rel="prev" title="koa项目：云音乐应用6——登录、音乐页面">
+                koa项目：云音乐应用6——登录、音乐页面 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册页面功能"><span class="nav-number">1.</span> <span class="nav-text">注册页面功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#补全头部按钮功能"><span class="nav-number">1.1.</span> <span class="nav-text">补全头部按钮功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注册页面检测用户名是否可用"><span class="nav-number">1.2.</span> <span class="nav-text">注册页面检测用户名是否可用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示密码强度"><span class="nav-number">1.3.</span> <span class="nav-text">显示密码强度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证码功能"><span class="nav-number">1.4.</span> <span class="nav-text">验证码功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#邮箱验证"><span class="nav-number">1.5.</span> <span class="nav-text">邮箱验证</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/08/20/koa项目：云音乐应用5——页面前端渲染/';
+          this.page.identifier = '2018/08/20/koa项目：云音乐应用5——页面前端渲染/';
+          this.page.title = 'koa项目：云音乐应用5——注册页面前端渲染';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

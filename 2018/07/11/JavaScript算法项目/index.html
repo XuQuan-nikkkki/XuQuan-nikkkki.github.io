@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,freecodecamp," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="JS算法项目是5道题目，没有具体的知识点讲解，我把题目的解答和思路放在下面：">
+<meta name="keywords" content="JavaScript,freecodecamp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript算法项目">
+<meta property="og:url" content="http://xuquan.site/2018/07/11/JavaScript算法项目/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="JS算法项目是5道题目，没有具体的知识点讲解，我把题目的解答和思路放在下面：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-07T06:52:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript算法项目">
+<meta name="twitter:description" content="JS算法项目是5道题目，没有具体的知识点讲解，我把题目的解答和思路放在下面：">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/07/11/JavaScript算法项目/"/>
+
+
+
+
+
+  <title>JavaScript算法项目 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/07/11/JavaScript算法项目/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JavaScript算法项目</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T00:38:36+08:00">
+                2018-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index">
+                    <span itemprop="name">FreeCodeCamp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/11/JavaScript算法项目/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/07/11/JavaScript算法项目/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/07/11/JavaScript算法项目/" class="leancloud_visitors" data-flag-title="JavaScript算法项目">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,548 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>JS算法项目是5道题目，没有具体的知识点讲解，我把题目的解答和思路放在下面：</p>
+<a id="more"></a>
+<hr>
+<h4 id="Introduction-to-the-JavaScript-Algorithms-and-Data-Structures-Projects"><a href="#Introduction-to-the-JavaScript-Algorithms-and-Data-Structures-Projects" class="headerlink" title="Introduction to the JavaScript Algorithms and Data Structures Projects"></a><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects" target="_blank" rel="noopener">Introduction to the JavaScript Algorithms and Data Structures Projects</a></h4><ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker" target="_blank" rel="noopener">Palindrome Checker</a> 测试回文</p>
+<p>题干：测试字符串从左到右与从右到左是否是一致的（需要提前筛除掉-/等特殊符号）</p>
+<p>这题比较简单，先把字符串转换成小写字母（题目规定忽略大小写差异），切分成数组，因为数组可以使用<code>reverse()</code>方法直接调转顺序，这里用<code>split(&quot;&quot;)</code>切分，方便后一步筛选特殊符号，然后利用<code>filter()</code>方法，用正则<code>/[a-z0-9]/</code>把可以接受的字符筛选出来，再将正反两个顺序的数组用<code>join()</code>方法连接起来比较就好了。</p>
+<pre><code class="js">function palindrome(str) {
+  let arr = str.toLowerCase().split(&quot;&quot;).filter(ele =&gt; (/[a-z0-9]/).test(ele));
+  return arr.join(&quot;&quot;) === arr.reverse().join(&quot;&quot;);
+}
+palindrome(&quot;eye&quot;);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter" target="_blank" rel="noopener">Roman Numeral Converter</a></p>
+<p>题干：将阿拉伯数字转换成罗马数字</p>
+<p>我们先找出罗马数字的特征，罗马数字有特殊的字母符号来表示特定的数字（1， 5， 10， 50， 100， 500， 1000），这里只需要计算到最高3999。这些符号累加的结果等于阿拉伯数字，但是写的顺序要注意，如果较小的单位在较大单位的左边，则表示减去这个较小单位，如果在右边就是加上较小单位。</p>
+<p>我采取的方法是先创建一个<code>Roman</code>对象来保存各个级别的对应字母，然后创建<code>repeat</code>函数来规定字母怎么排列。这里以5作为切换的标准，<code>1, 10, 100, 1000</code>这4个级别上都是<code>1-3</code>个单位写作累加<code>unit unit unit</code>类似<code>III</code>或者<code>XXX</code>，如果是<code>4</code>个单位就是表示5倍单位的字母左边加上较小单位，如<code>IV</code>或<code>XL</code>,<code>5</code>个单位的则是对应级别中数组的第二个元素，如<code>V</code>, <code>L</code>,<code>D</code>，如果是<code>6-8</code>个单位则是表示5倍单位的字母右边累计添加表示1倍单位的字母，最后表示<code>9</code>个单位则是10倍单位在左边加上一倍单位。</p>
+<p>找到这个规律之后，找到每个级别的数字，<code>Math.floor(num / unit)</code>，再调用<code>repeat</code>函数就可以返回转换后的字符串了。</p>
+<pre><code class="js">function convertToRoman(num) {
+    let Roman = {
+        1: [&quot;I&quot;, &quot;V&quot;],
+        10: [&quot;X&quot;, &quot;L&quot;],
+        100: [&quot;C&quot;, &quot;D&quot;],
+        1000: [&quot;M&quot;]
+    }
+    let result = &quot;&quot;;
+    let repeat = function(times, prop) {
+        let roman = Roman[prop];
+        let addStr;
+        if(times &lt;= 3) {
+            addStr = new Array(times).fill(roman[0]).join(&quot;&quot;);
+            result += addStr;
+        } else if (times === 4) {
+            addStr = roman[0] + roman[1];
+            result += addStr;
+        } else if (times === 5) {
+            result += roman[1];
+        } else if (times &lt; 9) {
+            addStr = roman[1] + new Array(times-5).fill(roman[0]).join(&quot;&quot;);
+            result += addStr;
+        } else if (times === 9) {
+            addStr = roman[0] + Roman[prop * 10][0];
+            result += addStr;
+        }
+        return result;
+    }
+    repeat(Math.floor(num / 1000), 1000);
+    repeat(Math.floor((num % 1000) /100), 100);
+    repeat(Math.floor(num % 100 / 10), 10);
+    repeat(num % 10, 1);
+    return result;
+}
+convertToRoman(36);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher" target="_blank" rel="noopener">Caesars Cipher</a></p>
+<p>题干：凯撒密码</p>
+<p>凯撒密码是一个很简单的编码方式，即字母对应编码为字母本身Unicode编码+13的字母。这里有一个小坑是，如果统一加13，小于65或者大于90对应的字母在26个大写字母之外，所以需要判断一下字母的大小，如果字母的编码本身大于77，则编码-13，如果小于77，则编码+13。对于非字母，则不必转换。</p>
+<pre><code class="js">function rot13(str) { // LBH QVQ VG!
+    let result = str.split(&quot;&quot;).map(val =&gt; {
+       if(val.charCodeAt() &lt; 65 || val.charCodeAt() &gt; 90) {
+           return val;
+       } else {
+           return val.charCodeAt() &gt; 77? String.fromCharCode(val.charCodeAt() - 13): String.fromCharCode(val.charCodeAt() + 13)
+       }
+   }).join(&quot;&quot;);
+   return result;
+}
+
+// Change the inputs below to test
+rot13(&quot;SERR PBQR PNZC&quot;);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator" target="_blank" rel="noopener">Telephone Number Validator</a></p>
+<p>题干：检测电话号码是否有效</p>
+<p>这题就是利用正则表达式来检测字符串。字符串开头可以是1或者1加上空格，之后是3个数字，这3个数字前后可以有一对括号，但是括号必须完整，之后是3个数组，再之后是4个数字，3组数字之间可以是空格，也可以是短横线，还可以没有分隔符，字符串前后不能再有其他的内容。所以按照这个思路很容易写出这个表达式。</p>
+<pre><code class="js">function telephoneCheck(str) {
+  let re = /^(1|1\s)?([0-9]{3}|\([0-9]{3}\))(\s|-)?[0-9]{3}(\s|-)?[0-9]{4}$/;
+  return re.test(str);
+}
+
+telephoneCheck(&quot;555-555-5555&quot;);
+</code></pre>
+<hr>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register" target="_blank" rel="noopener">Cash Register</a></p>
+<p>题干：模拟自动收银机返回找零钱的数组</p>
+<p>这题和转换罗马数字那题有一点类似，就是使用对象会很方便。这题把所有的单位和单位指代的价格对应起来，放在一个对象中。</p>
+<p>首先判断需要找零的钱和收银机里钱的关系，如果找零正好等于收银机的前，则返回原数组，且<code>status</code>是<code>CLOSED</code>，如果找零大于收银机里的钱，则返回零钱不够<code>INSUFFICIENT FUNDS</code>，如果零钱够，则需要判断返回的数组，这里我让<code>cid</code>中的每一位去和零钱比较，如果单位比<code>change</code>大，则不必返回这一部分，如果单位比<code>change</code>小或者相等，则判断返回多少<code>Math.floor(change / unit)</code>，在遍历完成后检查<code>change</code>是否为零，为零表示收银机里的钱可以合适地找给顾客，如果不为零，则说明对应的单位无法满足正好加起来等于找零。</p>
+<p>需要注意一个坑是，JavaScript在做浮点运算的时候回出现多位小数的bug，非常坑。这里我采取的方法是<code>toFixed(2)</code>，但是另一个需要注意的是，<code>toFixed</code>方法会返回一个字符串，所以无法直接合其他的数字比较，如果需要比较，得<code>parseFloat</code>。</p>
+<pre><code class="js">function checkCashRegister(price, cash, cid) {
+  var change = cash - price;
+  let money = {
+      &quot;ONE HUNDRED&quot;: 100,
+      &quot;TWENTY&quot;: 20,
+      &quot;TEN&quot;: 10,
+      &quot;FIVE&quot;: 5,
+      &quot;ONE&quot;: 1,
+      &quot;QUARTER&quot;: 0.25,
+      &quot;DIME&quot;: 0.1,
+      &quot;NICKEL&quot;: 0.05,
+      &quot;PENNY&quot;: 0.01 
+  };
+  let drawer = parseFloat(cid.reduce((acc, cur) =&gt; acc + cur[1], 0).toFixed(2));
+  if(change &gt; drawer) {
+      return {status: &quot;INSUFFICIENT_FUNDS&quot;, change:[]};
+  } else if (change === drawer) {
+      return {status: &quot;CLOSED&quot;, change: cid};
+  } else {
+      let cashArr = [];
+      cid.reverse().map(val =&gt; {
+          let unit = money[val[0]];
+          let cache = Math.floor(change/unit);
+          if(cache &gt; 0) {
+              if(cache * unit &gt;= val[1]) {
+                  cashArr.push(val);
+          change = (change - val[1]).toFixed(2);
+              } else {
+                  cashArr.push([val[0], cache * unit]);
+                  change = (change - cache * unit).toFixed(2);
+              }
+          } 
+      })
+      if(eval(change) === 0) {
+          return {status: &quot;OPEN&quot;, change: cashArr};
+      } else {
+          return {status: &quot;INSUFFICIENT_FUNDS&quot;, change:[]};
+      }
+  }
+}
+checkCashRegister(19.5, 20, [[&quot;PENNY&quot;, 1.01], [&quot;NICKEL&quot;, 2.05], [&quot;DIME&quot;, 3.1], [&quot;QUARTER&quot;, 4.25], [&quot;ONE&quot;, 90], [&quot;FIVE&quot;, 55], [&quot;TEN&quot;, 20], [&quot;TWENTY&quot;, 60], [&quot;ONE HUNDRED&quot;, 100]]);
+</code></pre>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/07/11/JavaScript算法项目/" title="JavaScript算法项目">http://xuquan.site/2018/07/11/JavaScript算法项目/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/tags/freecodecamp/" rel="tag"><i class="fa fa-tag"></i> freecodecamp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/10/算法中级/" rel="next" title="算法中级">
+                <i class="fa fa-chevron-left"></i> 算法中级
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/11/函数式编程/" rel="prev" title="函数式编程">
+                函数式编程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Introduction-to-the-JavaScript-Algorithms-and-Data-Structures-Projects"><span class="nav-number">1.</span> <span class="nav-text">Introduction to the JavaScript Algorithms and Data Structures Projects</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/07/11/JavaScript算法项目/';
+          this.page.identifier = '2018/07/11/JavaScript算法项目/';
+          this.page.title = 'JavaScript算法项目';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

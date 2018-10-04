@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS,position,float,flex," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="CSS布局方法包括定位布局、浮动布局、弹性布局，通过这些布局方式，可以玩出各种不同的花样。">
+<meta name="keywords" content="CSS,position,float,flex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS布局方式">
+<meta property="og:url" content="http://xuquan.site/2018/09/10/CSS布局方式/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="CSS布局方法包括定位布局、浮动布局、弹性布局，通过这些布局方式，可以玩出各种不同的花样。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fv4ud03egvj30f3071weh.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4ueeyy2aj30fl074mx6.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4rv2d7k2j305p05pmyb.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fv4rwz52v8j30k003qgmm.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fv5za1i65wj30fn099q2x.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fv5zdpib53j30lq05cmx5.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fv5ziezrbvj30hp0l70sn.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fv5zjrky5oj30h50lu3yg.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fv5zl4imjxj30h80lu0so.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdgy1fv603of655j30kn0aua9w.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fv6qjc6820j305r05vdfl.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fv6qoz26nbj305t05tjr5.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fv4s41dplwj30lw08k748.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fv6rvkzzbtj30jp0b9dft.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fv4se8gt4kj30sm08paa2.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fv4sfabqm7j30dd0h43yj.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fv4smmgr37j30sx08b0sq.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4swrq6y3j30m508o0sp.jpg">
+<meta property="og:updated_time" content="2018-09-12T08:00:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS布局方式">
+<meta name="twitter:description" content="CSS布局方法包括定位布局、浮动布局、弹性布局，通过这些布局方式，可以玩出各种不同的花样。">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fv4ud03egvj30f3071weh.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/09/10/CSS布局方式/"/>
+
+
+
+
+
+  <title>CSS布局方式 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/09/10/CSS布局方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">CSS布局方式</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-10T20:18:13+08:00">
+                2018-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/10/CSS布局方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/10/CSS布局方式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/10/CSS布局方式/" class="leancloud_visitors" data-flag-title="CSS布局方式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,151 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>CSS布局方法包括定位布局、浮动布局、弹性布局，通过这些布局方式，可以玩出各种不同的花样。</p>
+<a id="more"></a>
+<h3 id="定位布局"><a href="#定位布局" class="headerlink" title="定位布局"></a>定位布局</h3><p>定位布局通过<code>position</code>属性来实现。</p>
+<h4 id="position-static"><a href="#position-static" class="headerlink" title="position: static"></a><code>position: static</code></h4><p><code>static</code>是默认值，是静态定位，就是元素出现在正常的元素流中。</p>
+<h4 id="position-relative"><a href="#position-relative" class="headerlink" title="position: relative"></a><code>position: relative</code></h4><p><code>relative</code>是相对定位。在一个相对定位的元素上设置<code>top</code>,<code>left</code>,<code>bottom</code>,<code>right</code>属性会让它偏移其正常位置（如果不设置，则保持原位置不变）。但是其他元素不会受它的影响（即其他元素不会去弥补相对定位的元素偏移后的空隙位置）。</p>
+<h4 id="position-absolute"><a href="#position-absolute" class="headerlink" title="position: absolute"></a><code>position: absolute</code></h4><p><code>absolute</code>是绝对定位，它会相对于最近的“positioned”祖先元素定位（即<code>position</code>值不是<code>static</code>的元素）。如果没有“positioned”元素，那么它会相对于<code>body</code>来定位。</p>
+<h4 id="position-fixed"><a href="#position-fixed" class="headerlink" title="position: fixed"></a><code>position: fixed</code></h4><p><code>fixed</code>是固定定位。固定定位的元素会相对于视窗来定位，意味着即使页面滚动，它还是会停留在相同的位置。</p>
+<p>固定定位的元素会脱离文档流，也就是它原有的位置不会被保留。</p>
+<h4 id="position-sticky"><a href="#position-sticky" class="headerlink" title="position: sticky"></a><code>position: sticky</code></h4><p>粘性定位。最开始会像<code>relative</code>那样对原来的位置进行偏移，一旦超过一定的阈值之后，就会作为<code>fixed</code>定位，对于视窗进行定位。</p>
+<hr>
+<h3 id="浮动布局"><a href="#浮动布局" class="headerlink" title="浮动布局"></a>浮动布局</h3><p>浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边缘位置。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fv4ud03egvj30f3071weh.jpg" alt="image-20180910230338781"></p>
+<p>如果包含框太窄，无法容纳水平排列的三个浮动元素，那么其他浮动块向下移动，直到有足够的空间。如果浮动元素的高度不同，那么它们向下移动时可能会被其他浮动元素“卡住”。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4ueeyy2aj30fl074mx6.jpg" alt="image-20180910230500209"></p>
+<p><code>float</code>布局最开始是为了实现文字环绕而设计的。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4rv2d7k2j305p05pmyb.jpg" alt="image-20180910213712444"></p>
+<p>但浮动元素并不仅仅实现这一的效果。浮动元素会在浮动层上面进行排布，原先文档流中的元素位置会被删除。但是浮动元素的浮动层部分会把补上来的元素的文字挤出去。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fv4rwz52v8j30k003qgmm.jpg" alt="image-20180910213901541"></p>
+<p>这是因为设置浮动的元素会形成BFC，并且元素的宽度不再适应父元素宽度，而是适应自身内容宽度。</p>
+<h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><p><code>clear</code>属性规定元素的哪一边不可以有浮动元素。</p>
+<ul>
+<li><code>none</code>: 两边都可以有浮动元素</li>
+<li><code>left</code>：左边不可以有浮动元素</li>
+<li><code>right</code>：右边不可以有浮动元素</li>
+<li><code>both</code>：两边都不可以有浮动元素</li>
+<li><code>inherit</code>：继承父元素的<code>clear</code>属性</li>
+</ul>
+<p><code>clear</code>属性通常是和另一个被设置为浮动的元素搭配使用的。比如元素A设置了<code>float:left</code>，那个设置<code>clear:left</code>能让元素B不会和元素A发生重合，而是出现在元素A的下方，但元素A的浮动位置不会发生改变。</p>
+<hr>
+<h3 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h3><p>弹性布局能为盒模型提供很大的灵活性。定义了flex的容器是一个可伸缩容器，容器本身会根据容器中的元素动态设置资深大小，当容器被设置一个大小时，将会自动调整容器中的元素适应新大小。</p>
+<h4 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h4><p>所有的容器都可以指定为flex布局：</p>
+<pre><code class="css">.box {
+  display: flex;
+}
+</code></pre>
+<p>行内元素也可以使用flex布局：</p>
+<pre><code class="css">.box {
+  display: inline-flex;
+}
+</code></pre>
+<p>webkit内核的浏览器要加上<code>-webkit</code>前缀</p>
+<pre><code class="css">.box {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+</code></pre>
+<p><strong>设为Flex布局后，子元素的<code>float</code>,<code>clear</code>和<code>vertical-align</code>属性均失效。</strong></p>
+<h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p>设置为Flex的元素叫做Flex容器（flex container）。它的子元素被称为Flex项目（flex item）。</p>
+<p>容器默认存在两条轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴开始的位置叫做<code>main start</code>，结束位置叫做<code>main end</code>，交叉轴的开始位置叫做<code>cross start</code>，结束位置叫做<code>cross end</code>。</p>
+<p>单个项目占据的主轴空间叫做<code>main size</code>，占据的交叉轴空间叫做<code>cross size</code>。</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fv5za1i65wj30fn099q2x.jpg" alt="img"></p>
+<h4 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h4><ul>
+<li><p><code>flex-direction</code> 决定主轴的方向（即项目排列方向）</p>
+<pre><code class="css">.box {
+  flex-direction: row | row-reverse | column | column-reverse;
+}
+</code></pre>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fv5zdpib53j30lq05cmx5.jpg" alt="image-20180911224252905"></p>
+</li>
+</ul>
+<ul>
+<li><p><code>flex-wrap</code> 如果一行排不下，如何换行</p>
+<pre><code class="css">.box {
+  flex-wrap: nowrap | wrap | wrap-reverse； /* 不转行 | 转行，第一行在上 | 转行，第一行在下 */
+}
+</code></pre>
+</li>
+<li><p><code>flex-flow</code> <code>flex-direction</code>和<code>flex-wrap</code>的缩写，默认是<code>row nowrap</code></p>
+</li>
+<li><p><code>justify-content</code> 项目在主轴上的对齐方式</p>
+<pre><code class="css">.box {
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+</code></pre>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fv5ziezrbvj30hp0l70sn.jpg" alt="img"></p>
+</li>
+<li><p><code>align-items</code> 项目在交叉轴上如何对齐</p>
+<pre><code class="css">.box {
+  align-items: flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fv5zjrky5oj30h50lu3yg.jpg" alt="img"></p>
+</li>
+<li><p><code>align-content</code> 多根轴线的对齐方式</p>
+<pre><code class="css">.box {
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+</code></pre>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fv5zl4imjxj30h80lu0so.jpg" alt="img"></p>
+</li>
+</ul>
+<h4 id="项目属性"><a href="#项目属性" class="headerlink" title="项目属性"></a>项目属性</h4><ul>
+<li><p><code>order</code> 项目的排列顺序，数值越小，排列越靠前</p>
+</li>
+<li><p><code>flex-grow</code> 项目的放大比例（默认为0，按比例分配剩余空间）</p>
+</li>
+<li><p><code>flex-shrink</code> 项目的缩小比例，默认为1</p>
+</li>
+<li><p><code>flex-basis</code> 分配多余空间之前，项目占据的主轴空间</p>
+</li>
+<li><p><code>align-self</code> 运行单个项目有与其他项目不一样的对齐方式</p>
+<pre><code class="css">.item {
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fv603of655j30kn0aua9w.jpg" alt="img"></p>
+</li>
+</ul>
+<hr>
+<h3 id="常见布局技巧"><a href="#常见布局技巧" class="headerlink" title="常见布局技巧"></a>常见布局技巧</h3><h4 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h4><h5 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h5><ul>
+<li><p><code>text-align: center</code></p>
+</li>
+<li><p>块级元素可以转换成行内元素，再<code>text-align: center</code></p>
+<pre><code class="html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;test&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="css">.wrapper {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  text-align: center;
+}
+.test {
+  width: 50px;
+  height: 50px;
+  background: red;
+  display: inline-block | inline-flex;  //div转换成内联块级元素
+}
+</code></pre>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fv6qjc6820j305r05vdfl.jpg" alt="image-20180912142228021"></p>
+</li>
+</ul>
+<h5 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h5><ul>
+<li><p><code>margin: auto</code></p>
+<p> 块级元素左右外边距<code>auto</code>可以实现水平居中。</p>
+<pre><code class="css"> .wrapper {
+   width: 200px;
+   height: 200px;
+   border: 1px solid black;
+ }
+ .test {
+   width: 50px;
+   height: 50px;
+   background: red;
+   margin: 0 auto;
+ }
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p><code>margin</code>计算</p>
+<pre><code class="css">.wrapper {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+.test {
+  width: 50px;
+  height: 50px;
+  background: red;
+  position: relative;
+  margin-left: calc(50% - 25px);
+}
+</code></pre>
+</li>
+<li><p>弹性布局</p>
+<pre><code class="css">.wrapper {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+.test {
+  width: 50px;
+  height: 50px;
+  background: red;
+}
+</code></pre>
+</li>
+<li><p>绝对定位+ <code>margin: auto</code></p>
+<pre><code class="css">.wrapper {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  position: relative;
+}
+.test {
+  width: 50px;
+  height: 50px;
+  background: red;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h4><h5 id="行内元素-1"><a href="#行内元素-1" class="headerlink" title="行内元素"></a>行内元素</h5><ul>
+<li><code>line-height</code>设置为父容器的高度（适用于一行文字的情况）</li>
+</ul>
+<h5 id="块级元素-1"><a href="#块级元素-1" class="headerlink" title="块级元素"></a>块级元素</h5><p>以下方法均达到下图效果：</p>
+<pre><code class="html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;test&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fv6qoz26nbj305t05tjr5.jpg" alt="image-20180912142752550"></p>
+<ul>
+<li><p>直接使用margin计算</p>
+<pre><code class="css">.wrapper {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+.test {
+  width: 50px;
+  height: 50px;
+  margin-top: calc(50% - 25px);
+}
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p><code>display:table-cell</code> + <code>vertical-align: middle</code></p>
+<pre><code class="css">.wrapper {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  display: table-cell;
+  vertical-align: middle;
+}
+.test {
+  width: 50px;
+  height: 50px;
+  background: red;
+}
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p><code>flex</code>布局+<code>align-items: center</code></p>
+<pre><code class="css">.wrapper {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+.test {
+  width: 50px;
+  height: 50px;
+  background: red;
+}
+</code></pre>
+</li>
+<li><p>相对定位</p>
+<pre><code class="css">.wrapper {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+.test {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 50%;
+  margin-top: -25px;
+}
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>绝对定位+负的<code>margin</code></p>
+<pre><code class="css">.wrapper {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  position: relative;
+}
+.test {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+}
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>绝对定位 + <code>margin: auto</code></p>
+<pre><code class="css">.wrapper {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  position: relative;
+}
+.test {
+  width: 50px;
+  height: 50px;
+  background: red;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="两栏布局（一栏定宽，一栏自适应）"><a href="#两栏布局（一栏定宽，一栏自适应）" class="headerlink" title="两栏布局（一栏定宽，一栏自适应）"></a>两栏布局（一栏定宽，一栏自适应）</h4><pre><code class="html">&lt;div class=&quot;left&quot;&gt;定宽&lt;/div&gt;
+&lt;div class=&quot;right&quot;&gt;自适应&lt;/div&gt;
+</code></pre>
+<p>目标效果：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fv4s41dplwj30lw08k748.jpg" alt="image-20180910214549271"></p>
+<h5 id="1-相对布局"><a href="#1-相对布局" class="headerlink" title="1. 相对布局"></a>1. 相对布局</h5><pre><code class="css">* {
+  margin:0;
+  padding: 0;
+}
+
+.left {
+  width: 200px;
+  height: 400px;
+  background: red;
+
+}
+.right {
+  height: 400px;
+  background: yellow;
+  width: calc(100% - 200px);
+  position: relative;
+  left: 200px;
+  top: -400px;
+}
+</code></pre>
+<h5 id="2-绝对布局"><a href="#2-绝对布局" class="headerlink" title="2. 绝对布局"></a>2. 绝对布局</h5><pre><code class="css">* {
+  margin:0;
+  padding: 0;
+}
+
+.left {
+  width: 200px;
+  height: 400px;
+  background: red;
+
+}
+.right {
+  height: 400px;
+  background: yellow;
+  width: calc(100% - 200px);
+  position: absolute;
+  left: 200px;
+  top: 0;
+}
+</code></pre>
+<h5 id="3-浮动布局1-float-margin"><a href="#3-浮动布局1-float-margin" class="headerlink" title="3. 浮动布局1-float + margin"></a>3. 浮动布局1-<code>float</code> + <code>margin</code></h5><pre><code class="css">.left {
+  width: 200px;
+  heigth: 300px;
+  float: left;
+  background-color: red;
+}
+.rigth {
+  margin: 200px;
+  height: 300px;
+  background-color: yellow;
+}
+</code></pre>
+<h5 id="4-浮动布局：-两边都浮动"><a href="#4-浮动布局：-两边都浮动" class="headerlink" title="4. 浮动布局： 两边都浮动"></a>4. 浮动布局： 两边都浮动</h5><pre><code class="css">.left {
+  width: 200px;
+  height: 400px;
+  background: red;
+  float: left;
+}
+.right {
+  height: 400px;
+  background: yellow;
+  float: right;
+  width: calc(100% - 200px);
+}
+</code></pre>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fv6rvkzzbtj30jp0b9dft.jpg" alt="image-20180912150850318"></p>
+<h5 id="5-弹性布局-flex-1"><a href="#5-弹性布局-flex-1" class="headerlink" title="5. 弹性布局 + flex: 1"></a>5. 弹性布局 + <code>flex: 1</code></h5><pre><code class="css">body{ /* 应该加一层div包裹，避免其他元素布局受影响 */
+  display: flex;
+}
+.left {
+  width: 200px;
+  height: 400px;
+  background: red;
+
+}
+.right {
+  height: 400px;
+  background: yellow;
+  flex:1;
+}
+</code></pre>
+<h4 id="三栏布局（两边定宽，中间自适应）"><a href="#三栏布局（两边定宽，中间自适应）" class="headerlink" title="三栏布局（两边定宽，中间自适应）"></a>三栏布局（两边定宽，中间自适应）</h4><h5 id="1-左右float，-中间margin"><a href="#1-左右float，-中间margin" class="headerlink" title="1. 左右float， 中间margin"></a>1. 左右<code>float</code>， 中间<code>margin</code></h5><pre><code class="html">&lt;div class=&quot;left&quot;&gt;左栏&lt;/div&gt;
+&lt;div class=&quot;right&quot;&gt;右栏&lt;/div&gt;
+&lt;div class=&quot;middle&quot;&gt;中间栏&lt;/div&gt;
+</code></pre>
+<pre><code class="css">.left {
+  width: 200px;
+  height: 300px;
+  background: red;
+  float: left;
+}
+.right {
+  width: 300px;
+  height: 300px;
+  background: green;
+  float: right;
+}
+.middle {
+  background: yellow;
+  margin-left: 210px;
+  margin-right: 310px;
+}
+</code></pre>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fv4se8gt4kj30sm08paa2.jpg" alt="image-20180910215538173"></p>
+<p><strong>缺点：</strong>当浏览器宽度小于左右栏宽度之和时，右栏会被挤下去</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fv4sfabqm7j30dd0h43yj.jpg" alt="image-20180910215638282"></p>
+<h5 id="2-左右position定位，中间margin"><a href="#2-左右position定位，中间margin" class="headerlink" title="2. 左右position定位，中间margin"></a>2. 左右<code>position</code>定位，中间<code>margin</code></h5><pre><code class="html">&lt;div class=&quot;left&quot;&gt;左栏&lt;/div&gt;
+&lt;div class=&quot;right&quot;&gt;右栏&lt;/div&gt;
+&lt;div class=&quot;middle&quot;&gt;中间栏&lt;/div&gt;
+</code></pre>
+<pre><code class="css">* {
+  margin: 0;
+  padding: 0;
+}
+div {
+  height: 300px;
+}
+.left {
+  width: 200px;
+  background: red;
+  position: 0;
+  top: 0;
+  left: 0;
+}
+.right {
+  width: 300px;
+  background: green;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.middle {
+  background: yellow;
+  margin: 0 320px 0 220px;
+}
+</code></pre>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fv4smmgr37j30sx08b0sq.jpg" alt="image-20180910220341784"></p>
+<p>缺点：当父元素有内外边距时，中间栏位置会产生偏差（所以加上了reset）</p>
+<h5 id="3-flex布局"><a href="#3-flex布局" class="headerlink" title="3. flex布局"></a>3. <code>flex</code>布局</h5><pre><code class="html">&lt;div id=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;left&quot;&gt;左栏&lt;/div&gt;
+  &lt;div class=&quot;right&quot;&gt;右栏&lt;/div&gt;
+  &lt;div class=&quot;middle&quot;&gt;中间栏&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="css">#wrapper {
+  display: flex;
+  height: 300px
+}
+.left {
+  width: 200px;
+  background: red;
+}
+.right {
+  width: 300px;
+  background: green;
+}
+.middle {
+  width: 100%;  /* flex: 1 */
+  margin: 0 20px;
+}
+</code></pre>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4swrq6y3j30m508o0sp.jpg" alt="image-20180910221326693"></p>
+<p><strong>缺点：</strong>会有兼容性问题</p>
+<blockquote>
+<p>参考</p>
+<p><a href="http://zh.learnlayout.com/" target="_blank" rel="noopener">学习CSS布局</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">Flex布局教程：语法篇</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/09/10/CSS布局方式/" title="CSS布局方式">http://xuquan.site/2018/09/10/CSS布局方式/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+          
+            <a href="/tags/position/" rel="tag"><i class="fa fa-tag"></i> position</a>
+          
+            <a href="/tags/float/" rel="tag"><i class="fa fa-tag"></i> float</a>
+          
+            <a href="/tags/flex/" rel="tag"><i class="fa fa-tag"></i> flex</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/09/用信鸽解释HTTPS/" rel="next" title="「翻译」用信鸽解释HTTPS">
+                <i class="fa fa-chevron-left"></i> 「翻译」用信鸽解释HTTPS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/11/「翻译」什么是REST？/" rel="prev" title="「翻译」什么是REST？">
+                「翻译」什么是REST？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#定位布局"><span class="nav-number">1.</span> <span class="nav-text">定位布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#position-static"><span class="nav-number">1.1.</span> <span class="nav-text">position: static</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#position-relative"><span class="nav-number">1.2.</span> <span class="nav-text">position: relative</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#position-absolute"><span class="nav-number">1.3.</span> <span class="nav-text">position: absolute</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#position-fixed"><span class="nav-number">1.4.</span> <span class="nav-text">position: fixed</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#position-sticky"><span class="nav-number">1.5.</span> <span class="nav-text">position: sticky</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动布局"><span class="nav-number">2.</span> <span class="nav-text">浮动布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#清除浮动"><span class="nav-number">2.1.</span> <span class="nav-text">清除浮动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹性布局"><span class="nav-number">3.</span> <span class="nav-text">弹性布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Setup"><span class="nav-number">3.1.</span> <span class="nav-text">Setup</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-number">3.2.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#容器属性"><span class="nav-number">3.3.</span> <span class="nav-text">容器属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目属性"><span class="nav-number">3.4.</span> <span class="nav-text">项目属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见布局技巧"><span class="nav-number">4.</span> <span class="nav-text">常见布局技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#水平居中"><span class="nav-number">4.1.</span> <span class="nav-text">水平居中</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#行内元素"><span class="nav-number">4.1.1.</span> <span class="nav-text">行内元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#块级元素"><span class="nav-number">4.1.2.</span> <span class="nav-text">块级元素</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#垂直居中"><span class="nav-number">4.2.</span> <span class="nav-text">垂直居中</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#行内元素-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">行内元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#块级元素-1"><span class="nav-number">4.2.2.</span> <span class="nav-text">块级元素</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两栏布局（一栏定宽，一栏自适应）"><span class="nav-number">4.3.</span> <span class="nav-text">两栏布局（一栏定宽，一栏自适应）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-相对布局"><span class="nav-number">4.3.1.</span> <span class="nav-text">1. 相对布局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-绝对布局"><span class="nav-number">4.3.2.</span> <span class="nav-text">2. 绝对布局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-浮动布局1-float-margin"><span class="nav-number">4.3.3.</span> <span class="nav-text">3. 浮动布局1-float + margin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-浮动布局：-两边都浮动"><span class="nav-number">4.3.4.</span> <span class="nav-text">4. 浮动布局： 两边都浮动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-弹性布局-flex-1"><span class="nav-number">4.3.5.</span> <span class="nav-text">5. 弹性布局 + flex: 1</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三栏布局（两边定宽，中间自适应）"><span class="nav-number">4.4.</span> <span class="nav-text">三栏布局（两边定宽，中间自适应）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-左右float，-中间margin"><span class="nav-number">4.4.1.</span> <span class="nav-text">1. 左右float， 中间margin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-左右position定位，中间margin"><span class="nav-number">4.4.2.</span> <span class="nav-text">2. 左右position定位，中间margin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-flex布局"><span class="nav-number">4.4.3.</span> <span class="nav-text">3. flex布局</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/09/10/CSS布局方式/';
+          this.page.identifier = '2018/09/10/CSS布局方式/';
+          this.page.title = 'CSS布局方式';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS,box model,layout," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="盒模型是CSS布局的基础，因为所有的HTML元素都能看做是一个一个的盒子。">
+<meta name="keywords" content="CSS,box model,layout">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS盒模型">
+<meta property="og:url" content="http://xuquan.site/2018/09/01/CSS盒模型/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="盒模型是CSS布局的基础，因为所有的HTML元素都能看做是一个一个的盒子。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4g8uhe35j30r50b074n.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fv4io8n9rtj30av07babx.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fv4iojooz0j30as0750uj.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fv4hr1n89aj30jg0bl75t.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fv4kee9qgkj30jd060jso.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4kn04aqvj30op0cctha.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fv4kus7r0vj30ou0ex11m.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fv4kb0y8cpj305801w743.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fv4kd3ygjfj309v01nglf.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4jys99yaj30ht03c3yf.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fv4k2nsfhij304h04fjrc.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4k6hwht4j30ju03ojrb.jpg">
+<meta property="og:updated_time" content="2018-09-11T03:19:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS盒模型">
+<meta name="twitter:description" content="盒模型是CSS布局的基础，因为所有的HTML元素都能看做是一个一个的盒子。">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4g8uhe35j30r50b074n.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/09/01/CSS盒模型/"/>
+
+
+
+
+
+  <title>CSS盒模型 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/09/01/CSS盒模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">CSS盒模型</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T14:46:50+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/01/CSS盒模型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/01/CSS盒模型/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/01/CSS盒模型/" class="leancloud_visitors" data-flag-title="CSS盒模型">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,677 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>盒模型是CSS布局的基础，因为所有的HTML元素都能看做是一个一个的盒子。</p>
+<a id="more"></a>
+<h3 id="CSS盒模型"><a href="#CSS盒模型" class="headerlink" title="CSS盒模型"></a>CSS盒模型</h3><p>CSS盒模型包含四个部分：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4g8uhe35j30r50b074n.jpg" alt="image-20180910145515691"></p>
+<ul>
+<li><strong>Content</strong>：盒内容，文本和图片显示在这里</li>
+<li><strong>Padding</strong>：内容周围的空白部分，padding是透明的</li>
+<li><strong>Border</strong>：边框，边框围绕padding和内容</li>
+<li><strong>Margin</strong>：边框外的空白部分，margin是透明的</li>
+</ul>
+<h4 id="相关属性"><a href="#相关属性" class="headerlink" title="相关属性"></a>相关属性</h4><h5 id="padding"><a href="#padding" class="headerlink" title="padding"></a><code>padding</code></h5><p><code>padding</code>是透明的，我们可以分别设置<code>padding</code>的宽度：<code>padding-top</code>,<code>padding-left</code>,<code>padding-bottom</code>,<code>padding-right</code></p>
+<h5 id="margin"><a href="#margin" class="headerlink" title="margin"></a><code>margin</code></h5><p><code>margin</code>也是透明的，我们也可以分别设置<code>margin</code>的宽度：<code>margin-top</code>,<code>margin-left</code>,<code>margin-bottom</code>,<code>margin-right</code></p>
+<p><strong>需要注意的是，当两个盒子相邻时，它们之间的距离是两个盒子中较大的<code>margin</code>，而不是两个<code>margin</code>之和。这个现象叫<code>margin-collapse</code></strong>。</p>
+<h5 id="border"><a href="#border" class="headerlink" title="border"></a><code>border</code></h5><ul>
+<li><code>border</code>可以分别设置宽度：<code>border-top</code>,<code>border-left</code>,<code>border-bottom</code>,<code>border-right</code></li>
+<li>设置边框的样式<ul>
+<li><code>border-width</code>设置边框的宽度（可以设置数值，也可以设置<code>thick</code>,<code>medium</code>,<code>thin</code>）</li>
+<li><code>border-style</code>设置边框样式，如（<code>dotted</code>点状，<code>solid</code>实线，<code>inset</code>嵌入）</li>
+<li><code>border-color</code>设置边框颜色</li>
+<li>以上三个属性可以通过<code>border</code>简写直接设置<code>border: 1px solid black</code></li>
+</ul>
+</li>
+<li>混合设置，如<code>border-top-width</code>,<code>border-right-color</code></li>
+</ul>
+<h3 id="元素宽高"><a href="#元素宽高" class="headerlink" title="元素宽高"></a>元素宽高</h3><h4 id="width和height属性"><a href="#width和height属性" class="headerlink" title="width和height属性"></a><code>width</code>和<code>height</code>属性</h4><p>元素的宽高通过<code>width</code>和<code>height</code>属性来设置。但是<code>width</code>和<code>height</code>属性设置的是内容即<code>content area</code>的宽高，元素的实际宽高需要将<code>padding</code>,<code>border</code>,<code>margin</code>计算进去。</p>
+<h4 id="IE盒子模型和W3C盒子模型"><a href="#IE盒子模型和W3C盒子模型" class="headerlink" title="IE盒子模型和W3C盒子模型"></a>IE盒子模型和W3C盒子模型</h4><p>如上所述，W3C标准的盒模型在计算宽高时，是计算的内容部分的宽高。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fv4io8n9rtj30av07babx.jpg" alt="image-20180910161914949"></p>
+<p>但IE盒模型包含<code>padding</code>和<code>border</code>，所以在计算<code>width</code>和<code>height</code>时，会得到不一样的值。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fv4iojooz0j30as0750uj.jpg" alt="image-20180910161932994"></p>
+<h4 id="指定盒模型"><a href="#指定盒模型" class="headerlink" title="指定盒模型"></a>指定盒模型</h4><p><code>box-sizing</code>属性可以指定使用元素的哪个宽高作为元素的整体宽高。</p>
+<p><code>box-sizing: content-box</code>：以内容为宽高</p>
+<p><code>box-sizing: border-box</code>：以<code>content</code>+<code>border</code>+<code>padding</code>为宽高</p>
+<p>还可以将设定放在CSS reset部分：</p>
+<pre><code class="css">* {
+  -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+</code></pre>
+<h4 id="设定盒子的最大-最小宽高"><a href="#设定盒子的最大-最小宽高" class="headerlink" title="设定盒子的最大/最小宽高"></a>设定盒子的最大/最小宽高</h4><p><code>min-width</code>,<code>max-width</code>,<code>min-height</code>,<code>max-height</code>属性可以设定元素的最大/最小宽高。</p>
+<p>设置元素的宽高可以使用数值，也可以设置百分比，百分比会按照元素父元素的宽高来计算元素的对应宽高。</p>
+<h3 id="内容溢出"><a href="#内容溢出" class="headerlink" title="内容溢出"></a>内容溢出</h3><p>当盒子内放置的内容超出盒子大小时，就会溢出。我们使用<code>overflow</code>来控制这种情况：</p>
+<ul>
+<li><code>overflow: auto</code> 当内容过多时，溢出内容被隐藏，使用滚动条来滚动查看所有内容</li>
+<li><code>overflow: hidden</code> 溢出内容被隐藏</li>
+<li><code>overflow: visible</code> 溢出内容显示在盒子外面（默认行为）</li>
+</ul>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fv4hr1n89aj30jg0bl75t.jpg" alt="image-20180910154720272"></p>
+<h3 id="CSS盒子类型"><a href="#CSS盒子类型" class="headerlink" title="CSS盒子类型"></a>CSS盒子类型</h3><h4 id="块级盒子（Block-box）"><a href="#块级盒子（Block-box）" class="headerlink" title="块级盒子（Block box）"></a>块级盒子（Block box）</h4><p>可以堆放在其他盒子上的盒子（内容会单独占一行），可以设置宽高</p>
+<h4 id="行内盒子（inline-box）"><a href="#行内盒子（inline-box）" class="headerlink" title="行内盒子（inline box）"></a>行内盒子（inline box）</h4><ul>
+<li>多个行内元素在一排时，会出现在一行</li>
+<li>对行内盒子设置宽高无效</li>
+<li><code>padding</code>,<code>margin</code>横向有效，垂直方向无效</li>
+<li>行内盒子的高度可以通过<code>line-height</code>来设置</li>
+</ul>
+<h4 id="行内块级盒子（inline-block-box）"><a href="#行内块级盒子（inline-block-box）" class="headerlink" title="行内块级盒子（inline-block box）"></a>行内块级盒子（inline-block box）</h4><ul>
+<li>会像行内盒子一样，和其他行内盒子出现在一行</li>
+<li>但是不会像行内盒子那样出现断行，也就是说，如果一行剩下的空间不够行内块级盒子放下全部内容，那么它会在新的一行开始内容</li>
+<li>可以像块级盒子一样设置宽高</li>
+</ul>
+<h3 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h3><p>BFC（Block Formatting Context），即“<strong>块级格式化上下文</strong>”。它是页面中CSS渲染的一部分，在布局过程中生成块级盒子的区域。它像一个隔离的独立容器，容器里面的子元素不会影响到外面元素。容器内的长度大于容器长度时，会出现内部滚动，但是滚动不会影响父容器之外的布局。</p>
+<h4 id="触发条件"><a href="#触发条件" class="headerlink" title="触发条件"></a>触发条件</h4><ul>
+<li><p>根元素本身就是BFC</p>
+</li>
+<li><p><code>float</code>值不为<code>none</code></p>
+</li>
+<li><code>overflow</code>值不为<code>visible</code></li>
+<li><code>display</code>值为<code>inline-block</code>,<code>table-cell</code>,<code>table-caption</code></li>
+<li><code>position</code>值为<code>absolute</code>或<code>fixed</code></li>
+</ul>
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a><strong>应用场景</strong></h4><h5 id="自适应两栏布局"><a href="#自适应两栏布局" class="headerlink" title="自适应两栏布局"></a>自适应两栏布局</h5><p>通常文本会围绕浮动元素，但有些时候，我们并不希望发生这样的情况：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fv4kee9qgkj30jd060jso.jpg" alt="image-20180910171859165"></p>
+<p>我们想要Figure2的样式，</p>
+<p>我们将元素内容列出来：</p>
+<pre><code class="html">&lt;div class=&quot;container&quot;&gt;
+  &lt;img src=&quot;url&quot; /&gt;
+  &lt;p&gt;
+    ...... a lot of text
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="css">.container {
+  background-color: lightgreen;
+  overflow: hidden;
+}
+img {
+  float: left;
+}
+</code></pre>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4kn04aqvj30op0cctha.jpg" alt="image-20180910172715934"></p>
+<p>但我们注意看W3C给BFC的规范：</p>
+<blockquote>
+<p><em>In a block formatting context, each box’s left outer edge touches the left edge of the containing block (for right-to-left formatting, right edges touch). This is true even in the presence of floats (although a box’s line boxes may shrink due to the floats), unless the box establishes a new block formatting context (in which case the box itself may become narrower due to the floats).</em></p>
+<p>在BFC中，每一个盒子的左边外部边缘会挨着父容器的左边缘（如果是从右向左排版，则盒子右边缘挨着父容器的右边缘）。即使是浮动布局的情况下，这一点也不会改变（尽管父容器的子元素可能会因为浮动而尺寸缩小）。除非子元素创建一个新的BFC，这样它也会因为浮动布局而变窄。</p>
+</blockquote>
+<p>也就是说，如果我们希望p元素不要围绕图片，那么可以通过给p建立一个BFC来实现。</p>
+<pre><code class="css">p {
+  overflow: hidden;
+}
+</code></pre>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fv4kus7r0vj30ou0ex11m.jpg" alt="image-20180910173444021"></p>
+<h5 id="清除内部浮动"><a href="#清除内部浮动" class="headerlink" title="清除内部浮动"></a>清除内部浮动</h5><p>我们经常会遇到容器里面是浮动元素，于是容器的高度就塌陷到0的情况。</p>
+<pre><code class="html">&lt;div class=&quot;container&quot;&gt;
+  &lt;div&gt;Sibling&lt;/div&gt;
+  &lt;div&gt;Sibling&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="css">.container {
+  background-color: red;
+}
+.container div {
+  float: left;
+  background-color: lightgreen;
+  margin: 10px;
+}
+</code></pre>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fv4kb0y8cpj305801w743.jpg" alt="image-20180910171545341"></p>
+<p>页面中只有两个孤独的div漂浮。<code>.container</code>因为没有高度，并不会显示出来。通常我们会设置一个空的伪元素去把容器敞开，但利用BFC，我们能更容易地处理这个情况。</p>
+<pre><code class="css">.container {
+  background-color: red;
+  overflow: hidden;
+}
+.container div {
+  float: left;
+  background-color: lightgreen;
+  margin: 10px;
+}
+</code></pre>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fv4kd3ygjfj309v01nglf.jpg" alt="image-20180910171744389"></p>
+<h5 id="防止垂直的margin重叠"><a href="#防止垂直的margin重叠" class="headerlink" title="防止垂直的margin重叠"></a>防止垂直的<code>margin</code>重叠</h5><pre><code class="html">&lt;div class=&quot;container&quot;&gt;
+  &lt;p&gt;Sibling 1&lt;/p&gt;
+  &lt;p&gt;Sibling 2&lt;/p&gt;
+  &lt;p&gt;Sibling 3&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>我们创建一个<code>div</code>，中间包含3个<code>p</code>元素，此时如果给<code>p</code>元素设定<code>margin</code>值，上下相邻的两个<code>margin</code>是会塌陷的。</p>
+<pre><code class="css">.container {
+  background-color: red;
+  overflow: hidden;
+}
+p {
+  background-color: lightgreen;
+  margin: 10px 0;
+}
+</code></pre>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4jys99yaj30ht03c3yf.jpg" alt="image-20180910170359549"></p>
+<p>此时p元素之间的margin值是<code>10px</code>，而并不是<code>20px</code>。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fv4k2nsfhij304h04fjrc.jpg" alt="image-20180910170743174"></p>
+<p>如果我们还记得根元素整体也是一个BFC，那么我们就能理解，同一个BFC中是会发生margin collapse的，要想解决它，需要让元素属于不同的BFC。所以我们要建立一个新的BFC。</p>
+<pre><code class="html">&lt;div class=&quot;container&quot;&gt;
+  &lt;p&gt;Sibling 1&lt;/p&gt;
+  &lt;p&gt;Sibling 2&lt;/p&gt;
+  &lt;div class=&quot;newBFC&quot;&gt;
+      &lt;p&gt;Sibling 3&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>给新的BFC也设置<code>overflow</code></p>
+<pre><code class="css">.container {
+  background-color: red;
+  overflow: hidden;
+}
+p {
+  background-color: lightgreen;
+  margin: 10px 0;
+}
+.newBFC {
+  overflow: hidden;
+}
+</code></pre>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fv4k6hwht4j30ju03ojrb.jpg" alt="image-20180910171124209"></p>
+<p><strong>通过设置元素在不同的BFC中避免了垂直方向的margin collapse</strong>。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/09/01/CSS盒模型/" title="CSS盒模型">http://xuquan.site/2018/09/01/CSS盒模型/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+          
+            <a href="/tags/box-model/" rel="tag"><i class="fa fa-tag"></i> box model</a>
+          
+            <a href="/tags/layout/" rel="tag"><i class="fa fa-tag"></i> layout</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/01/CSS常见选择器类型/" rel="next" title="CSS常见选择器类型">
+                <i class="fa fa-chevron-left"></i> CSS常见选择器类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/01/Fuji-Rock音乐节求生指南/" rel="prev" title="Fuji Rock音乐节求生指南">
+                Fuji Rock音乐节求生指南 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS盒模型"><span class="nav-number">1.</span> <span class="nav-text">CSS盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#相关属性"><span class="nav-number">1.1.</span> <span class="nav-text">相关属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#padding"><span class="nav-number">1.1.1.</span> <span class="nav-text">padding</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#margin"><span class="nav-number">1.1.2.</span> <span class="nav-text">margin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#border"><span class="nav-number">1.1.3.</span> <span class="nav-text">border</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素宽高"><span class="nav-number">2.</span> <span class="nav-text">元素宽高</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#width和height属性"><span class="nav-number">2.1.</span> <span class="nav-text">width和height属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IE盒子模型和W3C盒子模型"><span class="nav-number">2.2.</span> <span class="nav-text">IE盒子模型和W3C盒子模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指定盒模型"><span class="nav-number">2.3.</span> <span class="nav-text">指定盒模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设定盒子的最大-最小宽高"><span class="nav-number">2.4.</span> <span class="nav-text">设定盒子的最大/最小宽高</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容溢出"><span class="nav-number">3.</span> <span class="nav-text">内容溢出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS盒子类型"><span class="nav-number">4.</span> <span class="nav-text">CSS盒子类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#块级盒子（Block-box）"><span class="nav-number">4.1.</span> <span class="nav-text">块级盒子（Block box）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行内盒子（inline-box）"><span class="nav-number">4.2.</span> <span class="nav-text">行内盒子（inline box）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行内块级盒子（inline-block-box）"><span class="nav-number">4.3.</span> <span class="nav-text">行内块级盒子（inline-block box）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC"><span class="nav-number">5.</span> <span class="nav-text">BFC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#触发条件"><span class="nav-number">5.1.</span> <span class="nav-text">触发条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用场景"><span class="nav-number">5.2.</span> <span class="nav-text">应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#自适应两栏布局"><span class="nav-number">5.2.1.</span> <span class="nav-text">自适应两栏布局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清除内部浮动"><span class="nav-number">5.2.2.</span> <span class="nav-text">清除内部浮动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#防止垂直的margin重叠"><span class="nav-number">5.2.3.</span> <span class="nav-text">防止垂直的margin重叠</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/09/01/CSS盒模型/';
+          this.page.identifier = '2018/09/01/CSS盒模型/';
+          this.page.title = 'CSS盒模型';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,ES6," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Learning Card 规则 只要等号两边形式相同，就可以将右边的值赋予左边的变量 有遍历接口的类型都可以解构赋值（字符串、数组、Set、generator函数…）   数组的解构赋值 完全解构 左边完全等同于右边 不完全解构 左边形式仅为右边形式的一部分   对象的解构赋值 变量与属性同名，根据属性赋值   默认值 等号左边形式中给变量赋值 对应变量的值严格等于undefined即可生效">
+<meta name="keywords" content="JavaScript,ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6学习笔记之解构赋值">
+<meta property="og:url" content="http://xuquan.site/2018/07/06/ES6学习笔记之解构赋值/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="Learning Card 规则 只要等号两边形式相同，就可以将右边的值赋予左边的变量 有遍历接口的类型都可以解构赋值（字符串、数组、Set、generator函数…）   数组的解构赋值 完全解构 左边完全等同于右边 不完全解构 左边形式仅为右边形式的一部分   对象的解构赋值 变量与属性同名，根据属性赋值   默认值 等号左边形式中给变量赋值 对应变量的值严格等于undefined即可生效">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-08T08:15:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6学习笔记之解构赋值">
+<meta name="twitter:description" content="Learning Card 规则 只要等号两边形式相同，就可以将右边的值赋予左边的变量 有遍历接口的类型都可以解构赋值（字符串、数组、Set、generator函数…）   数组的解构赋值 完全解构 左边完全等同于右边 不完全解构 左边形式仅为右边形式的一部分   对象的解构赋值 变量与属性同名，根据属性赋值   默认值 等号左边形式中给变量赋值 对应变量的值严格等于undefined即可生效">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/07/06/ES6学习笔记之解构赋值/"/>
+
+
+
+
+
+  <title>ES6学习笔记之解构赋值 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/07/06/ES6学习笔记之解构赋值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">ES6学习笔记之解构赋值</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-06T23:56:24+08:00">
+                2018-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/06/ES6学习笔记之解构赋值/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/07/06/ES6学习笔记之解构赋值/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/07/06/ES6学习笔记之解构赋值/" class="leancloud_visitors" data-flag-title="ES6学习笔记之解构赋值">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,830 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><ul>
+<li><strong>规则</strong><ul>
+<li>只要等号两边形式相同，就可以将右边的值赋予左边的变量</li>
+<li>有遍历接口的类型都可以解构赋值（字符串、数组、Set、generator函数…）</li>
+</ul>
+</li>
+<li><strong>数组的解构赋值</strong><ul>
+<li><strong>完全解构</strong> 左边完全等同于右边</li>
+<li><strong>不完全解构</strong> 左边形式仅为右边形式的一部分</li>
+</ul>
+</li>
+<li><strong>对象的解构赋值</strong><ul>
+<li><strong>变量与属性同名</strong>，根据属性赋值</li>
+</ul>
+</li>
+<li><strong>默认值</strong><ul>
+<li>等号左边形式中给变量赋值</li>
+<li>对应变量的值严格等于<code>undefined</code>即可生效</li>
+</ul>
+</li>
+<li><strong>字符串的解构赋值</strong><ul>
+<li>转换成类似数组的对象</li>
+</ul>
+</li>
+<li><strong>数值和布尔值的解构赋值</strong><ul>
+<li>县转换为对象</li>
+</ul>
+</li>
+<li><strong>函数的参数也可以解构赋值</strong></li>
+<li><strong>常见用途</strong><ul>
+<li>交换变量的值</li>
+<li>函数返回多个值</li>
+<li>提取JSON数据</li>
+<li>遍历Map结构</li>
+<li>输入模块的指定方法</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<hr>
+<p>解构赋值是将数组或对象或其他有遍历接口的数据的一部分值提取出来，赋给另一个值的语法。用简单的话说，就是<strong>只要等号两边的形式相同，就可以将右边的值赋予左边的变量</strong>。</p>
+<p>常见的解构赋值多用于数组和对象，但实际上<strong>有遍历接口的类型都可以解构赋值</strong>，如es6新增加的数据结构<code>Set</code>也可以解构赋值：</p>
+<pre><code class="js">let [x, y, z] = new Set([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]);
+console.log(x);  //&quot;a&quot;
+console.log(y);  //&quot;b&quot;
+console.log(z);  //&quot;c&quot;
+</code></pre>
+<p>generator函数也可以解构赋值</p>
+<pre><code class="js">function * fibs() {
+  let a = 0;
+  let b = 1;
+  while(true) {
+    yield a;
+    [a, b] = [b, a + b];
+  }
+}
+let [first, second, third, fourth, fifth, sixth] = fibs();
+console.log(sixth);   //5
+</code></pre>
+<p>如果右边是不能遍历的结构，结果会报错：</p>
+<pre><code class="js">let [foo] = 1;             //1 is not iterable
+let [foo] = false;         //false is not iterable
+let [foo] = NaN;           //NaN is not iterable
+let [foo] = undefined;     //undefined is not iterable
+let [foo] = null;          //null is not iterable
+let [foo] = {};            //{} is not iterable
+</code></pre>
+<h4 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h4><p>如前面所说，只要等号两边形式相同，左边的变量就会被赋予相应的值。最典型的例子就是：</p>
+<pre><code class="js">let [a, b, c] = [1, 2, 3];
+console.log(a);   //1
+console.log(b);   //2
+console.log(c);   //3
+</code></pre>
+<p>像上面这种左边形式完全等同于右边形式叫做<strong>完全解构</strong>，当左边形式仅为右边形式的一部分时，同样可以解构赋值，叫做<strong>不完全解构</strong>。</p>
+<pre><code class="js">let [a, b, c] = [1, 2, 3, 4];   //a = 1, b = 2, c = 3
+let [a, [b], c] = [1, [2, 3], 4];   //a = 1, b = 2, c = 4
+let [a, [, b], c] = [1, [2, 3], 4]; //a = 1, b = 3, c = 4
+</code></pre>
+<p>如果左边的形式多于右边，那么没有匹配上的值等于<code>undefined</code></p>
+<pre><code class="js">let [x, y] = [1];   //x = 1, y = undefined
+</code></pre>
+<hr>
+<h4 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h4><p>对象的解构赋值实现的规则是<strong>变量与属性同名，而非顺序</strong>，其实这一点也好理解，因为数组本身也是一种对象，它的key就是索引（即顺序），它的value是索引对应的值，在数组的解构赋值中，等号两边对应的顺序相同即他们的key相同，所以看起来是根据顺序赋值的，实际上还是根据属性赋值的。</p>
+<pre><code class="js">let {bar, foo} = {foo: &quot;aaa&quot;, bar: &quot;bbb&quot;};  //foo = &quot;aaa&quot;, bar = &quot;bbb&quot;
+</code></pre>
+<p>如果在右边的值中没有对应的变量名，则取不到值，变量等于<code>undefined</code></p>
+<pre><code class="js">let {baz} = {foo: &quot;aaa&quot;, bar: &quot;bbb&quot;};   //baz = undefined
+</code></pre>
+<p>如果变量名与属性名不同，想要取属性的值，需要将属性的值先赋给变量</p>
+<pre><code class="js">let {foo: baz} = {foo: &quot;aaa&quot;, bar: &quot;bbb&quot;};  //baz = &quot;aaa&quot;
+</code></pre>
+<p>解构赋值也可以应用于嵌套结构的对象：</p>
+<pre><code class="js">let obj = {
+  p: [
+    &#39;hello&#39;,
+    {y: &#39;world&#39;}
+  ]
+}
+let {p: [x, {y}]} = obj;  // x = &quot;hello&quot; y = &quot;world&quot;
+</code></pre>
+<hr>
+<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><p>数组和对象的解构赋值都可以接受默认值，即在等号左边的形式中给变量赋值，如果右边对应变量有新的值，则变量等于新的值，如果对应变量没有新的值，则变量等于默认值。</p>
+<pre><code class="js">//数组的默认值
+let [x, y = &quot;b&quot;] = [&quot;a&quot;];   //x = &quot;a&quot;, y = &quot;b&quot;
+//对象的默认值
+let {x, y = 5} = {x:1};   // x = 1, y = 5
+</code></pre>
+<p>默认值生效的条件是，<strong>对应变量的值严格等于<code>undefined</code></strong>，否则默认值无法生效。</p>
+<pre><code class="js">let [x = 1] = [];          // x = 1
+let [x = 1] = [undefined]; // x = 1
+let [x = 1] = [null];      // x = null
+</code></pre>
+<p>因为<code>null</code>不严格等于<code>undefined</code>，所以默认值不会生效。</p>
+<p>对象的默认值设置也是一样：</p>
+<pre><code class="js">let {x = 3} = {x: undefined};   // x = 3
+let {x = 3} = {x: null};        // x = null
+</code></pre>
+<p>需要注意的是，对象的默认值设置也还是用等号赋值，而不是<code>let {x: 3} = {x: undefined}</code>。</p>
+<hr>
+<h4 id="对象、数组混合赋值"><a href="#对象、数组混合赋值" class="headerlink" title="对象、数组混合赋值"></a>对象、数组混合赋值</h4><p>上面提到数组是一种特别的对象，它的key就是索引，所以可以利用这一点对数组进行对象属性的解构。</p>
+<pre><code class="js">let arr = [1, 2, 3];
+let {0: first, [arr.length - 1]: last} = arr;
+console.log(first, last);  //1, 3
+</code></pre>
+<h4 id="字符串的解构赋值"><a href="#字符串的解构赋值" class="headerlink" title="字符串的解构赋值"></a>字符串的解构赋值</h4><p>字符串也可以解构赋值，因为字符串是一个类似数组的对象，具有原生的Iterator接口。</p>
+<pre><code class="js">let str = &quot;hello&quot;;
+let iter = str[Symbol.iterator]();
+
+console.log(iter.next());    //{ value: &#39;h&#39;, done: false }
+console.log(iter.next());    //{ value: &#39;e&#39;, done: false }
+console.log(iter.next());    //{ value: &#39;l&#39;, done: false }
+console.log(iter.next());    //{ value: &#39;l&#39;, done: false }
+console.log(iter.next());    //{ value: &#39;o&#39;, done: false }
+console.log(iter.next());    //{ value: undefined, done: true }
+</code></pre>
+<p>字符串的解构赋值有两个用法：</p>
+<ol>
+<li><p>将其转换成一个类似数组的对象</p>
+<pre><code class="js">const [a, b, c, d, e] = &quot;hello&quot;; //a = &quot;h&quot;, b = &quot;e&quot;, c = &quot;l&quot;, d = &quot;l&quot;, e = &quot;o&quot;
+</code></pre>
+</li>
+<li><p>利用<code>length</code>属性赋值</p>
+<pre><code class="js">let [length: len] = &quot;hello&quot;;
+console.log(len)   //5  len即&quot;hello&quot;.length
+</code></pre>
+</li>
+</ol>
+<hr>
+<h4 id="数值和布尔值的解构赋值"><a href="#数值和布尔值的解构赋值" class="headerlink" title="数值和布尔值的解构赋值"></a>数值和布尔值的解构赋值</h4><p>解构赋值是，如果等号右边是数值和布尔值，会先转为对象。</p>
+<pre><code class="js">let {toString: s} = 123;
+s === Number.prototype.toString;  //true
+
+let {toString: s} = true;
+s === Boolean.prototype.toString;  //true
+</code></pre>
+<p>如果等号右边无法转为对象，就会报错。</p>
+<pre><code class="js">let {prop: x} = undefined;  //TypeError
+let {prop: y} = null;       //TypeError
+</code></pre>
+<hr>
+<h4 id="函数的解构赋值"><a href="#函数的解构赋值" class="headerlink" title="函数的解构赋值"></a>函数的解构赋值</h4><p>函数的参数也可以解构赋值。</p>
+<pre><code class="js">function add([x, y]) {
+  return x + y;
+}
+</code></pre>
+<p>以上函数的参数是数组，但传入函数的那一刻，就解构成x和y，所以可以直接使用x和y的值。</p>
+<p>函数的参数也可以设定默认值。</p>
+<pre><code class="js">[1, undefined, 3].map((x=&#39;yes&#39;) =&gt; x); //[1, &#39;yes&#39;, 3]
+</code></pre>
+<hr>
+<h4 id="具体用途"><a href="#具体用途" class="headerlink" title="具体用途"></a>具体用途</h4><ol>
+<li><p>用于交换变量的值</p>
+<pre><code class="js">let x = 1;
+let y = 2;
+[x, y] = [y, x];   //x = 2, y = 1
+</code></pre>
+</li>
+<li><p>函数返回多个值</p>
+<p>通常函数只能返回一个值，如果需要返回多个值，可以将返回的值放在一个数组或者对象里，通过解构赋值获取</p>
+<pre><code class="js">function example() {
+  return [1, 2, 3];
+}
+let [a, b, c] = example();
+</code></pre>
+</li>
+<li><p>提取JSON数据</p>
+<pre><code class="js">let json = {
+  id: 42,
+  status: &quot;ok&quot;,
+  data: [867, 5309]
+};
+let {id, status, data: number} = json;
+console.log(id, status, number);   //42, &quot;ok&quot;, [867, 5309]
+</code></pre>
+</li>
+<li><p>遍历Map结构</p>
+<p>Map原生支持Iterator接口，可以利用<code>for...of</code>循环遍历，配合解构赋值，获取key和value值</p>
+<pre><code class="js">const map = new Map();
+map.set(&#39;first&#39;, &#39;hello&#39;);
+map.set(&#39;second&#39;, &#39;world&#39;);
+
+for(let [key, value] of map) {
+  console.log(key + &quot; is &quot; + value);
+}
+// first is hello
+// second is world
+</code></pre>
+<p>需要注意的是，虽然Map看起来和Object一样都是键值对的形式，但是Object对象是不支持Iterator接口的，所以无法用<code>for...of</code>循环来获取Object对象的key和value</p>
+</li>
+<li><p>输入模块的指定方法</p>
+<p>加载模块时，需要指定输入哪些方法，解构赋值能够使得输入语句非常清晰。</p>
+<pre><code class="js">const {log, sin, cos} = require(&quot;Math&quot;);
+</code></pre>
+</li>
+</ol>
+<hr>
+<blockquote>
+<p>ES6学习笔记的内容主要基于阮一峰老师的<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">《ECMAScript 6入门》</a>，原文请见<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">链接</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/07/06/ES6学习笔记之解构赋值/" title="ES6学习笔记之解构赋值">http://xuquan.site/2018/07/06/ES6学习笔记之解构赋值/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/tags/ES6/" rel="tag"><i class="fa fa-tag"></i> ES6</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/06/知识管理学习笔记3： 工具论/" rel="next" title="知识管理学习笔记3： 工具论">
+                <i class="fa fa-chevron-left"></i> 知识管理学习笔记3： 工具论
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/08/面向对象编程/" rel="prev" title="面向对象编程">
+                面向对象编程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Learning-Card"><span class="nav-number">1.</span> <span class="nav-text">Learning Card</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组的解构赋值"><span class="nav-number">1.1.</span> <span class="nav-text">数组的解构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的解构赋值"><span class="nav-number">1.2.</span> <span class="nav-text">对象的解构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认值"><span class="nav-number">1.3.</span> <span class="nav-text">默认值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象、数组混合赋值"><span class="nav-number">1.4.</span> <span class="nav-text">对象、数组混合赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串的解构赋值"><span class="nav-number">1.5.</span> <span class="nav-text">字符串的解构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数值和布尔值的解构赋值"><span class="nav-number">1.6.</span> <span class="nav-text">数值和布尔值的解构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数的解构赋值"><span class="nav-number">1.7.</span> <span class="nav-text">函数的解构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体用途"><span class="nav-number">1.8.</span> <span class="nav-text">具体用途</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/07/06/ES6学习笔记之解构赋值/';
+          this.page.identifier = '2018/07/06/ES6学习笔记之解构赋值/';
+          this.page.title = 'ES6学习笔记之解构赋值';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,freecodecamp," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="JavaScript基础这一部分算是非常入门级的内容，包括JS的基本变量类型以及相应的基本操作。这一部分就不做过多的总结了，习题解答如下：">
+<meta name="keywords" content="JavaScript,freecodecamp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript基础">
+<meta property="og:url" content="http://xuquan.site/2018/06/29/JavaScript基础/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="JavaScript基础这一部分算是非常入门级的内容，包括JS的基本变量类型以及相应的基本操作。这一部分就不做过多的总结了，习题解答如下：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9240001-65afe5faf8843af1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-07T06:52:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript基础">
+<meta name="twitter:description" content="JavaScript基础这一部分算是非常入门级的内容，包括JS的基本变量类型以及相应的基本操作。这一部分就不做过多的总结了，习题解答如下：">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9240001-65afe5faf8843af1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/06/29/JavaScript基础/"/>
+
+
+
+
+
+  <title>JavaScript基础 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/06/29/JavaScript基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JavaScript基础</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-29T00:38:36+08:00">
+                2018-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index">
+                    <span itemprop="name">FreeCodeCamp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/29/JavaScript基础/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/29/JavaScript基础/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/06/29/JavaScript基础/" class="leancloud_visitors" data-flag-title="JavaScript基础">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,245 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>JavaScript基础这一部分算是非常入门级的内容，包括JS的基本变量类型以及相应的基本操作。这一部分就不做过多的总结了，习题解答如下：<br><a id="more"></a></p>
+<h4 id="Introduction-to-JavaScript"><a href="#Introduction-to-JavaScript" class="headerlink" title="Introduction to JavaScript"></a><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript" target="_blank" rel="noopener">Introduction to JavaScript</a></h4><ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code" target="_blank" rel="noopener">Comment Your JavaScript Code</a></p>
+<pre><code class="js">//This is a single-line comment
+/* This is a 
+    multiline comment */
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables" target="_blank" rel="noopener">Declare JavaScript Variables</a></p>
+<pre><code class="js">var myName;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener">Storing Values with the Assignment Operator</a></p>
+<pre><code class="js">a = 7;
+b = a; 
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/initializing-variables-with-the-assignment-operator" target="_blank" rel="noopener">Initializing Variables with the Assignment Operator</a></p>
+<pre><code class="js">var a = 9;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener">Understanding Uninitialized Variables</a></p>
+<pre><code class="js">var a = 5;
+var b = 10;
+var c = &quot;I am a&quot;;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understanding-case-sensitivity-in-variables" target="_blank" rel="noopener">Understanding Case Sensitivity in Variables</a></p>
+<pre><code class="js">// Declarations
+var studlyCapVar;
+var properCamelCase;
+var titleCaseOver;
+
+// Assignments
+studlyCapVar = 10;
+properCamelCase = &quot;A String&quot;;
+titleCaseOver = 9000;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/add-two-numbers-with-javascript" target="_blank" rel="noopener">Add Two Numbers with JavaScript</a></p>
+<pre><code class="js">var sum = 10 + 10;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/subtract-one-number-from-another-with-javascript" target="_blank" rel="noopener">Subtract One Number from Another with JavaScript</a></p>
+<pre><code class="js">var difference = 45 - 33;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/multiply-two-numbers-with-javascript" target="_blank" rel="noopener">Multiply Two Numbers with JavaScript</a></p>
+<pre><code class="js">var product = 8 * 10;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/divide-one-number-by-another-with-javascript" target="_blank" rel="noopener">Divide One Number by Another with JavaScript</a></p>
+<pre><code class="js">var quotient = 66 / 33;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/increment-a-number-with-javascript" target="_blank" rel="noopener">Increment a Number with JavaScript</a></p>
+<pre><code class="js">myVar++;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/decrement-a-number-with-javascript" target="_blank" rel="noopener">Decrement a Number with JavaScript</a></p>
+<pre><code class="js">myVar--;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/create-decimal-numbers-with-javascript" target="_blank" rel="noopener">Create Decimal Numbers with JavaScript</a></p>
+<pre><code class="js">var myDecimal = 3.2;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/multiply-two-decimals-with-javascript" target="_blank" rel="noopener">Multiply Two Decimals with JavaScript</a></p>
+<pre><code class="js">var product = 2.0 * 2.5;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/divide-one-decimal-by-another-with-javascript" target="_blank" rel="noopener">Divide One Decimal by Another with JavaScript</a></p>
+<pre><code class="js">var quotient = 4.4 / 2.0; 
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/finding-a-remainder-in-javascript" target="_blank" rel="noopener">Finding a Remainder in JavaScript</a></p>
+<pre><code class="js">var remainder = 11 % 3;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-addition" target="_blank" rel="noopener">Compound Assignment With Augmented Addition</a></p>
+<pre><code class="js">a += 12;
+b += 9;
+c += 7;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-subtraction" target="_blank" rel="noopener">Compound Assignment With Augmented Subtraction</a></p>
+<pre><code class="js">a -= 6;
+b -= 15;
+c -= 1;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-multiplication" target="_blank" rel="noopener">Compound Assignment With Augmented Multiplication</a></p>
+<pre><code class="js">a *= 5;
+b *= 3;
+c *= 10;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-division" target="_blank" rel="noopener">Compound Assignment With Augmented Division</a></p>
+<pre><code class="js">a /= 12;
+b /= 4;
+c /= 11;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/declare-string-variables" target="_blank" rel="noopener">Declare String Variables</a></p>
+<pre><code class="js">var myFirstName = &quot;Nikkkki&quot;;
+var myLastName = &quot;Xu&quot;;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/escaping-literal-quotes-in-strings" target="_blank" rel="noopener">Escaping Literal Quotes in Strings</a></p>
+<pre><code class="js">var myStr = &quot;I am a \&quot;double quoted\&quot; string inside \&quot;double quotes\&quot;.&quot;; 
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/quoting-strings-with-single-quotes" target="_blank" rel="noopener">Quoting Strings with Single Quotes</a></p>
+<pre><code class="js">var myStr = &#39;&lt;a href=&quot;http://www.example.com&quot; target=&quot;_blank&quot;&gt;Link&lt;/a&gt;&#39;;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/escape-sequences-in-strings" target="_blank" rel="noopener">Escape Sequences in Strings</a></p>
+<pre><code class="js">var myStr = &quot;FirstLine\n\t\\SecondLine\nThirdLine&quot;;
+</code></pre>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/9240001-65afe5faf8843af1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/concatenating-strings-with-plus-operator" target="_blank" rel="noopener">Concatenating Strings with Plus Operator</a></p>
+<pre><code class="js">var myStr = &quot;This is the start. &quot; + &quot;This is the end.&quot;;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/concatenating-strings-with-the-plus-equals-operator" target="_blank" rel="noopener">Concatenating Strings with the Plus Equals Operator</a></p>
+<pre><code class="js">var myStr = &quot;This is the first sentence. &quot;;
+myStr += &quot;This is the second sentence.&quot;;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/constructing-strings-with-variables" target="_blank" rel="noopener">Constructing Strings with Variables</a></p>
+<pre><code class="js">var myName = &quot;Nikkkki&quot;;
+var myStr = &quot;My name is &quot; + myName + &quot; and I am well!&quot;;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/appending-variables-to-strings" target="_blank" rel="noopener">Appending Variables to Strings</a></p>
+<pre><code class="js">var someAdjective = &quot;interesting&quot;;
+var myStr = &quot;Learning to code is &quot;;
+myStr += someAdjective;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/find-the-length-of-a-string" target="_blank" rel="noopener">Find the Length of a String</a></p>
+<pre><code class="js">lastNameLength = lastName.length;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-bracket-notation-to-find-the-first-character-in-a-string" target="_blank" rel="noopener">Use Bracket Notation to Find the First Character in a String</a></p>
+<pre><code class="js">firstLetterOfLastName = lastName[0];
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understand-string-immutability" target="_blank" rel="noopener">Understand String Immutability</a></p>
+<pre><code class="js">myStr = &quot;Hello World&quot;;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-bracket-notation-to-find-the-nth-character-in-a-string" target="_blank" rel="noopener">Use Bracket Notation to Find the Nth Character in a String</a></p>
+<pre><code class="js">var thirdLetterOfLastName = lastName[2];
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-bracket-notation-to-find-the-last-character-in-a-string" target="_blank" rel="noopener">Use Bracket Notation to Find the Last Character in a String</a></p>
+<pre><code class="js">var lastLetterOfLastName = lastName[lastName.length - 1];
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-bracket-notation-to-find-the-nth-to-last-character-in-a-string" target="_blank" rel="noopener">Use Bracket Notation to Find the Nth-to-Last Character in a String</a></p>
+<pre><code class="js">var secondToLastLetterOfLastName = lastName[lastName.length-2];
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/word-blanks" target="_blank" rel="noopener">Word Blanks</a></p>
+<pre><code class="js">function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
+  // Your code below this line
+  var result = &quot;&quot;;
+    result = myNoun + &quot; &quot; + myAdjective + &quot; &quot; + myVerb + &quot; &quot; + myAdverb;
+  // Your code above this line
+  return result;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/store-multiple-values-in-one-variable-using-javascript-arrays" target="_blank" rel="noopener">Store Multiple Values in one Variable using JavaScript Arrays</a></p>
+<pre><code class="js">var myArray = [&quot;kitty&quot;, 5];
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/nest-one-array-within-another-array" target="_blank" rel="noopener">Nest one Array within Another Array</a></p>
+<pre><code class="js">var myArray = [[&quot;dog&quot;, 5], [&quot;cat&quot;, 3]];
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/access-array-data-with-indexes" target="_blank" rel="noopener">Access Array Data with Indexes</a></p>
+<pre><code class="js">var myData = myArray[0];
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/modify-array-data-with-indexes" target="_blank" rel="noopener">Modify Array Data With Indexes</a></p>
+<pre><code class="js">myArray[0] = 45;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/access-multi-dimensional-arrays-with-indexes" target="_blank" rel="noopener">Access Multi-Dimensional Arrays With Indexes</a></p>
+<pre><code class="js">var myData = myArray[2][1];
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/manipulate-arrays-with-push" target="_blank" rel="noopener">Manipulate Arrays With push()</a></p>
+<pre><code class="js">myArray.push([&quot;dog&quot;, 3]);
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/manipulate-arrays-with-pop" target="_blank" rel="noopener">Manipulate Arrays With pop()</a></p>
+<pre><code class="js">var removedFromMyArray = myArray.pop();
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/manipulate-arrays-with-shift" target="_blank" rel="noopener">Manipulate Arrays With shift()</a></p>
+<pre><code class="js">var removedFromMyArray = myArray.shift();
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/manipulate-arrays-with-unshift" target="_blank" rel="noopener">Manipulate Arrays With unshift()</a></p>
+<pre><code class="js">myArray.unshift([&quot;Paul&quot;, 35]);
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/shopping-list" target="_blank" rel="noopener">Shopping List</a></p>
+<pre><code class="js">var myList = [[&quot;milk&quot;, 4], [&quot;biscuits&quot;, 22], [&quot;chocolate&quot;, 6], [&quot;honey&quot;, 2], [&quot;ice cream&quot;, 9]];
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/write-reusable-javascript-with-functions" target="_blank" rel="noopener">Write Reusable JavaScript with Functions</a></p>
+<pre><code class="js">function reusableFunction() {
+    console.log(&quot;Hi World&quot;);
+}
+reusableFunction();
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/passing-values-to-functions-with-arguments" target="_blank" rel="noopener">Passing Values to Functions with Arguments</a></p>
+<pre><code class="js">function functionWithArgs(param1, param2) {
+  console.log(param1 + param2);
+}
+functionWithArgs(3, 2);
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/global-scope-and-functions" target="_blank" rel="noopener">Global Scope and Functions</a></p>
+<pre><code class="js">// Declare your variable here
+var myGlobal = 10;
+
+function fun1() {
+  // Assign 5 to oopsGlobal Here
+  oopsGlobal = 5;
+}
+
+// Only change code above this line
+function fun2() {
+  var output = &quot;&quot;;
+  if (typeof myGlobal != &quot;undefined&quot;) {
+    output += &quot;myGlobal: &quot; + myGlobal;
+  }
+  if (typeof oopsGlobal != &quot;undefined&quot;) {
+    output += &quot; oopsGlobal: &quot; + oopsGlobal;
+  }
+  console.log(output);
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/local-scope-and-functions" target="_blank" rel="noopener">Local Scope and Functions</a></p>
+<pre><code class="js">function myLocalScope() {
+  &#39;use strict&#39;; // you shouldn&#39;t need to edit this line
+  var myVar = &quot;hello&quot;;
+  console.log(myVar);
+}
+myLocalScope();
+
+// Run and check the console
+// myVar is not defined outside of myLocalScope
+// console.log(myVar);
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/global-vs--local-scope-in-functions" target="_blank" rel="noopener">Global vs. Local Scope in Functions</a></p>
+<pre><code class="js">function myOutfit() {
+  // Only change code below this line
+  var outerWear = &quot;sweater&quot;;
+  // Only change code above this line
+  return outerWear;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/return-a-value-from-a-function-with-return" target="_blank" rel="noopener">Return a Value from a Function with Return</a></p>
+<pre><code class="js">function timesFive(num) {
+  return num * 5;
+}
+console.log(timesFive(2));
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understanding-undefined-value-returned-from-a-function" target="_blank" rel="noopener">Understanding Undefined Value returned from a Function</a></p>
+<pre><code class="js">function addFive() {
+  sum = sum + 5;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/assignment-with-a-returned-value" target="_blank" rel="noopener">Assignment with a Returned Value</a></p>
+<pre><code class="js">processed = processArg(7);
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/stand-in-line" target="_blank" rel="noopener">Stand in Line</a></p>
+<pre><code class="js">function nextInLine(arr, item) {
+  // Your code here
+  arr.push(item);
+  var result = arr.shift();
+  return result;  // Change this line
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understanding-boolean-values" target="_blank" rel="noopener">Understanding Boolean Values</a></p>
+<pre><code class="js">function welcomeToBooleans() {
+  // Only change code below this line.
+
+  return true; // Change this line
+
+  // Only change code above this line.
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-conditional-logic-with-if-statements" target="_blank" rel="noopener">Use Conditional Logic with If Statements</a></p>
+<pre><code class="js">function trueOrFalse(wasThatTrue) {
+  // Only change code below this line.
+  if(wasThatTrue) {
+      return &quot;Yes, that was true&quot;
+  }
+  return &quot;No, that was false&quot;; 
+  // Only change code above this line.
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank" rel="noopener">Comparison with the Equality Operator</a></p>
+<pre><code class="js">function testEqual(val) {
+  if (val == 12) { // Change this line
+    return &quot;Equal&quot;;
+  }
+  return &quot;Not Equal&quot;;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-strict-equality-operator" target="_blank" rel="noopener">Comparison with the Strict Equality Operator</a></p>
+<pre><code class="js">function compareEquality(a, b) {
+  if (a === b) { // Change this line
+    return &quot;Equal&quot;;
+  }
+  return &quot;Not Equal&quot;;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/practice-comparing-different-values" target="_blank" rel="noopener">Practice comparing different values</a></p>
+<pre><code class="js">function testNotEqual(val) {
+  if (val!=99) { // Change this line
+    return &quot;Not Equal&quot;;
+  }
+  return &quot;Equal&quot;;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-inequality-operator" target="_blank" rel="noopener">Comparison with the Inequality Operator</a></p>
+<pre><code class="js">function testStrictNotEqual(val) {
+  // Only Change Code Below this Line
+  if (val !== 17) {
+  // Only Change Code Above this Line
+    return &quot;Not Equal&quot;;
+  }
+  return &quot;Equal&quot;;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-strict-inequality-operator" target="_blank" rel="noopener">Comparison with the Strict Inequality Operator</a></p>
+<pre><code class="js">function testGreaterThan(val) {
+  if (val &gt; 100) {  // Change this line
+    return &quot;Over 100&quot;;
+  }
+  if (val &gt; 10) {  // Change this line
+    return &quot;Over 10&quot;;
+  }
+  return &quot;10 or Under&quot;;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-greater-than-operator" target="_blank" rel="noopener">Comparison with the Greater Than Operator</a></p>
+<pre><code class="js">function testGreaterOrEqual(val) {
+  if (val &gt;= 20) {  // Change this line
+    return &quot;20 or Over&quot;;
+  }
+  if (val &gt;= 10) {  // Change this line
+    return &quot;10 or Over&quot;;
+  }
+  return &quot;Less than 10&quot;;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-greater-than-or-equal-to-operator" target="_blank" rel="noopener">Comparison with the Greater Than Or Equal To Operator</a></p>
+<pre><code class="js">function testLessThan(val) {
+  if (val &lt; 25) {  // Change this line
+    return &quot;Under 25&quot;;
+  }
+  if (val &lt; 55) {  // Change this line
+    return &quot;Under 55&quot;;
+  }
+  return &quot;55 or Over&quot;;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-less-than-operator" target="_blank" rel="noopener">Comparison with the Less Than Operator</a></p>
+<pre><code class="js">function testLessOrEqual(val) {
+  if (val &lt;= 12) {  // Change this line
+    return &quot;Smaller Than or Equal to 12&quot;;
+  }
+  if (val &lt;= 24) {  // Change this line
+    return &quot;Smaller Than or Equal to 24&quot;;
+  }
+  return &quot;More Than 24&quot;;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-less-than-or-equal-to-operator" target="_blank" rel="noopener">Comparison with the Less Than Or Equal To Operator</a></p>
+<pre><code class="js">function testLogicalAnd(val) {
+  // Only change code below this line
+  if (val &lt;= 50 &amp;&amp; val &gt;= 25) {
+    return &quot;Yes&quot;;
+  }
+  // Only change code above this line
+  return &quot;No&quot;;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparisons-with-the-logical-and-operator" target="_blank" rel="noopener">Comparisons with the Logical And Operator</a></p>
+<pre><code class="js">function testLogicalOr(val) {
+  // Only change code below this line
+  if (val &gt; 20 || val &lt; 10) {
+    return &quot;Outside&quot;;
+  }
+  // Only change code above this line
+  return &quot;Inside&quot;;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparisons-with-the-logical-or-operator" target="_blank" rel="noopener">Comparisons with the Logical Or Operator</a></p>
+<pre><code class="js">function testElse(val) {
+  var result = &quot;&quot;;
+  // Only change code below this line
+  if (val &gt; 5) {
+    result = &quot;Bigger than 5&quot;;
+  }else {
+    result = &quot;5 or Smaller&quot;;
+  }
+  // Only change code above this line
+  return result;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/introducing-else-statements" target="_blank" rel="noopener">Introducing Else Statements</a></p>
+<pre><code class="js">function testElseIf(val) {
+  if (val &gt; 10) {
+    return &quot;Greater than 10&quot;;
+  } else if (val &lt; 5) {
+    return &quot;Smaller than 5&quot;;
+  } else {
+    return &quot;Between 5 and 10&quot;;
+  }
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/logical-order-in-if-else-statements" target="_blank" rel="noopener">Logical Order in If Else Statements</a></p>
+<pre><code class="js">function orderMyLogic(val) {
+  if (val &lt; 5) {
+    return &quot;Less than 5&quot;;
+  } else if (val &lt; 10) {
+    return &quot;Less than 10&quot;;
+  } else {
+    return &quot;Greater than or equal to 10&quot;;
+  }
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/chaining-if-else-statements" target="_blank" rel="noopener">Chaining If Else Statements</a></p>
+<pre><code class="js">function testSize(num) {
+  // Only change code below this line
+  if(num &lt; 5) {
+    return &quot;Tiny&quot;;
+  } else if (num &lt; 10) {
+    return &quot;Small&quot;;
+  } else if (num &lt; 15) {
+    return &quot;Medium&quot;;
+  } else if (num &lt; 20) {
+    return &quot;Large&quot;;
+  } else {
+    return &quot;Huge&quot;;
+  }
+  // Only change code above this line
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/golf-code" target="_blank" rel="noopener">Golf Code</a></p>
+<pre><code class="js">function golfScore(par, strokes) {
+  // Only change code below this line
+  if(strokes === 1) {
+    return names[0];
+  } else if (strokes &lt;= par - 2) {
+    return names[1];
+  } else if (strokes === par - 1) {
+    return names[2];
+  } else if (strokes === par) {
+    return names[3];
+  } else if (strokes === par + 1) {
+    return names[4];
+  } else if (strokes === par + 2) {
+    return names[5];
+  } else {
+    return names[6];
+  }
+  // Only change code above this line
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/selecting-from-many-options-with-switch-statements" target="_blank" rel="noopener">Selecting from Many Options with Switch Statements</a></p>
+<pre><code class="js">function caseInSwitch(val) {
+  var answer = &quot;&quot;;
+  // Only change code below this line
+  switch(val) {
+    case 1:
+      answer = &quot;alpha&quot;;
+      break;
+    case 2:
+      answer = &quot;beta&quot;;
+      break;
+    case 3:
+      answer = &quot;gamma&quot;;
+      break;
+    case 4:
+      answer = &quot;delta&quot;;
+      break;
+  }
+  // Only change code above this line  
+  return answer;  
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/adding-a-default-option-in-switch-statements" target="_blank" rel="noopener">Adding a Default Option in Switch Statements</a></p>
+<pre><code class="js">function switchOfStuff(val) {
+  var answer = &quot;&quot;;
+  // Only change code below this line
+  switch(val) {
+    case &quot;a&quot;:
+      answer = &quot;apple&quot;;
+      break;
+    case &quot;b&quot;:
+      answer = &quot;bird&quot;;
+      break;
+    case &quot;c&quot;:
+      answer = &quot;cat&quot;;
+      break;
+    default:
+      answer = &quot;stuff&quot;;
+      break;
+  }
+  // Only change code above this line  
+  return answer;  
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/multiple-identical-options-in-switch-statements" target="_blank" rel="noopener">Multiple Identical Options in Switch Statements</a></p>
+<pre><code class="js">function sequentialSizes(val) {
+  var answer = &quot;&quot;;
+  // Only change code below this line
+  switch(val) {
+    case 1:
+    case 2:
+    case 3:
+      answer = &quot;Low&quot;;
+      break;
+    case 4:
+    case 5:
+    case 6:
+      answer = &quot;Mid&quot;;
+      break;
+    case 7:
+    case 8:
+    case 9:
+      answer = &quot;High&quot;;
+      break;
+  }
+  // Only change code above this line  
+  return answer;  
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/replacing-if-else-chains-with-switch" target="_blank" rel="noopener">Replacing If Else Chains with Switch</a></p>
+<pre><code class="js">function chainToSwitch(val) {
+  var answer = &quot;&quot;;
+  // Only change code below this line
+  switch(val) {
+    case &quot;bob&quot;:
+      answer = &quot;Marley&quot;;
+      break;
+    case 42:
+      answer = &quot;The Answer&quot;;
+      break;
+    case 1:
+      answer = &quot;There is no #1&quot;;
+      break;
+    case 99:
+      answer = &quot;Missed me by this much!&quot;;
+      break;
+    case 7:
+      answer = &quot;Ate Nine&quot;;
+      break;
+  }
+  // Only change code above this line  
+  return answer;  
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/returning-boolean-values-from-functions" target="_blank" rel="noopener">Returning Boolean Values from Functions</a></p>
+<pre><code class="js">function isLess(a, b) {
+  // Fix this code
+    return a &lt; b;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/return-early-pattern-for-functions" target="_blank" rel="noopener">Return Early Pattern for Functions</a></p>
+<pre><code class="js">function abTest(a, b) {
+  // Only change code below this line
+  if(a &lt; 0 || b &lt; 0) {
+    return undefined;
+  }
+  // Only change code above this line
+  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/counting-cards" target="_blank" rel="noopener">Counting Cards</a></p>
+<pre><code class="js">function cc(card) {
+  // Only change code below this line
+  switch(card) {
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      count += 1;
+      break;
+    case 10:
+    case &#39;J&#39;:
+    case &#39;Q&#39;:
+    case &#39;K&#39;:
+    case &#39;A&#39;:
+      count -= 1;
+      break;
+  }
+  var str =&#39;&#39;;
+  if(count &gt; 0) {
+    str = &quot;Bet&quot;;
+  } else {
+    str = &quot;Hold&quot;;
+  } 
+  return count + &quot; &quot; + str;
+  // Only change code above this line
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/build-javascript-objects" target="_blank" rel="noopener">Build JavaScript Objects</a></p>
+<pre><code class="js">var myDog = {
+  &quot;name&quot; : &quot;Stone&quot;,
+  &quot;legs&quot;: 4,
+  &quot;tails&quot;: 1,
+  &quot;friends&quot;: [&quot;Pepe&quot;]
+};
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-dot-notation" target="_blank" rel="noopener">Accessing Object Properties with Dot Notation</a></p>
+<pre><code class="js">var hatValue = testObj.hat;      // Change this line
+var shirtValue = testObj.shirt;    // Change this line
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-bracket-notation" target="_blank" rel="noopener">Accessing Object Properties with Bracket Notation</a></p>
+<pre><code class="js">var entreeValue = testObj[&quot;an entree&quot;];   // Change this line
+var drinkValue = testObj[&quot;the drink&quot;];    // Change this line
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-variables" target="_blank" rel="noopener">Accessing Object Properties with Variables</a></p>
+<pre><code class="js">var playerNumber = 16;       // Change this Line
+var player = testObj[playerNumber];   // Change this Line
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/updating-object-properties" target="_blank" rel="noopener">Updating Object Properties</a></p>
+<pre><code class="js">myDog.name = &quot;Happy Coder&quot;;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/add-new-properties-to-a-javascript-object" target="_blank" rel="noopener">Add New Properties to a JavaScript Object</a></p>
+<pre><code class="js">myDog.bark = &quot;woof&quot;;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/delete-properties-from-a-javascript-object" target="_blank" rel="noopener">Delete Properties from a JavaScript Object</a></p>
+<pre><code class="js">delete myDog.tails;
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/using-objects-for-lookups" target="_blank" rel="noopener">Using Objects for Lookups</a></p>
+<pre><code class="js">function phoneticLookup(val) {
+  var result = &quot;&quot;;
+  // Only change code below this line
+  var lookup = {
+    &quot;alpha&quot;: &quot;Adams&quot;,
+    &quot;bravo&quot;: &quot;Boston&quot;,
+    &quot;charlie&quot;: &quot;Chicago&quot;,
+    &quot;delta&quot;: &quot;Denver&quot;,
+    &quot;echo&quot;: &quot;Easy&quot;,
+    &quot;foxtrot&quot;: &quot;Frank&quot;
+  }
+  result = lookup[val];
+  // Only change code above this line
+  return result;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/testing-objects-for-properties" target="_blank" rel="noopener">Testing Objects for Properties</a></p>
+<pre><code class="js">function checkObj(checkProp) {
+  // Your Code Here
+  if(myObj.hasOwnProperty(checkProp)) {
+    return myObj[checkProp];
+  }
+  return &quot;Not Found&quot;;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/manipulating-complex-objects" target="_blank" rel="noopener">Manipulating Complex Objects</a></p>
+<pre><code class="js">var myMusic = [
+  {
+    &quot;artist&quot;: &quot;Billy Joel&quot;,
+    &quot;title&quot;: &quot;Piano Man&quot;,
+    &quot;release_year&quot;: 1973,
+    &quot;formats&quot;: [ 
+      &quot;CD&quot;,
+      &quot;8T&quot;,
+      &quot;LP&quot;
+    ],
+    &quot;gold&quot;: true
+  },
+  // Add record here
+  {
+    &quot;artist&quot;: &quot;Alicia Keys&quot;,
+    &quot;title&quot;: &quot;If I ain&#39;t got you&quot;,
+    &quot;release_year&quot;: 2000,
+    &quot;formats&quot;: [
+      &quot;CD&quot;,
+      &quot;LP&quot;
+    ]
+  }
+];
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-objects" target="_blank" rel="noopener">Accessing Nested Objects</a></p>
+<pre><code class="js">var gloveBoxContents = myStorage.car.inside[&quot;glove box&quot;];
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-arrays" target="_blank" rel="noopener">Accessing Nested Arrays</a></p>
+<pre><code class="js">var secondTree = myPlants[1].list[1];
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/record-collection" target="_blank" rel="noopener">Record Collection</a></p>
+<pre><code class="js">function updateRecords(id, prop, value) {
+  if(prop !== &quot;tracks&quot; &amp;&amp; value !== &quot;&quot;) {
+    collection[id][prop] = value;
+  } else if(prop === &quot;tracks&quot; &amp;&amp; !collection[id].hasOwnProperty(&quot;tracks&quot;)) {
+    collection[id].tracks = [];
+    collection[id].tracks.push(value);
+  } else if (prop === &quot;tracks&quot; &amp;&amp; value !== &quot;&quot;) {
+    collection[id].tracks.push(value);
+  } else if (value === &quot;&quot;) {
+    delete collection[id][prop];
+  }
+  return collection;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-while-loops" target="_blank" rel="noopener">Iterate with JavaScript While Loops</a></p>
+<pre><code class="js">var i = 0;
+while(i &lt; 5) {
+  myArray.push(i);
+  i ++;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-for-loops" target="_blank" rel="noopener">Iterate with JavaScript For Loops</a></p>
+<pre><code class="js">for(var i = 1; i &lt; 6; i ++) {
+    myArray.push(i);
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-odd-numbers-with-a-for-loop" target="_blank" rel="noopener">Iterate Odd Numbers With a For Loop</a></p>
+<pre><code class="js">for(var i = 1; i &lt; 10; i += 2) {
+  myArray.push(i);
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/count-backwards-with-a-for-loop" target="_blank" rel="noopener">Count Backwards With a For Loop</a></p>
+<pre><code class="js">for(var i = 9; i &gt; 0; i -= 2) {
+  myArray.push(i);
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-through-an-array-with-a-for-loop" target="_blank" rel="noopener">Iterate Through an Array with a For Loop</a></p>
+<pre><code class="js">var total = 0;
+for(var i = 0; i &lt; myArr.length; i ++) {
+  total += myArr[i];
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/nesting-for-loops" target="_blank" rel="noopener">Nesting For Loops</a></p>
+<pre><code class="js">function multiplyAll(arr) {
+  var product = 1;
+  // Only change code below this line
+  for(var i = 0; i &lt; arr.length; i ++) {
+    for(var j = 0; j &lt;arr[i].length; j ++) {
+      product *= arr[i][j];
+    }
+  }
+  // Only change code above this line
+  return product;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-do---while-loops" target="_blank" rel="noopener">Iterate with JavaScript Do…While Loops</a></p>
+<pre><code class="js">do {
+  myArray.push(i);
+  i++
+} while(i&lt;5);
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/profile-lookup" target="_blank" rel="noopener">Profile Lookup</a></p>
+<pre><code class="js">function lookUpProfile(name, prop){
+// Only change code below this line
+  for(var i = 0; i &lt; contacts.length; i ++) {
+    if(contacts[i].firstName === name) {
+      if(contacts[i].hasOwnProperty(prop)) {
+        return contacts[i][prop];
+      } else {
+        return &quot;No such property&quot;;
+      }
+    } 
+  }
+  return &quot;No such contact&quot;;
+// Only change code above this line
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/generate-random-fractions-with-javascript" target="_blank" rel="noopener">Generate Random Fractions with JavaScript</a></p>
+<pre><code class="js">function randomFraction() {
+  // Only change code below this line.
+  return Math.random();
+  // Only change code above this line.
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/generate-random-whole-numbers-with-javascript" target="_blank" rel="noopener">Generate Random Whole Numbers with JavaScript</a></p>
+<pre><code class="js">function randomWholeNum() {
+  // Only change code below this line.
+  return Math.floor(Math.random()*10);
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/generate-random-whole-numbers-within-a-range" target="_blank" rel="noopener">Generate Random Whole Numbers within a Range</a></p>
+<pre><code class="js">function randomRange(myMin, myMax) {
+  return Math.floor(Math.random()*(myMax-myMin+1)) + myMin; // Change this line
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-the-parseint-function" target="_blank" rel="noopener">Use the parseInt Function</a></p>
+<pre><code class="js">function convertToInteger(str) {
+  return parseInt(str);
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-the-parseint-function-with-a-radix" target="_blank" rel="noopener">Use the parseInt Function with a Radix</a></p>
+<pre><code class="js">function convertToInteger(str) {
+  return parseInt(str, 2);
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-the-conditional-ternary-operator" target="_blank" rel="noopener">Use the Conditional (Ternary) Operator</a></p>
+<pre><code class="js">function checkEqual(a, b) {
+  return a === b ? true : false;
+}
+</code></pre>
+</li>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-multiple-conditional-ternary-operators" target="_blank" rel="noopener">Use Multiple Conditional (Ternary) Operators</a></p>
+<pre><code class="js">function checkSign(num) {
+  return num &gt; 0 ? &quot;positive&quot; : (num === 0) ? &quot;zero&quot; : &quot;negative&quot;;
+}
+</code></pre>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Xu Quan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xuquan.site/2018/06/29/JavaScript基础/" title="JavaScript基础">http://xuquan.site/2018/06/29/JavaScript基础/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/tags/freecodecamp/" rel="tag"><i class="fa fa-tag"></i> freecodecamp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/28/响应式页面设计准则/" rel="next" title="响应式页面设计准则">
+                <i class="fa fa-chevron-left"></i> 响应式页面设计准则
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/29/JS算法与数据结构证书/" rel="prev" title="JS算法与数据结构证书">
+                JS算法与数据结构证书 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Introduction-to-JavaScript"><span class="nav-number">1.</span> <span class="nav-text">Introduction to JavaScript</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">169.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xuquan.site/2018/06/29/JavaScript基础/';
+          this.page.identifier = '2018/06/29/JavaScript基础/';
+          this.page.title = 'JavaScript基础';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
