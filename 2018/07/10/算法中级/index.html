@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,877 字
+                  4,130 字
                 </span>
               
 
@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  16 分钟
+                  18 分钟
                 </span>
               
             </div>
@@ -488,68 +488,24 @@
 <p>题干： 第一题给定一个数组作为参数，数组中包含两个数字（大小顺序不定），需要求出这两个数字之间所有数字的和。我写了两个解法：</p>
 <p>第一个解法用<code>for</code>循环，循环出两个数字之间所有的数，让他们累加到<code>result</code>上。</p>
 <p>这里用到了<code>Math.min(num1, num2)</code>和<code>Max.max(num1, num2)</code>.</p>
-<pre><code class="js">function sumAll(arr) {
-  let result = 0;
-  for(let i = Math.min(arr[0], arr[1]); i &lt;= Math.max(arr[0], arr[1]); i ++) {
-    result += i;
-  }
-  return result;
-}
-
-sumAll([1, 4]);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumAll</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="built_in">Math</span>.min(arr[<span class="number">0</span>], arr[<span class="number">1</span>]); i &lt;= <span class="built_in">Math</span>.max(arr[<span class="number">0</span>], arr[<span class="number">1</span>]); i ++) &#123;</span><br><span class="line">    result += i;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sumAll([<span class="number">1</span>, <span class="number">4</span>]);</span><br></pre></td></tr></table></figure>
 <p>第二个方法是小学学过的等差数列求合法，我还记得口诀：首项加末项的和，乘以项数除以2。这里需要注意项数的求法，首项减末项的绝对值加1</p>
-<pre><code class="js">function sumAll(arr) {
-  return (arr[0]+arr[1])*(Math.abs(arr[0]-arr[1])+1)/2;
-}
-
-sumAll([1, 4]);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumAll</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (arr[<span class="number">0</span>]+arr[<span class="number">1</span>])*(<span class="built_in">Math</span>.abs(arr[<span class="number">0</span>]-arr[<span class="number">1</span>])+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sumAll([<span class="number">1</span>, <span class="number">4</span>]);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/diff-two-arrays" target="_blank" rel="noopener">Diff Two Arrays</a> 2. 对比数组差别</p>
 <p>题干： 这题需要比较两个数组，返回一个新的数组，里面的元素只在其中一个数组出现过。</p>
 <p>这题本来看到重复第一反应是利用<code>set</code>来做，但是其实是只返回出现了一次的，也就是说重复的元素两个都需要去掉，所以<code>set</code>不太有用。我采用的方法是两个数组分别筛选出另一个数组里没有的元素，然后添加到新数组中。</p>
-<pre><code class="js">function diffArray(arr1, arr2) {
-  let newArr = [];
-  arr1.filter(ele =&gt; {
-      if(arr2.indexOf(ele) === -1){
-          newArr.push(ele);
-      }
-  });
-  arr2.filter(ele =&gt; {
-      if(arr1.indexOf(ele) === -1){
-          newArr.push(ele);
-      }
-  });
-  return newArr;
-}
-
-diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">diffArray</span>(<span class="params">arr1, arr2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> newArr = [];</span><br><span class="line">  arr1.filter(<span class="function"><span class="params">ele</span> =&gt;</span> &#123;</span><br><span class="line">  	<span class="keyword">if</span>(arr2.indexOf(ele) === <span class="number">-1</span>)&#123;</span><br><span class="line">  		newArr.push(ele);</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  arr2.filter(<span class="function"><span class="params">ele</span> =&gt;</span> &#123;</span><br><span class="line">  	<span class="keyword">if</span>(arr1.indexOf(ele) === <span class="number">-1</span>)&#123;</span><br><span class="line">  		newArr.push(ele);</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">diffArray([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/seek-and-destroy" target="_blank" rel="noopener">Seek and Destroy</a> </p>
 <p>题干：这一题同样考察筛选排除。参数给定一个数组和不确定数量的数字，要筛选出数组里和给定数字不相等的元素，返回数组。这里很容易就想到了<code>filter</code>，但是怎么用<code>filter</code>，因为如果单纯用<code>===</code>去比较太麻烦了，而且不知道到底笔记几位，所以我想到的是把剩余的参数全部放进新数组里，比较方便的做法就是解构赋值（ES6的很多语法真的都非常好用），然后<code>indexOf</code>判断一下就OK了。</p>
 <p>需要注意的点是用<code>args</code>，不要有<code>arguments</code>，因为在Chrome中，<code>arguments</code>是保留关键字，无法直接用。</p>
-<pre><code class="js">function destroyer(...args) {
-  let [, ...newArr] = args;
-  return args[0].filter(ele =&gt; newArr.indexOf(ele) === -1);
-}
-
-destroyer([1, 2, 3, 1, 2, 3], 2, 3);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">destroyer</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> [, ...newArr] = args;</span><br><span class="line">  <span class="keyword">return</span> args[<span class="number">0</span>].filter(<span class="function"><span class="params">ele</span> =&gt;</span> newArr.indexOf(ele) === <span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">destroyer([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="number">2</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/wherefore-art-thou" target="_blank" rel="noopener">Wherefore art thou</a></p>
 <p>题干：参数<code>collection</code>是一个包含若干对象的数组，参数<code>source</code>是一个对象，需要找出<code>collection</code>中包含了<code>source</code>对象中的值且值与<code>source</code>相等的对象，返回这些对象的集合数组</p>
 <p>这题首先会想到需要遍历<code>collection</code>中的每个对象，然后需要想到如何比较两个对象，所以我把比较对象的方法<code>compare</code>先单独存成一个变量，而且给定了一个参数默认值<code>props</code>，遍历<code>props</code>中的属性，比较<code>collection</code>中每个对象是否包含这个属性且属性值与<code>source</code>中一样，这里不必先判断<code>hasOwnProperty</code>，直接比较久可以了。最后查看不相等的值的个数。</p>
-<pre><code class="js">function whatIsInAName(collection, source) {
-  let compare = function(obj, arr = Object.keys(source)){
-    return arr.filter(prop =&gt; obj[prop] !== source[prop]);
-  }
-  return collection.filter(obj =&gt; compare(obj).length === 0);
-}
-
-whatIsInAName([{ first: &quot;Romeo&quot;, last: &quot;Montague&quot; }, { first: &quot;Mercutio&quot;, last: null }, { first: &quot;Tybalt&quot;, last: &quot;Capulet&quot; }], { last: &quot;Capulet&quot; });
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">whatIsInAName</span>(<span class="params">collection, source</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> compare = <span class="function"><span class="keyword">function</span>(<span class="params">obj, arr = Object.keys(source</span>))</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> arr.filter(<span class="function"><span class="params">prop</span> =&gt;</span> obj[prop] !== source[prop]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> collection.filter(<span class="function"><span class="params">obj</span> =&gt;</span> compare(obj).length === <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">whatIsInAName([&#123; <span class="attr">first</span>: <span class="string">"Romeo"</span>, <span class="attr">last</span>: <span class="string">"Montague"</span> &#125;, &#123; <span class="attr">first</span>: <span class="string">"Mercutio"</span>, <span class="attr">last</span>: <span class="literal">null</span> &#125;, &#123; <span class="attr">first</span>: <span class="string">"Tybalt"</span>, <span class="attr">last</span>: <span class="string">"Capulet"</span> &#125;], &#123; <span class="attr">last</span>: <span class="string">"Capulet"</span> &#125;);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
@@ -561,48 +517,21 @@ whatIsInAName([{ first: &quot;Romeo&quot;, last: &quot;Montague&quot; }, { first
 <li>接下来我们需要对切分获得的数组进行遍历，让里面的每个元素都执行一个函数，这个函数让他们能把连在一起的单词切分开，这里用到的正则是<code>/[A-Z]?[a-z]+/g</code>，表示第一个字母可能是大写，也可能是小写（句首单词可能都是小写），之后都是小写，这样可以遇到首字母大写的单词就切开，这样就返回一个二维数组。</li>
 <li>分别对两个数组进行在<code>-</code>连接，如果数组中只有一个元素，那么连接不起作用，正好可以在不多用<code>-</code>的情况下把单词连接起来</li>
 </ol>
-<pre><code class="js">function spinalCase(str) {
-  let arr = str.split(/[^A-Za-z]/);
-  let re = /[A-Z]?[a-z]+/g;
-  return arr.map(val =&gt; val.match(re).join(&quot;-&quot;)).join(&quot;-&quot;).toLowerCase();
-}
-
-spinalCase(&#39;This Is Spinal Tap&#39;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">spinalCase</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arr = str.split(<span class="regexp">/[^A-Za-z]/</span>);</span><br><span class="line">  <span class="keyword">let</span> re = <span class="regexp">/[A-Z]?[a-z]+/g</span>;</span><br><span class="line">  <span class="keyword">return</span> arr.map(<span class="function"><span class="params">val</span> =&gt;</span> val.match(re).join(<span class="string">"-"</span>)).join(<span class="string">"-"</span>).toLowerCase();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">spinalCase(<span class="string">'This Is Spinal Tap'</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/pig-latin" target="_blank" rel="noopener">Pig Latin</a></p>
 <p>题干：这题的要求是给定一个参数字符串，如果参数字符串以元音字母开头，则直接在字符串末尾添加<code>&quot;way&quot;</code>，如果不是以元音字母开头，则将第一个元音字母之前的辅音字母挪到末尾，再添加<code>&quot;ay&quot;</code>。</p>
 <p>这里我用了一个很简单的正则判断元音字母，<code>/[aeiou]/</code>，然后找出第一个元音字母的位置，如果索引是<code>0，</code>即单词元音字母开头，则<code>str+=&quot;way&quot;</code>，如果不是元音字母开头，则去掉开头的辅音字母<code>str.slice(index)</code>，再把辅音字母挪到末尾<code>+str.slice(0,index)</code>，再加上<code>&quot;ay&quot;</code></p>
-<pre><code class="js">function translatePigLatin(str) {
-  let re = /[aeiou]/;
-  let index = str.match(re)===null? null:str.match(re).index;
-  if(index === 0) {
-    str += &#39;way&#39;;
-  } else {
-    str = str.slice(index) + str.slice(0, index) + &quot;ay&quot;;
-  }
-  return str;
-}
-
-translatePigLatin(&quot;consonant&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">translatePigLatin</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> re = <span class="regexp">/[aeiou]/</span>;</span><br><span class="line">  <span class="keyword">let</span> index = str.match(re)===<span class="literal">null</span>? <span class="literal">null</span>:str.match(re).index;</span><br><span class="line">  <span class="keyword">if</span>(index === <span class="number">0</span>) &#123;</span><br><span class="line">    str += <span class="string">'way'</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    str = str.slice(index) + str.slice(<span class="number">0</span>, index) + <span class="string">"ay"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">translatePigLatin(<span class="string">"consonant"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/search-and-replace" target="_blank" rel="noopener">Search and Replace</a></p>
 <p>题干： 这题给定三个参数，第一个是一个字符串句子，第二、三个都是单词，需要在字符串句子中找到第二个参数，并替换成第三个</p>
 <p>这题其实很简单，核心就是<code>string.replace(word1, word2)</code>，唯一需要注意的是判断<code>word1</code>和<code>word2</code>是否首字母大写，这里用<code>before[0] === before[0].toUpperCase()</code>来判断就可以了，如果原单词都是小写，替换的单词就都是小写（没有改变），如果原单词首字母大写，替换的单词就首字母大写<code>after = after[0].toUpperCase() + after.slice(1)</code></p>
-<pre><code class="js">function myReplace(str, before, after) {
-  if(before[0] === before[0].toUpperCase()) {
-    after = after[0].toUpperCase() + after.slice(1);
-  } 
-  return str.replace(before,after);
-}
-
-myReplace(&quot;A quick brown fox jumped over the lazy dog&quot;, &quot;jumped&quot;, &quot;leaped&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myReplace</span>(<span class="params">str, before, after</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(before[<span class="number">0</span>] === before[<span class="number">0</span>].toUpperCase()) &#123;</span><br><span class="line">    after = after[<span class="number">0</span>].toUpperCase() + after.slice(<span class="number">1</span>);</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">return</span> str.replace(before,after);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">myReplace(<span class="string">"A quick brown fox jumped over the lazy dog"</span>, <span class="string">"jumped"</span>, <span class="string">"leaped"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
@@ -610,289 +539,97 @@ myReplace(&quot;A quick brown fox jumped over the lazy dog&quot;, &quot;jumped&q
 <p>题干： 给定一个字符串，字符串只包含”C”, “G”, “A”, “T”四个字母，其中，[“C”, “G”]和[“A”, “T”]是两对基因，要求根据字符串的每个字母，找到对应的基因对，返回数组，里面每个元素都是对应的基因对，且基因对的第一个元素是字符串中的字母。</p>
 <p>这题有一个有点坑的点，我最开始想的是保存两个变量<code>pair1</code>和<code>pair2</code>，遍历字符串，让<code>pair1.indexOf(string)</code>，找到字母对应的基因对，如果<code>index</code>是0就返回这个数组，如果不是0就返回<code>pair.reverse()</code>，但是<code>reverse()</code>方法是直接修改数组的顺序，所以会导致最后输出的数组顺序都是一样的。</p>
 <p>最终的解决方案是把4种可能的基因对都放在一个数组里，遍历字符串的每个字母，去执行寻找功能，再遍历基因对的每一个数组，看看字母在哪个数组中的索引值是0，就在<code>result</code>数组中<code>push</code>这个数组。</p>
-<pre><code class="js">function pairElement(str) {
-  let pairs = [[&quot;C&quot;, &quot;G&quot;], [&quot;G&quot;, &quot;C&quot;], [&quot;A&quot;, &quot;T&quot;], [&quot;T&quot;, &quot;A&quot;]];
-  let result = [];
-  str.split(&quot;&quot;).map(val =&gt; {
-    pairs.forEach(arr =&gt; {
-      if(arr.indexOf(val) === 0) {
-        result.push(arr);
-      }
-    })
-  })
-  return result;
-}
-
-pairElement(&quot;GCG&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pairElement</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> pairs = [[<span class="string">"C"</span>, <span class="string">"G"</span>], [<span class="string">"G"</span>, <span class="string">"C"</span>], [<span class="string">"A"</span>, <span class="string">"T"</span>], [<span class="string">"T"</span>, <span class="string">"A"</span>]];</span><br><span class="line">  <span class="keyword">let</span> result = [];</span><br><span class="line">  str.split(<span class="string">""</span>).map(<span class="function"><span class="params">val</span> =&gt;</span> &#123;</span><br><span class="line">    pairs.forEach(<span class="function"><span class="params">arr</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span>(arr.indexOf(val) === <span class="number">0</span>) &#123;</span><br><span class="line">        result.push(arr);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pairElement(<span class="string">"GCG"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/missing-letters" target="_blank" rel="noopener">Missing letters</a></p>
 <p>题干：参数是一串按顺序排列的字符串，需要判断中间缺少了哪个字母，需要返回这个字母，如果不缺就返回<code>undefined</code></p>
 <p>相邻字母的Unicode编码差1，利用这一点可以比较每个字母比后一个字母的编码是不是正好少1，如果不是，那这个字母之后就缺了一个字母，用<code>String.fromCharCode</code>可以获得这个字母</p>
-<pre><code class="js">function fearNotLetter(str) {
-  for(let i = 0; i &lt; str.length; i ++) {
-    if(str.charCodeAt(i) - str.charCodeAt(i + 1) &lt; -1) {
-      return String.fromCharCode(str.charCodeAt(i) + 1);
-    }
-  }
-  return undefined;
-}
-
-fearNotLetter(&quot;abce&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fearNotLetter</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.length; i ++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(str.charCodeAt(i) - str.charCodeAt(i + <span class="number">1</span>) &lt; <span class="number">-1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">String</span>.fromCharCode(str.charCodeAt(i) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fearNotLetter(<span class="string">"abce"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/sorted-union" target="_blank" rel="noopener">Sorted Union</a></p>
 <p>题干： 参数是不定个数个数组，需要将这些数组组合起来，返回一个没有重复元素且顺序按照参数先后顺序的数组。</p>
 <p>一看到数组去重，现在会条件反射想到<code>Set</code>，因为比其他方法方便太多。这里我用变量<code>all</code>存储所有参数数组中的元素，然后利用<code>new Set(all)</code>来获得一个没有重复元素的数据<code>Set</code>，再利用<code>Array.from(set)</code>来将元素转换成数组</p>
-<pre><code class="js">function uniteUnique(...args) {
-  let all = [];
-  [...args].map(arr =&gt; all=all.concat(arr));
-  return Array.from(new Set(all));
-}
-
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniteUnique</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> all = [];</span><br><span class="line">  [...args].map(<span class="function"><span class="params">arr</span> =&gt;</span> all=all.concat(arr));</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(all));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">uniteUnique([<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>], [<span class="number">5</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">4</span>], [<span class="number">2</span>, <span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/convert-html-entities" target="_blank" rel="noopener">Convert HTML Entities</a></p>
 <p>题干：转换HTML转义符</p>
 <p>这题的思路是创建一个对象保存转义符，这样切换的时候可以统一使用<code>string.replace(ele, entities[ele])</code>的方法。然后使用正则把需要转义的内容筛选出来就可以了。</p>
-<pre><code class="js">function convertHTML(str) {
-  let entities = {
-    &quot;&lt;&quot; : &quot;&amp;lt;&quot;,
-    &quot;&gt;&quot; : &quot;&amp;gt;&quot;,
-    &quot;&amp;&quot; : &quot;&amp;amp;&quot;,
-    &quot;&#39;&quot; : &quot;&amp;apos;&quot;,
-    &#39;&quot;&#39; : &#39;&amp;quot;&#39;
-  }
-  let re = /[^A-Za-z\s]/g
-  let arr = str.match(re);
-  arr===null? str = str: arr.map(ele =&gt; str = str.replace(ele, entities[ele]));
-  return str;
-}
-
-convertHTML(&quot;Dolce &amp; Gabbana&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">convertHTML</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> entities = &#123;</span><br><span class="line">    <span class="string">"&lt;"</span> : <span class="string">"&amp;lt;"</span>,</span><br><span class="line">    <span class="string">"&gt;"</span> : <span class="string">"&amp;gt;"</span>,</span><br><span class="line">    <span class="string">"&amp;"</span> : <span class="string">"&amp;amp;"</span>,</span><br><span class="line">    <span class="string">"'"</span> : <span class="string">"&amp;apos;"</span>,</span><br><span class="line">    <span class="string">'"'</span> : <span class="string">'&amp;quot;'</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> re = <span class="regexp">/[^A-Za-z\s]/g</span></span><br><span class="line">  <span class="keyword">let</span> arr = str.match(re);</span><br><span class="line">  arr===<span class="literal">null</span>? str = str: arr.map(<span class="function"><span class="params">ele</span> =&gt;</span> str = str.replace(ele, entities[ele]));</span><br><span class="line">  <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">convertHTML(<span class="string">"Dolce &amp; Gabbana"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/sum-all-odd-fibonacci-numbers" target="_blank" rel="noopener">Sum All Odd Fibonacci Numbers</a></p>
 <p>题干：这题需要求给定小于参数<code>num</code>的斐波那契数列中所有奇数的和。</p>
 <p>首先我们需要知道什么是斐波那契数列，从<code>1, 1</code>开始，后面每一个数字是前两个数字的和，</p>
-<pre><code class="js">function sumFibs(num) {
-  let fibs = [1, 1];
-  let oddSum = 2;
-  while(true) {
-      let item = fibs[0] + fibs[1];
-      if(num &lt; item) {
-          return oddSum;
-      }
-      if(item % 2) {
-          oddSum += item;
-      }
-      fibs[0] = fibs[1];
-      fibs[1] = item;
-  }
-}
-
-sumFibs(4);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumFibs</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> fibs = [<span class="number">1</span>, <span class="number">1</span>];</span><br><span class="line">  <span class="keyword">let</span> oddSum = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">  	<span class="keyword">let</span> item = fibs[<span class="number">0</span>] + fibs[<span class="number">1</span>];</span><br><span class="line">  	<span class="keyword">if</span>(num &lt; item) &#123;</span><br><span class="line">  		<span class="keyword">return</span> oddSum;</span><br><span class="line">  	&#125;</span><br><span class="line">  	<span class="keyword">if</span>(item % <span class="number">2</span>) &#123;</span><br><span class="line">  		oddSum += item;</span><br><span class="line">  	&#125;</span><br><span class="line">  	fibs[<span class="number">0</span>] = fibs[<span class="number">1</span>];</span><br><span class="line">  	fibs[<span class="number">1</span>] = item;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sumFibs(<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/sum-all-primes" target="_blank" rel="noopener">Sum All Primes</a></p>
 <p>题干：求小于参数<code>num</code>的所有质数的和</p>
 <p>这题先确定怎么判断质数，然后再求和</p>
-<pre><code class="js">function sumPrimes(num) {
-  let isPrime = function(num) {
-      for(let i = 2; i &lt; num; i ++) {
-          if(num % i === 0) {
-              return false;
-          }
-    }
-      return true;
-  }
-  let result = 0;
-  for(let j = 2; j &lt;= num; j ++) {
-      if(isPrime(j)){
-          result+=j;
-      }
-  }
-  return result;
-}
-
-sumPrimes(10);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumPrimes</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> isPrime = <span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  	<span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">2</span>; i &lt; num; i ++) &#123;</span><br><span class="line">  		<span class="keyword">if</span>(num % i === <span class="number">0</span>) &#123;</span><br><span class="line">  			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">2</span>; j &lt;= num; j ++) &#123;</span><br><span class="line">  	<span class="keyword">if</span>(isPrime(j))&#123;</span><br><span class="line">  		result+=j;</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sumPrimes(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/smallest-common-multiple" target="_blank" rel="noopener">Smallest Common Multiple</a></p>
 <p>题干：求最小公倍数</p>
 <p>最大公倍数的求法是两个数相乘除以最大公约数，所以要先求出最大公约数。然后求积。</p>
-<p><code>`</code>js<br>function smallestCommons(arr) {<br>  function gcd(a, b){</p>
-<pre><code>if(a % b === 0){
-  return b;
-}
-return gcd(b, a % b);
-</code></pre><p>  }<br>  var max = Math.max.apply(null, arr);<br>  var min = Math.min.apply(null, arr);<br>  var result = min;<br>  for(var i = min + 1; i &lt;= max; i ++){</p>
-<pre><code>result *= i / gcd(i, result);
-</code></pre><p>  }<br>  return result;<br>}</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">smallestCommons</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">gcd</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a % b === <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> gcd(b, a % b);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr);</span><br><span class="line">  <span class="keyword">var</span> min = <span class="built_in">Math</span>.min.apply(<span class="literal">null</span>, arr);</span><br><span class="line">  <span class="keyword">var</span> result = min;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = min + <span class="number">1</span>; i &lt;= max; i ++)&#123;</span><br><span class="line">    result *= i / gcd(i, result);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">smallestCommons([<span class="number">1</span>,<span class="number">5</span>]);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>  smallestCommons([1,5]);</p>
-<pre><code>
-
-
-- [Drop it](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/drop-it)
-
-  题干：找出参数`arr`中第一个符合参数`func`条件的元素，并截取数组`arr`中自这个元素起的剩余部分
-
-  我的解决方案是遍历数组`arr.map`，找出符合`func`条件的所有元素，并在`indice`数组中记录它们的索引值，`sort()`排序后取第一个值，利用数组的`array.slice`方法来截取数组
-
-  ```js
-  function dropElements(arr, func) {
-    let result= [];
-    let indice = [];
-    arr.map(val =&gt; {
-      if(func(val) === true) {
-          indice.push(arr.indexOf(val));
-      }
-    })
-    if(indice.length &gt; 0) {
-        result = arr.slice(indice.sort()[0])
-    }
-    return result;
-  }
-
-  dropElements([1, 2, 3], function(n) {return n &lt; 3; });
-</code></pre><ul>
+<ul>
+<li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/drop-it" target="_blank" rel="noopener">Drop it</a></p>
+<p>题干：找出参数<code>arr</code>中第一个符合参数<code>func</code>条件的元素，并截取数组<code>arr</code>中自这个元素起的剩余部分</p>
+<p>我的解决方案是遍历数组<code>arr.map</code>，找出符合<code>func</code>条件的所有元素，并在<code>indice</code>数组中记录它们的索引值，<code>sort()</code>排序后取第一个值，利用数组的<code>array.slice</code>方法来截取数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dropElements</span>(<span class="params">arr, func</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result= [];</span><br><span class="line">  <span class="keyword">let</span> indice = [];</span><br><span class="line">  arr.map(<span class="function"><span class="params">val</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(func(val) === <span class="literal">true</span>) &#123;</span><br><span class="line">    	indice.push(arr.indexOf(val));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">if</span>(indice.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  	result = arr.slice(indice.sort()[<span class="number">0</span>])</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dropElements([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;<span class="keyword">return</span> n &lt; <span class="number">3</span>; &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/steamroller" target="_blank" rel="noopener">Steamroller</a></p>
 <p>题干：这题的参数是一个多维数组，需要将里面的元素解析到一个一维数组中，作为结果返回</p>
 <p>像这类判断数据类型然后可能需要反复做同一个转换操作的内容肯定会用到递归思想，这里就是判断数组内的元素是不是数组，如果是数组就再解析，不是数组就直接<code>push</code>到结果内。</p>
 <p>需要注意的是如何判断一个元素是不是数组，我刚开始想到的是用<code>typeof</code>，但是马上就会发现其实有问题，因为<code>typeof</code>不适合判断复杂类型的数据，所以这里用到<code>Object.prototype.toString.call(val)</code>，结果也和<code>typeof</code>的结果略有不同，这里会返回一个数组转成的字符串<code>[object Array]</code></p>
-<pre><code class="js">function steamrollArray(arr) {
-  let result = [];
-  arr.map(val =&gt; {
-    if(Object.prototype.toString.call(val) === &quot;[object Array]&quot;) {
-      result = result.concat(steamrollArray(val));
-    } else {
-      result.push(val);
-    }
-  })
-  return result;
-}
-
-steamrollArray([1, [2], [3, [[4]]]]);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">steamrollArray</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = [];</span><br><span class="line">  arr.map(<span class="function"><span class="params">val</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Object</span>.prototype.toString.call(val) === <span class="string">"[object Array]"</span>) &#123;</span><br><span class="line">      result = result.concat(steamrollArray(val));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      result.push(val);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">steamrollArray([<span class="number">1</span>, [<span class="number">2</span>], [<span class="number">3</span>, [[<span class="number">4</span>]]]]);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/binary-agents" target="_blank" rel="noopener">Binary Agents</a></p>
 <p>题干：将二进制参数转换成字符串</p>
 <p>核心知识点是<code>parseInt(num, 2)</code>将二进制编码转换成十进制数，和<code>String.fromCharCode(num)</code>将Unicode编码转换成字符串。用<code>string.split</code>将字符串切分成数组再遍历就可以了。</p>
-<pre><code class="js">function binaryAgent(str) {
-  let result = &quot;&quot;;
-  str.split(&quot; &quot;).map(val =&gt; result += String.fromCharCode(parseInt(val, 2)));
-  return result;
-}
-
-binaryAgent(&quot;01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">binaryAgent</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="string">""</span>;</span><br><span class="line">  str.split(<span class="string">" "</span>).map(<span class="function"><span class="params">val</span> =&gt;</span> result += <span class="built_in">String</span>.fromCharCode(<span class="built_in">parseInt</span>(val, <span class="number">2</span>)));</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">binaryAgent(<span class="string">"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/everything-be-true" target="_blank" rel="noopener">Everything Be True</a></p>
 <p>题干：判断参数<code>collection</code>数组中是否都有<code>pre</code>这个属性，以及这个属性的值是否都为真</p>
 <p>像这类判断每个值的题，会很容易想到用<code>map</code>遍历，但是这样其实还需要再判断遍历之后返回的值，比较麻烦，如果用<code>filter</code>来筛选出不符合要求的元素，并且判断包含这些元素的数组的长度，如果长度为0则表示所有的元素都符合要求，如果不为0则表示有元素不符合，不需要判断具体长度，这样会方便一些。</p>
-<pre><code class="js">function truthCheck(collection, pre) {
-  if(collection.filter(val=&gt; Boolean(val[pre]) === false).length === 0){
-      return true;
-  }
-  return false;
-}
-
-truthCheck([{&quot;user&quot;: &quot;Tinky-Winky&quot;, &quot;sex&quot;: &quot;male&quot;}, {&quot;user&quot;: &quot;Dipsy&quot;, &quot;sex&quot;: &quot;male&quot;}, {&quot;user&quot;: &quot;Laa-Laa&quot;, &quot;sex&quot;: &quot;female&quot;}, {&quot;user&quot;: &quot;Po&quot;, &quot;sex&quot;: &quot;female&quot;}], &quot;sex&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">truthCheck</span>(<span class="params">collection, pre</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(collection.filter(<span class="function"><span class="params">val</span>=&gt;</span> <span class="built_in">Boolean</span>(val[pre]) === <span class="literal">false</span>).length === <span class="number">0</span>)&#123;</span><br><span class="line">  	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">truthCheck([&#123;<span class="string">"user"</span>: <span class="string">"Tinky-Winky"</span>, <span class="string">"sex"</span>: <span class="string">"male"</span>&#125;, &#123;<span class="string">"user"</span>: <span class="string">"Dipsy"</span>, <span class="string">"sex"</span>: <span class="string">"male"</span>&#125;, &#123;<span class="string">"user"</span>: <span class="string">"Laa-Laa"</span>, <span class="string">"sex"</span>: <span class="string">"female"</span>&#125;, &#123;<span class="string">"user"</span>: <span class="string">"Po"</span>, <span class="string">"sex"</span>: <span class="string">"female"</span>&#125;], <span class="string">"sex"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/arguments-optional" target="_blank" rel="noopener">Arguments Optional</a></p>
 <p>题干：给定不定数量的参数，如果判断类型，如果是数字就求和。</p>
 <p>这一题需要把情况列出来，我先判断了两个参数的情况，如果两个参数都是数字，直接求和，如果两个参数，不是全是数字，则返回<code>undefined</code>，如果只有一个参数，且是数字，则返回一个<code>function</code>，再判断这个新方法的新参数及求和</p>
-<pre><code class="js">function addTogether(...args) {
-  if([...args].length === 2 &amp;&amp; typeof [...args][0] === &quot;number&quot; &amp;&amp; typeof [...args][1] === &quot;number&quot;) {
-        return args[0] + args[1];
-    } else if ([...args].length === 2) {
-        return undefined;
-    } else if ([...args].length === 1 &amp;&amp; typeof [...args][0] === &quot;number&quot;) {
-        return function(arg) {
-            if(typeof arg !== &quot;number&quot;) {
-                return undefined;
-            } else {
-                return args[0] + arg;
-            }
-        }
-    }
-}
-
-addTogether(2,3);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTogether</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>([...args].length === <span class="number">2</span> &amp;&amp; <span class="keyword">typeof</span> [...args][<span class="number">0</span>] === <span class="string">"number"</span> &amp;&amp; <span class="keyword">typeof</span> [...args][<span class="number">1</span>] === <span class="string">"number"</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> args[<span class="number">0</span>] + args[<span class="number">1</span>];</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> ([...args].length === <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> ([...args].length === <span class="number">1</span> &amp;&amp; <span class="keyword">typeof</span> [...args][<span class="number">0</span>] === <span class="string">"number"</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">typeof</span> arg !== <span class="string">"number"</span>) &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> args[<span class="number">0</span>] + arg;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">addTogether(<span class="number">2</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/make-a-person" target="_blank" rel="noopener">Make a Person</a></p>
 <p>这一题考察对象的属性和方法，没什么难点，直接设定和获取就好了</p>
-<pre><code class="js">var Person = function(firstAndLast) {
-  // Complete the method below and implement the others similarly
-  let name = firstAndLast.split(&quot; &quot;);
-  this.getFullName = function() {
-    return name.join(&quot; &quot;);
-  };
-  this.getFirstName = function() {
-    return name[0];
-  }
-  this.getLastName = function() {
-    return name[1];
-  }
-  this.setFirstName = function(first) {
-    name[0]= first;
-  }
-  this.setLastName = function(last) {
-    name[1]= last;
-  }
-  this.setFullName = function(firstAndLast) {
-    name = firstAndLast.split(&quot; &quot;);
-  }
-  return this;
-};
-
-var bob = new Person(&#39;Bob Ross&#39;);
-bob.getFullName();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params">firstAndLast</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Complete the method below and implement the others similarly</span></span><br><span class="line">  <span class="keyword">let</span> name = firstAndLast.split(<span class="string">" "</span>);</span><br><span class="line">  <span class="keyword">this</span>.getFullName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> name.join(<span class="string">" "</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">this</span>.getFirstName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> name[<span class="number">0</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.getLastName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> name[<span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.setFirstName = <span class="function"><span class="keyword">function</span>(<span class="params">first</span>) </span>&#123;</span><br><span class="line">    name[<span class="number">0</span>]= first;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.setLastName = <span class="function"><span class="keyword">function</span>(<span class="params">last</span>) </span>&#123;</span><br><span class="line">    name[<span class="number">1</span>]= last;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.setFullName = <span class="function"><span class="keyword">function</span>(<span class="params">firstAndLast</span>) </span>&#123;</span><br><span class="line">    name = firstAndLast.split(<span class="string">" "</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bob = <span class="keyword">new</span> Person(<span class="string">'Bob Ross'</span>);</span><br><span class="line">bob.getFullName();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/map-the-debris" target="_blank" rel="noopener">Map the Debris</a></p>
 <p>这一题唯一需要弄清楚的就是怎么计算这个公转周期。之后利用公式，也没有什么难度。</p>
-<pre><code class="js">function orbitalPeriod(arr) {
-  var GM = 398600.4418;
-  var earthRadius = 6367.4447;
-  let result = [];
-  arr.map(val =&gt; {
-      val.orbitalPeriod=Math.round(Math.sqrt(Math.pow((val.avgAlt+earthRadius), 3)/GM)*2*Math.PI);
-      val = {name: val.name, orbitalPeriod: val.orbitalPeriod};
-      result.push(val)
-  })
-  return result;
-}
-
-orbitalPeriod([{name : &quot;sputnik&quot;, avgAlt : 35873.5553}]);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">orbitalPeriod</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> GM = <span class="number">398600.4418</span>;</span><br><span class="line">  <span class="keyword">var</span> earthRadius = <span class="number">6367.4447</span>;</span><br><span class="line">  <span class="keyword">let</span> result = [];</span><br><span class="line">  arr.map(<span class="function"><span class="params">val</span> =&gt;</span> &#123;</span><br><span class="line">  	val.orbitalPeriod=<span class="built_in">Math</span>.round(<span class="built_in">Math</span>.sqrt(<span class="built_in">Math</span>.pow((val.avgAlt+earthRadius), <span class="number">3</span>)/GM)*<span class="number">2</span>*<span class="built_in">Math</span>.PI);</span><br><span class="line">  	val = &#123;<span class="attr">name</span>: val.name, <span class="attr">orbitalPeriod</span>: val.orbitalPeriod&#125;;</span><br><span class="line">  	result.push(val)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">orbitalPeriod([&#123;<span class="attr">name</span> : <span class="string">"sputnik"</span>, <span class="attr">avgAlt</span> : <span class="number">35873.5553</span>&#125;]);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -937,8 +674,8 @@ orbitalPeriod([{name : &quot;sputnik&quot;, avgAlt : 35873.5553}]);
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/11/函数式编程/" rel="prev" title="函数式编程">
-                函数式编程 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/11/JavaScript算法项目/" rel="prev" title="JavaScript算法项目">
+                JavaScript算法项目 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1166,7 +903,7 @@ orbitalPeriod([{name : &quot;sputnik&quot;, avgAlt : 35873.5553}]);
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.5k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

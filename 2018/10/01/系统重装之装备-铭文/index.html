@@ -124,8 +124,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
 
@@ -454,7 +452,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,905 字
+                  2,919 字
                 </span>
               
 
@@ -498,46 +496,37 @@
 <h4 id="图标可以调大"><a href="#图标可以调大" class="headerlink" title="图标可以调大"></a>图标可以调大</h4><p>因为dock栏的图标很少，所以可以适当放大一些，找起来比较方便。</p>
 <h3 id="launchpad"><a href="#launchpad" class="headerlink" title="launchpad"></a>launchpad</h3><p>launchpad图标可以通过设置每页几行几列图标来调整图标大小，我之前每次重装都会调，这次忘了。我的习惯是把所有的图标都整理到文件夹图标里，所以不论多少应用，launchpad都不会超过一页。这样看起来很不方便查找内容，但事实上，我几乎不会进launchpad找应用，都是通过alfred启动，所以想想其实调不调整大小都没关系。</p>
 <h3 id="app来源"><a href="#app来源" class="headerlink" title="app来源"></a>app来源</h3><p>有时候下载了破解版的app会显示没法安装，或者安装了没法使用的情况，可以通过终端命令取消对来源不明的app的限制（毕竟还是有风险的，需要自己把握到底什么app可以装，什么不可以）</p>
-<pre><code class="shell">sudo spctl --master-disable
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
 <p>输入密码后，「系统偏好设置」—「安全性与隐私」—「通用」中允许下载的应用来源就会变成「任何来源」。</p>
 <p><img src="/Users/quanxu/Library/Application%20Support/typora-user-images/image-20181001113723811.png" alt="image-20181001113723811"></p>
 <p>这时，再安装一些非app store下载的软件就没有限制了。</p>
 <h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><h4 id="node-amp-amp-npm"><a href="#node-amp-amp-npm" class="headerlink" title="node &amp;&amp; npm"></a>node &amp;&amp; npm</h4><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">官网</a>下载安装</p>
 <h5 id="配置npm镜像"><a href="#配置npm镜像" class="headerlink" title="配置npm镜像"></a>配置npm镜像</h5><ul>
 <li><p>下载</p>
-<pre><code class="shell">npm i -g nrm
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g nrm</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>切换镜像源</p>
-<pre><code class="shell">nrm use taobao
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm use taobao</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h5 id="下载nodemon"><a href="#下载nodemon" class="headerlink" title="下载nodemon"></a>下载nodemon</h5><ul>
 <li><p>下载</p>
-<pre><code class="shell">npm i -g nodemon
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g nodemon</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>变更服务器代码时，用nodemon不用重启服务器</p>
 <h4 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h4><ul>
 <li><p>下载</p>
-<pre><code class="shell">brew install git
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>配置git基本信息：</p>
-<pre><code class="shell">git config --global user.name &quot;xxx&quot;
-git config --global user.email &quot;xxx&quot;
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "xxx"</span><br><span class="line">git config --global user.email "xxx"</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>生成SSH：</p>
-<pre><code class="shell">ssh-keygen -t rsa -C &quot;email&quot;
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "email"</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>添加SSH key到ssh-agent</p>
-<pre><code class="shell">ssh-add ~/.ssh/id_rsa
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>将SSH添加到github</p>
 </li>
@@ -598,8 +587,7 @@ git config --global user.email &quot;xxx&quot;
 <li><p>调用插件安装方法</p>
 <ul>
 <li><p>ctrl+`调出console，复制粘贴以下内容</p>
-<pre><code class="shell">import urllib.request,os; pf = &#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), &#39;wb&#39;).write(urllib.request.urlopen( &#39;http://sublime.wbond.net/&#39; + pf.replace(&#39; &#39;,&#39;%20&#39;)).read())
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>重启后，就可以ctrl+shift+p调出命令面板了</p>
 </li>
@@ -611,11 +599,7 @@ git config --global user.email &quot;xxx&quot;
 <li><p>配置node环境</p>
 <ul>
 <li><p>「Tools」——「Build new system」</p>
-<pre><code class="json">{
-    &quot;cmd&quot;: [&quot;node&quot;, &quot;$file&quot;],
-    &quot;selector&quot;: &quot;source.js&quot;
-}
-</code></pre>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"cmd"</span>: [<span class="string">"node"</span>, <span class="string">"$file"</span>],</span><br><span class="line">	<span class="attr">"selector"</span>: <span class="string">"source.js"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>保存为node</p>
 </li>
@@ -964,7 +948,7 @@ git config --global user.email &quot;xxx&quot;
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.5k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

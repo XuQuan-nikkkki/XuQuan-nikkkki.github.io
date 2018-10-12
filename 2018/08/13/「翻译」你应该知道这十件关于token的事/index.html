@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,138 字
+                  3,207 字
                 </span>
               
 
@@ -511,109 +511,40 @@
 <li>授权一个新的token，并更新它的过期时间</li>
 </ol>
 <p>你甚至可以在token中储存最初的授权时间，实现14天免登陆等操作。</p>
-<pre><code class="js">app.post(&#39;/refresh_token&#39;, function (req, res) {
-  // verify the existing token
-  var profile = jwt.verify(req.body.token, secret);
-
-  // if more than 14 days old, force login
-  if (profile.original_iat - new Date() &gt; 14) { // iat == issued at
-    return res.send(401); // re-logging
-  }
-
-  // check if the user still exists or if authorization hasn&#39;t been revoked
-  if (!valid) return res.send(401); // re-logging
-
-  // issue a new token
-  var refreshed_token = jwt.sign(profile, secret, { expiresInMinutes: 60*5 });
-  res.json({ token: refreshed_token });
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">app.post(<span class="string">'/refresh_token'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// verify the existing token</span></span><br><span class="line">  <span class="keyword">var</span> profile = jwt.verify(req.body.token, secret);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// if more than 14 days old, force login</span></span><br><span class="line">  <span class="keyword">if</span> (profile.original_iat - <span class="keyword">new</span> <span class="built_in">Date</span>() &gt; <span class="number">14</span>) &#123; <span class="comment">// iat == issued at</span></span><br><span class="line">    <span class="keyword">return</span> res.send(<span class="number">401</span>); <span class="comment">// re-logging</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// check if the user still exists or if authorization hasn't been revoked</span></span><br><span class="line">  <span class="keyword">if</span> (!valid) <span class="keyword">return</span> res.send(<span class="number">401</span>); <span class="comment">// re-logging</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// issue a new token</span></span><br><span class="line">  <span class="keyword">var</span> refreshed_token = jwt.sign(profile, secret, &#123; <span class="attr">expiresInMinutes</span>: <span class="number">60</span>*<span class="number">5</span> &#125;);</span><br><span class="line">  res.json(&#123; <span class="attr">token</span>: refreshed_token &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>如果你需要重新激活tokens（长期有效的tokens是很有用的设置），你需要设置一些注册授权的操作来检测用户的tokens。</p>
 <h4 id="3-local-session-storage无法跨域，所以需要一个标记cookie"><a href="#3-local-session-storage无法跨域，所以需要一个标记cookie" class="headerlink" title="3. local/session storage无法跨域，所以需要一个标记cookie"></a>3. local/session storage无法跨域，所以需要一个标记cookie</h4><p>如果你将一个cookie的域名设置为<code>.yourdomain.com</code>，那么从<code>yourdomain.com</code>和<code>app.youdomain.com</code>路径都可以获取到这个cookie，我们假设用户在你的购物网站上，就能很容易地检测到他/她已经在主页面上登录，从而重定向到移动端<code>app.youdoumain.com</code>。</p>
 <p>但另一方面，存储在local/session storage中的tokens无法跨域获取，就算是子域也不可以。那么我们该怎么办呢？</p>
 <p>一个可行的方法是，当用户在<code>app.domain.com</code>上进行身份验证时，你可以生成一个token，同时还设置一个用于<code>.youdomain.com</code>的cookie。</p>
-<pre><code class="js">$.post(&#39;/authenticate&#39;, function() {
-  // store token on local/session storage or cookie
-    ....
-
-    // create a cookie signaling that user is logged in
-  $.cookie(&#39;loggedin&#39;, profile.name, &#39;.yourdomain.com&#39;);
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.post(<span class="string">'/authenticate'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// store token on local/session storage or cookie</span></span><br><span class="line">    ....</span><br><span class="line"></span><br><span class="line">    <span class="comment">// create a cookie signaling that user is logged in</span></span><br><span class="line">  $.cookie(<span class="string">'loggedin'</span>, profile.name, <span class="string">'.yourdomain.com'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>那么， 在<code>domain.com</code>上，你就能检测是否有用于这个域名的cookie，如果有，就可以重定向到<code>app.yourdomain.com</code>。token就可以在app的子域上使用，接下来就可以进行常规操作了（如果token仍然有效，就继续使用这个token，如果距离上次登录的时间已经超过了你设置的使用token的有效时长，那么久需要获取一个新的token）。</p>
 <p>有时会有cookie仍然存在，但是token被删除或者有其他误操作的情况发生。如果出现这样的状况，用户需要重新登录。但需要强调的是，正如我们前面提到的，我们并没有将cookie作为验证机制去使用，而是仅仅将它作为一种存储机制，协助我们在跨域的情况下完成信息的存储。</p>
 <h4 id="4-CORS请求会发送预检请求"><a href="#4-CORS请求会发送预检请求" class="headerlink" title="4. CORS请求会发送预检请求"></a>4. CORS请求会发送预检请求</h4><p>有人提出验证请求的头信息不满足简单请求的头信息要求，所以发送到特定地址的所有的请求都需要先发送预检请求。</p>
-<pre><code class="yaml">OPTIONS https://api.foo.com/bar
-GET https://api.foo.com/bar
-   Authorization: Bearer ....
-
-OPTIONS https://api.foo.com/bar2
-GET https://api.foo.com/bar2
-   Authorization: Bearer ....
-
-GET https://api.foo.com/bar
-   Authorization: Bearer ....
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">OPTIONS</span> <span class="attr">https://api.foo.com/bar</span></span><br><span class="line"><span class="string">GET</span> <span class="attr">https://api.foo.com/bar</span></span><br><span class="line"><span class="attr">   Authorization:</span> <span class="string">Bearer</span> <span class="string">....</span></span><br><span class="line"></span><br><span class="line"><span class="string">OPTIONS</span> <span class="attr">https://api.foo.com/bar2</span></span><br><span class="line"><span class="string">GET</span> <span class="attr">https://api.foo.com/bar2</span></span><br><span class="line"><span class="attr">   Authorization:</span> <span class="string">Bearer</span> <span class="string">....</span></span><br><span class="line"></span><br><span class="line"><span class="string">GET</span> <span class="attr">https://api.foo.com/bar</span></span><br><span class="line"><span class="attr">   Authorization:</span> <span class="string">Bearer</span> <span class="string">....</span></span><br></pre></td></tr></table></figure>
 <p>但这种情况只在你设置了<code>Content-Type: application/json</code>的情况下会发生。尽管对于绝大多数情况下都有这一设置。</p>
 <p>一个小的警告是，<code>OPTIONS</code>请求头信息本身并没有包含验证(Authorization)，所以你的web框架在处理<code>OPTION</code>请求和后续请求的时候应该区别对待（注意：Microsoft IIS在处理这个情况时会有一些问题）。</p>
 <h4 id="5-当你需要使用流传送时，使用token来获取已签名的请求"><a href="#5-当你需要使用流传送时，使用token来获取已签名的请求" class="headerlink" title="5. 当你需要使用流传送时，使用token来获取已签名的请求"></a>5. 当你需要使用流传送时，使用token来获取已签名的请求</h4><p>当使用cookie时，你可以很容易地触发文件下载并且对其内容进行流传送操作。但使用token时，因为它的请求是通过XHR实现的，你不能依赖它实现。解决方法是像AWS一样，生成一个签名的请求，<a href="https://github.com/hueniverse/hawk" target="_blank" rel="noopener">Hawk Bewits</a>就是一个很好的实现框架：</p>
 <p><strong>请求</strong></p>
-<pre><code class="yaml">POST /download-file/123
-Authorization: Bearer...
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">POST</span> <span class="string">/download-file/123</span></span><br><span class="line"><span class="attr">Authorization:</span> <span class="string">Bearer...</span></span><br></pre></td></tr></table></figure>
 <p><strong>响应</strong></p>
-<pre><code class="yaml">ticket=lahdoiasdhoiwdowijaksjdoaisdjoasidja
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">ticket=lahdoiasdhoiwdowijaksjdoaisdjoasidja</span></span><br></pre></td></tr></table></figure>
 <p>这个ticket是无状态的，而且基于地址URL来生成：域名+路径+请求+头信息+时间戳+HMAC，并且有过期时间。因此可以在有效期内，比如接下来的5分钟内，用于下载文件。</p>
 <p>接下来你可以重定向到<code>/download-file/123?ticket=lahdoiasdhoiwdowijaksjdoaisdjoasidja</code>。服务器会检查ticke是否有效，从而执行接下来的操作。</p>
 <h4 id="6-XSS比XSRF更好预防"><a href="#6-XSS比XSRF更好预防" class="headerlink" title="6. XSS比XSRF更好预防"></a>6. XSS比XSRF更好预防</h4><p>cookie可以在服务器端设置<code>HttpOnly</code>属性，从而使它只能在服务器端被获取，而不能通过JavaScript获取。这能够有效防范植入浏览器端的代码窃取cookie内容（XSS 跨站脚本攻击）。</p>
 <p>由于token是存储在local/session storage或客户端的cookie中的，攻击者很容易获取token实现XSS跨站脚本攻击。这是一个很现实的考虑，基于此，你应该让你的token的有效期尽量短一些。</p>
 <p>如果从防范攻击的层面去考虑，一个主要的隐患是XSRF。事实上，XSRF是最被误解的一种攻击，对于普通开发者来说，他们也许还没有意识到这个风险，所以很多应用都没有防范XSRF的机制。但不管怎么说，谁都明白注入代码是什么意思。简单来说，如果你允许在你的网站上植入一段代码，并且将它一同渲染出来，你就对XSS打开了大门。因此基于我们的经验，防范XSS比防范XSRF更容易。除此之外，防范XSRF并没有在每一个网页框架上实现。换句话说，防范XSS更容易因为大部分模板引擎已经默认对代码进行转义处理了。</p>
 <h4 id="7-每一个请求都会发送token，所以要注意它的大小"><a href="#7-每一个请求都会发送token，所以要注意它的大小" class="headerlink" title="7. 每一个请求都会发送token，所以要注意它的大小"></a>7. 每一个请求都会发送token，所以要注意它的大小</h4><p>每次你发送一个API请求时，你都需要在验证头信息中发送token。</p>
-<pre><code class="yaml">GET /foo
-Authorization: Bearer ...2kb token...
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">GET</span> <span class="string">/foo</span></span><br><span class="line"><span class="attr">Authorization:</span> <span class="string">Bearer</span> <span class="string">...2kb</span> <span class="string">token...</span></span><br></pre></td></tr></table></figure>
 <p>VS</p>
-<pre><code class="yaml">GET /foo
-connect.sid: ...20 bytes cookie...
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">GET</span> <span class="string">/foo</span></span><br><span class="line"><span class="string">connect.sid:</span> <span class="string">...20</span> <span class="string">bytes</span> <span class="string">cookie...</span></span><br></pre></td></tr></table></figure>
 <p>取决于你在token中存储多少信息，它也可以变得很大。另一方面，session cookies只是一个标识符（如connect.sid, PHPSESSID），其余的内容都存储在服务器上（如果你只有一台服务器，那么它就在你的内存中，如果你有一个服务器集群，它就会在一个数据库里）。</p>
 <p>现在，没什么能够阻止你利用token实现一个简单的机制了。token包含了所需的基本信息，同时在服务器端，你可以在每一次请求中丰富token信息。cookie也会这么做，只不过现在由你来决定增加哪些信息，你能在代码中完全掌控这一步骤。</p>
-<pre><code class="yaml">GET /foo
-Authorization: Bearer ……500 bytes token….
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">GET</span> <span class="string">/foo</span></span><br><span class="line"><span class="attr">Authorization:</span> <span class="string">Bearer</span> <span class="string">……500</span> <span class="string">bytes</span> <span class="string">token….</span></span><br></pre></td></tr></table></figure>
 <p>接着服务器：</p>
-<pre><code class="js">app.use(&#39;/api&#39;,
-  // validate token first
-  expressJwt({secret: secret}),
-
-  // enrich req.user with more data from db
-  function(req, res, next) {
-    req.user.extra_data = get_from_db();
-    next();
-  });
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="string">'/api'</span>,</span><br><span class="line">  <span class="comment">// validate token first</span></span><br><span class="line">  expressJwt(&#123;<span class="attr">secret</span>: secret&#125;),</span><br><span class="line"></span><br><span class="line">  <span class="comment">// enrich req.user with more data from db</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    req.user.extra_data = get_from_db();</span><br><span class="line">    next();</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 <p>值得注意的是，你也可以将session完全存储在cookie中（而不是只将cookie作为标识符）。有些web平台支持这一做法，有些则不行。比如，在node.js中，你也可以使用<a href="https://github.com/mozilla/node-client-sessions" target="_blank" rel="noopener">mozilla/node-client-sessions</a>。</p>
 <h4 id="8-如果你要保存机密信息，对token加密"><a href="#8-如果你要保存机密信息，对token加密" class="headerlink" title="8. 如果你要保存机密信息，对token加密"></a>8. 如果你要保存机密信息，对token加密</h4><p>token签名能够防止它被篡改。TLS/SSL防止使用过程中用户收到攻击。但如果有效载荷中包括用户的敏感信息（如SSN或其他），你可以对他们加密。JWT和JWE规范，但是大部分库都没有支持JWE，因此最简单的方法就是利用AES-CBC加密：</p>
-<pre><code class="js">app.post(&#39;/authenticate&#39;, function (req, res) {
-  // validate user
-
-  // encrypt profile
-  var encrypted = { token: encryptAesSha256(&#39;shhhh&#39;, JSON.stringify(profile)) };
-
-  // sing the token
-  var token = jwt.sign(encrypted, secret, { expiresInMinutes: 60*5 });
-
-  res.json({ token: token });
-}
-
-function encryptAesSha256 (password, textToEncrypt) {
-  var cipher = crypto.createCipher(&#39;aes-256-cbc&#39;, password);
-  var crypted = cipher.update(textToEncrypt, &#39;utf8&#39;, &#39;hex&#39;);
-  crypted += cipher.final(&#39;hex&#39;);
-  return crypted;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">app.post(<span class="string">'/authenticate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// validate user</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// encrypt profile</span></span><br><span class="line">  <span class="keyword">var</span> encrypted = &#123; <span class="attr">token</span>: encryptAesSha256(<span class="string">'shhhh'</span>, <span class="built_in">JSON</span>.stringify(profile)) &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// sing the token</span></span><br><span class="line">  <span class="keyword">var</span> token = jwt.sign(encrypted, secret, &#123; <span class="attr">expiresInMinutes</span>: <span class="number">60</span>*<span class="number">5</span> &#125;);</span><br><span class="line"></span><br><span class="line">  res.json(&#123; <span class="attr">token</span>: token &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">encryptAesSha256</span> (<span class="params">password, textToEncrypt</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> cipher = crypto.createCipher(<span class="string">'aes-256-cbc'</span>, password);</span><br><span class="line">  <span class="keyword">var</span> crypted = cipher.update(textToEncrypt, <span class="string">'utf8'</span>, <span class="string">'hex'</span>);</span><br><span class="line">  crypted += cipher.final(<span class="string">'hex'</span>);</span><br><span class="line">  <span class="keyword">return</span> crypted;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当然，你也可以使用第7条中的方法，将机密信息保存在数据库中。</p>
 <h4 id="9-JSON-Web-Tokens可以在OAuth中使用"><a href="#9-JSON-Web-Tokens可以在OAuth中使用" class="headerlink" title="9. JSON Web Tokens可以在OAuth中使用"></a>9. JSON Web Tokens可以在OAuth中使用</h4><p>tokens经常与OAuth一起使用。OAuth 2是用于解决身份认证的授权协议。用户在获取他们的数据时，认证服务器会返回一个<code>access_token</code>用于让接口记住用户。</p>
 <p>通常这些token是不透明的，他们被称为<code>bearer</code>tokens，是通过某种形式的哈希表保存在服务器上的随机字符串，并配有过期时间。服务器请求数据（如关联用户的通讯录），用户同意。下一次使用这个API时，token被发送给服务器，服务器在哈希表中查询，根据当下情景（token有没有过期？token是否有权获取相关数据？）决定是否通过验证。</p>
@@ -901,7 +832,7 @@ function encryptAesSha256 (password, textToEncrypt) {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.5k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

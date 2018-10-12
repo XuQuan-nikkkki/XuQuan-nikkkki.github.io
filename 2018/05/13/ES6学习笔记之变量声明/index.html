@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,399 字
+                  1,492 字
                 </span>
               
 
@@ -515,139 +515,46 @@
 </tbody>
 </table>
 <h4 id="1-声明"><a href="#1-声明" class="headerlink" title="1. 声明"></a>1. 声明</h4><p>&emsp;&emsp; <code>var</code>用于声明变量，且可以重复声明，后一次声明会覆盖前一次声明。</p>
-<pre><code class="js">var a = 12;
-var a = 5;
-console.log(a);  // 5
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">12</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;<code>let</code>用于声明变量，<code>const</code>用于声明常量，两者都无法重复声明，否则会报错，其中，<code>const</code>声明常量时必须赋值</p>
 <h4 id="2-变量提升-Hoisting"><a href="#2-变量提升-Hoisting" class="headerlink" title="2. 变量提升 Hoisting"></a>2. 变量提升 Hoisting</h4><p>&emsp;&emsp;<code>var</code>声明变量时，会变量提升。</p>
 <blockquote>
 <p>所谓<strong>变量提升</strong>，就是无论任何时候对变量赋值，都会在作用域头部给变量添加<strong>无赋值</strong>声明（无赋值很重要，之前弄错很多次）</p>
 </blockquote>
-<pre><code class="js">var a = 0;
-function fn() {
-  //var a
-  //此处会声明a，但是并未赋值
-  console.log(a)   //undefined
-  var a = 10;
-  console.log(a);  //10
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//var a</span></span><br><span class="line">  <span class="comment">//此处会声明a，但是并未赋值</span></span><br><span class="line">  <span class="built_in">console</span>.log(a)   <span class="comment">//undefined</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a);  <span class="comment">//10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;<code>let</code>和<code>const</code>不存在变量提升，经典面试问题如：</p>
-<pre><code class="js">let str = &#39;hello&#39;;
-//实际上var i被提升到了头部
-for(var i = 0; i &lt; str.length; i ++) {
-  console.log(str[i]);
-}
-console.log(i);  //5
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'hello'</span>;</span><br><span class="line"><span class="comment">//实际上var i被提升到了头部</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; str.length; i ++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(str[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);  <span class="comment">//5</span></span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;而如果是<code>let</code>和<code>const</code>，变量不会提升到头部，打印i就会出现未定义的问题。</p>
-<pre><code class="js">let str = &#39;hello&#39;;
-for(let i = 0; i &lt; str.length; i ++) {
-  console.log(str[i]);
-}
-console.log(i);  // i is not defined
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'hello'</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.length; i ++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(str[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);  <span class="comment">// i is not defined</span></span><br></pre></td></tr></table></figure>
 <h4 id="3-函数级作用域-VS-块级作用域"><a href="#3-函数级作用域-VS-块级作用域" class="headerlink" title="3. 函数级作用域 VS 块级作用域"></a>3. 函数级作用域 VS 块级作用域</h4><p>&emsp;&emsp;ES5中只有<strong>全局作用域</strong>和<strong>函数作用域</strong>，没有块级作用域。函数作用域是指在函数中定义的变量，函数外部不能获取变量。但由于<code>var</code>声明的变量存在变量提升，因此会导致一些问题。</p>
 <blockquote>
 <p>问题1: 内部变量可能会覆盖外部变量</p>
 </blockquote>
-<pre><code class="js">let temp = new Date();
-
-function fn() {
-  //var temp 
-  //由于变量提升，var temp的无赋值声明会提升到函数头部
-  console.log(temp);
-  if(false) {
-    var temp = &quot;hello world&quot;;
-  }
-}
-fn()  // temp is not defined
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> temp = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//var temp </span></span><br><span class="line">  <span class="comment">//由于变量提升，var temp的无赋值声明会提升到函数头部</span></span><br><span class="line">  <span class="built_in">console</span>.log(temp);</span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> temp = <span class="string">"hello world"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn()  <span class="comment">// temp is not defined</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>问题2: 循环变量会污染全局变量</p>
 </blockquote>
-<pre><code class="js">var str = &#39;hello&#39;;
-
-for(var i = 0; i &lt; str.length; i ++) {
-  console.log(str[i]);
-}
-console.log(i);  //5
-// i 原本用来控制循环，但是循环结束后，i并没有消失，而是泄露为全局变量
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'hello'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; str.length; i ++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(str[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);  <span class="comment">//5</span></span><br><span class="line"><span class="comment">// i 原本用来控制循环，但是循环结束后，i并没有消失，而是泄露为全局变量</span></span><br></pre></td></tr></table></figure>
 <p><br></p>
 <p>&emsp;&emsp;<strong>ES6中新增了块级作用域。</strong></p>
-<pre><code class="js">var str = &#39;hello&#39;;
-function d() {
-  console.log(str);
-  if(false) {
-    let str = &#39;world&#39;;
-  }
-}
-d();   // &#39;hello&#39;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'hello'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">d</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(str);</span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> str = <span class="string">'world'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">d();   <span class="comment">// 'hello'</span></span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;<code>let</code>生成的str的值不会对输出结果产生任何影响，因为<code>let</code>声明的str的作用域是if内部的块级作用域。如果我们在<code>if</code>内部添加一个<code>console.log(str)</code>，同时将前一个<code>console.log(str)</code>放到if后面会看得更明白，<code>let</code>声明的内容只在<code>if</code>内部起作用。</p>
-<pre><code class="js">var str = &#39;hello&#39;;
-function d() {
-  console.log(str);
-  if(false) {
-    let str = &#39;world&#39;;
-    console.log(str);
-  }
-}
-d();   // &#39;hello&#39;
-</code></pre>
-<pre><code class="js">var str = &#39;hello&#39;;
-function d() {
-  if(true) {
-    let str = &#39;world&#39;;
-    console.log(str);
-  }
-  console.log(str);
-}
-d();   
-// &#39;world&#39;
-// &#39;hello&#39;  
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'hello'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">d</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(str);</span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> str = <span class="string">'world'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(str);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">d();   <span class="comment">// 'hello'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'hello'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">d</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> str = <span class="string">'world'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(str);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(str);</span><br><span class="line">&#125;</span><br><span class="line">d();   </span><br><span class="line"><span class="comment">// 'world'</span></span><br><span class="line"><span class="comment">// 'hello'</span></span><br></pre></td></tr></table></figure>
 <h4 id="4-暂时性死区（TDZ）"><a href="#4-暂时性死区（TDZ）" class="headerlink" title="4. 暂时性死区（TDZ）"></a>4. 暂时性死区（TDZ）</h4><blockquote>
 <p><strong>暂时性死区 Temporary Dead Zone</strong><br>如果区块中使用了<code>let</code>和<code>const</code>命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域<br>即声明之前，变量就已经存在，但是不可获取（使用）</p>
 </blockquote>
-<pre><code class="js"> var str = &#39;hello&#39;;
- function d() {
-   console.log(str);
-   let str = &#39;world&#39;;
- }
- d(); // str is not defined   
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'hello'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">d</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(str);</span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">'world'</span>;</span><br><span class="line">&#125;</span><br><span class="line">d(); <span class="comment">// str is not defined</span></span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;还是上面一个例子，如果将<code>if</code>去掉，会发现输出结果变成了<code>str is not defined</code>，因为去掉<code>if</code>之后，函数内部会形成TDZ，防止在<code>let</code>之前，str被重复声明，因此<code>console.log(str)</code>实际在str被声明之前输出，结果是str未定义。</p>
 <h4 id="5-const修改属性"><a href="#5-const修改属性" class="headerlink" title="5. const修改属性"></a>5. <code>const</code>修改属性</h4><p>&emsp;&emsp;前面说过，const声明变量必须赋值，且一旦赋值将不能改变。本质上是<strong>变量指向的内存地址不能改变</strong>。</p>
 <blockquote>
 <p>对于简单类型的变量来说，即不能改变值；<br>对于复合类型变量（如数组，json）,可以修改符合类型变量的属性</p>
 </blockquote>
-<pre><code class="js">//数组
-const arr = [1,2,3,4];
-arr[2] = 5;
-console.log(arr);  //[1,2,5,4]
-
-//json
-const obj = {name: &#39;Tom&#39;, age:19};
-obj.age = 30;
-console.log(obj);  //{name:&#39;Tom&#39;, age:30}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line">arr[<span class="number">2</span>] = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr);  <span class="comment">//[1,2,5,4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//json</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">name</span>: <span class="string">'Tom'</span>, <span class="attr">age</span>:<span class="number">19</span>&#125;;</span><br><span class="line">obj.age = <span class="number">30</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj);  <span class="comment">//&#123;name:'Tom', age:30&#125;</span></span><br></pre></td></tr></table></figure>
 <p>可以通过冻结对象(<strong><code>Object.freeze()</code>方法</strong>)来避免<code>const</code>声明的复合类型变量被修改</p>
-<pre><code class="js"> //数组
-const arr = Object.freeze([1,2,3]);
-arr[0] = 12;
-console.log(arr);  //[1,2,3]
-
-const obj = Object.freeze({age:18});
-obj.age = 30;
-console.log(obj);  // {age:18} 这样就实现冻龄永远18岁了
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//数组</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="built_in">Object</span>.freeze([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">12</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr);  <span class="comment">//[1,2,3]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = <span class="built_in">Object</span>.freeze(&#123;<span class="attr">age</span>:<span class="number">18</span>&#125;);</span><br><span class="line">obj.age = <span class="number">30</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj);  <span class="comment">// &#123;age:18&#125; 这样就实现冻龄永远18岁了</span></span><br></pre></td></tr></table></figure>
 <h4 id="6-顶层对象属性"><a href="#6-顶层对象属性" class="headerlink" title="6. 顶层对象属性"></a>6. 顶层对象属性</h4><p>&emsp;&emsp;ES5中，顶层对象属性和全局变量等价</p>
-<pre><code class="js">window.a = 1;
-console.log(a);   //1
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);   <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;ES6对这一现象进行了改进，保留了原有的<code>var</code>和<code>function</code>声明的全局变量是顶层对象属性。<br>&emsp;&emsp;但是let，<code>const</code>和<code>class</code>声明的全局对象将不属于顶层对象属性。</p>
 
       
@@ -920,7 +827,7 @@ console.log(a);   //1
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.5k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

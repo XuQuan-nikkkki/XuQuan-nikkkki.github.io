@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  382 字
+                  421 字
                 </span>
               
 
@@ -491,79 +491,40 @@
 <p>以下是这一部分习题的解答：</p>
 <h4 id="Introduction-to-the-Basic-Node-and-Express-Challenges"><a href="#Introduction-to-the-Basic-Node-and-Express-Challenges" class="headerlink" title="Introduction to the Basic Node and Express Challenges"></a><a href="https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express" target="_blank" rel="noopener">Introduction to the Basic Node and Express Challenges</a></h4><ul>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express/meet-the-node-console" target="_blank" rel="noopener">Meet the Node console</a></p>
-<pre><code class="js">console.log(&quot;Hello World&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello World"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express/start-a-working-express-server" target="_blank" rel="noopener">Start a Working Express Server</a></p>
-<pre><code class="js">app.get(&#39;/root&#39;, (req, res) =&gt; {
-  res.send(&quot;Hello Express&quot;);
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/root'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  res.send(<span class="string">"Hello Express"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express/serve-an-html-file" target="_blank" rel="noopener">Serve an HTML File</a></p>
-<pre><code class="js">app.use(&#39;/&#39;, (req, res) =&gt; {
-  res.sendFile(__dirname + &quot;/views/index.html&quot;);
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="string">'/'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  res.sendFile(__dirname + <span class="string">"/views/index.html"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express/serve-static-assets" target="_blank" rel="noopener">Serve Static Assets</a></p>
-<pre><code class="js">app.use(express.static(__dirname + &#39;/public&#39;));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.static(__dirname + <span class="string">'/public'</span>));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express/serve-json-on-a-specific-route" target="_blank" rel="noopener">Serve JSON on a Specific Route</a></p>
-<pre><code class="js">app.get(&#39;/json&#39;, (req, res) =&gt; {
-  res.json({&quot;message&quot;: &quot;Hello json&quot;});
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/json'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  res.json(&#123;<span class="string">"message"</span>: <span class="string">"Hello json"</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express/use-the--env-file" target="_blank" rel="noopener">Use the .env File</a></p>
-<pre><code class="js">app.get(&#39;/json&#39;, (req, res) =&gt; {
-  res.json(process.env.MESSAGE_STYLE==&quot;uppercase&quot;?{&quot;message&quot;: &quot;Hello json&quot;.toUpperCase()}:{&quot;message&quot;:&quot;Hello json&quot;});
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/json'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  res.json(process.env.MESSAGE_STYLE==<span class="string">"uppercase"</span>?&#123;<span class="string">"message"</span>: <span class="string">"Hello json"</span>.toUpperCase()&#125;:&#123;<span class="string">"message"</span>:<span class="string">"Hello json"</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express/implement-a-root-level-request-logger-middleware" target="_blank" rel="noopener">Implement a Root-Level Request Logger Middleware</a></p>
-<pre><code class="js">app.use(&#39;/&#39;, (req, res, next) =&gt; {
-  console.log(req.method+&quot; &quot;+req.path+&quot; - &quot;+req.ip);
-  next();
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="string">'/'</span>, (req, res, next) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(req.method+<span class="string">" "</span>+req.path+<span class="string">" - "</span>+req.ip);</span><br><span class="line">  next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express/chain-middleware-to-create-a-time-server" target="_blank" rel="noopener">Chain Middleware to Create a Time Server</a></p>
-<pre><code class="js">app.get(&#39;/now&#39;, (req, res, next) =&gt; {
-  req.time = new Date().toString();
-  next(); 
-}, (req, res) =&gt; {
-  res.json({time: req.time});
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/now'</span>, (req, res, next) =&gt; &#123;</span><br><span class="line">  req.time = <span class="keyword">new</span> <span class="built_in">Date</span>().toString();</span><br><span class="line">  next(); </span><br><span class="line">&#125;, (req, res) =&gt; &#123;</span><br><span class="line">  res.json(&#123;<span class="attr">time</span>: req.time&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express/get-route-parameter-input-from-the-client" target="_blank" rel="noopener">Get Route Parameter Input from the Client</a></p>
-<pre><code class="js">app.get(&#39;/:word/echo&#39;, (req, res, next) =&gt; {
-  res.json({echo: req.params.word});
-  next();
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/:word/echo'</span>, (req, res, next) =&gt; &#123;</span><br><span class="line">  res.json(&#123;<span class="attr">echo</span>: req.params.word&#125;);</span><br><span class="line">  next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express/get-query-parameter-input-from-the-client" target="_blank" rel="noopener">Get Query Parameter Input from the Client</a></p>
-<pre><code class="js">app.get(&#39;/name&#39;, (req, res, next) =&gt; {
-  res.json({name: req.query.first+&#39; &#39;+req.query.last})
-})
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/name'</span>, (req, res, next) =&gt; &#123;</span><br><span class="line">  res.json(&#123;<span class="attr">name</span>: req.query.first+<span class="string">' '</span>+req.query.last&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express/use-body-parser-to-parse-post-requests" target="_blank" rel="noopener">Use body-parser to Parse POST Requests</a></p>
-<pre><code class="js">app.use(bodyParser.urlencoded({extended: false}));
-app.post(&#39;/&#39;, (req, res) =&gt; {
-  res.json(req.body);
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use(bodyParser.urlencoded(&#123;<span class="attr">extended</span>: <span class="literal">false</span>&#125;));</span><br><span class="line">app.post(<span class="string">'/'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  res.json(req.body);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express/get-data-from-post-requests" target="_blank" rel="noopener">Get Data from POST Requests</a></p>
-<pre><code class="js">app.use(bodyParser.urlencoded({extended: false}));
-app.post(&#39;/name&#39;,(req,res,next) =&gt; {
-  res.json({name: req.body.first+&#39; &#39;+req.body.last});
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use(bodyParser.urlencoded(&#123;<span class="attr">extended</span>: <span class="literal">false</span>&#125;));</span><br><span class="line">app.post(<span class="string">'/name'</span>,(req,res,next) =&gt; &#123;</span><br><span class="line">  res.json(&#123;<span class="attr">name</span>: req.body.first+<span class="string">' '</span>+req.body.last&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -610,8 +571,8 @@ app.post(&#39;/name&#39;,(req,res,next) =&gt; {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/28/CSS网格布局/" rel="prev" title="CSS网格布局">
-                CSS网格布局 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/28/CSS Flex布局/" rel="prev" title="CSS Flex布局">
+                CSS Flex布局 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -839,7 +800,7 @@ app.post(&#39;/name&#39;,(req,res,next) =&gt; {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.5k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,090 字
+                  2,230 字
                 </span>
               
 
@@ -498,12 +498,9 @@
         <p>前面已经实现了不同地址渲染不同页面的功能，后面我们需要实现注册和登录时的验证功能。</p>
 <a id="more"></a>
 <h4 id="处理请求体"><a href="#处理请求体" class="headerlink" title="处理请求体"></a>处理请求体</h4><p>首先我们要知道，注册和登录页面中的姓名和密码都会通过post方式传递给后台。无论是node.js还是koa都无法解析request对象上的post数据，需要中间件解析，所以我们先引入<code>koa-bodyparser</code></p>
-<pre><code class="bash">npm i koa-bodyparser -s
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i koa-bodyparser -s</span><br></pre></td></tr></table></figure>
 <p>并且在router之前使用（保证router接收到的请求是解析过的）：</p>
-<pre><code class="js">const bodyParser = require(&quot;koa-bodyparser&quot;);
-app.use(bodyParser());
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">"koa-bodyparser"</span>);</span><br><span class="line">app.use(bodyParser());</span><br></pre></td></tr></table></figure>
 <h4 id="处理注册"><a href="#处理注册" class="headerlink" title="处理注册"></a>处理注册</h4><p>接下来我们要处理页面的注册。这里涉及几个判断：</p>
 <ul>
 <li>注册<ul>
@@ -516,52 +513,12 @@ app.use(bodyParser());
 <ol>
 <li>先在根目录下创建一个<code>routes</code>文件夹，用来放置处理url的<code>user_router.js</code>文件（把原来app.js中的router内容挪过来</li>
 </ol>
-<pre><code class="js">const Router = require(&quot;koa-router&quot;);
-let userRouter = new Router();
-
-userRouter.get(&#39;/register&#39;, ctx =&gt; {
-  ctx.render(&#39;register&#39;);
-})
-  .get(&#39;/login&#39;, ctx =&gt; {
-  ctx.render(&#39;login&#39;)
-})
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Router = <span class="built_in">require</span>(<span class="string">"koa-router"</span>);</span><br><span class="line"><span class="keyword">let</span> userRouter = <span class="keyword">new</span> Router();</span><br><span class="line"></span><br><span class="line">userRouter.get(<span class="string">'/register'</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">'register'</span>);</span><br><span class="line">&#125;)</span><br><span class="line">  .get(<span class="string">'/login'</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">'login'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>紧接着我们要在<code>userRouter</code>中加入对post方式提交的数据的判断，我们在<code>user_controller.js</code>文件中定义判断方法<code>checkUsername</code>和<code>doRegister</code></li>
 </ol>
-<pre><code class="js">// user_router.js
-let userController = require(&quot;../controllers/user_controller&quot;);
-
-userRouter.get(&#39;/user/register&#39;, ctx =&gt; {
-  ctx.render(&#39;register&#39;);
-})
-  .get(&#39;/user/login&#39;, ctx =&gt; {
-  ctx.render(&#39;login&#39;)
-})
-.post(&#39;/user/check-username&#39;, userController.checkUsername)
-.post(&#39;/user/do-register&#39;, userController.doRegister);
-
-module.exports = router;
-</code></pre>
-<pre><code class="js">// user_controller.js
-const user_db = require(&#39;../modules/db&#39;);
-
-exports.checkUsername = async(ctx) =&gt; {
-  let {username} = ctx.request.body;
-  let users = await user_db.query(&quot;SELECT * FROM user_table WHERE username = ?&quot;, [username]);
-  //此时users的结果就和我们在第一篇连接数据库时输出的结果一样，是一个数组，里面有符合条件的数据
-  if(users.length !== 0) { //已经有用户使用了申请注册的用户名
-    // 可以自定义返回数据，使用json结构，不同的code对应不同的状态(相当于自定义状态码)
-    // code: &#39;000&#39; msg: &#39;可以注册‘
-    // code: &#39;001&#39; msg: &#39;注册成功&#39;
-    // code: &#39;002&#39; msg: &#39;用户名已存在&#39;
-    // code: &#39;003&#39; msg: &#39;邮箱已存在&#39;
-    // code: &#39;004&#39; msg: &#39;用户名与邮箱都存在&#39;
-    return ctx.body = {code: &#39;001&#39;, msg: &#39;用户名已存在&#39;}
-  }
-  ctx.body = {code: &#39;000&#39;, msg: &#39;可以注册&#39;}
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user_router.js</span></span><br><span class="line"><span class="keyword">let</span> userController = <span class="built_in">require</span>(<span class="string">"../controllers/user_controller"</span>);</span><br><span class="line"></span><br><span class="line">userRouter.get(<span class="string">'/user/register'</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">'register'</span>);</span><br><span class="line">&#125;)</span><br><span class="line">  .get(<span class="string">'/user/login'</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">'login'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">.post(<span class="string">'/user/check-username'</span>, userController.checkUsername)</span><br><span class="line">.post(<span class="string">'/user/do-register'</span>, userController.doRegister);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = router;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user_controller.js</span></span><br><span class="line"><span class="keyword">const</span> user_db = <span class="built_in">require</span>(<span class="string">'../modules/db'</span>);</span><br><span class="line"></span><br><span class="line">exports.checkUsername = <span class="keyword">async</span>(ctx) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> &#123;username&#125; = ctx.request.body;</span><br><span class="line">  <span class="keyword">let</span> users = <span class="keyword">await</span> user_db.query(<span class="string">"SELECT * FROM user_table WHERE username = ?"</span>, [username]);</span><br><span class="line">  <span class="comment">//此时users的结果就和我们在第一篇连接数据库时输出的结果一样，是一个数组，里面有符合条件的数据</span></span><br><span class="line">  <span class="keyword">if</span>(users.length !== <span class="number">0</span>) &#123; <span class="comment">//已经有用户使用了申请注册的用户名</span></span><br><span class="line">    <span class="comment">// 可以自定义返回数据，使用json结构，不同的code对应不同的状态(相当于自定义状态码)</span></span><br><span class="line">    <span class="comment">// code: '000' msg: '可以注册‘</span></span><br><span class="line">    <span class="comment">// code: '001' msg: '注册成功'</span></span><br><span class="line">    <span class="comment">// code: '002' msg: '用户名已存在'</span></span><br><span class="line">    <span class="comment">// code: '003' msg: '邮箱已存在'</span></span><br><span class="line">    <span class="comment">// code: '004' msg: '用户名与邮箱都存在'</span></span><br><span class="line">    <span class="keyword">return</span> ctx.body = &#123;<span class="attr">code</span>: <span class="string">'001'</span>, <span class="attr">msg</span>: <span class="string">'用户名已存在'</span>&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  ctx.body = &#123;<span class="attr">code</span>: <span class="string">'000'</span>, <span class="attr">msg</span>: <span class="string">'可以注册'</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们可以现在postman中测试一下结果：</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fudurywrmbj30s40dq401.jpg" alt="image-20180818144746684"></p>
 <p>首先测试一下使用已经注册过的username来尝试再次注册，post请求后，结果显示：</p>
@@ -571,27 +528,7 @@ exports.checkUsername = async(ctx) =&gt; {
 <p>这次的结果：</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuduttf5sgj30ks086t93.jpg" alt="image-20180818144932257"></p>
 <p>接下来我们可以接着往下来判断如何才算注册成功：</p>
-<pre><code class="js">exports.doRegister = async ctx =&gt; {
-  let {username, password, email} = ctx.quest.body;
-  let users = await user_db.query(&quot;SELECT * FROM user_table WHERE id is ? or email = ?&quot;, [username, email]);  // 如果有重复使用的用户名或邮箱，注册都不成功
-  // 接下来判断用户提交的数据到底能否注册成功，可以分一下情况
-  // 1. 用户名已存在
-  // 2. 邮箱已存在
-  // 3. 用户名和邮箱都存在
-  // 4. 用户名与邮箱都不存在，注册成功
-  // 可以发现分析情况就是对应上面我们自定义的状态码
-  let user;
-  if(users.length !== 0) {
-    if(users.length &gt; 1) return ctx.body = {code: &#39;004&#39;, msg: &quot;用户名与邮箱都存在&quot;}; // 至少有一个用户使用了申请用的用户名， 同时还有一个用户使用了申请用的邮箱
-    user = users[0];
-    if(user.username === username &amp;&amp; user.email === email) return ctx.body = {code: &#39;004&#39;, msg: &quot;用户名与邮箱都存在&quot;}; 
-    if(user.username === username) return ctx.body = {code: &#39;002&#39;, msg: &quot;用户名已存在&quot;}; 
-    if(user.email === email) return ctx.body = {code: &#39;003&#39;, msg: &quot;邮箱已存在&quot;}; 
-  }
-  let result = await user_db.query(&quot;INSERT INTO user_table (username, password, email) value (?, ?, ?)&quot;, [username, password, email]);
-  ctx.body = {code: &#39;001&#39;, msg: &quot;注册成功&quot;}；
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">exports.doRegister = <span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> &#123;username, password, email&#125; = ctx.quest.body;</span><br><span class="line">  <span class="keyword">let</span> users = <span class="keyword">await</span> user_db.query(<span class="string">"SELECT * FROM user_table WHERE id is ? or email = ?"</span>, [username, email]);  <span class="comment">// 如果有重复使用的用户名或邮箱，注册都不成功</span></span><br><span class="line">  <span class="comment">// 接下来判断用户提交的数据到底能否注册成功，可以分一下情况</span></span><br><span class="line">  <span class="comment">// 1. 用户名已存在</span></span><br><span class="line">  <span class="comment">// 2. 邮箱已存在</span></span><br><span class="line">  <span class="comment">// 3. 用户名和邮箱都存在</span></span><br><span class="line">  <span class="comment">// 4. 用户名与邮箱都不存在，注册成功</span></span><br><span class="line">  <span class="comment">// 可以发现分析情况就是对应上面我们自定义的状态码</span></span><br><span class="line">  <span class="keyword">let</span> user;</span><br><span class="line">  <span class="keyword">if</span>(users.length !== <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(users.length &gt; <span class="number">1</span>) <span class="keyword">return</span> ctx.body = &#123;<span class="attr">code</span>: <span class="string">'004'</span>, <span class="attr">msg</span>: <span class="string">"用户名与邮箱都存在"</span>&#125;; <span class="comment">// 至少有一个用户使用了申请用的用户名， 同时还有一个用户使用了申请用的邮箱</span></span><br><span class="line">    user = users[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">if</span>(user.username === username &amp;&amp; user.email === email) <span class="keyword">return</span> ctx.body = &#123;<span class="attr">code</span>: <span class="string">'004'</span>, <span class="attr">msg</span>: <span class="string">"用户名与邮箱都存在"</span>&#125;; </span><br><span class="line">    <span class="keyword">if</span>(user.username === username) <span class="keyword">return</span> ctx.body = &#123;<span class="attr">code</span>: <span class="string">'002'</span>, <span class="attr">msg</span>: <span class="string">"用户名已存在"</span>&#125;; </span><br><span class="line">    <span class="keyword">if</span>(user.email === email) <span class="keyword">return</span> ctx.body = &#123;<span class="attr">code</span>: <span class="string">'003'</span>, <span class="attr">msg</span>: <span class="string">"邮箱已存在"</span>&#125;; </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="keyword">await</span> user_db.query(<span class="string">"INSERT INTO user_table (username, password, email) value (?, ?, ?)"</span>, [username, password, email]);</span><br><span class="line">  ctx.body = &#123;<span class="attr">code</span>: <span class="string">'001'</span>, <span class="attr">msg</span>: <span class="string">"注册成功"</span>&#125;；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此时我们再用postman来测试一下我们的注册功能试试：</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fudvcwb87nj30la0a2jsd.jpg" alt="image-20180818150753681"></p>
 <p>结果显示是成功：</p>
@@ -606,73 +543,25 @@ exports.checkUsername = async(ctx) =&gt; {
 <li>用户名与密码是否匹配</li>
 </ul>
 <p>我们沿着前面的思路继续。首先在<code>userRouter</code>上明确接下来要进行登录操作，所以要调用判断登录是否成功的函数：</p>
-<pre><code class="js">// user_router.js
-userRouter.get(&#39;/user/register&#39;, ctx =&gt; {
-  ctx.render(&#39;register&#39;);
-})
-  .get(&#39;/user/login&#39;, ctx =&gt; {
-  ctx.render(&#39;login&#39;)
-})
-.post(&#39;/user/check-username&#39;, userController.checkUsername)
-.post(&#39;/user/do-register&#39;, userController.doRegister)
-.post(&#39;/user/do-login&#39;, userController.doLogin)
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user_router.js</span></span><br><span class="line">userRouter.get(<span class="string">'/user/register'</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">'register'</span>);</span><br><span class="line">&#125;)</span><br><span class="line">  .get(<span class="string">'/user/login'</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">'login'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">.post(<span class="string">'/user/check-username'</span>, userController.checkUsername)</span><br><span class="line">.post(<span class="string">'/user/do-register'</span>, userController.doRegister)</span><br><span class="line">.post(<span class="string">'/user/do-login'</span>, userController.doLogin)</span><br></pre></td></tr></table></figure>
 <p>然后再明确判断登录的内容:</p>
-<pre><code class="js">// user_controller.js
-exports.doLogin = async ctx =&gt; {
-  let {username, password, remember_me} = ctx.request.body;
-  let users = await user_db.query(&quot;SELECT * FROM user_table WHERE username = ?&quot;, [username]);
-  // 判断用户名是否存在
-  if(users.length === 0) return ctx.body = {code:&#39;002&#39;, msg: &quot;用户名或密码不正确&quot;}；
-  // 判断用户名密码是否匹配
-  let user = users[0];
-  if(user.password !== password) return ctx.body = {code: &#39;002&#39;, msg: &quot;用户名或密码不正确&quot;}；
-  // 用户名密码匹配，登陆成功
-  ctx.body = {code: &#39;001&#39;, msg: &quot;登录成功&quot;}；
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user_controller.js</span></span><br><span class="line">exports.doLogin = <span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> &#123;username, password, remember_me&#125; = ctx.request.body;</span><br><span class="line">  <span class="keyword">let</span> users = <span class="keyword">await</span> user_db.query(<span class="string">"SELECT * FROM user_table WHERE username = ?"</span>, [username]);</span><br><span class="line">  <span class="comment">// 判断用户名是否存在</span></span><br><span class="line">  <span class="keyword">if</span>(users.length === <span class="number">0</span>) <span class="keyword">return</span> ctx.body = &#123;<span class="attr">code</span>:<span class="string">'002'</span>, <span class="attr">msg</span>: <span class="string">"用户名或密码不正确"</span>&#125;；</span><br><span class="line">  <span class="comment">// 判断用户名密码是否匹配</span></span><br><span class="line">  <span class="keyword">let</span> user = users[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">if</span>(user.password !== password) <span class="keyword">return</span> ctx.body = &#123;<span class="attr">code</span>: <span class="string">'002'</span>, <span class="attr">msg</span>: <span class="string">"用户名或密码不正确"</span>&#125;；</span><br><span class="line">  <span class="comment">// 用户名密码匹配，登陆成功</span></span><br><span class="line">  ctx.body = &#123;<span class="attr">code</span>: <span class="string">'001'</span>, <span class="attr">msg</span>: <span class="string">"登录成功"</span>&#125;；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里住一个小的点，其实在判断中，我们第一个判断的是用户名是否存在，第二个是密码是否匹配，但是在返回给前端的信息中，我们最好不要细分，而是统一返回“用户名或密码不正确”，这样可以避免有人恶意尝试，反复提交请求。</p>
 <h4 id="验证登录"><a href="#验证登录" class="headerlink" title="验证登录"></a>验证登录</h4><p>处理登录还有一个重要步骤，就是有些页面需要登录后才能使用，比如自己的音乐页面只有根据自己的id才会选择将自己上传的音乐显示出来，也就是说，才登录页面之后的操作需要记录我们的登录状态才可以继续进行。这里就需要用到session这个功能。</p>
 <h5 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h5><p>我们还是先给项目下载中间件<code>koa-session</code></p>
-<pre><code class="bash">npm i koa-session -S
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i koa-session -S</span><br></pre></td></tr></table></figure>
 <h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>我们先给<code>router</code>加上检查session这个动作</p>
-<pre><code class="js">// user_router.js
-userRouter.get(&#39;/user/register&#39;, ctx =&gt; {
-  ctx.render(&#39;register&#39;);
-})
-  .get(&#39;/user/login&#39;, ctx =&gt; {
-  ctx.render(&#39;login&#39;)
-})
-.post(&#39;/user/check-username&#39;, userController.checkUsername)
-.post(&#39;/user/do-register&#39;, userController.doRegister)
-.post(&#39;/user/do-login&#39;, userController.doLogin)
-.post(&quot;user/test-session&quot;, userController.test)  //检测session
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user_router.js</span></span><br><span class="line">userRouter.get(<span class="string">'/user/register'</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">'register'</span>);</span><br><span class="line">&#125;)</span><br><span class="line">  .get(<span class="string">'/user/login'</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">'login'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">.post(<span class="string">'/user/check-username'</span>, userController.checkUsername)</span><br><span class="line">.post(<span class="string">'/user/do-register'</span>, userController.doRegister)</span><br><span class="line">.post(<span class="string">'/user/do-login'</span>, userController.doLogin)</span><br><span class="line">.post(<span class="string">"user/test-session"</span>, userController.test)  <span class="comment">//检测session</span></span><br></pre></td></tr></table></figure>
 <p>然后来规定怎么检测：</p>
 <p>第一步是我们登录的时候，要先存一个session</p>
-<pre><code class="js">// user_controller.js
-exports.doLogin = async ctx =&gt; {
-  // ... 前面的判断代码
-  ctx.session.user = user;
-  ctx.body = {code:&quot;001&quot;, msg: &quot;登录成功&quot;}；
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user_controller.js</span></span><br><span class="line">exports.doLogin = <span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  <span class="comment">// ... 前面的判断代码</span></span><br><span class="line">  ctx.session.user = user;</span><br><span class="line">  ctx.body = &#123;<span class="attr">code</span>:<span class="string">"001"</span>, <span class="attr">msg</span>: <span class="string">"登录成功"</span>&#125;；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们可以把session对象打出来看一看，到底是一个什么样的数据：</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuf3cn11d0j30l606ijyt.jpg" alt="image-20180819162956404"></p>
 <p>事实上，session就是一个对象，从数据库中选出的符合用户名和密码的这个数据是对象的key，保存的具体数据是value。</p>
 <p>第二部是检测session</p>
-<pre><code class="js">// user_controller.js
-exports.test = async ctx =&gt;{
-    ctx.body = ctx.session.user;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user_controller.js</span></span><br><span class="line">exports.test = <span class="keyword">async</span> ctx =&gt;&#123;</span><br><span class="line">	ctx.body = ctx.session.user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>并且在<code>app.js</code>中调用中间件：</p>
-<pre><code class="js">//app.js
-const session = require(&quot;koa-session&quot;);
-app.keys = [&quot;hello world&quot;];
-app.use(session(app));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line"><span class="keyword">const</span> session = <span class="built_in">require</span>(<span class="string">"koa-session"</span>);</span><br><span class="line">app.keys = [<span class="string">"hello world"</span>];</span><br><span class="line">app.use(session(app));</span><br></pre></td></tr></table></figure>
 <p>我们可以在postman中看到检测结果：</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fuf47ljpfoj30o20swdio.jpg" alt="image-20180819165944964"></p>
 <p>这里有一个需要注意的点，在我们<code>do-login</code>时，浏览器有两个cookie，一个是原cookie，一个是签名过的。</p>
@@ -681,42 +570,13 @@ app.use(session(app));
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fuf4af74h2j30xt06wgn3.jpg" alt="image-20180819170227982"></p>
 <p>这样当然存在安全隐患，所以我们应该将用户数据存在服务器端，浏览器和服务器间的通讯只携带签名过的这个session_id。</p>
 <p><code>koa-session</code>中有一个将session数据存储在服务器端的选项。</p>
-<pre><code class="js">//app.js
-let store = {
-  storage: {},
-  set: function(key, sess) {
-    this.storage[key] = sess;
-  },
-  get: function(key) {
-    return this.storage[key];
-  },
-  destroy: function(key){
-    delete this.storage[key];
-  }
-}
-app.use(session({store}, app));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line"><span class="keyword">let</span> store = &#123;</span><br><span class="line">  storage: &#123;&#125;,</span><br><span class="line">  set: <span class="function"><span class="keyword">function</span>(<span class="params">key, sess</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.storage[key] = sess;</span><br><span class="line">  &#125;,</span><br><span class="line">  get: <span class="function"><span class="keyword">function</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.storage[key];</span><br><span class="line">  &#125;,</span><br><span class="line">  destroy: <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">delete</span> <span class="keyword">this</span>.storage[key];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">app.use(session(&#123;store&#125;, app));</span><br></pre></td></tr></table></figure>
 <p>这时我们再试试登录，就不会返回原cookie了</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fuf4kpiuxyj31kw0ayjt7.jpg" alt="image-20180819171221362"></p>
 <p>此时的cookie都无法解码。但是<code>test-session</code>还是可以获取用户信息：</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fuf4lf3xkej31400qutbt.jpg" alt="image-20180819171302683"></p>
 <p>最后，我们给用户请求加一个判断，前面我们把用户的注册、登录请求的地址都设置为<code>/user/...</code>，方便我们来区分，接下来读取音乐列表、上传音乐等功能我们就不用<code>/user</code>作为url的开头了，同时也需要确定用户是登录状态才能打开页面，因此我们在app.js文件中加上一个对url的判断：</p>
-<pre><code class="js">//app.js
-app.use(async (ctx, next) =&gt; {
-  let regex = /^\/user/;  //用正则规定以/user开头的url
-  let checkUrl = regex.test(ctx.request.url);
-
-  if(checkUrl) return await next();
-
-  if(!ctx.session.user) {
-    return ctx.body = 
-      `&lt;div&gt;
-                &lt;a href = &#39;/login&#39;&gt;请登录&lt;/a&gt;
-            &lt;/div&gt;`;
-  }
-  await next();
-})
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line">app.use(<span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> regex = <span class="regexp">/^\/user/</span>;  <span class="comment">//用正则规定以/user开头的url</span></span><br><span class="line">  <span class="keyword">let</span> checkUrl = regex.test(ctx.request.url);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(checkUrl) <span class="keyword">return</span> <span class="keyword">await</span> next();</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(!ctx.session.user) &#123;</span><br><span class="line">    <span class="keyword">return</span> ctx.body = </span><br><span class="line">      <span class="string">`&lt;div&gt;</span></span><br><span class="line"><span class="string">				&lt;a href = '/login'&gt;请登录&lt;/a&gt;</span></span><br><span class="line"><span class="string">			&lt;/div&gt;`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">await</span> next();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>这时我们直接访问<code>localhost:9000/index</code>就会被拒绝：</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fuf5098ynvj30ra0p8di2.jpg" alt="image-20180819172717092"></p>
 
@@ -990,7 +850,7 @@ app.use(async (ctx, next) =&gt; {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.5k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

@@ -460,7 +460,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,263 字
+                  4,420 字
                 </span>
               
 
@@ -476,7 +476,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  16 分钟
+                  17 分钟
                 </span>
               
             </div>
@@ -509,25 +509,13 @@
 <h4 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h4><p>安装Hexo之前，必须保证自己的电脑中<strong>已经安装好了Node.js和Git</strong>。因为这两个软件我之前都安装过，这里就不重复安装过程了，检验方式如下：</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fu3fdok69rj309i025dfy.jpg" alt="image-20180809141924679"></p>
 <h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>安装好node.js和git后，可以通过npm来安装Hexo。</p>
-<pre><code class="shell">npm install -g hexo-cli
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <h4 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h4><p>之后就可以在电脑里新建一个文件夹来作为存放博客全部内容的大本营了。我们直接用hexo命令来初始化博客文件夹：</p>
-<pre><code class="shell">hexo init &lt;folder&gt;
-cd &lt;folder&gt;
-npm install
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 <p><code>&lt;folder&gt;</code>就是文件夹的名字，我们可以自己随意取这个名字，我的经验是，现在初始化应该不需要后面<code>npm install</code>这个步骤了，在创建的时候 ，文件夹初始化已经把需要的内容都下载进去了。</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fu3fy153qlj30ra06fwg8.jpg" alt="文件夹开始初始化了"></p>
 <h4 id="站内内容"><a href="#站内内容" class="headerlink" title="站内内容"></a>站内内容</h4><p>新建好的文件夹目录如下：</p>
-<pre><code class="yaml">.
-├── _config.yml
-├── package.json
-├── scaffolds
-├── source
-|   ├── _drafts
-|   └── _posts
-└── themes
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">.</span></span><br><span class="line"><span class="string">├──</span> <span class="string">_config.yml</span></span><br><span class="line"><span class="string">├──</span> <span class="string">package.json</span></span><br><span class="line"><span class="string">├──</span> <span class="string">scaffolds</span></span><br><span class="line"><span class="string">├──</span> <span class="string">source</span></span><br><span class="line"><span class="string">|   ├── _drafts</span></span><br><span class="line"><span class="string">|   └── _posts</span></span><br><span class="line"><span class="string">└── themes</span></span><br></pre></td></tr></table></figure>
 <p>这里解释一下各个文件夹的作用：</p>
 <h5 id="config-yml"><a href="#config-yml" class="headerlink" title="config.yml"></a>config.yml</h5><p>博客的配置文件，博客的名称、关键词、作者、语言、博客主题…设置都在里面。</p>
 <h5 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h5><p>应用程序信息，新添加的插件内容也会出现在这里面，我们可以不修改这里的内容。</p>
@@ -537,35 +525,26 @@ npm install
 <h5 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h5><p>放置主题文件包的地方。Hexo会根据这个文件来生成静态页面。</p>
 <p>初始状态下只有landscape一个文件夹，后续我们可以添加自己喜欢的。</p>
 <h4 id="Hexo命令"><a href="#Hexo命令" class="headerlink" title="Hexo命令"></a>Hexo命令</h4><h5 id="init"><a href="#init" class="headerlink" title="init"></a><code>init</code></h5><p>新建一个网站。</p>
-<pre><code class="shell">hexo init &lt;folder&gt;
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure>
 <h5 id="new"><a href="#new" class="headerlink" title="new"></a><code>new</code></h5><p>新建文章或页面。</p>
-<pre><code class="shell">hexo new &lt;layout&gt; &quot;title&quot;
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &lt;layout&gt; "title"</span><br></pre></td></tr></table></figure>
 <p>这里的<code>&lt;layout&gt;</code>对应我们要添加的内容，如果是<code>posts</code>就是添加新的文章，如果是<code>page</code>就是添加新的页面。</p>
 <p>默认是添加<code>posts</code>。</p>
 <p>然后我们就可以在对应的posts或drafts文件夹里找到我们新建的文件，然后在文件里用Markdown的格式来写作了。</p>
 <h5 id="generate"><a href="#generate" class="headerlink" title="generate"></a><code>generate</code></h5><p>生成静态页面</p>
-<pre><code class="shell">hexo generate
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
 <p>也可以简写成</p>
-<pre><code class="shell">hexo g
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
 <h5 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a><code>deploy</code></h5><p>将内容部署到网站</p>
-<pre><code class="shell">hexo deploy
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 <p>也可以简写成</p>
-<pre><code class="shell">hexo -d
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -d</span><br></pre></td></tr></table></figure>
 <h5 id="publish"><a href="#publish" class="headerlink" title="publish"></a><code>publish</code></h5><p>发布内容，实际上是将内容从drafts（草稿）文件夹移到posts（文章）文件夹。</p>
-<pre><code class="shell">hexo publish &lt;layout&gt; &lt;filename&gt;
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo publish &lt;layout&gt; &lt;filename&gt;</span><br></pre></td></tr></table></figure>
 <h5 id="server"><a href="#server" class="headerlink" title="server"></a><code>server</code></h5><p>启动服务器，默认情况下，访问网站为<code>http://localhost:4000/</code></p>
-<pre><code class="shell">hexo server
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <p>也可以简写成</p>
-<pre><code class="shell">hexo s
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>根据我的经验，除了第一次部署的时候，我们会重点用到<code>hexo init</code>这个命令外，在平时写博客和发布过程中最常用的就是：</p>
 <ul>
@@ -582,66 +561,35 @@ npm install
 <h4 id="实际操作"><a href="#实际操作" class="headerlink" title="实际操作"></a>实际操作</h4><p>我在新建博客之后，做了以下改动：</p>
 <h5 id="1-创建“分类”页面"><a href="#1-创建“分类”页面" class="headerlink" title="1. 创建“分类”页面"></a>1. 创建“分类”页面</h5><ul>
 <li><p>新建分类页面</p>
-<pre><code class="shell"> hexo new page categories
-</code></pre>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>给分类页面添加类型</p>
 <p> 我们在source文件夹中的categories文件夹下找到index.md文件，并在它的头部加上type属性。</p>
-<pre><code class="yaml"> ---
- title: 文章分类
- date: 2017-05-27 13:47:40
- type: &quot;categories&quot;   #这部分是新添加的
- ---
-</code></pre>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">文章分类</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="bullet">-05</span><span class="bullet">-27</span> <span class="number">13</span><span class="string">:47:40</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"categories"</span>   <span class="comment">#这部分是新添加的</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>给模板添加分类属性</p>
 <p> 现在我们打开scarffolds文件夹里的post.md文件，给它的头部加上<code>categories:</code>，这样我们创建的所有新的文章都会自带这个属性，我们只需要往里填分类，就可以自动在网站上形成分类了。</p>
-<pre><code class="yaml"> title: {{ title }}
- date: {{ date }}
- categories:
- tags:
-</code></pre>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">&#123;&#123;</span> <span class="string">title</span> <span class="string">&#125;&#125;</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">&#123;&#123;</span> <span class="string">date</span> <span class="string">&#125;&#125;</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="attr">tags:</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>给文章添加分类</p>
 <p> 现在我们可以找到一篇文章，然后尝试给它添加分类</p>
-<pre><code class="yaml"> layout: posts
- title: 写给小白的express学习笔记1： express-static文件静态管理
- date: 2018-06-07 00:38:36
- categories: 学习笔记
- tags: [node.js, express]
-</code></pre>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">layout:</span> <span class="string">posts</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">写给小白的express学习笔记1：</span> <span class="string">express-static文件静态管理</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018</span><span class="bullet">-06</span><span class="bullet">-07</span> <span class="number">00</span><span class="string">:38:36</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">学习笔记</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">[node.js,</span> <span class="string">express]</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h5 id="2-创建“标签”页面"><a href="#2-创建“标签”页面" class="headerlink" title="2. 创建“标签”页面"></a>2. 创建“标签”页面</h5><p>创建”标签”页的方式和创建“分类”一样。</p>
 <ul>
 <li><p>新建“标签”页面</p>
-<pre><code class="shell">hexo new page tags
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>给标签页面添加类型</p>
 <p>我们在source文件夹中的tags文件夹下找到index.md文件，并在它的头部加上type属性。</p>
-<pre><code class="yaml">title: tags
-date: 2018-08-06 22:48:29
-type: &quot;tags&quot; #新添加的内容
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018</span><span class="bullet">-08</span><span class="bullet">-06</span> <span class="number">22</span><span class="string">:48:29</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"tags"</span> <span class="comment">#新添加的内容</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>给文章添加标签</p>
 <p>有两种写法都可以，第一种是类似数组的写法，把标签放在中括号<code>[]</code>里，用英文逗号隔开</p>
-<pre><code class="yaml">layout: posts
-title: 写给小白的express学习笔记1： express-static文件静态管理
-date: 2018-06-07 00:38:36
-categories: 学习笔记
-tags: [node.js, express]
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">layout:</span> <span class="string">posts</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">写给小白的express学习笔记1：</span> <span class="string">express-static文件静态管理</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018</span><span class="bullet">-06</span><span class="bullet">-07</span> <span class="number">00</span><span class="string">:38:36</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">学习笔记</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">[node.js,</span> <span class="string">express]</span></span><br></pre></td></tr></table></figure>
 <p>第二种写法是用<code>-</code>短划线列出来</p>
-<pre><code class="yaml">layout: posts
-title: 写给小白的express学习笔记1： express-static文件静态管理
-date: 2018-06-07 00:38:36
-categories: 学习笔记
-tags: 
-- node.js
-- express
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">layout:</span> <span class="string">posts</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">写给小白的express学习笔记1：</span> <span class="string">express-static文件静态管理</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018</span><span class="bullet">-06</span><span class="bullet">-07</span> <span class="number">00</span><span class="string">:38:36</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">学习笔记</span></span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">node.js</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">express</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="部署域名"><a href="#部署域名" class="headerlink" title="部署域名"></a>部署域名</h3><p>紧接着我们就可以把这些内容添加到Github页面上，然后生成我们自己的博客了。</p>
@@ -682,8 +630,7 @@ tags:
 <li><p>在博客的页面添加CNAME文件，并在里面记录自己域名的地址，将这个文件放在public文件夹下</p>
 </li>
 <li><p>这里还有一个小坑，CNAME文件经常被覆盖，导致我们重新部署博客后，链接就不可用了，这里可以下载一个叫<code>hexo-generator-cname</code>的插件，这样它会自动搞定CNAME的问题，只需要第一次手动将域名添加到文件里即可</p>
-<pre><code class="shell">npm i hexo-generator-cname --save
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-generator-cname --save</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>最后<code>hexo g &amp;&amp; hexo deploy</code>就可以了</p>
 </li>
@@ -691,23 +638,13 @@ tags:
 <h3 id="NexT主题"><a href="#NexT主题" class="headerlink" title="NexT主题"></a>NexT主题</h3><p>hexo有很多开源的主题，我选了<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">NexT</a>，开始只是觉得很简洁清爽，后来发现它的功能挺齐全的，提前解决了很多搭建过程中会遇到的问题。这里强烈推荐一下。</p>
 <p>首先，NexT也有<a href="https://github.com/iissnan/hexo-theme-next/blob/master/README.cn.md" target="_blank" rel="noopener">中文文档</a>，然后我们就可以开始了。</p>
 <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>我是用的<code>git clone</code>的方法，文档中还有其他方法</p>
-<pre><code class="shell">$ git clone https://github.com/iissnan/hexo-theme-next themes/next
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span></span><br></pre></td></tr></table></figure>
 <h4 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h4><p>在<strong>hexo根目录</strong>下的配置文件config.yml里设置主题</p>
-<pre><code>theme: next
-</code></pre><h4 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h4><p>接下来我们就可以来按需配置主题内容了，所有内容都在<strong>themes/next</strong>文件夹下的config.yml文件里修改。</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: <span class="keyword">next</span></span><br></pre></td></tr></table></figure>
+<h4 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h4><p>接下来我们就可以来按需配置主题内容了，所有内容都在<strong>themes/next</strong>文件夹下的config.yml文件里修改。</p>
 <p>官方文档里写的是有些配置需要将一部分代码添加到配置文件中，但其实不用，我们逐行看配置文件就会发现，有很多功能都已经放在配置文件里了，只是注释掉了，我们只需要取消注释，把需要的相关信息补全即可使用</p>
 <h5 id="菜单栏-menu"><a href="#菜单栏-menu" class="headerlink" title="菜单栏 menu"></a>菜单栏 <code>menu</code></h5><p>原生菜单栏有主页、关于、分类、标签等数个选项，但是在配置文件中是注释掉的状态，这里我们自行修改注释就行</p>
-<pre><code class="yaml">menu:
-  home: / || home
-  # about: /about/ || user
-  tags: /tags/ || tags
-  categories: /categories/ || th
-  archives: /archives/ || archive
-  # schedule: /schedule/ || calendar
-  # sitemap: /sitemap.xml || sitemap
-  # commonweal: /404/ || heartbeat
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">  home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="comment"># about: /about/ || user</span></span><br><span class="line"><span class="attr">  tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">  categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line"><span class="attr">  archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="comment"># schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment"># sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment"># commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
 <p>注意点：</p>
 <ul>
 <li>如果事先没有通过<code>hexo new page &lt;pageName&gt;</code>来创建页面的话，即使在配置文件中取消注释，页面也没法显示</li>
@@ -716,18 +653,7 @@ tags:
 <li><code>menu_icons</code>记得选<code>enable: true</code>（默认应该是<code>true</code>）</li>
 </ul>
 <p>我在这部分添加了两个自定义的页面，后面在第三方插件部分我会再提到。</p>
-<pre><code class="yaml">menu:
-  home: / || home
-  # about: /about/ || user
-  tags: /tags/ || tags
-  categories: /categories/ || th
-  读书: /books || book
-  电影: /movies || film
-  archives: /archives/ || archive
-  # schedule: /schedule/ || calendar
-  # sitemap: /sitemap.xml || sitemap
-  # commonweal: /404/ || heartbeat
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">  home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="comment"># about: /about/ || user</span></span><br><span class="line"><span class="attr">  tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">  categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line">  <span class="string">读书:</span> <span class="string">/books</span> <span class="string">||</span> <span class="string">book</span></span><br><span class="line">  <span class="string">电影:</span> <span class="string">/movies</span> <span class="string">||</span> <span class="string">film</span></span><br><span class="line"><span class="attr">  archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="comment"># schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment"># sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment"># commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
 <h5 id="主题风格-schemes"><a href="#主题风格-schemes" class="headerlink" title="主题风格 schemes"></a>主题风格 <code>schemes</code></h5><p>主题提供了4个，我们把想要选择的取消注释，其他三个保持注释掉的状态即可。</p>
 <ul>
 <li><p><code>Muse</code></p>
@@ -745,26 +671,7 @@ tags:
 </ul>
 <p>选择主题后也可以自定义，不过我还没摸清楚有哪些地方可以自定义，等弄清楚了我再来更新。</p>
 <h5 id="底部建站时间和图标修改"><a href="#底部建站时间和图标修改" class="headerlink" title="底部建站时间和图标修改"></a>底部建站时间和图标修改</h5><p>修改主题的配置文件：</p>
-<pre><code class="yaml">footer:
-  # Specify the date when the site was setup.
-  # If not defined, current year will be used.
-  since: 2018
-
-  # Icon between year and copyright info.
-  icon: snowflake-o
-
-  # If not defined, will be used `author` from Hexo main config.
-  copyright:
-  # -------------------------------------------------------------
-  # Hexo link (Powered by Hexo).
-  powered: false
-
-  theme:
-    # Theme &amp; scheme info link (Theme - NexT.scheme).
-    enable: false
-    # Version info of NexT after scheme info (vX.X.X).
-    # version: false
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">footer:</span></span><br><span class="line">  <span class="comment"># Specify the date when the site was setup.</span></span><br><span class="line">  <span class="comment"># If not defined, current year will be used.</span></span><br><span class="line"><span class="attr">  since:</span> <span class="number">2018</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Icon between year and copyright info.</span></span><br><span class="line"><span class="attr">  icon:</span> <span class="string">snowflake-o</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># If not defined, will be used `author` from Hexo main config.</span></span><br><span class="line"><span class="attr">  copyright:</span></span><br><span class="line">  <span class="comment"># -------------------------------------------------------------</span></span><br><span class="line">  <span class="comment"># Hexo link (Powered by Hexo).</span></span><br><span class="line"><span class="attr">  powered:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  theme:</span></span><br><span class="line">    <span class="comment"># Theme &amp; scheme info link (Theme - NexT.scheme).</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># Version info of NexT after scheme info (vX.X.X).</span></span><br><span class="line">    <span class="comment"># version: false</span></span><br></pre></td></tr></table></figure>
 <p>我在这部分做了这样几件事：</p>
 <ul>
 <li>把用户的图标从小人<code>user</code>改成了雪花<code>snowflake-o</code></li>
@@ -775,61 +682,26 @@ tags:
 <p>这样底部信息比较简单。</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fu3kuj3xjpj30mp019jr9.jpg" alt="image-20180809172835606"></p>
 <h5 id="个人社交信息-social"><a href="#个人社交信息-social" class="headerlink" title="个人社交信息 social"></a>个人社交信息 <code>social</code></h5><p>在<code>social</code>里我们可以自定义自己想要在个人信息部分展现的账号，同时给他们加上图标。</p>
-<pre><code class="yaml">social:
-  GitHub: https://github.com/XuQuan-nikkkki || github
-  E-Mail: mailto:xuquan1225@hotmail.com || envelope
-  #Google: https://plus.google.com/yourname || google
-  #Twitter: https://twitter.com/yourname || twitter
-  #FB Page: https://www.facebook.com/yourname || facebook
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line"><span class="attr">  GitHub:</span> <span class="attr">https://github.com/XuQuan-nikkkki</span> <span class="string">||</span> <span class="string">github</span></span><br><span class="line"><span class="attr">  E-Mail:</span> <span class="attr">mailto:xuquan1225@hotmail.com</span> <span class="string">||</span> <span class="string">envelope</span></span><br><span class="line">  <span class="comment">#Google: https://plus.google.com/yourname || google</span></span><br><span class="line">  <span class="comment">#Twitter: https://twitter.com/yourname || twitter</span></span><br><span class="line">  <span class="comment">#FB Page: https://www.facebook.com/yourname || facebook</span></span><br></pre></td></tr></table></figure>
 <p>注意点：</p>
 <ul>
 <li><code>||</code>后面对应的名称是fontAwesome里图标的名称，如果我们选择的账号没有对应的图标（如豆瓣、知乎），我们可以在fontAwesome库里去选择自己喜欢的图标</li>
 <li>建议不要找太新的fontAwesome图标，主题关联的库版本没有那么新，很可能显示不了或者显示一个地球</li>
 </ul>
 <h5 id="网站动画效果"><a href="#网站动画效果" class="headerlink" title="网站动画效果"></a>网站动画效果</h5><p>为了网站响应速度我们可以把网站的动画关掉</p>
-<pre><code class="yaml">motion:
-  enable: false
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">motion:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <p>但我觉得页面比较素，所以开了动画，选择了<code>canvas-nest</code>这一个，主题自带四种效果，可以选自己喜欢的。</p>
-<pre><code class="yaml">motion:
-  enable: true
-  async: true
-
-# Canvas-nest
-canvas_nest: true
-
-# three_waves
-three_waves: false
-
-# canvas_lines
-canvas_lines: false
-
-# canvas_sphere
-canvas_sphere: false
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">motion:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  async:</span> <span class="literal">true</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># Canvas-nest</span></span><br><span class="line"><span class="attr">canvas_nest:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># three_waves</span></span><br><span class="line"><span class="attr">three_waves:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># canvas_lines</span></span><br><span class="line"><span class="attr">canvas_lines:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># canvas_sphere</span></span><br><span class="line"><span class="attr">canvas_sphere:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <h5 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h5><p>NexT原生支持多说、Disqus、hypercomments等多种评论系统。我选择了Disqus。</p>
 <p>方法也非常简单。直接去Disqus注册，注册完了在配置的时候会给你一个名为shortname的ID，将这个ID填在配置文件里即可。</p>
-<pre><code class="yaml"># Disqus
-disqus:
-  enable: true
-  shortname: xuquan
-  count: true
-</code></pre>
-<h5 id="统计文章字数和阅读时间"><a href="#统计文章字数和阅读时间" class="headerlink" title="统计文章字数和阅读时间"></a>统计文章字数和阅读时间</h5><pre><code class="yaml">post_wordcount:
-  item_text: true
-  wordcount: true  # 文章字数
-  min2read: true   # 阅读时间
-  totalcount: true  # 总共字数
-  separated_meta: true
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Disqus</span></span><br><span class="line"><span class="attr">disqus:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  shortname:</span> <span class="string">xuquan</span></span><br><span class="line"><span class="attr">  count:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h5 id="统计文章字数和阅读时间"><a href="#统计文章字数和阅读时间" class="headerlink" title="统计文章字数和阅读时间"></a>统计文章字数和阅读时间</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_wordcount:</span></span><br><span class="line"><span class="attr">  item_text:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  wordcount:</span> <span class="literal">true</span>  <span class="comment"># 文章字数</span></span><br><span class="line"><span class="attr">  min2read:</span> <span class="literal">true</span>   <span class="comment"># 阅读时间</span></span><br><span class="line"><span class="attr">  totalcount:</span> <span class="literal">true</span>  <span class="comment"># 总共字数</span></span><br><span class="line"><span class="attr">  separated_meta:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <h5 id="统计阅读次数"><a href="#统计阅读次数" class="headerlink" title="统计阅读次数"></a>统计阅读次数</h5><p>这里我用的是leancloud的服务，具体方法参考NexT上的<a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="noopener">教程</a>,添加完之后效果如下：</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fu3lif3vzoj302y00tgle.jpg" alt="image-20180809175133462"></p>
 <h3 id="第三方插件"><a href="#第三方插件" class="headerlink" title="第三方插件"></a>第三方插件</h3><h4 id="Hexo-admin"><a href="#Hexo-admin" class="headerlink" title="Hexo-admin"></a>Hexo-admin</h4><p>Hexo-admin插件允许我们直接在本地页面上修改文章内容。</p>
 <ul>
 <li><p>下载</p>
-<pre><code class="shell">npm i hexo-admin --save
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-admin --save</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>登录<code>http://localhost:4000/admin</code>即可看到我们所有的文章内容，并且在可视化界面中操作文章内容</p>
 </li>
@@ -837,55 +709,27 @@ disqus:
 <h4 id="Hexo-douban"><a href="#Hexo-douban" class="headerlink" title="Hexo-douban"></a>Hexo-douban</h4><p><a href="https://github.com/mythsman/hexo-douban" target="_blank" rel="noopener"><code>hexo-douban</code></a>插件可以在博客中添加豆瓣电影、读书和游戏页面，关联我们自己的账号。</p>
 <ul>
 <li><p>下载</p>
-<pre><code class="shell">npm install hexo-douban --save
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-douban --save</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>配置</p>
 <p>在<strong>hexo根目录</strong>下的config.yml文件中添加如下内容</p>
-<pre><code class="yaml">douban:
-  user: 
-  builtin: false
-  book:
-    title: &#39;This is my book title&#39;
-    quote: &#39;This is my book quote&#39;
-  movie:
-    title: &#39;This is my movie title&#39;
-    quote: &#39;This is my movie quote&#39;
-  game:
-    title: &#39;This is my game title&#39;
-    quote: &#39;This is my game quote&#39;
-  timeout: 10000 
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">douban:</span></span><br><span class="line"><span class="attr">  user:</span> </span><br><span class="line"><span class="attr">  builtin:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  book:</span></span><br><span class="line"><span class="attr">    title:</span> <span class="string">'This is my book title'</span></span><br><span class="line"><span class="attr">    quote:</span> <span class="string">'This is my book quote'</span></span><br><span class="line"><span class="attr">  movie:</span></span><br><span class="line"><span class="attr">    title:</span> <span class="string">'This is my movie title'</span></span><br><span class="line"><span class="attr">    quote:</span> <span class="string">'This is my movie quote'</span></span><br><span class="line"><span class="attr">  game:</span></span><br><span class="line"><span class="attr">    title:</span> <span class="string">'This is my game title'</span></span><br><span class="line"><span class="attr">    quote:</span> <span class="string">'This is my game quote'</span></span><br><span class="line"><span class="attr">  timeout:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
 <p>title和quote后面的内容会分别作为电影/读书/游戏页面的标题和副标题（引言）呈现在博客里。</p>
 <p><code>user</code>就写我们豆瓣的id，可以在“我的豆瓣”页面中找到，<code>builtin</code>指是否将生成页面功能嵌入<code>hexo s</code>和<code>hexo g</code>中，建议选<code>false</code>，因为<code>true</code>会导致页面每次启动本地服务器都需要很长时间生成豆瓣页面，长到怀疑人生。</p>
 </li>
 <li><p>生成页面</p>
-<pre><code class="shell">hexo douban   #生成读书、电影、游戏三个页面
-hexo douban -b  #生成读书页面
-hexo douban -m  #生成电影页面
-hexo douban -g  #生成游戏页面
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo douban   #生成读书、电影、游戏三个页面</span><br><span class="line">hexo douban -b  #生成读书页面</span><br><span class="line">hexo douban -m  #生成电影页面</span><br><span class="line">hexo douban -g  #生成游戏页面</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在博客中生成页面</p>
 <p>这里就需要用到我们前面提过的<code>hexo new</code>命令了。</p>
-<pre><code class="shell">hexo new page books
-hexo new page movies
-hexo new page games
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new page books</span><br><span class="line">hexo new page movies</span><br><span class="line">hexo new page games</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在博客中添加页面</p>
 <p>在<code>menu</code>部分添加我们需要添加的页面名称和相对路径</p>
-<pre><code class="yaml">menu:
-  Home: /
-  Archives: /archives
-  Books: /books     #This is your books page
-  Movies: /movies   #This is your movies page
-  Games: /games   #This is your games page
-</code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">  Home:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">  Archives:</span> <span class="string">/archives</span></span><br><span class="line"><span class="attr">  Books:</span> <span class="string">/books</span>     <span class="comment">#This is your books page</span></span><br><span class="line"><span class="attr">  Movies:</span> <span class="string">/movies</span>   <span class="comment">#This is your movies page</span></span><br><span class="line"><span class="attr">  Games:</span> <span class="string">/games</span>   <span class="comment">#This is your games page</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>部署到博客</p>
-<pre><code class="shell">hexo g &amp;&amp; hexo deploy
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="我踩过的坑"><a href="#我踩过的坑" class="headerlink" title="我踩过的坑"></a>我踩过的坑</h3><h4 id="iPic图片上传"><a href="#iPic图片上传" class="headerlink" title="iPic图片上传"></a>iPic图片上传</h4><p>hexo博客发布Typora写好的内容也会出现图片无法同步的问题，网上有大佬给出的解决方案是使用<code>hexo-asset-image</code>插件，这样在创建博客时会有一个与<code>.md</code>文件同名的文件夹，将图片同步到文件夹内即可。</p>
@@ -1165,7 +1009,7 @@ hexo new page games
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.5k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

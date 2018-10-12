@@ -463,7 +463,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,464 字
+                  3,691 字
                 </span>
               
 
@@ -479,7 +479,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  14 分钟
+                  16 分钟
                 </span>
               
             </div>
@@ -524,36 +524,11 @@
 <ul>
 <li>html部分就只有一个按钮，点击按钮会向<code>http://localhost:9000</code>发送一个ajax请求</li>
 </ul>
-<pre><code class="html">&lt;input type=&quot;submit&quot; id=&quot;submit&quot; value=&quot;提交&quot; /&gt;
-&lt;script&gt;
-    let oBtn = document.getElementById(&quot;submit&quot;);
-  oBtn.onclick = function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open(&quot;GET&quot;, &quot;http://localhost:9000&quot;, true);
-    xhr.send();
-    xhr.onreadystatechange = function() {
-      if(xhr.readyState === 4) {
-        if(xhr.status === 200) {
-          console.log(&quot;succeed: &quot; + xhr.responseText);
-        } else {
-          console.log(&quot;failed: &quot; + xhr.status);
-        }
-      }
-    }
-  }
-&lt;/script&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">id</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">let</span> oBtn = <span class="built_in">document</span>.getElementById(<span class="string">"submit"</span>);</span></span><br><span class="line"><span class="actionscript">  oBtn.onclick = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="actionscript">    xhr.open(<span class="string">"GET"</span>, <span class="string">"http://localhost:9000"</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="undefined">    xhr.send();</span></span><br><span class="line"><span class="actionscript">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span>) &#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">if</span>(xhr.status === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"succeed: "</span> + xhr.responseText);</span></span><br><span class="line"><span class="actionscript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"failed: "</span> + xhr.status);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>后端部分是一个简单的服务器，只要接收到请求，就回复一个字符串</li>
 </ul>
-<pre><code class="js">const http = require(&quot;http&quot;);
-let server = http.createServer((req, res) =&gt; {
-  res.end(&quot;hello world&quot;);
-})
-server.listen(9000, () =&gt; {
-  console.log(&quot;server running at 9000&quot;);
-})
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="keyword">let</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.end(<span class="string">"hello world"</span>);</span><br><span class="line">&#125;)</span><br><span class="line">server.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>页面如下：</p>
 <p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fu5s7x3gx5j30dc02h0t0.jpg" alt="image-20180811151447726"></p>
 <p>点击后我们可以在控制台看到报错信息：</p>
@@ -563,98 +538,35 @@ server.listen(9000, () =&gt; {
 <ul>
 <li>前端</li>
 </ul>
-<pre><code class="html">&lt;button id=&#39;btn&#39;&gt;点我发送ajax请求&lt;/button&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-  // 1. 创建一个script标签
-    var script = document.createElement(&#39;script&#39;);
-  // 2. 挂载一个全局函数，我们先给函数一个函数名
-  var callbackName = &#39;callback_&#39; + Date.now();
-  // 3. 服务器会返回数据，这个数据会在函数中执行
-  window[callbackName] = function(data) {
-    console.log(data);
-  }
-  // 4. 把函数名传递给服务器
-  script.scr = &#39;http://localhost:9000/?callback=&#39; + callbackName;
-  // 5. 把script标签插入到body中
-  document.body.appendChild(script);
-&lt;/script&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">'btn'</span>&gt;</span>点我发送ajax请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 1. 创建一个script标签</span></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 2. 挂载一个全局函数，我们先给函数一个函数名</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> callbackName = <span class="string">'callback_'</span> + <span class="built_in">Date</span>.now();</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 3. 服务器会返回数据，这个数据会在函数中执行</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">window</span>[callbackName] = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(data);</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 4. 把函数名传递给服务器</span></span></span><br><span class="line"><span class="actionscript">  script.scr = <span class="string">'http://localhost:9000/?callback='</span> + callbackName;</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 5. 把script标签插入到body中</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.body.appendChild(script);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>后端</li>
 </ul>
-<pre><code class="js">// 1. 引入必要模块
-const http = require(&quot;http&quot;);
-const url = require(&#39;url&#39;);
-// 2. 创建服务器
-let server = http.createServer((req, res) =&gt; {
-  // 3. 获取请求的url，解析出函数名
-  let fnName = url.parse(req.url, true).query.callback;
-  // 4. 将函数数据返回给前端
-  res.end(fnName + &#39;(&quot;hello world)&#39;);
-})
-// 5. 服务器监听
-server.listen(9000, () =&gt; {
-  console.log(&quot;server running at 9000&quot;);
-})
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 引入必要模块</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"><span class="comment">// 2. 创建服务器</span></span><br><span class="line"><span class="keyword">let</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 3. 获取请求的url，解析出函数名</span></span><br><span class="line">  <span class="keyword">let</span> fnName = url.parse(req.url, <span class="literal">true</span>).query.callback;</span><br><span class="line">  <span class="comment">// 4. 将函数数据返回给前端</span></span><br><span class="line">  res.end(fnName + <span class="string">'("hello world)'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 5. 服务器监听</span></span><br><span class="line">server.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>我们做了这样几件事：</p>
 <ol>
 <li><p>我们在前端代码中写了一个<code>script</code>文件的内容，并且插入到body当中，这个文件会和其他<code>script</code>文件一样被执行，这里如果写成平时嵌入的script文件的形式，应该是这样的(我们假设callback函数名是callback_1234）：</p>
-<pre><code class="html">&lt;script src=&quot;http://localhost:9000?calback=callback_1234&quot;&gt;
-    //现在已有一个定义好的全局函数，即callback_1234
-  //现在要执行的内容就是返回回来的data
-  ${data}
-&lt;/script&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://localhost:9000?calback=callback_1234"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">	<span class="comment">//现在已有一个定义好的全局函数，即callback_1234</span></span></span><br><span class="line"><span class="actionscript">  <span class="comment">//现在要执行的内容就是返回回来的data</span></span></span><br><span class="line"><span class="undefined">  $&#123;data&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>前端的请求发送到了<code>http://localhost:9000</code>，后端拿到的完整<code>req.url</code>是<code>http://localhost:9000/?callback=callback_1234</code>，我们用<code>url</code>模块解析url，可以获取到<code>query</code>是一个json数据</p>
-<pre><code class="json">{callback: callback_1234}
-</code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;callback: callback_1234&#125;</span><br></pre></td></tr></table></figure>
 <p>我们将获取到的<code>callback</code>数据保存为<code>fnName</code>，这样方便我们加入我们想要返回给前端的数据，然后让前端依照这个函数执行</p>
 </li>
 <li><p>我们先尝试只返回给前端一个字符串，我们希望前端能输出这个字符串：</p>
-<pre><code class="js">res.end(fnName + &quot;(&#39;hello world&#39;)&quot;);
-//实际返回给前端的内容就是callback_1234(&quot;hello world&quot;)
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res.end(fnName + <span class="string">"('hello world')"</span>);</span><br><span class="line"><span class="comment">//实际返回给前端的内容就是callback_1234("hello world")</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>前端收到了这个字符串<code>callback_1234(&quot;hello world&quot;)</code>，前面提到前端已经有这个<code>callback_1234</code>的全局函数了，那么前端要执行的<code>${data}</code>就是：</p>
-<pre><code class="js">&lt;script src=&quot;http://localhost:9000?calback=callback_1234&quot;&gt;
-    callback_1234(&quot;hello world&quot;);
-&lt;/script&gt;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://localhost:9000?calback=callback_1234"</span>&gt;</span><br><span class="line">	callback_1234(<span class="string">"hello world"</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p>即：</p>
-<pre><code class="js">console.log(&quot;hello world&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello world"</span>);</span><br></pre></td></tr></table></figure>
 <p>我们再看一看浏览器的控制台</p>
 <p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fu5u1s8n9aj30gn01bt8j.jpg" alt="image-20180811161805232"></p>
 </li>
 </ol>
 <p>这样我们就实现了用jsonp的方法来解决跨域。</p>
 <p>需要注意的是，<code>response.end()</code>方法只能传输字符串或者Buffer，如果我们需要传输其他数据结构，还需要添加解析的步骤：</p>
-<pre><code class="html">&lt;button id=&quot;btn&quot;&gt;点我发ajax请求&lt;/button&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-  var script = document.createElement(&#39;script&#39;);
-  var callbackName = &#39;callback_&#39; + Date.now();
-  window[callbackName] = function (data) {
-    console.log(JSON.parse(data)); //把字符串解析成data
-  }
-  script.src = &#39;http://localhost:9000?callback=&#39; + callbackName;
-  document.body.appendChild(script);
-&lt;/script&gt;
-</code></pre>
-<pre><code class="js">const http = require(&#39;http&#39;);
-const url = require(&#39;url&#39;);
-let server = http.createServer((req,res)=&gt;{
-  let fnName = url.parse(req.url,true).query.callback;
-  let data = JSON.stringify({msg:&#39;hello world&#39;}); //json解析成字符串
-  let str = fnName + `(&#39;${data}&#39;)`;      
-  res.end(str);
-});
-
-server.listen(9000,()=&gt;{
- console.log(&quot;server running at 9000&quot;); 
-})
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>点我发ajax请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> callbackName = <span class="string">'callback_'</span> + <span class="built_in">Date</span>.now();</span></span><br><span class="line"><span class="javascript">  <span class="built_in">window</span>[callbackName] = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.parse(data)); <span class="comment">//把字符串解析成data</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="actionscript">  script.src = <span class="string">'http://localhost:9000?callback='</span> + callbackName;</span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.body.appendChild(script);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"><span class="keyword">let</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> fnName = url.parse(req.url,<span class="literal">true</span>).query.callback;</span><br><span class="line">  <span class="keyword">let</span> data = <span class="built_in">JSON</span>.stringify(&#123;<span class="attr">msg</span>:<span class="string">'hello world'</span>&#125;); <span class="comment">//json解析成字符串</span></span><br><span class="line">  <span class="keyword">let</span> str = fnName + <span class="string">`('<span class="subst">$&#123;data&#125;</span>')`</span>;      </span><br><span class="line">  res.end(str);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">9000</span>,()=&gt;&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>); </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fu5u99xcd6j30h70243yi.jpg" alt="image-20180811162517851"></p>
 <blockquote>
 <p>jsonp总结：</p>
@@ -711,33 +623,8 @@ server.listen(9000,()=&gt;{
 <li>同样地，cookie也会遵循同源策略，只会将设置为服务器域名的cookie发送给服务器，其他域名下的cookie不会发送</li>
 <li><code>Access-Control-Expose-Headers</code>用来指定特定字段</li>
 </ul>
-<pre><code class="html">&lt;button id=&quot;btn&quot;&gt;点我发ajax请求&lt;/button&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
-        let oBtn = document.getElementById(&quot;btn&quot;);
-        oBtn.onclick = function() {
-            let xhr = new XMLHttpRequest();
-            xhr.open(&quot;get&quot;, &quot;http://localhost:9000&quot;, true);
-            xhr.send();
-            xhr.onreadystatechange = function() {
-                if(xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
-                    console.log(&quot;succeed: &quot; + xhr.responseText);
-                }
-            }
-        }
-    &lt;/script&gt;
-</code></pre>
-<pre><code class="js">const http = require(&#39;http&#39;);
-
-let server = http.createServer((req,res)=&gt;{
-  res.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;);
-  res.setHeader(&#39;Access-Control-Allow-Credentials&#39;, true);
-  res.end(&quot;hello world&quot;);
-});
-
-server.listen(9000,()=&gt;{
- console.log(&quot;server running at 9000&quot;); 
-})
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>点我发ajax请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">		<span class="keyword">let</span> oBtn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span></span><br><span class="line"><span class="actionscript">		oBtn.onclick = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">			<span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="actionscript">			xhr.open(<span class="string">"get"</span>, <span class="string">"http://localhost:9000"</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="undefined">			xhr.send();</span></span><br><span class="line"><span class="actionscript">			xhr.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">				<span class="keyword">if</span>(xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="javascript">					<span class="built_in">console</span>.log(<span class="string">"succeed: "</span> + xhr.responseText);</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">  res.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'*'</span>);</span><br><span class="line">  res.setHeader(<span class="string">'Access-Control-Allow-Credentials'</span>, <span class="literal">true</span>);</span><br><span class="line">  res.end(<span class="string">"hello world"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">9000</span>,()=&gt;&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>); </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu61digye0j30h001ymx7.jpg" alt="image-20180811203127014"></p>
 <ol start="2">
 <li><p><strong>非简单请求</strong></p>
@@ -751,52 +638,21 @@ server.listen(9000,()=&gt;{
 <p>预检请求的请求方法是<code>OPTIONS</code>，表明这个请求是用来询问的。</p>
 <p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu62rws290j30ma07cdi3.jpg" alt="image-20180811211959958"></p>
 <p>我们还是用上面的例子做演示：</p>
-<pre><code class="html">&lt;button id=&quot;btn&quot;&gt;点我发ajax请求&lt;/button&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-  let oBtn = document.getElementById(&quot;btn&quot;);
-  oBtn.onclick = function() {
-    let xhr = new XMLHttpRequest();
-    xhr.open(&quot;get&quot;, &quot;http://localhost:9000&quot;, true);
-    xhr.send();
-    xhr.onreadystatechange = function() {
-      if(xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
-        console.log(&quot;succeed: &quot; + xhr.responseText);
-      }
-    }
-  }
-&lt;/script&gt;
-</code></pre>
-<pre><code class="js">const http = require(&#39;http&#39;);
-let server = http.createServer((req,res)=&gt;{
-  res.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;);
-  res.setHeader(&#39;Access-Control-Allow-Credentials&#39;, true);
-  res.end(&quot;hello world&quot;);
-});
-server.listen(9000,()=&gt;{
- console.log(&quot;server running at 9000&quot;); 
-})
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>点我发ajax请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">let</span> oBtn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span></span><br><span class="line"><span class="actionscript">  oBtn.onclick = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="actionscript">    xhr.open(<span class="string">"get"</span>, <span class="string">"http://localhost:9000"</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="undefined">    xhr.send();</span></span><br><span class="line"><span class="actionscript">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">"succeed: "</span> + xhr.responseText);</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">let</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">  res.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'*'</span>);</span><br><span class="line">  res.setHeader(<span class="string">'Access-Control-Allow-Credentials'</span>, <span class="literal">true</span>);</span><br><span class="line">  res.end(<span class="string">"hello world"</span>);</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(<span class="number">9000</span>,()=&gt;&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>); </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <ol>
 <li><p>第一个触发点（get/post方法之外）</p>
-<pre><code class="js">//xhr.open(&quot;get&quot;, &quot;http://localhost:9000&quot;, true);
-xhr.open(&quot;put&quot;, &quot;http://localhost:9000&quot;, true);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//xhr.open("get", "http://localhost:9000", true);</span></span><br><span class="line">xhr.open(<span class="string">"put"</span>, <span class="string">"http://localhost:9000"</span>, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
 <p>结果：</p>
 <p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62l7jztxj30a90290su.jpg" alt="image-20180811211333327"></p>
 </li>
 <li><p>第二个触发点（加入自定义头）</p>
-<pre><code class="js">xhr.open(&quot;get&quot;, &quot;http://localhost:9000&quot;, true);
-xhr.setRequestHeader(&#39;my-token&#39;, &#39;abc&#39;);
-xhr.send();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(<span class="string">"get"</span>, <span class="string">"http://localhost:9000"</span>, <span class="literal">true</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">'my-token'</span>, <span class="string">'abc'</span>);</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
 <p>结果：</p>
 <p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu62ngkp80j30ab01z3yn.jpg" alt="image-20180811211543137"></p>
 </li>
 <li><p>第三个触发点（<code>Content-Type</code>是<code>application/json</code>)</p>
-<pre><code class="js">xhr.open(&quot;get&quot;, &quot;http://localhost:9000&quot;, true);
-xhr.setRequestHeader(&#39;Content-Type&#39;, &#39;application/json&#39;);
-xhr.send();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(<span class="string">"get"</span>, <span class="string">"http://localhost:9000"</span>, <span class="literal">true</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
 <p>结果：</p>
 <p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62pds4g4j30a302dt8v.jpg" alt="image-20180811211734111"></p>
 </li>
@@ -807,31 +663,8 @@ xhr.send();
 <li><code>Access-Control-Request-Headers</code>：指定CORS请求会额外发送的头字段信息</li>
 </ul>
 <p>我们在例子中加入这两个设置：</p>
-<pre><code class="js">let oBtn = document.getElementById(&quot;btn&quot;);
-oBtn.onclick = function() {
-  let xhr = new XMLHttpRequest();
-  xhr.open(&quot;get&quot;, &quot;http://localhost:9000&quot;, true);
-  xhr.setRequestHeader(&#39;my-token&#39;, &#39;abc&#39;)
-  xhr.setRequestHeader(&#39;Content-Type&#39;, &#39;application/json&#39;)
-  xhr.send();
-  xhr.onreadystatechange = function() {
-    if(xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
-      console.log(&quot;succeed: &quot; + xhr.responseText);
-    }
-  }
-}
-</code></pre>
-<pre><code class="js">const http = require(&#39;http&#39;);
-let server = http.createServer((req,res)=&gt;{
-  res.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;);
-  res.setHeader(&#39;Access-Control-Allow-Credentials&#39;, true);
-  res.setHeader(&#39;Access-Control-Allow-Methods&#39;, &#39;GET, POST, PUT, DELETE&#39;);
-  res.setHeader(&#39;Access-Control-Allow-Headers&#39;, &#39;my-token, content-type&#39;)
-  res.end(&quot;hello world&quot;);
-});
-server.listen(9000,()=&gt;{
- console.log(&quot;server running at 9000&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> oBtn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span><br><span class="line">oBtn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">  xhr.open(<span class="string">"get"</span>, <span class="string">"http://localhost:9000"</span>, <span class="literal">true</span>);</span><br><span class="line">  xhr.setRequestHeader(<span class="string">'my-token'</span>, <span class="string">'abc'</span>)</span><br><span class="line">  xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/json'</span>)</span><br><span class="line">  xhr.send();</span><br><span class="line">  xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"succeed: "</span> + xhr.responseText);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">let</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">  res.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'*'</span>);</span><br><span class="line">  res.setHeader(<span class="string">'Access-Control-Allow-Credentials'</span>, <span class="literal">true</span>);</span><br><span class="line">  res.setHeader(<span class="string">'Access-Control-Allow-Methods'</span>, <span class="string">'GET, POST, PUT, DELETE'</span>);</span><br><span class="line">  res.setHeader(<span class="string">'Access-Control-Allow-Headers'</span>, <span class="string">'my-token, content-type'</span>)</span><br><span class="line">  res.end(<span class="string">"hello world"</span>);</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(<span class="number">9000</span>,()=&gt;&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br></pre></td></tr></table></figure>
 <p>结果：</p>
 <p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fu62tp6s8zj30gm019jr8.jpg" alt="image-20180811212142934"></p>
 <p>这时我们可以在NETWORK里看到两次请求：</p>
@@ -863,27 +696,16 @@ server.listen(9000,()=&gt;{
 <h5 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h5><p>我们首先需要配置nginx。</p>
 <ol>
 <li><p>下载</p>
-<pre><code class="bash">brew install nginx
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>启动</p>
-<pre><code class="bash">nginx
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>nginx安装后，我们可以在浏览器访问，默认端口是8080，在<code>http://localhost:8080</code>我们会看到这样的界面：</p>
 <p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu666k0ic8j30id074dgm.jpg" alt="image-20180811231751868"></p>
 <p>接着需要配置，我在mac上的配置文件路径是<code>/usr/local/etc/nginx</code>，找到nginx.config文件。</p>
-<pre><code class="python">location /apis {
-            rewrite  ^/apis/(.*)$ /$1 break; #重写URL
-            include  uwsgi_params; # 携带请求参数
-            proxy_pass   http://localhost:8888;
-            # 服务器回写的cookie的domain是 代理服务器,
-            # 如此操作可以修改cookie的domain为 浏览器 
-            # 浏览器cookie -&gt; 代理服务器cookie -&gt; 自动到目标服务器
-            proxy_cookie_domain domino_server nginx_server;
-        }
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">location /apis &#123;</span><br><span class="line">    	    rewrite  ^/apis/(.*)$ /$<span class="number">1</span> <span class="keyword">break</span>; <span class="comment">#重写URL</span></span><br><span class="line">            include  uwsgi_params; <span class="comment"># 携带请求参数</span></span><br><span class="line">            proxy_pass   http://localhost:<span class="number">8888</span>;</span><br><span class="line">            <span class="comment"># 服务器回写的cookie的domain是 代理服务器,</span></span><br><span class="line">            <span class="comment"># 如此操作可以修改cookie的domain为 浏览器 </span></span><br><span class="line">            <span class="comment"># 浏览器cookie -&gt; 代理服务器cookie -&gt; 自动到目标服务器</span></span><br><span class="line">            proxy_cookie_domain domino_server nginx_server;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 <p>配置好之后，我们可以开始写代理服务器的代码。这里我们拿豆瓣api来做例子。</p>
 <ul>
 <li><p>豆瓣api接口：<a href="https://api.douban.com" target="_blank" rel="noopener">https://api.douban.com</a></p>
@@ -895,57 +717,8 @@ server.listen(9000,()=&gt;{
 <p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu66ghc7v6j30qp0li42f.jpg" alt="image-20180811232724024"></p>
 <p>（有可能会是写成一堆的json数据，我安装了插件，所以信息美化了）</p>
 <p>确认好地址无误后，我们在html页面里用XMLHttpRequest将地址发送给服务器。</p>
-<pre><code class="html">&lt;button id=&quot;btn&quot;&gt;点我发本服务器的node代理&lt;/button&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-  let oBtn = document.getElementById(&quot;btn&quot;);
-  oBtn.onclick = function () {
-    // 发请求
-    var xhr = new XMLHttpRequest();
-    // 将请求地址放在url中发送给服务器
-    // 因为要区分登录和发送请求，这里我们用&#39;/proxy&#39;来区分
-    xhr.open(&#39;get&#39;,&#39;/proxy?url=http://api.douban.com/v2/movie/in_theaters&#39;);
-    xhr.send();
-    xhr.onreadystatechange = function () {
-      if(xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
-        alert(xhr.responseText);
-      }
-    }
-  }
-&lt;/script&gt;
-</code></pre>
-<pre><code class="js">// 1. 引入模块
-const http = require(&#39;http&#39;);
-const url = require(&#39;url&#39;);
-const fs = require(&#39;fs&#39;);
-// 这里需要用到一个新的插件request
-const request = require(&#39;request&#39;);
-
-// 2. 创建服务器
-let server = http.createServer();
-// 3. 为服务器接受请求绑定事件
-server.on(&#39;request&#39;, (req, res) =&gt; {
-  // 判断请求和登录
-  if(req.url === &#39;/&#39;) {
-    // 如果是访问localhost:8888就返回html页面
-    // 注意这里要用同步，否则会直接读取nginx的index页面
-    let data = fs.readFileSync(&#39;./proxy.html&#39;);
-    res.end(data);
-  } else if(req.url.startsWith(&#39;/proxy&#39;)) {
-    // 如果发送的是请求(以&#39;/proxy‘开头)
-    // 解析出请求地址 req.query是{url: 豆瓣api地址}
-    let obj = url.parse(req.url, true);
-    // 新建对象x 它是一个请求
-    let x = request(obj.query.url);
-    // 将req中的数据通过“管道”流给x
-    req.pipe(x);
-    // 返回给x的数据通过“管道”流给res用于返回给浏览器
-    x.pipe(res);  
-  }
-})
-server.listen(8888, () =&gt; {
-  console.log(&quot;server running at 8888&quot;);
-})
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>点我发本服务器的node代理<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">let</span> oBtn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span></span><br><span class="line"><span class="actionscript">  oBtn.onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 发请求</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 将请求地址放在url中发送给服务器</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 因为要区分登录和发送请求，这里我们用'/proxy'来区分</span></span></span><br><span class="line"><span class="actionscript">    xhr.open(<span class="string">'get'</span>,<span class="string">'/proxy?url=http://api.douban.com/v2/movie/in_theaters'</span>);</span></span><br><span class="line"><span class="undefined">    xhr.send();</span></span><br><span class="line"><span class="actionscript">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="undefined">        alert(xhr.responseText);</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 引入模块</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="comment">// 这里需要用到一个新的插件request</span></span><br><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">'request'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 创建服务器</span></span><br><span class="line"><span class="keyword">let</span> server = http.createServer();</span><br><span class="line"><span class="comment">// 3. 为服务器接受请求绑定事件</span></span><br><span class="line">server.on(<span class="string">'request'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="comment">// 判断请求和登录</span></span><br><span class="line">  <span class="keyword">if</span>(req.url === <span class="string">'/'</span>) &#123;</span><br><span class="line">    <span class="comment">// 如果是访问localhost:8888就返回html页面</span></span><br><span class="line">    <span class="comment">// 注意这里要用同步，否则会直接读取nginx的index页面</span></span><br><span class="line">    <span class="keyword">let</span> data = fs.readFileSync(<span class="string">'./proxy.html'</span>);</span><br><span class="line">    res.end(data);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span>(req.url.startsWith(<span class="string">'/proxy'</span>)) &#123;</span><br><span class="line">    <span class="comment">// 如果发送的是请求(以'/proxy‘开头)</span></span><br><span class="line">    <span class="comment">// 解析出请求地址 req.query是&#123;url: 豆瓣api地址&#125;</span></span><br><span class="line">    <span class="keyword">let</span> obj = url.parse(req.url, <span class="literal">true</span>);</span><br><span class="line">    <span class="comment">// 新建对象x 它是一个请求</span></span><br><span class="line">    <span class="keyword">let</span> x = request(obj.query.url);</span><br><span class="line">    <span class="comment">// 将req中的数据通过“管道”流给x</span></span><br><span class="line">    req.pipe(x);</span><br><span class="line">    <span class="comment">// 返回给x的数据通过“管道”流给res用于返回给浏览器</span></span><br><span class="line">    x.pipe(res);  </span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">server.listen(<span class="number">8888</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at 8888"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu67ntgwh1j308003ejrk.jpg" alt="image-20180812000903565"></p>
 <p>点击按钮会返回豆瓣数据：</p>
 <p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu67ov99a5j30d208ojt4.jpg" alt="image-20180812001003822"></p>
@@ -1229,7 +1002,7 @@ server.listen(8888, () =&gt; {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.5k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

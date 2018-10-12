@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  915 字
+                  1,091 字
                 </span>
               
 
@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -495,258 +495,82 @@
 <hr>
 <h3 id="Introduction-to-the-ES6-Challenges"><a href="#Introduction-to-the-ES6-Challenges" class="headerlink" title="Introduction to the ES6 Challenges"></a><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6" target="_blank" rel="noopener">Introduction to the ES6 Challenges</a></h3><ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/explore-differences-between-the-var-and-let-keywords" target="_blank" rel="noopener">Explore Differences Between the var and let Keywords</a></p>
-<pre><code class="js">let catName;
-let quote;
-function catTalk() {
-  &quot;use strict&quot;;
-
-  catName = &quot;Oliver&quot;;
-  quote = catName + &quot; says Meow!&quot;;
-
-}
-catTalk();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> catName;</span><br><span class="line"><span class="keyword">let</span> quote;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">catTalk</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line"></span><br><span class="line">  catName = <span class="string">"Oliver"</span>;</span><br><span class="line">  quote = catName + <span class="string">" says Meow!"</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">catTalk();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/compare-scopes-of-the-var-and-let-keywords" target="_blank" rel="noopener">Compare Scopes of the var and let Keywords</a></p>
-<pre><code class="js">function checkScope() {
-&quot;use strict&quot;;
-  let i = &quot;function scope&quot;;
-  if (true) {
-    let i = &quot;block scope&quot;;
-    console.log(&quot;Block scope i is: &quot;, i);
-  }
-  console.log(&quot;Function scope i is: &quot;, i);
-  return i;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkScope</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line">  <span class="keyword">let</span> i = <span class="string">"function scope"</span>;</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="string">"block scope"</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Block scope i is: "</span>, i);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Function scope i is: "</span>, i);</span><br><span class="line">  <span class="keyword">return</span> i;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/declare-a-read-only-variable-with-the-const-keyword" target="_blank" rel="noopener">Declare a Read-Only Variable with the const Keyword</a></p>
-<pre><code class="js">function printManyTimes(str) {
-  &quot;use strict&quot;;
-
-  // change code below this line
-  const SENTENCE = str + &quot; is cool!&quot;;
-  for(let i = 0; i &lt; str.length; i+=2) {
-    console.log(SENTENCE);
-  }
-  // change code above this line
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printManyTimes</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">const</span> SENTENCE = str + <span class="string">" is cool!"</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.length; i+=<span class="number">2</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(SENTENCE);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/mutate-an-array-declared-with-const" target="_blank" rel="noopener">Mutate an Array Declared with const</a></p>
-<pre><code class="js">const s = [5, 7, 2];
-function editInPlace() {
-  &quot;use strict&quot;;
-  // change code below this line
-  // s = [2, 5, 7]; &lt;- this is invalid
-  s[0] = 2;
-  s[1] = 5;
-  s[2] = 7;
-  return s;
-  // change code above this line
-}
-editInPlace();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s = [<span class="number">5</span>, <span class="number">7</span>, <span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">editInPlace</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="comment">// s = [2, 5, 7]; &lt;- this is invalid</span></span><br><span class="line">  s[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">  s[<span class="number">1</span>] = <span class="number">5</span>;</span><br><span class="line">  s[<span class="number">2</span>] = <span class="number">7</span>;</span><br><span class="line">  <span class="keyword">return</span> s;</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">&#125;</span><br><span class="line">editInPlace();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/prevent-object-mutation" target="_blank" rel="noopener">Prevent Object Mutation</a></p>
-<pre><code class="js">function freezeObj() {
-  &quot;use strict&quot;;
-  const MATH_CONSTANTS = {
-    PI: 3.14
-  };
-  // change code below this line
-Object.freeze(MATH_CONSTANTS);
-  // change code above this line
-  try {
-    MATH_CONSTANTS.PI = 99;
-  } catch( ex ) {
-    console.log(ex);
-  }
-  return MATH_CONSTANTS.PI;
-}
-const PI = freezeObj();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">freezeObj</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="keyword">const</span> MATH_CONSTANTS = &#123;</span><br><span class="line">    PI: <span class="number">3.14</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line"><span class="built_in">Object</span>.freeze(MATH_CONSTANTS);</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    MATH_CONSTANTS.PI = <span class="number">99</span>;</span><br><span class="line">  &#125; <span class="keyword">catch</span>( ex ) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(ex);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> MATH_CONSTANTS.PI;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> PI = freezeObj();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/use-arrow-functions-to-write-concise-anonymous-functions" target="_blank" rel="noopener">Use Arrow Functions to Write Concise Anonymous Functions</a></p>
-<pre><code class="js">const magic = () =&gt; new Date();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> magic = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/write-arrow-functions-with-parameters" target="_blank" rel="noopener">Write Arrow Functions with Parameters</a></p>
-<pre><code class="js">const myConcat = (arr1, arr2) =&gt; arr1.concat(arr2);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myConcat = <span class="function">(<span class="params">arr1, arr2</span>) =&gt;</span> arr1.concat(arr2);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/write-higher-order-arrow-functions" target="_blank" rel="noopener">Write Higher Order Arrow Functions</a></p>
-<pre><code class="js">const squaredIntegers = arr.filter((val) =&gt; val &gt; 0 &amp;&amp; val% 1 === 0).map(val =&gt; Math.pow(val, 2));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> squaredIntegers = arr.filter(<span class="function">(<span class="params">val</span>) =&gt;</span> val &gt; <span class="number">0</span> &amp;&amp; val% <span class="number">1</span> === <span class="number">0</span>).map(<span class="function"><span class="params">val</span> =&gt;</span> <span class="built_in">Math</span>.pow(val, <span class="number">2</span>));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions" target="_blank" rel="noopener">Set Default Parameters for Your Functions</a></p>
-<pre><code class="js">const increment = (function() {
-  &quot;use strict&quot;;
-  return function increment(number, value=1) {
-    return number + value;
-  };
-})();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> increment = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">increment</span>(<span class="params">number, value=<span class="number">1</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> number + value;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/use-the-rest-operator-with-function-parameters" target="_blank" rel="noopener">Use the Rest Operator with Function Parameters</a></p>
-<pre><code class="js">const sum = (function() {
-  &quot;use strict&quot;;
-  return function sum(...args) {
-    return args.reduce((a, b) =&gt; a + b, 0);
-  };
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> args.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b, <span class="number">0</span>);</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/use-the-spread-operator-to-evaluate-arrays-in-place" target="_blank" rel="noopener">Use the Spread Operator to Evaluate Arrays In-Place</a></p>
-<pre><code class="js">const arr1 = [&#39;JAN&#39;, &#39;FEB&#39;, &#39;MAR&#39;, &#39;APR&#39;, &#39;MAY&#39;];
-let arr2;
-(function() {
-  &quot;use strict&quot;;
-  arr2 = [...arr1]; // change this line
-})();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="string">'JAN'</span>, <span class="string">'FEB'</span>, <span class="string">'MAR'</span>, <span class="string">'APR'</span>, <span class="string">'MAY'</span>];</span><br><span class="line"><span class="keyword">let</span> arr2;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  arr2 = [...arr1]; <span class="comment">// change this line</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/use-destructuring-assignment-to-assign-variables-from-objects" target="_blank" rel="noopener">Use Destructuring Assignment to Assign Variables from Objects</a></p>
-<pre><code class="js">function getLength(str) {
-  &quot;use strict&quot;;
-  // change code below this line
-  const {length : len} = str; // change this
-  // change code above this line
-  return len; // you must assign length to len in line
-
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLength</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">const</span> &#123;<span class="attr">length</span> : len&#125; = str; <span class="comment">// change this</span></span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">  <span class="keyword">return</span> len; <span class="comment">// you must assign length to len in line</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/use-destructuring-assignment-to-assign-variables-from-nested-objects" target="_blank" rel="noopener">Use Destructuring Assignment to Assign Variables from Nested Objects</a></p>
-<pre><code class="js">function getMaxOfTmrw(forecast) {
-  &quot;use strict&quot;;
-  // change code below this line
-  const {tomorrow: {max: maxOfTomorrow}} = forecast; // change this line
-  // change code above this line
-  return maxOfTomorrow;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMaxOfTmrw</span>(<span class="params">forecast</span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">const</span> &#123;<span class="attr">tomorrow</span>: &#123;<span class="attr">max</span>: maxOfTomorrow&#125;&#125; = forecast; <span class="comment">// change this line</span></span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">  <span class="keyword">return</span> maxOfTomorrow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/use-destructuring-assignment-to-assign-variables-from-arrays" target="_blank" rel="noopener">Use Destructuring Assignment to Assign Variables from Arrays</a></p>
-<pre><code class="js">let a = 8, b = 6;
-(() =&gt; {
-  &quot;use strict&quot;;
-  // change code below this line
-  [a,b] = [b,a];
-  // change code above this line
-})();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">8</span>, b = <span class="number">6</span>;</span><br><span class="line">(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  [a,b] = [b,a];</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/use-destructuring-assignment-with-the-rest-operator-to-reassign-array-elements" target="_blank" rel="noopener">Use Destructuring Assignment with the Rest Operator to Reassign Array Elements</a></p>
-<pre><code class="js">function removeFirstTwo(list) {
-  &quot;use strict&quot;;
-  // change code below this line
-  const [, , ...arr] = source; // change this
-  // change code below this line
-  return arr;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeFirstTwo</span>(<span class="params">list</span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">const</span> [, , ...arr] = source; <span class="comment">// change this</span></span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/use-destructuring-assignment-to-pass-an-object-as-a-functions-parameters" target="_blank" rel="noopener">Use Destructuring Assignment to Pass an Object as a Function’s Parameters</a></p>
-<pre><code class="js">const half = (function() {
-  &quot;use strict&quot;; // do not change this line
-
-  // change code below this line
-  return ({max,min}) =&gt; 
-    // use function argument destructuring
-    (stats.max + stats.min) / 2.0;
-
-  // change code above this line
-
-})();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> half = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>; <span class="comment">// do not change this line</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">&#123;max,min&#125;</span>) =&gt;</span> </span><br><span class="line">    <span class="comment">// use function argument destructuring</span></span><br><span class="line">    (stats.max + stats.min) / <span class="number">2.0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line"></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/create-strings-using-template-literals" target="_blank" rel="noopener">Create Strings using Template Literals</a></p>
-<pre><code class="js">function makeList(arr) {
-  &quot;use strict&quot;;
-
-  // change code below this line
-  const resultDisplayArray = arr.map((val) =&gt; `&lt;li class=&quot;text-warning&quot;&gt;${val}&lt;/li&gt;`);
-  // change code above this line
-
-  return resultDisplayArray;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeList</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">const</span> resultDisplayArray = arr.map(<span class="function">(<span class="params">val</span>) =&gt;</span> <span class="string">`&lt;li class="text-warning"&gt;<span class="subst">$&#123;val&#125;</span>&lt;/li&gt;`</span>);</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> resultDisplayArray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/write-concise-object-literal-declarations-using-simple-fields" target="_blank" rel="noopener">Write Concise Object Literal Declarations Using Simple Fields</a></p>
-<pre><code class="js">const createPerson = (name, age, gender) =&gt; {
-  &quot;use strict&quot;;
-  // change code below this line
-  return {
-    name, age, gender
-  };
-  // change code above this line
-};
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> createPerson = <span class="function">(<span class="params">name, age, gender</span>) =&gt;</span> &#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    name, age, gender</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/write-concise-declarative-functions-with-es6" target="_blank" rel="noopener">Write Concise Declarative Functions with ES6</a></p>
-<pre><code class="js">const bicycle = {
-  gear: 2,
-  setGear(newGear) {
-    &quot;use strict&quot;;
-    this.gear = newGear;
-  }
-};
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bicycle = &#123;</span><br><span class="line">  gear: <span class="number">2</span>,</span><br><span class="line">  setGear(newGear) &#123;</span><br><span class="line"><span class="meta">    "use strict"</span>;</span><br><span class="line">    <span class="keyword">this</span>.gear = newGear;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/use-class-syntax-to-define-a-constructor-function" target="_blank" rel="noopener">Use class Syntax to Define a Constructor Function</a></p>
-<pre><code class="js">function makeClass() {
-  &quot;use strict&quot;;
-  /* Alter code below this line */
-  class Vegetable {
-    constructor(name) {
-      this.name = name;
-    }
-  }
-  /* Alter code above this line */
-  return Vegetable;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeClass</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="comment">/* Alter code below this line */</span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Vegetable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name) &#123;</span><br><span class="line">      <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* Alter code above this line */</span></span><br><span class="line">  <span class="keyword">return</span> Vegetable;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/use-getters-and-setters-to-control-access-to-an-object" target="_blank" rel="noopener">Use getters and setters to Control Access to an Object</a></p>
-<pre><code class="js">function makeClass() {
-  &quot;use strict&quot;;
-  /* Alter code below this line */
-  class Thermostat {
-    constructor(Fa_temperature) {
-      this.temperature = 5/0 * (Fa_temperature-32);
-    }
-  }
-  /* Alter code above this line */
-  return Thermostat;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeClass</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="comment">/* Alter code below this line */</span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Thermostat</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(Fa_temperature) &#123;</span><br><span class="line">      <span class="keyword">this</span>.temperature = <span class="number">5</span>/<span class="number">0</span> * (Fa_temperature<span class="number">-32</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* Alter code above this line */</span></span><br><span class="line">  <span class="keyword">return</span> Thermostat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/understand-the-differences-between-import-and-require" target="_blank" rel="noopener">Understand the Differences Between import and require</a></p>
-<pre><code class="js"> &quot;use strict&quot;;
-import {capitalizeString} from &quot;string_functions&quot;;
-capitalizeString(&quot;hello!&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"> "use strict"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;capitalizeString&#125; <span class="keyword">from</span> <span class="string">"string_functions"</span>;</span><br><span class="line">capitalizeString(<span class="string">"hello!"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/use-export-to-reuse-a-code-block" target="_blank" rel="noopener">Use export to Reuse a Code Block</a></p>
-<pre><code class="js">&quot;use strict&quot;;
-export const foo = &quot;bar&quot;; 
-export const bar= &quot;foo&quot;;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> foo = <span class="string">"bar"</span>; </span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> bar= <span class="string">"foo"</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/use--to-import-everything-from-a-file" target="_blank" rel="noopener">Use * to Import Everything from a File</a></p>
-<pre><code class="js">&quot;use strict&quot;;
-import * as myCapitalizeStrings from &quot;capitalize_strings&quot;;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> myCapitalizeStrings <span class="keyword">from</span> <span class="string">"capitalize_strings"</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/create-an-export-fallback-with-export-default" target="_blank" rel="noopener">Create an Export Fallback with export default</a></p>
-<pre><code class="js">&quot;use strict&quot;;
-export default function subtract(x,y) {return x - y;}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">subtract</span>(<span class="params">x,y</span>) </span>&#123;<span class="keyword">return</span> x - y;&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/import-a-default-export" target="_blank" rel="noopener">Import a Default Export</a></p>
-<pre><code class="js">&quot;use strict&quot;;
-import subtract from &quot;math_functions&quot;;
-subtract(7,4);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">import</span> subtract <span class="keyword">from</span> <span class="string">"math_functions"</span>;</span><br><span class="line">subtract(<span class="number">7</span>,<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -793,8 +617,8 @@ subtract(7,4);
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/04/正则表达式/" rel="prev" title="正则表达式">
-                正则表达式 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/04/数据结构基础/" rel="prev" title="数据结构基础">
+                数据结构基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1022,7 +846,7 @@ subtract(7,4);
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.5k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

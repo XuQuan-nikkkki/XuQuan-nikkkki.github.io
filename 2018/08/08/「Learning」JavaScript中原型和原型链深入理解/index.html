@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  849 字
+                  870 字
                 </span>
               
 
@@ -461,7 +461,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -561,28 +561,7 @@
 </blockquote>
 <p>我们可以通过一个例子来巩固这个知识点。</p>
 <p>我们已知有<code>A</code>和<code>B</code>两个构造函数，<code>A</code>的<code>prototype</code>是另一个函数对象<code>B</code>构造出的实例，我们可以尝试把它们连接起来：</p>
-<pre><code class="js">function A() {...};
-function B() {...};
-
-var b = new B();
-//A的prototype是B的实例，即
-A.prototype = b;
-var a = new A();
-//最基本的关系如下
-console.log(A.prototype === a.__proto__);  //true
-console.log(B.prototype === b.__proto__);  //true
-//延展关系如下
-console.log(b === a.__proto__);  //true
-console.log(b.__proto__ === a.__proto__.__proto__); //true
-console.log(B.prototype === a.__proto__.__proto__); //true
-console.log(b.__proto__ === a.__proto__.__proto__); //true
-//A和B都是Object构建出的实例
-console.log(Object.prototype === A.__proto__);
-console.log(Object.prototype === B.__proto__);
-//可以看出实例a和Object的关系
-//B.prototype === b.__proto__ =&gt; B.prototype.__proto__ === b.__proto__.__proto__ === a.__proto__.__proto__.__proto__ === Object.prototype
-console.log(Object.prototype === a.__proto__.__proto__);  //true
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;...&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>) </span>&#123;...&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> B();</span><br><span class="line"><span class="comment">//A的prototype是B的实例，即</span></span><br><span class="line">A.prototype = b;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> A();</span><br><span class="line"><span class="comment">//最基本的关系如下</span></span><br><span class="line"><span class="built_in">console</span>.log(A.prototype === a.__proto__);  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(B.prototype === b.__proto__);  <span class="comment">//true</span></span><br><span class="line"><span class="comment">//延展关系如下</span></span><br><span class="line"><span class="built_in">console</span>.log(b === a.__proto__);  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(b.__proto__ === a.__proto__.__proto__); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(B.prototype === a.__proto__.__proto__); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(b.__proto__ === a.__proto__.__proto__); <span class="comment">//true</span></span><br><span class="line"><span class="comment">//A和B都是Object构建出的实例</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype === A.__proto__);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype === B.__proto__);</span><br><span class="line"><span class="comment">//可以看出实例a和Object的关系</span></span><br><span class="line"><span class="comment">//B.prototype === b.__proto__ =&gt; B.prototype.__proto__ === b.__proto__.__proto__ === a.__proto__.__proto__.__proto__ === Object.prototype</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype === a.__proto__.__proto__);  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>JS中万物皆对象，函数也是一种对象</li>
 <li>JS中的所有东西都由<code>Object</code>衍生而来，<strong>所有东西的原型链的重点都指向<code>Object.prototype</code></strong></li>
@@ -878,7 +857,7 @@ console.log(Object.prototype === a.__proto__.__proto__);  //true
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.5k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

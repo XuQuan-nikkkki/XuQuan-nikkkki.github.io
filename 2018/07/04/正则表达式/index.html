@@ -446,7 +446,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,703 字
+                  2,803 字
                 </span>
               
 
@@ -462,7 +462,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  12 分钟
+                  13 分钟
                 </span>
               
             </div>
@@ -592,201 +592,100 @@
 <hr>
 <h4 id="Introduction-to-the-Regular-Expression-Challenges"><a href="#Introduction-to-the-Regular-Expression-Challenges" class="headerlink" title="Introduction to the Regular Expression Challenges"></a><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions" target="_blank" rel="noopener">Introduction to the Regular Expression Challenges</a></h4><ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/using-the-test-method" target="_blank" rel="noopener">Using the Test Method</a></p>
-<pre><code class="js">let myString = &quot;Hello, World!&quot;;
-let myRegex = /Hello/;
-let result = myRegex.test(myString); // Change this line
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myString = <span class="string">"Hello, World!"</span>;</span><br><span class="line"><span class="keyword">let</span> myRegex = <span class="regexp">/Hello/</span>;</span><br><span class="line"><span class="keyword">let</span> result = myRegex.test(myString); <span class="comment">// Change this line</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-literal-strings" target="_blank" rel="noopener">Match Literal Strings</a></p>
-<pre><code class="js">let waldoIsHiding = &quot;Somewhere Waldo is hiding in this text.&quot;;
-let waldoRegex = /Waldo/; // Change this line
-let result = waldoRegex.test(waldoIsHiding);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> waldoIsHiding = <span class="string">"Somewhere Waldo is hiding in this text."</span>;</span><br><span class="line"><span class="keyword">let</span> waldoRegex = <span class="regexp">/Waldo/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = waldoRegex.test(waldoIsHiding);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-a-literal-string-with-different-possibilities" target="_blank" rel="noopener">Match a Literal String with Different Possibilities</a></p>
-<pre><code class="js">let petString = &quot;James has a pet cat.&quot;;
-let petRegex = /dog|cat|bird|fish/; // Change this line
-let result = petRegex.test(petString);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> petString = <span class="string">"James has a pet cat."</span>;</span><br><span class="line"><span class="keyword">let</span> petRegex = <span class="regexp">/dog|cat|bird|fish/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = petRegex.test(petString);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/ignore-case-while-matching" target="_blank" rel="noopener">Ignore Case While Matching</a></p>
-<pre><code class="js">let myString = &quot;freeCodeCamp&quot;;
-let fccRegex = /freeCodeCamp/i; // Change this line
-let result = fccRegex.test(myString);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myString = <span class="string">"freeCodeCamp"</span>;</span><br><span class="line"><span class="keyword">let</span> fccRegex = <span class="regexp">/freeCodeCamp/i</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = fccRegex.test(myString);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/extract-matches" target="_blank" rel="noopener">Extract Matches</a></p>
-<pre><code class="js">let extractStr = &quot;Extract the word &#39;coding&#39; from this string.&quot;;
-let codingRegex = /coding/; // Change this line
-let result = extractStr.match(codingRegex); // Change this line
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> extractStr = <span class="string">"Extract the word 'coding' from this string."</span>;</span><br><span class="line"><span class="keyword">let</span> codingRegex = <span class="regexp">/coding/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = extractStr.match(codingRegex); <span class="comment">// Change this line</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/find-more-than-the-first-match" target="_blank" rel="noopener">Find More Than the First Match</a></p>
-<pre><code class="js">let twinkleStar = &quot;Twinkle, twinkle, little star&quot;;
-let starRegex = /twinkle/gi; // Change this line
-let result = twinkleStar.match(starRegex); // Change this line
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> twinkleStar = <span class="string">"Twinkle, twinkle, little star"</span>;</span><br><span class="line"><span class="keyword">let</span> starRegex = <span class="regexp">/twinkle/gi</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = twinkleStar.match(starRegex); <span class="comment">// Change this line</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-anything-with-wildcard-period" target="_blank" rel="noopener">Match Anything with Wildcard Period</a></p>
-<pre><code class="js">let exampleStr = &quot;Let&#39;s have fun with regular expressions!&quot;;
-let unRegex = /.un/; // Change this line
-let result = unRegex.test(exampleStr);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> exampleStr = <span class="string">"Let's have fun with regular expressions!"</span>;</span><br><span class="line"><span class="keyword">let</span> unRegex = <span class="regexp">/.un/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = unRegex.test(exampleStr);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-single-character-with-multiple-possibilities" target="_blank" rel="noopener">Match Single Character with Multiple Possibilities</a></p>
-<pre><code class="js">let quoteSample = &quot;Beware of bugs in the above code; I have only proved it correct, not tried it.&quot;;
-let vowelRegex = /[aeiou]/gi; // Change this line
-let result = quoteSample.match(vowelRegex); // Change this line
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> quoteSample = <span class="string">"Beware of bugs in the above code; I have only proved it correct, not tried it."</span>;</span><br><span class="line"><span class="keyword">let</span> vowelRegex = <span class="regexp">/[aeiou]/gi</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = quoteSample.match(vowelRegex); <span class="comment">// Change this line</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-letters-of-the-alphabet" target="_blank" rel="noopener">Match Letters of the Alphabet</a></p>
-<pre><code class="js">let quoteSample = &quot;The quick brown fox jumps over the lazy dog.&quot;;
-let alphabetRegex = /[a-z]/gi; // Change this line
-let result = quoteSample.match(alphabetRegex); // Change this line
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> quoteSample = <span class="string">"The quick brown fox jumps over the lazy dog."</span>;</span><br><span class="line"><span class="keyword">let</span> alphabetRegex = <span class="regexp">/[a-z]/gi</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = quoteSample.match(alphabetRegex); <span class="comment">// Change this line</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-numbers-and-letters-of-the-alphabet" target="_blank" rel="noopener">Match Numbers and Letters of the Alphabet</a></p>
-<pre><code class="js">let quoteSample = &quot;Blueberry 3.141592653s are delicious.&quot;;
-let myRegex = /[h-s2-6]/gi; // Change this line
-let result = quoteSample.match(myRegex); // Change this line
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> quoteSample = <span class="string">"Blueberry 3.141592653s are delicious."</span>;</span><br><span class="line"><span class="keyword">let</span> myRegex = <span class="regexp">/[h-s2-6]/gi</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = quoteSample.match(myRegex); <span class="comment">// Change this line</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-single-characters-not-specified" target="_blank" rel="noopener">Match Single Characters Not Specified</a></p>
-<pre><code class="js">let quoteSample = &quot;3 blind mice.&quot;;
-let myRegex = /[^aeiou0-9]/gi; // Change this line
-let result = quoteSample.match(myRegex); // Change this line
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> quoteSample = <span class="string">"3 blind mice."</span>;</span><br><span class="line"><span class="keyword">let</span> myRegex = <span class="regexp">/[^aeiou0-9]/gi</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = quoteSample.match(myRegex); <span class="comment">// Change this line</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-characters-that-occur-one-or-more-times" target="_blank" rel="noopener">Match Characters that Occur One or More Times</a></p>
-<pre><code class="js">let difficultSpelling = &quot;Mississippi&quot;;
-let myRegex = /s+/g; // Change this line
-let result = difficultSpelling.match(myRegex);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> difficultSpelling = <span class="string">"Mississippi"</span>;</span><br><span class="line"><span class="keyword">let</span> myRegex = <span class="regexp">/s+/g</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = difficultSpelling.match(myRegex);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-characters-that-occur-zero-or-more-times" target="_blank" rel="noopener">Match Characters that Occur Zero or More Times</a></p>
-<pre><code class="js">let chewieQuote = &quot;Aaaaaaaaaaaaaaaarrrgh!&quot;;
-let chewieRegex = /Aa*/; // Change this line
-let result = chewieQuote.match(chewieRegex);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> chewieQuote = <span class="string">"Aaaaaaaaaaaaaaaarrrgh!"</span>;</span><br><span class="line"><span class="keyword">let</span> chewieRegex = <span class="regexp">/Aa*/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = chewieQuote.match(chewieRegex);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/find-characters-with-lazy-matching" target="_blank" rel="noopener">Find Characters with Lazy Matching</a></p>
-<pre><code class="js">let text = &quot;&lt;h1&gt;Winter is coming&lt;/h1&gt;&quot;;
-let myRegex = /&lt;h.*?1&gt;/; // Change this line
-let result = text.match(myRegex);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> text = <span class="string">"&lt;h1&gt;Winter is coming&lt;/h1&gt;"</span>;</span><br><span class="line"><span class="keyword">let</span> myRegex = <span class="regexp">/&lt;h.*?1&gt;/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = text.match(myRegex);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/find-one-or-more-criminals-in-a-hunt" target="_blank" rel="noopener">Find One or More Criminals in a Hunt</a></p>
-<pre><code class="js">let crowd = &#39;P1P2P3P4P5P6CCCP7P8P9&#39;;
-
-let reCriminals = /C+/g; // Change this line
-
-let matchedCriminals = crowd.match(reCriminals);
-console.log(matchedCriminals);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> crowd = <span class="string">'P1P2P3P4P5P6CCCP7P8P9'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> reCriminals = <span class="regexp">/C+/g</span>; <span class="comment">// Change this line</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> matchedCriminals = crowd.match(reCriminals);</span><br><span class="line"><span class="built_in">console</span>.log(matchedCriminals);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-beginning-string-patterns" target="_blank" rel="noopener">Match Beginning String Patterns</a></p>
-<pre><code class="js">let rickyAndCal = &quot;Cal and Ricky both like racing.&quot;;
-let calRegex = /^Cal/; // Change this line
-let result = calRegex.test(rickyAndCal);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> rickyAndCal = <span class="string">"Cal and Ricky both like racing."</span>;</span><br><span class="line"><span class="keyword">let</span> calRegex = <span class="regexp">/^Cal/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = calRegex.test(rickyAndCal);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-ending-string-patterns" target="_blank" rel="noopener">Match Ending String Patterns</a></p>
-<pre><code class="js">let caboose = &quot;The last car on a train is the caboose&quot;;
-let lastRegex = /caboose$/; // Change this line
-let result = lastRegex.test(caboose);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> caboose = <span class="string">"The last car on a train is the caboose"</span>;</span><br><span class="line"><span class="keyword">let</span> lastRegex = <span class="regexp">/caboose$/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = lastRegex.test(caboose);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-all-letters-and-numbers" target="_blank" rel="noopener">Match All Letters and Numbers</a></p>
-<pre><code class="js">let quoteSample = &quot;The five boxing wizards jump quickly.&quot;;
-let alphabetRegexV2 = /\w/gi; // Change this line
-let result = quoteSample.match(alphabetRegexV2).length;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> quoteSample = <span class="string">"The five boxing wizards jump quickly."</span>;</span><br><span class="line"><span class="keyword">let</span> alphabetRegexV2 = <span class="regexp">/\w/gi</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = quoteSample.match(alphabetRegexV2).length;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-everything-but-letters-and-numbers" target="_blank" rel="noopener">Match Everything But Letters and Numbers</a></p>
-<pre><code class="js">let quoteSample = &quot;The five boxing wizards jump quickly.&quot;;
-let nonAlphabetRegex = /\W/gi; // Change this line
-let result = quoteSample.match(nonAlphabetRegex).length;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> quoteSample = <span class="string">"The five boxing wizards jump quickly."</span>;</span><br><span class="line"><span class="keyword">let</span> nonAlphabetRegex = <span class="regexp">/\W/gi</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = quoteSample.match(nonAlphabetRegex).length;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-all-numbers" target="_blank" rel="noopener">Match All Numbers</a></p>
-<pre><code class="js">let numString = &quot;Your sandwich will be $5.00&quot;;
-let numRegex = /\d/g; // Change this line
-let result = numString.match(numRegex).length;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numString = <span class="string">"Your sandwich will be $5.00"</span>;</span><br><span class="line"><span class="keyword">let</span> numRegex = <span class="regexp">/\d/g</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = numString.match(numRegex).length;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-all-non-numbers" target="_blank" rel="noopener">Match All Non-Numbers</a></p>
-<pre><code class="js">let numString = &quot;Your sandwich will be $5.00&quot;;
-let noNumRegex = /\D/gi; // Change this line
-let result = numString.match(noNumRegex).length;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numString = <span class="string">"Your sandwich will be $5.00"</span>;</span><br><span class="line"><span class="keyword">let</span> noNumRegex = <span class="regexp">/\D/gi</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = numString.match(noNumRegex).length;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/restrict-possible-usernames" target="_blank" rel="noopener">Restrict Possible Usernames</a></p>
-<pre><code class="js">let username = &quot;JackOfAllTrades&quot;;
-let userCheck = /[A-Za-z]+[A-Za-z]+\d*$/; // Change this line
-let result = userCheck.test(username);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> username = <span class="string">"JackOfAllTrades"</span>;</span><br><span class="line"><span class="keyword">let</span> userCheck = <span class="regexp">/[A-Za-z]+[A-Za-z]+\d*$/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = userCheck.test(username);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-whitespace" target="_blank" rel="noopener">Match Whitespace</a></p>
-<pre><code class="js">let sample = &quot;Whitespace is important in separating words&quot;;
-let countWhiteSpace = /\s/g; // Change this line
-let result = sample.match(countWhiteSpace);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sample = <span class="string">"Whitespace is important in separating words"</span>;</span><br><span class="line"><span class="keyword">let</span> countWhiteSpace = <span class="regexp">/\s/g</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = sample.match(countWhiteSpace);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-non-whitespace-characters" target="_blank" rel="noopener">Match Non-Whitespace Characters</a></p>
-<pre><code class="js">let sample = &quot;Whitespace is important in separating words&quot;;
-let countNonWhiteSpace = /\S/g; // Change this line
-let result = sample.match(countNonWhiteSpace);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sample = <span class="string">"Whitespace is important in separating words"</span>;</span><br><span class="line"><span class="keyword">let</span> countNonWhiteSpace = <span class="regexp">/\S/g</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = sample.match(countNonWhiteSpace);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/specify-upper-and-lower-number-of-matches" target="_blank" rel="noopener">Specify Upper and Lower Number of Matches</a></p>
-<pre><code class="js">let ohStr = &quot;Ohhh no&quot;;
-let ohRegex = /[^h]h{3,6}[^h]/; // Change this line
-let result = ohRegex.test(ohStr); 
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> ohStr = <span class="string">"Ohhh no"</span>;</span><br><span class="line"><span class="keyword">let</span> ohRegex = <span class="regexp">/[^h]h&#123;3,6&#125;[^h]/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = ohRegex.test(ohStr);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/specify-only-the-lower-number-of-matches" target="_blank" rel="noopener">Specify Only the Lower Number of Matches</a></p>
-<pre><code class="js">let haStr = &quot;Hazzzzah&quot;;
-let haRegex = /Haz{4,}ah/; // Change this line
-let result = haRegex.test(haStr);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> haStr = <span class="string">"Hazzzzah"</span>;</span><br><span class="line"><span class="keyword">let</span> haRegex = <span class="regexp">/Haz&#123;4,&#125;ah/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = haRegex.test(haStr);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/specify-exact-number-of-matches" target="_blank" rel="noopener">Specify Exact Number of Matches</a></p>
-<pre><code class="js">let timStr = &quot;Timmmmber&quot;;
-let timRegex = /Tim{4}ber/; // Change this line
-let result = timRegex.test(timStr);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> timStr = <span class="string">"Timmmmber"</span>;</span><br><span class="line"><span class="keyword">let</span> timRegex = <span class="regexp">/Tim&#123;4&#125;ber/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = timRegex.test(timStr);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/check-for-all-or-none" target="_blank" rel="noopener">Check for All or None</a></p>
-<pre><code class="js">let favWord = &quot;favorite&quot;;
-let favRegex = /favou?rite/; // Change this line
-let result = favRegex.test(favWord);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> favWord = <span class="string">"favorite"</span>;</span><br><span class="line"><span class="keyword">let</span> favRegex = <span class="regexp">/favou?rite/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = favRegex.test(favWord);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/positive-and-negative-lookahead" target="_blank" rel="noopener">Positive and Negative Lookahead</a></p>
-<pre><code class="js">let sampleWord = &quot;astronaut&quot;;
-let pwRegex = /(?=\w{5,})(?=\D*\d{2,})/; // Change this line
-let result = pwRegex.test(sampleWord);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sampleWord = <span class="string">"astronaut"</span>;</span><br><span class="line"><span class="keyword">let</span> pwRegex = <span class="regexp">/(?=\w&#123;5,&#125;)(?=\D*\d&#123;2,&#125;)/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = pwRegex.test(sampleWord);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/reuse-patterns-using-capture-groups" target="_blank" rel="noopener">Reuse Patterns Using Capture Groups</a></p>
-<pre><code class="js">let repeatNum = &quot;42 42 42&quot;;
-let reRegex = /^(\d+)\s\1\s\1$/; // Change this line
-let result = reRegex.test(repeatNum);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> repeatNum = <span class="string">"42 42 42"</span>;</span><br><span class="line"><span class="keyword">let</span> reRegex = <span class="regexp">/^(\d+)\s\1\s\1$/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = reRegex.test(repeatNum);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/use-capture-groups-to-search-and-replace" target="_blank" rel="noopener">Use Capture Groups to Search and Replace</a></p>
-<pre><code class="js">let huhText = &quot;This sandwich is good.&quot;;
-let fixRegex = /good/; // Change this line
-let replaceText = &quot;okey-dokey&quot;; // Change this line
-let result = huhText.replace(fixRegex, replaceText);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> huhText = <span class="string">"This sandwich is good."</span>;</span><br><span class="line"><span class="keyword">let</span> fixRegex = <span class="regexp">/good/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> replaceText = <span class="string">"okey-dokey"</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = huhText.replace(fixRegex, replaceText);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/remove-whitespace-from-start-and-end" target="_blank" rel="noopener">Remove Whitespace from Start and End</a></p>
-<pre><code class="js">let hello = &quot;   Hello, World!  &quot;;
-let wsRegex = /\S+\s?\S+/; // Change this line
-let result = hello.match(wsRegex)[0]; // Change this line
-</code></pre>
-</li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> hello = <span class="string">"   Hello, World!  "</span>;</span><br><span class="line"><span class="keyword">let</span> wsRegex = <span class="regexp">/\S+\s?\S+/</span>; <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">let</span> result = hello.match(wsRegex)[<span class="number">0</span>]; <span class="comment">// Change this line</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -822,8 +721,8 @@ let result = hello.match(wsRegex)[0]; // Change this line
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/02/ES6/" rel="next" title="ES6">
-                <i class="fa fa-chevron-left"></i> ES6
+              <a href="/2018/07/04/Debugging/" rel="next" title="Debugging">
+                <i class="fa fa-chevron-left"></i> Debugging
               </a>
             
           </div>
@@ -832,8 +731,8 @@ let result = hello.match(wsRegex)[0]; // Change this line
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/04/数据结构基础/" rel="prev" title="数据结构基础">
-                数据结构基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/06/算法基础/" rel="prev" title="算法基础">
+                算法基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1061,7 +960,7 @@ let result = hello.match(wsRegex)[0]; // Change this line
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.5k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

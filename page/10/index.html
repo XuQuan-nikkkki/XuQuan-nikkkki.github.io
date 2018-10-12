@@ -442,7 +442,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  907 字
+                  1,016 字
                 </span>
               
 
@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -657,7 +657,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  525 字
+                  562 字
                 </span>
               
 
@@ -673,7 +673,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -861,7 +861,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  527 字
+                  539 字
                 </span>
               
 
@@ -1476,7 +1476,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,746 字
+                  2,241 字
                 </span>
               
 
@@ -1492,7 +1492,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10 分钟
+                  13 分钟
                 </span>
               
             </div>
@@ -1683,7 +1683,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,293 字
+                  1,651 字
                 </span>
               
 
@@ -1699,7 +1699,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7 分钟
+                  10 分钟
                 </span>
               
             </div>
@@ -2093,7 +2093,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,287 字
+                  1,518 字
                 </span>
               
 
@@ -2109,7 +2109,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8 分钟
+                  9 分钟
                 </span>
               
             </div>
@@ -2296,7 +2296,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  269 字
+                  309 字
                 </span>
               
 
@@ -2312,7 +2312,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -2338,47 +2338,8 @@
             <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>In this kata, you must create a digital root function.</p>
 <p>A digital root is the recursive sum of all the digits in a number. Given n, take the sum of the digits of n. If that value has two digits, continue reducing in this way until a single-digit number is produced. This is only applicable to the natural numbers.</p>
 <p>Here’s how it works (Ruby example given):</p>
-<pre><code>digital_root(16)
-=&gt; 1 + 6
-=&gt; 7
-
-digital_root(942)
-=&gt; 9 + 4 + 2
-=&gt; 15 ...
-=&gt; 1 + 5
-=&gt; 6
-
-digital_root(132189)
-=&gt; 1 + 3 + 2 + 1 + 8 + 9
-=&gt; 24 ...
-=&gt; 2 + 4
-=&gt; 6
-
-digital_root(493193)
-=&gt; 4 + 9 + 3 + 1 + 9 + 3
-=&gt; 29 ...
-=&gt; 2 + 9
-=&gt; 11 ...
-=&gt; 1 + 1
-=&gt; 2
-</code></pre><h2 id="我的解答："><a href="#我的解答：" class="headerlink" title="我的解答："></a>我的解答：</h2><pre><code class="js">function digital_root(n) {
-  function sum(n) {
-    let arr = [];
-    let result = 0;
-    n = n + &#39;&#39;;
-    for(let i of n) {
-      result += parseInt(i);
-    }
-    return result;
-  }
-  let res = sum(n);
-  if(res &gt; 9) {
-    return sum(res);
-  } else {
-    return res;
-  }
-}
-</code></pre>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">digital_root(<span class="number">16</span>)</span><br><span class="line">=&gt; <span class="number">1</span> + <span class="number">6</span></span><br><span class="line">=&gt; <span class="number">7</span></span><br><span class="line"></span><br><span class="line">digital_root(<span class="number">942</span>)</span><br><span class="line">=&gt; <span class="number">9</span> + <span class="number">4</span> + <span class="number">2</span></span><br><span class="line">=&gt; <span class="number">15</span> ...</span><br><span class="line">=&gt; <span class="number">1</span> + <span class="number">5</span></span><br><span class="line">=&gt; <span class="number">6</span></span><br><span class="line"></span><br><span class="line">digital_root(<span class="number">132189</span>)</span><br><span class="line">=&gt; <span class="number">1</span> + <span class="number">3</span> + <span class="number">2</span> + <span class="number">1</span> + <span class="number">8</span> + <span class="number">9</span></span><br><span class="line">=&gt; <span class="number">24</span> ...</span><br><span class="line">=&gt; <span class="number">2</span> + <span class="number">4</span></span><br><span class="line">=&gt; <span class="number">6</span></span><br><span class="line"></span><br><span class="line">digital_root(<span class="number">493193</span>)</span><br><span class="line">=&gt; <span class="number">4</span> + <span class="number">9</span> + <span class="number">3</span> + <span class="number">1</span> + <span class="number">9</span> + <span class="number">3</span></span><br><span class="line">=&gt; <span class="number">29</span> ...</span><br><span class="line">=&gt; <span class="number">2</span> + <span class="number">9</span></span><br><span class="line">=&gt; <span class="number">11</span> ...</span><br><span class="line">=&gt; <span class="number">1</span> + <span class="number">1</span></span><br><span class="line">=&gt; <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h2 id="我的解答："><a href="#我的解答：" class="headerlink" title="我的解答："></a>我的解答：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">digital_root</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> arr = [];</span><br><span class="line">    <span class="keyword">let</span> result = <span class="number">0</span>;</span><br><span class="line">    n = n + <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> n) &#123;</span><br><span class="line">      result += <span class="built_in">parseInt</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> res = sum(n);</span><br><span class="line">  <span class="keyword">if</span>(res &gt; <span class="number">9</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> sum(res);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>思路:<br>因为结果需要一直重复轮加，直到最终结果小于10，所以会考虑到递归。在函数内部创建一个基础的函数，先算出n所有位数相加的结果，如果大于10，再对结果使用基础函数。<br>基础函数的思路是，先将参数数字n转换为字符串，使其具有可遍历性，然后轮加，求得最终结果，返回给digital_root函数。</p>
 </blockquote>
@@ -2591,7 +2552,7 @@ digital_root(493193)
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.5k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 
