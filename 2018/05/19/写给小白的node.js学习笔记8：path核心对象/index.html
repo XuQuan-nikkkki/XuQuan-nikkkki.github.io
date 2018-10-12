@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  232 字
+                  257 字
                 </span>
               
 
@@ -492,41 +492,16 @@
 <li><code>path.parse</code> 将文件路径解析成对象</li>
 </ul>
 <a id="more"></a>
-<h5 id="1-path-join方法"><a href="#1-path-join方法" class="headerlink" title="1. path.join方法"></a>1. <code>path.join</code>方法</h5><pre><code class="js">const path = require(&#39;path&#39;);
-
-let strPath = path.join(_dirname, &#39;///files/&#39;, &#39;jpg&#39;, &#39;1.jpg&#39;);
-console.log(strPath);
-</code></pre>
+<h5 id="1-path-join方法"><a href="#1-path-join方法" class="headerlink" title="1. path.join方法"></a>1. <code>path.join</code>方法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> strPath = path.join(_dirname, <span class="string">'///files/'</span>, <span class="string">'jpg'</span>, <span class="string">'1.jpg'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(strPath);</span><br></pre></td></tr></table></figure>
 <p><code>path.join</code>方法会自动解析参数中的’/‘符，并组合路径名称<br><img src="https://upload-images.jianshu.io/upload_images/9240001-aed3f3e92661964e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p>
 <h5 id="2-path-parse方法"><a href="#2-path-parse方法" class="headerlink" title="2. path.parse方法"></a>2. <code>path.parse</code>方法</h5><p><code>path/parse</code>方法用于将文件路径解析成对象。</p>
-<pre><code class="js">const path = require(&#39;path&#39;);
-
-let strPath = path.join(_dirname,&#39;///files/&#39;, &#39;jpg&#39;, &#39;1.jpg&#39;);
-
-const pathObj = path.parse(strPath);
-
-console.log(pathObj);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> strPath = path.join(_dirname,<span class="string">'///files/'</span>, <span class="string">'jpg'</span>, <span class="string">'1.jpg'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pathObj = path.parse(strPath);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pathObj);</span><br></pre></td></tr></table></figure>
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-f1f3541e4d22e2d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="解析为对象"></p>
 <p><code>pathObj</code>的属性依据原字符串生成，可以改动，但不会对文件路径生效</p>
-<pre><code class="js">//接上面
-const pathObj = path.parse(strPath);
-
-pathObj.ext = &#39;.txt&#39;;
-pathObj.name = &#39;2&#39;;
-
-console.log(pathObj);
-console.log(strPath);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接上面</span></span><br><span class="line"><span class="keyword">const</span> pathObj = path.parse(strPath);</span><br><span class="line"></span><br><span class="line">pathObj.ext = <span class="string">'.txt'</span>;</span><br><span class="line">pathObj.name = <span class="string">'2'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pathObj);</span><br><span class="line"><span class="built_in">console</span>.log(strPath);</span><br></pre></td></tr></table></figure>
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-9aa454756b5ccf1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ext和name属性被修改，但是修改对dir属性无效"></p>
 <p>修改dir属性的唯一入口是base属性，修改base属性能够达到修改文件名信息和文件后缀的效果</p>
-<pre><code class="js">//接上面
-pathObj.base = &quot;newFile.txt&quot;;
-console.log(pathObj);
-
-let strPathNew = path.formath(pathObj);
-console.log(strPathNew);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接上面</span></span><br><span class="line">pathObj.base = <span class="string">"newFile.txt"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(pathObj);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> strPathNew = path.formath(pathObj);</span><br><span class="line"><span class="built_in">console</span>.log(strPathNew);</span><br></pre></td></tr></table></figure>
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-2ba8143f9f5a6364.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="通过base属性修改文件信息"></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-f1916e4a3e669e85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="node.js的内置对象不完全小结"></p>
 
@@ -559,8 +534,8 @@ console.log(strPathNew);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/19/写给小白的node.js学习笔记7：process全局对象的filename和dirname属性/" rel="next" title="node.js学习笔记7：process全局对象的filename和dirname属性">
-                <i class="fa fa-chevron-left"></i> node.js学习笔记7：process全局对象的filename和dirname属性
+              <a href="/2018/05/19/写给小白的node.js学习笔记9： express-基本路由/" rel="next" title="node.js学习笔记9： express-基本路由">
+                <i class="fa fa-chevron-left"></i> node.js学习笔记9： express-基本路由
               </a>
             
           </div>
@@ -569,8 +544,8 @@ console.log(strPathNew);
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/20/Nikkkki的一周分享001/" rel="prev" title="Nikkkki的一周分享001">
-                Nikkkki的一周分享001 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/19/写给小白的node.js学习笔记7：process全局对象的filename和dirname属性/" rel="prev" title="node.js学习笔记7：process全局对象的filename和dirname属性">
+                node.js学习笔记7：process全局对象的filename和dirname属性 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -798,7 +773,7 @@ console.log(strPathNew);
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

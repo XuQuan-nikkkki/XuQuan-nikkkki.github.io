@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  265 字
+                  282 字
                 </span>
               
 
@@ -485,24 +485,7 @@
         <p>最近开始了<a href="https://freecodecamp.cn/challenges/manage-packages-with-npm" target="_blank" rel="noopener">FreeCodeCamp上的Node.js课程</a>,它的课程可以通过<code>npm install learnyounode -g</code>来全局下载node.js的学习模块一步步完成课程挑战来学习基本操作，课程推荐在<a href="https://c9.io" target="_blank" rel="noopener">c9</a>的虚拟Ubuntu操作系统上完成，但是我实测非常不推荐用虚拟操作系统，非常非常慢，且资源占用非常可怕，经常会拖到浏览器卡死。而且这部分课程也不需要提交完成挑战的线上链接，所以完全可以自己用终端来下载模块学习。</p>
 <a id="more"></a>
 <p>FCC这部分课程的搭建服务器挑战不同于之前课程提到的通过<code>http</code>模块完成，它指定用<code>net</code>模块来完成TCP连接，所以需要用到<code>net</code>模块。</p>
-<pre><code class="js">//1. 引入模块
-const net = require(&quot;net&quot;);
-//2. 创建服务器
-let server = net.createServer((c) =&gt; {
-  // &#39;connection&#39; listener
-  console.log(&quot;client connected&quot;);
-  c.on(&#39;end&#39;, () =&gt; {
-    console.log(&#39;client disconnected&#39;);
-  });
-  c.pipe(c);
-})
-server.on(&#39;error&#39;, (err) =&gt; {
-  throw err;
-});
-server.listen(9000, () =&gt; {
-  console.log(&quot;server running at 9000&quot;);
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 引入模块</span></span><br><span class="line"><span class="keyword">const</span> net = <span class="built_in">require</span>(<span class="string">"net"</span>);</span><br><span class="line"><span class="comment">//2. 创建服务器</span></span><br><span class="line"><span class="keyword">let</span> server = net.createServer(<span class="function">(<span class="params">c</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 'connection' listener</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"client connected"</span>);</span><br><span class="line">  c.on(<span class="string">'end'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'client disconnected'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  c.pipe(c);</span><br><span class="line">&#125;)</span><br><span class="line">server.on(<span class="string">'error'</span>, (err) =&gt; &#123;</span><br><span class="line">  <span class="keyword">throw</span> err;</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>在浏览器打开<code>localhost:9000</code>会触发connection，后台会输出：<br><img src="https://upload-images.jianshu.io/upload_images/9240001-4040aa72a7e6ff23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="后台输出"></p>
 
       
@@ -748,7 +731,7 @@ server.listen(9000, () =&gt; {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

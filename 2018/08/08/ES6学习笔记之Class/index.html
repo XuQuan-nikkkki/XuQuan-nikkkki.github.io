@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  573 字
+                  620 字
                 </span>
               
 
@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -496,29 +496,10 @@
 <a id="more"></a>
 <hr>
 <h3 id="Class的用法"><a href="#Class的用法" class="headerlink" title="Class的用法"></a><code>Class</code>的用法</h3><p>JavaScript和传统的面向对象语言在生成实例对象的方法上有很大差异。在<a href="https://xuquan.site/2018/08/07/%E3%80%8CLearning%E3%80%8DJavaScript%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%83%E7%A7%8D%E6%96%B9%E5%BC%8F/">JavaScript创建对象的文章</a>里可以看到，JavaScript有很多种实现创建对象的方法，最常用的是组合构造函数方式与原型方式。</p>
-<pre><code>function User(name, pass) {
-  this.name = name;
-  this.pass = pass;
-}
-
-User.prototype.showName = function() {
-  console.log(&quot;name: &quot; + this.name);
-}
-
-var usr1 = new User(&quot;Tom&quot;, 123456);
-</code></pre><p>ES6提出了一种更接近传统语言的写法，并且引入了<code>Class</code>（类）这个概念，作为对象的模板。</p>
-<pre><code>class User {
-  constructor(name, pass) {
-    this.name = name;
-    this.pass = pass;
-  }
-
-  showName() {
-    console.log(&quot;name: &quot; + this.name);
-  }
-}
-var usr1 = new User(&quot;Tom&quot;, 123456);
-</code></pre><p>事实上，ES6的类并不是真正的类，而是一个语法糖，但总体来说，它的写法还是方便了很多。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">name, pass</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.pass = pass;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">User.prototype.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"name: "</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> usr1 = <span class="keyword">new</span> User(<span class="string">"Tom"</span>, <span class="number">123456</span>);</span><br></pre></td></tr></table></figure>
+<p>ES6提出了一种更接近传统语言的写法，并且引入了<code>Class</code>（类）这个概念，作为对象的模板。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name, pass) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.pass = pass;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  showName() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"name: "</span> + <span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> usr1 = <span class="keyword">new</span> User(<span class="string">"Tom"</span>, <span class="number">123456</span>);</span><br></pre></td></tr></table></figure>
+<p>事实上，ES6的类并不是真正的类，而是一个语法糖，但总体来说，它的写法还是方便了很多。</p>
 <h4 id="Class的特征："><a href="#Class的特征：" class="headerlink" title="Class的特征："></a><code>Class</code>的特征：</h4><ul>
 <li><code>class</code>关键字来定义类（类后面不用跟参数）</li>
 <li>类内部有<code>constructor</code>方法，即构造器，它来定义类的属性</li>
@@ -529,35 +510,12 @@ var usr1 = new User(&quot;Tom&quot;, 123456);
 <li>方法和属性之间不用<code>,</code></li>
 </ul>
 <h5 id="为类添加多个方法"><a href="#为类添加多个方法" class="headerlink" title="为类添加多个方法"></a>为类添加多个方法</h5><p>当需要给一个类添加多个方法的时候，我们可以把每个方法都分别添加到<code>User.prototype</code>上，但是这样比较麻烦，这里可以用到我们前面在对象的扩展里提到的<code>Object.assign</code>方法</p>
-<pre><code>Object.assign(User.prototyper, {
-  fn1(){console.log(1)},
-  fn2(){console.log(2)}
-})
-</code></pre><h3 id="Class的继承"><a href="#Class的继承" class="headerlink" title="Class的继承"></a><code>Class</code>的继承</h3><p>相比起类本身，在ES6中，类的继承的写法更为优雅。我们接着上面的例子来：</p>
-<pre><code>//ES5写法
-function VipUser(name, pass, level) {
-  User.call(this, name, pass);
-  this.level = level;
-}
-
-VipUser.prototype = new User();
-VipUser.prototype.constructor = VipUser;
-
-VipUser.prototype.showLevel = function() {
-  console.log(&quot;level: &quot; + this.level);
-}
-</code></pre><p>ES5需要通过<code>call</code>方法来将<code>VipUser</code>的<code>this</code>指向<code>User</code>，再添加自己的属性。同样让<code>VipUser</code>的原型指向<code>User</code>，同时让构造器还是指向自己。</p>
-<pre><code>//ES6写法
-class VipUser extends User {
-  constructor(name, pass, level) {
-    super(name, pass);
-    this.level = level;
-  }
-  showLevel() {
-    console.log(&quot;level: &quot; + this.level);
-  }
-}
-</code></pre><h4 id="Class继承的特征："><a href="#Class继承的特征：" class="headerlink" title="Class继承的特征："></a><code>Class</code>继承的特征：</h4><ul>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Object</span><span class="selector-class">.assign</span>(User.prototyper, &#123;</span><br><span class="line">  <span class="selector-tag">fn1</span>()&#123;<span class="selector-tag">console</span><span class="selector-class">.log</span>(<span class="number">1</span>)&#125;,</span><br><span class="line">  <span class="selector-tag">fn2</span>()&#123;<span class="selector-tag">console</span><span class="selector-class">.log</span>(<span class="number">2</span>)&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Class的继承"><a href="#Class的继承" class="headerlink" title="Class的继承"></a><code>Class</code>的继承</h3><p>相比起类本身，在ES6中，类的继承的写法更为优雅。我们接着上面的例子来：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5写法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">VipUser</span>(<span class="params">name, pass, level</span>) </span>&#123;</span><br><span class="line">  User.call(<span class="keyword">this</span>, name, pass);</span><br><span class="line">  <span class="keyword">this</span>.level = level;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">VipUser.prototype = <span class="keyword">new</span> User();</span><br><span class="line">VipUser.prototype.constructor = VipUser;</span><br><span class="line"></span><br><span class="line">VipUser.prototype.showLevel = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"level: "</span> + <span class="keyword">this</span>.level);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ES5需要通过<code>call</code>方法来将<code>VipUser</code>的<code>this</code>指向<code>User</code>，再添加自己的属性。同样让<code>VipUser</code>的原型指向<code>User</code>，同时让构造器还是指向自己。</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES6写法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">VipUser</span> <span class="keyword">extends</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">  constructor(name, pass, level) &#123;</span><br><span class="line">    <span class="keyword">super</span>(name, pass);</span><br><span class="line">    <span class="keyword">this</span>.level = level;</span><br><span class="line">  &#125;</span><br><span class="line">  showLevel() &#123;</span><br><span class="line">    console.log(<span class="string">"level: "</span> + <span class="keyword">this</span>.level);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Class继承的特征："><a href="#Class继承的特征：" class="headerlink" title="Class继承的特征："></a><code>Class</code>继承的特征：</h4><ul>
 <li>子类<code>extends</code>父类</li>
 <li>构造器内，<code>super</code>需要继承父类的属性</li>
 </ul>
@@ -832,7 +790,7 @@ class VipUser extends User {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

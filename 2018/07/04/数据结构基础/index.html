@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,247 字
+                  1,526 字
                 </span>
               
 
@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7 分钟
+                  9 分钟
                 </span>
               
             </div>
@@ -524,343 +524,64 @@
 <hr>
 <h4 id="Introduction-to-the-Basic-Data-Structure-Challenges"><a href="#Introduction-to-the-Basic-Data-Structure-Challenges" class="headerlink" title="Introduction to the Basic Data Structure Challenges"></a><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures" target="_blank" rel="noopener">Introduction to the Basic Data Structure Challenges</a></h4><ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/use-an-array-to-store-a-collection-of-data" target="_blank" rel="noopener">Use an Array to Store a Collection of Data</a></p>
-<pre><code class="js">let yourArray = [true, &quot;abc&quot;, 12, [1, 2], {a: 1, b: 2}]; // change this line
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> yourArray = [<span class="literal">true</span>, <span class="string">"abc"</span>, <span class="number">12</span>, [<span class="number">1</span>, <span class="number">2</span>], &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>&#125;]; <span class="comment">// change this line</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/access-an-arrays-contents-using-bracket-notation" target="_blank" rel="noopener">Access an Array’s Contents Using Bracket Notation</a></p>
-<pre><code class="js">let myArray = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;];
-// change code below this line
-myArray[1] = &quot;hello&quot;;
-//change code above this line
-console.log(myArray);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myArray = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>];</span><br><span class="line"><span class="comment">// change code below this line</span></span><br><span class="line">myArray[<span class="number">1</span>] = <span class="string">"hello"</span>;</span><br><span class="line"><span class="comment">//change code above this line</span></span><br><span class="line"><span class="built_in">console</span>.log(myArray);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/add-items-to-an-array-with-push-and-unshift" target="_blank" rel="noopener">Add Items to an Array with push() and unshift()</a></p>
-<pre><code class="js">function mixedNumbers(arr) {
-  // change code below this line
-    arr.unshift(&#39;I&#39;, 2, &#39;three&#39;);
-    arr.push(7, &#39;VIII&#39;, 9);
-  // change code above this line
-  return arr;
-}
-
-// do not change code below this line
-console.log(mixedNumbers([&#39;IV&#39;, 5, &#39;six&#39;]));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mixedNumbers</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">    arr.unshift(<span class="string">'I'</span>, <span class="number">2</span>, <span class="string">'three'</span>);</span><br><span class="line">    arr.push(<span class="number">7</span>, <span class="string">'VIII'</span>, <span class="number">9</span>);</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// do not change code below this line</span></span><br><span class="line"><span class="built_in">console</span>.log(mixedNumbers([<span class="string">'IV'</span>, <span class="number">5</span>, <span class="string">'six'</span>]));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/remove-items-from-an-array-with-pop-and-shift" target="_blank" rel="noopener">Remove Items from an Array with pop() and shift()</a></p>
-<pre><code class="js">function popShift(arr) {
-  let popped = arr.pop(); // change this line
-  let shifted = arr.shift(); // change this line
-  return [shifted, popped];
-}
-
-// do not change code below this line
-console.log(popShift([&#39;challenge&#39;, &#39;is&#39;, &#39;not&#39;, &#39;complete&#39;]));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">popShift</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> popped = arr.pop(); <span class="comment">// change this line</span></span><br><span class="line">  <span class="keyword">let</span> shifted = arr.shift(); <span class="comment">// change this line</span></span><br><span class="line">  <span class="keyword">return</span> [shifted, popped];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// do not change code below this line</span></span><br><span class="line"><span class="built_in">console</span>.log(popShift([<span class="string">'challenge'</span>, <span class="string">'is'</span>, <span class="string">'not'</span>, <span class="string">'complete'</span>]));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/remove-items-using-splice" target="_blank" rel="noopener">Remove Items Using splice()</a></p>
-<pre><code class="js">function sumOfTen(arr) {
-  // change code below this line
-  arr.splice(1,2);
-  // change code above this line
-  return arr.reduce((a, b) =&gt; a + b);
-}
-
-// do not change code below this line
-console.log(sumOfTen([2, 5, 1, 5, 2, 1]));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumOfTen</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  arr.splice(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">  <span class="keyword">return</span> arr.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// do not change code below this line</span></span><br><span class="line"><span class="built_in">console</span>.log(sumOfTen([<span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">1</span>]));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/add-items-using-splice" target="_blank" rel="noopener">Add Items Using splice()</a></p>
-<pre><code class="js">function htmlColorNames(arr) {
-  // change code below this line
-  arr.splice(0, 2, &quot;DarkSalmon&quot;, &quot;BlanchedAlmond&quot;);
-  // change code above this line
-  return arr;
-} 
-
-// do not change code below this line
-console.log(htmlColorNames([&#39;DarkGoldenRod&#39;, &#39;WhiteSmoke&#39;, &#39;LavenderBlush&#39;, &#39;PaleTurqoise&#39;, &#39;FireBrick&#39;]));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">htmlColorNames</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  arr.splice(<span class="number">0</span>, <span class="number">2</span>, <span class="string">"DarkSalmon"</span>, <span class="string">"BlanchedAlmond"</span>);</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125; </span><br><span class="line"> </span><br><span class="line"><span class="comment">// do not change code below this line</span></span><br><span class="line"><span class="built_in">console</span>.log(htmlColorNames([<span class="string">'DarkGoldenRod'</span>, <span class="string">'WhiteSmoke'</span>, <span class="string">'LavenderBlush'</span>, <span class="string">'PaleTurqoise'</span>, <span class="string">'FireBrick'</span>]));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/copy-array-items-using-slice" target="_blank" rel="noopener">Copy Array Items Using slice()</a></p>
-<pre><code class="js">function forecast(arr) {
-  // change code below this line
-  return arr.slice(2, 4);
-}
-
-// do not change code below this line
-console.log(forecast([&#39;cold&#39;, &#39;rainy&#39;, &#39;warm&#39;, &#39;sunny&#39;, &#39;cool&#39;, &#39;thunderstorms&#39;]));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">forecast</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">return</span> arr.slice(<span class="number">2</span>, <span class="number">4</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// do not change code below this line</span></span><br><span class="line"><span class="built_in">console</span>.log(forecast([<span class="string">'cold'</span>, <span class="string">'rainy'</span>, <span class="string">'warm'</span>, <span class="string">'sunny'</span>, <span class="string">'cool'</span>, <span class="string">'thunderstorms'</span>]));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/copy-an-array-with-the-spread-operator" target="_blank" rel="noopener">Copy an Array with the Spread Operator</a></p>
-<pre><code class="js">function copyMachine(arr, num) {
-  let newArr = [];
-  while (num &gt;= 1) {
-    // change code below this line
-    newArr.push([...arr]);
-    // change code above this line
-    num--;
-  }
-  return newArr;
-}
-
-// change code here to test different cases:
-console.log(copyMachine([true, false, true], 2));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyMachine</span>(<span class="params">arr, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> newArr = [];</span><br><span class="line">  <span class="keyword">while</span> (num &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// change code below this line</span></span><br><span class="line">    newArr.push([...arr]);</span><br><span class="line">    <span class="comment">// change code above this line</span></span><br><span class="line">    num--;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// change code here to test different cases:</span></span><br><span class="line"><span class="built_in">console</span>.log(copyMachine([<span class="literal">true</span>, <span class="literal">false</span>, <span class="literal">true</span>], <span class="number">2</span>));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/combine-arrays-with-the-spread-operator" target="_blank" rel="noopener">Combine Arrays with the Spread Operator</a></p>
-<pre><code class="js">function spreadOut() {
-  let fragment = [&#39;to&#39;, &#39;code&#39;];
-  let sentence = [&#39;learning&#39;, ...fragment, &#39;is&#39;, &#39;fun&#39;]; // change this line
-  return sentence;
-}
-
-// do not change code below this line
-console.log(spreadOut());
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">spreadOut</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> fragment = [<span class="string">'to'</span>, <span class="string">'code'</span>];</span><br><span class="line">  <span class="keyword">let</span> sentence = [<span class="string">'learning'</span>, ...fragment, <span class="string">'is'</span>, <span class="string">'fun'</span>]; <span class="comment">// change this line</span></span><br><span class="line">  <span class="keyword">return</span> sentence;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// do not change code below this line</span></span><br><span class="line"><span class="built_in">console</span>.log(spreadOut());</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/check-for-the-presence-of-an-element-with-indexof" target="_blank" rel="noopener">Check For The Presence of an Element With indexOf()</a></p>
-<pre><code class="js">function quickCheck(arr, elem) {
-  // change code below this line
-  if(arr.indexOf(elem) === -1) {
-    return false;
-  }
-  return true;
-  // change code above this line
-}
-
-// change code here to test different cases:
-console.log(quickCheck([&#39;squash&#39;, &#39;onions&#39;, &#39;shallots&#39;], &#39;mushrooms&#39;));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickCheck</span>(<span class="params">arr, elem</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">if</span>(arr.indexOf(elem) === <span class="number">-1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// change code here to test different cases:</span></span><br><span class="line"><span class="built_in">console</span>.log(quickCheck([<span class="string">'squash'</span>, <span class="string">'onions'</span>, <span class="string">'shallots'</span>], <span class="string">'mushrooms'</span>));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/iterate-through-all-an-arrays-items-using-for-loops" target="_blank" rel="noopener">Iterate Through All an Array’s Items Using For Loops</a></p>
-<pre><code class="js">function filteredArray(arr, elem) {
-  let newArr = [];
-  // change code below this line
-  for(let i = 0; i &lt; arr.length; i ++) {
-    if(arr[i].indexOf(elem) === -1){
-      newArr.push(arr[i]);
-    }
-  }
-  // change code above this line
-  return newArr;
-}
-
-// change code here to test different cases:
-console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">filteredArray</span>(<span class="params">arr, elem</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> newArr = [];</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i ++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[i].indexOf(elem) === <span class="number">-1</span>)&#123;</span><br><span class="line">      newArr.push(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">  <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// change code here to test different cases:</span></span><br><span class="line"><span class="built_in">console</span>.log(filteredArray([[<span class="number">3</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">6</span>, <span class="number">3</span>], [<span class="number">3</span>, <span class="number">13</span>, <span class="number">26</span>], [<span class="number">19</span>, <span class="number">3</span>, <span class="number">9</span>]], <span class="number">3</span>));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/create-complex-multi-dimensional-arrays" target="_blank" rel="noopener">Create complex multi-dimensional arrays</a></p>
-<pre><code class="js">let myNestedArray = [
-  // change code below this line
-  [&#39;unshift&#39;, false, 1, 2, 3, &#39;complex&#39;, &#39;nested&#39;,[&#39;deep&#39;, [&#39;deeper&#39;, [&#39;deepest&#39;]]]],
-  [&#39;loop&#39;, &#39;shift&#39;, 6, 7, 1000, &#39;method&#39;],
-  [&#39;concat&#39;, false, true, &#39;spread&#39;, &#39;array&#39;],
-  [&#39;mutate&#39;, 1327.98, &#39;splice&#39;, &#39;slice&#39;, &#39;push&#39;],
-  [&#39;iterate&#39;, 1.3849, 7, &#39;8.4876&#39;, &#39;arbitrary&#39;, &#39;depth&#39;]
-  // change code above this line
-];
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myNestedArray = [</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  [<span class="string">'unshift'</span>, <span class="literal">false</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">'complex'</span>, <span class="string">'nested'</span>,[<span class="string">'deep'</span>, [<span class="string">'deeper'</span>, [<span class="string">'deepest'</span>]]]],</span><br><span class="line">  [<span class="string">'loop'</span>, <span class="string">'shift'</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">1000</span>, <span class="string">'method'</span>],</span><br><span class="line">  [<span class="string">'concat'</span>, <span class="literal">false</span>, <span class="literal">true</span>, <span class="string">'spread'</span>, <span class="string">'array'</span>],</span><br><span class="line">  [<span class="string">'mutate'</span>, <span class="number">1327.98</span>, <span class="string">'splice'</span>, <span class="string">'slice'</span>, <span class="string">'push'</span>],</span><br><span class="line">  [<span class="string">'iterate'</span>, <span class="number">1.3849</span>, <span class="number">7</span>, <span class="string">'8.4876'</span>, <span class="string">'arbitrary'</span>, <span class="string">'depth'</span>]</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/add-key-value-pairs-to-javascript-objects" target="_blank" rel="noopener">Add Key-Value Pairs to JavaScript Objects</a></p>
-<pre><code class="js">let foods = {
-  apples: 25,
-  oranges: 32,
-  plums: 28
-};
-
-// change code below this line
-foods.bananas = 13;
-foods.grapes = 35;
-foods[&quot;strawberries&quot;] = 27;
-// change code above this line
-
-console.log(foods);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foods = &#123;</span><br><span class="line">  apples: <span class="number">25</span>,</span><br><span class="line">  oranges: <span class="number">32</span>,</span><br><span class="line">  plums: <span class="number">28</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// change code below this line</span></span><br><span class="line">foods.bananas = <span class="number">13</span>;</span><br><span class="line">foods.grapes = <span class="number">35</span>;</span><br><span class="line">foods[<span class="string">"strawberries"</span>] = <span class="number">27</span>;</span><br><span class="line"><span class="comment">// change code above this line</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foods);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/modify-an-object-nested-within-an-object" target="_blank" rel="noopener">Modify an Object Nested Within an Object</a></p>
-<pre><code class="js">let userActivity = {
-  id: 23894201352,
-  date: &#39;January 1, 2017&#39;,
-  data: {
-    totalUsers: 51,
-    online: 42
-  }
-};
-
-// change code below this line
-userActivity.data.online = 45;
-// change code above this line
-
-console.log(userActivity);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userActivity = &#123;</span><br><span class="line">  id: <span class="number">23894201352</span>,</span><br><span class="line">  date: <span class="string">'January 1, 2017'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    totalUsers: <span class="number">51</span>,</span><br><span class="line">    online: <span class="number">42</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// change code below this line</span></span><br><span class="line">userActivity.data.online = <span class="number">45</span>;</span><br><span class="line"><span class="comment">// change code above this line</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(userActivity);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/access-property-names-with-bracket-notation" target="_blank" rel="noopener">Access Property Names with Bracket Notation</a></p>
-<pre><code class="js">let foods = {
-  apples: 25,
-  oranges: 32,
-  plums: 28,
-  bananas: 13,
-  grapes: 35,
-  strawberries: 27
-};
-// do not change code above this line
-
-function checkInventory(scannedItem) {
-  // change code below this line
-  return foods[scannedItem];
-}
-
-// change code below this line to test different cases:
-console.log(checkInventory(&quot;apples&quot;));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foods = &#123;</span><br><span class="line">  apples: <span class="number">25</span>,</span><br><span class="line">  oranges: <span class="number">32</span>,</span><br><span class="line">  plums: <span class="number">28</span>,</span><br><span class="line">  bananas: <span class="number">13</span>,</span><br><span class="line">  grapes: <span class="number">35</span>,</span><br><span class="line">  strawberries: <span class="number">27</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// do not change code above this line</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkInventory</span>(<span class="params">scannedItem</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">return</span> foods[scannedItem];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// change code below this line to test different cases:</span></span><br><span class="line"><span class="built_in">console</span>.log(checkInventory(<span class="string">"apples"</span>));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/use-the-delete-keyword-to-remove-object-properties" target="_blank" rel="noopener">Use the delete Keyword to Remove Object Properties</a></p>
-<pre><code class="js">let foods = {
-  apples: 25,
-  oranges: 32,
-  plums: 28,
-  bananas: 13,
-  grapes: 35,
-  strawberries: 27
-};
-
-// change code below this line
-delete foods.oranges;
-delete foods.plums;
-delete foods.strawberries;
-// change code above this line
-
-console.log(foods);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foods = &#123;</span><br><span class="line">  apples: <span class="number">25</span>,</span><br><span class="line">  oranges: <span class="number">32</span>,</span><br><span class="line">  plums: <span class="number">28</span>,</span><br><span class="line">  bananas: <span class="number">13</span>,</span><br><span class="line">  grapes: <span class="number">35</span>,</span><br><span class="line">  strawberries: <span class="number">27</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// change code below this line</span></span><br><span class="line"><span class="keyword">delete</span> foods.oranges;</span><br><span class="line"><span class="keyword">delete</span> foods.plums;</span><br><span class="line"><span class="keyword">delete</span> foods.strawberries;</span><br><span class="line"><span class="comment">// change code above this line</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foods);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/check-if-an-object-has-a-property" target="_blank" rel="noopener">Check if an Object has a Property</a></p>
-<pre><code class="js">let users = {
-  Alan: {
-    age: 27,
-    online: true
-  },
-  Jeff: {
-    age: 32,
-    online: true
-  },
-  Sarah: {
-    age: 48,
-    online: true
-  },
-  Ryan: {
-    age: 19,
-    online: true
-  }
-};
-
-function isEveryoneHere(obj) {
-  // change code below this line
-  if(obj.hasOwnProperty(&#39;Alan&#39;) &amp;&amp; obj.hasOwnProperty(&#39;Jeff&#39;) &amp;&amp; obj.hasOwnProperty(&#39;Sarah&#39;) &amp;&amp; obj.hasOwnProperty(&#39;Ryan&#39;)) {
-    return true;
-  }
-  return false;
-  // change code above this line
-}
-
-console.log(isEveryoneHere(users));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> users = &#123;</span><br><span class="line">  Alan: &#123;</span><br><span class="line">    age: <span class="number">27</span>,</span><br><span class="line">    online: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  Jeff: &#123;</span><br><span class="line">    age: <span class="number">32</span>,</span><br><span class="line">    online: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  Sarah: &#123;</span><br><span class="line">    age: <span class="number">48</span>,</span><br><span class="line">    online: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  Ryan: &#123;</span><br><span class="line">    age: <span class="number">19</span>,</span><br><span class="line">    online: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEveryoneHere</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">if</span>(obj.hasOwnProperty(<span class="string">'Alan'</span>) &amp;&amp; obj.hasOwnProperty(<span class="string">'Jeff'</span>) &amp;&amp; obj.hasOwnProperty(<span class="string">'Sarah'</span>) &amp;&amp; obj.hasOwnProperty(<span class="string">'Ryan'</span>)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(isEveryoneHere(users));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/-iterate-through-the-keys-of-an-object-with-a-for---in-statement" target="_blank" rel="noopener"> Iterate Through the Keys of an Object with a for…in Statement</a></p>
-<pre><code class="js">let users = {
-  Alan: {
-    age: 27,
-    online: false
-  },
-  Jeff: {
-    age: 32,
-    online: true
-  },
-  Sarah: {
-    age: 48,
-    online: false
-  },
-  Ryan: {
-    age: 19,
-    online: true
-  }
-};
-
-function countOnline(obj) {
-  // change code below this line
-  let result = 0;
-  for(let i in obj) {
-    if(obj[i].online === true) {
-      result =result +=1;
-    }
-  }
-  return result;
-  // change code above this line
-}
-
-console.log(countOnline(users));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> users = &#123;</span><br><span class="line">  Alan: &#123;</span><br><span class="line">    age: <span class="number">27</span>,</span><br><span class="line">    online: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  Jeff: &#123;</span><br><span class="line">    age: <span class="number">32</span>,</span><br><span class="line">    online: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  Sarah: &#123;</span><br><span class="line">    age: <span class="number">48</span>,</span><br><span class="line">    online: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  Ryan: &#123;</span><br><span class="line">    age: <span class="number">19</span>,</span><br><span class="line">    online: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countOnline</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">let</span> result = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="keyword">if</span>(obj[i].online === <span class="literal">true</span>) &#123;</span><br><span class="line">      result =result +=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(countOnline(users));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/generate-an-array-of-all-object-keys-with-object-keys" target="_blank" rel="noopener">Generate an Array of All Object Keys with Object.keys()</a></p>
-<pre><code class="js">let users = {
-  Alan: {
-    age: 27,
-    online: false
-  },
-  Jeff: {
-    age: 32,
-    online: true
-  },
-  Sarah: {
-    age: 48,
-    online: false
-  },
-  Ryan: {
-    age: 19,
-    online: true
-  }
-};
-
-function getArrayOfUsers(obj) {
-  // change code below this line
-  return Object.keys(obj);
-  // change code above this line
-}
-
-console.log(getArrayOfUsers(users));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> users = &#123;</span><br><span class="line">  Alan: &#123;</span><br><span class="line">    age: <span class="number">27</span>,</span><br><span class="line">    online: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  Jeff: &#123;</span><br><span class="line">    age: <span class="number">32</span>,</span><br><span class="line">    online: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  Sarah: &#123;</span><br><span class="line">    age: <span class="number">48</span>,</span><br><span class="line">    online: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  Ryan: &#123;</span><br><span class="line">    age: <span class="number">19</span>,</span><br><span class="line">    online: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArrayOfUsers</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// change code below this line</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.keys(obj);</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(getArrayOfUsers(users));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/modify-an-array-stored-in-an-object" target="_blank" rel="noopener">Modify an Array Stored in an Object</a></p>
-<pre><code class="js">let user = {
-  name: &#39;Kenneth&#39;,
-  age: 28,
-  data: {
-    username: &#39;kennethCodesAllDay&#39;,
-    joinDate: &#39;March 26, 2016&#39;,
-    organization: &#39;freeCodeCamp&#39;,
-    friends: [
-      &#39;Sam&#39;,
-      &#39;Kira&#39;,
-      &#39;Tomo&#39;
-    ],
-    location: {
-      city: &#39;San Francisco&#39;,
-      state: &#39;CA&#39;,
-      country: &#39;USA&#39;
-    }
-  }
-};
-
-function addFriend(userObj, friend) {
-  // change code below this line  
-  userObj.data.friends.push(friend);
-  return userObj.data.friends;
-  // change code above this line
-}
-
-console.log(addFriend(user, &#39;Pete&#39;));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  name: <span class="string">'Kenneth'</span>,</span><br><span class="line">  age: <span class="number">28</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    username: <span class="string">'kennethCodesAllDay'</span>,</span><br><span class="line">    joinDate: <span class="string">'March 26, 2016'</span>,</span><br><span class="line">    organization: <span class="string">'freeCodeCamp'</span>,</span><br><span class="line">    friends: [</span><br><span class="line">      <span class="string">'Sam'</span>,</span><br><span class="line">      <span class="string">'Kira'</span>,</span><br><span class="line">      <span class="string">'Tomo'</span></span><br><span class="line">    ],</span><br><span class="line">    location: &#123;</span><br><span class="line">      city: <span class="string">'San Francisco'</span>,</span><br><span class="line">      state: <span class="string">'CA'</span>,</span><br><span class="line">      country: <span class="string">'USA'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addFriend</span>(<span class="params">userObj, friend</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// change code below this line  </span></span><br><span class="line">  userObj.data.friends.push(friend);</span><br><span class="line">  <span class="keyword">return</span> userObj.data.friends;</span><br><span class="line">  <span class="comment">// change code above this line</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(addFriend(user, <span class="string">'Pete'</span>));</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -1134,7 +855,7 @@ console.log(addFriend(user, &#39;Pete&#39;));
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

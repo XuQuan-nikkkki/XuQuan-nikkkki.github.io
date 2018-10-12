@@ -453,7 +453,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6,854 字
+                  6,883 字
                 </span>
               
 
@@ -469,7 +469,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  24 分钟
+                  25 分钟
                 </span>
               
             </div>
@@ -612,7 +612,7 @@
 <li>客户端和服务器会一直保持请求/回复状态，直到客户端发送SMTP QUIT命令。接着服务器会发送再见信息，连接会关闭</li>
 </ol>
 <p>下面是一个简单的SMTP客户端和SMTP服务器的简单”对话“。<strong>R</strong>表示服务器发送的信息，<strong>S</strong>表示客户端发送的信息。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这个SMTP案例展示了Smith在主机USC-ISIF上，给Jones, Green,和Brown的主机BBN-UNIX发送邮件的过程。这里我们假设主机USC-ISIF直接连接主机BBN-UNIX。Jones和Brown收到了邮件。Green在主机BBN-UNIX上没有邮箱。</span><br><span class="line"></span><br><span class="line">-------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">R: 220 BBN-UNIX.ARPA Simple Mail Transfer Service Ready</span><br><span class="line">S: HELO USC-ISIF.ARPA</span><br><span class="line">R: 250 BBN-UNIX.ARPA</span><br><span class="line"></span><br><span class="line">S: MAIL FROM:&lt;Smith@USC-ISIF.ARPA&gt;</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: RCPT TO:&lt;Jones@BBN-UNIX.ARPA&gt;</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: RCPT TO:&lt;Green@BBN-UNIX.ARPA&gt;</span><br><span class="line">R: 550 No such user here</span><br><span class="line"></span><br><span class="line">S: RCPT TO:&lt;Brown@BBN-UNIX.ARPA&gt;</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: DATA</span><br><span class="line">R: 354 Start mail input; end with &lt;CRLF&gt;.&lt;CRLF&gt;</span><br><span class="line">S: Blah blah blah...</span><br><span class="line">S: ...etc. etc. etc.</span><br><span class="line">S: .</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: QUIT</span><br><span class="line">R: 221 BBN-UNIX.ARPA Service closing transmission channel</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">这个SMTP案例展示了Smith在主机USC-ISIF上，给Jones, Green,和Brown的主机BBN-UNIX发送邮件的过程。这里我们假设主机USC-ISIF直接连接主机BBN-UNIX。Jones和Brown收到了邮件。Green在主机BBN-UNIX上没有邮箱。</span><br><span class="line"></span><br><span class="line">-------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">R: 220 BBN-UNIX.ARPA<span class="built_in"> Simple </span>Mail Transfer<span class="built_in"> Service </span>Ready</span><br><span class="line">S: HELO USC-ISIF.ARPA</span><br><span class="line">R: 250 BBN-UNIX.ARPA</span><br><span class="line"></span><br><span class="line">S: MAIL <span class="keyword">FROM</span>:&lt;Smith@USC-ISIF.ARPA&gt;</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: RCPT <span class="keyword">TO</span>:&lt;Jones@BBN-UNIX.ARPA&gt;</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: RCPT <span class="keyword">TO</span>:&lt;Green@BBN-UNIX.ARPA&gt;</span><br><span class="line">R: 550 <span class="literal">No</span> such<span class="built_in"> user </span>here</span><br><span class="line"></span><br><span class="line">S: RCPT <span class="keyword">TO</span>:&lt;Brown@BBN-UNIX.ARPA&gt;</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: DATA</span><br><span class="line">R: 354 Start mail input; end with &lt;CRLF&gt;.&lt;CRLF&gt;</span><br><span class="line">S: Blah blah blah<span class="built_in">..</span>.</span><br><span class="line">S: <span class="built_in">..</span>.etc. etc. etc.</span><br><span class="line">S: .</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: QUIT</span><br><span class="line">R: 221 BBN-UNIX.ARPA<span class="built_in"> Service </span>closing transmission channel</span><br></pre></td></tr></table></figure>
 <p>SMTP协议由RFC 821规定。</p>
 <hr>
 <h3 id="传输控制协议"><a href="#传输控制协议" class="headerlink" title="传输控制协议"></a>传输控制协议</h3><p>在协议栈中，应用层下面是TCP层。当应用与互联网中的另一台计算机建立连接时，他们（通过特定的应用层协议）发送的信息会传递到TCP层。<strong>TCP层负责将应用程序协议导向目标计算机的正确应用程序上</strong>。端口号用来达到这一目标。端口就像计算机上的不同频道。打个比方，你浏览网页的同时也能查看邮件，这是因为这两个应用程序（浏览器和邮件客户端）使用不同的端口号。当数据包传递到计算机上时，它在协议栈中一路向上传递，TCP层根据它的端口号决定哪一个程序接收到这个数据包。</p>
@@ -947,7 +947,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

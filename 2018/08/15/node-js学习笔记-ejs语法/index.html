@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  347 字
+                  415 字
                 </span>
               
 
@@ -488,102 +488,33 @@
         <p>ejs的语法与原生js的更接近，相对于jade没有那么强势。</p>
 <a id="more"></a>
 <h3 id="ejs语法"><a href="#ejs语法" class="headerlink" title="ejs语法"></a>ejs语法</h3><h4 id="1-输出内容"><a href="#1-输出内容" class="headerlink" title="1. 输出内容"></a>1. 输出内容</h4><p>和jade思路一样，但是语法略有不同。</p>
-<pre><code class="js">const ejs = require(&quot;ejs&quot;);
-ejs.renderFile(&quot;view/1.ejs&quot;, {变量}, (err, data) =&gt; {
-  console.log(data);
-})
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ejs = <span class="built_in">require</span>(<span class="string">"ejs"</span>);</span><br><span class="line">ejs.renderFile(<span class="string">"view/1.ejs"</span>, &#123;变量&#125;, (err, data) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h4 id="2-变量"><a href="#2-变量" class="headerlink" title="2. 变量"></a>2. 变量</h4><ul>
 <li><p><code>&lt;%=变量=%&gt;</code></p>
 </li>
 <li><p>变量可以接受任意数据类型</p>
-<pre><code class="ejs">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    我的名字：&lt;%=json.arr[0].name %&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<pre><code class="js">const ejs = require(&quot;ejs&quot;);
-ejs.renderFile(&#39;view/1.ejs&#39;,{json: {arr:[
-    {name: &quot;nikkkki&quot;, pass: 123456},
-    {name: &quot;tom&quot;, pass: 654321},
-    {name: &quot;rose&quot;, pass: 6666666}]
-}},(err,data) =&gt; {
-    console.log(data);
-});
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	我的名字：&lt;%=json.arr[0].name %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ejs = <span class="built_in">require</span>(<span class="string">"ejs"</span>);</span><br><span class="line">ejs.renderFile(<span class="string">'view/1.ejs'</span>,&#123;<span class="attr">json</span>: &#123;<span class="attr">arr</span>:[</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"nikkkki"</span>, <span class="attr">pass</span>: <span class="number">123456</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"tom"</span>, <span class="attr">pass</span>: <span class="number">654321</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"rose"</span>, <span class="attr">pass</span>: <span class="number">6666666</span>&#125;]</span><br><span class="line">&#125;&#125;,(err,data) =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fuapa6r1pdj30d806edkm.jpg" alt="image-20180815212059899"></p>
 </li>
 </ul>
 <h4 id="3-js语法语句"><a href="#3-js语法语句" class="headerlink" title="3. js语法语句"></a>3. js语法语句</h4><ul>
 <li><p>循环</p>
-<pre><code class="js">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;% for(var i=0; i&lt;json.arr.length; i++){ %&gt;
-    &lt;div&gt;用户名： &lt;%=json.arr[i].name%&gt; 密码: &lt;%=json.arr[i].pass%&gt;&lt;/div&gt;
-    &lt;% } %&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<pre><code class="js">const ejs = require(&quot;ejs&quot;);
-ejs.renderFile(&#39;view/1.ejs&#39;,{json: {arr:[
-    {name: &quot;nikkkki&quot;, pass: 123456},
-    {name: &quot;tom&quot;, pass: 654321},
-    {name: &quot;rose&quot;, pass: 6666666}]
-}},(err,data) =&gt; {
-    console.log(data);
-});
-
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">	&lt;title&gt;Document&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;% <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;json.arr.length; i++)&#123; %&gt;</span><br><span class="line">	&lt;div&gt;用户名： &lt;%=json.arr[i].name%&gt; 密码: <span class="xml"><span class="tag">&lt;<span class="name">%=json.arr[i].pass%</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">	&lt;% &#125; %&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ejs = <span class="built_in">require</span>(<span class="string">"ejs"</span>);</span><br><span class="line">ejs.renderFile(<span class="string">'view/1.ejs'</span>,&#123;<span class="attr">json</span>: &#123;<span class="attr">arr</span>:[</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"nikkkki"</span>, <span class="attr">pass</span>: <span class="number">123456</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"tom"</span>, <span class="attr">pass</span>: <span class="number">654321</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"rose"</span>, <span class="attr">pass</span>: <span class="number">6666666</span>&#125;]</span><br><span class="line">&#125;&#125;,(err,data) =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuapgxt3e8j30dr09k10b.jpg" alt="image-20180815212728782"></p>
 </li>
 </ul>
 <h4 id="4-html标签非转义输出"><a href="#4-html标签非转义输出" class="headerlink" title="4. html标签非转义输出"></a>4. html标签非转义输出</h4><ul>
 <li><p>用<code>-</code>减号代替<code>=</code>等号</p>
-<pre><code class="js">const ejs = require(&quot;ejs&quot;);
-ejs.renderFile(&#39;view/1.ejs&#39;,{content:&quot;&lt;div&gt;&lt;p&gt;example&lt;/p&gt;&lt;/div&gt;&quot;},(err,data) =&gt; {
-    console.log(data);
-});
-</code></pre>
-<pre><code class="js">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;%-content%&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ejs = <span class="built_in">require</span>(<span class="string">"ejs"</span>);</span><br><span class="line">ejs.renderFile(<span class="string">'view/1.ejs'</span>,&#123;<span class="attr">content</span>:<span class="string">"&lt;div&gt;&lt;p&gt;example&lt;/p&gt;&lt;/div&gt;"</span>&#125;,(err,data) =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">	&lt;title&gt;Document&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;%-content%&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fuapn9cuxnj30d506htdj.jpg" alt="image-20180815213333496"></p>
 </li>
 </ul>
 <h4 id="5-引用"><a href="#5-引用" class="headerlink" title="5. 引用"></a>5. 引用</h4><ul>
 <li><p>Include引入其他文件</p>
-<pre><code class="ejs">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        &lt;% include ../data/1.txt %&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&lt;% include ../data/1.txt %&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fuappzzsq3j30dl07jgrc.jpg" alt="image-20180815213609299"></p>
 </li>
 <li><p>include中不能用变量</p>
@@ -864,7 +795,7 @@ ejs.renderFile(&#39;view/1.ejs&#39;,{content:&quot;&lt;div&gt;&lt;p&gt;example&l
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

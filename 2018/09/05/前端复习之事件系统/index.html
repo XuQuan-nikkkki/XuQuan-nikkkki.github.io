@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,274 字
+                  4,364 字
                 </span>
               
 
@@ -496,17 +496,9 @@
 <p>事件回调函数由某个特定的事件来触发，比如用户点击或者请求数据库数据。</p>
 </blockquote>
 <h4 id="I-O编程-VS-事件驱动编程"><a href="#I-O编程-VS-事件驱动编程" class="headerlink" title="I/O编程 VS 事件驱动编程"></a>I/O编程 VS 事件驱动编程</h4><p>I/O编程规定事件在某个进程结束之后执行。我们来看一组对比：</p>
-<pre><code class="js">// I/O编程
-let result = query(&quot;SELECT * FROM posts WHERE id = 1&quot;);
-myResult(result);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// I/O编程</span></span><br><span class="line"><span class="keyword">let</span> result = query(<span class="string">"SELECT * FROM posts WHERE id = 1"</span>);</span><br><span class="line">myResult(result);</span><br></pre></td></tr></table></figure>
 <p>在I/O编程中，<code>myResult</code>函数的执行需要等数据库请求这一进程结束之后才会执行。</p>
-<pre><code class="js">// 事件驱动编程
-let query_finished = function(result){
-  myResult(result);
-}
-query(&quot;SELECT * FROM posts WHERE id = 1&quot;, query_finished);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 事件驱动编程</span></span><br><span class="line"><span class="keyword">let</span> query_finished = <span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">  myResult(result);</span><br><span class="line">&#125;</span><br><span class="line">query(<span class="string">"SELECT * FROM posts WHERE id = 1"</span>, query_finished);</span><br></pre></td></tr></table></figure>
 <p>在事件驱动编程中，先定义在数据库请求结束之后要进行什么操作，并将这个操作存储在一个叫做<code>query_finished</code>的函数中，然后将这个函数作为参数传递给数据库请求这一事件。当数据库请求结束时，就会自动触发<code>query_finished</code>函数，而不是仅仅返回请求结果。</p>
 <p>像这种通过定义在特定事件发生时触发特定函数，而非仅仅返回一个结果值的编程风格就叫做事件驱动或异步编程。这种编程风格在执行I/O时，当前进程不会发生阻塞，且可以多个I/O同时进行，每一个I/O的回调函数都会在操作结束时被触发。</p>
 <blockquote>
@@ -556,19 +548,7 @@ query(&quot;SELECT * FROM posts WHERE id = 1&quot;, query_finished);
 </ul>
 <p>比如我们需要一个独立的线程来帮我们作平方数运算，由于平方运算非常耗时，所以我们在一个叫做”squareworker.js”的文件中来写代码。</p>
 <p>为了避免worker线程和其他线程同时操作相同的数据导致错误发生，workers线程不与主线程环境共享它的全局环境和数据，而是利用信息往返来实现数据交换。</p>
-<pre><code class="js">// squareworker.js中输出结果数据
-addEventListener(&quot;message&quot;, event =&gt; {
-  postMessage(event.data * event.data);
-})
-
-// main.js中创建worker
-let squareWorker = new Worker(&quot;squareworker.js&quot;);
-squareWorker.addEventListener(&quot;message&quot;, event =&gt; {
-  console.log(&quot;The worker responded:&quot;, event.data);
-})
-squareWorker.postMessage(10);
-squareWorker.postMessage(24);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// squareworker.js中输出结果数据</span></span><br><span class="line">addEventListener(<span class="string">"message"</span>, event =&gt; &#123;</span><br><span class="line">  postMessage(event.data * event.data);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js中创建worker</span></span><br><span class="line"><span class="keyword">let</span> squareWorker = <span class="keyword">new</span> Worker(<span class="string">"squareworker.js"</span>);</span><br><span class="line">squareWorker.addEventListener(<span class="string">"message"</span>, event =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"The worker responded:"</span>, event.data);</span><br><span class="line">&#125;)</span><br><span class="line">squareWorker.postMessage(<span class="number">10</span>);</span><br><span class="line">squareWorker.postMessage(<span class="number">24</span>);</span><br></pre></td></tr></table></figure>
 <p>我们可以尝试在浏览器中打开（会存在兼容性问题，Chrome需要下载subworker.js文件支持，火狐可以正常打开）</p>
 <p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fuz1j6705mj305t02zmx2.jpg" alt="image-20180905223822638"></p>
 <h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><blockquote>
@@ -586,17 +566,7 @@ squareWorker.postMessage(24);
 </blockquote>
 <h4 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h4><p>通过事件对象的<code>target</code>属性和冒泡过程，我们可以给父元素添加事件监听器，来监听和处理子元素的事件，避免重复为子元素绑定相同的事件。当目标元素被触发时，这个事件会向外传递，冒泡到父元素上，触发父元素绑定的事件函数，父元素可以通过<code>event.target</code>获取到被触发的目标元素。</p>
 <p>比如有一个node节点包含一串<code>button</code>元素，点击按钮会触发相同的事件，那么给这个node节点绑定点击事件就会比给每一个<code>button</code>都绑定点击事件方便得多。而通过<code>event.target</code>即可得知哪一个<code>button</code>被点击了。</p>
-<pre><code class="html">&lt;button&gt;A&lt;/button&gt;
-&lt;button&gt;B&lt;/button&gt;
-&lt;button&gt;C&lt;/button&gt;
-&lt;script&gt;
-  document.body.addEventListener(&quot;click&quot;, event =&gt; {
-    if (event.target.nodeName == &quot;BUTTON&quot;) {
-      console.log(&quot;Clicked&quot;, event.target.textContent);
-    }
-  });
-&lt;/script&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>A<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>B<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>C<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.body.addEventListener(<span class="string">"click"</span>, event =&gt; &#123;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">if</span> (event.target.nodeName == <span class="string">"BUTTON"</span>) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"Clicked"</span>, event.target.textContent);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="事件对象-Event-Object"><a href="#事件对象-Event-Object" class="headerlink" title="事件对象 Event Object"></a>事件对象 Event Object</h3><p>当我们使用事件处理函数时，实际上我们传递了一个参数：事件对象(event object)。这个对象包含了关于事件的其他信息，这些信息因事件类型的不同而不同。</p>
 <p>事件对象只在事件发生时产生，并且只能在事件处理函数内部访问，在所有事件处理函数执行结束后，事件对象就被销毁。</p>
 <h4 id="事件对象的属性"><a href="#事件对象的属性" class="headerlink" title="事件对象的属性"></a>事件对象的属性</h4><h5 id="bubbles"><a href="#bubbles" class="headerlink" title="bubbles"></a><code>bubbles</code></h5><p>返回布尔值，表示事件是否是冒泡事件类型。</p>
@@ -609,16 +579,11 @@ squareWorker.postMessage(24);
 <h5 id="stopPropagation"><a href="#stopPropagation" class="headerlink" title="stopPropagation()"></a><code>stopPropagation()</code></h5><p>不要派发事件。</p>
 <h5 id="兼容性问题"><a href="#兼容性问题" class="headerlink" title="兼容性问题"></a>兼容性问题</h5><p>事件对象也存在一些兼容性问题。</p>
 <h6 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h6><p>IE8之前，注册事件处理函数时，事件对象并没有被传递到函数内部，因此需要使用<code>window.event</code>来获取事件：</p>
-<pre><code class="js">function getEvent(event) {
-  event = event || window.event;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getEvent</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  event = event || <span class="built_in">window</span>.event;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="preventDefault-1"><a href="#preventDefault-1" class="headerlink" title="preventDefault()"></a><code>preventDefault()</code></h6><p>IE没有<code>preventDefault()</code>方法，所以我们需要设置的是：</p>
-<pre><code class="js">window.event.returnValue = false;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.event.returnValue = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
 <h6 id="stopPropagation-1"><a href="#stopPropagation-1" class="headerlink" title="stopPropagation()"></a><code>stopPropagation()</code></h6><p>IE也没有<code>stopPropagation()</code>方法，所以需要设置<code>cancelBubble</code>属性</p>
-<pre><code class="js">event.cancelBubble = true;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">event.cancelBubble = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
 <h3 id="事件处理-1"><a href="#事件处理-1" class="headerlink" title="事件处理"></a>事件处理</h3><p>有个三种方式来给元素添加事件：</p>
 <ul>
 <li>Inline event handlers 内联事件处理器</li>
@@ -626,20 +591,7 @@ squareWorker.postMessage(24);
 <li>Event listeners 事件监听器</li>
 </ul>
 <h4 id="内联事件处理器"><a href="#内联事件处理器" class="headerlink" title="内联事件处理器"></a>内联事件处理器</h4><p>内联事件处理器，也称为HTML事件处理程序，是指直接给元素添加事件属性，事件属性的属性值为事件函数：</p>
-<pre><code class="html">&lt;button onclick=&quot;changeText()&quot;&gt;
-  Click me!
-&lt;/button&gt;
-&lt;p&gt;
-  Try to change me.
-&lt;/p&gt;
-
-&lt;script&gt;
-  const changeText = () =&gt; {
-    const p = document.querySelector(&quot;p&quot;);
-    p.textContent = &quot;I changed because of an inline event handler.&quot;;
-  }
-&lt;/script&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"changeText()"</span>&gt;</span></span><br><span class="line">  Click me!</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  Try to change me.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> changeText = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> p = <span class="built_in">document</span>.querySelector(<span class="string">"p"</span>);</span></span><br><span class="line"><span class="actionscript">    p.textContent = <span class="string">"I changed because of an inline event handler."</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>当我们打开页面时：</p>
 <p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fuyn70syzdj310k0km0tx.jpg" alt="First rendering of events.html"></p>
 <p>当我们点击按钮后：</p>
@@ -647,18 +599,7 @@ squareWorker.postMessage(24);
 <p>内联事件处理器是最直接的理解事件的方式，但是在实际编程过程中，除了测试和教学目的，很少真正使用它们。</p>
 <p>内联事件处理器就和CSS内联样式一样，不易于代码维护，所以不建议使用。</p>
 <h4 id="事件处理属性（DOM0级事件处理程序）"><a href="#事件处理属性（DOM0级事件处理程序）" class="headerlink" title="事件处理属性（DOM0级事件处理程序）"></a>事件处理属性（DOM0级事件处理程序）</h4><p>事件处理属性的触发机制和内联事件处理器类似，只不过我们通过JavaScript来设置元素的属性，而不是直接在HTML中设置。</p>
-<pre><code class="html">&lt;button&gt;Click me!&lt;/button&gt;
-&lt;p&gt;Try to change me.&lt;/p&gt;
-
-&lt;script&gt;
-  const changeText = () =&gt; {
-    const p = document.querySelector(&quot;p&quot;);
-    p.textContent = &quot;I changed because of an  event handler property.&quot;;
-  }
-  const button = document.querySelector(&quot;button&quot;);
-  button.onclick = changeText;
-&lt;/script&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Try to change me.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> changeText = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> p = <span class="built_in">document</span>.querySelector(<span class="string">"p"</span>);</span></span><br><span class="line"><span class="actionscript">    p.textContent = <span class="string">"I changed because of an  event handler property."</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> button = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span></span><br><span class="line"><span class="undefined">  button.onclick = changeText;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>这里需要注意两个细节：</p>
 <ul>
 <li>通过JavaScript来添加<code>onclick</code>属性时，<code>onclick</code>并不用遵循驼峰命名法写成<code>onClick</code></li>
@@ -667,18 +608,7 @@ squareWorker.postMessage(24);
 <p>通过<code>button.onclick = null</code>可以删除事件处理程序。</p>
 <p>通过事件处理属性来添加函数比内联处理器要易于维护，但它同样有一些缺陷，比如它无法传递多个事件处理函数给同一个事件，如果给点击事件赋上多个<code>onclick</code>属性值，后一个事件处理函数会覆盖前一个函数。此外，这种方法也不能控制事件流到底是捕获还是冒泡。</p>
 <h4 id="事件监听器"><a href="#事件监听器" class="headerlink" title="事件监听器"></a>事件监听器</h4><p>事件监听器用于监听元素上的事件，我们通过<code>addEventListener()</code>方法来给监听事件。</p>
-<pre><code class="html">&lt;button&gt;Click me!&lt;/button&gt;
-&lt;p&gt;Try to change me.&lt;/p&gt;
-
-&lt;script&gt;
-  const changeText = () =&gt; {
-    const p = document.querySelector(&quot;p&quot;);
-    p.textContent = &quot;I changed because of an event listener.&quot;;
-  }
-  const button = document.querySelector(&quot;button&quot;);
-  button.addEventListener(&quot;click&quot;, changeText);
-&lt;/script&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Try to change me.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> changeText = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> p = <span class="built_in">document</span>.querySelector(<span class="string">"p"</span>);</span></span><br><span class="line"><span class="actionscript">    p.textContent = <span class="string">"I changed because of an event listener."</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> button = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span></span><br><span class="line"><span class="actionscript">  button.addEventListener(<span class="string">"click"</span>, changeText);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><code>addEventListener()</code>接受三个参数：</p>
 <ol>
 <li>要处理的事件名（不需要添加前缀<code>on</code>）</li>
@@ -701,27 +631,7 @@ squareWorker.postMessage(24);
 <p>它们都接受两个参数，第一个是事件处理程序的名称（不是事件，所以要添加<code>on</code>前缀）；第二个是事件处理函数；之所以没有第三个参数是因为IE8之前只支持冒泡事件流。</p>
 <p>由于支持的是冒泡事件流，如果给元素绑定多个事件处理函数，事件触发的顺序是添加顺序的相反顺序。</p>
 <p><code>attachEvent</code>有一个缺点，不同于<code>addEventListener()</code>的<code>this</code>值指向目标元素，<code>attachEvent()</code>的<code>this</code>值指向<code>window</code>对象。</p>
-<h5 id="跨浏览器的写法"><a href="#跨浏览器的写法" class="headerlink" title="跨浏览器的写法"></a>跨浏览器的写法</h5><pre><code class="js">let EventUtil = {
-  addHandler: function(element, type, handler) {
-    if(element.addEventListener) {
-      element.addEventListener(type, handler, false);
-    } else if (element.attachEvent) {
-      element.attachEvent(&quot;on&quot;+type, handler);
-    } else {
-      element[&quot;on&quot; + type] = handler;
-    }
-  },
-  removeHandler: function(element, type, handler) {
-    if(element.removeEventListener) {
-      element.removeEventListener(type, handler, false);
-    } else if (element.detachEvent) {
-      element.detachEvent(&quot;on&quot;+type, handler);
-    } else {
-      element[&quot;on&quot; + type] = null;
-    }
-  }
-}
-</code></pre>
+<h5 id="跨浏览器的写法"><a href="#跨浏览器的写法" class="headerlink" title="跨浏览器的写法"></a>跨浏览器的写法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> EventUtil = &#123;</span><br><span class="line">  addHandler: <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(element.addEventListener) &#123;</span><br><span class="line">      element.addEventListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.attachEvent) &#123;</span><br><span class="line">      element.attachEvent(<span class="string">"on"</span>+type, handler);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      element[<span class="string">"on"</span> + type] = handler;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  removeHandler: <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(element.removeEventListener) &#123;</span><br><span class="line">      element.removeEventListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.detachEvent) &#123;</span><br><span class="line">      element.detachEvent(<span class="string">"on"</span>+type, handler);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      element[<span class="string">"on"</span> + type] = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="常见事件"><a href="#常见事件" class="headerlink" title="常见事件"></a>常见事件</h3><h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h4><table>
 <thead>
 <tr>
@@ -1164,7 +1074,7 @@ squareWorker.postMessage(24);
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

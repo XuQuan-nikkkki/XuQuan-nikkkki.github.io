@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  598 字
+                  635 字
                 </span>
               
 
@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -512,59 +512,23 @@
 <a id="more"></a>
 <hr>
 <h2 id="新属性"><a href="#新属性" class="headerlink" title="新属性"></a>新属性</h2><h3 id="1-属性的简洁表达法"><a href="#1-属性的简洁表达法" class="headerlink" title="1. 属性的简洁表达法"></a>1. 属性的简洁表达法</h3><p>ES6可以直接写入变量和函数，作为对象的属性和方法</p>
-<pre><code class="js">const foo = &quot;bar&quot;;
-const baz = {foo};
-baz //{foo: &quot;bar&quot;}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = <span class="string">"bar"</span>;</span><br><span class="line"><span class="keyword">const</span> baz = &#123;foo&#125;;</span><br><span class="line">baz <span class="comment">//&#123;foo: "bar"&#125;</span></span><br></pre></td></tr></table></figure>
 <p>这种方法用于写函数的返回值非常方便</p>
-<pre><code class="js">function getPoint() {
-  const x = 1;
-  const y = 10;
-  return {x, y};
-}
-getPoint()  // {x: 1, y: 10}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPoint</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> x = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">const</span> y = <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;x, y&#125;;</span><br><span class="line">&#125;</span><br><span class="line">getPoint()  <span class="comment">// &#123;x: 1, y: 10&#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-属性名表达式"><a href="#2-属性名表达式" class="headerlink" title="2. 属性名表达式"></a>2. 属性名表达式</h3><p>ES5中，表达对象的方法有两种：</p>
-<pre><code class="js">//方法1
-obj.prop = true;
-//方法2
-obj[prop] = true;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line">obj.prop = <span class="literal">true</span>;</span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line">obj[prop] = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
 <p>如果使用大括号来定义对象，则只能使用方法1来定义属性</p>
-<pre><code class="js">let obj = {
-  prop: true
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  prop: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>ES6允许使用方法2作为属性名</p>
-<pre><code class="js">let obj = {
-  [prop]: true;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  [prop]: <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="3-方法的name属性"><a href="#3-方法的name属性" class="headerlink" title="3. 方法的name属性"></a>3. 方法的<code>name</code>属性</h3><p>函数的<code>name</code>属性返回函数名，这点在<a href="https://www.jianshu.com/p/ed21662145cf" target="_blank" rel="noopener">函数的扩展</a>中提到过。对象方法也是函数，因此也有<code>name</code>属性。</p>
-<pre><code class="js">const person = {
-  sayName() {
-    console.log(&quot;hello&quot;);
-  }
-};
-person.sayName.name  //&quot;sayName&quot;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  sayName() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"hello"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">person.sayName.name  <span class="comment">//"sayName"</span></span><br></pre></td></tr></table></figure>
 <h2 id="新方法"><a href="#新方法" class="headerlink" title="新方法"></a>新方法</h2><h3 id="Object-is"><a href="#Object-is" class="headerlink" title="Object.is()"></a><code>Object.is()</code></h3><p>用于判断两个值是否严格相等，与<code>===</code>基本一致</p>
-<pre><code class="js">Object.is(&#39;abc&#39;, &#39;abc&#39;)  //true
-Object.is({}， {})  //false
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.is(<span class="string">'abc'</span>, <span class="string">'abc'</span>)  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Object</span>.is(&#123;&#125;， &#123;&#125;)  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
 <p>不同之处是正负零和<code>NaN</code>的判断</p>
-<pre><code class="js">+0 === -0   //true
-Object.is(+0, -0)  //false
-
-NaN === NaN   //false
-Object.is(NaN, NaN)  //true
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+<span class="number">0</span> === <span class="number">-0</span>   <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Object</span>.is(+<span class="number">0</span>, <span class="number">-0</span>)  <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>   <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>, <span class="literal">NaN</span>)  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a><code>Object.assign()</code></h3><p>用于对象的合并，将源对象的所有可枚举属性赋值给目标对象。</p>
-<pre><code class="js">const target = {a: 1};
-const source = {b: 2};
-Object.assign(target, source);
-target // {a: 1, b: 2}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> source = &#123;<span class="attr">b</span>: <span class="number">2</span>&#125;;</span><br><span class="line"><span class="built_in">Object</span>.assign(target, source);</span><br><span class="line">target <span class="comment">// &#123;a: 1, b: 2&#125;</span></span><br></pre></td></tr></table></figure>
 <p><code>Object.assign</code>方法的第一个参数是目标对象，后面都是源对象（可以有多个）；如果目标对象和源对象有同名属性，则后面的属性会覆盖前面的属性。</p>
 <p>注意点：</p>
 <ol>
@@ -573,8 +537,7 @@ target // {a: 1, b: 2}
 <li><p>遇到同名对象时，后一个属性值会覆盖前一个</p>
 </li>
 <li><p>当<code>Object.assign</code>用来处理数组时，会把数组作为对象，即索引号被作为属性</p>
-<pre><code class="js">Object.assign([1, 2, 3], [4, 5])  //[4, 5, 3]
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.assign([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>])  <span class="comment">//[4, 5, 3]</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
@@ -613,8 +576,8 @@ target // {a: 1, b: 2}
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/03/ES6学习笔记之Set和Map/" rel="next" title="ES6学习笔记之Set和Map">
-                <i class="fa fa-chevron-left"></i> ES6学习笔记之Set和Map
+              <a href="/2018/08/03/自己手动升级网易云音乐音效/" rel="next" title="自己手动升级网易云音乐音效">
+                <i class="fa fa-chevron-left"></i> 自己手动升级网易云音乐音效
               </a>
             
           </div>
@@ -623,8 +586,8 @@ target // {a: 1, b: 2}
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/04/Nikkkki的一周分享002/" rel="prev" title="Nikkkki的一周分享002">
-                Nikkkki的一周分享002 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/03/ES6学习笔记之函数的扩展/" rel="prev" title="ES6学习笔记之函数的扩展">
+                ES6学习笔记之函数的扩展 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -852,7 +815,7 @@ target // {a: 1, b: 2}
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

@@ -457,7 +457,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,700 字
+                  4,709 字
                 </span>
               
 
@@ -554,8 +554,7 @@
 <h4 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h4><p>通常，解析树都不是最终结果。解析是在翻译的过程中使用的。翻译用于将输入的文档转化成另一个范式。编译器就是一个例子，它将输入到机器中的源码先解析成一个解析树，然后将解析树翻译成机器编码文件。</p>
 <p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fuzsqv3xfoj313u0ouq5n.jpg" alt="image-20180906141956594"></p>
 <h4 id="词汇和句法"><a href="#词汇和句法" class="headerlink" title="词汇和句法"></a>词汇和句法</h4><p>词汇通常用正则表达式来表示。比如数字可以这样表达：</p>
-<pre><code class="js">INTEGER: 0|[1-9][0-9]*
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INTEGER: <span class="number">0</span>|[<span class="number">1</span><span class="number">-9</span>][<span class="number">0</span><span class="number">-9</span>]*</span><br></pre></td></tr></table></figure>
 <p>语法通常遵循BNF范式。</p>
 <h4 id="解析器的种类"><a href="#解析器的种类" class="headerlink" title="解析器的种类"></a>解析器的种类</h4><p>解析器有两种：<strong>自上而下解析器</strong>和<strong>自下而上解析器</strong>。</p>
 <p>自上而下解析器是从语法的高层结构触发，尝试从中找到匹配的结构；自下而上解析器是从底层规则触发，将输入内容逐步转化成语法规则，直至满足高层规则。</p>
@@ -565,15 +564,7 @@
 <p>HTML无法使用上下文无关语法解析器的原因是它是一种“软性”语法。HTML允许省略一些隐式添加的标记，或者一些起始/结束标记等，这使得HTML语言更为“宽容”，简化了网络开发的难度，但是也使得它很难编写正式的语法。</p>
 <h4 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h4><p>解析器解析出的解析树是由DOM元素和属性节点共同构成的树状结构。DOM（文档对象模型）是HTML文档的对象表示，也是外部内容与HTML元素之间的接口。它的根节点是<code>document</code>对象。</p>
 <p>DOM和标记之间几乎是一一对应的。以这段代码为例：</p>
-<pre><code class="html">&lt;html&gt;
-  &lt;body&gt;
-    &lt;p&gt;
-      Hello World
-    &lt;/p&gt;
-    &lt;div&gt; &lt;img src=&quot;example.png&quot;/&gt;&lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      Hello World</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"example.png"</span>/&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>可以解析成如下DOM树：</p>
 <p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fuzt77k3fyj30b4063gm6.jpg" alt="img"></p>
 <p>和HTML一样，DOM也是W3C规定的。</p>
@@ -938,7 +929,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

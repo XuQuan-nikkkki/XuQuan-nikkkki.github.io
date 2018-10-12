@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,541 字
+                  4,705 字
                 </span>
               
 
@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  18 分钟
+                  19 分钟
                 </span>
               
             </div>
@@ -486,12 +486,7 @@
 <h4 id="Introduction-to-Basic-Algorithm-Scripting"><a href="#Introduction-to-Basic-Algorithm-Scripting" class="headerlink" title="Introduction to Basic Algorithm Scripting"></a><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting" target="_blank" rel="noopener">Introduction to Basic Algorithm Scripting</a></h4><hr>
 <ol>
 <li><p><strong>摄氏度、华氏度换算</strong> <a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/convert-celsius-to-fahrenheit" target="_blank" rel="noopener">Convert Celsius to Fahrenheit</a><br>这题很简单，会初中的一元一次方程就能写出来</p>
-<pre><code class="js"> function convertToF(celsius) {
-   let fahrenheit = celsius * 9/5 + 32;
-   return fahrenheit;
- }
- convertToF(30);
-</code></pre>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">convertToF</span>(<span class="params">celsius</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> fahrenheit = celsius * <span class="number">9</span>/<span class="number">5</span> + <span class="number">32</span>;</span><br><span class="line">  <span class="keyword">return</span> fahrenheit;</span><br><span class="line">&#125;</span><br><span class="line">convertToF(<span class="number">30</span>);</span><br></pre></td></tr></table></figure>
 <hr>
 </li>
 <li><p><strong>字符串逆序处理</strong> <a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/reverse-a-string" target="_blank" rel="noopener">Reverse a String</a><br>这题的目的是将字符串的顺序倒过来，可以联想到数组的<code>.reverse()</code>方法。所以解题方法是：</p>
@@ -499,11 +494,7 @@
 <li>字符串转数组 <code>string.split(&quot;&quot;)</code>;</li>
 <li>数组逆序 <code>array.reverse()</code>;</li>
 <li><p>数组转字符串 <code>array.join(&quot;&quot;)</code>;</p>
-<pre><code class="js">function reverseString(str) {
-return str.split(&quot;&quot;).reverse().join(&quot;&quot;);
-}
-reverseString(&quot;hello&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> str.split(<span class="string">""</span>).reverse().join(<span class="string">""</span>);</span><br><span class="line">&#125;</span><br><span class="line">reverseString(<span class="string">"hello"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -514,15 +505,7 @@ reverseString(&quot;hello&quot;);
 <ol>
 <li>for循环，让变量i从1开始递增，并且让结果一开始为1</li>
 <li><p>每一个i都与result想乘<code>result *= i</code></p>
-<pre><code class="js">function factorialize(num) {
-let result = 1;
-for(let i = 1; i &lt;= num; i ++) {
-result *= i;
-}
-return result;
-}
-factorialize(5);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorialize</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= num; i ++) &#123;</span><br><span class="line">    result *= i;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line">factorialize(<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -534,12 +517,7 @@ factorialize(5);
 <li>把字符串转化成由单词组成的数组<code>string.split(&quot; &quot;)</code></li>
 <li>用<code>array.sort()</code>方法来对数组进行排序，排序规则是单词长度由长到短排列</li>
 <li><p>新数组的第一个元素将是长度最长的单词，直接获取<code>arr[0].length</code>就可以得到结果了</p>
-<pre><code class="js">function findLongestWordLength(str) {
-let arr = str.split(&quot; &quot;).sort((a, b) =&gt; b.length - a.length);
-return arr[0].length;
-}
-findLongestWordLength(&quot;The quick brown fox jumped over the lazy dog&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLongestWordLength</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arr = str.split(<span class="string">" "</span>).sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> b.length - a.length);</span><br><span class="line">  <span class="keyword">return</span> arr[<span class="number">0</span>].length;</span><br><span class="line">&#125;</span><br><span class="line">findLongestWordLength(<span class="string">"The quick brown fox jumped over the lazy dog"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -557,26 +535,8 @@ findLongestWordLength(&quot;The quick brown fox jumped over the lazy dog&quot;);
 <ul>
 <li>方法1用的方法是<code>for...in</code>循环</li>
 <li><p>方法2用的是数组的<code>map</code>方法来遍历</p>
-<pre><code class="js">function largestOfFour(arr) {
-let resArr = [];
-for(let i in arr) {
-  resArr.push(arr[i].sort((a, b) =&gt; b-a)[0]);
-}
-return resArr;
-}
-largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
-</code></pre>
-<pre><code class="js">//方法2
-function largestOfFour(arr) {
-let result = [];
-arr.map(val=&gt; {
-    val.sort((a, b)=&gt;b-a);
-    result.push(val[0]);
-})
-return result;
-}
-console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">largestOfFour</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> resArr = [];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> arr) &#123;</span><br><span class="line">    resArr.push(arr[i].sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> b-a)[<span class="number">0</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> resArr;</span><br><span class="line">&#125;</span><br><span class="line">largestOfFour([[<span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>], [<span class="number">13</span>, <span class="number">27</span>, <span class="number">18</span>, <span class="number">26</span>], [<span class="number">32</span>, <span class="number">35</span>, <span class="number">37</span>, <span class="number">39</span>], [<span class="number">1000</span>, <span class="number">1001</span>, <span class="number">857</span>, <span class="number">1</span>]]);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">largestOfFour</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = [];</span><br><span class="line">  arr.map(<span class="function"><span class="params">val</span>=&gt;</span> &#123;</span><br><span class="line">  	val.sort(<span class="function">(<span class="params">a, b</span>)=&gt;</span>b-a);</span><br><span class="line">  	result.push(val[<span class="number">0</span>]);</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(largestOfFour([[<span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>], [<span class="number">13</span>, <span class="number">27</span>, <span class="number">18</span>, <span class="number">26</span>], [<span class="number">32</span>, <span class="number">35</span>, <span class="number">37</span>, <span class="number">39</span>], [<span class="number">1000</span>, <span class="number">1001</span>, <span class="number">857</span>, <span class="number">1</span>]]));</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -587,47 +547,17 @@ console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [10
 <p> 第一个思路是获取str字符串的最后几位（位数和target参数的长度相等），然后和target字符串比较，看是否相等。这里有两个实现方法：</p>
 <ol>
 <li><p>用字符串的<code>string.slice(start, end)</code>方法来获取字符串的最后几位，可以知道end对应的索引就是字符串的长度（即字符串的最后一位再多一位，因为slice函数取到end位，但不包含end位），start即str字符串长度减去target字符串长度；然后将这一部分字符串与target比较</p>
-<pre><code class="js">//思路1 实现1
-function confirmEnding(str, target) {
-if(str.slice(str.length - target.length, str.length) === target) {
- return true;
-}
-return false;
-}
-confirmEnding(&quot;Bastian&quot;, &quot;n&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//思路1 实现1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(str.slice(str.length - target.length, str.length) === target) &#123;</span><br><span class="line">  	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">confirmEnding(<span class="string">"Bastian"</span>, <span class="string">"n"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>第二种实现方法是用用<code>string.indexOf()</code>方法，我们常用<code>string.indexOf()</code>来检验字符串是否包含某个字符串，但是这样结果只能返回string字符串中首次出现target字符串的索引号，如<code>confirmEnding(&quot;Congratulation&quot;, &quot;on&quot;)</code>就会返回<code>&quot;Con&quot;</code>中的<code>&quot;on&quot;</code>，因此我们还需要使用第二个参数，是一个可选参数，即从什么位置开始查找，这里我们和上面一种实现方法一样，从<code>str.length-target.length</code>开始查找</p>
-<pre><code class="js">//思路1 实现2
-function confirmEnding(str, target) {
-if(str.indexOf(target, str.length-target.length) &gt; 0) {
- return true;
-}
-return false;
-}
-confirmEnding(&quot;Bastian&quot;, &quot;n&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//思路1 实现2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(str.indexOf(target, str.length-target.length) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">confirmEnding(<span class="string">"Bastian"</span>, <span class="string">"n"</span>);</span><br></pre></td></tr></table></figure>
 <p>第二个思路就是用正则表达式来完成，其实用正则表达式更为直观，直接<code>/target$/</code>就可以了，这里写了两个实现方法只有细微区别，就是怎么写这个正则表达式，因为这里正则表达式需要包含变量。</p>
 </li>
 <li><p>正则表达式的第一个实现方法就是把正则表达式用<code>eval()</code>方法来连接变量和字符串</p>
-<pre><code class="js">//方法2
-//字符串拼接的方法在正则里加入变量
-function confirmEnding(str, target) {
-let re = eval(&#39;/&#39;+target+&#39;$/&#39;);
-return re.test(str);
-}
-confirmEnding(&quot;Bastian&quot;, &quot;n&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//方法2</span></span><br><span class="line"> <span class="comment">//字符串拼接的方法在正则里加入变量</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">let</span> re = <span class="built_in">eval</span>(<span class="string">'/'</span>+target+<span class="string">'$/'</span>);</span><br><span class="line">   <span class="keyword">return</span> re.test(str);</span><br><span class="line"> &#125;</span><br><span class="line">confirmEnding(<span class="string">"Bastian"</span>, <span class="string">"n"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>第二个实现方法是利用正则表达式的构造函数，把变量target和正则标识符加起来就行了</p>
-<pre><code class="js">//方法2
-//用正则构造函数在正则里加入变量
-function confirmEnding(str, target) {
-let re = new RegExp(target+&quot;$&quot;);;
-return re.test(str);
-}
-confirmEnding(&quot;Bastian&quot;, &quot;n&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法2</span></span><br><span class="line"><span class="comment">//用正则构造函数在正则里加入变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> re = <span class="keyword">new</span> <span class="built_in">RegExp</span>(target+<span class="string">"$"</span>);;</span><br><span class="line">  <span class="keyword">return</span> re.test(str);</span><br><span class="line">&#125;</span><br><span class="line">confirmEnding(<span class="string">"Bastian"</span>, <span class="string">"n"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -635,19 +565,7 @@ confirmEnding(&quot;Bastian&quot;, &quot;n&quot;);
 <hr>
 <ol start="7">
 <li><p><strong>重复字符串</strong><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/repeat-a-string-repeat-a-string" target="_blank" rel="noopener">Repeat a String Repeat a String</a><br>这题和求阶乘的思路也差不多，就是用<code>for</code>循环来重复参数<code>num</code>次，每次在结果<code>result</code>字符串中添加一次参数<code>str</code>。这里需要注意的一个小坑是，我刚开始想要图方便，想的是让<code>for</code>循环中的<code>i</code>从1开始循环，这样直接在参数<code>str</code>后面添加<code>str</code>就好了，但是这里的一个坑是这样<code>str</code>在每次添加之后都变成了新的字符串，这样添加出来的字符串重复次数会超过<code>num</code>要求的次数。</p>
-<pre><code class="js"> function repeatStringNumTimes(str, num) {
-   let result = &quot;&quot;;
-   if(num &lt; 0) {
-     result = &quot;&quot;;
-   } else {
-     for(let i = 0; i &lt; num; i ++) {
-       result += str;
-     }
-   }
-   return result;
- }
- repeatStringNumTimes(&quot;abc&quot;, 3);
-</code></pre>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">repeatStringNumTimes</span>(<span class="params">str, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">if</span>(num &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    result = <span class="string">""</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num; i ++) &#123;</span><br><span class="line">      result += str;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line">repeatStringNumTimes(<span class="string">"abc"</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
@@ -657,14 +575,7 @@ confirmEnding(&quot;Bastian&quot;, &quot;n&quot;);
 <ol>
 <li>对<code>num</code>与<code>str</code>的长度做判断，将结果分为两种状况，即<code>num</code>大于等于<code>str.length</code>和<code>num</code>小于<code>str.length</code>，这里的一个小技巧是<em>两种结果返回的都是<code>str</code>，只不过小于的状况下，<code>str</code>会有变化，这样可以只判断<code>num &lt; str.length</code>，总之都是<code>return str</code>，这样可以省略一步判断，让代码更简洁</em></li>
 <li><p>截取字符串使用<code>str.slice(start, end)</code>函数，需要注意的是，<code>str.slice(start, end)</code>这一部分是我们需要的结果，但函数最终返回<code>str</code>，因此这里需要将<code>str.slice(start, end)</code>赋值给<code>str</code></p>
-<pre><code class="js">function truncateString(str, num) {
-if(num &lt; str.length) {
-str = str.slice(0, num)+&#39;...&#39;;
-}
-return str;
-}
-truncateString(&quot;A-tisket a-tasket A green and yellow basket&quot;, 8);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">truncateString</span>(<span class="params">str, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(num &lt; str.length) &#123;</span><br><span class="line">    str = str.slice(<span class="number">0</span>, num)+<span class="string">'...'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line">truncateString(<span class="string">"A-tisket a-tasket A green and yellow basket"</span>, <span class="number">8</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -672,24 +583,13 @@ truncateString(&quot;A-tisket a-tasket A green and yellow basket&quot;, 8);
 <hr>
 <ol start="9">
 <li><p><strong>函数筛选数组元素</strong><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/finders-keepers" target="_blank" rel="noopener">Finders Keepers</a><br> 这题给了两个参数，一个数组<code>arr</code>和一个函数<code>func</code>，我们需要把符合函数<code>func</code>要求的第一个元素给找出来。这题挺简单的，毕竟连函数<code>func</code>的内容都给定了， 相当于筛选的条件已经写好了，我们只用将这个筛选条件套到数组上就行，所以用<code>arr.filter(func)</code>来获取所有满足<code>func</code>函数的元素，返回结果是一个新的数组，我们获取第一个元素即可。</p>
-<pre><code class="js"> function findElement(arr, func) {
-   return arr.filter(func)[0];
- }
- findElement([1, 2, 3, 4], num =&gt; num % 2 === 0);
-</code></pre>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findElement</span>(<span class="params">arr, func</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> arr.filter(func)[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line">findElement([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], num =&gt; num % <span class="number">2</span> === <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
 <ol start="10">
 <li><p><strong>判断元素是否为布尔值类型</strong><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/boo-who" target="_blank" rel="noopener">Boo who</a><br>这题需要判断给的参数是不是布尔值，用<code>typeof</code>就可以获得参数的类型</p>
-<pre><code class="js">function booWho(bool) {
- if(typeof bool === &quot;boolean&quot;) {
-   return true;
- }
- return false;
-}
-booWho(null);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">booWho</span>(<span class="params">bool</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> bool === <span class="string">"boolean"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">booWho(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
@@ -701,11 +601,7 @@ booWho(null);
 <li>用<code>array.map()</code>函数遍历数组中的每一个单词元素</li>
 <li>实现首字母大写，每一个单词都是第一个字母大写<code>str[0].toUpperCase()</code>，剩余的字母小写，这里的一个小坑是容易理所当然觉得后面的字母直接截取就好了，但是这题里有的单词是大小写混用的，所以需要先<code>str.toLowerCase()</code>，然后截取除了第一个之外的部分<code>substring(1, str.length)</code></li>
 <li><p>数组还原成字符串，用<code>array.join(&quot; &quot;)</code>函数，注意怎么用空格切开就怎么用空格还原</p>
-<pre><code class="js">function titleCase(str) {
-return str.split(&quot; &quot;).map(val=&gt;val[0].toUpperCase() + val.toLowerCase().substring(1, val.length)).join(&quot; &quot;);
-}
-titleCase(&quot;I&#39;m a little tea pot&quot;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleCase</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> str.split(<span class="string">" "</span>).map(<span class="function"><span class="params">val</span>=&gt;</span>val[<span class="number">0</span>].toUpperCase() + val.toLowerCase().substring(<span class="number">1</span>, val.length)).join(<span class="string">" "</span>);</span><br><span class="line">&#125;</span><br><span class="line">titleCase(<span class="string">"I'm a little tea pot"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -726,14 +622,7 @@ titleCase(&quot;I&#39;m a little tea pot&quot;);
 <li><code>array.splice(start, count)</code>返回<code>array[start, start+count]</code>,原数组为<code>[0, start].concat([start+count, end])</code></li>
 <li><code>array.splice(start, count, ...items)</code>返回<code>array[start, start+count]</code>，原数组添加<code>...items</code>元素，原数组为<code>[0,start].concat([...items]).concat([start+count, end])</code></li>
 </ul>
-<pre><code class="js">function frankenSplice(arr1, arr2, n) {
-let newArr = arr2.slice(0, n);
-newArr.splice(newArr.length, 0, ...arr1);
-newArr.splice(newArr.length, 0, ...arr2.slice(n));
-return newArr;
-}
-frankenSplice([1, 2, 3], [4, 5, 6], 1);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">frankenSplice</span>(<span class="params">arr1, arr2, n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> newArr = arr2.slice(<span class="number">0</span>, n);</span><br><span class="line">  newArr.splice(newArr.length, <span class="number">0</span>, ...arr1);</span><br><span class="line">  newArr.splice(newArr.length, <span class="number">0</span>, ...arr2.slice(n));</span><br><span class="line">  <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;</span><br><span class="line">frankenSplice([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -744,12 +633,7 @@ frankenSplice([1, 2, 3], [4, 5, 6], 1);
 <ol>
 <li>用<code>array.filter()</code>数组的筛选函数来筛查每个值</li>
 <li><p>筛选的标准是元素的布尔值是true，可以直接用<code>Boolean()</code>函数</p>
-<pre><code class="js">function bouncer(arr) {
-arr = arr.filter(val =&gt; Boolean(val) === true)
-return arr;
-}
-console.log(bouncer([7, &quot;ate&quot;, &quot;&quot;, false, 9]));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bouncer</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  arr = arr.filter(<span class="function"><span class="params">val</span> =&gt;</span> <span class="built_in">Boolean</span>(val) === <span class="literal">true</span>)</span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(bouncer([<span class="number">7</span>, <span class="string">"ate"</span>, <span class="string">""</span>, <span class="literal">false</span>, <span class="number">9</span>]));</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -766,13 +650,7 @@ console.log(bouncer([7, &quot;ate&quot;, &quot;&quot;, false, 9]));
 </ul>
 </li>
 <li><p>利用<code>array.indexOf()</code>就可以找到<code>num</code>在数组中的位置</p>
-<pre><code class="js">function getIndexToIns(arr, num) {
-arr.push(num);
-arr.sort((a, b) =&gt; a-b);
-return arr.indexOf(num);
-}
-getIndexToIns([40, 60], 50);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getIndexToIns</span>(<span class="params">arr, num</span>) </span>&#123;</span><br><span class="line">  arr.push(num);</span><br><span class="line">  arr.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a-b);</span><br><span class="line">  <span class="keyword">return</span> arr.indexOf(num);</span><br><span class="line">&#125;</span><br><span class="line">getIndexToIns([<span class="number">40</span>, <span class="number">60</span>], <span class="number">50</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -785,15 +663,7 @@ getIndexToIns([40, 60], 50);
 <li>将<code>arr[1]</code>转换成数组，并保证都是小写字母<code>arr[1].toLowerCase().split(&quot;&quot;)</code></li>
 <li>检验数组中的每个字母元素，筛选出没有出现在<code>arr[0]</code>中的元素<code>array.filter()</code></li>
 <li><p>判断这个新数组的长度，如果是空数组，则表明<code>arr[0]</code>包含了<code>arr[1]</code>中的所有字母，可以返回true，否则有字母是不在<code>arr[0]</code>中的，返回false</p>
-<pre><code class="js">function mutation(arr) {
-let extra = arr[1].toLowerCase().split(&quot;&quot;).filter(val =&gt; arr[0].toLowerCase().indexOf(val) === -1);
-if(extra.length &gt; 0) {
- return false;
-}
-return true;
-}
-mutation([&quot;hello&quot;, &quot;hey&quot;]);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mutation</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> extra = arr[<span class="number">1</span>].toLowerCase().split(<span class="string">""</span>).filter(<span class="function"><span class="params">val</span> =&gt;</span> arr[<span class="number">0</span>].toLowerCase().indexOf(val) === <span class="number">-1</span>);</span><br><span class="line">  <span class="keyword">if</span>(extra.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">mutation([<span class="string">"hello"</span>, <span class="string">"hey"</span>]);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -802,15 +672,7 @@ mutation([&quot;hello&quot;, &quot;hey&quot;]);
 <ol start="16">
 <li><p><strong>切分数组</strong><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/chunky-monkey" target="_blank" rel="noopener">Chunky Monkey</a><br> 这题给了数组<code>arr</code>和数字<code>size</code>两个参数，需要将数组<code>arr</code>按照<code>size</code>指定的长度来切分，返回的新数组是一个二维数组，里面的每一个元素是原数组切分出来的部分，长度即是<code>size</code>。</p>
 <p> 一看到切分，很容易就想到<code>array.slice()</code>，只是需要确定一下开始和结束的位置，以<code>size=2</code>为例，切分的位置将是<code>0-2, 2-4, 4-6...</code>，用<code>i*size, (i+1)*size</code>就很容易得到切分的区域，但是还需要确定一下区分的次数，因为数组的长度不一定是<code>size</code>的整数倍，最后一个新数组里的元素可能长度并不正好是<code>size</code>的值，在<code>slice()</code>函数里，如果切分的结束为止多于数组的长度，则会自动忽略，所以我们用<code>Math.ceil(arr.length/size)</code>来确定切分的次数，然后在新的数组<code>result</code>里添加切分出来的小数组，即可获得结果。</p>
-<pre><code class="js"> function chunkArrayInGroups(arr, size) {
-   let result = [];
-   for(let i = 0; i &lt; Math.ceil(arr.length/size); i ++) {
-     result.push(arr.slice(i * size, (i + 1) * size));
-   }
-   return result;
- }
- chunkArrayInGroups([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;], 2);
-</code></pre>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">chunkArrayInGroups</span>(<span class="params">arr, size</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = [];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">Math</span>.ceil(arr.length/size); i ++) &#123;</span><br><span class="line">    result.push(arr.slice(i * size, (i + <span class="number">1</span>) * size));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line">chunkArrayInGroups([<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>], <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
@@ -819,31 +681,16 @@ mutation([&quot;hello&quot;, &quot;hey&quot;]);
 <p>这4个函数是JS的高阶函数，都非常好用，我不记得在哪个课上看到有老师把它们4个拎出来一起讲了，我的问题在于它们返回的值是什么，这决定了再使用的时候是否需要将使用它们的结果重新赋给原数组。所以这里一起回顾一下。</p>
 <ul>
 <li><p><strong><code>map</code></strong>方法的参数是一个函数，它<strong>返回一个新数组</strong>，里面的每个元素都是原数组中的元素调用函数之后的结果</p>
-<pre><code class="js">const arr1 = [1, 2, 3];
-const arr2 = arr1.map(x =&gt; x * 2);
-console.log(arr2);  //[2, 4, 6]
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = arr1.map(<span class="function"><span class="params">x</span> =&gt;</span> x * <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr2);  <span class="comment">//[2, 4, 6]</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong><code>reduce</code></strong>方法返回一个结果值，我记得老师当时说的这个叫<strong>汇总</strong>，就是对数组中的每个元素都执行一个函数操作，最后只返回一个值</p>
-<pre><code class="js">const arr1 = [1, 2, 3];
-let result = arr1.reduce((a, b) =&gt; a + b);
-console.log(result);   //6
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> result = arr1.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b);</span><br><span class="line"><span class="built_in">console</span>.log(result);   <span class="comment">//6</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong><code>sort</code></strong>方法前面第14题提到了，是<strong>返回排序后的原数组</strong>，不产生新数组</p>
-<pre><code class="js">const arr1 = [2, 3, 1];
-const arr2 = arr1.sort((a, b) =&gt; a-b);
-console.log(arr1);  //[1, 2, 3]
-console.log(arr2);  //[1, 2, 3]
-console.log(arr1 === arr2); // true
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = arr1.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a-b);</span><br><span class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[1, 2, 3]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2);  <span class="comment">//[1, 2, 3]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr1 === arr2); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong><code>filter</code></strong>方法实现筛选/过滤功能，它的参数是一个函数，<strong>返回值是一个新的数组</strong>，数组内的元素都<strong>满足</strong>函数要求（千万不要记反了），原数组不变</p>
-<pre><code class="js">const arr1 = [2, 4, 5];
-const arr2 = arr1.filter(val =&gt; val &gt; 3);
-console.log(arr1);  //[2, 4, 5]
-console.log(arr2);  //[4, 5]
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = arr1.filter(<span class="function"><span class="params">val</span> =&gt;</span> val &gt; <span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[2, 4, 5]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2);  <span class="comment">//[4, 5]</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -852,14 +699,7 @@ console.log(arr2);  //[4, 5]
 <p>两个函数都用于遍历数组，且都能够对每个元素进行函数操作，区别在于</p>
 <ul>
 <li><p><code>map</code>返回一个新的数组，<strong><code>forEach</code>没有返回值</strong></p>
-<pre><code class="js">const arr1 = [1, 2, 3];
-const arr2 = arr1.forEach(val =&gt; val + 1);
-console.log(arr2);  //undefined
-arr1.forEach(val =&gt; console.log(val + 1));
-//2
-//3
-//4
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = arr1.forEach(<span class="function"><span class="params">val</span> =&gt;</span> val + <span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr2);  <span class="comment">//undefined</span></span><br><span class="line">arr1.forEach(<span class="function"><span class="params">val</span> =&gt;</span> <span class="built_in">console</span>.log(val + <span class="number">1</span>));</span><br><span class="line"><span class="comment">//2</span></span><br><span class="line"><span class="comment">//3</span></span><br><span class="line"><span class="comment">//4</span></span><br></pre></td></tr></table></figure>
 <p>可以理解成<code>forEach</code>是悄无声息地干了一些活儿，除非你主动问它是不是它干的，否则它不会主动告诉你</p>
 </li>
 </ul>
@@ -876,11 +716,7 @@ arr1.forEach(val =&gt; console.log(val + 1));
 <li><p><strong>辨析4：字符串的<code>slice</code>, <code>substring</code>, <code>substr</code>,<code>split</code>方法</strong></p>
 <ul>
 <li><p>字符串的<strong><code>slice</code></strong>方法与数组的<code>slice</code>方法类似，用于提取字符串的一部分，<strong>返回一个新的字符串</strong></p>
-<pre><code class="js">const str1 = &#39;hello world&#39;;
-const str2 = str1.slice(2, 3);
-console.log(str2);  //&quot;l&quot;
-console.log(str1);  //&quot;hello world&quot;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str1 = <span class="string">'hello world'</span>;</span><br><span class="line"><span class="keyword">const</span> str2 = str1.slice(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str2);  <span class="comment">//"l"</span></span><br><span class="line"><span class="built_in">console</span>.log(str1);  <span class="comment">//"hello world"</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>substring</code>方法和<code>slice</code>方法基本相同，传入两个参数，一个是起点位置，一个是重点位置（不包含）</p>
 </li>
@@ -1229,7 +1065,7 @@ console.log(str1);  //&quot;hello world&quot;
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

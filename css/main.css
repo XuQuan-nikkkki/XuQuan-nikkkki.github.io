@@ -1892,7 +1892,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #faf4b5;
+  background: #e0ffb5;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3058,9 +3058,12 @@ p a:hover {
 }
 blockquote {
   border-left: 4px solid #42b983;
-  padding: 10px 0px 10px 15px;
+  padding: 10px 15px 10px 15px;
   color: #777;
   background-color: rgba(66,185,131,0.1);
+}
+blockquote ul {
+  margin-left: 1.5em;
 }
 .footer {
   padding: 0;

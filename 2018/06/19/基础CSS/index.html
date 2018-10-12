@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,293 字
+                  1,651 字
                 </span>
               
 
@@ -461,7 +461,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7 分钟
+                  10 分钟
                 </span>
               
             </div>
@@ -499,491 +499,133 @@
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-cf42d246d9689dbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="基础CSS"></p>
 <h4 id="Introduction-to-Basic-CSS"><a href="#Introduction-to-Basic-CSS" class="headerlink" title="Introduction to Basic CSS"></a><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css" target="_blank" rel="noopener">Introduction to Basic CSS</a></h4><ul>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/change-the-color-of-text" target="_blank" rel="noopener">Change the Color of Text</a></p>
-<pre><code class="html">&lt;h2 style=&quot;color: red;&quot;&gt;CatPhotoApp&lt;/h2&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span>=<span class="string">"color: red;"</span>&gt;</span>CatPhotoApp<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-css-selectors-to-style-elements" target="_blank" rel="noopener">Use CSS Selectors to Style Elements</a></p>
-<pre><code class="html">&lt;style&gt;
-  h2 {color: blue;}
-&lt;/style&gt;
-&lt;h2&gt;CatPhotoApp&lt;/h2&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-tag">h2</span> &#123;<span class="attribute">color</span>: blue;&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>CatPhotoApp<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-a-css-class-to-style-an-element" target="_blank" rel="noopener">Use a CSS Class to Style an Element</a></p>
-<pre><code class="html">&lt;style&gt;
-  .red-text {
-    color: red;
-  }
-&lt;/style&gt;
-
-&lt;h2 class=&quot;red-text&quot;&gt;CatPhotoApp&lt;/h2&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.red-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"red-text"</span>&gt;</span>CatPhotoApp<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/style-multiple-elements-with-a-css-class" target="_blank" rel="noopener">Style Multiple Elements with a CSS Class</a></p>
-<pre><code class="html">&lt;style&gt;
-  .red-text {
-    color: red;
-  }
-&lt;/style&gt;
-
-&lt;h2 class=&quot;red-text&quot;&gt;CatPhotoApp&lt;/h2&gt;
-&lt;main&gt;
-  &lt;p class=&quot;red-text&quot;&gt;Click here to view more &lt;a href=&quot;#&quot;&gt;cat photos&lt;/a&gt;.&lt;/p&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.red-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"red-text"</span>&gt;</span>CatPhotoApp<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"red-text"</span>&gt;</span>Click here to view more <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>cat photos<span class="tag">&lt;/<span class="name">a</span>&gt;</span>.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/change-the-font-size-of-an-element" target="_blank" rel="noopener">Change the Font Size of an Element</a></p>
-<pre><code class="html">&lt;style&gt;
-  .red-text {
-    color: red;
-  }
-  p {
-    font-size: 16px;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.red-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  p &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 16px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/set-the-font-family-of-an-element" target="_blank" rel="noopener">Set the Font Family of an Element</a></p>
-<pre><code class="html">&lt;style&gt;
-  .red-text {
-    color: red;
-  }
-
-  p {
-    font-size: 16px;
-    font-family: monospace;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.red-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  p &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 16px;</span></span><br><span class="line"><span class="undefined">    font-family: monospace;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/import-a-google-font" target="_blank" rel="noopener">Import a Google Font</a></p>
-<pre><code class="html">&lt;link href=&quot;https://fonts.googleapis.com/css?family=Lobster&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
-&lt;style&gt;
-  .red-text {
-    color: red;
-  }
-
-  p {
-    font-size: 16px;
-    font-family: monospace;
-  }
-
-  h2 {
-    font-family: Lobster;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com/css?family=Lobster"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.red-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  p &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 16px;</span></span><br><span class="line"><span class="undefined">    font-family: monospace;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  h2 &#123;</span></span><br><span class="line"><span class="undefined">    font-family: Lobster;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/specify-how-fonts-should-degrade" target="_blank" rel="noopener">Specify How Fonts Should Degrade</a></p>
-<pre><code class="html">&lt;!-- &lt;link href=&quot;https://fonts.googleapis.com/css?family=Lobster&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;--&gt;
-&lt;style&gt;
-  .red-text {
-    color: red;
-  }
-
-  h2 {
-    font-family: Lobster, Monospace;
-  }
-
-  p {
-    font-size: 16px;
-    font-family: monospace;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"&gt;--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.red-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  h2 &#123;</span></span><br><span class="line"><span class="undefined">    font-family: Lobster, Monospace;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  p &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 16px;</span></span><br><span class="line"><span class="undefined">    font-family: monospace;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/size-your-images" target="_blank" rel="noopener">Size Your Images</a></p>
-<pre><code class="html">&lt;style&gt;
-    .smaller-image {
-    width: 100px;
-  }
-&lt;/style&gt;
-    ...
-  &lt;a href=&quot;#&quot;&gt;&lt;img class=&quot;smaller-image&quot; src=&quot;https://bit.ly/fcc-relaxing-cat&quot; alt=&quot;A cute orange cat lying on its back.&quot;&gt;&lt;/a&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-class">.smaller-image</span> &#123;</span></span><br><span class="line"><span class="undefined">    width: 100px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"smaller-image"</span> <span class="attr">src</span>=<span class="string">"https://bit.ly/fcc-relaxing-cat"</span> <span class="attr">alt</span>=<span class="string">"A cute orange cat lying on its back."</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/add-borders-around-your-elements" target="_blank" rel="noopener">Add Borders Around Your Elements</a></p>
-<pre><code class="html">&lt;style&gt;
-  .thick-green-border {
-    border-color: green;
-    border-width: 10px;
-    border-style: solid;
-  }
-&lt;/style&gt;
-    ...
-  &lt;a href=&quot;#&quot;&gt;&lt;img class=&quot;smaller-image thick-green-border&quot; src=&quot;https://bit.ly/fcc-relaxing-cat&quot; alt=&quot;A cute orange cat lying on its back.&quot;&gt;&lt;/a&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.thick-green-border</span> &#123;</span></span><br><span class="line"><span class="undefined">    border-color: green;</span></span><br><span class="line"><span class="undefined">    border-width: 10px;</span></span><br><span class="line"><span class="undefined">    border-style: solid;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"smaller-image thick-green-border"</span> <span class="attr">src</span>=<span class="string">"https://bit.ly/fcc-relaxing-cat"</span> <span class="attr">alt</span>=<span class="string">"A cute orange cat lying on its back."</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/add-rounded-corners-with-border-radius" target="_blank" rel="noopener">Add Rounded Corners with border-radius</a></p>
-<pre><code class="html">&lt;style&gt;
-    .thick-green-border {
-    border-color: green;
-    border-width: 10px;
-    border-style: solid;
-    border-radius: 10px;
-  }
-&lt;/style&gt; 
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-class">.thick-green-border</span> &#123;</span></span><br><span class="line"><span class="undefined">    border-color: green;</span></span><br><span class="line"><span class="undefined">    border-width: 10px;</span></span><br><span class="line"><span class="undefined">    border-style: solid;</span></span><br><span class="line"><span class="undefined">    border-radius: 10px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/make-circular-images-with-a-border-radius" target="_blank" rel="noopener">Make Circular Images with a border-radius</a></p>
-<pre><code class="html">&lt;style&gt;
-    .thick-green-border {
-    border-color: green;
-    border-width: 10px;
-    border-style: solid;
-    border-radius: 50%;
-  }
-&lt;/style&gt; 
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-class">.thick-green-border</span> &#123;</span></span><br><span class="line"><span class="undefined">    border-color: green;</span></span><br><span class="line"><span class="undefined">    border-width: 10px;</span></span><br><span class="line"><span class="undefined">    border-style: solid;</span></span><br><span class="line"><span class="undefined">    border-radius: 50%;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/give-a-background-color-to-a-div-element" target="_blank" rel="noopener">Give a Background Color to a div Element</a></p>
-<pre><code class="html">&lt;style&gt;
-    .silver-background {
-    background-color: silver;
-  }
-&lt;/style&gt;
-
-  &lt;div class=&quot;silver-background&quot;&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-class">.silver-background</span> &#123;</span></span><br><span class="line"><span class="undefined">    background-color: silver;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"silver-background"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/set-the-id-of-an-element" target="_blank" rel="noopener">Set the id of an Element</a></p>
-<pre><code class="html">  &lt;form id=&quot;cat-photo-form&quot; action=&quot;/submit-cat-photo&quot;&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"cat-photo-form"</span> <span class="attr">action</span>=<span class="string">"/submit-cat-photo"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-an-id-attribute-to-style-an-element" target="_blank" rel="noopener">Use an id Attribute to Style an Element</a></p>
-<pre><code class="html">&lt;style&gt;
-    #cat-photo-form {
-    background-color: green;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-id">#cat-photo-form</span> &#123;</span></span><br><span class="line"><span class="undefined">    background-color: green;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/adjust-the-padding-of-an-element" target="_blank" rel="noopener">Adjust the Padding of an Element</a></p>
-<pre><code class="html">&lt;style&gt;
-    .blue-box {
-    background-color: blue;
-    color: #fff;
-    padding: 20px;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-class">.blue-box</span> &#123;</span></span><br><span class="line"><span class="undefined">    background-color: blue;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="undefined">    padding: 20px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/adjust-the-margin-of-an-element" target="_blank" rel="noopener">Adjust the Margin of an Element</a></p>
-<pre><code class="html">&lt;style&gt;
-  .blue-box {
-    background-color: blue;
-    color: #fff;
-    padding: 20px;
-    margin: 20px;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.blue-box</span> &#123;</span></span><br><span class="line"><span class="undefined">    background-color: blue;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="undefined">    padding: 20px;</span></span><br><span class="line"><span class="undefined">    margin: 20px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/add-a-negative-margin-to-an-element" target="_blank" rel="noopener">Add a Negative Margin to an Element</a></p>
-<pre><code class="html">&lt;style&gt;
-  .blue-box {
-    background-color: blue;
-    color: #fff;
-    padding: 20px;
-    margin: -15px;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.blue-box</span> &#123;</span></span><br><span class="line"><span class="undefined">    background-color: blue;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="undefined">    padding: 20px;</span></span><br><span class="line"><span class="undefined">    margin: -15px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/add-different-padding-to-each-side-of-an-element" target="_blank" rel="noopener">Add Different Padding to Each Side of an Element</a></p>
-<pre><code class="html">&lt;style&gt;
-  .blue-box {
-    background-color: blue;
-    color: #fff;
-    padding: 40px;
-    padding-bottom: 20px;
-    padding-right:20px;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.blue-box</span> &#123;</span></span><br><span class="line"><span class="undefined">    background-color: blue;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="undefined">    padding: 40px;</span></span><br><span class="line"><span class="undefined">    padding-bottom: 20px;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">padding-right</span><span class="selector-pseudo">:20px</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/add-different-margins-to-each-side-of-an-element" target="_blank" rel="noopener">Add Different Margins to Each Side of an Element</a></p>
-<pre><code class="html">&lt;style&gt;
-  .blue-box {
-    background-color: blue;
-    color: #fff;
-    margin: 40px;
-    margin-bottom: 20px;
-    margin-right:20px;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.blue-box</span> &#123;</span></span><br><span class="line"><span class="undefined">    background-color: blue;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="undefined">    margin: 40px;</span></span><br><span class="line"><span class="undefined">    margin-bottom: 20px;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">margin-right</span><span class="selector-pseudo">:20px</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-clockwise-notation-to-specify-the-padding-of-an-element" target="_blank" rel="noopener">Use Clockwise Notation to Specify the Padding of an Element</a></p>
-<pre><code class="html">&lt;style&gt;
-  .blue-box {
-    background-color: blue;
-    color: #fff;
-    padding:40px 20px 20px 40px;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.blue-box</span> &#123;</span></span><br><span class="line"><span class="undefined">    background-color: blue;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">padding</span><span class="selector-pseudo">:40px</span> 20<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> 40<span class="selector-tag">px</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-clockwise-notation-to-specify-the-margin-of-an-element" target="_blank" rel="noopener">Use Clockwise Notation to Specify the Margin of an Element</a></p>
-<pre><code class="html">&lt;style&gt;
-  .blue-box {
-    background-color: blue;
-    color: #fff;
-    margin:40px 20px 20px 40px;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.blue-box</span> &#123;</span></span><br><span class="line"><span class="undefined">    background-color: blue;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">margin</span><span class="selector-pseudo">:40px</span> 20<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> 40<span class="selector-tag">px</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-attribute-selectors-to-style-elements" target="_blank" rel="noopener">Use Attribute Selectors to Style Elements</a></p>
-<pre><code class="html">&lt;style&gt;
-  [type=&quot;checkbox&quot;] {
-    margin: 10px 0 15px;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-attr">[type="checkbox"]</span> &#123;</span></span><br><span class="line"><span class="undefined">    margin: 10px 0 15px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/understand-absolute-versus-relative-units" target="_blank" rel="noopener">Understand Absolute versus Relative Units</a></p>
-<pre><code class="html">&lt;style&gt;
-  .red-box {
-    background-color: red;
-    margin: 20px 40px 20px 40px;
-    padding: 1.5em;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.red-box</span> &#123;</span></span><br><span class="line"><span class="undefined">    background-color: red;</span></span><br><span class="line"><span class="undefined">    margin: 20px 40px 20px 40px;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">padding</span>: 1<span class="selector-class">.5em</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/style-the-html-body-element" target="_blank" rel="noopener">Style the HTML Body Element</a></p>
-<pre><code class="html">&lt;style&gt;
-  body {
-    background-color:black;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  body &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span><span class="selector-pseudo">:black</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/inherit-styles-from-the-body-element" target="_blank" rel="noopener">Inherit Styles from the Body Element</a></p>
-<pre><code class="html">&lt;style&gt;
-  body {
-    background-color: black;
-    color: green;
-    font-family:monospace;
-  }
-
-&lt;/style&gt;
-&lt;h1&gt;Hello World&lt;/h1&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  body &#123;</span></span><br><span class="line"><span class="undefined">    background-color: black;</span></span><br><span class="line"><span class="undefined">    color: green;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">font-family</span><span class="selector-pseudo">:monospace</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/prioritize-one-style-over-another" target="_blank" rel="noopener">Prioritize One Style Over Another</a></p>
-<pre><code class="html">&lt;style&gt;
-  body {
-    background-color: black;
-    font-family: monospace;
-    color: green;
-  }
-
-  .pink-text {
-    color: pink;
-  }
-&lt;/style&gt;
-&lt;h1 class=&quot;pink-text&quot;&gt;Hello World!&lt;/h1&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  body &#123;</span></span><br><span class="line"><span class="undefined">    background-color: black;</span></span><br><span class="line"><span class="undefined">    font-family: monospace;</span></span><br><span class="line"><span class="undefined">    color: green;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.pink-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: pink;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"pink-text"</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/override-styles-in-subsequent-css" target="_blank" rel="noopener">Override Styles in Subsequent CSS</a></p>
-<pre><code class="html">&lt;style&gt;
-  body {
-    background-color: black;
-    font-family: monospace;
-    color: green;
-  }
-  .pink-text {
-    color: pink;
-  }
-  .blue-text {
-    color: blue;
-  }
-&lt;/style&gt;
-&lt;h1 class=&quot;pink-text blue-text&quot;&gt;Hello World!&lt;/h1&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  body &#123;</span></span><br><span class="line"><span class="undefined">    background-color: black;</span></span><br><span class="line"><span class="undefined">    font-family: monospace;</span></span><br><span class="line"><span class="undefined">    color: green;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.pink-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: pink;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.blue-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: blue;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"pink-text blue-text"</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/override-class-declarations-by-styling-id-attributes" target="_blank" rel="noopener">Override Class Declarations by Styling ID Attributes</a></p>
-<pre><code class="html">&lt;style&gt;
-  body {
-    background-color: black;
-    font-family: monospace;
-    color: green;
-  }
-  .pink-text {
-    color: pink;
-  }
-  .blue-text {
-    color: blue;
-  }
-
-  #orange-text {
-    color:orange;
-  }
-&lt;/style&gt;
-&lt;h1 class=&quot;pink-text blue-text&quot; id=&quot;orange-text&quot;&gt;Hello World!&lt;/h1&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  body &#123;</span></span><br><span class="line"><span class="undefined">    background-color: black;</span></span><br><span class="line"><span class="undefined">    font-family: monospace;</span></span><br><span class="line"><span class="undefined">    color: green;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.pink-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: pink;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.blue-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: blue;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="css">  <span class="selector-id">#orange-text</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span><span class="selector-pseudo">:orange</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"pink-text blue-text"</span> <span class="attr">id</span>=<span class="string">"orange-text"</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/override-class-declarations-with-inline-styles" target="_blank" rel="noopener">Override Class Declarations with Inline Styles</a></p>
-<pre><code class="html">&lt;h1 id=&quot;orange-text&quot; class=&quot;pink-text blue-text&quot; style=&quot;color: white&quot;&gt;Hello World!&lt;/h1&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"orange-text"</span> <span class="attr">class</span>=<span class="string">"pink-text blue-text"</span> <span class="attr">style</span>=<span class="string">"color: white"</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/override-all-other-styles-by-using-important" target="_blank" rel="noopener">Override All Other Styles by using Important</a></p>
-<pre><code class="html">&lt;style&gt;
-    .pink-text {
-    color: pink !important;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-class">.pink-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: pink !important;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-hex-code-for-specific-colors" target="_blank" rel="noopener">Use Hex Code for Specific Colors</a></p>
-<pre><code class="html">&lt;style&gt;
-  body {
-    background-color: #000000;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  body &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#000000</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-hex-code-to-mix-colors" target="_blank" rel="noopener">Use Hex Code to Mix Colors</a></p>
-<pre><code class="html">&lt;style&gt;
-  .red-text {
-    color: #FF0000;
-  }
-  .green-text {
-    color: #00FF00;
-  }
-  .dodger-blue-text {
-    color: #1E90FF;
-  }
-  .orange-text {
-    color: #FFA500;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.red-text</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#FF0000</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.green-text</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#00FF00</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.dodger-blue-text</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#1E90FF</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.orange-text</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#FFA500</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-abbreviated-hex-code" target="_blank" rel="noopener">Use Abbreviated Hex Code</a></p>
-<pre><code class="HTML">&lt;style&gt;
-  .red-text {
-    color: #F00;
-  }
-  .fuchsia-text {
-    color: #F0F;
-  }
-  .cyan-text {
-    color: #0FF;
-  }
-  .green-text {
-    color: #0F0;
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.red-text</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#F00</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.fuchsia-text</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#F0F</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.cyan-text</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#0FF</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.green-text</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#0F0</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-rgb-values-to-color-elements" target="_blank" rel="noopener">Use RGB values to Color Elements</a></p>
-<pre><code class="HTML">&lt;style&gt;
-  body {
-    background-color: rgb(0, 0, 0);
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  body &#123;</span></span><br><span class="line"><span class="undefined">    background-color: rgb(0, 0, 0);</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-rgb-to-mix-colors" target="_blank" rel="noopener">Use RGB to Mix Colors</a></p>
-<pre><code class="html">&lt;style&gt;
-  .red-text {
-    color: rgb(255, 0, 0);
-  }
-  .orchid-text {
-    color: rgb(218, 112, 214);
-  }
-  .sienna-text {
-    color: rgb(160, 82, 45);
-  }
-  .blue-text {
-    color: rgb(0, 0, 255);
-  }
-&lt;/style&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.red-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: rgb(255, 0, 0);</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.orchid-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: rgb(218, 112, 214);</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.sienna-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: rgb(160, 82, 45);</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.blue-text</span> &#123;</span></span><br><span class="line"><span class="undefined">    color: rgb(0, 0, 255);</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-css-variables-to-change-several-elements-at-once" target="_blank" rel="noopener">Use CSS Variables to change several elements at once</a></p>
-<pre><code class="html">&lt;style&gt;   
-        /* change code below */
-    --penguin-skin: gray;
-    --penguin-belly: white;
-    --penguin-beak: orange;
-    /* change code above */
-&lt;/style&gt; 
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">   </span></span><br><span class="line"><span class="css">		<span class="comment">/* change code below */</span></span></span><br><span class="line"><span class="undefined">    --penguin-skin: gray;</span></span><br><span class="line"><span class="undefined">    --penguin-belly: white;</span></span><br><span class="line"><span class="undefined">    --penguin-beak: orange;</span></span><br><span class="line"><span class="css">    <span class="comment">/* change code above */</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/create-a-custom-css-variable" target="_blank" rel="noopener">Create a custom CSS Variable</a></p>
-<pre><code class="html">&lt;style&gt;   
-    /* add code below */
-    --penguin-skin: gray;
-    /* add code above */
-&lt;/style&gt; 
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">   </span></span><br><span class="line"><span class="css">    <span class="comment">/* add code below */</span></span></span><br><span class="line"><span class="undefined">    --penguin-skin: gray;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add code above */</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-a-custom-css-variable" target="_blank" rel="noopener">Use a custom CSS Variable</a></p>
-<pre><code class="html">&lt;style&gt;   
-    /* change code below */
-    background: var(--penguin-skin);
-    /* change code above */
-&lt;/style&gt; 
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">   </span></span><br><span class="line"><span class="css">    <span class="comment">/* change code below */</span></span></span><br><span class="line"><span class="undefined">    background: var(--penguin-skin);</span></span><br><span class="line"><span class="css">    <span class="comment">/* change code above */</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/attach-a-fallback-value-to-a-css-variable" target="_blank" rel="noopener">Attach a Fallback value to a CSS Variable</a></p>
-<pre><code class="html">&lt;style&gt;   
-    /* change code below */
-    background: var(--pengiun-skin, black);
-    /* change code above */
-&lt;/style&gt; 
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">   </span></span><br><span class="line"><span class="css">    <span class="comment">/* change code below */</span></span></span><br><span class="line"><span class="undefined">    background: var(--pengiun-skin, black);</span></span><br><span class="line"><span class="css">    <span class="comment">/* change code above */</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/cascading-css-variables" target="_blank" rel="noopener">Cascading CSS variables</a></p>
-<pre><code class="html">&lt;style&gt;   
-  :root {
-    /* add code below */
-    --penguin-belly: pink;
-    /* add code above */
-  }
-&lt;/style&gt; 
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">   </span></span><br><span class="line"><span class="css">  <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add code below */</span></span></span><br><span class="line"><span class="undefined">    --penguin-belly: pink;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add code above */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/change-a-variable-for-a-specific-area" target="_blank" rel="noopener">Change a variable for a specific area</a></p>
-<pre><code class="html">&lt;style&gt;   
-  :root {
-    --penguin-skin: gray;
-    --penguin-belly: pink;
-    --penguin-beak: orange;
-  }
-
-  .penguin {
-    /* add code below */
-    --penguin-belly: white;
-    /* add code above */
-  }
-&lt;/style&gt; 
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">   </span></span><br><span class="line"><span class="css">  <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="undefined">    --penguin-skin: gray;</span></span><br><span class="line"><span class="undefined">    --penguin-belly: pink;</span></span><br><span class="line"><span class="undefined">    --penguin-beak: orange;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="css">  <span class="selector-class">.penguin</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add code below */</span></span></span><br><span class="line"><span class="undefined">    --penguin-belly: white;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add code above */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/basic-css/use-a-media-query-to-change-a-variable" target="_blank" rel="noopener">Use a media query to change a variable</a></p>
-<pre><code class="html">&lt;style&gt;   
-  :root {
-    --penguin-size: 300px;
-    --penguin-skin: gray;
-    --penguin-belly: white;
-    --penguin-beak: orange;
-  }
-
-  @media (max-width: 350px) {
-    :root {
-
-      /* add code below */
-      --penguin-size: 200px;
-      --penguin-skin: black;
-      /* add code above */
-
-    }
-  }
-&lt;/style&gt; 
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">   </span></span><br><span class="line"><span class="css">  <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="undefined">    --penguin-size: 300px;</span></span><br><span class="line"><span class="undefined">    --penguin-skin: gray;</span></span><br><span class="line"><span class="undefined">    --penguin-belly: white;</span></span><br><span class="line"><span class="undefined">    --penguin-beak: orange;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="css">  @<span class="keyword">media</span> (max-width: <span class="number">350px</span>) &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="undefined">      </span></span><br><span class="line"><span class="css">      <span class="comment">/* add code below */</span></span></span><br><span class="line"><span class="undefined">      --penguin-size: 200px;</span></span><br><span class="line"><span class="undefined">      --penguin-skin: black;</span></span><br><span class="line"><span class="css">      <span class="comment">/* add code above */</span></span></span><br><span class="line"><span class="undefined">      </span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -1257,7 +899,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

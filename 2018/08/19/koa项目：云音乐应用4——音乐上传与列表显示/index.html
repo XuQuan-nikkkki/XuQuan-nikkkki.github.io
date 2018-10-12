@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  994 字
+                  1,042 字
                 </span>
               
 
@@ -489,33 +489,13 @@
 <a id="more"></a>
 <p>我们首先来完成两个功能，第一个是完成登录后，跳转到index页面，页面中根据登录的id来找到用户的音乐，并在页面中显示音乐列表；第二个功能是点击上传按钮能够上传音乐。</p>
 <h4 id="显示音乐列表"><a href="#显示音乐列表" class="headerlink" title="显示音乐列表"></a>显示音乐列表</h4><h5 id="创建router"><a href="#创建router" class="headerlink" title="创建router"></a>创建<code>router</code></h5><p>和之前创建专门处理用户账号相关的请求一样，我们先创建一个专业用来处理音乐请求相关的router，明确好router的功能，并在主文件中引入。</p>
-<pre><code class="js">// music_router.js
-const Router = require(&quot;koa-router&quot;);
-let router = new Router();
-let musicController = require(&quot;../modules/music_controller&quot;);
-
-router.get(&quot;/music/index&quot;, musicController.showIndex)
-</code></pre>
-<pre><code class="js">// app.js
-const musicRouter = require(&quot;./routes/music_router&quot;);
-...
-
-// 在处理router的部分添加以下代码
-app.use(musicRouter.routes)
-.use(musicRouter.allowedMethods());
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// music_router.js</span></span><br><span class="line"><span class="keyword">const</span> Router = <span class="built_in">require</span>(<span class="string">"koa-router"</span>);</span><br><span class="line"><span class="keyword">let</span> router = <span class="keyword">new</span> Router();</span><br><span class="line"><span class="keyword">let</span> musicController = <span class="built_in">require</span>(<span class="string">"../modules/music_controller"</span>);</span><br><span class="line"></span><br><span class="line">router.get(<span class="string">"/music/index"</span>, musicController.showIndex)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.js</span></span><br><span class="line"><span class="keyword">const</span> musicRouter = <span class="built_in">require</span>(<span class="string">"./routes/music_router"</span>);</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在处理router的部分添加以下代码</span></span><br><span class="line">app.use(musicRouter.routes)</span><br><span class="line">.use(musicRouter.allowedMethods());</span><br></pre></td></tr></table></figure>
 <h5 id="创建数据库的表"><a href="#创建数据库的表" class="headerlink" title="创建数据库的表"></a>创建数据库的表</h5><p>我们还需要在数据库中添加专门管理音乐的表，并定义好里面需要的列名。</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fufbwygn82j30h303saa7.jpg" alt="image-20180819212619317"></p>
 <p>这一部分直接通过navicat设置就好了，非常傻瓜式的操作。</p>
 <h5 id="音乐操作"><a href="#音乐操作" class="headerlink" title="音乐操作"></a>音乐操作</h5><p>接下来我们将和处理音乐相关的函数都放到<code>music_controller.js</code>中去。</p>
-<pre><code class="js">const music_db = require(&quot;../modules/db&quot;);
-
-exports.showIndex = async ctx =&gt; {
-  let user = ctx.session.user;    //判断出用户是谁
-  let musics = music_db.query(&quot;SELECT * FROM music_table WHERE uid = ?&quot;, [user.id]);
-  ctx.render(&#39;index&#39;, {musics})
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> music_db = <span class="built_in">require</span>(<span class="string">"../modules/db"</span>);</span><br><span class="line"></span><br><span class="line">exports.showIndex = <span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> user = ctx.session.user;    <span class="comment">//判断出用户是谁</span></span><br><span class="line">  <span class="keyword">let</span> musics = music_db.query(<span class="string">"SELECT * FROM music_table WHERE uid = ?"</span>, [user.id]);</span><br><span class="line">  ctx.render(<span class="string">'index'</span>, &#123;musics&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们判断出用户是谁，再根据用户的id来找到该用户上传的音乐，从而返回给模板。在postman中测试的结果（这里要注意，一定要先登录，再发请求，否则会提示没有登录，如下：）</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fufcy41kv2j30vg0pigo1.jpg" alt="image-20180819220201904"></p>
 <p>如果按步骤来测试，则结果是：</p>
@@ -523,42 +503,14 @@ exports.showIndex = async ctx =&gt; {
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fufcyyr8z6j319k0xu7bn.jpg" alt="image-20180819220250496"></p>
 <h4 id="添加音乐"><a href="#添加音乐" class="headerlink" title="添加音乐"></a>添加音乐</h4><p>添加的关于音乐的内容就是我们在显示音乐列表部分看到的那些信息，包括歌名title，歌手singer，时长time，歌曲文件file，歌词文件filelrc，id由数据库自动生成，uid则是上传歌曲的用户的id，其中uid是决定哪些歌曲显示在页面上的辨识标志。</p>
 <p>我们还是在<code>music_router.js</code>中先确定发起添加音乐请求后会调用相应的功能函数。</p>
-<pre><code class="js">// music_router.js
-router.get(&quot;/music/index&quot;, musicController.showIndex)
-.post(&quot;/music/add-music&quot;, musicController.addMusic)
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// music_router.js</span></span><br><span class="line">router.get(<span class="string">"/music/index"</span>, musicController.showIndex)</span><br><span class="line">.post(<span class="string">"/music/add-music"</span>, musicController.addMusic)</span><br></pre></td></tr></table></figure>
 <p>接着来完成添加音乐的功能函数：</p>
 <p>因为添加音乐的过程中除了常规的歌名、歌手的信息可以直接从<code>ctx.request</code>中获取外，我们还需要处理上传的文件，所以这里需要用到中间件来处理。</p>
 <p>在前面的复习内容中，我们接触过<code>multer</code>中间件配合express来完成文件上传，但是<code>koa-multer</code>上传会有一点小问题，我在测试了几次之后都没有成功，一直没有获取到相关数据，应该是哪里设置不对，我后面再找时间来试，这里我们先用全栈课的老师推荐的<code>koa-formidable</code>中间件来完成。</p>
 <p>先在<code>app.js</code>文件中引入并设置好，然后我们就可以在controller中直接通过中间件添加在<code>ctx.request</code>上的<code>files</code>属性来获取上传文件的相关信息了。</p>
-<pre><code class="bash">npm i koa-formidable -S
-</code></pre>
-<pre><code class="js">// app.js
-const formidable = require(&quot;koa-formidable&quot;);
-const musicRouter = require(&quot;./routes/music_router&quot;);
-
-musicRouter.use(formidable({
-  uploadDir: &#39;./public/upload&#39;,  // 在public文件夹中添加一个upload文件夹用来存放上传的歌曲和歌词文件
-  keepExtensions: true  //文件保持上传的后缀名不变
-}))
-</code></pre>
-<pre><code class="js">// music_controller.js
-exports.addMusic = async ctx =&gt; {
-  let {title, singer, time.} = ctx.request.body;
-
-  let filePath = ctx.request.files.file.path;   // 歌曲文件的上传路径
-  let fileLrcPath = ctx.request.files.filelrc.path;  // 歌词文件的上传路径
-
-  let net_filePath = &#39;/public/upload/&#39; + filePath;
-  let net_fileLrcPath = &#39;/public/upload/&#39; + fileLrcPath;
-
-  let uid = ctx.session.user.id;
-
-  let result = await music_db.query(&quot;INSERT INTO music_table (title, singer, time, file, filelrc, uid) values (?, ?, ?, ?, ?, ?)&quot;, [title, singer, time, net_filePath, net_fileLrcPath, uid]);
-
-  ctx.body = {code: &#39;001&#39;, msg: &#39;上传成功&#39;}；
-}
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i koa-formidable -S</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.js</span></span><br><span class="line"><span class="keyword">const</span> formidable = <span class="built_in">require</span>(<span class="string">"koa-formidable"</span>);</span><br><span class="line"><span class="keyword">const</span> musicRouter = <span class="built_in">require</span>(<span class="string">"./routes/music_router"</span>);</span><br><span class="line"></span><br><span class="line">musicRouter.use(formidable(&#123;</span><br><span class="line">  uploadDir: <span class="string">'./public/upload'</span>,  <span class="comment">// 在public文件夹中添加一个upload文件夹用来存放上传的歌曲和歌词文件</span></span><br><span class="line">  keepExtensions: <span class="literal">true</span>  <span class="comment">//文件保持上传的后缀名不变</span></span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// music_controller.js</span></span><br><span class="line">exports.addMusic = <span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> &#123;title, singer, time.&#125; = ctx.request.body;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">let</span> filePath = ctx.request.files.file.path;   <span class="comment">// 歌曲文件的上传路径</span></span><br><span class="line">  <span class="keyword">let</span> fileLrcPath = ctx.request.files.filelrc.path;  <span class="comment">// 歌词文件的上传路径</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">let</span> net_filePath = <span class="string">'/public/upload/'</span> + filePath;</span><br><span class="line">  <span class="keyword">let</span> net_fileLrcPath = <span class="string">'/public/upload/'</span> + fileLrcPath;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">let</span> uid = ctx.session.user.id;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">let</span> result = <span class="keyword">await</span> music_db.query(<span class="string">"INSERT INTO music_table (title, singer, time, file, filelrc, uid) values (?, ?, ?, ?, ?, ?)"</span>, [title, singer, time, net_filePath, net_fileLrcPath, uid]);</span><br><span class="line">  </span><br><span class="line">  ctx.body = &#123;<span class="attr">code</span>: <span class="string">'001'</span>, <span class="attr">msg</span>: <span class="string">'上传成功'</span>&#125;；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样我们就基本上把后台的功能都完成了，然后就开始逐步完成前端渲染，一边完成前端工作，一边来测试后台的代码是否有bug。</p>
 
       
@@ -831,7 +783,7 @@ exports.addMusic = async ctx =&gt; {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

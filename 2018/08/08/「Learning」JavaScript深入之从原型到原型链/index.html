@@ -447,7 +447,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  467 字
+                  479 字
                 </span>
               
 
@@ -506,16 +506,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="原型链三大定律"><a href="#原型链三大定律" class="headerlink" title="原型链三大定律"></a>原型链三大定律</h3><pre><code class="js">function Person() {}
-var person = new Person();
-
-//1. 父元素的prototype 等于 子元素的__proto__
-Person.prototype === person.__proto__  //true
-//2. 父元素原型的constructor指向自己
-Person.prototype.constructor === Perosn  //true
-//3. 获取对象的原型方法
-Object.getPrototypeOf(person) === Person.prototype  //true
-</code></pre>
+<h3 id="原型链三大定律"><a href="#原型链三大定律" class="headerlink" title="原型链三大定律"></a>原型链三大定律</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="comment">//1. 父元素的prototype 等于 子元素的__proto__</span></span><br><span class="line">Person.prototype === person.__proto__  <span class="comment">//true</span></span><br><span class="line"><span class="comment">//2. 父元素原型的constructor指向自己</span></span><br><span class="line">Person.prototype.constructor === Perosn  <span class="comment">//true</span></span><br><span class="line"><span class="comment">//3. 获取对象的原型方法</span></span><br><span class="line"><span class="built_in">Object</span>.getPrototypeOf(person) === Person.prototype  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <hr>
 <h3 id="构造函数创建对象"><a href="#构造函数创建对象" class="headerlink" title="构造函数创建对象"></a>构造函数创建对象</h3><h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a><code>prototype</code></h4><ul>
@@ -554,10 +545,7 @@ Object.getPrototypeOf(person) === Person.prototype  //true
 <p><code>Son.constructor === Father</code></p>
 </blockquote>
 <p>因为实例本身没有<code>constructor</code>属性，当读不到时，会向<code>Father.prototype</code>查找，所以实际上是</p>
-<pre><code class="js">person.constructor === Person.prototype.constructor;  //true
-Person.prototype.constructor === Person;   //true
-person.constructor === Person;   //true
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">person.constructor === Person.prototype.constructor;  <span class="comment">//true</span></span><br><span class="line">Person.prototype.constructor === Person;   <span class="comment">//true</span></span><br><span class="line">person.constructor === Person;   <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <h4 id="proto-属性"><a href="#proto-属性" class="headerlink" title="__proto__属性"></a><code>__proto__</code>属性</h4><p><code>__proto__</code>属性是一个非标准的访问原型的方法，当使用<code>obj.__proto__</code>时，可以理解成返回了<code>Object.getPrototypeOf(obj)</code></p>
 
       
@@ -830,7 +818,7 @@ person.constructor === Person;   //true
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

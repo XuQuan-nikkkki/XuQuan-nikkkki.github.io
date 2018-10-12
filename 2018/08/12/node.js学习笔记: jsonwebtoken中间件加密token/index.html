@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,135 字
+                  1,199 字
                 </span>
               
 
@@ -499,29 +499,12 @@
 <h3 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h3><p>JSON Web Token是一种解决跨域身份认证的方案。</p>
 <p>这篇文章能够帮我们理解JWT：<a href="">JSON Web Token 入门教程</a></p>
 <p>我们可以通过<code>jsonwebtoken</code>中间件来尝试创建token：</p>
-<pre><code class="js">const jwt = require(&quot;jsonwebtoken&quot;);
-let token = jwt.sign({foo: &#39;bar&#39;}, &#39;shhhhh&#39;);
-console.log(&quot;token: &quot;, token);
-let decoded = jwt.verify(token, &#39;shhhhh&#39;);
-console.log(&#39;decoded: &#39;, decoded.foo);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jwt = <span class="built_in">require</span>(<span class="string">"jsonwebtoken"</span>);</span><br><span class="line"><span class="keyword">let</span> token = jwt.sign(&#123;<span class="attr">foo</span>: <span class="string">'bar'</span>&#125;, <span class="string">'shhhhh'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"token: "</span>, token);</span><br><span class="line"><span class="keyword">let</span> decoded = jwt.verify(token, <span class="string">'shhhhh'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'decoded: '</span>, decoded.foo);</span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fu82q57pnqj30hv01kaaa.jpg" alt="image-20180813144925195"></p>
 <p>这是用HMAC SHA256方法进行加密的。</p>
 <p>我们还可以用其他方法来加密，比如RSA SHA256，我们可以从<a href="https://github.com/auth0/node-jsonwebtoken/tree/master/test" target="_blank" rel="noopener">github</a>上找到测试用的公钥和私钥。</p>
-<pre><code class="js">const jwt = require(&quot;jsonwebtoken&quot;);
-const fs = require(&quot;fs&quot;);
-
-let pri_key = fs.readFileSync(&quot;./private.key&quot;);
-let token = jwt.sign({foo:&#39;bar&#39;}, pri_key, {algorithm: &#39;RS256&#39;});
-console.log(&quot;token: &quot;, token);
-
-let pub_key = fs.readFileSync(&quot;./public.key&quot;);
-jwt.verify(token, pub_key, (err, decoded) =&gt; {
-  if(err) throw err;
-  console.log(&quot;decoded: &quot;, decoded.foo);
-})
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jwt = <span class="built_in">require</span>(<span class="string">"jsonwebtoken"</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> pri_key = fs.readFileSync(<span class="string">"./private.key"</span>);</span><br><span class="line"><span class="keyword">let</span> token = jwt.sign(&#123;<span class="attr">foo</span>:<span class="string">'bar'</span>&#125;, pri_key, &#123;<span class="attr">algorithm</span>: <span class="string">'RS256'</span>&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"token: "</span>, token);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> pub_key = fs.readFileSync(<span class="string">"./public.key"</span>);</span><br><span class="line">jwt.verify(token, pub_key, (err, decoded) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"decoded: "</span>, decoded.foo);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fu833vue4gj30hv04awfx.jpg" alt="image-20180813150238225"></p>
 <h4 id="简单实现JWT"><a href="#简单实现JWT" class="headerlink" title="简单实现JWT"></a>简单实现JWT</h4><blockquote>
@@ -535,57 +518,10 @@ jwt.verify(token, pub_key, (err, decoded) =&gt; {
 </ol>
 </blockquote>
 <p>我们先搭建一个简单的页面：</p>
-<pre><code class="html">&lt;form action=&quot;http://localhost:9000/login&quot; method=&quot;get&quot; accept-charset=&quot;utf-8&quot;&gt;
-  &lt;label&gt;姓名： &lt;input type=&quot;text&quot; name=&quot;name&quot; value=&quot;&quot;&gt;&lt;/label&gt;&lt;br&gt;
-  &lt;label&gt;年龄： &lt;input type=&quot;text&quot; name=&quot;age&quot; value=&quot;&quot;&gt;&lt;/label&gt;
-  &lt;input type=&quot;submit&quot; name=&quot;&quot;&gt;
-&lt;/form&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://localhost:9000/login"</span> <span class="attr">method</span>=<span class="string">"get"</span> <span class="attr">accept-charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>姓名： <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>年龄： <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"age"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">""</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fu85hbk87uj3080029glg.jpg" alt="image-20180813162444663"></p>
 <p>服务器端代码：</p>
-<pre><code class="js">const http = require(&quot;http&quot;);
-const jwt = require(&quot;jsonwebtoken&quot;);
-const fs = require(&quot;fs&quot;);
-const url = require(&quot;url&quot;);
-
-let pri_key = fs.readFileSync(&#39;./private.key&#39;);  //秘钥
-
-let i = 1;   
-global.mySession = {}; //模拟的session数据
-
-let server = http.createServer((req, res) =&gt; {
-  if(req.url === &#39;/&#39;) { //如果用户直接访问，就返回登录页面
-    let page = fs.readFileSync(&#39;./test.html&#39;);
-    res.end(page);
-  } else if (req.url.startsWith(&#39;/login&#39;)) { //如果用户提交数据到/login页面
-    // 解析用户请求，获取用户的数据
-    // 打印出来是{name: xxx, age: xx}
-    let obj = url.parse(req.url, true).query;
-    // 每个用户一个session_id,这里的形式就是cookie_1, cookie_2...以此类推
-    let cookieValue = &quot;cookie_&quot; + (i++);
-    // 加密token
-    let TOKEN = jwt.sign({cookie: cookieValue}, pri_key, {algorithm: &#39;RS256&#39;});
-    // 关联session和token，让token对应用户的数据
-    global.mySession[TOKEN] = obj;
-    // 在响应头的cookie中返回数据
-    res.setHeader(&quot;set-cookie&quot;, &quot;cookie=&quot;+TOKEN);
-    res.end(&quot;Login succeed&quot;);
-  } else if(req.url.startsWith(&#39;/show&#39;)) { //如果用户想要查看数据
-    // 获取用户的所有cookies
-    let myCookies = req.headers.cookie;
-    // 找到key为cookie的那一条
-    // 所有的cookies会以一长串字符串的形式发过来，所以我直接在cookie=这部分切开
-    let cookieValue = myCookies.split(&quot;cookie=&quot;)[1];
-    // 在session中找到对应的数据，解析后返回给浏览器
-    res.end(JSON.stringify(global.mySession[cookieValue]));
-  }
-
-})
-
-server.listen(9000, () =&gt; {
-  console.log(&quot;server running at 9000&quot;);
-})
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="keyword">const</span> jwt = <span class="built_in">require</span>(<span class="string">"jsonwebtoken"</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">"url"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> pri_key = fs.readFileSync(<span class="string">'./private.key'</span>);  <span class="comment">//秘钥</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> i = <span class="number">1</span>;   </span><br><span class="line">global.mySession = &#123;&#125;; <span class="comment">//模拟的session数据</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(req.url === <span class="string">'/'</span>) &#123; <span class="comment">//如果用户直接访问，就返回登录页面</span></span><br><span class="line">    <span class="keyword">let</span> page = fs.readFileSync(<span class="string">'./test.html'</span>);</span><br><span class="line">    res.end(page);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (req.url.startsWith(<span class="string">'/login'</span>)) &#123; <span class="comment">//如果用户提交数据到/login页面</span></span><br><span class="line">    <span class="comment">// 解析用户请求，获取用户的数据</span></span><br><span class="line">    <span class="comment">// 打印出来是&#123;name: xxx, age: xx&#125;</span></span><br><span class="line">    <span class="keyword">let</span> obj = url.parse(req.url, <span class="literal">true</span>).query;</span><br><span class="line">    <span class="comment">// 每个用户一个session_id,这里的形式就是cookie_1, cookie_2...以此类推</span></span><br><span class="line">    <span class="keyword">let</span> cookieValue = <span class="string">"cookie_"</span> + (i++);</span><br><span class="line">    <span class="comment">// 加密token</span></span><br><span class="line">    <span class="keyword">let</span> TOKEN = jwt.sign(&#123;<span class="attr">cookie</span>: cookieValue&#125;, pri_key, &#123;<span class="attr">algorithm</span>: <span class="string">'RS256'</span>&#125;);</span><br><span class="line">    <span class="comment">// 关联session和token，让token对应用户的数据</span></span><br><span class="line">    global.mySession[TOKEN] = obj;</span><br><span class="line">    <span class="comment">// 在响应头的cookie中返回数据</span></span><br><span class="line">    res.setHeader(<span class="string">"set-cookie"</span>, <span class="string">"cookie="</span>+TOKEN);</span><br><span class="line">    res.end(<span class="string">"Login succeed"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span>(req.url.startsWith(<span class="string">'/show'</span>)) &#123; <span class="comment">//如果用户想要查看数据</span></span><br><span class="line">    <span class="comment">// 获取用户的所有cookies</span></span><br><span class="line">    <span class="keyword">let</span> myCookies = req.headers.cookie;</span><br><span class="line">    <span class="comment">// 找到key为cookie的那一条</span></span><br><span class="line">    <span class="comment">// 所有的cookies会以一长串字符串的形式发过来，所以我直接在cookie=这部分切开</span></span><br><span class="line">    <span class="keyword">let</span> cookieValue = myCookies.split(<span class="string">"cookie="</span>)[<span class="number">1</span>];</span><br><span class="line">    <span class="comment">// 在session中找到对应的数据，解析后返回给浏览器</span></span><br><span class="line">    res.end(<span class="built_in">JSON</span>.stringify(global.mySession[cookieValue]));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>我们在浏览器端提交数据后：</p>
 <p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu85psygn7j306q01wmx1.jpg" alt="image-20180813163254261"></p>
 <p>浏览器提示成功：</p>
@@ -869,7 +805,7 @@ server.listen(9000, () =&gt; {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

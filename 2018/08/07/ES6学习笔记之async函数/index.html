@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  393 字
+                  419 字
                 </span>
               
 
@@ -499,39 +499,13 @@
 </ul>
 <p>我们可以理解，<code>async</code>函数就是<code>generator</code>函数的高级版，它让<code>generator</code>函数写起来更方便了。</p>
 <h3 id="async函数的基本用法"><a href="#async函数的基本用法" class="headerlink" title="async函数的基本用法"></a><code>async</code>函数的基本用法</h3><p>既然<code>async</code>函数是<code>generator</code>的高级封装，我们可以结合两者一起来看看它们之间的区别和联系。</p>
-<pre><code class="js">const fs = require(&#39;fs&#39;);
-const readFile = function(fileName) {
-  return new Promise(function(resolve, reject) {
-    fs.readFile(fileName, function(err, data) {
-      if(error) return reject(error);
-      resolve(data);
-    })
-  })
-}
-
-//generator函数写法
-const gen = function* () {
-  const f1 = yield readFile(&#39;/data1&#39;);
-  const f2 = yield readFile(&#39;/data2&#39;);
-  console.log(f1.toString());
-  console.log(f2.toString());
-};
-
-//async函数写法
-const asyncReadFile = async function() {
-  const f1 = await readFile(&#39;/data1&#39;);
-  const f2 = await readFile(&#39;/data2&#39;);
-  console.log(f1.toString());
-  console.log(f2.toString());
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">const</span> readFile = <span class="function"><span class="keyword">function</span>(<span class="params">fileName</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    fs.readFile(fileName, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(error) <span class="keyword">return</span> reject(error);</span><br><span class="line">      resolve(data);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//generator函数写法</span></span><br><span class="line"><span class="keyword">const</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> f1 = <span class="keyword">yield</span> readFile(<span class="string">'/data1'</span>);</span><br><span class="line">  <span class="keyword">const</span> f2 = <span class="keyword">yield</span> readFile(<span class="string">'/data2'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(f1.toString());</span><br><span class="line">  <span class="built_in">console</span>.log(f2.toString());</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//async函数写法</span></span><br><span class="line"><span class="keyword">const</span> asyncReadFile = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> f1 = <span class="keyword">await</span> readFile(<span class="string">'/data1'</span>);</span><br><span class="line">  <span class="keyword">const</span> f2 = <span class="keyword">await</span> readFile(<span class="string">'/data2'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(f1.toString());</span><br><span class="line">  <span class="built_in">console</span>.log(f2.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>从写法上看，不难发现，<code>async</code>函数只是将<code>generator</code>函数的星号（<code>*</code>）替换成了<code>async</code>，将<code>yield</code>替换成了<code>await</code>。</p>
 <p>但是<code>async</code>在用法上还是对<code>generator</code>函数有了一些改进：</p>
 <ol>
 <li><p>内置执行器</p>
 <p><code>generator</code>函数的执行需要<code>next()</code>来调用，但是<code>async</code>函数自带执行器，即与普通函数一样，直接调用即可</p>
-<pre><code class="js">asyncReadFile()
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">asyncReadFile()</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>语义更明确</p>
 <p><code>async</code>本身就有异步的含义，<code>await</code>也有等待结果的意思，比<code>*</code>和<code>yield</code>意思更明确</p>
@@ -811,7 +785,7 @@ const asyncReadFile = async function() {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  900 字
+                  944 字
                 </span>
               
 
@@ -511,49 +511,21 @@
 </ul>
 <a id="more"></a>
 <hr>
-<h2 id="RegExp构造函数"><a href="#RegExp构造函数" class="headerlink" title="RegExp构造函数"></a><code>RegExp</code>构造函数</h2><h3 id="ES5中RegExp构造函数写法"><a href="#ES5中RegExp构造函数写法" class="headerlink" title="ES5中RegExp构造函数写法"></a>ES5中<code>RegExp</code>构造函数写法</h3><pre><code class="js">// 写法1 参数：字符串 + 修饰符
-let regex = new RegExp(&#39;xyz&#39;, &#39;i&#39;);
-
-//写法2  参数：正则表达式
-let regex = new RegExp(/xyz/i);
-</code></pre>
+<h2 id="RegExp构造函数"><a href="#RegExp构造函数" class="headerlink" title="RegExp构造函数"></a><code>RegExp</code>构造函数</h2><h3 id="ES5中RegExp构造函数写法"><a href="#ES5中RegExp构造函数写法" class="headerlink" title="ES5中RegExp构造函数写法"></a>ES5中<code>RegExp</code>构造函数写法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 写法1 参数：字符串 + 修饰符</span></span><br><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'xyz'</span>, <span class="string">'i'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//写法2  参数：正则表达式</span></span><br><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/xyz/i</span>);</span><br></pre></td></tr></table></figure>
 <p>不允许<code>参数：正则表达式+修饰符</code>的形式，否则会报错</p>
-<pre><code class="js">let regex = new RegExp(/xyz/, &#39;i&#39;);  //Uncaught TypeError
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/xyz/</span>, <span class="string">'i'</span>);  <span class="comment">//Uncaught TypeError</span></span><br></pre></td></tr></table></figure>
 <h3 id="ES6写法"><a href="#ES6写法" class="headerlink" title="ES6写法"></a>ES6写法</h3><p>参数可以是<code>正则表达式 + 修饰符</code>，且新指定的修饰符会覆盖原修饰符</p>
-<pre><code class="js">new RegExp(/abc/ig, &#39;i&#39;).flags    // &quot;i&quot;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/abc/ig</span>, <span class="string">'i'</span>).flags    <span class="comment">// "i"</span></span><br></pre></td></tr></table></figure>
 <h2 id="新的修饰符"><a href="#新的修饰符" class="headerlink" title="新的修饰符"></a>新的修饰符</h2><h3 id="u修饰符"><a href="#u修饰符" class="headerlink" title="u修饰符"></a><code>u</code>修饰符</h3><p><code>u</code>修饰符指”Unicode模式”，用于正确处理大于<code>\uFFFF</code>的Unicode字符。</p>
 <h3 id="y修饰符"><a href="#y修饰符" class="headerlink" title="y修饰符"></a><code>y</code>修饰符</h3><p><code>y</code>修饰符叫做”粘连“（sticky）修饰符。</p>
 <p>它和<code>g</code>修饰符类似，也是全局匹配，但是后一次匹配必须从上一次匹配成功的下一个位置开始。</p>
-<pre><code class="js">let str = &#39;aaa_aa_a&#39;;
-let r1 = /a+/g;
-let r2 = /a+/y;
-
-r1.exec(str)   //[&#39;aaa&#39;]
-r2.exec(str)   //[&#39;aaa&#39;]
-
-r1.exec(str)   //[&#39;aa&#39;]
-r2.exec(str)   //null
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'aaa_aa_a'</span>;</span><br><span class="line"><span class="keyword">let</span> r1 = <span class="regexp">/a+/g</span>;</span><br><span class="line"><span class="keyword">let</span> r2 = <span class="regexp">/a+/y</span>;</span><br><span class="line"></span><br><span class="line">r1.exec(str)   <span class="comment">//['aaa']</span></span><br><span class="line">r2.exec(str)   <span class="comment">//['aaa']</span></span><br><span class="line"></span><br><span class="line">r1.exec(str)   <span class="comment">//['aa']</span></span><br><span class="line">r2.exec(str)   <span class="comment">//null</span></span><br></pre></td></tr></table></figure>
 <h2 id="新的属性"><a href="#新的属性" class="headerlink" title="新的属性"></a>新的属性</h2><h3 id="unicode属性"><a href="#unicode属性" class="headerlink" title="unicode属性"></a><code>unicode</code>属性</h3><p><code>unicode</code>属性表示是否设置了<code>u</code>修饰符</p>
-<pre><code class="js">const r1 = /hello/;
-const r2 = /hello/u;
-
-r1.unicode    //false
-r2.unicode    //true
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> r1 = <span class="regexp">/hello/</span>;</span><br><span class="line"><span class="keyword">const</span> r2 = <span class="regexp">/hello/u</span>;</span><br><span class="line"></span><br><span class="line">r1.unicode    <span class="comment">//false</span></span><br><span class="line">r2.unicode    <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <h3 id="sticky属性"><a href="#sticky属性" class="headerlink" title="sticky属性"></a><code>sticky</code>属性</h3><p><code>sticky</code>属性表示是否设置了<code>y</code>修饰符</p>
-<pre><code class="js">let r = /hello\d/y;
-r.sticky   //true
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> r = <span class="regexp">/hello\d/y</span>;</span><br><span class="line">r.sticky   <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <h3 id="flags属性"><a href="#flags属性" class="headerlink" title="flags属性"></a><code>flags</code>属性</h3><p><code>flags</code>属性会返回正则表达式的修饰符</p>
-<pre><code class="js">//ES5的 source 属性会返回正则表达式的正文
-/abc/ig.source    //&quot;abc&quot;
-
-//ES6的 flags 属性会返回正则表达式的修饰符
-/abc/ig.flags    //&quot;gi&quot;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5的 source 属性会返回正则表达式的正文</span></span><br><span class="line">/abc/ig.source    <span class="comment">//"abc"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ES6的 flags 属性会返回正则表达式的修饰符</span></span><br><span class="line">/abc/ig.flags    <span class="comment">//"gi"</span></span><br></pre></td></tr></table></figure>
 <h2 id="新规则"><a href="#新规则" class="headerlink" title="新规则"></a>新规则</h2><h3 id="后行断言"><a href="#后行断言" class="headerlink" title="后行断言"></a>后行断言</h3><p>JavaScript原本只支持先行断言和先行否定断言。ES2018引入后行断言。</p>
 <p>先行断言指，只有<code>x</code>在<code>y</code>前面才匹配，写成<strong><code>/x(?=y)/</code></strong>，比如匹配百分号之前的数字，写成<code>/\d(?=%)/</code>，先行否定断言指石油<code>x</code>不在<code>y</code>前面才匹配，写成<strong><code>/x(?!y)/</code></strong>。这两个规则在<a href="https://www.jianshu.com/p/0ffc2b6bac0a" target="_blank" rel="noopener">正则表达式</a>这一节中提到过。</p>
 <p>后行断言与先行断言相反，只有<code>x</code>在<code>y</code>后面才匹配，写成<strong><code>/(?&lt;=y)x/</code></strong>，比如只匹配没有符号之后的数字，要写成<code>/(?&lt;=\$)\d+/</code>。同样地，后行否定断言只有<code>x</code>不在<code>y</code>后面才匹配，写成<strong><code>/(?&lt;!y)x/</code></strong>。</p>
@@ -579,26 +551,9 @@ r.sticky   //true
 </tbody>
 </table>
 <h3 id="具名组匹配"><a href="#具名组匹配" class="headerlink" title="具名组匹配"></a>具名组匹配</h3><p>正则表达式中使用圆括号进行组匹配，并将匹配结果分别提取出来，但是每一组的匹配含义并不清晰，只能通过序号来引用。</p>
-<pre><code class="js">const RE_DATE = /(\d{4})-(\d{2})-(\d{2})/;
-
-const matchObj = RE_DATE.exec(&#39;1999-12-31&#39;);
-const year = matchObj[1];  //1999
-const month = matchObj[2];  //12
-const day = matchObj[3];  //31
-
-//matchObj [&#39;1999-12-31&#39;, &#39;1999&#39;, &#39;12&#39;, &#39;31&#39;, index:0, input: &#39;1999-12-31&#39;, groups: undefined]
-
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> RE_DATE = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> matchObj = RE_DATE.exec(<span class="string">'1999-12-31'</span>);</span><br><span class="line"><span class="keyword">const</span> year = matchObj[<span class="number">1</span>];  <span class="comment">//1999</span></span><br><span class="line"><span class="keyword">const</span> month = matchObj[<span class="number">2</span>];  <span class="comment">//12</span></span><br><span class="line"><span class="keyword">const</span> day = matchObj[<span class="number">3</span>];  <span class="comment">//31</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//matchObj ['1999-12-31', '1999', '12', '31', index:0, input: '1999-12-31', groups: undefined]</span></span><br></pre></td></tr></table></figure>
 <p>ES2018引入了具名组匹配（Named Capture Groups），允许为每一个组匹配指定一个名字。</p>
-<pre><code class="js">const RE_DATE = /(?&lt;year&gt;\d{4})-(?&lt;month&gt;\d{2})-(?&lt;day&gt;\d{2})/;
-
-const matchObj = RE_DATE.exec(&#39;1999-12-31&#39;);
-const year = matchObj.groups.year;  //1999
-const month = matchObj.groups.month;  //12
-const day = matchObj.groups.day;  //31
-
-//matchObj [&#39;1999-12-31&#39;, &#39;1999&#39;, &#39;12&#39;, &#39;31&#39;, index:0, input: &#39;1999-12-31&#39;, groups: {year: &#39;1999&#39;, month: &#39;12&#39;, day: &#39;31&#39;}]
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> RE_DATE = <span class="regexp">/(?&lt;year&gt;\d&#123;4&#125;)-(?&lt;month&gt;\d&#123;2&#125;)-(?&lt;day&gt;\d&#123;2&#125;)/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> matchObj = RE_DATE.exec(<span class="string">'1999-12-31'</span>);</span><br><span class="line"><span class="keyword">const</span> year = matchObj.groups.year;  <span class="comment">//1999</span></span><br><span class="line"><span class="keyword">const</span> month = matchObj.groups.month;  <span class="comment">//12</span></span><br><span class="line"><span class="keyword">const</span> day = matchObj.groups.day;  <span class="comment">//31</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//matchObj ['1999-12-31', '1999', '12', '31', index:0, input: '1999-12-31', groups: &#123;year: '1999', month: '12', day: '31'&#125;]</span></span><br></pre></td></tr></table></figure>
 <hr>
 <blockquote>
 <p>ES6学习笔记的内容主要基于阮一峰老师的<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">《ECMAScript 6入门》</a>，原文请见<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">链接</a></p>
@@ -645,8 +600,8 @@ const day = matchObj.groups.day;  //31
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/03/ES6学习笔记之Set和Map/" rel="prev" title="ES6学习笔记之Set和Map">
-                ES6学习笔记之Set和Map <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/03/ES6学习笔记之数组的扩展/" rel="prev" title="ES6学习笔记之数组的扩展">
+                ES6学习笔记之数组的扩展 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -874,7 +829,7 @@ const day = matchObj.groups.day;  //31
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

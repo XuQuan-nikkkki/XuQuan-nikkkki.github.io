@@ -467,7 +467,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,171 字
+                  1,353 字
                 </span>
               
 
@@ -483,7 +483,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  7 分钟
                 </span>
               
             </div>
@@ -508,82 +508,35 @@
 <a id="more"></a>
 <p>jade是一种“强依赖”的模板，即它无法和其他html和css文件共存，如果我们需要添加额外的非jade模板的页面代码，只能采用和jade兼容的其他模板，不能直接添加html。</p>
 <h3 id="jade的使用"><a href="#jade的使用" class="headerlink" title="jade的使用"></a>jade的使用</h3><p>先下载<code>jade</code>模块：</p>
-<pre><code class="bash">npm i jade -S
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i jade -S</span><br></pre></td></tr></table></figure>
 <h4 id="文件渲染"><a href="#文件渲染" class="headerlink" title="文件渲染"></a>文件渲染</h4><p><code>jade</code>模块自带<code>render</code>方法，可以直接渲染模板文件。最基础的就是我们可以尝试直接在js文件里写页面内容：</p>
-<pre><code class="js">const jade = require(&quot;jade&quot;);
-let content = `
-html
-    div
-        p`;
-let str = jade.render(content, {pretty: true});
-console.log(str);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jade = <span class="built_in">require</span>(<span class="string">"jade"</span>);</span><br><span class="line"><span class="keyword">let</span> content = <span class="string">`</span></span><br><span class="line"><span class="string">html</span></span><br><span class="line"><span class="string">	div</span></span><br><span class="line"><span class="string">		p`</span>;</span><br><span class="line"><span class="keyword">let</span> str = jade.render(content, &#123;<span class="attr">pretty</span>: <span class="literal">true</span>&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuagvuqhnwj30dc041mx8.jpg" alt="image-20180815162649599"></p>
 <p>当然这种方法并不靠谱，如果文件比较复杂，js文件内会混乱不堪，我们还是用常规的单独将模板内容存在文件里的方式来操作：</p>
 <ul>
 <li>创建<code>view</code>文件夹存放模板文件</li>
 </ul>
-<pre><code class="jade">html
-    div
-        p
-            a
-</code></pre>
-<pre><code class="js">const jade = require(&quot;jade&quot;);
-let str = jade.renderFile(&#39;view/1.jade&#39;, {pretty: true});
-console.log(str);
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	div</span><br><span class="line">		p</span><br><span class="line">			a</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jade = <span class="built_in">require</span>(<span class="string">"jade"</span>);</span><br><span class="line"><span class="keyword">let</span> str = jade.renderFile(<span class="string">'view/1.jade'</span>, &#123;<span class="attr">pretty</span>: <span class="literal">true</span>&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuagva4or1j30cy03xaa4.jpg" alt="image-20180815162951028"></p>
 <p>我们使用<code>renderFile</code>来读取模板文件。</p>
 <h3 id="jade的语法"><a href="#jade的语法" class="headerlink" title="jade的语法"></a>jade的语法</h3><h4 id="1-根据缩进规定层级"><a href="#1-根据缩进规定层级" class="headerlink" title="1. 根据缩进规定层级"></a>1. 根据缩进规定层级</h4><p>从上面的例子我们能看到，jade模板中根据缩进来规定元素之间的关系。如果没有缩进，那么两个元素就是平级的关系。</p>
-<h4 id="2-属性放在括号-里，多个属性用逗号隔开"><a href="#2-属性放在括号-里，多个属性用逗号隔开" class="headerlink" title="2. 属性放在括号()里，多个属性用逗号隔开"></a>2. 属性放在括号<code>()</code>里，多个属性用逗号隔开</h4><pre><code class="jade">html
-    head
-        link(href=&quot;a.css&quot;, rel=&quot;stylesheet&quot;)
-    body
-        div
-            ul
-                li
-                li
-                li
-            input(type=&quot;text&quot;, id=&quot;name&quot;, value=&quot;123&quot;)
-</code></pre>
+<h4 id="2-属性放在括号-里，多个属性用逗号隔开"><a href="#2-属性放在括号-里，多个属性用逗号隔开" class="headerlink" title="2. 属性放在括号()里，多个属性用逗号隔开"></a>2. 属性放在括号<code>()</code>里，多个属性用逗号隔开</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">		link(href=&quot;a.css&quot;, rel=&quot;stylesheet&quot;)</span><br><span class="line">	body</span><br><span class="line">		div</span><br><span class="line">			ul</span><br><span class="line">				li</span><br><span class="line">				li</span><br><span class="line">				li</span><br><span class="line">			input(type=&quot;text&quot;, id=&quot;name&quot;, value=&quot;123&quot;)</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fuagzuxo0xj30cz08kdg7.jpg" alt="image-20180815163416718"></p>
-<h4 id="3-特殊属性的写法"><a href="#3-特殊属性的写法" class="headerlink" title="3. 特殊属性的写法"></a>3. 特殊属性的写法</h4><h5 id="style可以使用json写属性"><a href="#style可以使用json写属性" class="headerlink" title="style可以使用json写属性"></a>style可以使用json写属性</h5><pre><code class="jade">html
-    head
-        link(href=&quot;a.css&quot;, rel=&quot;stylesheet&quot;)
-    body
-        div(style=&quot;width:200px;height:300px&quot;)
-        div(style={width: &quot;200px&quot;,height: &quot;300px&quot;})
-</code></pre>
+<h4 id="3-特殊属性的写法"><a href="#3-特殊属性的写法" class="headerlink" title="3. 特殊属性的写法"></a>3. 特殊属性的写法</h4><h5 id="style可以使用json写属性"><a href="#style可以使用json写属性" class="headerlink" title="style可以使用json写属性"></a>style可以使用json写属性</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">		link(href=&quot;a.css&quot;, rel=&quot;stylesheet&quot;)</span><br><span class="line">	body</span><br><span class="line">		div(style=&quot;width:200px;height:300px&quot;)</span><br><span class="line">		div(style=&#123;width: &quot;200px&quot;,height: &quot;300px&quot;&#125;)</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fuaiiqhzmpj30dv05waah.jpg" alt="image-20180815172701406"></p>
-<h5 id="class属性可以写成数组"><a href="#class属性可以写成数组" class="headerlink" title="class属性可以写成数组"></a>class属性可以写成数组</h5><pre><code class="jade">html
-    body
-        div(class=&quot;active left-wrap red-bg&quot;)
-        div(class=[&quot;active&quot;,&quot;left-wrap&quot;,&quot;red-bg&quot;])
-</code></pre>
+<h5 id="class属性可以写成数组"><a href="#class属性可以写成数组" class="headerlink" title="class属性可以写成数组"></a>class属性可以写成数组</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	body</span><br><span class="line">		div(class=&quot;active left-wrap red-bg&quot;)</span><br><span class="line">		div(class=[&quot;active&quot;,&quot;left-wrap&quot;,&quot;red-bg&quot;])</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuaijxx05yj30di04ldg2.jpg" alt="image-20180815172810582"></p>
 <h5 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h5><ul>
 <li>class可以用<code>.</code>简写 <code>div.active</code></li>
 <li>id可以用<code>#</code>简写 <code>div#div1</code></li>
 </ul>
-<pre><code class="jade">html
-    head
-        style
-    body
-        div.box
-        div#div1
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">		style</span><br><span class="line">	body</span><br><span class="line">		div.box</span><br><span class="line">		div#div1</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fuainfysmjj30dd05x74j.jpg" alt="image-20180815173132545"></p>
 <ul>
 <li><p>把所有属性都放进json <code>div&amp;attributes({title: &#39;aaa&#39;, id:&#39;div1&#39;})</code></p>
-<pre><code class="jade">html
-    head
-        style
-    body
-        div(title=&quot;aaa&quot;,id=&quot;div1&quot;)
-        div&amp;attributes({title: &#39;aaa&#39;, id: &#39;div1&#39;})
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">		style</span><br><span class="line">	body</span><br><span class="line">		div(title=&quot;aaa&quot;,id=&quot;div1&quot;)</span><br><span class="line">		div&amp;attributes(&#123;title: &apos;aaa&apos;, id: &apos;div1&apos;&#125;)</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuair8pwaxj30en05ut90.jpg" alt="image-20180815173511443"></p>
 </li>
 </ul>
@@ -592,23 +545,11 @@ console.log(str);
 <li>内容不能转行</li>
 <li>嵌套内容和子标签可以共存</li>
 </ul>
-<pre><code class="jade">html
-    head
-        style
-    body
-        div aaa
-            span bbb
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">		style</span><br><span class="line">	body</span><br><span class="line">		div aaa</span><br><span class="line">			span bbb</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fuaiwm1z55j30d105e74g.jpg" alt="image-20180815174021302"></p>
 <h3 id="导出jade模板内容"><a href="#导出jade模板内容" class="headerlink" title="导出jade模板内容"></a>导出jade模板内容</h3><ul>
 <li><p>使用<code>fs</code>模块，将内容写入到新的文件中</p>
-<pre><code class="js">const jade = require(&quot;jade&quot;);
-const fs = require(&quot;fs&quot;);
-let str = jade.renderFile(&#39;view/1.jade&#39;, {pretty: true});
-fs.writeFile(&#39;resource/1.html&#39;, str, (err) =&gt; {
-    console.log(err);
-})
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jade = <span class="built_in">require</span>(<span class="string">"jade"</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">let</span> str = jade.renderFile(<span class="string">'view/1.jade'</span>, &#123;<span class="attr">pretty</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">fs.writeFile(<span class="string">'resource/1.html'</span>, str, (err) =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fuaiyuvnkaj30ak04o74c.jpg" alt="image-20180815174230475"></p>
 </li>
 </ul>
@@ -618,101 +559,29 @@ fs.writeFile(&#39;resource/1.html&#39;, str, (err) =&gt; {
 </ul>
 <h4 id="2-允许自定义标签"><a href="#2-允许自定义标签" class="headerlink" title="2. 允许自定义标签"></a>2. 允许自定义标签</h4><ul>
 <li><p>默认是双标签</p>
-<pre><code class="jade">html
-    head
-        style
-    body
-        div
-        aaa
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">		style</span><br><span class="line">	body</span><br><span class="line">		div</span><br><span class="line">		aaa</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fuaj235g4jj30da0513ym.jpg" alt="image-20180815174536896"></p>
 </li>
 </ul>
-<h4 id="3-原样输出内容"><a href="#3-原样输出内容" class="headerlink" title="3. 原样输出内容"></a>3. 原样输出内容</h4><h5 id="1-内容前面加"><a href="#1-内容前面加" class="headerlink" title="1. 内容前面加|"></a>1. 内容前面加<code>|</code></h5><pre><code class="jade">  html
-      head
-      script
-          |window.onload=function (){
-          | var oBtn=document.getElementById(&#39;btn1&#39;);
-          | oBtn.onclick=function (){
-          |    alert(&#39;aaaa&#39;);
-          |    };
-          |};
-      body
-          |abc
-          |ddd
-          |213
-</code></pre>
+<h4 id="3-原样输出内容"><a href="#3-原样输出内容" class="headerlink" title="3. 原样输出内容"></a>3. 原样输出内容</h4><h5 id="1-内容前面加"><a href="#1-内容前面加" class="headerlink" title="1. 内容前面加|"></a>1. 内容前面加<code>|</code></h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">	script</span><br><span class="line">		|window.onload=function ()&#123;</span><br><span class="line">		| var oBtn=document.getElementById(&apos;btn1&apos;);</span><br><span class="line">		| oBtn.onclick=function ()&#123;</span><br><span class="line">		|	alert(&apos;aaaa&apos;);</span><br><span class="line">		|	&#125;;</span><br><span class="line">		|&#125;;</span><br><span class="line">	body</span><br><span class="line">		|abc</span><br><span class="line">		|ddd</span><br><span class="line">		|213</span><br></pre></td></tr></table></figure>
 <p>  <img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fuaj6tlf20j30dn085gm2.jpg" alt="image-20180815175010207"></p>
-<h5 id="2-标签后面加-（所有下级内容都原样输出）"><a href="#2-标签后面加-（所有下级内容都原样输出）" class="headerlink" title="2. 标签后面加.（所有下级内容都原样输出）"></a>2. 标签后面加<code>.</code>（所有下级内容都原样输出）</h5><pre><code class="jade">html
-    head
-        script.
-            window.onload=function(){
-                var oBtn=document.getElementById(&#39;btn1&#39;);
-                oBtn.onclick=function (){
-                    alert(&#39;aaaa&#39;);
-                };
-            };
-    body
-        |abc
-        |ddd
-        |213
-</code></pre>
+<h5 id="2-标签后面加-（所有下级内容都原样输出）"><a href="#2-标签后面加-（所有下级内容都原样输出）" class="headerlink" title="2. 标签后面加.（所有下级内容都原样输出）"></a>2. 标签后面加<code>.</code>（所有下级内容都原样输出）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">		script.</span><br><span class="line">			window.onload=function()&#123;</span><br><span class="line">				var oBtn=document.getElementById(&apos;btn1&apos;);</span><br><span class="line">				oBtn.onclick=function ()&#123;</span><br><span class="line">					alert(&apos;aaaa&apos;);</span><br><span class="line">				&#125;;</span><br><span class="line">			&#125;;</span><br><span class="line">	body</span><br><span class="line">		|abc</span><br><span class="line">		|ddd</span><br><span class="line">		|213</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuaj9ol4n7j30eu09mdgf.jpg" alt="image-20180815175255243"></p>
 <h5 id="3-include文件"><a href="#3-include文件" class="headerlink" title="3. include文件"></a>3. <code>include</code>文件</h5><ul>
 <li><p><code>include a.js</code></p>
-<pre><code class="js">window.onload=function (){
-    var oBtn=document.getElementById(&#39;btn1&#39;);
-    oBtn.onclick=function (){
-        alert(&#39;aaaa&#39;);
-    };
-};
-</code></pre>
-<pre><code class="jade">html
-    head
-        script
-            include a.js
-    body
-        |abc
-        |ddd
-        |213
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> oBtn=<span class="built_in">document</span>.getElementById(<span class="string">'btn1'</span>);</span><br><span class="line">	oBtn.onclick=<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="string">'aaaa'</span>);</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">		script</span><br><span class="line">			include a.js</span><br><span class="line">	body</span><br><span class="line">		|abc</span><br><span class="line">		|ddd</span><br><span class="line">		|213</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuajbnxwjnj30dm097q3h.jpg" alt="image-20180815175448912"></p>
 </li>
 </ul>
-<h4 id="4-输出变量"><a href="#4-输出变量" class="headerlink" title="4. 输出变量"></a>4. 输出变量</h4><h5 id="1-模板中：-变量"><a href="#1-模板中：-变量" class="headerlink" title="1. 模板中：#{变量}"></a>1. 模板中：<code>#{变量}</code></h5><h5 id="2-renderFile-url-变量-值"><a href="#2-renderFile-url-变量-值" class="headerlink" title="2. renderFile(url, {变量: 值})"></a>2. <code>renderFile(url, {变量: 值})</code></h5><pre><code class="jade">html
-    head
-    body
-        div 我的名字：#{name}
-</code></pre>
-<pre><code class="js">const jade = require(&quot;jade&quot;);
-let str = jade.renderFile(&#39;view/1.jade&#39;, {pretty: true, name: &#39;nikkkki&#39;});
-console.log(str);
-</code></pre>
+<h4 id="4-输出变量"><a href="#4-输出变量" class="headerlink" title="4. 输出变量"></a>4. 输出变量</h4><h5 id="1-模板中：-变量"><a href="#1-模板中：-变量" class="headerlink" title="1. 模板中：#{变量}"></a>1. 模板中：<code>#{变量}</code></h5><h5 id="2-renderFile-url-变量-值"><a href="#2-renderFile-url-变量-值" class="headerlink" title="2. renderFile(url, {变量: 值})"></a>2. <code>renderFile(url, {变量: 值})</code></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">	body</span><br><span class="line">		div 我的名字：#&#123;name&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jade = <span class="built_in">require</span>(<span class="string">"jade"</span>);</span><br><span class="line"><span class="keyword">let</span> str = jade.renderFile(<span class="string">'view/1.jade'</span>, &#123;<span class="attr">pretty</span>: <span class="literal">true</span>, <span class="attr">name</span>: <span class="string">'nikkkki'</span>&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fuajf25jrtj30ee04utci.jpg" alt="image-20180815175803892"></p>
-<h5 id="3-变量可以运算"><a href="#3-变量可以运算" class="headerlink" title="3. 变量可以运算"></a>3. 变量可以运算</h5><pre><code class="jade">html
-    head
-    body
-        div 我的年龄：#{a + b}
-</code></pre>
-<pre><code class="js">const jade = require(&quot;jade&quot;);
-let str = jade.renderFile(&#39;view/1.jade&#39;, {pretty: true, a:12, b: 6});
-console.log(str);
-</code></pre>
+<h5 id="3-变量可以运算"><a href="#3-变量可以运算" class="headerlink" title="3. 变量可以运算"></a>3. 变量可以运算</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">	body</span><br><span class="line">		div 我的年龄：#&#123;a + b&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jade = <span class="built_in">require</span>(<span class="string">"jade"</span>);</span><br><span class="line"><span class="keyword">let</span> str = jade.renderFile(<span class="string">'view/1.jade'</span>, &#123;<span class="attr">pretty</span>: <span class="literal">true</span>, <span class="attr">a</span>:<span class="number">12</span>, <span class="attr">b</span>: <span class="number">6</span>&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fuajh6syubj30d804oq6b.jpg" alt="image-20180815180007852"></p>
-<h5 id="4-变量可以是数据库获取的内容或用户输入内容"><a href="#4-变量可以是数据库获取的内容或用户输入内容" class="headerlink" title="4. 变量可以是数据库获取的内容或用户输入内容"></a>4. 变量可以是数据库获取的内容或用户输入内容</h5><h5 id="5-style和class不用花括号-，直接div-style-json-或div-class-arr"><a href="#5-style和class不用花括号-，直接div-style-json-或div-class-arr" class="headerlink" title="5. style和class不用花括号{}，直接div(style=json)或div(class=arr)"></a>5. style和class不用花括号<code>{}</code>，直接<code>div(style=json)</code>或<code>div(class=arr)</code></h5><pre><code class="jade">html
-    head
-    body
-        div(style=json)
-        div(class=arr)
-        div(class=arr class=&quot;active&quot;)
-        div(class=arr)
-        div(class=arr)
-</code></pre>
-<pre><code class="js">const jade = require(&quot;jade&quot;);
-let str = jade.renderFile(&#39;view/1.jade&#39;, {pretty: true, json: {width: &#39;200px&#39;, height: &#39;200px&#39;, background: &#39;red&#39;},
- arr: [&#39;aaa&#39;, &#39;left-wrap&#39;]});
-console.log(str);
-</code></pre>
+<h5 id="4-变量可以是数据库获取的内容或用户输入内容"><a href="#4-变量可以是数据库获取的内容或用户输入内容" class="headerlink" title="4. 变量可以是数据库获取的内容或用户输入内容"></a>4. 变量可以是数据库获取的内容或用户输入内容</h5><h5 id="5-style和class不用花括号-，直接div-style-json-或div-class-arr"><a href="#5-style和class不用花括号-，直接div-style-json-或div-class-arr" class="headerlink" title="5. style和class不用花括号{}，直接div(style=json)或div(class=arr)"></a>5. style和class不用花括号<code>{}</code>，直接<code>div(style=json)</code>或<code>div(class=arr)</code></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">	body</span><br><span class="line">		div(style=json)</span><br><span class="line">		div(class=arr)</span><br><span class="line">		div(class=arr class=&quot;active&quot;)</span><br><span class="line">		div(class=arr)</span><br><span class="line">		div(class=arr)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jade = <span class="built_in">require</span>(<span class="string">"jade"</span>);</span><br><span class="line"><span class="keyword">let</span> str = jade.renderFile(<span class="string">'view/1.jade'</span>, &#123;<span class="attr">pretty</span>: <span class="literal">true</span>, <span class="attr">json</span>: &#123;<span class="attr">width</span>: <span class="string">'200px'</span>, <span class="attr">height</span>: <span class="string">'200px'</span>, <span class="attr">background</span>: <span class="string">'red'</span>&#125;,</span><br><span class="line"> arr: [<span class="string">'aaa'</span>, <span class="string">'left-wrap'</span>]&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fuajjsfcy4j30eq064gqw.jpg" alt="image-20180815180238159"></p>
 <h5 id="6-style和class后面可以增加新的内容"><a href="#6-style和class后面可以增加新的内容" class="headerlink" title="6. style和class后面可以增加新的内容"></a>6. style和class后面可以增加新的内容</h5><ul>
 <li><code>div(class=arr class=&quot;active&quot;)</code></li>
@@ -721,80 +590,29 @@ console.log(str);
 <li>在标签前面加<code>!</code>，否则<code>&lt;&gt;</code>会被转义</li>
 <li>目的：防止注入式攻击</li>
 </ul>
-<pre><code class="jade">html
-    head
-    body
-        div!=content
-</code></pre>
-<pre><code class="js">const jade = require(&quot;jade&quot;);
-let str = jade.renderFile(&#39;view/1.jade&#39;, {pretty: true, content: &quot;&lt;h2&gt;你好啊&lt;/h2&gt;&lt;p&gt;对方水电费色弱威尔士地方&lt;/p&gt;&quot;});
-console.log(str);
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">	body</span><br><span class="line">		div!=content</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jade = <span class="built_in">require</span>(<span class="string">"jade"</span>);</span><br><span class="line"><span class="keyword">let</span> str = jade.renderFile(<span class="string">'view/1.jade'</span>, &#123;<span class="attr">pretty</span>: <span class="literal">true</span>, <span class="attr">content</span>: <span class="string">"&lt;h2&gt;你好啊&lt;/h2&gt;&lt;p&gt;对方水电费色弱威尔士地方&lt;/p&gt;"</span>&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fuajqno7rhj30e1040jug.jpg" alt="image-20180815180914031"></p>
 <ul>
 <li><p>如果直接使用变量，标签括号会被转义</p>
-<pre><code class="jade">html
-    head
-    body
-        div #{content}
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">	body</span><br><span class="line">		div #&#123;content&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fuajro91ldj30jb040wit.jpg" alt="image-20180815181012690"></p>
 </li>
 </ul>
-<h4 id="6-jade直接编写js"><a href="#6-jade直接编写js" class="headerlink" title="6. jade直接编写js"></a>6. jade直接编写js</h4><h5 id="1-开头加"><a href="#1-开头加" class="headerlink" title="1. 开头加-"></a>1. 开头加<code>-</code></h5><pre><code class="jade">html
-    head
-    body
-        -var a=12;
-        -var b=5;
-        div 结果是：#{a+b}
-</code></pre>
+<h4 id="6-jade直接编写js"><a href="#6-jade直接编写js" class="headerlink" title="6. jade直接编写js"></a>6. jade直接编写js</h4><h5 id="1-开头加"><a href="#1-开头加" class="headerlink" title="1. 开头加-"></a>1. 开头加<code>-</code></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">	body</span><br><span class="line">		-var a=12;</span><br><span class="line">		-var b=5;</span><br><span class="line">		div 结果是：#&#123;a+b&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuaju9uuprj30d703iach.jpg" alt="image-20180815181242202"></p>
 <h5 id="2-在模板输出变量"><a href="#2-在模板输出变量" class="headerlink" title="2. 在模板输出变量"></a>2. 在模板输出变量</h5><ul>
 <li><p><code>span = a</code>等同于<code>span #{a}</code></p>
-<pre><code class="jade">html
-    head
-    body
-        span #{a}
-        span=a
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">	body</span><br><span class="line">		span #&#123;a&#125;</span><br><span class="line">		span=a</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fuajw02x1xj30cw0310us.jpg" alt="image-20180815181422269"></p>
 </li>
 </ul>
-<h5 id="3-循环"><a href="#3-循环" class="headerlink" title="3. 循环"></a>3. 循环</h5><pre><code class="jade">html
-    head
-    body
-        -for(var i=0;i&lt;arr.length;i++)
-            div=arr[i]
-</code></pre>
-<pre><code class="js">const jade = require(&quot;jade&quot;);
-let str = jade.renderFile(&#39;view/1.jade&#39;, {pretty: true, arr: [&#39;aaa&#39;, &#39;sfasdf&#39;, &#39;3423&#39;, &#39;asdfasdf&#39;]});
-console.log(str);
-</code></pre>
+<h5 id="3-循环"><a href="#3-循环" class="headerlink" title="3. 循环"></a>3. 循环</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">	body</span><br><span class="line">		-for(var i=0;i&lt;arr.length;i++)</span><br><span class="line">			div=arr[i]</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jade = <span class="built_in">require</span>(<span class="string">"jade"</span>);</span><br><span class="line"><span class="keyword">let</span> str = jade.renderFile(<span class="string">'view/1.jade'</span>, &#123;<span class="attr">pretty</span>: <span class="literal">true</span>, <span class="attr">arr</span>: [<span class="string">'aaa'</span>, <span class="string">'sfasdf'</span>, <span class="string">'3423'</span>, <span class="string">'asdfasdf'</span>]&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fuajyp58p3j30dt05in1b.jpg" alt="image-20180815181657171"></p>
-<h5 id="4-if"><a href="#4-if" class="headerlink" title="4. if"></a>4. if</h5><pre><code class="jade">html
-    head
-    body
-        -var a=19;
-        if(a%2==0)
-            div(style={background:&#39;red&#39;}) 偶数
-        else
-            div(style={background:&#39;green&#39;}) 奇数
-</code></pre>
+<h5 id="4-if"><a href="#4-if" class="headerlink" title="4. if"></a>4. if</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">	body</span><br><span class="line">		-var a=19;</span><br><span class="line">		if(a%2==0)</span><br><span class="line">			div(style=&#123;background:&apos;red&apos;&#125;) 偶数</span><br><span class="line">		else</span><br><span class="line">			div(style=&#123;background:&apos;green&apos;&#125;) 奇数</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fuak034fqej30cz03smzt.jpg" alt="image-20180815181817806"></p>
-<h5 id="5-switch"><a href="#5-switch" class="headerlink" title="5. switch"></a>5. switch</h5><pre><code class="jade">html
-    head
-    body
-        -var a=1;
-        case a
-            when 0
-                div aaa
-            when 1
-                div bbb
-            when 2
-                div ccc
-            default
-                |不靠谱
-</code></pre>
+<h5 id="5-switch"><a href="#5-switch" class="headerlink" title="5. switch"></a>5. switch</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">	head</span><br><span class="line">	body</span><br><span class="line">		-var a=1;</span><br><span class="line">		case a</span><br><span class="line">			when 0</span><br><span class="line">				div aaa</span><br><span class="line">			when 1</span><br><span class="line">				div bbb</span><br><span class="line">			when 2</span><br><span class="line">				div ccc</span><br><span class="line">			default</span><br><span class="line">				|不靠谱</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fuak1qjbb9j30d00430vh.jpg" alt="image-20180815181952871"></p>
 
       
@@ -1069,7 +887,7 @@ console.log(str);
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

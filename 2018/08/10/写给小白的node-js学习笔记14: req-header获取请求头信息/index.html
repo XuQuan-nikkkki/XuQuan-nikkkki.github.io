@@ -446,7 +446,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  603 字
+                  630 字
                 </span>
               
 
@@ -462,7 +462,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -501,31 +501,12 @@
 <li>请求头数据： <code>req.headers</code>（它是一个对象）</li>
 </ul>
 <p>我们可以打印出请求头数据来看一看，这个对象有哪些信息：</p>
-<pre><code class="js">const http = require(&quot;http&quot;);
-let server = http.createServer((req, res) =&gt; {
-    console.log(req.headers);
-})
-
-server.listen(9000, () =&gt; {
-    console.log(&quot;server running at 9000&quot;);
-})
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="keyword">let</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(req.headers);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fu4xg9e4clj30uo0o2wqd.jpg" alt="image-20180810213010477"></p>
 <p>FreeCodeCamp的后端习题里有一个小的project就是要按照要求获取请求对象里的内容：<a href="https://learn.freecodecamp.org/apis-and-microservices/apis-and-microservices-projects/request-header-parser-microservice/" target="_blank" rel="noopener">Request Header Parser Microservice</a>，其中包括<code>req.headers</code>中的language和software，还包括ipaddress，示例如下：</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fu4xu7w287j30uj02qjrt.jpg" alt="image-20180810214338779"></p>
 <p>这个project非常简单：</p>
-<pre><code class="js">const express = require(&quot;express&quot;);
-let app = express();
-
-app.get(&#39;/&#39;, (req, res) =&gt; {
-    res.json({&#39;ipaddress&#39;: req.ip, &quot;language&quot;: req.headers[&#39;accept-language&#39;], &quot;software&quot;: req.headers[&#39;user-agent&#39;]});
-    console.log(req);
-})
-
-app.listen(9000, () =&gt; {
-    console.log(&quot;server running at 9000&quot;);
-})
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">let</span> app = express();</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/'</span>, (req, res) =&gt; &#123;</span><br><span class="line">    res.json(&#123;<span class="string">'ipaddress'</span>: req.ip, <span class="string">"language"</span>: req.headers[<span class="string">'accept-language'</span>], <span class="string">"software"</span>: req.headers[<span class="string">'user-agent'</span>]&#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(req);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>除了获取请求头，还可以获取请求体，事实上，我们在<a href="https://xuquan.site/2018/06/25/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02%EF%BC%9Abody-parser%E8%A7%A3%E6%9E%90%E8%AF%B7%E6%B1%82%E4%BD%93/"><code>body-parser</code>解析请求体</a>中就已经实现过获取请求体的操作了。</p>
 <p>除了读取请求对象，我们还可以写入响应对象。</p>
 <h3 id="响应对象"><a href="#响应对象" class="headerlink" title="响应对象"></a>响应对象</h3><h4 id="写响应头"><a href="#写响应头" class="headerlink" title="写响应头"></a>写响应头</h4><ul>
@@ -536,10 +517,7 @@ app.listen(9000, () =&gt; {
 <li>最后一个参数是<code>headers</code>响应头</li>
 <li>中间参数是可选的状态描述</li>
 </ul>
-<pre><code class="js">response.writeHead(200, {
-  &#39;Content-Type&#39;: &#39;text/plain&#39;
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response.writeHead(<span class="number">200</span>, &#123;</span><br><span class="line">  <span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <ul>
 <li>这个方法只能被调用一次</li>
 <li>必须在<code>res.end()</code>被调用之前调用</li>
@@ -548,8 +526,7 @@ app.listen(9000, () =&gt; {
 <li><p>设置多次的头信息: <code>res.setHeader(name, value)</code></p>
 <ul>
 <li><p>为一个隐式的响应头设置值</p>
-<pre><code class="js">res.setHeader(&#39;Content-Type&#39;, &#39;text/html&#39;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/html'</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>res.setHeader()</code>会和<code>res.writeHead()</code>设置的响应头合并，且<code>res.writeHead()</code>优先</p>
 </li>
@@ -558,17 +535,13 @@ app.listen(9000, () =&gt; {
 </ul>
 <h4 id="写响应体"><a href="#写响应体" class="headerlink" title="写响应体"></a>写响应体</h4><ul>
 <li><p>一次写响应体: <code>res.end()</code></p>
-<pre><code class="js">res.end(&#39;Hello World&#39;);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.end(<span class="string">'Hello World'</span>);</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>res.end()</code>之后的内容不会生效</li>
 </ul>
 </li>
 <li><p>多次写响应体: <code>res.write()</code></p>
-<pre><code class="js">res.write(&quot;hello&quot;);
-res.write(&quot;world&quot;);
-res.end();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res.write(<span class="string">"hello"</span>);</span><br><span class="line">res.write(<span class="string">"world"</span>);</span><br><span class="line">res.end();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -840,7 +813,7 @@ res.end();
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

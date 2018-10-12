@@ -446,7 +446,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  306 字
+                  326 字
                 </span>
               
 
@@ -489,27 +489,7 @@
 <a id="more"></a>
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-dc7e719097480000.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="把服务器想象成一个洗衣机"></p>
 <p>使用node.js的第一步，创建服务器，需要使用<code>http</code>模块。</p>
-<pre><code class="js">//1. 引入http模块     
-const http = require(&#39;http&#39;);
-//2. 创建服务器
-let  server = http.createServer(function(request, response) {
-  //request参数为接受到的内容
-  //response用于服务器传给浏览器端的内容
-
-  //例：发送HTTP头部
-  //HTTP 状态值 200：OK
-  //内容类型： text/plain
-  response.writeHead(200, {&#39;Content-type&#39;: &#39;text/plain&#39;});
-
-  //发送响应数据&quot;Hello World&quot;
-  response.end(&#39;Hello World \n&#39;);
-}
-
-server.listen(8080);  //括号内为端口
-console.log(&#39;Server running at http://127.0.0.1:8080&#39;);
-//可以用命令行工具运行文件，检测服务器是否已开始运行
-//服务器经常会遇到的一个问题是端口冲突，测试的时候如果遇到，可以换一个端口试试
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 引入http模块     </span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="comment">//2. 创建服务器</span></span><br><span class="line"><span class="keyword">let</span>  server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//request参数为接受到的内容</span></span><br><span class="line">  <span class="comment">//response用于服务器传给浏览器端的内容</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//例：发送HTTP头部</span></span><br><span class="line">  <span class="comment">//HTTP 状态值 200：OK</span></span><br><span class="line">  <span class="comment">//内容类型： text/plain</span></span><br><span class="line">  response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-type'</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//发送响应数据"Hello World"</span></span><br><span class="line">  response.end(<span class="string">'Hello World \n'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">8080</span>);  <span class="comment">//括号内为端口</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:8080'</span>);</span><br><span class="line"><span class="comment">//可以用命令行工具运行文件，检测服务器是否已开始运行</span></span><br><span class="line"><span class="comment">//服务器经常会遇到的一个问题是端口冲突，测试的时候如果遇到，可以换一个端口试试</span></span><br></pre></td></tr></table></figure>
 <p>需要特别注意的是，response.write()方法只能写入string或buffer，如果用response.write()方法传递的是JSON，那么需要在浏览器端使用eval()来解析。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-de28920063b9c80e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建服务器模型"></p>
 
@@ -756,7 +736,7 @@ console.log(&#39;Server running at http://127.0.0.1:8080&#39;);
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

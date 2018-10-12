@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,245 字
+                  2,806 字
                 </span>
               
 
@@ -461,7 +461,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  14 分钟
+                  17 分钟
                 </span>
               
             </div>
@@ -485,887 +485,325 @@
         <p>JavaScript基础这一部分算是非常入门级的内容，包括JS的基本变量类型以及相应的基本操作。这一部分就不做过多的总结了，习题解答如下：<br><a id="more"></a></p>
 <h4 id="Introduction-to-JavaScript"><a href="#Introduction-to-JavaScript" class="headerlink" title="Introduction to JavaScript"></a><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript" target="_blank" rel="noopener">Introduction to JavaScript</a></h4><ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code" target="_blank" rel="noopener">Comment Your JavaScript Code</a></p>
-<pre><code class="js">//This is a single-line comment
-/* This is a 
-    multiline comment */
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//This is a single-line comment</span></span><br><span class="line"><span class="comment">/* This is a </span></span><br><span class="line"><span class="comment">    multiline comment */</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables" target="_blank" rel="noopener">Declare JavaScript Variables</a></p>
-<pre><code class="js">var myName;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myName;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank" rel="noopener">Storing Values with the Assignment Operator</a></p>
-<pre><code class="js">a = 7;
-b = a; 
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">7</span>;</span><br><span class="line">b = a;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/initializing-variables-with-the-assignment-operator" target="_blank" rel="noopener">Initializing Variables with the Assignment Operator</a></p>
-<pre><code class="js">var a = 9;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">9</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables" target="_blank" rel="noopener">Understanding Uninitialized Variables</a></p>
-<pre><code class="js">var a = 5;
-var b = 10;
-var c = &quot;I am a&quot;;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">"I am a"</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understanding-case-sensitivity-in-variables" target="_blank" rel="noopener">Understanding Case Sensitivity in Variables</a></p>
-<pre><code class="js">// Declarations
-var studlyCapVar;
-var properCamelCase;
-var titleCaseOver;
-
-// Assignments
-studlyCapVar = 10;
-properCamelCase = &quot;A String&quot;;
-titleCaseOver = 9000;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Declarations</span></span><br><span class="line"><span class="keyword">var</span> studlyCapVar;</span><br><span class="line"><span class="keyword">var</span> properCamelCase;</span><br><span class="line"><span class="keyword">var</span> titleCaseOver;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Assignments</span></span><br><span class="line">studlyCapVar = <span class="number">10</span>;</span><br><span class="line">properCamelCase = <span class="string">"A String"</span>;</span><br><span class="line">titleCaseOver = <span class="number">9000</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/add-two-numbers-with-javascript" target="_blank" rel="noopener">Add Two Numbers with JavaScript</a></p>
-<pre><code class="js">var sum = 10 + 10;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="number">10</span> + <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/subtract-one-number-from-another-with-javascript" target="_blank" rel="noopener">Subtract One Number from Another with JavaScript</a></p>
-<pre><code class="js">var difference = 45 - 33;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> difference = <span class="number">45</span> - <span class="number">33</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/multiply-two-numbers-with-javascript" target="_blank" rel="noopener">Multiply Two Numbers with JavaScript</a></p>
-<pre><code class="js">var product = 8 * 10;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> product = <span class="number">8</span> * <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/divide-one-number-by-another-with-javascript" target="_blank" rel="noopener">Divide One Number by Another with JavaScript</a></p>
-<pre><code class="js">var quotient = 66 / 33;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> quotient = <span class="number">66</span> / <span class="number">33</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/increment-a-number-with-javascript" target="_blank" rel="noopener">Increment a Number with JavaScript</a></p>
-<pre><code class="js">myVar++;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myVar++;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/decrement-a-number-with-javascript" target="_blank" rel="noopener">Decrement a Number with JavaScript</a></p>
-<pre><code class="js">myVar--;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myVar--;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/create-decimal-numbers-with-javascript" target="_blank" rel="noopener">Create Decimal Numbers with JavaScript</a></p>
-<pre><code class="js">var myDecimal = 3.2;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myDecimal = <span class="number">3.2</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/multiply-two-decimals-with-javascript" target="_blank" rel="noopener">Multiply Two Decimals with JavaScript</a></p>
-<pre><code class="js">var product = 2.0 * 2.5;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> product = <span class="number">2.0</span> * <span class="number">2.5</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/divide-one-decimal-by-another-with-javascript" target="_blank" rel="noopener">Divide One Decimal by Another with JavaScript</a></p>
-<pre><code class="js">var quotient = 4.4 / 2.0; 
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> quotient = <span class="number">4.4</span> / <span class="number">2.0</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/finding-a-remainder-in-javascript" target="_blank" rel="noopener">Finding a Remainder in JavaScript</a></p>
-<pre><code class="js">var remainder = 11 % 3;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> remainder = <span class="number">11</span> % <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-addition" target="_blank" rel="noopener">Compound Assignment With Augmented Addition</a></p>
-<pre><code class="js">a += 12;
-b += 9;
-c += 7;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a += <span class="number">12</span>;</span><br><span class="line">b += <span class="number">9</span>;</span><br><span class="line">c += <span class="number">7</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-subtraction" target="_blank" rel="noopener">Compound Assignment With Augmented Subtraction</a></p>
-<pre><code class="js">a -= 6;
-b -= 15;
-c -= 1;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a -= <span class="number">6</span>;</span><br><span class="line">b -= <span class="number">15</span>;</span><br><span class="line">c -= <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-multiplication" target="_blank" rel="noopener">Compound Assignment With Augmented Multiplication</a></p>
-<pre><code class="js">a *= 5;
-b *= 3;
-c *= 10;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a *= <span class="number">5</span>;</span><br><span class="line">b *= <span class="number">3</span>;</span><br><span class="line">c *= <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-division" target="_blank" rel="noopener">Compound Assignment With Augmented Division</a></p>
-<pre><code class="js">a /= 12;
-b /= 4;
-c /= 11;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a /= <span class="number">12</span>;</span><br><span class="line">b /= <span class="number">4</span>;</span><br><span class="line">c /= <span class="number">11</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/declare-string-variables" target="_blank" rel="noopener">Declare String Variables</a></p>
-<pre><code class="js">var myFirstName = &quot;Nikkkki&quot;;
-var myLastName = &quot;Xu&quot;;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myFirstName = <span class="string">"Nikkkki"</span>;</span><br><span class="line"><span class="keyword">var</span> myLastName = <span class="string">"Xu"</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/escaping-literal-quotes-in-strings" target="_blank" rel="noopener">Escaping Literal Quotes in Strings</a></p>
-<pre><code class="js">var myStr = &quot;I am a \&quot;double quoted\&quot; string inside \&quot;double quotes\&quot;.&quot;; 
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myStr = <span class="string">"I am a \"double quoted\" string inside \"double quotes\"."</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/quoting-strings-with-single-quotes" target="_blank" rel="noopener">Quoting Strings with Single Quotes</a></p>
-<pre><code class="js">var myStr = &#39;&lt;a href=&quot;http://www.example.com&quot; target=&quot;_blank&quot;&gt;Link&lt;/a&gt;&#39;;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myStr = <span class="string">'&lt;a href="http://www.example.com" target="_blank"&gt;Link&lt;/a&gt;'</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/escape-sequences-in-strings" target="_blank" rel="noopener">Escape Sequences in Strings</a></p>
-<pre><code class="js">var myStr = &quot;FirstLine\n\t\\SecondLine\nThirdLine&quot;;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myStr = <span class="string">"FirstLine\n\t\\SecondLine\nThirdLine"</span>;</span><br></pre></td></tr></table></figure>
 <p>  <img src="https://upload-images.jianshu.io/upload_images/9240001-65afe5faf8843af1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 </li>
 </ul>
 <ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/concatenating-strings-with-plus-operator" target="_blank" rel="noopener">Concatenating Strings with Plus Operator</a></p>
-<pre><code class="js">var myStr = &quot;This is the start. &quot; + &quot;This is the end.&quot;;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myStr = <span class="string">"This is the start. "</span> + <span class="string">"This is the end."</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/concatenating-strings-with-the-plus-equals-operator" target="_blank" rel="noopener">Concatenating Strings with the Plus Equals Operator</a></p>
-<pre><code class="js">var myStr = &quot;This is the first sentence. &quot;;
-myStr += &quot;This is the second sentence.&quot;;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myStr = <span class="string">"This is the first sentence. "</span>;</span><br><span class="line">myStr += <span class="string">"This is the second sentence."</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/constructing-strings-with-variables" target="_blank" rel="noopener">Constructing Strings with Variables</a></p>
-<pre><code class="js">var myName = &quot;Nikkkki&quot;;
-var myStr = &quot;My name is &quot; + myName + &quot; and I am well!&quot;;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myName = <span class="string">"Nikkkki"</span>;</span><br><span class="line"><span class="keyword">var</span> myStr = <span class="string">"My name is "</span> + myName + <span class="string">" and I am well!"</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/appending-variables-to-strings" target="_blank" rel="noopener">Appending Variables to Strings</a></p>
-<pre><code class="js">var someAdjective = &quot;interesting&quot;;
-var myStr = &quot;Learning to code is &quot;;
-myStr += someAdjective;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> someAdjective = <span class="string">"interesting"</span>;</span><br><span class="line"><span class="keyword">var</span> myStr = <span class="string">"Learning to code is "</span>;</span><br><span class="line">myStr += someAdjective;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/find-the-length-of-a-string" target="_blank" rel="noopener">Find the Length of a String</a></p>
-<pre><code class="js">lastNameLength = lastName.length;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lastNameLength = lastName.length;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-bracket-notation-to-find-the-first-character-in-a-string" target="_blank" rel="noopener">Use Bracket Notation to Find the First Character in a String</a></p>
-<pre><code class="js">firstLetterOfLastName = lastName[0];
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firstLetterOfLastName = lastName[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understand-string-immutability" target="_blank" rel="noopener">Understand String Immutability</a></p>
-<pre><code class="js">myStr = &quot;Hello World&quot;;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myStr = <span class="string">"Hello World"</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-bracket-notation-to-find-the-nth-character-in-a-string" target="_blank" rel="noopener">Use Bracket Notation to Find the Nth Character in a String</a></p>
-<pre><code class="js">var thirdLetterOfLastName = lastName[2];
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> thirdLetterOfLastName = lastName[<span class="number">2</span>];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-bracket-notation-to-find-the-last-character-in-a-string" target="_blank" rel="noopener">Use Bracket Notation to Find the Last Character in a String</a></p>
-<pre><code class="js">var lastLetterOfLastName = lastName[lastName.length - 1];
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lastLetterOfLastName = lastName[lastName.length - <span class="number">1</span>];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-bracket-notation-to-find-the-nth-to-last-character-in-a-string" target="_blank" rel="noopener">Use Bracket Notation to Find the Nth-to-Last Character in a String</a></p>
-<pre><code class="js">var secondToLastLetterOfLastName = lastName[lastName.length-2];
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> secondToLastLetterOfLastName = lastName[lastName.length<span class="number">-2</span>];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/word-blanks" target="_blank" rel="noopener">Word Blanks</a></p>
-<pre><code class="js">function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
-  // Your code below this line
-  var result = &quot;&quot;;
-    result = myNoun + &quot; &quot; + myAdjective + &quot; &quot; + myVerb + &quot; &quot; + myAdverb;
-  // Your code above this line
-  return result;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">wordBlanks</span>(<span class="params">myNoun, myAdjective, myVerb, myAdverb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Your code below this line</span></span><br><span class="line">  <span class="keyword">var</span> result = <span class="string">""</span>;</span><br><span class="line">    result = myNoun + <span class="string">" "</span> + myAdjective + <span class="string">" "</span> + myVerb + <span class="string">" "</span> + myAdverb;</span><br><span class="line">  <span class="comment">// Your code above this line</span></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/store-multiple-values-in-one-variable-using-javascript-arrays" target="_blank" rel="noopener">Store Multiple Values in one Variable using JavaScript Arrays</a></p>
-<pre><code class="js">var myArray = [&quot;kitty&quot;, 5];
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myArray = [<span class="string">"kitty"</span>, <span class="number">5</span>];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/nest-one-array-within-another-array" target="_blank" rel="noopener">Nest one Array within Another Array</a></p>
-<pre><code class="js">var myArray = [[&quot;dog&quot;, 5], [&quot;cat&quot;, 3]];
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myArray = [[<span class="string">"dog"</span>, <span class="number">5</span>], [<span class="string">"cat"</span>, <span class="number">3</span>]];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/access-array-data-with-indexes" target="_blank" rel="noopener">Access Array Data with Indexes</a></p>
-<pre><code class="js">var myData = myArray[0];
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myData = myArray[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/modify-array-data-with-indexes" target="_blank" rel="noopener">Modify Array Data With Indexes</a></p>
-<pre><code class="js">myArray[0] = 45;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myArray[<span class="number">0</span>] = <span class="number">45</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/access-multi-dimensional-arrays-with-indexes" target="_blank" rel="noopener">Access Multi-Dimensional Arrays With Indexes</a></p>
-<pre><code class="js">var myData = myArray[2][1];
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myData = myArray[<span class="number">2</span>][<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/manipulate-arrays-with-push" target="_blank" rel="noopener">Manipulate Arrays With push()</a></p>
-<pre><code class="js">myArray.push([&quot;dog&quot;, 3]);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myArray.push([<span class="string">"dog"</span>, <span class="number">3</span>]);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/manipulate-arrays-with-pop" target="_blank" rel="noopener">Manipulate Arrays With pop()</a></p>
-<pre><code class="js">var removedFromMyArray = myArray.pop();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> removedFromMyArray = myArray.pop();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/manipulate-arrays-with-shift" target="_blank" rel="noopener">Manipulate Arrays With shift()</a></p>
-<pre><code class="js">var removedFromMyArray = myArray.shift();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> removedFromMyArray = myArray.shift();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/manipulate-arrays-with-unshift" target="_blank" rel="noopener">Manipulate Arrays With unshift()</a></p>
-<pre><code class="js">myArray.unshift([&quot;Paul&quot;, 35]);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myArray.unshift([<span class="string">"Paul"</span>, <span class="number">35</span>]);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/shopping-list" target="_blank" rel="noopener">Shopping List</a></p>
-<pre><code class="js">var myList = [[&quot;milk&quot;, 4], [&quot;biscuits&quot;, 22], [&quot;chocolate&quot;, 6], [&quot;honey&quot;, 2], [&quot;ice cream&quot;, 9]];
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myList = [[<span class="string">"milk"</span>, <span class="number">4</span>], [<span class="string">"biscuits"</span>, <span class="number">22</span>], [<span class="string">"chocolate"</span>, <span class="number">6</span>], [<span class="string">"honey"</span>, <span class="number">2</span>], [<span class="string">"ice cream"</span>, <span class="number">9</span>]];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/write-reusable-javascript-with-functions" target="_blank" rel="noopener">Write Reusable JavaScript with Functions</a></p>
-<pre><code class="js">function reusableFunction() {
-    console.log(&quot;Hi World&quot;);
-}
-reusableFunction();
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reusableFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Hi World"</span>);</span><br><span class="line">&#125;</span><br><span class="line">reusableFunction();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/passing-values-to-functions-with-arguments" target="_blank" rel="noopener">Passing Values to Functions with Arguments</a></p>
-<pre><code class="js">function functionWithArgs(param1, param2) {
-  console.log(param1 + param2);
-}
-functionWithArgs(3, 2);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionWithArgs</span>(<span class="params">param1, param2</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(param1 + param2);</span><br><span class="line">&#125;</span><br><span class="line">functionWithArgs(<span class="number">3</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/global-scope-and-functions" target="_blank" rel="noopener">Global Scope and Functions</a></p>
-<pre><code class="js">// Declare your variable here
-var myGlobal = 10;
-
-function fun1() {
-  // Assign 5 to oopsGlobal Here
-  oopsGlobal = 5;
-}
-
-// Only change code above this line
-function fun2() {
-  var output = &quot;&quot;;
-  if (typeof myGlobal != &quot;undefined&quot;) {
-    output += &quot;myGlobal: &quot; + myGlobal;
-  }
-  if (typeof oopsGlobal != &quot;undefined&quot;) {
-    output += &quot; oopsGlobal: &quot; + oopsGlobal;
-  }
-  console.log(output);
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Declare your variable here</span></span><br><span class="line"><span class="keyword">var</span> myGlobal = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Assign 5 to oopsGlobal Here</span></span><br><span class="line">  oopsGlobal = <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Only change code above this line</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> output = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> myGlobal != <span class="string">"undefined"</span>) &#123;</span><br><span class="line">    output += <span class="string">"myGlobal: "</span> + myGlobal;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> oopsGlobal != <span class="string">"undefined"</span>) &#123;</span><br><span class="line">    output += <span class="string">" oopsGlobal: "</span> + oopsGlobal;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(output);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/local-scope-and-functions" target="_blank" rel="noopener">Local Scope and Functions</a></p>
-<pre><code class="js">function myLocalScope() {
-  &#39;use strict&#39;; // you shouldn&#39;t need to edit this line
-  var myVar = &quot;hello&quot;;
-  console.log(myVar);
-}
-myLocalScope();
-
-// Run and check the console
-// myVar is not defined outside of myLocalScope
-// console.log(myVar);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myLocalScope</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>; <span class="comment">// you shouldn't need to edit this line</span></span><br><span class="line">  <span class="keyword">var</span> myVar = <span class="string">"hello"</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(myVar);</span><br><span class="line">&#125;</span><br><span class="line">myLocalScope();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Run and check the console</span></span><br><span class="line"><span class="comment">// myVar is not defined outside of myLocalScope</span></span><br><span class="line"><span class="comment">// console.log(myVar);</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/global-vs--local-scope-in-functions" target="_blank" rel="noopener">Global vs. Local Scope in Functions</a></p>
-<pre><code class="js">function myOutfit() {
-  // Only change code below this line
-  var outerWear = &quot;sweater&quot;;
-  // Only change code above this line
-  return outerWear;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myOutfit</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">var</span> outerWear = <span class="string">"sweater"</span>;</span><br><span class="line">  <span class="comment">// Only change code above this line</span></span><br><span class="line">  <span class="keyword">return</span> outerWear;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/return-a-value-from-a-function-with-return" target="_blank" rel="noopener">Return a Value from a Function with Return</a></p>
-<pre><code class="js">function timesFive(num) {
-  return num * 5;
-}
-console.log(timesFive(2));
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timesFive</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num * <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(timesFive(<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understanding-undefined-value-returned-from-a-function" target="_blank" rel="noopener">Understanding Undefined Value returned from a Function</a></p>
-<pre><code class="js">function addFive() {
-  sum = sum + 5;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addFive</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  sum = sum + <span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/assignment-with-a-returned-value" target="_blank" rel="noopener">Assignment with a Returned Value</a></p>
-<pre><code class="js">processed = processArg(7);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">processed = processArg(<span class="number">7</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/stand-in-line" target="_blank" rel="noopener">Stand in Line</a></p>
-<pre><code class="js">function nextInLine(arr, item) {
-  // Your code here
-  arr.push(item);
-  var result = arr.shift();
-  return result;  // Change this line
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">nextInLine</span>(<span class="params">arr, item</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Your code here</span></span><br><span class="line">  arr.push(item);</span><br><span class="line">  <span class="keyword">var</span> result = arr.shift();</span><br><span class="line">  <span class="keyword">return</span> result;  <span class="comment">// Change this line</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understanding-boolean-values" target="_blank" rel="noopener">Understanding Boolean Values</a></p>
-<pre><code class="js">function welcomeToBooleans() {
-  // Only change code below this line.
-
-  return true; // Change this line
-
-  // Only change code above this line.
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">welcomeToBooleans</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Only change code below this line.</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// Change this line</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// Only change code above this line.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-conditional-logic-with-if-statements" target="_blank" rel="noopener">Use Conditional Logic with If Statements</a></p>
-<pre><code class="js">function trueOrFalse(wasThatTrue) {
-  // Only change code below this line.
-  if(wasThatTrue) {
-      return &quot;Yes, that was true&quot;
-  }
-  return &quot;No, that was false&quot;; 
-  // Only change code above this line.
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trueOrFalse</span>(<span class="params">wasThatTrue</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Only change code below this line.</span></span><br><span class="line">  <span class="keyword">if</span>(wasThatTrue) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"Yes, that was true"</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"No, that was false"</span>; </span><br><span class="line">  <span class="comment">// Only change code above this line.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank" rel="noopener">Comparison with the Equality Operator</a></p>
-<pre><code class="js">function testEqual(val) {
-  if (val == 12) { // Change this line
-    return &quot;Equal&quot;;
-  }
-  return &quot;Not Equal&quot;;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testEqual</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (val == <span class="number">12</span>) &#123; <span class="comment">// Change this line</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Equal"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"Not Equal"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-strict-equality-operator" target="_blank" rel="noopener">Comparison with the Strict Equality Operator</a></p>
-<pre><code class="js">function compareEquality(a, b) {
-  if (a === b) { // Change this line
-    return &quot;Equal&quot;;
-  }
-  return &quot;Not Equal&quot;;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compareEquality</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (a === b) &#123; <span class="comment">// Change this line</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Equal"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"Not Equal"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/practice-comparing-different-values" target="_blank" rel="noopener">Practice comparing different values</a></p>
-<pre><code class="js">function testNotEqual(val) {
-  if (val!=99) { // Change this line
-    return &quot;Not Equal&quot;;
-  }
-  return &quot;Equal&quot;;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testNotEqual</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (val!=<span class="number">99</span>) &#123; <span class="comment">// Change this line</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Not Equal"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"Equal"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-inequality-operator" target="_blank" rel="noopener">Comparison with the Inequality Operator</a></p>
-<pre><code class="js">function testStrictNotEqual(val) {
-  // Only Change Code Below this Line
-  if (val !== 17) {
-  // Only Change Code Above this Line
-    return &quot;Not Equal&quot;;
-  }
-  return &quot;Equal&quot;;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testStrictNotEqual</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Only Change Code Below this Line</span></span><br><span class="line">  <span class="keyword">if</span> (val !== <span class="number">17</span>) &#123;</span><br><span class="line">  <span class="comment">// Only Change Code Above this Line</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Not Equal"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"Equal"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-strict-inequality-operator" target="_blank" rel="noopener">Comparison with the Strict Inequality Operator</a></p>
-<pre><code class="js">function testGreaterThan(val) {
-  if (val &gt; 100) {  // Change this line
-    return &quot;Over 100&quot;;
-  }
-  if (val &gt; 10) {  // Change this line
-    return &quot;Over 10&quot;;
-  }
-  return &quot;10 or Under&quot;;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testGreaterThan</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (val &gt; <span class="number">100</span>) &#123;  <span class="comment">// Change this line</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Over 100"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (val &gt; <span class="number">10</span>) &#123;  <span class="comment">// Change this line</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Over 10"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"10 or Under"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-greater-than-operator" target="_blank" rel="noopener">Comparison with the Greater Than Operator</a></p>
-<pre><code class="js">function testGreaterOrEqual(val) {
-  if (val &gt;= 20) {  // Change this line
-    return &quot;20 or Over&quot;;
-  }
-  if (val &gt;= 10) {  // Change this line
-    return &quot;10 or Over&quot;;
-  }
-  return &quot;Less than 10&quot;;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testGreaterOrEqual</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (val &gt;= <span class="number">20</span>) &#123;  <span class="comment">// Change this line</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"20 or Over"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (val &gt;= <span class="number">10</span>) &#123;  <span class="comment">// Change this line</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"10 or Over"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"Less than 10"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-greater-than-or-equal-to-operator" target="_blank" rel="noopener">Comparison with the Greater Than Or Equal To Operator</a></p>
-<pre><code class="js">function testLessThan(val) {
-  if (val &lt; 25) {  // Change this line
-    return &quot;Under 25&quot;;
-  }
-  if (val &lt; 55) {  // Change this line
-    return &quot;Under 55&quot;;
-  }
-  return &quot;55 or Over&quot;;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testLessThan</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (val &lt; <span class="number">25</span>) &#123;  <span class="comment">// Change this line</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Under 25"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (val &lt; <span class="number">55</span>) &#123;  <span class="comment">// Change this line</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Under 55"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"55 or Over"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-less-than-operator" target="_blank" rel="noopener">Comparison with the Less Than Operator</a></p>
-<pre><code class="js">function testLessOrEqual(val) {
-  if (val &lt;= 12) {  // Change this line
-    return &quot;Smaller Than or Equal to 12&quot;;
-  }
-  if (val &lt;= 24) {  // Change this line
-    return &quot;Smaller Than or Equal to 24&quot;;
-  }
-  return &quot;More Than 24&quot;;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testLessOrEqual</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (val &lt;= <span class="number">12</span>) &#123;  <span class="comment">// Change this line</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Smaller Than or Equal to 12"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (val &lt;= <span class="number">24</span>) &#123;  <span class="comment">// Change this line</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Smaller Than or Equal to 24"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"More Than 24"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-less-than-or-equal-to-operator" target="_blank" rel="noopener">Comparison with the Less Than Or Equal To Operator</a></p>
-<pre><code class="js">function testLogicalAnd(val) {
-  // Only change code below this line
-  if (val &lt;= 50 &amp;&amp; val &gt;= 25) {
-    return &quot;Yes&quot;;
-  }
-  // Only change code above this line
-  return &quot;No&quot;;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testLogicalAnd</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">if</span> (val &lt;= <span class="number">50</span> &amp;&amp; val &gt;= <span class="number">25</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Yes"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Only change code above this line</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">"No"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparisons-with-the-logical-and-operator" target="_blank" rel="noopener">Comparisons with the Logical And Operator</a></p>
-<pre><code class="js">function testLogicalOr(val) {
-  // Only change code below this line
-  if (val &gt; 20 || val &lt; 10) {
-    return &quot;Outside&quot;;
-  }
-  // Only change code above this line
-  return &quot;Inside&quot;;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testLogicalOr</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">if</span> (val &gt; <span class="number">20</span> || val &lt; <span class="number">10</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Outside"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Only change code above this line</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">"Inside"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comparisons-with-the-logical-or-operator" target="_blank" rel="noopener">Comparisons with the Logical Or Operator</a></p>
-<pre><code class="js">function testElse(val) {
-  var result = &quot;&quot;;
-  // Only change code below this line
-  if (val &gt; 5) {
-    result = &quot;Bigger than 5&quot;;
-  }else {
-    result = &quot;5 or Smaller&quot;;
-  }
-  // Only change code above this line
-  return result;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testElse</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="string">""</span>;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">if</span> (val &gt; <span class="number">5</span>) &#123;</span><br><span class="line">    result = <span class="string">"Bigger than 5"</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    result = <span class="string">"5 or Smaller"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Only change code above this line</span></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/introducing-else-statements" target="_blank" rel="noopener">Introducing Else Statements</a></p>
-<pre><code class="js">function testElseIf(val) {
-  if (val &gt; 10) {
-    return &quot;Greater than 10&quot;;
-  } else if (val &lt; 5) {
-    return &quot;Smaller than 5&quot;;
-  } else {
-    return &quot;Between 5 and 10&quot;;
-  }
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testElseIf</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (val &gt; <span class="number">10</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Greater than 10"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (val &lt; <span class="number">5</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Smaller than 5"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Between 5 and 10"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/logical-order-in-if-else-statements" target="_blank" rel="noopener">Logical Order in If Else Statements</a></p>
-<pre><code class="js">function orderMyLogic(val) {
-  if (val &lt; 5) {
-    return &quot;Less than 5&quot;;
-  } else if (val &lt; 10) {
-    return &quot;Less than 10&quot;;
-  } else {
-    return &quot;Greater than or equal to 10&quot;;
-  }
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">orderMyLogic</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (val &lt; <span class="number">5</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Less than 5"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (val &lt; <span class="number">10</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Less than 10"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Greater than or equal to 10"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/chaining-if-else-statements" target="_blank" rel="noopener">Chaining If Else Statements</a></p>
-<pre><code class="js">function testSize(num) {
-  // Only change code below this line
-  if(num &lt; 5) {
-    return &quot;Tiny&quot;;
-  } else if (num &lt; 10) {
-    return &quot;Small&quot;;
-  } else if (num &lt; 15) {
-    return &quot;Medium&quot;;
-  } else if (num &lt; 20) {
-    return &quot;Large&quot;;
-  } else {
-    return &quot;Huge&quot;;
-  }
-  // Only change code above this line
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testSize</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">if</span>(num &lt; <span class="number">5</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Tiny"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num &lt; <span class="number">10</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Small"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num &lt; <span class="number">15</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Medium"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num &lt; <span class="number">20</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Large"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Huge"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Only change code above this line</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/golf-code" target="_blank" rel="noopener">Golf Code</a></p>
-<pre><code class="js">function golfScore(par, strokes) {
-  // Only change code below this line
-  if(strokes === 1) {
-    return names[0];
-  } else if (strokes &lt;= par - 2) {
-    return names[1];
-  } else if (strokes === par - 1) {
-    return names[2];
-  } else if (strokes === par) {
-    return names[3];
-  } else if (strokes === par + 1) {
-    return names[4];
-  } else if (strokes === par + 2) {
-    return names[5];
-  } else {
-    return names[6];
-  }
-  // Only change code above this line
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">golfScore</span>(<span class="params">par, strokes</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">if</span>(strokes === <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> names[<span class="number">0</span>];</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (strokes &lt;= par - <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> names[<span class="number">1</span>];</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (strokes === par - <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> names[<span class="number">2</span>];</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (strokes === par) &#123;</span><br><span class="line">    <span class="keyword">return</span> names[<span class="number">3</span>];</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (strokes === par + <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> names[<span class="number">4</span>];</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (strokes === par + <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> names[<span class="number">5</span>];</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> names[<span class="number">6</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Only change code above this line</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/selecting-from-many-options-with-switch-statements" target="_blank" rel="noopener">Selecting from Many Options with Switch Statements</a></p>
-<pre><code class="js">function caseInSwitch(val) {
-  var answer = &quot;&quot;;
-  // Only change code below this line
-  switch(val) {
-    case 1:
-      answer = &quot;alpha&quot;;
-      break;
-    case 2:
-      answer = &quot;beta&quot;;
-      break;
-    case 3:
-      answer = &quot;gamma&quot;;
-      break;
-    case 4:
-      answer = &quot;delta&quot;;
-      break;
-  }
-  // Only change code above this line  
-  return answer;  
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">caseInSwitch</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> answer = <span class="string">""</span>;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">switch</span>(val) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">      answer = <span class="string">"alpha"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">      answer = <span class="string">"beta"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">      answer = <span class="string">"gamma"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">      answer = <span class="string">"delta"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Only change code above this line  </span></span><br><span class="line">  <span class="keyword">return</span> answer;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/adding-a-default-option-in-switch-statements" target="_blank" rel="noopener">Adding a Default Option in Switch Statements</a></p>
-<pre><code class="js">function switchOfStuff(val) {
-  var answer = &quot;&quot;;
-  // Only change code below this line
-  switch(val) {
-    case &quot;a&quot;:
-      answer = &quot;apple&quot;;
-      break;
-    case &quot;b&quot;:
-      answer = &quot;bird&quot;;
-      break;
-    case &quot;c&quot;:
-      answer = &quot;cat&quot;;
-      break;
-    default:
-      answer = &quot;stuff&quot;;
-      break;
-  }
-  // Only change code above this line  
-  return answer;  
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">switchOfStuff</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> answer = <span class="string">""</span>;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">switch</span>(val) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"a"</span>:</span><br><span class="line">      answer = <span class="string">"apple"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"b"</span>:</span><br><span class="line">      answer = <span class="string">"bird"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"c"</span>:</span><br><span class="line">      answer = <span class="string">"cat"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      answer = <span class="string">"stuff"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Only change code above this line  </span></span><br><span class="line">  <span class="keyword">return</span> answer;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/multiple-identical-options-in-switch-statements" target="_blank" rel="noopener">Multiple Identical Options in Switch Statements</a></p>
-<pre><code class="js">function sequentialSizes(val) {
-  var answer = &quot;&quot;;
-  // Only change code below this line
-  switch(val) {
-    case 1:
-    case 2:
-    case 3:
-      answer = &quot;Low&quot;;
-      break;
-    case 4:
-    case 5:
-    case 6:
-      answer = &quot;Mid&quot;;
-      break;
-    case 7:
-    case 8:
-    case 9:
-      answer = &quot;High&quot;;
-      break;
-  }
-  // Only change code above this line  
-  return answer;  
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sequentialSizes</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> answer = <span class="string">""</span>;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">switch</span>(val) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">      answer = <span class="string">"Low"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">      answer = <span class="string">"Mid"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">      answer = <span class="string">"High"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Only change code above this line  </span></span><br><span class="line">  <span class="keyword">return</span> answer;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/replacing-if-else-chains-with-switch" target="_blank" rel="noopener">Replacing If Else Chains with Switch</a></p>
-<pre><code class="js">function chainToSwitch(val) {
-  var answer = &quot;&quot;;
-  // Only change code below this line
-  switch(val) {
-    case &quot;bob&quot;:
-      answer = &quot;Marley&quot;;
-      break;
-    case 42:
-      answer = &quot;The Answer&quot;;
-      break;
-    case 1:
-      answer = &quot;There is no #1&quot;;
-      break;
-    case 99:
-      answer = &quot;Missed me by this much!&quot;;
-      break;
-    case 7:
-      answer = &quot;Ate Nine&quot;;
-      break;
-  }
-  // Only change code above this line  
-  return answer;  
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">chainToSwitch</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> answer = <span class="string">""</span>;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">switch</span>(val) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"bob"</span>:</span><br><span class="line">      answer = <span class="string">"Marley"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">42</span>:</span><br><span class="line">      answer = <span class="string">"The Answer"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">      answer = <span class="string">"There is no #1"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">99</span>:</span><br><span class="line">      answer = <span class="string">"Missed me by this much!"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">      answer = <span class="string">"Ate Nine"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Only change code above this line  </span></span><br><span class="line">  <span class="keyword">return</span> answer;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/returning-boolean-values-from-functions" target="_blank" rel="noopener">Returning Boolean Values from Functions</a></p>
-<pre><code class="js">function isLess(a, b) {
-  // Fix this code
-    return a &lt; b;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isLess</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Fix this code</span></span><br><span class="line">    <span class="keyword">return</span> a &lt; b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/return-early-pattern-for-functions" target="_blank" rel="noopener">Return Early Pattern for Functions</a></p>
-<pre><code class="js">function abTest(a, b) {
-  // Only change code below this line
-  if(a &lt; 0 || b &lt; 0) {
-    return undefined;
-  }
-  // Only change code above this line
-  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">abTest</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">if</span>(a &lt; <span class="number">0</span> || b &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Only change code above this line</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.pow(<span class="built_in">Math</span>.sqrt(a) + <span class="built_in">Math</span>.sqrt(b), <span class="number">2</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/counting-cards" target="_blank" rel="noopener">Counting Cards</a></p>
-<pre><code class="js">function cc(card) {
-  // Only change code below this line
-  switch(card) {
-    case 2:
-    case 3:
-    case 4:
-    case 5:
-    case 6:
-      count += 1;
-      break;
-    case 10:
-    case &#39;J&#39;:
-    case &#39;Q&#39;:
-    case &#39;K&#39;:
-    case &#39;A&#39;:
-      count -= 1;
-      break;
-  }
-  var str =&#39;&#39;;
-  if(count &gt; 0) {
-    str = &quot;Bet&quot;;
-  } else {
-    str = &quot;Hold&quot;;
-  } 
-  return count + &quot; &quot; + str;
-  // Only change code above this line
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cc</span>(<span class="params">card</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">switch</span>(card) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">      count += <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'J'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'Q'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'K'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'A'</span>:</span><br><span class="line">      count -= <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> str =<span class="string">''</span>;</span><br><span class="line">  <span class="keyword">if</span>(count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    str = <span class="string">"Bet"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    str = <span class="string">"Hold"</span>;</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">return</span> count + <span class="string">" "</span> + str;</span><br><span class="line">  <span class="comment">// Only change code above this line</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/build-javascript-objects" target="_blank" rel="noopener">Build JavaScript Objects</a></p>
-<pre><code class="js">var myDog = {
-  &quot;name&quot; : &quot;Stone&quot;,
-  &quot;legs&quot;: 4,
-  &quot;tails&quot;: 1,
-  &quot;friends&quot;: [&quot;Pepe&quot;]
-};
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myDog = &#123;</span><br><span class="line">  <span class="string">"name"</span> : <span class="string">"Stone"</span>,</span><br><span class="line">  <span class="string">"legs"</span>: <span class="number">4</span>,</span><br><span class="line">  <span class="string">"tails"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="string">"friends"</span>: [<span class="string">"Pepe"</span>]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-dot-notation" target="_blank" rel="noopener">Accessing Object Properties with Dot Notation</a></p>
-<pre><code class="js">var hatValue = testObj.hat;      // Change this line
-var shirtValue = testObj.shirt;    // Change this line
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hatValue = testObj.hat;      <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">var</span> shirtValue = testObj.shirt;    <span class="comment">// Change this line</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-bracket-notation" target="_blank" rel="noopener">Accessing Object Properties with Bracket Notation</a></p>
-<pre><code class="js">var entreeValue = testObj[&quot;an entree&quot;];   // Change this line
-var drinkValue = testObj[&quot;the drink&quot;];    // Change this line
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> entreeValue = testObj[<span class="string">"an entree"</span>];   <span class="comment">// Change this line</span></span><br><span class="line"><span class="keyword">var</span> drinkValue = testObj[<span class="string">"the drink"</span>];    <span class="comment">// Change this line</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-variables" target="_blank" rel="noopener">Accessing Object Properties with Variables</a></p>
-<pre><code class="js">var playerNumber = 16;       // Change this Line
-var player = testObj[playerNumber];   // Change this Line
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> playerNumber = <span class="number">16</span>;       <span class="comment">// Change this Line</span></span><br><span class="line"><span class="keyword">var</span> player = testObj[playerNumber];   <span class="comment">// Change this Line</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/updating-object-properties" target="_blank" rel="noopener">Updating Object Properties</a></p>
-<pre><code class="js">myDog.name = &quot;Happy Coder&quot;;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myDog.name = <span class="string">"Happy Coder"</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/add-new-properties-to-a-javascript-object" target="_blank" rel="noopener">Add New Properties to a JavaScript Object</a></p>
-<pre><code class="js">myDog.bark = &quot;woof&quot;;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myDog.bark = <span class="string">"woof"</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/delete-properties-from-a-javascript-object" target="_blank" rel="noopener">Delete Properties from a JavaScript Object</a></p>
-<pre><code class="js">delete myDog.tails;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> myDog.tails;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/using-objects-for-lookups" target="_blank" rel="noopener">Using Objects for Lookups</a></p>
-<pre><code class="js">function phoneticLookup(val) {
-  var result = &quot;&quot;;
-  // Only change code below this line
-  var lookup = {
-    &quot;alpha&quot;: &quot;Adams&quot;,
-    &quot;bravo&quot;: &quot;Boston&quot;,
-    &quot;charlie&quot;: &quot;Chicago&quot;,
-    &quot;delta&quot;: &quot;Denver&quot;,
-    &quot;echo&quot;: &quot;Easy&quot;,
-    &quot;foxtrot&quot;: &quot;Frank&quot;
-  }
-  result = lookup[val];
-  // Only change code above this line
-  return result;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">phoneticLookup</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="string">""</span>;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">var</span> lookup = &#123;</span><br><span class="line">    <span class="string">"alpha"</span>: <span class="string">"Adams"</span>,</span><br><span class="line">    <span class="string">"bravo"</span>: <span class="string">"Boston"</span>,</span><br><span class="line">    <span class="string">"charlie"</span>: <span class="string">"Chicago"</span>,</span><br><span class="line">    <span class="string">"delta"</span>: <span class="string">"Denver"</span>,</span><br><span class="line">    <span class="string">"echo"</span>: <span class="string">"Easy"</span>,</span><br><span class="line">    <span class="string">"foxtrot"</span>: <span class="string">"Frank"</span></span><br><span class="line">  &#125;</span><br><span class="line">  result = lookup[val];</span><br><span class="line">  <span class="comment">// Only change code above this line</span></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/testing-objects-for-properties" target="_blank" rel="noopener">Testing Objects for Properties</a></p>
-<pre><code class="js">function checkObj(checkProp) {
-  // Your Code Here
-  if(myObj.hasOwnProperty(checkProp)) {
-    return myObj[checkProp];
-  }
-  return &quot;Not Found&quot;;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkObj</span>(<span class="params">checkProp</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Your Code Here</span></span><br><span class="line">  <span class="keyword">if</span>(myObj.hasOwnProperty(checkProp)) &#123;</span><br><span class="line">    <span class="keyword">return</span> myObj[checkProp];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"Not Found"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/manipulating-complex-objects" target="_blank" rel="noopener">Manipulating Complex Objects</a></p>
-<pre><code class="js">var myMusic = [
-  {
-    &quot;artist&quot;: &quot;Billy Joel&quot;,
-    &quot;title&quot;: &quot;Piano Man&quot;,
-    &quot;release_year&quot;: 1973,
-    &quot;formats&quot;: [ 
-      &quot;CD&quot;,
-      &quot;8T&quot;,
-      &quot;LP&quot;
-    ],
-    &quot;gold&quot;: true
-  },
-  // Add record here
-  {
-    &quot;artist&quot;: &quot;Alicia Keys&quot;,
-    &quot;title&quot;: &quot;If I ain&#39;t got you&quot;,
-    &quot;release_year&quot;: 2000,
-    &quot;formats&quot;: [
-      &quot;CD&quot;,
-      &quot;LP&quot;
-    ]
-  }
-];
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myMusic = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"artist"</span>: <span class="string">"Billy Joel"</span>,</span><br><span class="line">    <span class="string">"title"</span>: <span class="string">"Piano Man"</span>,</span><br><span class="line">    <span class="string">"release_year"</span>: <span class="number">1973</span>,</span><br><span class="line">    <span class="string">"formats"</span>: [ </span><br><span class="line">      <span class="string">"CD"</span>,</span><br><span class="line">      <span class="string">"8T"</span>,</span><br><span class="line">      <span class="string">"LP"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"gold"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// Add record here</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"artist"</span>: <span class="string">"Alicia Keys"</span>,</span><br><span class="line">    <span class="string">"title"</span>: <span class="string">"If I ain't got you"</span>,</span><br><span class="line">    <span class="string">"release_year"</span>: <span class="number">2000</span>,</span><br><span class="line">    <span class="string">"formats"</span>: [</span><br><span class="line">      <span class="string">"CD"</span>,</span><br><span class="line">      <span class="string">"LP"</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-objects" target="_blank" rel="noopener">Accessing Nested Objects</a></p>
-<pre><code class="js">var gloveBoxContents = myStorage.car.inside[&quot;glove box&quot;];
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gloveBoxContents = myStorage.car.inside[<span class="string">"glove box"</span>];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-arrays" target="_blank" rel="noopener">Accessing Nested Arrays</a></p>
-<pre><code class="js">var secondTree = myPlants[1].list[1];
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> secondTree = myPlants[<span class="number">1</span>].list[<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/record-collection" target="_blank" rel="noopener">Record Collection</a></p>
-<pre><code class="js">function updateRecords(id, prop, value) {
-  if(prop !== &quot;tracks&quot; &amp;&amp; value !== &quot;&quot;) {
-    collection[id][prop] = value;
-  } else if(prop === &quot;tracks&quot; &amp;&amp; !collection[id].hasOwnProperty(&quot;tracks&quot;)) {
-    collection[id].tracks = [];
-    collection[id].tracks.push(value);
-  } else if (prop === &quot;tracks&quot; &amp;&amp; value !== &quot;&quot;) {
-    collection[id].tracks.push(value);
-  } else if (value === &quot;&quot;) {
-    delete collection[id][prop];
-  }
-  return collection;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateRecords</span>(<span class="params">id, prop, value</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(prop !== <span class="string">"tracks"</span> &amp;&amp; value !== <span class="string">""</span>) &#123;</span><br><span class="line">    collection[id][prop] = value;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span>(prop === <span class="string">"tracks"</span> &amp;&amp; !collection[id].hasOwnProperty(<span class="string">"tracks"</span>)) &#123;</span><br><span class="line">    collection[id].tracks = [];</span><br><span class="line">    collection[id].tracks.push(value);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (prop === <span class="string">"tracks"</span> &amp;&amp; value !== <span class="string">""</span>) &#123;</span><br><span class="line">    collection[id].tracks.push(value);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value === <span class="string">""</span>) &#123;</span><br><span class="line">    <span class="keyword">delete</span> collection[id][prop];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> collection;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-while-loops" target="_blank" rel="noopener">Iterate with JavaScript While Loops</a></p>
-<pre><code class="js">var i = 0;
-while(i &lt; 5) {
-  myArray.push(i);
-  i ++;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(i &lt; <span class="number">5</span>) &#123;</span><br><span class="line">  myArray.push(i);</span><br><span class="line">  i ++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-for-loops" target="_blank" rel="noopener">Iterate with JavaScript For Loops</a></p>
-<pre><code class="js">for(var i = 1; i &lt; 6; i ++) {
-    myArray.push(i);
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">6</span>; i ++) &#123;</span><br><span class="line">    myArray.push(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-odd-numbers-with-a-for-loop" target="_blank" rel="noopener">Iterate Odd Numbers With a For Loop</a></p>
-<pre><code class="js">for(var i = 1; i &lt; 10; i += 2) {
-  myArray.push(i);
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i += <span class="number">2</span>) &#123;</span><br><span class="line">  myArray.push(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/count-backwards-with-a-for-loop" target="_blank" rel="noopener">Count Backwards With a For Loop</a></p>
-<pre><code class="js">for(var i = 9; i &gt; 0; i -= 2) {
-  myArray.push(i);
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">9</span>; i &gt; <span class="number">0</span>; i -= <span class="number">2</span>) &#123;</span><br><span class="line">  myArray.push(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-through-an-array-with-a-for-loop" target="_blank" rel="noopener">Iterate Through an Array with a For Loop</a></p>
-<pre><code class="js">var total = 0;
-for(var i = 0; i &lt; myArr.length; i ++) {
-  total += myArr[i];
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> total = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; myArr.length; i ++) &#123;</span><br><span class="line">  total += myArr[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/nesting-for-loops" target="_blank" rel="noopener">Nesting For Loops</a></p>
-<pre><code class="js">function multiplyAll(arr) {
-  var product = 1;
-  // Only change code below this line
-  for(var i = 0; i &lt; arr.length; i ++) {
-    for(var j = 0; j &lt;arr[i].length; j ++) {
-      product *= arr[i][j];
-    }
-  }
-  // Only change code above this line
-  return product;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiplyAll</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> product = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i ++) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt;arr[i].length; j ++) &#123;</span><br><span class="line">      product *= arr[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Only change code above this line</span></span><br><span class="line">  <span class="keyword">return</span> product;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-do---while-loops" target="_blank" rel="noopener">Iterate with JavaScript Do…While Loops</a></p>
-<pre><code class="js">do {
-  myArray.push(i);
-  i++
-} while(i&lt;5);
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  myArray.push(i);</span><br><span class="line">  i++</span><br><span class="line">&#125; <span class="keyword">while</span>(i&lt;<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/profile-lookup" target="_blank" rel="noopener">Profile Lookup</a></p>
-<pre><code class="js">function lookUpProfile(name, prop){
-// Only change code below this line
-  for(var i = 0; i &lt; contacts.length; i ++) {
-    if(contacts[i].firstName === name) {
-      if(contacts[i].hasOwnProperty(prop)) {
-        return contacts[i][prop];
-      } else {
-        return &quot;No such property&quot;;
-      }
-    } 
-  }
-  return &quot;No such contact&quot;;
-// Only change code above this line
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lookUpProfile</span>(<span class="params">name, prop</span>)</span>&#123;</span><br><span class="line"><span class="comment">// Only change code below this line</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; contacts.length; i ++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(contacts[i].firstName === name) &#123;</span><br><span class="line">      <span class="keyword">if</span>(contacts[i].hasOwnProperty(prop)) &#123;</span><br><span class="line">        <span class="keyword">return</span> contacts[i][prop];</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"No such property"</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"No such contact"</span>;</span><br><span class="line"><span class="comment">// Only change code above this line</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/generate-random-fractions-with-javascript" target="_blank" rel="noopener">Generate Random Fractions with JavaScript</a></p>
-<pre><code class="js">function randomFraction() {
-  // Only change code below this line.
-  return Math.random();
-  // Only change code above this line.
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomFraction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Only change code below this line.</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.random();</span><br><span class="line">  <span class="comment">// Only change code above this line.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/generate-random-whole-numbers-with-javascript" target="_blank" rel="noopener">Generate Random Whole Numbers with JavaScript</a></p>
-<pre><code class="js">function randomWholeNum() {
-  // Only change code below this line.
-  return Math.floor(Math.random()*10);
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomWholeNum</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Only change code below this line.</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/generate-random-whole-numbers-within-a-range" target="_blank" rel="noopener">Generate Random Whole Numbers within a Range</a></p>
-<pre><code class="js">function randomRange(myMin, myMax) {
-  return Math.floor(Math.random()*(myMax-myMin+1)) + myMin; // Change this line
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomRange</span>(<span class="params">myMin, myMax</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(myMax-myMin+<span class="number">1</span>)) + myMin; <span class="comment">// Change this line</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-the-parseint-function" target="_blank" rel="noopener">Use the parseInt Function</a></p>
-<pre><code class="js">function convertToInteger(str) {
-  return parseInt(str);
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">convertToInteger</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">parseInt</span>(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-the-parseint-function-with-a-radix" target="_blank" rel="noopener">Use the parseInt Function with a Radix</a></p>
-<pre><code class="js">function convertToInteger(str) {
-  return parseInt(str, 2);
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">convertToInteger</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">parseInt</span>(str, <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-the-conditional-ternary-operator" target="_blank" rel="noopener">Use the Conditional (Ternary) Operator</a></p>
-<pre><code class="js">function checkEqual(a, b) {
-  return a === b ? true : false;
-}
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkEqual</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a === b ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-multiple-conditional-ternary-operators" target="_blank" rel="noopener">Use Multiple Conditional (Ternary) Operators</a></p>
-<pre><code class="js">function checkSign(num) {
-  return num &gt; 0 ? &quot;positive&quot; : (num === 0) ? &quot;zero&quot; : &quot;negative&quot;;
-}
-</code></pre>
-</li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkSign</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num &gt; <span class="number">0</span> ? <span class="string">"positive"</span> : (num === <span class="number">0</span>) ? <span class="string">"zero"</span> : <span class="string">"negative"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -1399,8 +837,8 @@ for(var i = 0; i &lt; myArr.length; i ++) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/28/响应式页面设计准则/" rel="next" title="响应式页面设计准则">
-                <i class="fa fa-chevron-left"></i> 响应式页面设计准则
+              <a href="/2018/06/28/CSS Flex布局/" rel="next" title="CSS Flex布局">
+                <i class="fa fa-chevron-left"></i> CSS Flex布局
               </a>
             
           </div>
@@ -1638,7 +1076,7 @@ for(var i = 0; i &lt; myArr.length; i ++) {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

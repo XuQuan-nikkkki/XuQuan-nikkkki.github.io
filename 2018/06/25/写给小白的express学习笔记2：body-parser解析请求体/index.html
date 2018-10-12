@@ -447,7 +447,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  525 字
+                  562 字
                 </span>
               
 
@@ -463,7 +463,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -492,42 +492,23 @@
 <p>在使用express框架的时候，解析数据的方法略有不同。</p>
 <a id="more"></a>
 <h3 id="解析GET数据"><a href="#解析GET数据" class="headerlink" title="解析GET数据"></a>解析GET数据</h3><p>使用express框架时，解析GET方式提交的数据非常方便，我们可以直接通过<code>request.query</code>来获取。</p>
-<pre><code class="html">&lt;form action=&quot;http://localhost:9000&quot; method=&quot;get&quot; accept-charset=&quot;utf-8&quot;&gt;
-    &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
-    &lt;input type=&quot;password&quot; name=&quot;pass&quot;&gt;
-    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
-&lt;/form&gt;
-</code></pre>
-<pre><code class="js">const express = require(&quot;express&quot;);
-let app = express();
-
-app.use(&#39;/&#39;, (req, res) =&gt; {
-    console.log(req.query);
-    res.end();
-})
-
-app.listen(9000, () =&gt; {
-    console.log(&quot;server running at 9000&quot;);
-})
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://localhost:9000"</span> <span class="attr">method</span>=<span class="string">"get"</span> <span class="attr">accept-charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"pass"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">let</span> app = express();</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/'</span>, (req, res) =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(req.query);</span><br><span class="line">	res.end();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-546132d789a48d0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="获取get数据"></p>
 <h3 id="解析POST数据"><a href="#解析POST数据" class="headerlink" title="解析POST数据"></a>解析POST数据</h3><p>当需要解析POST数据的时候，我们需要用到body-parser中间件。</p>
 <ol>
-<li>先下载中间件<pre><code class="SHELL">npm install body-parser --save
-</code></pre>
-这里有一个有意思的点，一般express和koa都会有对应的功能相同的插件，比如前面提到的静态文件管理，express框架的中间件叫做<code>express-static</code>,koa框架使用的是<code>koa-static</code>，但是解析POST数据体的中间件，express使用的是<code>body-parser</code>，并没有强调express，但是koa使用的是<code>koa-bodyparser</code>，这里需要注意，不要下错了。</li>
-<li>form使用post方式提交<pre><code class="html">&lt;form action=&quot;http://localhost:9000&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot;&gt;
- &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
- &lt;input type=&quot;password&quot; name=&quot;pass&quot;&gt;
- &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
-&lt;/form&gt;
-</code></pre>
+<li>先下载中间件<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install body-parser --save</span><br></pre></td></tr></table></figure>
 </li>
-<li>引入<code>body-parser</code>解析<br><code>`</code>js<br>const express = require(“express”);<br>const bodyParser = require(“body-parser”);<br>let app = express();</li>
 </ol>
-<p>app.use(bodyParser.urlencoded({<br>    extended: false<br>}));</p>
-<p>app.use(‘/‘, (req, res) =&gt; {<br>    console.log(req.body);<br>    res.end();<br>});</p>
-<p>app.listen(9000, () =&gt; {<br>    console.log(“server running at 9000”);<br>});<br><code>`</code></p>
+<p>这里有一个有意思的点，一般express和koa都会有对应的功能相同的插件，比如前面提到的静态文件管理，express框架的中间件叫做<code>express-static</code>,koa框架使用的是<code>koa-static</code>，但是解析POST数据体的中间件，express使用的是<code>body-parser</code>，并没有强调express，但是koa使用的是<code>koa-bodyparser</code>，这里需要注意，不要下错了。</p>
+<ol start="2">
+<li><p>form使用post方式提交</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://localhost:9000"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">accept-charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"pass"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引入<code>body-parser</code>解析</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">"body-parser"</span>);</span><br><span class="line"><span class="keyword">let</span> app = express();</span><br><span class="line"></span><br><span class="line">app.use(bodyParser.urlencoded(&#123;</span><br><span class="line">	extended: <span class="literal">false</span></span><br><span class="line">&#125;));</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/'</span>, (req, res) =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(req.body);</span><br><span class="line">	res.end();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 <ul>
 <li><code>app.use(bodyParser.urlencoded({extended: false})</code>用于解析<code>application/x-www-form-urlencoded</code>格式的数据</li>
 <li><code>app.use(bodyParser.json())</code>用于解析json格式的数据</li>
@@ -571,8 +552,8 @@ app.listen(9000, () =&gt; {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/23/利用npm管理包/" rel="next" title="利用npm管理包">
-                <i class="fa fa-chevron-left"></i> 利用npm管理包
+              <a href="/2018/06/23/FCC:Apis And Microservices Certification/" rel="next" title="FCC:Apis And Microservices Certification">
+                <i class="fa fa-chevron-left"></i> FCC:Apis And Microservices Certification
               </a>
             
           </div>
@@ -810,7 +791,7 @@ app.listen(9000, () =&gt; {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 

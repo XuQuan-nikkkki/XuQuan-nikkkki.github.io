@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  891 字
+                  952 字
                 </span>
               
 
@@ -511,111 +511,54 @@
 <a id="more"></a>
 <hr>
 <h3 id="1-新特性"><a href="#1-新特性" class="headerlink" title="1. 新特性"></a>1. 新特性</h3><p>字符串新<strong>添加了遍历器接口</strong>，可以被解析成一个类似于数组的数据结构。</p>
-<pre><code class="js">let str =&quot;hello&quot;;
-console.log(str[Symbol.iterator]);   //[Function: [Symbol.iterator]]
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str =<span class="string">"hello"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str[<span class="built_in">Symbol</span>.iterator]);   <span class="comment">//[Function: [Symbol.iterator]]</span></span><br></pre></td></tr></table></figure>
 <p>因此，<strong>字符串也可以被<code>for...or</code>来遍历</strong>。</p>
-<pre><code class="js">let str =&quot; hello&quot;;
-for(let value of str) {
-  console.log(value);
-}
-//h
-//e
-//l
-//l
-//o
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str =<span class="string">" hello"</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> value <span class="keyword">of</span> str) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//h</span></span><br><span class="line"><span class="comment">//e</span></span><br><span class="line"><span class="comment">//l</span></span><br><span class="line"><span class="comment">//l</span></span><br><span class="line"><span class="comment">//o</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-模板字符串"><a href="#2-模板字符串" class="headerlink" title="2. 模板字符串"></a>2. 模板字符串</h3><ul>
 <li><p><strong>模板字符串用反引号来标识</strong>，可以当做普通字符串使用。</p>
-<pre><code class="js">`hello world`
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`hello world`</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>模板字符串<strong>包含的字符串可以转行</strong>，且在解析的过程中，转行符不会丢失。</p>
-<pre><code class="js">let str = `hello
-world`;
-console.log(str);
-//hello 
-//world
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">`hello</span></span><br><span class="line"><span class="string">world`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br><span class="line"><span class="comment">//hello </span></span><br><span class="line"><span class="comment">//world</span></span><br></pre></td></tr></table></figure>
 <p>因此，模板字符串非常适合在需要定义多行字符串，如输出HTML代码的时候使用</p>
-<pre><code class="js">$(&#39;#list&#39;).html(`
-&lt;ul&gt;
-  &lt;li&gt;first&lt;/li&gt;
-  &lt;li&gt;second&lt;/li&gt;
-&lt;/ul&gt;
-`)
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#list'</span>).html(<span class="string">`</span></span><br><span class="line"><span class="string">&lt;ul&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;first&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li&gt;second&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ul&gt;</span></span><br><span class="line"><span class="string">`</span>)</span><br></pre></td></tr></table></figure>
 <p>如果我们需要去掉字符串首尾的空格，可以使用<code>trim()</code>，但是需要注意的是一定是首尾，字符串中间的空格没办法通过<code>trim()</code>消除。</p>
-<pre><code class="js">let str1 = `   hello`;
-console.log(str1.trim());  //hello
-let str2 = `he  llo`;
-console.log(str.trim());   //he  llo
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str1 = <span class="string">`   hello`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str1.trim());  <span class="comment">//hello</span></span><br><span class="line"><span class="keyword">let</span> str2 = <span class="string">`he  llo`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.trim());   <span class="comment">//he  llo</span></span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
 <li><p><strong>模板字符串中可以嵌入变量<code>${}</code></strong></p>
-<pre><code class="js">let x = 1, y = 2;
-console.log(`${x} + ${y}`);   // 1 + 2 = 3
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>, y = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;x&#125;</span> + <span class="subst">$&#123;y&#125;</span>`</span>);   <span class="comment">// 1 + 2 = 3</span></span><br></pre></td></tr></table></figure>
 <p>还可以<strong>引用对象属性</strong></p>
-<pre><code class="js">let obj = {x: 1, y: 2};
-console.log(`${obj.x + obj.y}`);   //3
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;obj.x + obj.y&#125;</span>`</span>);   <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
 <p>也<strong>可以调用函数</strong></p>
-<pre><code class="js">function fn() {
-  return &quot;hello world&quot;;
-}
-console.log(`foo ${fn()} bar`);  //foo hello world bar
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"hello world"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`foo <span class="subst">$&#123;fn()&#125;</span> bar`</span>);  <span class="comment">//foo hello world bar</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="3-新方法"><a href="#3-新方法" class="headerlink" title="3. 新方法"></a>3. 新方法</h3><ul>
 <li><p><strong>判断字符串</strong>方法</p>
 <ul>
 <li><p><strong><code>includes()</code> 判断字符串内是否包含某个字符串元素</strong></p>
-<pre><code class="js">let str = &quot;hello world&quot;;
-console.log(str.includes(&quot;he&quot;));  //true
-console.log(str.includes(&quot;ro&quot;));  //false
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"hello world"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">"he"</span>));  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">"ro"</span>));  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
 <p><strong>参数不可以是正则表达式</strong></p>
-<pre><code class="js">let str = &quot;hello world&quot;;
-console.log(str.includes(/^h/));   //TypeError:First argument to String.prototype.includes must not be a regular expression
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"hello world"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="regexp">/^h/</span>));   <span class="comment">//TypeError:First argument to String.prototype.includes must not be a regular expression</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong><code>startsWith()</code>, <code>endsWith()</code> 判断字符串是否以某个字符串元素开头或者结尾</strong></p>
-<pre><code class="js">let str = &quot;hello world&quot;;
-console.log(str.startsWith(&quot;hello&quot;));   //true
-console.log(str.endsWith(&quot;world&quot;));     //true
-console.log(str.startsWith(&quot;great&quot;));   //false
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"hello world"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.startsWith(<span class="string">"hello"</span>));   <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(str.endsWith(<span class="string">"world"</span>));     <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(str.startsWith(<span class="string">"great"</span>));   <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p><strong>创建新的字符串</strong> <code>repeat()</code></p>
 <ul>
 <li><p><code>repeat()</code>方法会返回一个新的字符串，<strong>将原字符串重复n次</strong></p>
-<pre><code class="js">&#39;x&#39;.repeat(3)   //&#39;xxx&#39;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'x'</span>.repeat(<span class="number">3</span>)   <span class="comment">//'xxx'</span></span><br></pre></td></tr></table></figure>
 <p><strong>字符串可以是模板字符串</strong></p>
-<pre><code class="js">let str = `hello
-world`;
-str.repeat(3);
-//hello
-//worldhello
-//worldhello
-//world
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">`hello</span></span><br><span class="line"><span class="string">world`</span>;</span><br><span class="line">str.repeat(<span class="number">3</span>);</span><br><span class="line"><span class="comment">//hello</span></span><br><span class="line"><span class="comment">//worldhello</span></span><br><span class="line"><span class="comment">//worldhello</span></span><br><span class="line"><span class="comment">//world</span></span><br></pre></td></tr></table></figure>
 <p><strong>参数可以是小数，但会被向下取整(<code>Math.floor()</code>)</strong></p>
-<pre><code class="js">&#39;na&#39;.repeat(2.9)   //&#39;nana&#39;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'na'</span>.repeat(<span class="number">2.9</span>)   <span class="comment">//'nana'</span></span><br></pre></td></tr></table></figure>
 <p>如果参数是负数或者<code>Infinity</code>，会报错</p>
 <p>如果参数是0到-1间的小数，会等同于0</p>
-<pre><code class="js">&#39;na&#39;.repeat(-0.9);   //&quot;&quot;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'na'</span>.repeat(<span class="number">-0.9</span>);   <span class="comment">//""</span></span><br></pre></td></tr></table></figure>
 <p><strong>参数如果是字符串，会先转换为数字</strong></p>
-<pre><code class="js">&#39;x&#39;.repeat(&#39;4&#39;)    //&#39;xxxx&#39;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'x'</span>.repeat(<span class="string">'4'</span>)    <span class="comment">//'xxxx'</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -624,25 +567,19 @@ str.repeat(3);
 <li><p><strong><code>padStart()</code>, <code>padEnd()</code>在字符串头部/尾部补齐参数字符串</strong></p>
 </li>
 <li><p>第一个参数是补齐后字符串的长度，第二个参数是用什么字符串来补齐</p>
-<pre><code class="js">&#39;x&#39;.padStart(5, &#39;ab&#39;);  //ababx
-&#39;x&#39;.padEnd(4, &#39;a&#39;);     //xaaa
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'x'</span>.padStart(<span class="number">5</span>, <span class="string">'ab'</span>);  <span class="comment">//ababx</span></span><br><span class="line"><span class="string">'x'</span>.padEnd(<span class="number">4</span>, <span class="string">'a'</span>);     <span class="comment">//xaaa</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>如果字符串长度等于或者大于第一个参数，那么返回原字符串</p>
-<pre><code class="js">&#39;abc&#39;.padStart(2, &#39;ab&#39;)   //abc
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'abc'</span>.padStart(<span class="number">2</span>, <span class="string">'ab'</span>)   <span class="comment">//abc</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>如果原字符串的长度加上第二个参数指定的字符串的长度超过了第一个参数指定的长度，则<strong>截去超出位数的补全字符串</strong></p>
-<pre><code class="js">&#39;x&#39;.padStart(3, &#39;abcd&#39;)   //abx
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'x'</span>.padStart(<span class="number">3</span>, <span class="string">'abcd'</span>)   <span class="comment">//abx</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>省略第二个参数，则<strong>默认使用空格补齐</strong></p>
-<pre><code class="js">&#39;x&#39;.padEnd(3)   //&quot;  x&quot;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'x'</span>.padEnd(<span class="number">3</span>)   <span class="comment">//"  x"</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>可以用于在已知字符串格式的情况下补全字符串</p>
-<pre><code class="js">&#39;09-12&#39;.pardStart(10, &#39;YYYY-MM-DD&#39;)  //YYYY-09-12
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'09-12'</span>.pardStart(<span class="number">10</span>, <span class="string">'YYYY-MM-DD'</span>)  <span class="comment">//YYYY-09-12</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -683,8 +620,8 @@ str.repeat(3);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/13/使用autojump取代命令行里的cd/" rel="next" title="使用autojump取代命令行里的cd">
-                <i class="fa fa-chevron-left"></i> 使用autojump取代命令行里的cd
+              <a href="/2018/07/13/Sass/" rel="next" title="Sass">
+                <i class="fa fa-chevron-left"></i> Sass
               </a>
             
           </div>
@@ -922,7 +859,7 @@ str.repeat(3);
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">179.0k</span>
   
 </div>
 
