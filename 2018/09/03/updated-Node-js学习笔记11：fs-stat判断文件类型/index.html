@@ -446,7 +446,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  187 字
+                  180 字
                 </span>
               
 
@@ -485,7 +485,14 @@
       
         <p>上一节提到如何用<code>fs.readdir</code>方法读取指定路径的文件列表（见[《<a href="https://www.jianshu.com/p/86127593e93e" target="_blank" rel="noopener">写给小白的Node.js学习笔记10：fs模块读取文件列表》</a>，读取出来的结果可以看到，文件夹和文件并没有作任何区分，接下来我们用<code>fs.stat</code>方法对文件类型进行判断。</p>
 <a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入模块，沿用上一节提到的文件夹</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> path =<span class="string">"/Applications/MAMP/htdocs/nodejs/test/"</span>;</span><br><span class="line">fs.stat(path, (err, stats) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"It is a folder: "</span> + stats.isDirectory());</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"It is a file: "</span> + stats.isFile());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">//引入模块，沿用上一节提到的文件夹
+const fs = require(&quot;fs&quot;);
+const path =&quot;/Applications/MAMP/htdocs/nodejs/test/&quot;;
+fs.stat(path, (err, stats) =&gt; {
+  console.log(&quot;It is a folder: &quot; + stats.isDirectory());
+  console.log(&quot;It is a file: &quot; + stats.isFile());
+});
+</code></pre>
 <p>返回结果<br><img src="https://upload-images.jianshu.io/upload_images/9240001-b2393d7d61153be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p>
 <p><code>fs.stat</code>方法会读取文件，并返回一个对象<code>fs.stats</code>，<code>stats</code>对象有一下判断方法，可以判断文件类型<br><img src="https://upload-images.jianshu.io/upload_images/9240001-cd5e7856c45c26b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="fs.stats方法"></p>
 <hr>
@@ -734,7 +741,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 

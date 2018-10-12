@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  181 字
+                  170 字
                 </span>
               
 
@@ -486,13 +486,24 @@
 <a id="more"></a>
 <ol>
 <li><p>需要提前下载中间件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i express-static -S</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">npm i express-static -S
+</code></pre>
 </li>
 <li><p>使用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.引入express和express-static模块</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">const</span> expressStatic = requier(<span class="string">"express-static"</span>);</span><br><span class="line"><span class="comment">//2. 创建服务器</span></span><br><span class="line"><span class="keyword">let</span> app = express();</span><br><span class="line"><span class="comment">//3. 指定文件夹</span></span><br><span class="line"><span class="comment">//浏览器可以浏览当前文件目录下的'「resouce」文件夹</span></span><br><span class="line">app.use(expressStatic(__dirname + <span class="string">'/resource'</span>));</span><br><span class="line"><span class="comment">//4. 服务器监听</span></span><br><span class="line">app.listen(<span class="number">9000</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">//1.引入express和express-static模块
+const express = require(&quot;express&quot;);
+const expressStatic = requier(&quot;express-static&quot;);
+//2. 创建服务器
+let app = express();
+//3. 指定文件夹
+//浏览器可以浏览当前文件目录下的&#39;「resouce」文件夹
+app.use(expressStatic(__dirname + &#39;/resource&#39;));
+//4. 服务器监听
+app.listen(9000);
+</code></pre>
+<p>核心就是这一句<br><img src="https://upload-images.jianshu.io/upload_images/9240001-4923c284622f6f88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="文件托管"></p>
 </li>
 </ol>
-<p>核心就是这一句<br><img src="https://upload-images.jianshu.io/upload_images/9240001-4923c284622f6f88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="文件托管"></p>
 
       
     </div>
@@ -525,8 +536,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/06/Mac添加自定义快捷键/" rel="next" title="Mac添加自定义快捷键">
-                <i class="fa fa-chevron-left"></i> Mac添加自定义快捷键
+              <a href="/2018/06/06/写给小白的Node.js学习笔记12：作业——读取文件夹内所有文件列表/" rel="next" title="Node.js学习笔记12：作业——读取文件夹内所有文件列表">
+                <i class="fa fa-chevron-left"></i> Node.js学习笔记12：作业——读取文件夹内所有文件列表
               </a>
             
           </div>
@@ -739,7 +750,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 

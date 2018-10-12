@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  199 字
+                  173 字
                 </span>
               
 
@@ -490,16 +490,43 @@
 <hr>
 <h4 id="Introduction-to-the-Responsive-Web-Design-Challenges"><a href="#Introduction-to-the-Responsive-Web-Design-Challenges" class="headerlink" title="Introduction to the Responsive Web Design Challenges"></a><a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles" target="_blank" rel="noopener">Introduction to the Responsive Web Design Challenges</a></h4><ul>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/create-a-media-query" target="_blank" rel="noopener">Create a Media Query</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  @<span class="keyword">media</span> (max-height: <span class="number">800px</span>) &#123; </span></span><br><span class="line"><span class="css">	  <span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">10px</span>; &#125; </span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  @media (max-height: 800px) { 
+      p { font-size: 10px; } 
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/make-an-image-responsive" target="_blank" rel="noopener">Make an Image Responsive</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  img &#123;</span></span><br><span class="line"><span class="undefined">      max-width: 100%;</span></span><br><span class="line"><span class="undefined">      display: block;</span></span><br><span class="line"><span class="undefined">      height: auto;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  img {
+      max-width: 100%;
+      display: block;
+      height: auto;
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/use-a-retina-image-for-higher-resolution-displays" target="_blank" rel="noopener">Use a Retina Image for Higher Resolution Displays</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  img &#123;</span></span><br><span class="line"><span class="css">      <span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="undefined">      height: 100px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  img {
+      width:100px;
+      height: 100px;
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/make-typography-responsive" target="_blank" rel="noopener">Make Typography Responsive</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  h2 &#123;</span></span><br><span class="line"><span class="undefined">      width: 80vw;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  p &#123;</span></span><br><span class="line"><span class="undefined">      width: 75vmin;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<pre><code class="html">&lt;style&gt;
+  h2 {
+      width: 80vw;
+  }
+  p {
+      width: 75vmin;
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
 </ul>
 
       
@@ -535,8 +562,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/27/node和express基础/" rel="next" title="node和express基础">
-                <i class="fa fa-chevron-left"></i> node和express基础
+              <a href="/2018/06/28/CSS Flex布局/" rel="next" title="CSS Flex布局">
+                <i class="fa fa-chevron-left"></i> CSS Flex布局
               </a>
             
           </div>
@@ -545,8 +572,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/28/CSS网格布局/" rel="prev" title="CSS网格布局">
-                CSS网格布局 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/29/JavaScript基础/" rel="prev" title="JavaScript基础">
+                JavaScript基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -774,7 +801,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 

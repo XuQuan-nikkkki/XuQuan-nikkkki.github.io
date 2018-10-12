@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  881 字
+                  838 字
                 </span>
               
 
@@ -461,7 +461,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -487,56 +487,88 @@
 </blockquote>
 <a id="more"></a>
 <p>&emsp;&emsp;Git学习参考了<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰老师的教程</a>和最近听的全栈课程里的介绍，以下是笔记，有些不全，后期学到了再来补。</p>
-<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. homebrew install git （npm/cnpm都可以，使用包安装工具就行，直接下载包应该也没问题）</span><br><span class="line">2. git --version 查看版本</span><br><span class="line">3. git config --global user.name 查看/修改用户姓名</span><br><span class="line">4. git config --global user.email 查看/修改用户邮箱</span><br></pre></td></tr></table></figure>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><pre><code class="shell">1. homebrew install git （npm/cnpm都可以，使用包安装工具就行，直接下载包应该也没问题）
+2. git --version 查看版本
+3. git config --global user.name 查看/修改用户姓名
+4. git config --global user.email 查看/修改用户邮箱
+</code></pre>
 <p>&emsp;&emsp;只有第一次使用的时候需要设置user.name和user.email，方便以后提交的时候知道由谁提交的内容。</p>
 <h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ul>
 <li>创建版本库</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mkdir learngit(库名，可自定义)</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> learngit（库名） //进入库目录</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span>   //显示当前目录</span></span><br></pre></td></tr></table></figure>
+<pre><code class="shell">$ mkdir learngit(库名，可自定义)
+$ cd learngit（库名） //进入库目录
+$ pwd   //显示当前目录
+</code></pre>
 <ul>
 <li>把这个目录变成Git可以管理的仓库(只有执行一次）</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git init </span></span><br><span class="line">Initialized empty Git repository in /Users/xxx/learngit/.git/</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">$ git init 
+Initialized empty Git repository in /Users/xxx/learngit/.git/
+</code></pre>
 <ul>
 <li>查看隐藏文件</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls -ah</span></span><br></pre></td></tr></table></figure>
+<pre><code class="shell">$ ls -ah
+</code></pre>
 <ul>
 <li>提交文件</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 在根目录下添加txt文件</span><br><span class="line">2. $ git add xxx.txt</span><br><span class="line">3. $ git commit -m "xxx”  //-m后面输入本次提交的说明</span><br><span class="line"></span><br><span class="line">小技巧</span><br><span class="line">添加文件时可以添加目录下的全部文件</span><br><span class="line">git add -A 或 git add.</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">1. 在根目录下添加txt文件
+2. $ git add xxx.txt
+3. $ git commit -m &quot;xxx”  //-m后面输入本次提交的说明
+
+小技巧
+添加文件时可以添加目录下的全部文件
+git add -A 或 git add.
+</code></pre>
 <ul>
 <li>查看提交结果<br>文件一般有两种状态：untracked(未追踪)和modified(被修改)</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git status
+</code></pre>
 <ul>
 <li>查看文件更改情况</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff xxx(文件名）</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git diff xxx(文件名）
+</code></pre>
 <ul>
 <li>查看更改日志</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git log </span><br><span class="line">// git log --pretty=oneline（查看简洁版）</span><br><span class="line"></span><br><span class="line">小技巧</span><br><span class="line">q可以退出git log 或git diff</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git log 
+// git log --pretty=oneline（查看简洁版）
+
+小技巧
+q可以退出git log 或git diff
+</code></pre>
 <ul>
 <li>恢复到上一个版本</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br><span class="line">//git reset --hard HEAD~100  往上100个版本</span><br><span class="line">//gig reset --hard xxxxx（版本号）</span><br><span class="line">//git log查看时会有每个操作的ID号，复制前面几位作为版本号即可恢复到指定版本</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git reset --hard HEAD^
+//git reset --hard HEAD~100  往上100个版本
+//gig reset --hard xxxxx（版本号）
+//git log查看时会有每个操作的ID号，复制前面几位作为版本号即可恢复到指定版本
+</code></pre>
 <ul>
 <li>查看每一次命令（包括退回的命令）</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git reflog
+</code></pre>
 <ul>
 <li>查看文本内容</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat xxx&lt;filename&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">cat xxx&lt;filename&gt;
+</code></pre>
 <ul>
 <li>撤销操作(git add之前）</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git checkout -- &lt;filename&gt;
+</code></pre>
 <ul>
 <li>撤销操作（git add之后）</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git reset HEAD &lt;filename&gt;
+</code></pre>
 <ul>
 <li>删除文件<ul>
 <li>从文件夹删除 <code>rm &lt;filename&gt;</code></li>
@@ -572,35 +604,46 @@
 <li>关联</li>
 <li>如果将文件推送到github或其他平台会需要每次提交账户、密码信息，可以生成SSH秘钥，放到平台账号的设置里 （生成一个即可在各个平台上使用)</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:xxx/learngit.git</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git remote add origin git@github.com:xxx/learngit.git
+</code></pre>
 <ul>
 <li><p>切换远程库</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url origin git@github.com:xxx/learngit.git</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git remote set-url origin git@github.com:xxx/learngit.git
+</code></pre>
 </li>
 <li><p>推送内容</p>
 </li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master   //第一次推送（推送+关联master分支）</span><br><span class="line">git push origin master   //之后推送</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git push -u origin master   //第一次推送（推送+关联master分支）
+git push origin master   //之后推送
+</code></pre>
 <ul>
 <li>克隆库(注意在本地的保存地址）</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:xxx/gitskills.git</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git clone git@github.com:xxx/gitskills.git
+</code></pre>
 <h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><ul>
 <li>创建新指针</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch dev   //创建</span><br><span class="line">git checkout dev   //切换分支</span><br><span class="line">git checkout -b dev   //-b 创建并切换</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git branch dev   //创建
+git checkout dev   //切换分支
+git checkout -b dev   //-b 创建并切换
+</code></pre>
 <ul>
 <li>查看当前分支</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git branch
+</code></pre>
 <ul>
 <li>合并分支</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge dev(分支名)</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git merge dev(分支名)
+</code></pre>
 <ul>
 <li>删除分支</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d dev(分支名）</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">git branch -d dev(分支名）
+</code></pre>
 
       
     </div>
@@ -872,7 +915,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 

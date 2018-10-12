@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,336 字
+                  1,190 字
                 </span>
               
 
@@ -464,7 +464,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -488,87 +488,233 @@
         <p>CSS选择器是我们操作CSS元素的重要方式，它帮我们快速定位到我们想要修改样式的内容上。</p>
 <a id="more"></a>
 <h3 id="选择器类型"><a href="#选择器类型" class="headerlink" title="选择器类型"></a>选择器类型</h3><h4 id="通配选择器-Universal-selector："><a href="#通配选择器-Universal-selector：" class="headerlink" title="通配选择器 Universal selector：*"></a>通配选择器 <em>Universal selector</em>：<code>*</code></h4><p>通配选择器匹配所有的元素。它通常被用来重置浏览器的默认样式。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">* {
+  margin: 0;
+  padding: 0;
+}
+</code></pre>
 <p>通配选择器可以单独使用，也可以用来匹配某一个元素下的所有子元素：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#container</span> # &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">#container # {
+  border: 1px solid black;
+}
+</code></pre>
 <h3 id="标签-元素选择器-Type-selector"><a href="#标签-元素选择器-Type-selector" class="headerlink" title="标签/元素选择器 Type selector"></a>标签/元素选择器 <em>Type selector</em></h3><p>通过node节点名称匹配元素。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">a {
+  color: red;
+}
+</code></pre>
 <h3 id="类选择器-Class-selector"><a href="#类选择器-Class-selector" class="headerlink" title="类选择器 Class selector"></a>类选择器 <em>Class selector</em></h3><p>选择<code>class</code>属性为给定值的元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">.div {
+  color: red;
+}
+</code></pre>
 <p>可以结合元素选择器一起使用：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.left</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">div.left {
+  float: left;
+}
+</code></pre>
 <h3 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a>ID选择器</h3><p>选择<code>id</code>属性为特定值的元素。通常文档中的ID是独一无二的，因此ID选择器应该只能选择到一个元素。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#test</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">#test {
+  color: red;
+}
+</code></pre>
 <p>ID选择器同样可以结合元素选择器一起使用：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-id">#test</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">div#test {
+  color: red;
+}
+</code></pre>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fv4b0oykw1j30le0aagnf.jpg" alt="image-20180910115423574"></p>
 <h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><h4 id="1-简单属性选择器"><a href="#1-简单属性选择器" class="headerlink" title="1. 简单属性选择器"></a>1. 简单属性选择器</h4><p>包含有某个属性的元素，不限定属性的值</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[title]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">img</span><span class="selector-attr">[alt]</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">a[title] {
+  color: red;
+}
+img[alt] {
+  border: 1px solid black;
+}
+</code></pre>
 <h4 id="2-具体属性选择器"><a href="#2-具体属性选择器" class="headerlink" title="2. 具体属性选择器"></a>2. 具体属性选择器</h4><p>包含某个属性，且属性值与指定值一致的元素。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href="https://www.google.com"]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[id="box"]</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">a[href=&quot;https://www.google.com&quot;] {
+  color: red;
+}
+div[id=&quot;box&quot;] {
+  width: 300px;
+}
+</code></pre>
 <h4 id="3-部分属性选择器"><a href="#3-部分属性选择器" class="headerlink" title="3. 部分属性选择器"></a>3. 部分属性选择器</h4><h5 id="attr-value"><a href="#attr-value" class="headerlink" title="[attr~=value]"></a><code>[attr~=value]</code></h5><p>包含属性<code>attr</code>，且属性值包含数个用空格隔开的值，<code>value</code>是其中一个值的元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* lang属性包含en-us的div元素 */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[lang~="en-us"]</span> &#123;  </span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">/* lang属性包含en-us的div元素 */
+div[lang~=&quot;en-us&quot;] {  
+  color: blue;
+}
+</code></pre>
 <h5 id="attr-value-1"><a href="#attr-value-1" class="headerlink" title="[attr|=value]"></a><code>[attr|=value]</code></h5><p>包含属性<code>attr</code>，且属性值是<code>value</code>或以<code>value</code>开头，紧接<code>-</code>的元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 匹配中文语音，无论是简体中文zh-CN还是繁体中文zh-TW */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[lang|="zh"]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">/* 匹配中文语音，无论是简体中文zh-CN还是繁体中文zh-TW */
+div[lang|=&quot;zh&quot;] {
+  color: red;
+}
+</code></pre>
 <h5 id="attr-value-2"><a href="#attr-value-2" class="headerlink" title="[attr^=value]"></a><code>[attr^=value]</code></h5><p>包含属性<code>attr</code>，且属性值以<code>value</code>为前缀的元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 匹配内链元素 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href^="#"]</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: gold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">/* 匹配内链元素 */
+a[href^=&quot;#&quot;] {
+  background-color: gold;
+}
+</code></pre>
 <h5 id="attr-value-3"><a href="#attr-value-3" class="headerlink" title="[attr$=value]"></a><code>[attr$=value]</code></h5><p>包含属性<code>attr</code>，且属性值以<code>value</code>为后缀的元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 匹配以'.org'结尾的链接 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href$=".org"]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">/* 匹配以&#39;.org&#39;结尾的链接 */
+a[href$=&quot;.org&quot;] {
+  color: red;
+}
+</code></pre>
 <h5 id="attr-value-4"><a href="#attr-value-4" class="headerlink" title="[attr*=value]"></a><code>[attr*=value]</code></h5><p>包含属性<code>attr</code>，且属性值包含<code>value</code>的元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 链接中有"insensitive",且不论大小写 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href*="insensitive" i]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: cyan;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">/* 链接中有&quot;insensitive&quot;,且不论大小写 */
+a[href*=&quot;insensitive&quot; i] {
+  color: cyan;
+}
+</code></pre>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fv4b2uyo2bj30s80cxdij.jpg" alt="image-20180910115630790"></p>
 <h3 id="组合选择器"><a href="#组合选择器" class="headerlink" title="组合选择器"></a>组合选择器</h3><h4 id="群组选择器-A-B"><a href="#群组选择器-A-B" class="headerlink" title="群组选择器 A, B"></a>群组选择器 <code>A, B</code></h4><p>用逗号隔开，同时选中<code>A</code>和<code>B</code>两个元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div1</span>, <span class="selector-class">.div2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">.div1, .div2 {
+  width: 200px;
+}
+</code></pre>
 <h4 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h4><h5 id="A-B"><a href="#A-B" class="headerlink" title="A B"></a><code>A B</code></h5><p>用空格隔开，<code>B</code>是<code>A</code>的后代元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">div p {
+  color: blue;
+}
+</code></pre>
 <h5 id="A-gt-B"><a href="#A-gt-B" class="headerlink" title="A&gt;B"></a><code>A&gt;B</code></h5><p><code>B</code>是<code>A</code>的子元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span>&gt;<span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">ul&gt;li {
+  list-style-type: none;
+}
+</code></pre>
 <h5 id="A-B-1"><a href="#A-B-1" class="headerlink" title="A || B"></a><code>A || B</code></h5><p><code>B</code>元素是<code>A</code>的子元素，且<code>A</code>元素是表格中的列。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">col.selected || td &#123;</span><br><span class="line">  <span class="selector-tag">background</span>: <span class="selector-tag">gray</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="兄弟选择器"><a href="#兄弟选择器" class="headerlink" title="兄弟选择器"></a>兄弟选择器</h4><h5 id="A-B-相邻兄弟选择器"><a href="#A-B-相邻兄弟选择器" class="headerlink" title="A + B 相邻兄弟选择器"></a><code>A + B</code> 相邻兄弟选择器</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h2</span> + <span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">col.selected || td {
+  background: gray;
+}
+</code></pre>
+<h4 id="兄弟选择器"><a href="#兄弟选择器" class="headerlink" title="兄弟选择器"></a>兄弟选择器</h4><h5 id="A-B-相邻兄弟选择器"><a href="#A-B-相邻兄弟选择器" class="headerlink" title="A + B 相邻兄弟选择器"></a><code>A + B</code> 相邻兄弟选择器</h5><pre><code class="css">h2 + p {
+  color: red;
+}
+</code></pre>
 <p><code>A ~ B</code> 通用兄弟选择器</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> ~ <span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">p ~ span {
+  color: red;
+}
+</code></pre>
 <h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><h4 id="静态伪类（只用于超链接）"><a href="#静态伪类（只用于超链接）" class="headerlink" title="静态伪类（只用于超链接）"></a>静态伪类（只用于超链接）</h4><h5 id="link"><a href="#link" class="headerlink" title=":link"></a><code>:link</code></h5><p>没有被访问的包含<code>href</code>属性的元素，如<code>&lt;a&gt;</code>,<code>&lt;area&gt;</code>,<code>&lt;link&gt;</code>.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">a:link {
+  color: red;
+}
+</code></pre>
 <h5 id="visited"><a href="#visited" class="headerlink" title=":visited"></a><code>:visited</code></h5><p>访问过的链接</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">a:visited {
+  color: green;
+}
+</code></pre>
 <h4 id="动态伪类（可用于任何元素）"><a href="#动态伪类（可用于任何元素）" class="headerlink" title="动态伪类（可用于任何元素）"></a>动态伪类（可用于任何元素）</h4><h5 id="focus"><a href="#focus" class="headerlink" title=":focus"></a><code>:focus</code></h5><p>获得焦点的元素，通常由用户点击或”tab”跳转到该元素触发。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">input:focus {
+  color: red;
+}
+</code></pre>
 <h5 id="hover"><a href="#hover" class="headerlink" title=":hover"></a><code>:hover</code></h5><p>鼠标悬停的元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">a:hover {
+  color: orange;
+}
+</code></pre>
 <h5 id="active"><a href="#active" class="headerlink" title=":active"></a><code>:active</code></h5><p>被激活的元素，当鼠标正在点击</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">a:active {
+  color: red;
+}
+</code></pre>
 <h4 id="UI元素伪类"><a href="#UI元素伪类" class="headerlink" title="UI元素伪类"></a>UI元素伪类</h4><h5 id="enabled"><a href="#enabled" class="headerlink" title=":enabled"></a><code>:enabled</code></h5><p>状态为可用的元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:enabled</span> &#123;</span><br><span class="line">   <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">input:enabled {
+   color: blue;
+}
+</code></pre>
 <h5 id="disabled"><a href="#disabled" class="headerlink" title=":disabled"></a><code>:disabled</code></h5><p>状态为不可用的元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:disabled</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#ccc</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">input:disabled {
+  background: #ccc;
+}
+</code></pre>
 <h5 id="checked"><a href="#checked" class="headerlink" title=":checked"></a><code>:checked</code></h5><p><code>radio</code>,<code>checkbox</code>,<code>option</code>被选中的元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:checked</span> &#123;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">25px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">:checked {
+  margin-left: 25px;
+  border: 1px solid blue;
+}
+</code></pre>
 <h4 id="结构伪类"><a href="#结构伪类" class="headerlink" title="结构伪类"></a>结构伪类</h4><h5 id="first-child-last-child"><a href="#first-child-last-child" class="headerlink" title="first-child / last-child"></a><code>first-child</code> / <code>last-child</code></h5><p>一组兄弟元素中的第一个或最后一个元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-child</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: lime</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">p:first-child {
+  color: lime
+}
+</code></pre>
 <p>最初定义时，所选元素必须有一个父元素，从选择器Level 4开始，父元素不是必须了。</p>
 <h5 id="root"><a href="#root" class="headerlink" title=":root"></a><code>:root</code></h5><p>根元素，即<code>&lt;html&gt;</code>元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">:root {
+  background: yellow;
+}
+</code></pre>
 <h5 id="nth-child-n-nth-last-child-n"><a href="#nth-child-n-nth-last-child-n" class="headerlink" title="nth-child(n) / nth-last-child(n)"></a><code>nth-child(n)</code> / <code>nth-last-child(n)</code></h5><p>一组兄弟元素中的第n个或倒数第n个元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 每组兄弟元素中每隔4个元素 */</span></span><br><span class="line"><span class="selector-pseudo">:nth-child(4n)</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: lime;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 每组兄弟元素中第5个元素 */</span></span><br><span class="line"><span class="selector-pseudo">:nth-child(5)</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: lime;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:nth-child(3n+4)</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: lime;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">/* 每组兄弟元素中每隔4个元素 */
+:nth-child(4n) {
+  color: lime;
+}
+
+/* 每组兄弟元素中第5个元素 */
+:nth-child(5) {
+  color: lime;
+}
+
+:nth-child(3n+4) {
+  color: lime;
+}
+</code></pre>
 <h5 id="nth-of-type-n-nth-last-of-type-n"><a href="#nth-of-type-n-nth-last-of-type-n" class="headerlink" title="nth-of-type(n) / nth-last-of-type(n)"></a><code>nth-of-type(n)</code> / <code>nth-last-of-type(n)</code></h5><p>一组兄弟元素中的第n个或倒数第n个符合特定类型的元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-of-type(4n)</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: lime;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">p:nth-of-type(4n) {
+  color: lime;
+}
+</code></pre>
 <h5 id="first-of-type-last-of-type"><a href="#first-of-type-last-of-type" class="headerlink" title="first-of-type / last-of-type"></a><code>first-of-type</code> / <code>last-of-type</code></h5><p>符合类型的第一个或最后一个兄弟元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 所有兄弟节点中排列第一个的p元素 */</span></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-of-type</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">/* 所有兄弟节点中排列第一个的p元素 */
+p:first-of-type {
+  color: red;
+}
+</code></pre>
 <h5 id="only-child"><a href="#only-child" class="headerlink" title="only-child"></a><code>only-child</code></h5><p>父元素只包含一个同类型的元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 父元素只要一个子元素p的p元素 */</span></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:only-child</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: lime;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">/* 父元素只要一个子元素p的p元素 */
+p:only-child {
+  background-color: lime;
+}
+</code></pre>
 <h5 id="empty"><a href="#empty" class="headerlink" title=":empty"></a><code>:empty</code></h5><p>没有子元素的元素</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:empty</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: lime;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">div:empty {
+  background: lime;
+}
+</code></pre>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fv4fq316i7j30uc14cgtl.jpg" alt="image-20180910143713490"></p>
 <h3 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h3><h5 id="first-letter"><a href="#first-letter" class="headerlink" title="::first-letter"></a><code>::first-letter</code></h5><p>第一个字母</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-letter</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">130%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">p::first-letter {
+  font-size: 130%;
+}
+</code></pre>
 <p>#####<code>::first-line</code></p>
 <p>元素的第一行</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-line</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">  <span class="attribute">text-transform</span>: uppercase;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">p::first-line {
+  color: blue;
+  text-transform: uppercase;
+}
+</code></pre>
 <h5 id="before-after"><a href="#before-after" class="headerlink" title=":before / :after"></a><code>:before</code> / <code>:after</code></h5><p>在元素的开始/末尾插入内容（默认这个伪元素是行内元素，继承元素可继承的属性）</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">"Hello"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">"=&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">a::before {
+  content: &quot;Hello&quot;;
+}
+a::after {
+  content: &quot;=&gt;&quot;;
+}
+</code></pre>
 <h5 id="selection"><a href="#selection" class="headerlink" title="::selection"></a><code>::selection</code></h5><p>被用户鼠标选中部分</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::selection</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: cyan;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">::selection {
+  background: cyan;
+}
+</code></pre>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fv4fpk73u6j30p10gc0vw.jpg" alt="image-20180910143643608"></p>
 
       
@@ -841,7 +987,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 

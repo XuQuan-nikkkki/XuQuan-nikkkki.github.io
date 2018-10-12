@@ -446,7 +446,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,233 字
+                  3,156 字
                 </span>
               
 
@@ -462,7 +462,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  13 分钟
+                  12 分钟
                 </span>
               
             </div>
@@ -502,7 +502,9 @@
 </ul>
 <h5 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h5><ul>
 <li><p>浏览器直接在控制台中通过<code>document.cookie=&quot;xxx=xxx&quot;</code>的形式来设置</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.cookie=<span class="string">"name=value"</span>;</span><br><span class="line"><span class="built_in">document</span>.cookie=<span class="string">"name=valueldomain=www.baidu.com"</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="js">document.cookie=&quot;name=value&quot;;
+document.cookie=&quot;name=valueldomain=www.baidu.com&quot;;
+</code></pre>
 <p>浏览器可以设置<code>cookie</code>的<code>expires</code>,<code>domain</code>,<code>path</code>,<code>secure</code>等属性</p>
 </li>
 <li><p>服务器端可以通过<code>response</code>的<code>Set-Cookie</code>方法来设置</p>
@@ -523,7 +525,13 @@
 <li><code>window.sessionStorage</code> 用来存储会话数据，即当浏览器标签页关闭时，会话数据会被清空</li>
 </ul>
 <p>使用之前，我们可以先检测浏览器是否支持<code>localStorage</code>和<code>sessionStorage</code>：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> Storage !== <span class="string">"undefined"</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(localStorage);</span><br><span class="line">  <span class="built_in">console</span>.log(sessionStorage);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Web storage not suppoerted"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="js">if(typeof Storage !== &quot;undefined&quot;){
+  console.log(localStorage);
+  console.log(sessionStorage);
+} else {
+  console.log(&quot;Web storage not suppoerted&quot;);
+}
+</code></pre>
 <p>比如我使用之前做过的一个弹幕项目的页面来测试，可以看见<code>localStorage</code>里是存储了数据的：</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fv12qw0eolj30ji0cutb2.jpg" alt="image-20180907103004447"></p>
 <p>下面是<code>localStorage</code>的方法。</p>
@@ -534,12 +542,21 @@
 <h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><ul>
 <li><code>localStorage.setItem(&quot;name&quot;, &quot;value&quot;);</code> 设置</li>
 <li><p><code>localStorage.getItem(&quot;name&quot;);</code> 读取</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// store</span></span><br><span class="line">localStorage.setItem(<span class="string">"lastname"</span>, <span class="string">"Smith"</span>);</span><br><span class="line"><span class="comment">// Retrieve</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML = localStorage.getItem(<span class="string">"lastname"</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">  // store
+  localStorage.setItem(&quot;lastname&quot;, &quot;Smith&quot;);
+  // Retrieve
+  document.getElementById(&quot;result&quot;).innerHTML = localStorage.getItem(&quot;lastname&quot;);
+</code></pre>
 <p>  <code>localStorage</code>的值也可以和<code>cookies</code>一样直接设置：</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// store</span></span><br><span class="line">localStorage.lastname = <span class="string">"Smith"</span>;</span><br><span class="line"><span class="comment">// retrieve</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML = localStorage.lastname;</span><br></pre></td></tr></table></figure>
+<pre><code class="js">  // store
+  localStorage.lastname = &quot;Smith&quot;;
+  // retrieve
+  document.getElementById(&quot;result&quot;).innerHTML = localStorage.lastname;
+</code></pre>
 </li>
 <li><p><code>localStorage.removeItem(&quot;name&quot;);</code> 删除</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.removeItem(<span class="string">"lastname"</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">  localStorage.removeItem(&quot;lastname&quot;);
+</code></pre>
 </li>
 <li><p><code>localStorage.clear()</code> 清空</p>
 </li>
@@ -565,17 +582,48 @@
 <li><code>transaction</code> - 这个方法允许我们创建一个事务，基于事务来提交或者回滚</li>
 <li><code>executeSql</code> - 执行实际的SQL请求</li>
 </ul>
-<h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> db = openDatabase(<span class="string">"mydb"</span>, <span class="string">"1.0"</span>, <span class="string">"Test DB"</span>, <span class="number">2</span>*<span class="number">1024</span>*<span class="number">1024</span>, fn);</span><br><span class="line"><span class="comment">// openDatabase方法对应的5个参数分别是：数据库名称、版本号、描述文本、数据库大小、回调函数</span></span><br></pre></td></tr></table></figure>
+<h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><pre><code class="js">let db = openDatabase(&quot;mydb&quot;, &quot;1.0&quot;, &quot;Test DB&quot;, 2*1024*1024, fn);
+// openDatabase方法对应的5个参数分别是：数据库名称、版本号、描述文本、数据库大小、回调函数
+</code></pre>
 <p>数据库被创建完毕时，第5个参数对应的回调函数会被触发，如果没有设置第五个参数，数据库也能够被创建。</p>
 <h4 id="执行请求"><a href="#执行请求" class="headerlink" title="执行请求"></a>执行请求</h4><p><code>database.transaction()</code>函数用来执行请求。这个函数接受一个函数参数，用来指明需要执行的内容：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> db = openDatabase(<span class="string">"mydb"</span>, <span class="string">"1.0"</span>, <span class="string">"Test DB"</span>, <span class="number">2</span>*<span class="number">1024</span>*<span class="number">1024</span>);</span><br><span class="line"></span><br><span class="line">db.transaction(<span class="function"><span class="keyword">function</span>(<span class="params">tx</span>) </span>&#123;</span><br><span class="line">  tx.executeSql(<span class="string">'CREATE TABLE IF NOT EXISTS LOGS (id unique, log)'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="js">let db = openDatabase(&quot;mydb&quot;, &quot;1.0&quot;, &quot;Test DB&quot;, 2*1024*1024);
+
+db.transaction(function(tx) {
+  tx.executeSql(&#39;CREATE TABLE IF NOT EXISTS LOGS (id unique, log)&#39;);
+})
+</code></pre>
 <p>上述代码会在’mydb’数据库中创建一个名叫LOGS的表。</p>
 <h4 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h4><p>我们可以通过简单的SQL语句为数据库插入数据：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> db = openDatabase(<span class="string">"mydb"</span>, <span class="string">"1.0"</span>, <span class="string">"Test DB"</span>, <span class="number">2</span>*<span class="number">1024</span>*<span class="number">1024</span>);</span><br><span class="line"></span><br><span class="line">db.transaction(<span class="function"><span class="keyword">function</span>(<span class="params">tx</span>) </span>&#123;</span><br><span class="line">  tx.executeSql(<span class="string">"CREATE TABLE IF NOT EXISTS LOGS(id unique, log)"</span>);</span><br><span class="line">  tx.executeSql(<span class="string">"INSERT INTO LOGS (id, log) VALUES (1, 'foobar')"</span>);</span><br><span class="line">  tx.executeSql(<span class="string">"INSERT INTO LOGS (id, log) VALUES (2, 'logmsg')"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="js">let db = openDatabase(&quot;mydb&quot;, &quot;1.0&quot;, &quot;Test DB&quot;, 2*1024*1024);
+
+db.transaction(function(tx) {
+  tx.executeSql(&quot;CREATE TABLE IF NOT EXISTS LOGS(id unique, log)&quot;);
+  tx.executeSql(&quot;INSERT INTO LOGS (id, log) VALUES (1, &#39;foobar&#39;)&quot;);
+  tx.executeSql(&quot;INSERT INTO LOGS (id, log) VALUES (2, &#39;logmsg&#39;)&quot;);
+})
+</code></pre>
 <p>我们也可以通过动态数据来操作数据库：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> db = openDatabase(<span class="string">"mydb"</span>, <span class="string">"1.0"</span>, <span class="string">"Test DB"</span>, <span class="number">2</span>*<span class="number">1024</span>*<span class="number">1024</span>);</span><br><span class="line"></span><br><span class="line">db.transaction(<span class="function"><span class="keyword">function</span>(<span class="params">tx</span>) </span>&#123;</span><br><span class="line">  tx.executeSql(<span class="string">"CREATE TABLE IF NOT EXISTS LOGS(id unique, log)"</span>);</span><br><span class="line">  tx.executeSql(<span class="string">"INSERT INTO LOGS (id, log) VALUES (?, ?)"</span>, [e_id, e_log]);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="js">let db = openDatabase(&quot;mydb&quot;, &quot;1.0&quot;, &quot;Test DB&quot;, 2*1024*1024);
+
+db.transaction(function(tx) {
+  tx.executeSql(&quot;CREATE TABLE IF NOT EXISTS LOGS(id unique, log)&quot;);
+  tx.executeSql(&quot;INSERT INTO LOGS (id, log) VALUES (?, ?)&quot;, [e_id, e_log]);
+})
+</code></pre>
 <p>这里的<code>e_id</code>和<code>e_log</code>都是外部变量，<code>executeSql</code>方法会遍历数组变量中的参数赋给<code>?</code>。</p>
-<h4 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">db.transaction(<span class="function"><span class="keyword">function</span>(<span class="params">tx</span>) </span>&#123;</span><br><span class="line">  tx.executeSql(<span class="string">"SELECT * FROM LOGS"</span>, [], <span class="function"><span class="keyword">function</span>(<span class="params">tx, results</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> len = results.rows.length, i;</span><br><span class="line">    msg = <span class="string">"&lt;p&gt;Found rows: "</span> + len + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">    <span class="built_in">document</span>.querySelector(<span class="string">"#status"</span>).innerHTML += msg;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; len; i ++)&#123;</span><br><span class="line">      alert(results.rows.item(i).log)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="literal">null</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h4><pre><code class="js">db.transaction(function(tx) {
+  tx.executeSql(&quot;SELECT * FROM LOGS&quot;, [], function(tx, results) {
+    let len = results.rows.length, i;
+    msg = &quot;&lt;p&gt;Found rows: &quot; + len + &quot;&lt;/p&gt;&quot;;
+    document.querySelector(&quot;#status&quot;).innerHTML += msg;
+
+    for(i = 0; i &lt; len; i ++){
+      alert(results.rows.item(i).log)
+    }
+  }, null);
+});
+</code></pre>
 <hr>
 <h3 id="IndexedDB"><a href="#IndexedDB" class="headerlink" title="IndexedDB"></a>IndexedDB</h3><p>IndexedDB是一个在用户端存储包括文件和二进制数据在内的结构化数据的低级API。它使用索引来实现高性能的数据搜索。由于网页存储对于较少量的数据存储有用，但对于更大量的结构化数据来说不太适用，IndexedDB提供了一个解决方案。</p>
 <blockquote>
@@ -607,19 +655,48 @@
 </li>
 </ul>
 <h4 id="操作-1"><a href="#操作-1" class="headerlink" title="操作"></a>操作</h4><h5 id="初始化数据库"><a href="#初始化数据库" class="headerlink" title="初始化数据库"></a>初始化数据库</h5><p><code>IndexedDB</code>在不同的浏览器中需要添加前缀，可以用以下代码来实现统一。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.indexdDB = <span class="built_in">window</span>.indexdDB || <span class="built_in">window</span>.webkitIndexedDB || <span class="built_in">window</span>.mozIndexedDB || <span class="built_in">window</span>.msIndexedDB;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="string">'webkitIndexedDB'</span> <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">  <span class="built_in">window</span>.IDBTransaction = <span class="built_in">window</span>.webkitIDBTransaction;</span><br><span class="line">  <span class="built_in">window</span>.IDBKeyRange = <span class="built_in">window</span>.webkitIDBKeyRange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="js">window.indexdDB = window.indexdDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
+
+if(&#39;webkitIndexedDB&#39; in window) {
+  window.IDBTransaction = window.webkitIDBTransaction;
+  window.IDBKeyRange = window.webkitIDBKeyRange;
+}
+</code></pre>
 <p>但使用前缀的方法还是会造成一些BUG，或者功能实现不完整，这样会造成一些不太好的用户体验。还是建议明确告知客户有些浏览器并不支持IndexedDB。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!<span class="built_in">window</span>.indexedDB) &#123;</span><br><span class="line">  <span class="built_in">window</span>.alert(<span class="string">"Your browser doesn't support a stable version of IndexedDB."</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="打开数据库"><a href="#打开数据库" class="headerlink" title="打开数据库"></a>打开数据库</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> request = <span class="built_in">window</span>.indexedDB.open(<span class="string">"mydb"</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">if(!window.indexedDB) {
+  window.alert(&quot;Your browser doesn&#39;t support a stable version of IndexedDB.&quot;);
+}
+</code></pre>
+<h5 id="打开数据库"><a href="#打开数据库" class="headerlink" title="打开数据库"></a>打开数据库</h5><pre><code class="js">let request = window.indexedDB.open(&quot;mydb&quot;, 3);
+</code></pre>
 <p>IndexedDB使用数据库是通过请求来实现的，它并不马上打开数据库或者马上开始一个事务，发送打开请求会返回一个<code>IDBOpenDBRequest</code>对象，对象包含了请求成功的<code>result</code>值和请求失败的<code>error</code>值。IndexedDB中的大部分异步函数都以这样的机制运行——返回一个包含成功和错误值<code>IDBRequest</code>对象。<code>open</code>函数返回的结果是一个<code>IDBDatabase</code>实例。</p>
 <p>请求中传入的第二个参数是数据库的版本。数据库的版本决定了数据库的架构（包括数据库中存储的对象和它们的结构）。</p>
-<h5 id="生成处理函数"><a href="#生成处理函数" class="headerlink" title="生成处理函数"></a>生成处理函数</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> db;</span><br><span class="line"><span class="keyword">let</span> request = indexedDB.open(<span class="string">"mydb"</span>);</span><br><span class="line">request.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Database error: "</span> + e.target.errorCode);</span><br><span class="line">&#125;;</span><br><span class="line">request.onsuccess = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  db = request.result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="构建数据库"><a href="#构建数据库" class="headerlink" title="构建数据库"></a>构建数据库</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">request.onupgradeneeded = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> db = e.target.result;</span><br><span class="line">  <span class="keyword">let</span> objectStore = db.createObjectStore(<span class="string">"customers"</span>, &#123;<span class="attr">keyPath</span>: <span class="string">'ssn'</span>&#125;);</span><br><span class="line">  objectStore.createIndex(<span class="string">"name"</span>, <span class="string">"name"</span>, &#123;<span class="attr">unique</span>: <span class="literal">false</span>&#125;);</span><br><span class="line">  objectStore.createIndex(<span class="string">"email"</span>, <span class="string">"email"</span>, &#123;<span class="attr">unique</span>:<span class="literal">true</span>&#125;);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> customerData) &#123;</span><br><span class="line">    objectStore.add(customerData[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="生成处理函数"><a href="#生成处理函数" class="headerlink" title="生成处理函数"></a>生成处理函数</h5><pre><code class="js">let db;
+let request = indexedDB.open(&quot;mydb&quot;);
+request.onerror = function(e) {
+  console.log(&quot;Database error: &quot; + e.target.errorCode);
+};
+request.onsuccess = function(e) {
+  db = request.result;
+}
+</code></pre>
+<h5 id="构建数据库"><a href="#构建数据库" class="headerlink" title="构建数据库"></a>构建数据库</h5><pre><code class="js">request.onupgradeneeded = function(e) {
+  let db = e.target.result;
+  let objectStore = db.createObjectStore(&quot;customers&quot;, {keyPath: &#39;ssn&#39;});
+  objectStore.createIndex(&quot;name&quot;, &quot;name&quot;, {unique: false});
+  objectStore.createIndex(&quot;email&quot;, &quot;email&quot;, {unique:true});
+  for(let i in customerData) {
+    objectStore.add(customerData[i]);
+  }
+}
+</code></pre>
 <p>IndexedDB没有表的概念，而是objectStore，一个数据库可以包含多个objectStore，objectStore是一个灵活的数据结构，可以存放多种类型的数据。</p>
 <p>我们可以使用每条记录中的某个指定字段作为键值（keyPath），也可以使用自动生成的递增数字作为键值(keyGenerator)，也可以不指定。</p>
 <p>选择键的类型不同，objectStore可以存储的数据结构也有差异。</p>
-<h5 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> transaction = db.transaction([<span class="string">"customers"</span>], <span class="string">"readwirte"</span>);</span><br></pre></td></tr></table></figure>
-<h5 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> request = db.objectStore(<span class="string">"customers"</span>).delete(value);</span><br></pre></td></tr></table></figure>
+<h5 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h5><pre><code class="js">let transaction = db.transaction([&quot;customers&quot;], &quot;readwirte&quot;);
+</code></pre>
+<h5 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h5><pre><code class="js">let request = db.objectStore(&quot;customers&quot;).delete(value);
+</code></pre>
 <blockquote>
 <p>参考：</p>
 <p><a href="https://www.w3schools.com/html/html5_webstorage.asp" target="_blank" rel="noopener">W3C: HTML5 Web Storage</a></p>
@@ -902,7 +979,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 

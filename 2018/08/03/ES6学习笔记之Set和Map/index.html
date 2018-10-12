@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  773 字
+                  740 字
                 </span>
               
 
@@ -533,11 +533,21 @@
 <li>类似数组</li>
 <li>成员的值都是唯一的，没有重复值</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">[<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>].forEach(<span class="function"><span class="params">x</span> =&gt;</span> a.add(x));</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> a) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//2, 3, 4, 5</span></span><br></pre></td></tr></table></figure>
+<pre><code class="js">const a = new Set();
+[2, 3, 4, 5, 5, 2, 3].forEach(x =&gt; a.add(x));
+for(let i of a) {
+  console.log(i)
+} 
+//2, 3, 4, 5
+</code></pre>
 <p><code>Set</code>可以接受一个数组作为参数来初始化，这个方法可以用来为数组去重。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>])</span><br><span class="line">[...set]  <span class="comment">//[1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+<pre><code class="js">const set = new Set([1, 2, 3, 4, 4])
+[...set]  //[1, 2, 3, 4]
+</code></pre>
 <p><code>Array.from</code>方法也可以将<code>Set</code>结构转为数组</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> items = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]);</span><br><span class="line"><span class="keyword">const</span> array = <span class="built_in">Array</span>.from(items);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">const items = new Set([1, 2, 3, 4, 5]);
+const array = Array.from(items);
+</code></pre>
 <h4 id="Set的属性"><a href="#Set的属性" class="headerlink" title="Set的属性"></a><code>Set</code>的属性</h4><ul>
 <li><code>Set.prototype.constructor</code> ：构造函数，默认就是<code>Set</code>函数</li>
 <li><code>Set.prototype.size</code>： 返回<code>Set</code>实例的成员总数，类似数组的<code>length</code>属性</li>
@@ -552,7 +562,10 @@
 <li>类似于对象，是键值对的集合</li>
 <li>“键”的范围不限于字符串，可以是各种类型的值</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">map.set(<span class="number">1</span>, <span class="string">'aaa'</span>).set(<span class="number">2</span>, <span class="string">'bbb'</span>);</span><br><span class="line">map.get(<span class="number">1</span>)  <span class="comment">//'aaa'</span></span><br></pre></td></tr></table></figure>
+<pre><code class="js">const map = new Map();
+map.set(1, &#39;aaa&#39;).set(2, &#39;bbb&#39;);
+map.get(1)  //&#39;aaa&#39;
+</code></pre>
 <h4 id="Map的属性"><a href="#Map的属性" class="headerlink" title="Map的属性"></a><code>Map</code>的属性</h4><ul>
 <li><code>size</code> 成员个数</li>
 </ul>
@@ -564,10 +577,30 @@
 <li><code>clear()</code> 清除所有成员，没有返回值</li>
 </ul>
 <h3 id="与其他数据结构互相转换"><a href="#与其他数据结构互相转换" class="headerlink" title="与其他数据结构互相转换"></a>与其他数据结构互相转换</h3><h4 id="1-Map-gt-数组"><a href="#1-Map-gt-数组" class="headerlink" title="1. Map =&gt; 数组"></a>1. Map =&gt; 数组</h4><p>最方便的方法是使用扩展运算符<code>...</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myMap = <span class="keyword">new</span> <span class="built_in">Map</span>().set(<span class="literal">true</span>, <span class="number">7</span>).set(&#123;<span class="attr">foo</span>:<span class="number">3</span>&#125;, [<span class="string">'abc'</span>]);</span><br><span class="line">[...myMap]  <span class="comment">//[[true, 7], [[foo:3], ['abc']]]</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-数组-gt-Map"><a href="#2-数组-gt-Map" class="headerlink" title="2. 数组 =&gt; Map"></a>2. 数组 =&gt; Map</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Map</span>(array)</span><br></pre></td></tr></table></figure>
-<h4 id="3-Map-gt-对象"><a href="#3-Map-gt-对象" class="headerlink" title="3. Map =&gt; 对象"></a>3. Map =&gt; 对象</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">strMapToObj</span>(<span class="params">strMap</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> obj = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> [k, v] <span class="keyword">of</span> strMap) &#123;</span><br><span class="line">    obj[k] = v;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> myMap = <span class="keyword">new</span> <span class="built_in">Map</span>().set(<span class="string">'yes'</span>, <span class="literal">true</span>).set(<span class="string">'no'</span>, <span class="literal">false</span>);</span><br><span class="line">strMapToObj(myMap)  <span class="comment">//&#123;yes: true, no: false&#125;</span></span><br></pre></td></tr></table></figure>
-<h4 id="4-对象-gt-Map"><a href="#4-对象-gt-Map" class="headerlink" title="4. 对象 =&gt; Map"></a>4. 对象 =&gt; Map</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">objToStrMap</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> strMap = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> k <span class="keyword">of</span> <span class="built_in">Object</span>.keys(obj)) &#123;</span><br><span class="line">    strMap.set(k, obj[k]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> strMap;</span><br><span class="line">&#125;</span><br><span class="line">objToStrMap(&#123;<span class="attr">yes</span>: <span class="literal">true</span>, <span class="attr">no</span>: <span class="literal">false</span>&#125;) <span class="comment">//Map &#123;"yes" =&gt; true, "no" =&gt; false&#125;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="js">const myMap = new Map().set(true, 7).set({foo:3}, [&#39;abc&#39;]);
+[...myMap]  //[[true, 7], [[foo:3], [&#39;abc&#39;]]]
+</code></pre>
+<h4 id="2-数组-gt-Map"><a href="#2-数组-gt-Map" class="headerlink" title="2. 数组 =&gt; Map"></a>2. 数组 =&gt; Map</h4><pre><code class="js">new Map(array)
+</code></pre>
+<h4 id="3-Map-gt-对象"><a href="#3-Map-gt-对象" class="headerlink" title="3. Map =&gt; 对象"></a>3. Map =&gt; 对象</h4><pre><code class="js">function strMapToObj(strMap) {
+  let obj = Object.create(null);
+  for(let [k, v] of strMap) {
+    obj[k] = v;
+  }
+  return obj;
+}
+const myMap = new Map().set(&#39;yes&#39;, true).set(&#39;no&#39;, false);
+strMapToObj(myMap)  //{yes: true, no: false}
+</code></pre>
+<h4 id="4-对象-gt-Map"><a href="#4-对象-gt-Map" class="headerlink" title="4. 对象 =&gt; Map"></a>4. 对象 =&gt; Map</h4><pre><code class="js">function objToStrMap(obj) {
+  let strMap = new Map();
+  for(let k of Object.keys(obj)) {
+    strMap.set(k, obj[k]);
+  }
+  return strMap;
+}
+objToStrMap({yes: true, no: false}) //Map {&quot;yes&quot; =&gt; true, &quot;no&quot; =&gt; false}
+</code></pre>
 <hr>
 <blockquote>
 <p>ES6学习笔记的内容主要基于阮一峰老师的<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">《ECMAScript 6入门》</a>，原文请见<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">链接</a></p>
@@ -614,8 +647,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/04/「Learning」区别线程和进程/" rel="prev" title="「Learning」区别线程和进程">
-                「Learning」区别线程和进程 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/03/ES6学习笔记之对象的扩展/" rel="prev" title="ES6学习笔记之对象的扩展">
+                ES6学习笔记之对象的扩展 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -843,7 +876,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 

@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,961 字
+                  1,682 字
                 </span>
               
 
@@ -461,7 +461,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10 分钟
+                  9 分钟
                 </span>
               
             </div>
@@ -505,78 +505,357 @@
 </ul>
 <h5 id="对网格的位置进行布局"><a href="#对网格的位置进行布局" class="headerlink" title="对网格的位置进行布局"></a>对网格的位置进行布局</h5><ul>
 <li><p>可以设置父元素的<code>grid-template-areas</code>，即作为目标设置每一行的每一列均为什么内容，可以对这一内容进行命名，通过设置子元素的<code>grid-area</code>来让子元素对应到父元素中的理想位置，如</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grid-<span class="keyword">template</span>-areas: </span><br><span class="line">    <span class="string">"header header header"</span></span><br><span class="line">    <span class="string">"advert content content"</span></span><br><span class="line">    <span class="string">"footer footer footer"</span>;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>grid-template-areas: 
+  &quot;header header header&quot;
+  &quot;advert content content&quot;
+  &quot;footer footer footer&quot;;
+</code></pre></li>
 <li><p>也可以不通过命名模板来设置单个网格的布局，即通过设置网格上下左右四根线条对应的横向和纵向起始线条来确定网格的位置和宽高，如`grid-area: 1/1/2/4”即高度从横向第一根线条开始，到第2根线条结束，宽度从纵向第一根线条开始，到第4根线条结束</p>
 </li>
 </ul>
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-8bc6d14907e80775.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="grid布局"></p>
 <h2 id="以下是这一部分习题的解答："><a href="#以下是这一部分习题的解答：" class="headerlink" title="以下是这一部分习题的解答："></a><em>以下是这一部分习题的解答：</em></h2><h4 id="Introduction-to-the-CSS-Grid-Challenges"><a href="#Introduction-to-the-CSS-Grid-Challenges" class="headerlink" title="Introduction to the CSS Grid Challenges"></a><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid" target="_blank" rel="noopener">Introduction to the CSS Grid Challenges</a></h4><ul>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/create-your-first-css-grid" target="_blank" rel="noopener">Create Your First CSS Grid</a></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">background</span>: LightGray;</span><br><span class="line">  <span class="comment">/* add your code below this line */</span></span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="comment">/* add your code above this line */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">.container {
+  font-size: 40px;
+  width: 100%;
+  background: LightGray;
+  /* add your code below this line */
+  display: grid;
+  /* add your code above this line */
+}
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/add-columns-with-grid-template-columns" target="_blank" rel="noopener">Add Columns with grid-template-columns</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">    background: LightGray;</span></span><br><span class="line"><span class="undefined">    display: grid;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code below this line */</span></span></span><br><span class="line"><span class="undefined">    grid-template-columns: 100px 100px 100px;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+    .container {
+    font-size: 40px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* add your code below this line */
+    grid-template-columns: 100px 100px 100px;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/add-rows-with-grid-template-rows" target="_blank" rel="noopener">Add Rows with grid-template-rows</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">    background: LightGray;</span></span><br><span class="line"><span class="undefined">    display: grid;</span></span><br><span class="line"><span class="undefined">    grid-template-columns: 100px 100px 100px;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code below this line */</span></span></span><br><span class="line"><span class="undefined">    grid-template-rows: 50px 50px;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+    .container {
+    font-size: 40px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    /* add your code below this line */
+    grid-template-rows: 50px 50px;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/use-css-grid-units-to-change-the-size-of-columns-and-rows" target="_blank" rel="noopener">Use CSS Grid units to Change the Size of Columns and Rows</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">    background: LightGray;</span></span><br><span class="line"><span class="undefined">    display: grid;</span></span><br><span class="line"><span class="css">    <span class="comment">/* modify the code below this line */</span></span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="undefined">    grid-template-columns: 1fr 100px 2fr;</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="css">    <span class="comment">/* modify the code above this line */</span></span></span><br><span class="line"><span class="undefined">    grid-template-rows: 50px 50px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* modify the code below this line */
+
+    grid-template-columns: 1fr 100px 2fr;
+
+    /* modify the code above this line */
+    grid-template-rows: 50px 50px;
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/create-a-column-gap-using-grid-column-gap" target="_blank" rel="noopener">Create a Column Gap Using grid-column-gap</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    min-height: 300px;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">    background: LightGray;</span></span><br><span class="line"><span class="undefined">    display: grid;</span></span><br><span class="line"><span class="undefined">    grid-template-columns: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="undefined">    grid-template-rows: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code below this line */</span></span></span><br><span class="line"><span class="undefined">    grid-column-gap: 20px;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* add your code below this line */
+    grid-column-gap: 20px;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/create-a-row-gap-using-grid-row-gap" target="_blank" rel="noopener">Create a Row Gap using grid-row-gap</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    min-height: 300px;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">    background: LightGray;</span></span><br><span class="line"><span class="undefined">    display: grid;</span></span><br><span class="line"><span class="undefined">    grid-template-columns: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="undefined">    grid-template-rows: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code below this line */</span></span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="undefined">    grid-row-gap: 5px;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* add your code below this line */
+
+    grid-row-gap: 5px;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/add-gaps-faster-with-grid-gap" target="_blank" rel="noopener">Add Gaps Faster with grid-gap</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    min-height: 300px;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">    background: LightGray;</span></span><br><span class="line"><span class="undefined">    display: grid;</span></span><br><span class="line"><span class="undefined">    grid-template-columns: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="undefined">    grid-template-rows: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code below this line */</span></span></span><br><span class="line"><span class="undefined">    grid-gap: 10px 20px;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* add your code below this line */
+    grid-gap: 10px 20px;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/use-grid-column-to-control-spacing" target="_blank" rel="noopener">Use grid-column to Control Spacing</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.item5</span> &#123;</span></span><br><span class="line"><span class="undefined">    background: PaleGreen;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code below this line */</span></span></span><br><span class="line"><span class="undefined">    grid-column: 2/4;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .item5 {
+    background: PaleGreen;
+    /* add your code below this line */
+    grid-column: 2/4;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/use-grid-row-to-control-spacing" target="_blank" rel="noopener">Use grid-row to Control Spacing</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.item5</span> &#123;</span></span><br><span class="line"><span class="undefined">    background: PaleGreen;</span></span><br><span class="line"><span class="undefined">    grid-column: 2 / 4;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code below this line */</span></span></span><br><span class="line"><span class="undefined">    grid-row: 2/4;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .item5 {
+    background: PaleGreen;
+    grid-column: 2 / 4;
+    /* add your code below this line */
+    grid-row: 2/4;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/align-an-item-horizontally-using-justify-self" target="_blank" rel="noopener">Align an Item Horizontally using justify-self</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.item2</span> &#123;</span></span><br><span class="line"><span class="undefined">    background: LightSalmon;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code below this line */</span></span></span><br><span class="line"><span class="undefined">    justify-self: center;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .item2 {
+    background: LightSalmon;
+    /* add your code below this line */
+    justify-self: center;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/align-an-item-vertically-using-align-self" target="_blank" rel="noopener">Align an Item Vertically using align-self</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.item3</span> &#123;</span></span><br><span class="line"><span class="undefined">    background: PaleTurquoise;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code below this line */</span></span></span><br><span class="line"><span class="undefined">    align-self: end;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .item3 {
+    background: PaleTurquoise;
+    /* add your code below this line */
+    align-self: end;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/align-all-items-horizontally-using-justify-items" target="_blank" rel="noopener">Align All Items Horizontally using justify-items</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    min-height: 300px;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">    background: LightGray;</span></span><br><span class="line"><span class="undefined">    display: grid;</span></span><br><span class="line"><span class="undefined">    grid-template-columns: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="undefined">    grid-template-rows: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="undefined">    grid-gap: 10px;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code below this line */</span></span></span><br><span class="line"><span class="undefined">    justify-items: center;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    /* add your code below this line */
+    justify-items: center;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/align-all-items-vertically-using-align-items" target="_blank" rel="noopener">Align All Items Vertically using align-items</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    min-height: 300px;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">    background: LightGray;</span></span><br><span class="line"><span class="undefined">    display: grid;</span></span><br><span class="line"><span class="undefined">    grid-template-columns: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="undefined">    grid-template-rows: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="undefined">    grid-gap: 10px;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code below this line */</span></span></span><br><span class="line"><span class="undefined">    align-items: end;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    /* add your code below this line */
+    align-items: end;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/divide-the-grid-into-an-area-template" target="_blank" rel="noopener">Divide the Grid Into an Area Template</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    min-height: 300px;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">    background: LightGray;</span></span><br><span class="line"><span class="undefined">    display: grid;</span></span><br><span class="line"><span class="undefined">    grid-template-columns: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="undefined">    grid-template-rows: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="undefined">    grid-gap: 10px;</span></span><br><span class="line"><span class="css">    <span class="comment">/* change code below this line */</span></span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="undefined">    grid-template-areas:</span></span><br><span class="line"><span class="undefined">      "header header header"</span></span><br><span class="line"><span class="undefined">      ". content content"</span></span><br><span class="line"><span class="undefined">      "footer footer footer";</span></span><br><span class="line"><span class="css">    <span class="comment">/* change code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    /* change code below this line */
+
+    grid-template-areas:
+      &quot;header header header&quot;
+      &quot;. content content&quot;
+      &quot;footer footer footer&quot;;
+    /* change code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/place-items-in-grid-areas-using-the-grid-area-property" target="_blank" rel="noopener">Place Items in Grid Areas Using the grid-area Property</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.item5</span> &#123;</span></span><br><span class="line"><span class="undefined">    background: PaleGreen;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code below this line */</span></span></span><br><span class="line"><span class="undefined">    grid-area: footer;  </span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .item5 {
+    background: PaleGreen;
+    /* add your code below this line */
+    grid-area: footer;  
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/use-grid-area-without-creating-an-areas-template" target="_blank" rel="noopener">Use grid-area Without Creating an Areas Template</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.item5</span> &#123;</span></span><br><span class="line"><span class="undefined">    background: PaleGreen;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code below this line */</span></span></span><br><span class="line"><span class="undefined">    grid-area:3/1/4/4;</span></span><br><span class="line"><span class="css">    <span class="comment">/* add your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .item5 {
+    background: PaleGreen;
+    /* add your code below this line */
+    grid-area:3/1/4/4;
+    /* add your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/reduce-repetition-using-the-repeat-function" target="_blank" rel="noopener">Reduce Repetition Using the repeat Function</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    min-height: 300px;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">    background: LightGray;</span></span><br><span class="line"><span class="undefined">    display: grid;</span></span><br><span class="line"><span class="css">    <span class="comment">/* change the code below this line */</span></span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="undefined">    grid-template-columns: repeat(3, 1fr);;</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="css">    <span class="comment">/* change the code above this line */</span></span></span><br><span class="line"><span class="undefined">    grid-template-rows: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="undefined">    grid-gap: 10px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* change the code below this line */
+
+    grid-template-columns: repeat(3, 1fr);;
+
+    /* change the code above this line */
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/limit-item-size-using-the-minmax-function" target="_blank" rel="noopener">Limit Item Size Using the minmax Function</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    min-height: 300px;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">    background: LightGray;</span></span><br><span class="line"><span class="undefined">    display: grid;</span></span><br><span class="line"><span class="css">    <span class="comment">/* change the code below this line */</span></span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="undefined">    grid-template-columns: repeat(3, minmax(90px, 1fr));</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="css">    <span class="comment">/* change the code above this line */</span></span></span><br><span class="line"><span class="undefined">    grid-template-rows: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="undefined">    grid-gap: 10px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* change the code below this line */
+
+    grid-template-columns: repeat(3, minmax(90px, 1fr));
+
+    /* change the code above this line */
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/create-flexible-layouts-using-auto-fill" target="_blank" rel="noopener">Create Flexible Layouts Using auto-fill</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    min-height: 100px;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">    background: LightGray;</span></span><br><span class="line"><span class="undefined">    display: grid;</span></span><br><span class="line"><span class="css">    <span class="comment">/* change the code below this line */</span></span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="undefined">    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="css">    <span class="comment">/* change the code above this line */</span></span></span><br><span class="line"><span class="undefined">    grid-template-rows: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="undefined">    grid-gap: 10px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .container {
+    font-size: 40px;
+    min-height: 100px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* change the code below this line */
+
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+
+    /* change the code above this line */
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/create-flexible-layouts-using-auto-fit" target="_blank" rel="noopener">Create Flexible Layouts Using auto-fit</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container2</span> &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 40px;</span></span><br><span class="line"><span class="undefined">    min-height: 100px;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">    background: Silver;</span></span><br><span class="line"><span class="undefined">    display: grid;</span></span><br><span class="line"><span class="css">    <span class="comment">/* change the code below this line */</span></span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="undefined">    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="css">    <span class="comment">/* change the code above this line */</span></span></span><br><span class="line"><span class="undefined">    grid-template-rows: 1fr 1fr 1fr;</span></span><br><span class="line"><span class="undefined">    grid-gap: 10px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  .container2 {
+    font-size: 40px;
+    min-height: 100px;
+    width: 100%;
+    background: Silver;
+    display: grid;
+    /* change the code below this line */
+
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+
+    /* change the code above this line */
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/use-media-queries-to-create-responsive-layouts" target="_blank" rel="noopener">Use Media Queries to Create Responsive Layouts</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  @<span class="keyword">media</span> (min-width: <span class="number">400px</span>)&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.container</span>&#123;</span></span><br><span class="line"><span class="css">      <span class="comment">/* change the code below this line */</span></span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="undefined">      grid-template-areas:</span></span><br><span class="line"><span class="undefined">        "header header"</span></span><br><span class="line"><span class="undefined">        "advert content"</span></span><br><span class="line"><span class="undefined">        "footer footer";</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="css">    <span class="comment">/* change the code above this line */</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;style&gt;
+  @media (min-width: 400px){
+    .container{
+      /* change the code below this line */
+
+      grid-template-areas:
+        &quot;header header&quot;
+        &quot;advert content&quot;
+        &quot;footer footer&quot;;
+
+    /* change the code above this line */
+    }
+  }
+&lt;/style&gt;
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/responsive-web-design/css-grid/create-grids-within-grids" target="_blank" rel="noopener">Create Grids within Grids</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.item3</span> &#123;</span></span><br><span class="line"><span class="undefined">    background: PaleTurquoise;</span></span><br><span class="line"><span class="undefined">    grid-area: content;</span></span><br><span class="line"><span class="css">    <span class="comment">/* enter your code below this line */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">display</span><span class="selector-pseudo">:grid</span>;</span></span><br><span class="line"><span class="undefined">    grid-template-column: auto 1fr;</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="css">    <span class="comment">/* enter your code above this line */</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<pre><code class="html">&lt;style&gt;
+  .item3 {
+    background: PaleTurquoise;
+    grid-area: content;
+    /* enter your code below this line */
+    display:grid;
+    grid-template-column: auto 1fr;
+
+    /* enter your code above this line */
+  }
+&lt;/style&gt;
+</code></pre>
+</li>
 </ul>
 
       
@@ -612,8 +891,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/28/响应式页面设计准则/" rel="next" title="响应式页面设计准则">
-                <i class="fa fa-chevron-left"></i> 响应式页面设计准则
+              <a href="/2018/06/27/node和express基础/" rel="next" title="node和express基础">
+                <i class="fa fa-chevron-left"></i> node和express基础
               </a>
             
           </div>
@@ -851,7 +1130,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 

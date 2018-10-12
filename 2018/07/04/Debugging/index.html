@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  957 字
+                  862 字
                 </span>
               
 
@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -509,40 +509,135 @@
 <hr>
 <h4 id="Introduction-to-the-Debugging-Challenges"><a href="#Introduction-to-the-Debugging-Challenges" class="headerlink" title="Introduction to the Debugging Challenges"></a><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging" target="_blank" rel="noopener">Introduction to the Debugging Challenges</a></h4><ul>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/use-the-javascript-console-to-check-the-value-of-a-variable" target="_blank" rel="noopener">Use the JavaScript Console to Check the Value of a Variable</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">1</span>;</span><br><span class="line">a++;</span><br><span class="line"><span class="comment">// Add your code below this line</span></span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> sumAB = a + b;</span><br><span class="line"><span class="built_in">console</span>.log(sumAB);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">let a = 5;
+let b = 1;
+a++;
+// Add your code below this line
+console.log(a);
+
+let sumAB = a + b;
+console.log(sumAB);
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/understanding-the-differences-between-the-freecodecamp-and-browser-console" target="_blank" rel="noopener">Understanding the Differences between the freeCodeCamp and Browser Console</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Open your browser console</span></span><br><span class="line"><span class="keyword">let</span> outputTwo = <span class="string">"This will print to the browser console 2 times"</span>;</span><br><span class="line"><span class="comment">// Use console.log() to print the outputTwo variable</span></span><br><span class="line"><span class="built_in">console</span>.log(outputTwo);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> outputOne = <span class="string">"Try to get this to log only once to the browser console"</span>;</span><br><span class="line"><span class="comment">// Use console.clear() in the next line to print the outputOne only once</span></span><br><span class="line"><span class="built_in">console</span>.clear();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Use console.log() to print the outputOne variable</span></span><br><span class="line"><span class="built_in">console</span>.log(outputOne);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">// Open your browser console
+let outputTwo = &quot;This will print to the browser console 2 times&quot;;
+// Use console.log() to print the outputTwo variable
+console.log(outputTwo);
+
+let outputOne = &quot;Try to get this to log only once to the browser console&quot;;
+// Use console.clear() in the next line to print the outputOne only once
+console.clear();
+
+// Use console.log() to print the outputOne variable
+console.log(outputOne);
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/use-typeof-to-check-the-type-of-a-variable" target="_blank" rel="noopener">Use typeof to Check the Type of a Variable</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> seven = <span class="number">7</span>;</span><br><span class="line"><span class="keyword">let</span> three = <span class="string">"3"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(seven + three);</span><br><span class="line"><span class="comment">// Add your code below this line</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> seven);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> three);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">let seven = 7;
+let three = &quot;3&quot;;
+console.log(seven + three);
+// Add your code below this line
+console.log(typeof seven);
+console.log(typeof three);
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/catch-misspelled-variable-and-function-names" target="_blank" rel="noopener">Catch Misspelled Variable and Function Names</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> receivables = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> payables = <span class="number">8</span>;</span><br><span class="line"><span class="keyword">let</span> netWorkingCapital = receivables - payables;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`Net working capital is: <span class="subst">$&#123;netWorkingCapital&#125;</span>`</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">let receivables = 10;
+let payables = 8;
+let netWorkingCapital = receivables - payables;
+console.log(`Net working capital is: ${netWorkingCapital}`);
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/catch-unclosed-parentheses-brackets-braces-and-quotes" target="_blank" rel="noopener">Catch Unclosed Parentheses, Brackets, Braces and Quotes</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myArray = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> arraySum = myArray.reduce(<span class="function">(<span class="params">previous, current</span>) =&gt;</span>  previous + current);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`Sum of array values is: <span class="subst">$&#123;arraySum&#125;</span>`</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">let myArray = [1, 2, 3];
+let arraySum = myArray.reduce((previous, current) =&gt;  previous + current);
+console.log(`Sum of array values is: ${arraySum}`);
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/catch-mixed-usage-of-single-and-double-quotes" target="_blank" rel="noopener">Catch Mixed Usage of Single and Double Quotes</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> innerHtml = <span class="string">"&lt;p&gt;Click here to &lt;a href='#Home'&gt;return home&lt;/a&gt;&lt;/p&gt;"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(innerHtml);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">let innerHtml = &quot;&lt;p&gt;Click here to &lt;a href=&#39;#Home&#39;&gt;return home&lt;/a&gt;&lt;/p&gt;&quot;;
+console.log(innerHtml);
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/catch-use-of-assignment-operator-instead-of-equality-operator" target="_blank" rel="noopener">Catch Use of Assignment Operator Instead of Equality Operator</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">7</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">let</span> result = <span class="string">"to come"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(x === y) &#123;</span><br><span class="line">  result = <span class="string">"Equal!"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  result = <span class="string">"Not equal!"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">let x = 7;
+let y = 9;
+let result = &quot;to come&quot;;
+
+if(x === y) {
+  result = &quot;Equal!&quot;;
+} else {
+  result = &quot;Not equal!&quot;;
+}
+
+console.log(result);
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/catch-missing-open-and-closing-parenthesis-after-a-function-call" target="_blank" rel="noopener">Catch Missing Open and Closing Parenthesis After a Function Call</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNine</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> x = <span class="number">6</span>;</span><br><span class="line">  <span class="keyword">let</span> y = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = getNine();</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">function getNine() {
+  let x = 6;
+  let y = 3;
+  return x + y;
+}
+
+let result = getNine();
+console.log(result);
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/catch-arguments-passed-in-the-wrong-order-when-calling-a-function" target="_blank" rel="noopener">Catch Arguments Passed in the Wrong Order When Calling a Function</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">raiseToPower</span>(<span class="params">b, e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.pow(b, e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> base = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">let</span> exp = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">let</span> power = raiseToPower(base, exp);</span><br><span class="line"><span class="built_in">console</span>.log(power);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">function raiseToPower(b, e) {
+  return Math.pow(b, e);
+}
+
+let base = 2;
+let exp = 3;
+let power = raiseToPower(base, exp);
+console.log(power);
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/catch-off-by-one-errors-when-using-indexing" target="_blank" rel="noopener">Catch Off By One Errors When Using Indexing</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countToFive</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> firstFive = <span class="string">"12345"</span>;</span><br><span class="line">  <span class="keyword">let</span> len = firstFive.length;</span><br><span class="line">  <span class="comment">// Fix the line below</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">  <span class="comment">// Do not alter code below this line</span></span><br><span class="line">    <span class="built_in">console</span>.log(firstFive[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">countToFive();</span><br></pre></td></tr></table></figure>
+<pre><code class="js">function countToFive() {
+  let firstFive = &quot;12345&quot;;
+  let len = firstFive.length;
+  // Fix the line below
+  for (let i = 0; i &lt; len; i++) {
+  // Do not alter code below this line
+    console.log(firstFive[i]);
+  }
+}
+
+countToFive();
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/use-caution-when-reinitializing-variables-inside-a-loop" target="_blank" rel="noopener">Use Caution When Reinitializing Variables Inside a Loop</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">zeroArray</span>(<span class="params">m, n</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Creates a 2-D array with m rows and n columns of zeroes</span></span><br><span class="line">  <span class="keyword">let</span> newArray = [];</span><br><span class="line">  <span class="keyword">let</span> row = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">      <span class="comment">// Pushes n zeroes into the current row to create the columns</span></span><br><span class="line">      row.push(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">    <span class="comment">// Adds the m-th row into newArray</span></span><br><span class="line">    <span class="comment">// Pushes the current row, which now has n zeroes in it, to the array</span></span><br><span class="line">    newArray.push(row);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> newArray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> matrix = zeroArray(<span class="number">3</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(matrix);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">function zeroArray(m, n) {
+  // Creates a 2-D array with m rows and n columns of zeroes
+  let newArray = [];
+  let row = [];
+  for (let j = 0; j &lt; n; j++) {
+      // Pushes n zeroes into the current row to create the columns
+      row.push(0);
+    }
+  for (let i = 0; i &lt; m; i++) {
+    // Adds the m-th row into newArray
+    // Pushes the current row, which now has n zeroes in it, to the array
+    newArray.push(row);
+  }
+  return newArray;
+}
+
+let matrix = zeroArray(3, 2);
+console.log(matrix);
+</code></pre>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/prevent-infinite-loops-with-a-valid-terminal-condition" target="_blank" rel="noopener">Prevent Infinite Loops with a Valid Terminal Condition</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunc</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= <span class="number">4</span>; i += <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Still going!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="js">function myFunc() {
+  for (let i = 1; i &lt;= 4; i += 2) {
+    console.log(&quot;Still going!&quot;);
+  }
+}
+</code></pre>
 </li>
 </ul>
 
@@ -816,7 +911,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 

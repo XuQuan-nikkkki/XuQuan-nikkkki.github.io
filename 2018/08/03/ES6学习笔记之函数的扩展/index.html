@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,179 字
+                  1,153 字
                 </span>
               
 
@@ -515,28 +515,28 @@
 <a id="more"></a>
 <hr>
 <h3 id="1-函数参数的默认值"><a href="#1-函数参数的默认值" class="headerlink" title="1. 函数参数的默认值"></a>1. 函数参数的默认值</h3><p>ES6以前，函数参数指定默认值时，只能使用变通的方法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  y = y || <span class="string">'World'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line">log(<span class="string">'Hello'</span>)  <span class="comment">// Hello World</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">'China'</span>)  <span class="comment">// Hello China</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">''</span>)  <span class="comment">// Hello China</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  y = y || <span class="string">'World'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line">log(<span class="string">'Hello'</span>)  <span class="comment">// Hello World</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">'China'</span>)  <span class="comment">// Hello China</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">''</span>)  <span class="comment">// Hello China</span></span><br></pre></td></tr></table></figure>
 <p>这里会先检查<code>y</code>是否被赋值了，如果没有，就赋值为<code>World</code>，但是这样写会有一些问题，如果<code>y</code>的值对应的布尔值是<code>false</code>，该赋值就不起作用。</p>
 <p>ES6允许为函数的参数指定默认值。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">x, y = <span class="string">'World'</span></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line">log(<span class="string">'Hello'</span>)  <span class="comment">// Hello World</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">'China'</span>)  <span class="comment">// Hello China</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">''</span>)  <span class="comment">// Hello</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">x, y = <span class="string">'World'</span></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line">log(<span class="string">'Hello'</span>)  <span class="comment">// Hello World</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">'China'</span>)  <span class="comment">// Hello China</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">''</span>)  <span class="comment">// Hello</span></span><br></pre></td></tr></table></figure>
 <p>这里只有当<code>y</code>的赋值严格等于<code>undefined</code>的时候，默认值才会有效。如果给<code>y</code>赋值为空字符串<code>&#39;&#39;</code>，那么<code>y</code>的值就为空字符串。</p>
 <h4 id="参数默认值的位置"><a href="#参数默认值的位置" class="headerlink" title="参数默认值的位置"></a>参数默认值的位置</h4><p><strong>参数默认值建议作为函数的尾参数</strong>，这样在设置参数值的时候，能更方便地省略设置该参数。如果参数默认值设置在非尾部，那么在省略该参数时，容易将赋值给后面参数的值错误地赋值到默认值上来。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">x = <span class="number">1</span>, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [x, y];</span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="number">2</span>)  <span class="comment">//[2, undefined]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">x = <span class="number">1</span>, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [x, y];</span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="number">2</span>)  <span class="comment">//[2, undefined]</span></span><br></pre></td></tr></table></figure>
 <h4 id="函数的length属性"><a href="#函数的length属性" class="headerlink" title="函数的length属性"></a>函数的<code>length</code>属性</h4><p>函数的<code>length</code>属性是指该函数预期传入的参数个数，如果某个参数被指定了默认值，那么预期传入的参数就不包括这个参数了，因此<code>length</code>属性会返回没有设定默认值的参数个数，也就是说，指定参数的默认值后，函数的<code>length</code>属性将失真。</p>
 <p>同样地，<code>length</code>属性也不包括rest参数。</p>
 <h4 id="函数参数的作用域"><a href="#函数参数的作用域" class="headerlink" title="函数参数的作用域"></a>函数参数的作用域</h4><p>给函数参数指定默认值时，参数会形成一个单独的作用域（可以理解就是函数参数的括号内），等到初始化结束，作用域会消失，这在不设置参数默认值时是不会出现的。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">x, y = x</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(y)</span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="number">2</span>)  <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">x, y = x</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(y)</span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="number">2</span>)  <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
 <p>上面代码中，<code>y</code>的默认值是变量<code>x</code>，调用函数<code>fn</code>时，参数形成一个单独的作用域，这个作用域内，默认值<code>x</code>指向第一个参数<code>x</code>，而不是全局变量<code>x</code></p>
 <h3 id="2-rest-参数"><a href="#2-rest-参数" class="headerlink" title="2. rest 参数"></a>2. rest 参数</h3><p>ES6引入了rest参数，写法与<code>arguments</code>对象类似，形式是<code>…变量名</code>，用来获取函数的多余参数。</p>
 <p>rest参数和<code>arguments</code>对象的区别在于，<code>arguments</code>对象时一个类似数组的对象，如果需要使用对象的方法，就必须使用<code>Array.prototype.slice.call(arguments)</code>来转换成数组使用，而rest参数是一个真正的数组</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sortNumbers = <span class="function">(<span class="params">...numbers</span>) =&gt;</span> numbers.sort();</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> sortNumbers = <span class="function">(<span class="params">...numbers</span>) =&gt;</span> numbers.sort();</span><br></pre></td></tr></table></figure>
 <p>注意点：</p>
 <ol>
 <li>rest参数之后不能有其他参数</li>
 <li>函数的<code>length</code>属性不包括rest参数</li>
 </ol>
 <h3 id="3-name属性"><a href="#3-name属性" class="headerlink" title="3. name属性"></a>3. <code>name</code>属性</h3><p>函数的<code>name</code>属性返回函数的函数名</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125; </span><br><span class="line">foo.name  <span class="comment">// "foo"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125; </span><br><span class="line">foo.name  <span class="comment">// "foo"</span></span><br></pre></td></tr></table></figure>
 <h3 id="4-箭头函数"><a href="#4-箭头函数" class="headerlink" title="4. 箭头函数"></a>4. 箭头函数</h3><p>箭头函数的写法：</p>
 <ol>
 <li>省略了关键字<code>function</code></li>
@@ -544,7 +544,7 @@
 <li>当函数不需要参数或者需要多个参数时，使用<code>()</code>来包含参数，只有一个参数时可以省略圆括号</li>
 <li>如果箭头函数的代码块部分多余一条语句，用<code>{}</code>括起来，使用<code>return</code>返回；如果只有一条语句，可以省略<code>{}</code>和<code>return</code> </li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = values.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a-b);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> result = values.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a-b);</span><br></pre></td></tr></table></figure>
 <p>注意点：</p>
 <ol>
 <li>箭头函数的<code>this</code>对象是固定的，永远指向定义时所在的对象，而不是使用时所在的对象</li>
@@ -588,8 +588,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/03/自己手动升级网易云音乐音效/" rel="next" title="自己手动升级网易云音乐音效">
-                <i class="fa fa-chevron-left"></i> 自己手动升级网易云音乐音效
+              <a href="/2018/08/03/ES6学习笔记之数组的扩展/" rel="next" title="ES6学习笔记之数组的扩展">
+                <i class="fa fa-chevron-left"></i> ES6学习笔记之数组的扩展
               </a>
             
           </div>
@@ -598,8 +598,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/03/ES6学习笔记之对象的扩展/" rel="prev" title="ES6学习笔记之对象的扩展">
-                ES6学习笔记之对象的扩展 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/03/ES6学习笔记之正则表达式的扩展/" rel="prev" title="ES6学习笔记之正则表达式的扩展">
+                ES6学习笔记之正则表达式的扩展 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -827,7 +827,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 

@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  737 字
+                  673 字
                 </span>
               
 
@@ -493,26 +493,90 @@
 </blockquote>
 <a id="more"></a>
 <p>当我们使用表单GET数据的时候，数据会在url地址栏中以<code>user=tom&amp;pass=123456&amp;age=8</code>的形式显示，同样，我们在后台获取到的数据也是这种xxx=xxx&amp;xxx=xxx的形式，那么就需要我们处理获得的数据，方便以后使用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//html文件</span></span><br><span class="line">&lt;form action=<span class="string">"http://localhost:8080"</span> method=<span class="string">"get"</span>&gt;</span><br><span class="line">  用户：&lt;input type=<span class="string">"text"</span> name=<span class="string">"user"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span></span><br><span class="line">  密码：&lt;input type="password" name="pass"&gt;&lt;br&gt;</span><br><span class="line">  &lt;input type="submit" value="提交"&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="js">//html文件
+&lt;form action=&quot;http://localhost:8080&quot; method=&quot;get&quot;&gt;
+  用户：&lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;&lt;br&gt;
+  密码：&lt;input type=&quot;password&quot; name=&quot;pass&quot;&gt;&lt;br&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+&lt;/form&gt;
+</code></pre>
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-9e5539ee01189a75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//js文件</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(req.url);</span><br><span class="line">  res.write();</span><br><span class="line">  res.end();</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"server running"</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">//js文件
+const http = require(&#39;http&#39;);
+http.createServer(function(req, res) {
+  console.log(req.url);
+  res.write();
+  res.end();
+}).listen(8080);
+console.log(&quot;server running&quot;);
+</code></pre>
 <p>在页面填写用户名为nikkkki，密码为123456，服务器端获得的信息如下：<br><img src="https://upload-images.jianshu.io/upload_images/9240001-11f1259be168a4df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="因为v8引擎默认请求网页的图标，因此返回的数据总会有favicon.ico这个文件"></p>
 <p>这里需要注意的是，上图显示的返回信息为两条字符串，相当于传回了两条req.url信息。</p>
 <p>我们希望获得的数据格式是json，那么我们有几种方法可以处理req.url：</p>
 <blockquote>
 <p>第一种方法：完全依赖字符串原生方法来处理（非常不推荐）</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> GET = &#123;&#125;;</span><br><span class="line">  <span class="comment">//只有请求的数据开头会有?</span></span><br><span class="line">  <span class="keyword">if</span>(req.url.indexOf(<span class="string">'?'</span>) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> arr1 = req.url.split(<span class="string">'?'</span>);</span><br><span class="line">    <span class="comment">//arr1为["/","user=nikkkki&amp;pass=123456"</span></span><br><span class="line">    <span class="keyword">let</span> arr2 = arr1[<span class="number">1</span>].split(<span class="string">"&amp;"</span>);</span><br><span class="line">    url = arr1[<span class="number">0</span>];</span><br><span class="line">    <span class="comment">//arr2为["user=nikkkki", "pass=123456"]</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> arr2) &#123;</span><br><span class="line">      <span class="keyword">let</span> arr3 = i.split(<span class="string">'='</span>);  <span class="comment">//用于将arr2中的每一项切开</span></span><br><span class="line">      GET[arr3[<span class="number">0</span>]] = arr3[<span class="number">1</span>];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> url = req.url;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(url, GET);</span><br><span class="line">  res.end();</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"server running"</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">const http = require(&#39;http&#39;);
+http.createServer(function(req, res) {
+  let GET = {};
+  //只有请求的数据开头会有?
+  if(req.url.indexOf(&#39;?&#39;) &gt; -1) {
+    let arr1 = req.url.split(&#39;?&#39;);
+    //arr1为[&quot;/&quot;,&quot;user=nikkkki&amp;pass=123456&quot;
+    let arr2 = arr1[1].split(&quot;&amp;&quot;);
+    url = arr1[0];
+    //arr2为[&quot;user=nikkkki&quot;, &quot;pass=123456&quot;]
+    for(let i of arr2) {
+      let arr3 = i.split(&#39;=&#39;);  //用于将arr2中的每一项切开
+      GET[arr3[0]] = arr3[1];
+    } else {
+    var url = req.url;
+    }
+  }
+  console.log(url, GET);
+  res.end();
+}).listen(8080);
+console.log(&quot;server running&quot;);
+</code></pre>
 <p>输出结果为<br><img src="https://upload-images.jianshu.io/upload_images/9240001-aa5b04c1ee80cf2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="原生字符串处理url"></p>
 <blockquote>
 <p>第二种方法：引入<code>querystring</code>模块<br><code>querystring</code>模块用来解析URL查询字符串，它主要用于界定”&amp;”和”=”两个字符，<code>querystring.parse(str,sep.eq,option)</code>第一个参数为要查询的字符串，第二、三个参数为要界定的字符，默认’&amp;’和’=’</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> GET= &#123;&#125;;</span><br><span class="line">  <span class="keyword">if</span>(req.url.indexOf(<span class="string">'?'</span>) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> arr = req.url.split(<span class="string">'?'</span>);</span><br><span class="line">    url = arr[<span class="number">0</span>];</span><br><span class="line">    GET = querystring.parse(arr[<span class="number">1</span>]);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> url = req.url;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(url, GET);</span><br><span class="line">  res.end();</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"server running"</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">const http = require(&#39;http&#39;);
+const querystring = require(&#39;querystring&#39;);
+
+http.createServer(function(req, res) {
+  let GET= {};
+  if(req.url.indexOf(&#39;?&#39;) &gt; -1) {
+    let arr = req.url.split(&#39;?&#39;);
+    url = arr[0];
+    GET = querystring.parse(arr[1]);
+  } else {
+    var url = req.url;
+  }
+  console.log(url, GET);
+  res.end();
+}).listen(8080);
+console.log(&quot;server running&quot;);
+</code></pre>
 <p>输出结果是<br><img src="https://upload-images.jianshu.io/upload_images/9240001-1d26c5b615e26960.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="querystring输出结果"></p>
 <blockquote>
 <p>第三种方法：引入<code>url</code>模块<br>用<code>url.parse</code>方法会返回一个URL对象，如果要获取表单提交的信息，我们可以获取其中的query属性</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> urlLib = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> obj = urlLib.parse(req.url, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> url = obj.pathname;</span><br><span class="line">  <span class="keyword">let</span> GET = obj.query;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(url, GET);</span><br><span class="line">  res.end();</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"server running"</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">const http = require(&#39;http&#39;);
+const urlLib = require(&#39;url&#39;);
+
+http.createServer(function(req, res) {
+  let obj = urlLib.parse(req.url, true);
+
+  let url = obj.pathname;
+  let GET = obj.query;
+
+  console.log(url, GET);
+  res.end();
+}).listen(8080);
+console.log(&quot;server running&quot;);
+</code></pre>
 <p>输出结果如下：<br><img src="https://upload-images.jianshu.io/upload_images/9240001-9bacf6d2d5fea27b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="url模块输出结果"></p>
 <p>如果不选取query或pathname属性，obj解析出来的url对象整体数据如下：<br><img src="https://upload-images.jianshu.io/upload_images/9240001-cc93c37704c16a4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="obj的完整数据"></p>
 <p>三种方法的输出结果一样，都可以达到将表单提交数据转化为json数据的效果。</p>
@@ -547,8 +611,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/14/写给小白的Node-js学习笔记2：fs模块实现文件读写/" rel="next" title="Node.js学习笔记：fs模块实现文件读写">
-                <i class="fa fa-chevron-left"></i> Node.js学习笔记：fs模块实现文件读写
+              <a href="/2018/05/14/写给小白的Node.js学习笔记4：querystring模块解析post数据请求/" rel="next" title="Node.js学习笔记4：querystring模块解析post数据请求">
+                <i class="fa fa-chevron-left"></i> Node.js学习笔记4：querystring模块解析post数据请求
               </a>
             
           </div>
@@ -557,8 +621,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/14/写给小白的Node.js学习笔记4：querystring模块解析post数据请求/" rel="prev" title="Node.js学习笔记4：querystring模块解析post数据请求">
-                Node.js学习笔记4：querystring模块解析post数据请求 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/16/写给小白的node.js学习笔记5：作业（结合fs,get:post数据)/" rel="prev" title="node.js学习笔记5：作业（结合fs,get/post数据)">
+                node.js学习笔记5：作业（结合fs,get/post数据) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -761,7 +825,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 

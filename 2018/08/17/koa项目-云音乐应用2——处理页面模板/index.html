@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,313 字
+                  1,280 字
                 </span>
               
 
@@ -502,15 +502,41 @@
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fud43v67gvj31kw0tyn8q.jpg" alt="image-20180817232459739"></p>
 </li>
 <li><p>在<code>main.html</code>文件中引入<code>header.html</code>,<code>footer.html</code>,<code>links.html</code>文件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>我的音乐<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--加载资源包--&gt;</span></span><br><span class="line">        &#123;&#123;include '../components/links.html'&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--引入头部--&gt;</span></span><br><span class="line">        &#123;&#123;include '../components/header.html'&#125;&#125;</span><br><span class="line">        <span class="comment">&lt;!--中间部分留出来，用于引入其他内容--&gt;</span></span><br><span class="line">        &#123;&#123;block 'content'&#125;&#125;&#123;&#123;/block&#125;&#125;</span><br><span class="line">        <span class="comment">&lt;!--引入底部--&gt;</span></span><br><span class="line">        &#123;&#123;include '../components/footer.html'&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;我的音乐&lt;/title&gt;
+        &lt;!--加载资源包--&gt;
+        {{include '../components/links.html'}}
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!--引入头部--&gt;
+        {{include '../components/header.html'}}
+        &lt;!--中间部分留出来，用于引入其他内容--&gt;
+        {{block 'content'}}{{/block}}
+        &lt;!--引入底部--&gt;
+        {{include '../components/footer.html'}}
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 </li>
 <li><p>在其他的页面文件（如注册、登录页面）中，继承<code>main.html</code>的布局，并且将自己的内容填入到上面提到的<code></code>部分</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;extend "./layout/main.html"&#125;&#125;</span><br><span class="line">&#123;&#123;block 'content'&#125;&#125;</span><br><span class="line">	...</span><br><span class="line">&#123;&#123;/block&#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="html">{{extend "./layout/main.html"}}
+{{block 'content'}}
+    ...
+{{/block}}
+</code></pre>
 </li>
 </ol>
 <p>这里我们不细究具体的布局问题，主要实现node.js的功能。</p>
 <p>接着我们给<code>router</code>配置上不同的路径应该渲染哪个模板：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">"/register"</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">"register"</span>);</span><br><span class="line">&#125;)</span><br><span class="line">  .get(<span class="string">"/login"</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">"login"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="js">router.get(&quot;/register&quot;, ctx =&gt; {
+  ctx.render(&quot;register&quot;);
+})
+  .get(&quot;/login&quot;, ctx =&gt; {
+  ctx.render(&quot;login&quot;);
+})
+</code></pre>
 <p>现在我们可以来试一试在<code>localhost:9000/register</code>来看看能不能把页面内容渲染出来：</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fud3vv4p31j30h10ekaau.jpg" alt="image-20180817231719857"></p>
 <p>这里读出文件内容是没问题的，但并没有任何样式，在控制台可以看到有一堆资源404的报错。</p>
@@ -519,7 +545,14 @@
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fud40ovbh6j30ef0403zh.jpg" alt="image-20180817232158388"></p>
 <p>（考虑不修改引用路径来解决）如果在按照图中路径的情况，就得让整个项目文件夹共享，这样就会导致所有代码公开，不太安全，但是如果不修改路径的情况下，我们就要做一个调整，即将引用路径中的<code>/public</code>部分去除掉。</p>
 <p>这里的解决方法是当服务器接收到以<code>/public</code>开头的请求时，将<code>/public</code>删除：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(ctx.request.url.startsWith(<span class="string">'/public'</span>)) &#123;</span><br><span class="line">    ctx.request.url = ctx.request.url.replace(<span class="string">"/public"</span>, <span class="string">""</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">await</span> next();</span><br><span class="line">&#125;)</span><br><span class="line">app.use(<span class="built_in">require</span>(<span class="string">"koa-static"</span>)&#123;<span class="string">'./public'</span>&#125;);</span><br></pre></td></tr></table></figure>
+<pre><code class="js">app.use(async (ctx, next) =&gt; {
+  if(ctx.request.url.startsWith(&#39;/public&#39;)) {
+    ctx.request.url = ctx.request.url.replace(&quot;/public&quot;, &quot;&quot;);
+  }
+  await next();
+})
+app.use(require(&quot;koa-static&quot;){&#39;./public&#39;});
+</code></pre>
 <p>_<strong>注意点1</strong>：_koa的服务器对象有两个参数，一个是<code>ctx</code>即上下文对象，另一个是<code>next</code>，用于让服务器实现链式操作。一般使用中间件的时候都没有用到这个<code>next</code>，并不是因为<code>next</code>没必要用，而是因为中间件内部已经包含了是否需要<code>next</code>的判断。如果我们自己写中间件，还是应该把<code>next()</code>给加上。</p>
 <p>现在我们再来看</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fud4j5ehjvj30i60hzwfa.jpg" alt="image-20180817233943262"></p>
@@ -799,7 +832,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 

@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  397 字
+                  391 字
                 </span>
               
 
@@ -503,7 +503,13 @@
 <li><code>response</code>：响应对象</li>
 </ul>
 <p>需要注意的是koa创建的服务器的<code>request</code>和<code>response</code>都在<code>context</code>身上，所以写法应该是</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">"koa"</span>);</span><br><span class="line"><span class="keyword">let</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line">app.use(<span class="function">(<span class="params">ctx, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(ctx.request.query);</span><br><span class="line">  ctx.response.body = <span class="string">"hello world"</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="js">const Koa = require(&quot;koa&quot;);
+let app = new Koa();
+app.use((ctx, next) =&gt; {
+  console.log(ctx.request.query);
+  ctx.response.body = &quot;hello world&quot;;
+})
+</code></pre>
 <p>写作<code>ctx.req</code>和<code>ctx.res</code>也可以。但是不要使用node的原生<code>res</code>对象</p>
 <h4 id="context常用属性"><a href="#context常用属性" class="headerlink" title="context常用属性"></a><code>context</code>常用属性</h4><ul>
 <li><code>ctx.cookies.get(name)</code> 获取cookies</li>
@@ -793,7 +799,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 

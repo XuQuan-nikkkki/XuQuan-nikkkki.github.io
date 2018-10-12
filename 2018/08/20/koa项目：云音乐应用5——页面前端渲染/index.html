@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,773 字
+                  1,616 字
                 </span>
               
 
@@ -464,7 +464,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8 分钟
+                  7 分钟
                 </span>
               
             </div>
@@ -490,8 +490,17 @@
 <h3 id="注册页面功能"><a href="#注册页面功能" class="headerlink" title="注册页面功能"></a>注册页面功能</h3><p><em>由于页面已经引入了jQuery，我们可以直接使用jQuery的语法。</em></p>
 <h4 id="补全头部按钮功能"><a href="#补全头部按钮功能" class="headerlink" title="补全头部按钮功能"></a>补全头部按钮功能</h4><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fug7gflnjnj31860liqjr.jpg" alt="image-20180820153735231"></p>
 <p>我们要实现的第一个小功能是登录和注册页面右上角的两个小按钮，点击他们跳转到各自页面。两行代码就可以搞定：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 这是头部的部分代码</span><br><span class="line"><span class="comment">&lt;!-- 登陆&amp;注册栏 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"register btn btn-normal btn-success"</span> <span class="attr">href</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"register"</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"login btn btn-normal btn-primary"</span> <span class="attr">href</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"login"</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- end 登陆&amp;注册栏 --&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#register"</span>).attr(<span class="string">"href"</span>, <span class="string">"/user/register"</span>);</span><br><span class="line">$(<span class="string">"#login"</span>).attr(<span class="string">"href"</span>,<span class="string">"/user/login"</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="html">// 这是头部的部分代码
+&lt;!-- 登陆&amp;注册栏 --&gt;
+&lt;span&gt;
+  &lt;a class=&quot;register btn btn-normal btn-success&quot; href=&quot;&quot; id=&quot;register&quot;&gt;注册&lt;/a&gt;
+  &lt;a class=&quot;login btn btn-normal btn-primary&quot; href=&quot;&quot; id=&quot;login&quot;&gt;登录&lt;/a&gt;
+&lt;/span&gt;
+&lt;!-- end 登陆&amp;注册栏 --&gt;
+</code></pre>
+<pre><code class="js">$(&quot;#register&quot;).attr(&quot;href&quot;, &quot;/user/register&quot;);
+$(&quot;#login&quot;).attr(&quot;href&quot;,&quot;/user/login&quot;);
+</code></pre>
 <h4 id="注册页面检测用户名是否可用"><a href="#注册页面检测用户名是否可用" class="headerlink" title="注册页面检测用户名是否可用"></a>注册页面检测用户名是否可用</h4><blockquote>
 <p>老师的思路：</p>
 <p>用户名输入框的值产生变化时，发送ajax请求检测用户名是否可用。</p>
@@ -507,7 +516,33 @@
 <li>把每次输入的值保存在一个临时变量中，每次发送请求前检测是否和保存的值相同，如果相同则不发送请求，以免重复请求</li>
 </ol>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sendAjax</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timer;</span><br><span class="line">    <span class="keyword">var</span> username;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">      clearTimeout(timer);</span><br><span class="line">      <span class="keyword">if</span>(username === $(<span class="string">"#username"</span>).val())&#123;</span><br><span class="line">        <span class="keyword">return</span>;   <span class="comment">// 如果值没有变化，就不发送请求</span></span><br><span class="line">      &#125;</span><br><span class="line">      timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">          url: <span class="string">"/user/check-username"</span>,</span><br><span class="line">          type: <span class="string">"post"</span>,</span><br><span class="line">          data: <span class="string">"username="</span> + $(<span class="string">"#username"</span>).val(),</span><br><span class="line">          dataType: <span class="string">"json"</span>,</span><br><span class="line">          success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">            username = $(<span class="string">"#username"</span>).val();</span><br><span class="line">            alert(data.msg);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;, <span class="number">500</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  $(<span class="string">"#username"</span>).on(<span class="string">"keyup"</span>, sendAjax());</span><br><span class="line">&#125;)&#123;<span class="built_in">window</span>&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="js">(function(){
+  function sendAjax() {
+    var timer;
+    var username;
+    return function(e) {
+      clearTimeout(timer);
+      if(username === $(&quot;#username&quot;).val()){
+        return;   // 如果值没有变化，就不发送请求
+      }
+      timer = setTimeout(function(){
+        $.ajax({
+          url: &quot;/user/check-username&quot;,
+          type: &quot;post&quot;,
+          data: &quot;username=&quot; + $(&quot;#username&quot;).val(),
+          dataType: &quot;json&quot;,
+          success: function(data){
+            username = $(&quot;#username&quot;).val();
+            alert(data.msg);
+          }
+        })
+      }, 500)
+    }
+  }
+
+  $(&quot;#username&quot;).on(&quot;keyup&quot;, sendAjax());
+}){window}
+</code></pre>
 <blockquote>
 <p>我的思路：</p>
 <ol>
@@ -515,7 +550,24 @@
 <li>只返回用户名不可用时的提示信息</li>
 </ol>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> username;</span><br><span class="line">  $(<span class="string">"#username"</span>).on(<span class="string">"blur"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(username === $(<span class="string">"#username"</span>).val())&#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">      url: <span class="string">"/user/check-username"</span>,</span><br><span class="line">      method: <span class="string">"post"</span>,</span><br><span class="line">      data: <span class="string">"username="</span> + $(<span class="string">"#username"</span>).val(),</span><br><span class="line">      dataType: <span class="string">"json"</span>,</span><br><span class="line">      success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)(<span class="built_in">window</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="js">(function(){
+  let username;
+  $(&quot;#username&quot;).on(&quot;blur&quot;, function(){
+    if(username === $(&quot;#username&quot;).val()){
+      return;
+    }
+    $.ajax({
+      url: &quot;/user/check-username&quot;,
+      method: &quot;post&quot;,
+      data: &quot;username=&quot; + $(&quot;#username&quot;).val(),
+      dataType: &quot;json&quot;,
+      success: function(data) {
+        if
+      }
+    })
+  })
+})(window)
+</code></pre>
 <blockquote>
 <p>最开始我直接用<code>on(&quot;blur&quot;, fn)</code>来实现判断用户名，这样的确是没问题的。</p>
 <p>但是在尝试老师提到的选中文字复制会重复触发请求这一点上，同样有这一问题。</p>
@@ -530,29 +582,134 @@
 <li>是否包含特殊字符</li>
 </ul>
 <p>如果我们假定一开始的安全值为0的话，每符合上述一条要求则加1，最终的数字为密码强度。我们为显示密码强度的地方留了三个空的<code>div</code>元素，对应密码强度，会有相应个数的<code>div</code>变成红色。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 先明确如何判断强度</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkPass</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> level = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> reg1 = <span class="regexp">/[A-Za-z]/</span>;   <span class="comment">//判断是否包含字母</span></span><br><span class="line">  <span class="keyword">let</span> reg2 = <span class="regexp">/\d/</span>;         <span class="comment">//判断是否包含数字</span></span><br><span class="line">  <span class="keyword">let</span> reg3 = <span class="regexp">/\W/</span>;         <span class="comment">//判断是否包含特殊字符</span></span><br><span class="line">  <span class="keyword">if</span>(reg1.test(str)) level++;</span><br><span class="line">  <span class="keyword">if</span>(reg2.test(str)) level++;</span><br><span class="line">  <span class="keyword">if</span>(reg3.test(str)) level++;</span><br><span class="line">  <span class="keyword">return</span> level;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 再对密码进行动态判断(即每次密码值的变化都会进行一次判断)</span></span><br><span class="line">$(<span class="string">"#password"</span>).on(<span class="string">"keyup"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> divs = $(<span class="string">"#pwd-level"</span>).find(<span class="string">"div"</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>； i&lt;divs.length; i++)&#123;</span><br><span class="line">    divs[i].style.backgroundColor = <span class="string">''</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> pass = e.target.value;</span><br><span class="line">  <span class="keyword">let</span> level = checkPass(pass);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; level; i ++) &#123;</span><br><span class="line">    divs[i].style.backgroundColor = <span class="string">"red"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="js">// 先明确如何判断强度
+function checkPass(str) {
+  let level = 0;
+  let reg1 = /[A-Za-z]/;   //判断是否包含字母
+  let reg2 = /\d/;         //判断是否包含数字
+  let reg3 = /\W/;         //判断是否包含特殊字符
+  if(reg1.test(str)) level++;
+  if(reg2.test(str)) level++;
+  if(reg3.test(str)) level++;
+  return level;
+}
+
+// 再对密码进行动态判断(即每次密码值的变化都会进行一次判断)
+$(&quot;#password&quot;).on(&quot;keyup&quot;, function(e){
+  let divs = $(&quot;#pwd-level&quot;).find(&quot;div&quot;);
+  for(let i = 0； i&lt;divs.length; i++){
+    divs[i].style.backgroundColor = &#39;&#39;;
+  }
+  let pass = e.target.value;
+  let level = checkPass(pass);
+  for(let i = 0; i &lt; level; i ++) {
+    divs[i].style.backgroundColor = &quot;red&quot;;
+  }
+})
+</code></pre>
 <h4 id="验证码功能"><a href="#验证码功能" class="headerlink" title="验证码功能"></a>验证码功能</h4><p>发送彩色验证码需要用到一个叫做<code>captchapng2</code>的中间件，它会随机生成一个4位的数字，然后会渲染成图片。</p>
 <p>我们先在模板文件中将图片的<code>src</code>给补上</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"aw-register-verify"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"pull-right"</span> <span class="attr">width</span>=<span class="string">"120"</span> <span class="attr">src</span>=<span class="string">"/user/captcha"</span> &gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">name</span>=<span class="string">"vcode"</span> <span class="attr">placeholder</span>=<span class="string">"验证码"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;li class=&quot;aw-register-verify&quot;&gt;
+  &lt;img class=&quot;pull-right&quot; width=&quot;120&quot; src=&quot;/user/captcha&quot; &gt;
+  &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;vcode&quot; placeholder=&quot;验证码&quot; /&gt;
+&lt;/li&gt;
+</code></pre>
 <p>然后给用户路由加上对应的内容</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/user/register'</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">'register'</span>);</span><br><span class="line">&#125;)</span><br><span class="line">.get(<span class="string">'/user/login'</span>, ctx =&gt; &#123;</span><br><span class="line">	ctx.render(<span class="string">'login'</span>);</span><br><span class="line">&#125;)</span><br><span class="line">.post(<span class="string">'/user/check-username'</span>, userController.checkUsername)</span><br><span class="line">.post(<span class="string">'/user/do-register'</span>, userController.doRegister)</span><br><span class="line">.post(<span class="string">'/user/do-login'</span>, userController.doLogin)</span><br><span class="line">.post(<span class="string">'/user/test-session'</span>,userController.test)</span><br><span class="line">.get(<span class="string">"/user/captcha"</span>,userController.getPic)  <span class="comment">//加载验证码</span></span><br></pre></td></tr></table></figure>
+<pre><code class="js">router.get(&#39;/user/register&#39;, ctx =&gt; {
+  ctx.render(&#39;register&#39;);
+})
+.get(&#39;/user/login&#39;, ctx =&gt; {
+    ctx.render(&#39;login&#39;);
+})
+.post(&#39;/user/check-username&#39;, userController.checkUsername)
+.post(&#39;/user/do-register&#39;, userController.doRegister)
+.post(&#39;/user/do-login&#39;, userController.doLogin)
+.post(&#39;/user/test-session&#39;,userController.test)
+.get(&quot;/user/captcha&quot;,userController.getPic)  //加载验证码
+</code></pre>
 <p>再根据中间件来写<code>getPic</code>函数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i captchapng2 -S</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> captchapng = <span class="built_in">require</span>(<span class="string">"captchapng2"</span>);</span><br><span class="line">exports.getPic = <span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> rand = <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * <span class="number">9000</span> + <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">let</span> png = <span class="keyword">new</span> captchapng(<span class="number">80</span>, <span class="number">30</span>, rand);  <span class="comment">// 宽、高、图片数字</span></span><br><span class="line">  </span><br><span class="line">  ctx.session.vcode = rand;</span><br><span class="line">  ctx.response.set(<span class="string">"Content-Type"</span>, <span class="string">"image/png"</span>);</span><br><span class="line">  ctx.body = png.getBuffer();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">npm i captchapng2 -S
+</code></pre>
+<pre><code class="js">const captchapng = require(&quot;captchapng2&quot;);
+exports.getPic = async ctx =&gt; {
+  let rand = parseInt(Math.random() * 9000 + 1000);
+  let png = new captchapng(80, 30, rand);  // 宽、高、图片数字
+
+  ctx.session.vcode = rand;
+  ctx.response.set(&quot;Content-Type&quot;, &quot;image/png&quot;);
+  ctx.body = png.getBuffer();
+}
+</code></pre>
 <p>这时我们的注册页面上就有验证码了：</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fugilg6h9dj30bh08p0sz.jpg" alt="image-20180820220300970"></p>
 <p>但是还有一个问题，就是我们经常会遇见的验证码看不清需要点击换一个，所以我们还需要给验证码图片加上一个点击事件。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"pull-right"</span> <span class="attr">width</span>=<span class="string">"120"</span> <span class="attr">src</span>=<span class="string">"/user/captcha"</span> <span class="attr">onclick</span>=<span class="string">"this.src='/user/captcha?' +Date.now()"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;img class=&quot;pull-right&quot; width=&quot;120&quot; src=&quot;/user/captcha&quot; onclick=&quot;this.src=&#39;/user/captcha?&#39; +Date.now()&quot;&gt;
+</code></pre>
 <p>这样每次点击就会发送一个带时间戳的请求到<code>user/captcha</code>，从而请求到不同的图片了。</p>
 <p>此外，我们还需要将验证码的验证加入到验证注册这一步骤中：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//user_controller.js</span></span><br><span class="line">exports.doRegister = <span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> &#123;username, password, email, vcode&#125; = ctx.request.body;</span><br><span class="line">  <span class="keyword">if</span>(vcode != ctx.session.vcode) &#123;  <span class="comment">// 注意vcode是数字，ctx.session.vcode是字符串，需要隐性转换类型</span></span><br><span class="line">    <span class="keyword">return</span> ctx.body = &#123;<span class="attr">code</span>:<span class="string">"003"</span>, <span class="attr">msg</span>: <span class="string">"验证码不正确"</span>&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="js">//user_controller.js
+exports.doRegister = async ctx =&gt; {
+  let {username, password, email, vcode} = ctx.request.body;
+  if(vcode != ctx.session.vcode) {  // 注意vcode是数字，ctx.session.vcode是字符串，需要隐性转换类型
+    return ctx.body = {code:&quot;003&quot;, msg: &quot;验证码不正确&quot;};
+  }
+}
+</code></pre>
 <h4 id="邮箱验证"><a href="#邮箱验证" class="headerlink" title="邮箱验证"></a>邮箱验证</h4><blockquote>
 <p>发现这里还有个小bug是邮箱没有验证。</p>
 <p>我刚开始的做法是在模板文件里添加了一个正则验证邮箱的步骤，但是后来发现这样其实点击提示框之后还是可以继续完成注册，所以就学测试用户名是否可用那一部分一样，把验证邮箱加到了<code>user_controller</code>里，同时在验证注册的步骤里再验证一次邮箱。</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// register.html模板文件的验证用户名部分添加验证邮箱的代码</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> email;</span><br><span class="line">  $(<span class="string">"#email"</span>).on(<span class="string">"blur"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(email === $(<span class="string">"#email"</span>).val())&#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">      url:<span class="string">"user/check-email"</span>,</span><br><span class="line">      method:<span class="string">"post"</span>,</span><br><span class="line">      data: <span class="string">"email="</span>+$(<span class="string">"#email"</span>).val(),</span><br><span class="line">      dataType: <span class="string">"json"</span>,</span><br><span class="line">      success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">        email = $(<span class="string">"#email"</span>).val();</span><br><span class="line">        <span class="keyword">if</span>(data.code === <span class="string">"001"</span>) &#123;</span><br><span class="line">          alert(data.msg);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)(<span class="built_in">window</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user_router.js</span></span><br><span class="line">router.get(<span class="string">'/user/register'</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">'register'</span>);</span><br><span class="line">&#125;)</span><br><span class="line">.get(<span class="string">'/user/login'</span>, ctx =&gt; &#123;</span><br><span class="line">	ctx.render(<span class="string">'login'</span>);</span><br><span class="line">&#125;)</span><br><span class="line">.post(<span class="string">'/user/check-username'</span>, userController.checkUsername)</span><br><span class="line">.post(<span class="string">"/user/check-email"</span>,userController.checkEmail)  <span class="comment">//添加验证邮箱</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user_controller.js</span></span><br><span class="line"><span class="comment">// 验证邮箱格式是否正确</span></span><br><span class="line">exports.checkEmail = <span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">	<span class="keyword">let</span> &#123;email&#125; = ctx.request.body;</span><br><span class="line">	<span class="keyword">let</span> reg = <span class="regexp">/\w+@\w+.\w&#123;2,3&#125;/</span>;</span><br><span class="line">	<span class="keyword">if</span>(!reg.test(email))&#123;</span><br><span class="line">		<span class="keyword">return</span> ctx.body = &#123;<span class="attr">code</span>: <span class="string">"001"</span>, <span class="attr">msg</span>: <span class="string">"请输入正确的邮箱"</span>&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.doRegister = <span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> &#123;username, password, email, vcode&#125; = ctx.request.body;</span><br><span class="line">	<span class="comment">// 验证邮箱格式，格式不正确无法完成注册</span></span><br><span class="line">	<span class="keyword">let</span> reg = <span class="regexp">/\w+@\w+.\w&#123;2,3&#125;/</span>;</span><br><span class="line">	<span class="keyword">if</span>(!reg.test(email))&#123;</span><br><span class="line">		<span class="keyword">return</span> ctx.body = &#123;<span class="attr">code</span>: <span class="string">"003"</span>, <span class="attr">msg</span>: <span class="string">"请输入正确的邮箱"</span>&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="js">// register.html模板文件的验证用户名部分添加验证邮箱的代码
+(function(){
+  let email;
+  $(&quot;#email&quot;).on(&quot;blur&quot;, function() {
+    if(email === $(&quot;#email&quot;).val()){
+      return;
+    }
+    $.ajax({
+      url:&quot;user/check-email&quot;,
+      method:&quot;post&quot;,
+      data: &quot;email=&quot;+$(&quot;#email&quot;).val(),
+      dataType: &quot;json&quot;,
+      success: function(data){
+        email = $(&quot;#email&quot;).val();
+        if(data.code === &quot;001&quot;) {
+          alert(data.msg);
+        }
+      }
+    })
+  })
+})(window)
+</code></pre>
+<pre><code class="js">// user_router.js
+router.get(&#39;/user/register&#39;, ctx =&gt; {
+  ctx.render(&#39;register&#39;);
+})
+.get(&#39;/user/login&#39;, ctx =&gt; {
+    ctx.render(&#39;login&#39;);
+})
+.post(&#39;/user/check-username&#39;, userController.checkUsername)
+.post(&quot;/user/check-email&quot;,userController.checkEmail)  //添加验证邮箱
+</code></pre>
+<pre><code class="js">// user_controller.js
+// 验证邮箱格式是否正确
+exports.checkEmail = async ctx =&gt; {
+    let {email} = ctx.request.body;
+    let reg = /\w+@\w+.\w{2,3}/;
+    if(!reg.test(email)){
+        return ctx.body = {code: &quot;001&quot;, msg: &quot;请输入正确的邮箱&quot;};
+    }
+}
+
+exports.doRegister = async ctx =&gt; {
+  let {username, password, email, vcode} = ctx.request.body;
+    // 验证邮箱格式，格式不正确无法完成注册
+    let reg = /\w+@\w+.\w{2,3}/;
+    if(!reg.test(email)){
+        return ctx.body = {code: &quot;003&quot;, msg: &quot;请输入正确的邮箱&quot;};
+    }
+}
+</code></pre>
 <p>这样注册页面需要的功能就全都补上了接下来处理登录页面。</p>
 
       
@@ -825,7 +982,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">179.0k</span>
+    <span title="Site words total count">170.4k</span>
   
 </div>
 
