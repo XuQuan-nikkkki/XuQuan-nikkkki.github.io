@@ -135,7 +135,7 @@
 <meta name="keywords" content="coding, programming, life">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nikkkki&#39;s Notes">
-<meta property="og:url" content="http://xuquan.site/tags/HTML/index.html">
+<meta property="og:url" content="http://xuquan.site/tags/html/index.html">
 <meta property="og:site_name" content="Nikkkki&#39;s Notes">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -165,17 +165,19 @@
       labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
+
+  
 </script>
 
 
 
-  <link rel="canonical" href="http://xuquan.site/tags/HTML/"/>
+  <link rel="canonical" href="http://xuquan.site/tags/html/"/>
 
 
 
 
 
-  <title>标签: HTML | Nikkkki's Notes</title>
+  <title>标签: html | Nikkkki's Notes</title>
   
 
 
@@ -325,7 +327,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h2>HTML<small>标签</small>
+        <h2>html<small>标签</small>
         </h2>
       </div>
 
@@ -337,9 +339,9 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2018/09/06/HTML解析过程全解/" itemprop="url">
+            <a class="post-title-link" href="/2018/06/26/信息可传达性应用/" itemprop="url">
               
-                <span itemprop="name">HTML解析过程全解</span>
+                <span itemprop="name">信息可传达性应用</span>
               
             </a>
         
@@ -347,9 +349,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-06T10:27:32+08:00"
-              content="2018-09-06" >
-          09-06
+              datetime="2018-06-26T00:38:36+08:00"
+              content="2018-06-26" >
+          06-26
         </time>
       </div>
 
@@ -365,37 +367,9 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2018/09/05/前端复习之事件系统/" itemprop="url">
+            <a class="post-title-link" href="/2018/06/18/基础HTML和HTML5/" itemprop="url">
               
-                <span itemprop="name">前端复习之事件系统</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-05T11:24:05+08:00"
-              content="2018-09-05" >
-          09-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/04/前端复习之DOM/" itemprop="url">
-              
-                <span itemprop="name">前端复习之DOM</span>
+                <span itemprop="name">基础HTML和HTML5</span>
               
             </a>
         
@@ -403,37 +377,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-04T14:40:34+08:00"
-              content="2018-09-04" >
-          09-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/04/前端复习之BOM/" itemprop="url">
-              
-                <span itemprop="name">前端复习之BOM</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-04T10:39:21+08:00"
-              content="2018-09-04" >
-          09-04
+              datetime="2018-06-18T00:38:36+08:00"
+              content="2018-06-18" >
+          06-18
         </time>
       </div>
 
@@ -519,7 +465,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">88</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -617,9 +563,11 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">170.4k</span>
+    <span title="Site words total count">170.5k</span>
   
 </div>
+
+
 
 
 
@@ -744,13 +692,10 @@
   
 
 
+
   
-
-    
-      <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
-    
-
-    
+    <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+  
 
   
 
@@ -867,6 +812,76 @@
             newcounter.save(null, {
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+entById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
