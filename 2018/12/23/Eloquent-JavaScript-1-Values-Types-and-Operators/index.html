@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eloquent JavaScript 1: Values, Types and Operators ">
+<meta property="og:url" content="http://xuquan.site/2018/12/23/Eloquent-JavaScript-1-Values-Types-and-Operators/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fygu2o6z6bj30ul0u0wjx.jpg">
+<meta property="og:updated_time" content="2018-12-23T10:01:32.129Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Eloquent JavaScript 1: Values, Types and Operators ">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fygu2o6z6bj30ul0u0wjx.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+
+  
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2018/12/23/Eloquent-JavaScript-1-Values-Types-and-Operators/"/>
+
+
+
+
+
+  <title>Eloquent JavaScript 1: Values, Types and Operators  | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/12/23/Eloquent-JavaScript-1-Values-Types-and-Operators/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Eloquent JavaScript 1: Values, Types and Operators </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-23T17:09:49+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/23/Eloquent-JavaScript-1-Values-Types-and-Operators/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/12/23/Eloquent-JavaScript-1-Values-Types-and-Operators/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/12/23/Eloquent-JavaScript-1-Values-Types-and-Operators/" class="leancloud_visitors" data-flag-title="Eloquent JavaScript 1: Values, Types and Operators ">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,048 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fygu2o6z6bj30ul0u0wjx.jpg" alt="image-20181223180126759"></p>
+<a id="more"></a>
+<h2 id="Values-Types-and-Operators"><a href="#Values-Types-and-Operators" class="headerlink" title="Values, Types, and Operators"></a>Values, Types, and Operators</h2><ul>
+<li>Bits are any kind of two-valued things, usually described as zeros and ones.</li>
+</ul>
+<h3 id="Values"><a href="#Values" class="headerlink" title="Values"></a>Values</h3><ul>
+<li>To be able to work with such quantities of bits without getting lost, we must separate them into chunks that represent pieces of information. In a JavaScript environment, those chunks are called values.</li>
+</ul>
+<h4 id="Numbers"><a href="#Numbers" class="headerlink" title="Numbers"></a>Numbers</h4><ul>
+<li><p>Values of the number type are, unsurprisingly, numeric values.</p>
+</li>
+<li><p>Those bits also store negative numbers, so one bit indicates the sign of the number</p>
+</li>
+<li><p>some of the bits are used to store the position of the decimal point.</p>
+</li>
+<li><p>Calculations with whole numbers (also called integers) smaller than the aforementioned 9 quadrillion are guaranteed to always be precise. Unfortunately, <strong>calculations with fractional numbers are generally not</strong>.</p>
+</li>
+</ul>
+<h5 id="Arithmetic"><a href="#Arithmetic" class="headerlink" title="Arithmetic"></a>Arithmetic</h5><ul>
+<li><p>The <code>+</code> and <code>*</code> symbols are called operators</p>
+</li>
+<li><p>For subtraction, there is the <code>-</code> operator, and division can be done with the <code>/</code> operator.</p>
+</li>
+<li><p>When operators appear together without parentheses, the order in which they are applied is determined by the <strong>precedence of the operators</strong>.</p>
+</li>
+<li><p>The <code>%</code> symbol is used to represent the remainder operation</p>
+</li>
+</ul>
+<h5 id="Special-numbers"><a href="#Special-numbers" class="headerlink" title="Special numbers"></a>Special numbers</h5><ul>
+<li><p>There are three special values in JavaScript that are considered numbers but don’t behave like normal numbers.</p>
+</li>
+<li><p><code>Infinity</code> and <code>-Infinity</code>, which represent the positive and negative infinities.</p>
+</li>
+<li><p>Don’t put too much trust in infinity-based computation, though. Infinity - 1 is still Infinity, and so on</p>
+</li>
+<li><p><code>NaN</code> stands for “not a number”, even though it is a value of the number type.</p>
+</li>
+</ul>
+<h4 id="Strings"><a href="#Strings" class="headerlink" title="Strings"></a>Strings</h4><ul>
+<li><p>Strings are used to represent text</p>
+</li>
+<li><p>You can use <strong>single quotes, double quotes, or backticks</strong> to mark strings, as long as the quotes at the start and the end of the string match.</p>
+</li>
+<li><p>whenever a backslash <code>\</code> is found inside quoted text, it indicates that the character after it has a special meaning. This is called escaping the character.</p>
+</li>
+<li><p>Strings, too, have to be modeled as a series of bits to be able to exist inside the computer. The way JavaScript does this is based on the <strong>Unicode standard</strong></p>
+</li>
+<li><p>If we have a number for every character, a string can be described by a sequence of numbers.</p>
+</li>
+<li><p>Strings cannot be divided, multiplied, or subtracted, but the <code>+</code> operator can be used on them. It does not add, but <strong>it concatenates</strong>—it glues two strings together</p>
+</li>
+<li><p>Backtick-quoted strings, usually called <strong>template literals</strong></p>
+</li>
+<li><p>Apart from being able to span lines, they can also embed other values</p>
+</li>
+<li><p>When you write something inside <code>${}</code> in a template literal, its result will be computed, converted to a string, and included at that position.</p>
+</li>
+</ul>
+<h4 id="Unary-operators"><a href="#Unary-operators" class="headerlink" title="Unary operators"></a>Unary operators</h4><ul>
+<li><p><code>typeof</code> operator, which produces a string value naming the type of the value you give it.</p>
+</li>
+<li><p>The other operators shown all operated on two values, but typeof takes only one. </p>
+</li>
+<li>Operators that use two values are called <strong>binary operators</strong>, while those that take one are called <strong>unary operators</strong>. The minus operator can be used both as a binary operator and as a unary operator.</li>
+</ul>
+<h4 id="Boolean-values"><a href="#Boolean-values" class="headerlink" title="Boolean values"></a>Boolean values</h4><ul>
+<li>Boolean type, which has just two values, <code>true</code> and <code>false</code></li>
+</ul>
+<h5 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h5><ul>
+<li><p>The <code>&gt;</code> and <code>&lt;</code> signs are the traditional symbols for “is greater than” and “is less than”, respectively. They are binary operators.</p>
+</li>
+<li><p>Strings can be compared in the same way.</p>
+</li>
+<li><p>The way strings are ordered is roughly alphabetic but not really what you’d expect to see in a dictionary: uppercase letters are always “less” than lowercase ones, and nonalphabetic characters (<code>!</code>, <code>-</code>, and so on) are also included in the ordering</p>
+</li>
+<li><p>Other similar operators are <code>&gt;=</code> (greater than or equal to), <code>&lt;=</code> (less than or equal to), <code>==</code> (equal to), and <code>!=</code> (not equal to).</p>
+</li>
+<li><p>There is only one value in JavaScript that is not equal to itself, and that is <code>NaN</code> (“not a number”).</p>
+</li>
+<li><p><code>NaN</code> is supposed to denote the result of a nonsensical computation, and as such, it isn’t equal to the result of any other nonsensical computations.</p>
+</li>
+</ul>
+<h5 id="Logical-operators"><a href="#Logical-operators" class="headerlink" title="Logical operators"></a>Logical operators</h5><ul>
+<li><p>JavaScript supports three logical operators: <strong>and, or, and not</strong>.</p>
+</li>
+<li><p>The <code>&amp;&amp;</code> operator represents logical and. It is a binary operator, and its result is true only if both the values given to it are true.</p>
+</li>
+<li><p>The <code>||</code> operator denotes logical or. It produces true if either of the values given to it is true.</p>
+</li>
+<li><p>Not is written as an exclamation mark <code>!</code>. It is a unary operator that flips the value given to it—<code>!true</code> produces false, and <code>!false</code> gives true.</p>
+</li>
+<li><p><code>||</code> has the lowest precedence, then comes <code>&amp;&amp;</code>, then the comparison operators (<code>&gt;</code>,<code>==</code>, and so on), and then the rest</p>
+</li>
+<li><p>ternary, operating on three values. It is written with a question mark and a colon</p>
+</li>
+</ul>
+<h4 id="Empty-values"><a href="#Empty-values" class="headerlink" title="Empty values"></a>Empty values</h4><ul>
+<li><p><code>null</code> and <code>undefined</code>, that are used to denote the absence of a meaningful value. They are themselves values, but they carry no information.</p>
+</li>
+<li><p>The difference in meaning between <code>undefined</code> and <code>null</code> is an accident of JavaScript’s design, and it doesn’t matter most of the time.</p>
+</li>
+</ul>
+<h4 id="Automatic-type-conversion"><a href="#Automatic-type-conversion" class="headerlink" title="Automatic type conversion"></a>Automatic type conversion</h4><ul>
+<li><p>When an operator is applied to the “wrong” type of value, JavaScript will <strong>quietly convert</strong> that value to the type it needs, using a set of rules that often aren’t what you want or expect. This is called <strong>type coercion</strong>.</p>
+</li>
+<li><p>In most cases, it just tries to convert one of the values to the other value’s type. However, when <code>null</code> or <code>undefined</code> occurs on either side of the operator, it produces true only if both sides are one of <code>null</code> or <code>undefined</code>.</p>
+</li>
+<li><p>When you do not want any type conversions to happen, there are two additional operators: <code>===</code> and <code>!==</code>. The first tests whether a value is precisely equal to the other, and the second tests whether it is not precisely equal.</p>
+</li>
+</ul>
+<h5 id="Short-circuiting-of-logical-operators"><a href="#Short-circuiting-of-logical-operators" class="headerlink" title="Short-circuiting of logical operators"></a>Short-circuiting of logical operators</h5><ul>
+<li><p>The logical operators <code>&amp;&amp;</code> and <code>||</code> handle values of different types in a peculiar way. They will convert the value on their left side to Boolean type in order to decide what to do,</p>
+</li>
+<li><p>The <code>||</code> operator, for example, will return the value to its left when that can be converted to true and will return the value on its right otherwise. We can use this functionality as a way to fall back on a default value</p>
+</li>
+<li><p>The <code>&amp;&amp;</code> operator works similarly but the other way around. When the value to its left is something that converts to false, it returns that value, and otherwise it returns the value on its right.</p>
+</li>
+<li><p>Another important property of these two operators is that the part to their right is evaluated only when necessary. This is called <strong>short-circuit evaluation</strong>.</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/05/React学习笔记高阶/" rel="next" title="React学习笔记高阶">
+                <i class="fa fa-chevron-left"></i> React学习笔记高阶
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">136</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Values-Types-and-Operators"><span class="nav-number">1.</span> <span class="nav-text">Values, Types, and Operators</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Values"><span class="nav-number">1.1.</span> <span class="nav-text">Values</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Numbers"><span class="nav-number">1.1.1.</span> <span class="nav-text">Numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Arithmetic"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Arithmetic</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Special-numbers"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Special numbers</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Strings"><span class="nav-number">1.1.2.</span> <span class="nav-text">Strings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unary-operators"><span class="nav-number">1.1.3.</span> <span class="nav-text">Unary operators</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Boolean-values"><span class="nav-number">1.1.4.</span> <span class="nav-text">Boolean values</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Comparison"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Logical-operators"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">Logical operators</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Empty-values"><span class="nav-number">1.1.5.</span> <span class="nav-text">Empty values</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Automatic-type-conversion"><span class="nav-number">1.1.6.</span> <span class="nav-text">Automatic type conversion</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Short-circuiting-of-logical-operators"><span class="nav-number">1.1.6.1.</span> <span class="nav-text">Short-circuiting of logical operators</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">194.0k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+
+  
+    <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://xuquan.site/2018/12/23/Eloquent-JavaScript-1-Values-Types-and-Operators/';
+        this.page.identifier = '2018/12/23/Eloquent-JavaScript-1-Values-Types-and-Operators/';
+        this.page.title = 'Eloquent JavaScript 1: Values, Types and Operators ';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
