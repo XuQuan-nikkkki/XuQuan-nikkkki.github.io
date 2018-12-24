@@ -335,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/06/06/写给小白的Node.js学习笔记12：作业——读取文件夹内所有文件列表/">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/06/06/写给小白的Node.js学习笔记11：fs.stat判断文件类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xu Quan">
@@ -354,7 +354,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/06/写给小白的Node.js学习笔记12：作业——读取文件夹内所有文件列表/" itemprop="url">Node.js学习笔记12：作业——读取文件夹内所有文件列表</a></h2>
+                <a class="post-title-link" href="/2018/06/06/写给小白的Node.js学习笔记11：fs.stat判断文件类型/" itemprop="url">Node.js学习笔记11：fs.stat判断文件类型</a></h2>
         
 
         <div class="post-meta">
@@ -407,9 +407,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/06/06/写给小白的Node.js学习笔记12：作业——读取文件夹内所有文件列表/#comments" itemprop="discussionUrl">
+                <a href="/2018/06/06/写给小白的Node.js学习笔记11：fs.stat判断文件类型/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/06/06/写给小白的Node.js学习笔记12：作业——读取文件夹内所有文件列表/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/06/06/写给小白的Node.js学习笔记11：fs.stat判断文件类型/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -417,7 +417,7 @@
 
           
           
-             <span id="/2018/06/06/写给小白的Node.js学习笔记12：作业——读取文件夹内所有文件列表/" class="leancloud_visitors" data-flag-title="Node.js学习笔记12：作业——读取文件夹内所有文件列表">
+             <span id="/2018/06/06/写给小白的Node.js学习笔记11：fs.stat判断文件类型/" class="leancloud_visitors" data-flag-title="Node.js学习笔记11：fs.stat判断文件类型">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -442,7 +442,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  307 字
+                  225 字
                 </span>
               
 
@@ -480,14 +480,18 @@
 
       
         
-          <p>结合前两节的内容：<br><a href="https://www.jianshu.com/p/86127593e93e" target="_blank" rel="noopener">写给小白的Node.js学习笔记10：fs模块读取文件列表</a><br><a href="https://www.jianshu.com/p/8cd6f60d00dc" target="_blank" rel="noopener">写给小白的Node.js学习笔记11：fs.stat判断文件类型</a><br>我们可以结合两种方法，读取文件夹内的全部文件列表。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/06/写给小白的Node.js学习笔记12：作业——读取文件夹内所有文件列表/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <p>上一节提到如何用<code>fs.readdir</code>方法读取指定路径的文件列表（见[《<a href="https://www.jianshu.com/p/86127593e93e" target="_blank" rel="noopener">写给小白的Node.js学习笔记10：fs模块读取文件列表》</a>，读取出来的结果可以看到，文件夹和文件并没有作任何区分，接下来我们用<code>fs.stat</code>方法对文件类型进行判断。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入模块，沿用上一节提到的文件夹</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> path =<span class="string">"/Applications/MAMP/htdocs/nodejs/test/"</span>;</span><br><span class="line">fs.stat(path, (err, stats) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"It is a folder: "</span> + stats.isDirectory());</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"It is a file: "</span> + stats.isFile());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>返回结果<br><img src="https://upload-images.jianshu.io/upload_images/9240001-b2393d7d61153be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p>
+<p><code>fs.stat</code>方法会读取文件，并返回一个对象<code>fs.stats</code>，<code>stats</code>对象有一下判断方法，可以判断文件类型<br><img src="https://upload-images.jianshu.io/upload_images/9240001-cd5e7856c45c26b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="fs.stats方法"></p>
+<hr>
+<p>[2018/09/03 更新]</p>
+<p>文件的<code>stat</code>对象本身包含了关于文件的各种信息：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line">fs.stat(<span class="string">"./data/1.txt"</span>, (err, stat) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(stat);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fuwefs58g2j30ct0aswmm.jpg" alt="image-20180903154812921"></p>
+
+          
         
       
     </div>
