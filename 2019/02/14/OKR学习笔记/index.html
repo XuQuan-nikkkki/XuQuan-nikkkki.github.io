@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="效率提升,OKR," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="最近公司要开始做新一年的OKR规划，之前没有接触过，所以抽空看了《OKR：源于英特尔和谷歌的目标管理利器》，只记录了一下对我有用的内容。以下是笔记：">
+<meta name="keywords" content="效率提升,OKR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OKR学习笔记">
+<meta property="og:url" content="http://xuquan.site/2019/02/14/OKR学习笔记/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="最近公司要开始做新一年的OKR规划，之前没有接触过，所以抽空看了《OKR：源于英特尔和谷歌的目标管理利器》，只记录了一下对我有用的内容。以下是笔记：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://xuquan.site/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-a7bc994b-e365-4b3b-96ff-2c67385ac7d0.png">
+<meta property="og:image" content="http://xuquan.site/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-b15f4661-184b-41aa-b64b-b2d6a5bd2c54.png">
+<meta property="og:image" content="http://xuquan.site/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-f1b13ac9-faff-4f7e-a455-6aaf29e41c6d.png">
+<meta property="og:image" content="http://xuquan.site/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-4df49017-f23e-4ab4-9883-7edafc285d0e.png">
+<meta property="og:image" content="http://xuquan.site/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-08bb970e-31c8-4551-86ee-140d14610765.png">
+<meta property="og:image" content="http://xuquan.site/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-26d04a24-3c22-42bc-b194-b4a4e993b78a.png">
+<meta property="og:image" content="http://xuquan.site/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-ddb1b2e5-bce0-48fe-b714-aac989310f2f.png">
+<meta property="og:image" content="http://xuquan.site/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-b5b71bb8-bc4e-4011-bdcf-275b4626bf13.png">
+<meta property="og:updated_time" content="2019-02-14T04:16:11.420Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OKR学习笔记">
+<meta name="twitter:description" content="最近公司要开始做新一年的OKR规划，之前没有接触过，所以抽空看了《OKR：源于英特尔和谷歌的目标管理利器》，只记录了一下对我有用的内容。以下是笔记：">
+<meta name="twitter:image" content="http://xuquan.site/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-a7bc994b-e365-4b3b-96ff-2c67385ac7d0.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+
+  
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2019/02/14/OKR学习笔记/"/>
+
+
+
+
+
+  <title>OKR学习笔记 | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2019/02/14/OKR学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">OKR学习笔记</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-14T12:10:27+08:00">
+                2019-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/14/OKR学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/02/14/OKR学习笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/14/OKR学习笔记/" class="leancloud_visitors" data-flag-title="OKR学习笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,528 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近公司要开始做新一年的OKR规划，之前没有接触过，所以抽空看了《<a href="https://book.douban.com/subject/27084312/" target="_blank" rel="noopener">OKR：源于英特尔和谷歌的目标管理利器</a>》，只记录了一下对我有用的内容。以下是笔记：</p>
+<a id="more"></a>
+<h2 id="OKR：源于英特尔和谷歌的目标管理利器"><a href="#OKR：源于英特尔和谷歌的目标管理利器" class="headerlink" title="OKR：源于英特尔和谷歌的目标管理利器"></a>OKR：源于英特尔和谷歌的目标管理利器</h2><p>Description: OKR introduction book<br>Link: <a href="https://hbr.org/2014/06/how-to-succeed-in-business-by-bundling-and-unbundling" target="_blank" rel="noopener">https://hbr.org/2014/06/how-to-succeed-in-business-by-bundling-and-unbundling</a><br>Tags: OKR,efficiency improvement,objective management</p>
+<h3 id="OKR简介"><a href="#OKR简介" class="headerlink" title="OKR简介"></a>OKR简介</h3><ul>
+<li>OKR（Objectives and Key Results）是融合了一系列框架、方法和哲学后的产物</li>
+</ul>
+<h4 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h4><ul>
+<li>20C，“霍桑效应”<ul>
+<li>工人绩效的提升是因为他们赶紧收到了公司的关注，从而增强了工作动机</li>
+</ul>
+</li>
+<li>德鲁克：MBO(management by objectives) “目标管理”框架<ul>
+<li><strong>应对的问题</strong>：担心现代管理者在评估绩效时，并不是评判其对公司的贡献，而是依据他们个人的专业水准的高下</li>
+<li><strong>方法</strong>：<ul>
+<li>每个管理者都需要有明确的目标，目标包括他和他的单位要达成的目标</li>
+<li>目标包括长期和短期目标</li>
+<li>包括有形（经营）和无形（组织发展、社会责任等）目标</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>安迪·格鲁夫<ul>
+<li>两个基本问题<ul>
+<li>我想去哪儿（objective）？</li>
+<li>我如何调整节奏以确保我正往那儿去？—— “关键结果”(Key Results)</li>
+</ul>
+</li>
+<li>宗旨——“聚焦”<ul>
+<li>目标太多会什么都做不好</li>
+<li>甄选目标，清晰传递希望做什么，不希望做什么</li>
+</ul>
+</li>
+<li>框架<ul>
+<li>更频繁的设定OKR：季度甚至月度（不以此作为单一评判员工绩效，仅仅是员工绩效的一个输入）</li>
+<li>兼顾自上而下和自下而上</li>
+<li>强调目标挑战性的重要性<ul>
+<li>即使竭尽全力，也只有一半的成功机会</li>
+<li>鼓励每个人超越现有水平</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="OKR是什么？"><a href="#OKR是什么？" class="headerlink" title="OKR是什么？"></a>OKR是什么？</h3><ul>
+<li>一套严密的思考框架<ul>
+<li>检查结果要超越数字本身</li>
+<li>深入考虑数字意味着什么</li>
+</ul>
+</li>
+<li>持续的纪律要求<ul>
+<li>时间和精力上的承诺</li>
+<li>周期性地刷新OKR</li>
+<li>确认结果达成情况</li>
+<li>持续修正</li>
+<li>结果导向</li>
+</ul>
+</li>
+<li>旨在确保员工紧密协作<ul>
+<li>OKR对每一个人共享——透明性</li>
+<li>与组织对齐一致</li>
+</ul>
+</li>
+<li>精力聚焦<ul>
+<li>识别最关键的业务目标</li>
+<li>通过量化的关键结果去衡量达成情况</li>
+</ul>
+</li>
+<li>促进组织成长</li>
+<li>可衡量的贡献</li>
+</ul>
+<h4 id="目标（Objective）"><a href="#目标（Objective）" class="headerlink" title="目标（Objective）"></a>目标（Objective）</h4><ul>
+<li>核心问题：‘我们想做什么’</li>
+<li>标准<ul>
+<li>简洁的</li>
+<li>定性的（没有数字）</li>
+<li>有时限要求</li>
+<li>鼓舞人心的</li>
+<li>能激发团队达成共鸣的</li>
+</ul>
+</li>
+</ul>
+<h4 id="关键结果（Key-Results）"><a href="#关键结果（Key-Results）" class="headerlink" title="关键结果（Key Results）"></a>关键结果（Key Results）</h4><ul>
+<li>回答：‘我们如何知道自己是否达成了目标的要求’</li>
+<li>标准<ul>
+<li>定量描述</li>
+</ul>
+</li>
+</ul>
+<h4 id="好的OKR能带来哪些收益？"><a href="#好的OKR能带来哪些收益？" class="headerlink" title="好的OKR能带来哪些收益？"></a>好的OKR能带来哪些收益？</h4><ul>
+<li>更好的沟通</li>
+<li>敏捷——更频繁的周期</li>
+<li>聚焦</li>
+<li>公开透明</li>
+<li>自下而上</li>
+<li>前瞻性思考</li>
+</ul>
+<h3 id="OKR框架"><a href="#OKR框架" class="headerlink" title="OKR框架"></a>OKR框架</h3><h4 id="使命"><a href="#使命" class="headerlink" title="使命"></a>使命</h4><ul>
+<li>核心问题： <strong>我们存在的意义是什么？</strong></li>
+<li>方向指导，但不可达</li>
+<li>特质<ul>
+<li>简单明了——体现要专注的领域</li>
+<li>激发改变的欲望</li>
+<li>长期性</li>
+<li>易于理解和沟通</li>
+</ul>
+</li>
+</ul>
+<p><img src="/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-a7bc994b-e365-4b3b-96ff-2c67385ac7d0.png" alt=""></p>
+<p><img src="/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-b15f4661-184b-41aa-b64b-b2d6a5bd2c54.png" alt=""></p>
+<ul>
+<li>有一个清晰的使命，以及与之对齐的OKR（月度、季度、年度均可），可以确保短期工作与公司长期目标保持一致</li>
+</ul>
+<h4 id="愿景"><a href="#愿景" class="headerlink" title="愿景"></a>愿景</h4><ul>
+<li><strong>未来蓝图——我们的未来将往何处去</strong></li>
+<li>组织在未来5年、10年甚至15年后成为什么样子（尽可能地具体）</li>
+<li>典型元素包括<ul>
+<li>业务活动的期望范围</li>
+<li>利益关系人（客户、员工、供应商、监管机构等）如何看待公司</li>
+<li>领导力或独特竞争力</li>
+<li>强烈的价值主张</li>
+</ul>
+</li>
+<li>标准<ul>
+<li>量化且有时间约束</li>
+<li>简洁</li>
+<li>同使命报错一致</li>
+<li>可验性（避免模糊和难以理解）</li>
+<li>可行的</li>
+<li>鼓舞人心的</li>
+</ul>
+</li>
+</ul>
+<h4 id="战略"><a href="#战略" class="headerlink" title="战略"></a>战略</h4><ul>
+<li><strong>重点和优先处理的事项</strong></li>
+</ul>
+<p><img src="/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-f1b13ac9-faff-4f7e-a455-6aaf29e41c6d.png" alt=""></p>
+<ul>
+<li><p>四个问题：</p>
+<ol>
+<li><p>是什么在驱动我们前进？</p>
+<ul>
+<li>“这是一家____公司”</li>
+<li>典型的组织驱动力<ul>
+<li>产品和服务<ul>
+<li>使用多种渠道向不同的客户群销售</li>
+<li>聚焦某一核心产品或服务</li>
+<li>i.e. 可口可乐</li>
+</ul>
+</li>
+<li>客户和市场<ul>
+<li>专注于某一特定客户群</li>
+<li>i.e. 强生</li>
+</ul>
+</li>
+<li>容量或能力<ul>
+<li>i.e. 酒店、航空运营</li>
+<li>能力驱动型公司（拥有特定领域的专业技能，应用到任何可能的产品或市场上）</li>
+</ul>
+</li>
+<li>技术<ul>
+<li>可用于不同产品和用户的专利技术</li>
+<li>i.e. 杜邦</li>
+</ul>
+</li>
+<li>销售和分销渠道<ul>
+<li>“如何做”</li>
+<li>电视网络购物</li>
+</ul>
+</li>
+<li>原始材料<ul>
+<li>i.e. 石油公司</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>我们销售的是什么？</p>
+<ul>
+<li>产品 / 服务 / 两者组合</li>
+</ul>
+</li>
+<li><p>谁是我们的客户</p>
+<ul>
+<li>重点放在哪个客户群及地区？</li>
+<li>哪些地方不值得分散注意力？</li>
+</ul>
+</li>
+<li><p>我们如何销售？</p>
+<ul>
+<li>如何为客户创造价值？/ 客户为什么从你这里购买东西？</li>
+</ul>
+<p><img src="/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-4df49017-f23e-4ab4-9883-7edafc285d0e.png" alt=""></p>
+</li>
+</ol>
+</li>
+<li><p>四个镜像</p>
+<ul>
+<li>社会/文化镜像<ul>
+<li>考虑战略驱动力与聚焦点的切合度</li>
+</ul>
+</li>
+<li>人力镜像——了解团队成员的技能及人才现状</li>
+<li>技术镜像</li>
+<li>财务镜像</li>
+</ul>
+</li>
+</ul>
+<h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><ul>
+<li><strong>近期聚焦达成的事项</strong></li>
+</ul>
+<h4 id="关键结果"><a href="#关键结果" class="headerlink" title="关键结果"></a>关键结果</h4><ul>
+<li><strong>如何得知我们朝目标推进了多少？</strong></li>
+</ul>
+<h3 id="创建有效的OKR"><a href="#创建有效的OKR" class="headerlink" title="创建有效的OKR"></a>创建有效的OKR</h3><ul>
+<li><p>宏伟目标的标准</p>
+<ul>
+<li>鼓舞人心</li>
+<li>可达到</li>
+<li>以季度为周期</li>
+<li>在团队可控范围内</li>
+<li>有商业价值</li>
+<li>定性的</li>
+</ul>
+</li>
+<li><p>制定KR</p>
+<ul>
+<li>只写关键项，而非全部罗列<ul>
+<li>聚焦在能让目标取得实际进展的KR上</li>
+</ul>
+</li>
+<li>基于结果，而非任务<ul>
+<li>找出影响Objective的KR，而非任务或行动清单</li>
+</ul>
+</li>
+<li>使用积极正向的语言进行表述</li>
+<li>简单明了</li>
+<li>考虑所有的可能性（避免自信偏差）</li>
+<li>务必指定一个责任人</li>
+</ul>
+</li>
+<li><p>KR的类型</p>
+<p><img src="/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-08bb970e-31c8-4551-86ee-140d14610765.png" alt=""></p>
+</li>
+<li><p>KR打分</p>
+<ul>
+<li>1.0<ul>
+<li>非常有野心、几乎不可能完成的结果</li>
+<li>所有KR都英国从一开始按照这一标准来写</li>
+</ul>
+</li>
+<li>0.7<ul>
+<li>很难，但是可以达成</li>
+</ul>
+</li>
+<li>0.3<ul>
+<li>一切照旧</li>
+</ul>
+</li>
+</ul>
+<p><img src="/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-26d04a24-3c22-42bc-b194-b4a4e993b78a.png" alt=""></p>
+</li>
+<li><p>OKR制定流程</p>
+<p><img src="/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-ddb1b2e5-bce0-48fe-b714-aac989310f2f.png" alt=""></p>
+</li>
+</ul>
+<h3 id="用OKR进行日常管理"><a href="#用OKR进行日常管理" class="headerlink" title="用OKR进行日常管理"></a>用OKR进行日常管理</h3><h4 id="周例会"><a href="#周例会" class="headerlink" title="周例会"></a>周例会</h4><ul>
+<li>目的<ul>
+<li>评估进度</li>
+<li>在问题爆发前识别潜在风险</li>
+<li>确保团队聚焦</li>
+</ul>
+</li>
+</ul>
+<p><img src="/Users/quanxu/Downloads/Export-e82e3738-be25-4258-9d52-9d334ba672db/Untitled-b5b71bb8-bc4e-4011-bdcf-275b4626bf13.png" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/效率提升/" rel="tag"><i class="fa fa-tag"></i> 效率提升</a>
+          
+            <a href="/tags/OKR/" rel="tag"><i class="fa fa-tag"></i> OKR</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/14/FCC-Redux/" rel="next" title="FCC: Redux">
+                <i class="fa fa-chevron-left"></i> FCC: Redux
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Xu Quan" />
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">137</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">97</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OKR：源于英特尔和谷歌的目标管理利器"><span class="nav-number">1.</span> <span class="nav-text">OKR：源于英特尔和谷歌的目标管理利器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OKR简介"><span class="nav-number">1.1.</span> <span class="nav-text">OKR简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#发展历程"><span class="nav-number">1.1.1.</span> <span class="nav-text">发展历程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OKR是什么？"><span class="nav-number">1.2.</span> <span class="nav-text">OKR是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目标（Objective）"><span class="nav-number">1.2.1.</span> <span class="nav-text">目标（Objective）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关键结果（Key-Results）"><span class="nav-number">1.2.2.</span> <span class="nav-text">关键结果（Key Results）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#好的OKR能带来哪些收益？"><span class="nav-number">1.2.3.</span> <span class="nav-text">好的OKR能带来哪些收益？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OKR框架"><span class="nav-number">1.3.</span> <span class="nav-text">OKR框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使命"><span class="nav-number">1.3.1.</span> <span class="nav-text">使命</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#愿景"><span class="nav-number">1.3.2.</span> <span class="nav-text">愿景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#战略"><span class="nav-number">1.3.3.</span> <span class="nav-text">战略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#目标"><span class="nav-number">1.3.4.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关键结果"><span class="nav-number">1.3.5.</span> <span class="nav-text">关键结果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建有效的OKR"><span class="nav-number">1.4.</span> <span class="nav-text">创建有效的OKR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用OKR进行日常管理"><span class="nav-number">1.5.</span> <span class="nav-text">用OKR进行日常管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#周例会"><span class="nav-number">1.5.1.</span> <span class="nav-text">周例会</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">196.6k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+
+  
+    <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://xuquan.site/2019/02/14/OKR学习笔记/';
+        this.page.identifier = '2019/02/14/OKR学习笔记/';
+        this.page.title = 'OKR学习笔记';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
