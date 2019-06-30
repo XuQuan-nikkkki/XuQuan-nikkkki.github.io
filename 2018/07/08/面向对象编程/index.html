@@ -487,6 +487,7 @@
       
         <p><strong>面向对象编程</strong>是JS里一个非常核心的思想，几乎所有面试的习题也都会涉及到这部分内容。这次FCC改版后的习题也单独把这部分内容做成了一个模块。以线性的创建父类和子类的顺序来讲解知识点。</p>
 <a id="more"></a>
+
 <hr>
 <h3 id="1-第一个核心概念是对象"><a href="#1-第一个核心概念是对象" class="headerlink" title="1. 第一个核心概念是对象"></a>1. 第一个核心概念是<strong>对象</strong></h3><p>在JavaScript中，万物皆对象。所谓对象，就是<strong>一种特殊的数据类型</strong>，拥有<strong>属性</strong>和<strong>方法</strong>。</p>
 <ul>
@@ -602,27 +603,36 @@
 <p><strong>其次，我们需要知道为什么存在<code>prototype</code>属性</strong></p>
 <p>JavaScript里所有的数据类型都是对象，为了实现面向对象的思想，就必须实现<strong>继承</strong>来把所有的对象都连接起来。JavaScript是通过<code>new</code>来创建实例的，比如我们创建两个实例：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Mother</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.father = <span class="string">"father"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> child1 = <span class="keyword">new</span> Mother(<span class="string">'c1'</span>);</span><br><span class="line"><span class="keyword">let</span> child2 = <span class="keyword">new</span> Mother(<span class="string">"c2"</span>);</span><br></pre></td></tr></table></figure>
+
 <p>这时发现其实<code>child2</code>的父亲并不是<code>father</code>，而是<code>Father</code>，我们修改<code>child2</code>的<code>father</code>属性</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">child2.father = <span class="string">"Father"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(child1.father);   <span class="comment">//father</span></span><br></pre></td></tr></table></figure>
+
 <p>当我们修改了<code>child2</code>的<code>father</code>属性之后，<code>child1</code>的<code>father</code>属性并没有改变，因为属性的值无法共享。</p>
 <p>而<code>prototype</code>属性所起的作用就是<strong>把需要共享的属性都放到构造函数的<code>prototype</code>上，这样每一个实例都能够获取到这些属性</strong>。</p>
 <p><strong>接着需要知道构造函数和实例原型之间的关系：</strong></p>
 <p>上面提到，每个函数都有<code>prototype</code>属性，每个对象（<code>null</code>除外）在创建的时候就会有一个与之关联的对象，这个对象就是我们说的原型，每一个对象都会从原型“继承”属性。</p>
 <p> <img src="https://upload-images.jianshu.io/upload_images/9240001-3b087188be2960ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="构造函数的prototype属性"></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">Person.prototype.name = <span class="string">"nikkkki"</span>;</span><br><span class="line"><span class="keyword">let</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">let</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(person1.name);   <span class="comment">//nikkkki</span></span><br><span class="line"><span class="built_in">console</span>.log(person2.name);   <span class="comment">//nikkkki</span></span><br></pre></td></tr></table></figure>
+
 <p> <code>Person</code>作为构造函数，在创建<code>person1</code>和<code>person2</code>的时候，这两个实例都会与<code>Person</code>的<code>prototype</code>属性关联，并从它继承属性，<code>Person.prototype.name</code>给<code>prototype</code>属性添加了<code>name</code>值，于是两个实例都能够获取到这个值。</p>
 <p> 所有的对象都是<code>Object</code>衍生出来的，因此所有的对象原型链终点都是<code>Object.prototype</code>的实例。</p>
-<p> 每个JavaScript对象(除了<code>null</code>)还有<code>__proto__</code>属性，它指向该对象的原型。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype === person.__proto__);   <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<p> 每个JavaScript对象(除了<code>null</code>)还有<code>__proto__</code>属性，它指向该对象的原型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype === person.__proto__);   <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
 <p> 所以构造函数在构建实例时，除了有实例原型<code>prototype</code>，还让实例的原型<code>__proto__</code>指向了实力原型。</p>
 <p> <img src="https://upload-images.jianshu.io/upload_images/9240001-9435ecc6f74e0484.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="__proto__"></p>
 <p> 前面<code>5</code>提到每个实例都有<code>constructor</code>属性，并且该属性指向这个实例的构造函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Person === Person.prototype.constructor);   <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
 <p> 所以我们在这里加上<code>constructor</code>属性与<code>prototype</code>属性对应。</p>
 <p> <img src="https://upload-images.jianshu.io/upload_images/9240001-613e502f569c5588.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="constructor"></p>
-<p> 这里我们记住<strong>原型的3大定律</strong>：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person.__proto__ === Person.prototype)  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor === Person)   <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(person) === Person.prototype)  <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<p> 这里我们记住<strong>原型的3大定律</strong>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person.__proto__ === Person.prototype)  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor === Person)   <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(person) === Person.prototype)  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
 <p> <strong>那么原型链是什么呢？</strong></p>
 <p> 所有对象的原型<code>__proto__</code>都指向构造函数的<code>prototype</code>属性，而所有的构造函数都是函数对象，所有的对象都是<code>Object</code>衍生出来的，也就是说所有的实例向上追溯<code>__proto__</code>，最终都会到达<code>Object.prototype</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(person.name);  <span class="comment">//undefined</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.name = <span class="string">"nikkkki"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person.name);  <span class="comment">//nikkkki</span></span><br></pre></td></tr></table></figure>
+
 <p> 我们可以将<code>Object</code>加入到关系图中：<br> <img src="https://upload-images.jianshu.io/upload_images/9240001-ff8d9dd7746b7f45.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Object作为源头"></p>
 <p> 当查找实例的属性时，会现在实例本身查找，如果实例没有这个属性，就会在实例的构造函数的<code>prototype</code>上查找，一直到<code>Object.prototype</code>。</p>
 <p><strong><code>Object.prototype</code>的原型是<code>null</code></strong>，所以查找到这一步就是终点了，如果还是查找失败，那就会返回<code>null</code></p>
@@ -630,8 +640,10 @@
 <p> 这里我们可以来做一个小的逻辑运算题，想象一个函数对象<code>A</code>的<code>prototype</code>是另一个函数对象<code>B</code>构建出的实例，<code>a</code>实例就可以通过<code>__proto__</code>和<code>B</code>的原型连接起来。</p>
 <p> 这里我们一定要记住<strong>原型3大定律的第一定律</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">let</span> son = <span class="keyword">new</span> Father();</span><br><span class="line"><span class="built_in">console</span>.log(Father.prototype === son.__proto__);   <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
 <p> 在记住这一关系的情况下，<code>A</code>和<code>B</code>的关系就很好理解了：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>) </span>&#123;&#125;    <span class="comment">// B.__proto__ === Object.prototype</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> B();   <span class="comment">// b.__proto__ === B.prototype</span></span><br><span class="line">A.prototype = b;</span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> A();   <span class="comment">// a.__proto__ === A.prototype === b</span></span><br><span class="line"><span class="built_in">console</span>.log(a.__proto__ === b);   <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(a.__proto__.__proto__ === B.prototype)  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(a.__proto__.__proto__.__proto__ === <span class="built_in">Object</span>.prototype)  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
 <p>总结一下：</p>
 <ul>
 <li>JS中所有东西都是对象，函数也是对象，是一种特殊的对象</li>
@@ -648,6 +660,7 @@
 </blockquote>
 <p>这里需要注意的地方是，我们在创建实例时，常使用<code>new</code>关键字，这里建议使用<code>Object.create</code>来创建实例，那么这两者的区别是什么呢？</p>
 <h4 id="new-创建实例实现原理"><a href="#new-创建实例实现原理" class="headerlink" title="new()创建实例实现原理"></a><strong><code>new()</code>创建实例实现原理</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line">obj.__proto__ = Father.prototype;</span><br><span class="line">Father.call(obj);</span><br></pre></td></tr></table></figure>
+
 <p><code>new</code>创建实例时经历了这样几步：</p>
 <ol>
 <li>创建一个空对象<code>obj</code></li>
@@ -655,6 +668,7 @@
 <li>将构造函数中的<code>this</code>指针指向<code>obj</code></li>
 </ol>
 <h4 id="Object-create-创建实例实现原理"><a href="#Object-create-创建实例实现原理" class="headerlink" title="Object.create()创建实例实现原理"></a><strong><code>Object.create()</code>创建实例实现原理</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.create = <span class="function"><span class="keyword">function</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">  F.prototype = o;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>它在内部定义了一个对象，并且让<code>F.prototype</code>对象赋值为引进的对象/函数<code>o</code>，然后返回新对象。</p>
 <h4 id="DRY原则"><a href="#DRY原则" class="headerlink" title="DRY原则"></a><strong>DRY原则</strong></h4><p>正是因为可以从原型链上继承也好，委托也好，父类的属性和方法，因此我们应该多利用这一的特性，将子类    上重复的方法尽量放到父类上，这一可以保持代码的简洁，同时增强可维护性。</p>
 <p>​    </p>
@@ -857,6 +871,7 @@
 </ol>
 <p>立即执行函数常被用来将相关的功能组合成一个对象或模块。比如我们可以创建一个对象模块，让它是立即执行函数，在函数内部返回一个或多个<code>mixin</code>，这样我们在调用模块的时候可以同步调用<code>mixin</code>，如下题中，我们可以<code>funModule.isCuteMixin(cat);    cat.isCute</code>，使代码更简洁。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> funModule = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    isCuteMixin: <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">      obj.isCute = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    singMixin: <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">      obj.sing = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"Singing to an awesome tune"</span>);</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 
@@ -992,7 +1007,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1128,7 +1143,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

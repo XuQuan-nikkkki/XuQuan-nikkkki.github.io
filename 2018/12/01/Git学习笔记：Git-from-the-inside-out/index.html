@@ -119,7 +119,7 @@
 
 
 
-  <meta name="keywords" content="git,翻译,">
+  <meta name="keywords" content="翻译,git,">
 
 
 
@@ -133,7 +133,7 @@
 
 
 <meta name="description" content="Git from the inside outgit对我来说，依然是一个黑洞啊！！！！">
-<meta name="keywords" content="git,翻译">
+<meta name="keywords" content="翻译,git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「翻译」从里到外搞懂Git">
 <meta property="og:url" content="http://xuquan.site/2018/12/01/Git学习笔记：Git-from-the-inside-out/index.html">
@@ -169,7 +169,6 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxshpa0es1j31ay0u0mzq.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxshw5jqwrj31ay0u0jtw.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxsro47bt2j30pm0cx74y.jpg">
-<meta property="og:image" content="http://xuquan.site/Users/quanxu/Library/Application%20Support/typora-user-images/image-20181202222812723.png">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxss4il1mnj30pj0ggq4d.jpg">
 <meta property="og:updated_time" content="2018-12-02T15:29:15.000Z">
 <meta name="twitter:card" content="summary">
@@ -474,7 +473,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  7,597 字
+                  7,611 字
                 </span>
               
 
@@ -511,38 +510,53 @@
       
 
       
-        <p><a href="https://maryrosecook.com/blog/post/git-from-the-inside-out" target="_blank" rel="noopener">Git from the inside out</a><br>git对我来说，依然是一个黑洞啊！！！！<br><a id="more"></a></p>
+        <p><a href="https://maryrosecook.com/blog/post/git-from-the-inside-out" target="_blank" rel="noopener">Git from the inside out</a><br>git对我来说，依然是一个黑洞啊！！！！</p>
+<a id="more"></a>
+
 <p>这篇论文旨在解释Git是如何运作的。</p>
 <p>我们假设读者已经足够了解Git，并能够使用git来实现对自己项目的版本控制。文章重点讲解了实现Git功能的图形结构(graph structure)以及图形结构如何体现Git的操作内容。从基础入手能够帮助你将自己对git 的理解建立在实现原理上，而非通过对API的反复试错从而获得的对原理的猜想。这样能让你更了解Git做了什么，正在做什么， 会执行什么操作。</p>
 <h3 id="创建一个项目"><a href="#创建一个项目" class="headerlink" title="创建一个项目"></a>创建一个项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~ $ mkdir alpha</span><br><span class="line">~ $ <span class="built_in">cd</span> alpha</span><br></pre></td></tr></table></figure>
+
 <p>用户为自己的项目创建了<code>alpha</code>文件夹</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ mkdir data</span><br><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'a'</span> &gt; data/letter.txt</span><br></pre></td></tr></table></figure>
+
 <p>进入到<code>alpha</code>文件夹后，创建了一个叫做<code>data</code>的目录。在<code>data</code>目录下，创建了一个名为<code>letter.txt</code>的文件，它的内容是<code>a</code>。此时<code>alpha</code>目录的路径如下:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alpha</span><br><span class="line">	- data</span><br><span class="line">		- letter.txt</span><br></pre></td></tr></table></figure>
+
 <h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git init</span><br><span class="line">					Initialized empty Git repository</span><br></pre></td></tr></table></figure>
+
 <p><code>git init</code>将当期路径初始化为一个Git仓库。这一操作会创建一个<code>.git</code>目录，并且对它写入一些文件内容。这些文件定义了关于Git设置和项目历史的所有内容。它们仅仅是普通的文件，并没有什么特别之处。用户可以阅读它们，也可以通过编辑器或shell来编辑它们。也就是说，用户可以轻易地阅读和编辑项目历史，就像编辑其他文件那样。</p>
 <p>此时，<code>alpha</code>目录路径如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">alpha</span><br><span class="line">	- data</span><br><span class="line">		- letter.txt</span><br><span class="line">  - .git</span><br><span class="line">  	- objects</span><br><span class="line">  - etc...</span><br></pre></td></tr></table></figure>
+
 <p><code>.git</code>目录和它们的内容都属于Git，所有其他的文件都统称为工作副本(working copy)。它们是用户的文件。</p>
 <h3 id="添加文件"><a href="#添加文件" class="headerlink" title="添加文件"></a>添加文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git add data/letter.txt</span><br></pre></td></tr></table></figure>
+
 <p>当用户对<code>data/letter.txt</code>文件执行<code>git add</code> 操作时，会发生两件事：</p>
 <p>第一， 会在<code>.git/objects/</code>路径中新创建一个blob文件</p>
 <p>这个blob文件包含了<code>data/letter.txt</code>文件的压缩内容。它的名字来源于对它的内容的hash处理。对一段文本进行hash处理意味着在这段文本上执行一个程序，将它转换成更小片段的文本，同时能够独一无二地识别到原文本。举个例子，Git将<code>a</code>hash处理为<code>2e65efe2a145dda7ee51d1741299f848e5bf752e</code>。开头的两个字符被用作Git对象数据中的路径名：<code>.git/objects/2e</code>。剩余的hash内容作为承载文本内容的blob文件的名字：<code>.git/objects/2e/65efe2a145dda7ee51d1741299f848e5bf752e</code>。</p>
 <p>由此可以看到添加文件到Git会将文件内容存储到<code>objects</code>路径下。即使用户从工作副本中删除了<code>data/letter.txt</code>文件，文件内容在Git中依然是安全的。</p>
 <p>第二，<code>git add</code>将文件添加到索引中。索引(index)是一个包含了所有要求Git跟踪的文件的列表。它被保存在<code>.git/index</code>中。文件的每一行文件都映射到它被添加时的内容的hash值。以下是<code>git add</code>命令执行后的索引：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data/letter.txt 2e65efe2a145dda7ee51d1741299f848e5bf752e</span><br></pre></td></tr></table></figure>
+
 <p>用户创建了一个叫做<code>data/number.txt</code>的文件，内容是<code>1234</code>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'1234'</span> &gt; data/number.txt</span><br></pre></td></tr></table></figure>
+
 <p>工作副本的路径如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alpha</span><br><span class="line">	- data</span><br><span class="line">		- letter.txt</span><br><span class="line">		- number.txt</span><br></pre></td></tr></table></figure>
+
 <p>用户将文件添加到Git</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git add data</span><br></pre></td></tr></table></figure>
+
 <p><code>git add</code>命令创建了一个包含<code>data/number.txt</code>内容的blob对象。还为<code>data/number.txt</code>添加了一个指向blob文件的索引入口。以下是<code>git add</code>命令第二次执行后的索引：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data/letter.txt 2e65efe2a145dda7ee51d1741299f848e5bf752e</span><br><span class="line">data/number.txt 274c0052dd5408f8ae2bc8440029ff67d79bc5c3</span><br></pre></td></tr></table></figure>
+
 <p>尽管用户执行的是<code>git add data</code>，但只有<code>data</code>路径下的文件罗列在索引中，<code>data</code>索引并没有列在其中。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'1'</span> &gt; data/number.txt</span><br><span class="line">~/alpha $ git add data</span><br></pre></td></tr></table></figure>
+
 <p>当用户最初创建<code>data/number.txt</code>时，他们实际希望文件内容是<code>1</code>，而非<code>1234</code>，于是他们修改了文件的内容，并重新添加到git中。这次操作会创建一个包含新内容的新blob文件，同时在索引中更新<code>data/number.txt</code>文件的入口，使其指向新的blob文件。</p>
 <h3 id="提交内容"><a href="#提交内容" class="headerlink" title="提交内容"></a>提交内容</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git commit -m <span class="string">'a1'</span></span><br><span class="line">					[master (root-commit) 774b54a] a1</span><br></pre></td></tr></table></figure>
+
 <p>用户创建了内容为<code>a1</code>的提交。Git会显示关于这次提交的一些信息。这些信息会立马生效。</p>
 <p>提交命令实际包含三个步骤：创建一个表示当前版本的提交内容的树形图形；创建一个提交对象；将当前分支指向新的提交对象。</p>
 <h4 id="创建树形图形"><a href="#创建树形图形" class="headerlink" title="创建树形图形"></a>创建树形图形</h4><p>Git通过索引来创建一个树形图形，从而记录项目的当前状态。这个树形图形会记录项目中每个文件的位置和内容。</p>
@@ -551,45 +565,56 @@
 <p>trees是在提交时创建的。一个树表示工作副本中的一个路径。</p>
 <p>下面是记录<code>data</code>路径的新提交内容的树对象：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">100664 blob 2e65efe2a145dda7ee51d1741299f848e5bf752e letter.txt</span><br><span class="line">100664 blob 56a6051ca2b02b04ef92d5150c9ef600403cb1de number.txt</span><br></pre></td></tr></table></figure>
+
 <p>第一行记录了所有用来重新生成<code>data/letter.txt</code>文件的内容。第一部分指文件许可，第二部分表示指向当前内容的是一个blob文件，第三部分是这个blob文件的hash值，第四部分是这个文件的名称。</p>
 <p>第二行记录了<code>data/number.txt</code>文件的相关内容。</p>
 <p>下面是<code>alpha</code>路径的树对象，即当前项目的根路径的树对象：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">040000 tree 0eed1217a2947f4930583229987d90fe5e8e0b74 data</span><br></pre></td></tr></table></figure>
+
 <p>这单独的一行将这个树指向了<code>data</code>树。</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxrn2b8v6sj31di07cmxb.jpg" alt="Tree graph for the `a1` commit"></p>
 <p>图中，<code>root</code>树指向<code>data</code>树，<code>data</code>树指向表示<code>data/letter.txt</code>和<code>data/number.txt</code>的blob文件。</p>
 <h4 id="创建一个提交对象"><a href="#创建一个提交对象" class="headerlink" title="创建一个提交对象"></a>创建一个提交对象</h4><p><code>git commit</code>在创建了树形图形后会创建一个提交对象。提交对象是<code>.git/objects/</code>路径中的另一个文本文件。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tree ffe298c3ce8bb07326f888907996eaa48d266db4</span><br><span class="line">author Mary Rose Cook &lt;mary@maryrosecook.com&gt; 1424798436 -0500</span><br><span class="line">committer Mary Rose Cook &lt;mary@maryrosecook.com&gt; 1424798436 -0500</span><br><span class="line"></span><br><span class="line">a1</span><br></pre></td></tr></table></figure>
+
 <p>第一行指向树形图形，hash值指向表示工作副本中根路径的树对象，也就是<code>alpha</code>路径。最后一行是提交信息。</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxrn5yzugtj31di09st8z.jpg" alt="`a1` commit object pointing at its tree graph"></p>
 <h4 id="将当期分支指向新提交"><a href="#将当期分支指向新提交" class="headerlink" title="将当期分支指向新提交"></a>将当期分支指向新提交</h4><p>最后，提交命令将当期分支指向新的提交对象。哪一个是当前分支呢？Git会到<code>.git/HEAD</code>路径中寻找<code>HEAD</code>文件，并找到：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ref: refs/heads/master</span><br></pre></td></tr></table></figure>
+
 <p>这是说<code>HEAD</code>正指向<code>master</code>，<code>master</code>是当前分支。</p>
 <p><code>HEAD</code>和<code>master</code>都是引用。引用是Git或用户用来标记一个特定的提交的标签。</p>
 <p>代表<code>master</code>引用的文件还不存在，因为这是仓库的第一次提交。Git会在<code>.git/refs/heads/master</code>中创建一个文件，并将内容设置为此次提交对象的hash值：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">74ac3ad9cde0b265d2b4f1c778b283a6e2ffbafd</span><br></pre></td></tr></table></figure>
+
 <p>（如果你正在试着复现以上阅读到的Git操作，你会发现你的<code>a1</code>提交的hash值会和我的不一样。像blob这类内容对象和树对象会总是转换到相同的hash值，但是提交对象不会，因为它们还包含了日期和创建者的名字等信息）</p>
 <p>现在让我们添加<code>HEAD</code>和<code>master</code>到Git图形：</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxrndaw8bpj31di0eot9a.jpg" alt="`master` pointing at the `a1` commit"></p>
 <p><code>HEAD</code>和提交之前一样指向<code>master</code>，但是<code>master</code>现在指向新的提交对象。</p>
 <h3 id="再次提交"><a href="#再次提交" class="headerlink" title="再次提交"></a>再次提交</h3><p>下面是<code>a1</code>提交之后的Git图形。</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxrnq5mpmwj31di0h43zs.jpg" alt="`a1` commit shown with the working copy and index"></p>
-<p>工作副本，索引和<code>a1</code>提交中<code></code>data/letter.txt<code>和</code>data/number.txt<code>的内容是相同的。索引和</code>HEAD`的提交都使用hash值来引用blob对象，但是工作副本的内容是用文本的形式存储在其他地方的。</p>
+<p>工作副本，索引和<code>a1</code>提交中``data/letter.txt<code>和</code>data/number.txt<code>的内容是相同的。索引和</code>HEAD`的提交都使用hash值来引用blob对象，但是工作副本的内容是用文本的形式存储在其他地方的。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'2'</span> &gt; data/number.txt</span><br></pre></td></tr></table></figure>
+
 <p>用户将<code>data/number.txt</code>的内容设为<code>2</code>。这样就更新了工作副本的内容，但是索引和<code>HEAD</code>提交保持不变。</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxrntxmm9cj31di0h4dh4.jpg" alt="`data/number.txt` set to `2` in the working copy"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git add data/number.txt</span><br></pre></td></tr></table></figure>
+
 <p>用户将文件添加到Git中。这时会在<code>objects</code>目录下添加一个内容为<code>2</code>的blob文件，<code>data/number.txt</code>的索引指向新的blob文件。</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxrnw20nthj31di0h40u1.jpg" alt="`data/number.txt` set to `2` in the working copy and index"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git commit -m <span class="string">'a2'</span></span><br><span class="line">					[master f07af7e6] a2</span><br></pre></td></tr></table></figure>
+
 <p>用户提交了修改，这一步和之前的提交步骤是一样的。</p>
 <p>首先，一个新的树形图形被创建出来，用来表示索引的内容。</p>
 <p><code>data/number.txt</code>的索引入口被修改了。之前的<code>data</code>树不再映射到<code>data</code>目录，新的<code>data</code>树对象必须创建：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">100664 blob 2e65efe2a145dda7ee51d1741299f848e5bf752e letter.txt</span><br><span class="line">100664 blob d8263ee9860594d2806b0dfd1bfd17528b0ba2a4 number.txt</span><br></pre></td></tr></table></figure>
+
 <p>新的<code>data</code>树被hash处理为不同于之前的<code>data</code>树的值。新的<code>root</code>树必须被创建，用来记录这个新的hash值：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">040000 tree 40b0318811470aaacc577485777d7a6780e51f0b data</span><br></pre></td></tr></table></figure>
+
 <p>第二，新的提交对象被创建：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tree ce72afb5ff229a39f6cce47b00d1b0ed60fe3556</span><br><span class="line">parent 774b54a193d6cfdd081e581a007d2e11f784b9fe</span><br><span class="line">author Mary Rose Cook &lt;mary@maryrosecook.com&gt; 1424813101 -0500</span><br><span class="line">committer Mary Rose Cook &lt;mary@maryrosecook.com&gt; 1424813101 -0500</span><br><span class="line"></span><br><span class="line">a2</span><br></pre></td></tr></table></figure>
+
 <p>提交对象的第一行执行新的<code>root</code>树对象。第二行执行<code>a1</code>：此次提交的父提交。为了找到父提交，Git找到<code>HEAD</code>,通过<code>HEAD</code>找到<code>master</code>并找到<code>a1</code>提交的hash值。</p>
 <p>第三步，<code>master</code>分支的文件内容被修改为新提交的hash值。</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxro38sjmoj31di0h4dh6.jpg" alt="`a2` commit"></p>
@@ -605,6 +630,7 @@
 <p>一个具体的引用指向的提交也是容易复现的。用户只需要切换到这个分支。这个分支的更改没有<code>HEAD</code>那么频繁。</p>
 <p>不被任何引用指向的提交时很难被复现的。用户不再使用一个引用越久，他们理解该引用的提交就越难。但用户不使用的时间越久，其实也不太会有什么新的更改历史。</p>
 <h3 id="切换到某次提交"><a href="#切换到某次提交" class="headerlink" title="切换到某次提交"></a>切换到某次提交</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git checkout 37888c2</span><br><span class="line">					You are <span class="keyword">in</span> <span class="string">'detached HEAD'</span> state...</span><br></pre></td></tr></table></figure>
+
 <p>用户通过hash值查看<code>a2</code>提交。</p>
 <p>切换包括四个步骤：</p>
 <p>第一，Git找到<code>a2</code>提交以及它指向的树形图形</p>
@@ -614,51 +640,63 @@
 <p>修改<code>HEAD</code>的内容到某个hash值会让整个仓库处于脱离的<code>HEAD</code>的状态。注意下图中的<code>HEAD</code>直接指向<code>a2</code>提交，而不是指向<code>master</code></p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxrpdzzjh0j31di0h4dgn.jpg" alt="Detached `HEAD` on `a2` commit"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'3'</span> &gt; data/number.txt</span><br><span class="line">~/alpha $ git add data/number.txt</span><br><span class="line">~/alpha $ git commit -m <span class="string">'a3'</span></span><br><span class="line">					[detached HEAD 3645a0e] a3</span><br></pre></td></tr></table></figure>
+
 <p>用户将<code>data/number.txt</code>的内容设为<code>3</code>，并提交了此次修改。Git通过<code>HEAD</code>来找到<code>a3</code>提交的父提交。不像之前需要找到并顺着某个分支引用来查找，这次直接找到并返回<code>a2</code>提交的hash值。</p>
 <p>Git更新<code>HEAD</code>直接到<code>a3</code>提交的hash值，仓库依然处于脱离的<code>HEAD</code>状态。提交不再任何一个分支上，因为没有分支指向<code>a3</code>或它的后代。这意味着这些提交很容易丢失。</p>
 <p>到目前为止，树和blob会在图形中被忽略。</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxrpjgen20j31di0h4q3q.jpg" alt="`a3` commit that is not on a branch"></p>
 <h3 id="创建一个分支"><a href="#创建一个分支" class="headerlink" title="创建一个分支"></a>创建一个分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git branch deputy</span><br></pre></td></tr></table></figure>
+
 <p>用户创建了一个新的<code>deputy</code>分支，这样会在<code>.git/refs/heads/deputy</code>路径创建一个新的文件，文件内容是<code>HEAD</code>指向的提交的hash值，即<code>a3</code>提交的hash值。</p>
 <p>图形解读：分支即引用，引用即文件，这意味着Git的分支都是轻量级的。</p>
 <p>创建<code>deputy</code>分支让<code>a3</code>提交能够安全地保存在一个分支上，<code>HEAD</code>仍然是脱离的，因为它依然直接指向了一个提交。</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxrpsngmesj31di0h43zh.jpg" alt="`a3` commit now on the `deputy` branch"></p>
 <h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git checkout master</span><br><span class="line">					Switched to branch <span class="string">'master'</span></span><br></pre></td></tr></table></figure>
+
 <p>用户切换到<code>master</code>分支。</p>
 <p>首先，Git找到<code>master</code>指向的<code>a2</code>提交以及<code>a2</code>指向的树形图形。</p>
 <p>第二步，Git改写树形图形中指向工作副本的文件入口，将<code>data/number.txt</code>的内容设置为<code>2</code></p>
 <p>第三步，Git改写树形图形中指向索引的文件入口，将<code>data/number.txt</code>的入口更新为<code>2</code>blob对应的hash值</p>
 <p>第四步，Git通过修改以下内容以将<code>HEAD</code>指向<code>master</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ref: refs/heads/master</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxrpxrpkg2j31di0fw3zd.jpg" alt="`master` checked out and pointing at the `a2` commit"></p>
 <h3 id="切换到与工作副本不匹配的分支"><a href="#切换到与工作副本不匹配的分支" class="headerlink" title="切换到与工作副本不匹配的分支"></a>切换到与工作副本不匹配的分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'789'</span> &gt; data/number.txt</span><br><span class="line">~/alpha $ git checkout deputy</span><br><span class="line">					Your changes to these files would be overwritten by checkout: </span><br><span class="line">						data/number.txt</span><br><span class="line">					Commit your changes or stash them before you switch branches</span><br></pre></td></tr></table></figure>
+
 <p>用户意外地将<code>data/number.txt</code>的内容设置为<code>789</code>。当他们想要切换到<code>deputy</code>分支时，Git阻止了这次切换。</p>
 <p><code>HEAD</code>正指向<code>master</code>，<code>master</code>指向了<code>a2</code>提交，<code>a2</code>提交中<code>data/number.txt</code>的内容为<code>2</code>。<code>deputy</code>指向<code>a3</code>，<code>a3</code>提交中<code>data/number.txt</code>的内容为<code>3</code>。工作副本中<code>data/number.txt</code>的当前版本为<code>789</code>。这几个版本都是不一样的，必须先解决这些冲突。</p>
 <p>Git可以将工作副本中<code>data/number.txt</code>的内容替换为要切换到的分支的提交中的内容，但它会建立避免数据丢失。</p>
 <p>Git也可以合并工作副本的当前版本和切换到的分支的版本，但是这样非常复杂。</p>
 <p>所以，Git放弃了这次切换。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'2'</span> &gt; data/number.txt</span><br><span class="line">~/alpha $ git checkout deputy</span><br><span class="line">					Switched to branch <span class="string">'deputy'</span></span><br></pre></td></tr></table></figure>
+
 <p>用户注意到了他们不小心修改了<code>data/number.txt</code>的内容，并将内容修改会原来的<code>2</code>。然后成功切换到<code>deputy</code>分支。</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxrq5jort9j31di0fwt9k.jpg" alt="`deputy` checked out"></p>
 <h3 id="合并祖先"><a href="#合并祖先" class="headerlink" title="合并祖先"></a>合并祖先</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git merge master</span><br><span class="line">					Already up-to-date</span><br></pre></td></tr></table></figure>
+
 <p>用户将<code>master</code>合并进<code>deputy</code>。合并两个分支意味着核名两个提交。第一个提交是<code>deputy</code>指向的提交，即合并者。第二次提交是<code>master</code>指向的提交，即被合并者。这次合并中，Git没有做任何事情，所以它提示<code>Already up-to-date</code>。</p>
 <p>图形截图：图形中的一系列提交可以理解为一些了对仓库内容的修改。也就是说，在合并中，如果被合并者是合并者的祖先，那么Git不会做任何事情，这些修改已经被合并了。</p>
 <h3 id="合并后代"><a href="#合并后代" class="headerlink" title="合并后代"></a>合并后代</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~alpha $ git checkout master</span><br><span class="line">				Switched to branch <span class="string">'master'</span></span><br></pre></td></tr></table></figure>
+
 <p>用户切换到<code>master</code></p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxrqazmrl6j31di0fwdgr.jpg" alt="`master` checked out and pointing at the `a2` commit"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git merge deputy</span><br><span class="line">					Fast-forward</span><br></pre></td></tr></table></figure>
+
 <p>用户将<code>deputy</code>合并进<code>master</code>。Git发现合并者的提交<code>a2</code>是被合并者的提交<code>a3</code>的祖先，就会执行一次快进合并。</p>
 <p>它找到被合并者的提交和这次提交指向的树形图形，改写树形图形中指向工作副本和索引的文件入口，快进<code>master</code>到<code>a3</code>。</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxrqegzljkj31di0fw3zf.jpg" alt="`a3` commit from `deputy` fast-forward merged into `master`"></p>
 <p>图形属性：图中一系列提交可以看做是一些了对仓库内容的修改。也就是说，当合并分支时，如果被合并者是合并者的后代，提交历史就不会被修改，合并者和被合并者直接的一系列提交已经存在。但是，尽管Git的修改历史没有改变，但是Git图形发生了变化。<code>HEAD</code>指向的引用变成了合并者的提交</p>
 <h3 id="合并两个不同源提交"><a href="#合并两个不同源提交" class="headerlink" title="合并两个不同源提交"></a>合并两个不同源提交</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'4'</span> &gt; data/number.txt</span><br><span class="line">~/alpha $ git add data/number.txt</span><br><span class="line">~/alpha $ git commit -m <span class="string">'a4'</span></span><br><span class="line">					[master 7b7bd9a] a4</span><br></pre></td></tr></table></figure>
+
 <p>用户将<code>number.txt</code>的内容修改为<code>4</code>，并将修改提交给<code>master</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git checkout deputy</span><br><span class="line">					Switched to branch <span class="string">'deputy'</span></span><br><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'b'</span> &gt; data/letter.txt</span><br><span class="line">~/alpha $ git add data/letter.txt</span><br><span class="line">~/alpha $ git commit -m <span class="string">'b3'</span></span><br><span class="line">					[deputy 982dffb] b3</span><br></pre></td></tr></table></figure>
+
 <p>用户切换到<code>deputy</code>分支，将<code>&#39;data/letter.txt</code>的内容修改为<code>b</code>，并提交到<code>deputy</code>分支上。</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxs8dpnncnj31di0h40tn.jpg" alt="`a4` committed to `master`, `b3` committed to `deputy` and `deputy` checked out"></p>
 <p>图形属性：提交可以共享父提交，也就是说新的源头可以在提交历史中被创建出来。</p>
 <p>图形属性：一个提交可以有多个父提交。也就是说不同源的提交可以由一次提交来合并，即一次合并提交</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git merge master -m <span class="string">'b4'</span></span><br><span class="line">					Merge made by the <span class="string">'recursive'</span> strategy</span><br></pre></td></tr></table></figure>
+
 <p>用户将<code>master</code>分支合并进<code>deputy</code>分支</p>
 <p>Git发现合并者的<code>b3</code>提交和被合并者的<code>a4</code>提交是不同源的提交。所以需要做一次合并提交，整个过程包括8个步骤：</p>
 <ol>
@@ -684,20 +722,25 @@
 </li>
 <li><p>更新后的索引会被提交</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tree 20294508aea3fb6f05fcc49adaecc2e6d60f7e7d</span><br><span class="line">parent 982dffb20f8d6a25a8554cc8d765fb9f3ff1333b</span><br><span class="line">parent 7b7bd9a5253f47360d5787095afc5ba56591bfe7</span><br><span class="line">author Mary Rose Cook &lt;mary@maryrosecook.com&gt; 1425596551 -0500</span><br><span class="line">committer Mary Rose Cook &lt;mary@maryrosecook.com&gt; 1425596551 -0500</span><br><span class="line"></span><br><span class="line">b4</span><br></pre></td></tr></table></figure>
+
 <p>注意到这次提交有两个父提交</p>
 </li>
 <li><p>Git指向当前分支<code>deputy</code>的新提交</p>
 </li>
 </ol>
 <h3 id="合并修改了相同文件的不同源提交"><a href="#合并修改了相同文件的不同源提交" class="headerlink" title="合并修改了相同文件的不同源提交"></a>合并修改了相同文件的不同源提交</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git checkout master</span><br><span class="line">					Switched to branch <span class="string">'master'</span></span><br><span class="line">~/alpha $ git merge deputy</span><br><span class="line">					Fast-forward</span><br></pre></td></tr></table></figure>
+
 <p>用户切换到<code>master</code>分支，将<code>deputy</code>分支合并入<code>master</code>分支。这时会将<code>master</code>快进推到<code>b4</code>提交。此时<code>master</code>和<code>HEAD</code>指向同一次提交。</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxsa6zyrryj31di0h4ab1.jpg" alt="`deputy` merged into `master` to bring `master` up to the latest commit, `b4`"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git checkout deputy</span><br><span class="line">					Switched to branch <span class="string">'deputy'</span></span><br><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'5'</span> &gt; data/number.txt</span><br><span class="line">~/alpha $ git add data/number.txt</span><br><span class="line">~/alpha $ git commit -m <span class="string">'b5'</span></span><br><span class="line">					[deputy bd797c2] b5</span><br></pre></td></tr></table></figure>
+
 <p>用户切换到<code>deputy</code>分支，将<code>data/number.txt</code>的内容改为<code>5</code>，并将修改提交到<code>deputy</code>分支。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git checkout master</span><br><span class="line">					Switched to branch <span class="string">'master'</span></span><br><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'6'</span> &gt; data/number.txt</span><br><span class="line">~/alpha $ git add data/number.txt</span><br><span class="line">~/alpha $ git commit -m <span class="string">'b6'</span></span><br><span class="line">					[master 4c3ce18] b6</span><br></pre></td></tr></table></figure>
+
 <p>用户切换到<code>master</code>分支，他们将<code>data/number.txt</code>的内容修改为<code>6</code>，并将修改提交到<code>master</code></p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxsae6rrmwj31di0h4wfj.jpg" alt="`b5` commit on `deputy` and `b6` commit on `master`"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git merge deputy</span><br><span class="line">					CONFILICT <span class="keyword">in</span> data/number.txt</span><br><span class="line">					Automatic merge failed; fix conficts and commit the result</span><br></pre></td></tr></table></figure>
+
 <p>用户将<code>deputy</code>合并到<code>master</code>分支，此时出现了冲突，合并停止。有冲突的合并过程和没有冲突的合并过程的前6个步骤是相同的：设置<code>.git/MERGE_HEAD</code>，找到基准提交，生成基准提交、合并者提交和被合并者提交的索引，创建对比，更新工作副本，更新索引。由于出现了冲突，第7、8步无法执行，那我们来看看每一步发生了什么：</p>
 <ol>
 <li><p>Git将被合并者提交的hash值写入到<code>.git/MERGE_HEAD</code></p>
@@ -715,13 +758,17 @@
 </li>
 <li><p>对比中标记的修改也被应用到索引中，索引中的文件入口标记了文件的路径和阶段。没有冲突的文件标记的阶段为<code>0</code>，在此次合并之前，索引应该如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0 data/letter.txt 63d8dbd40c23542e740659a7168a0ce3138ea748</span><br><span class="line">0 data/number.txt 62f9457511f879886bb7728c986fe10b0ece6bcb</span><br></pre></td></tr></table></figure>
+
 <p>此次合并之后，对比写入索引，索引如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 data/letter.txt 63d8dbd40c23542e740659a7168a0ce3138ea748</span><br><span class="line">1 data/number.txt bf0d87ab1b2b0ec1a11a3973d2845b42413d9767</span><br><span class="line">2 data/number.txt 62f9457511f879886bb7728c986fe10b0ece6bcb</span><br><span class="line">3 data/number.txt 7813681f5b41c028345ca62a2be376bae70b7f61</span><br></pre></td></tr></table></figure>
+
 <p><code>data/letter.txt</code>的阶段为<code>0</code>，和合并之前一样。<code>data/number.txt</code>则有3个新的非<code>0</code>的入口出现。阶段为<code>1</code>的文件hash值指向基准提交的<code>data/number.txt</code>的内容，阶段为<code>2</code>的hash值指向合并者的文件内容，阶段为<code>3</code>的hash值指向被合并者的文件内容。这三个入口的存在告诉Git<code>data/number.txt</code>目前存在冲突。</p>
 <p>合并停止</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'11'</span> &gt; data/number.txt</span><br><span class="line">~/alpha $ git add data/number.txt</span><br></pre></td></tr></table></figure>
+
 <p>用户将<code>data/number.txt</code>的内容修改为<code>11</code>，并将文件添加到索引。Git新添加一个内容为<code>11</code>的blob文件，添加一个包含冲突的文件意味着告诉Git冲突已被解决。Git从索引中删除掉<code>data/number.txt</code>的阶段<code>1</code>,<code>2</code>,<code>3</code>的文件，添加<code>data/number.txt</code>阶段为<code>0</code>的入口，现在索引如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0 data/letter.txt 63d8dbd40c23542e740659a7168a0ce3138ea748</span><br><span class="line">0 data/number.txt 9d607966b721abde8931ddd052181fae905db503</span><br></pre></td></tr></table></figure>
+
 <ol start="7">
 <li>用户提交。Git看到仓库中的<code>.git/MERGE_HEAD</code>，直到正在合并过程中。于是查看索引，看到并没有冲突，于是新创建一个<code>b11</code>提交，用来记录合并后的内容，并删除<code>.git/MERGE_HEAD</code>中的文件。合并完成。</li>
 <li>Git将<code>master</code>指向新的提交</li>
@@ -732,24 +779,32 @@
 <h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><p>以下Git 图形包含了提交历史、最近一次提交的树形图形和Blob对象，工作副本和索引：</p>
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxsb3vzmrej31di0igabe.jpg" alt="The working copy, index, `b11` commit and its tree graph"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git rm data/letter.txt</span><br><span class="line">					rm <span class="string">'data/letter.txt'</span></span><br></pre></td></tr></table></figure>
+
 <p>用户告诉git删除<code>data/letter.txt</code>文件。文件从工作副本中被删除。索引中的文件入口也被删除</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxsb5ccfmaj31di0ig3zt.jpg" alt="After `data/letter.txt` `rm`ed from working copy and index"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git commit -m <span class="string">'11'</span></span><br><span class="line">					[master d14c7d2] 11</span><br></pre></td></tr></table></figure>
+
 <p>用户提交。作为提交的一个部分，Git创建一个树形图形来记录索引的内容。<code>data/letter.txt</code>不包含在树形吐信中，因为它不再索引中。</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxsb6wioqaj31di0ig0u3.jpg" alt="`11` commit made after `data/letter.txt` `rm`ed"></p>
 <h3 id="复制仓库"><a href="#复制仓库" class="headerlink" title="复制仓库"></a>复制仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ <span class="built_in">cd</span> ..</span><br><span class="line">			~ $ cp -R alpha bravo</span><br></pre></td></tr></table></figure>
+
 <p>用户将<code>alpha/</code>仓库中的内容复制到<code>bravo/</code>路径下。这回创建如下路径结构：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">~</span><br><span class="line">	- alpha</span><br><span class="line">		- data</span><br><span class="line">			- number.txt</span><br><span class="line">	- bravo</span><br><span class="line">		- data</span><br><span class="line">			- number.txt</span><br></pre></td></tr></table></figure>
+
 <p><code>bravo</code>路径下会有另一个Git图形</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxsb9omz18j31ay0u0ac1.jpg" alt="New graph created when `alpha` `cp`ed to `bravo`"></p>
 <h3 id="连接两个仓库"><a href="#连接两个仓库" class="headerlink" title="连接两个仓库"></a>连接两个仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">			~ $ <span class="built_in">cd</span> alpha</span><br><span class="line">~/alpha $ git remote add bravo ../bravo</span><br></pre></td></tr></table></figure>
+
 <p>用户切回到<code>alpha</code>路径下，将<code>bravo</code>设置为<code>alpha</code>的远程仓库。这一操作会在<code>alpha/.git/config</code>中添加如下内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[remote <span class="string">"bravo"</span>]</span><br><span class="line">				url = ../bravo/</span><br></pre></td></tr></table></figure>
+
 <p>这表明在路径<code>../bravo</code>下有一个名为<code>bravo</code>的远程仓库</p>
 <h3 id="从远程仓库获取分支"><a href="#从远程仓库获取分支" class="headerlink" title="从远程仓库获取分支"></a>从远程仓库获取分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ <span class="built_in">cd</span> ../bravo</span><br><span class="line">~/bravo $ <span class="built_in">printf</span> <span class="string">'12'</span> &gt; data/number.txt</span><br><span class="line">~/bravo $ git add data/number.txt</span><br><span class="line">~/bravo $ git commit -m <span class="string">'12'</span></span><br><span class="line">					[master 94cd04d] 12</span><br></pre></td></tr></table></figure>
+
 <p>用户进入<code>bravo</code>仓库，将<code>data/number.txt</code>的内容设为<code>12</code>，并将修改提交到<code>bravo</code>的<code>master</code>上。</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxsbgm4l6sj31ay0u040p.jpg" alt="`12` commit on `bravo` repository"></p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~/bravo $ <span class="built_in">cd</span> .../alpha</span><br><span class="line">~/alpha $ git fetch bravo master</span><br><span class="line">					Unpacking objects: 100%</span><br><span class="line">					From ../bravo</span><br><span class="line">						* branch master -&gt; FETCH_HEAD</span><br></pre></td></tr></table></figure>
+
 <p>用户进入<code>alpha</code>仓库，他们获取远程<code>bravo</code>仓库的<code>master</code>分支，这个过程包括四个步骤：</p>
 <ol>
 <li><p>Git找到<code>bravo</code>仓库的<code>master</code>分支指向的提交的hash值，即提交<code>12</code>的hash值</p>
@@ -760,6 +815,7 @@
 </li>
 <li><p><code>alpha/.git/FETCH_HEAD</code>设置为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">94cd04d93ae88a1f53a4646532b1e8cdfbc0977f branch <span class="string">'master'</span> of ../bravo</span><br></pre></td></tr></table></figure>
+
 <p>这意味着最近一次的获取命令获取到了<code>bravo</code>仓库的<code>master</code>分支的提交<code>12</code></p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxshpa0es1j31ay0u0mzq.jpg" alt="`alpha` after `bravo/master` fetched"></p>
 <p>图形解读：对象可以被复制，也就是说提交历史可以被仓库共享</p>
@@ -767,30 +823,41 @@
 </li>
 </ol>
 <h3 id="合并FETCH-HEAD"><a href="#合并FETCH-HEAD" class="headerlink" title="合并FETCH_HEAD"></a>合并<code>FETCH_HEAD</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git merge FETCH_HEAD</span><br><span class="line">					Updating d14c7d2..94cd04d</span><br><span class="line">					Fast-forward</span><br></pre></td></tr></table></figure>
+
 <p>用户合并了<code>FETCH_HEAD</code>。<code>FETCH_HEAD</code>只不过另一个引用，它指向被合并者的提交<code>12</code>，<code>HEAD</code>指向合并者的提交<code>11</code>。Git执行了一次快进合并，并将<code>master</code>指向提交<code>12</code>。</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxshw5jqwrj31ay0u0jtw.jpg" alt="`alpha` after `FETCH_HEAD` merged"></p>
 <h3 id="从远程仓库拉分支"><a href="#从远程仓库拉分支" class="headerlink" title="从远程仓库拉分支"></a>从远程仓库拉分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git pull bravo master</span><br><span class="line">					Already up-to-date</span><br></pre></td></tr></table></figure>
+
 <p>用户从<code>alpha</code>仓库拉远程<code>bravo</code>仓库的<code>master</code>分支。拉（pull）是获取(fetch)和合并(merge)<code>FETCH_HEAD</code>的简写。Git会执行者两个命令，并显示<code>master</code>分支已经<code>Already up-to-date</code></p>
 <h3 id="克隆一个仓库"><a href="#克隆一个仓库" class="headerlink" title="克隆一个仓库"></a>克隆一个仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ <span class="built_in">cd</span> ..</span><br><span class="line">			~ $ git <span class="built_in">clone</span> alpha charlie</span><br><span class="line">					Cloning into <span class="string">'charlie'</span></span><br></pre></td></tr></table></figure>
+
 <p>用户进入上一级路径，将<code>alpha</code>仓库克隆到<code>charlie</code>仓库。克隆到<code>charlie</code>仓库的结果与用户使用<code>cp</code>命令聊创建<code>bravo</code>仓库类似，Git会创建一个新的名为<code>charlie</code>的仓库，初始化<code>charlie</code>为一个Git仓库，添加<code>alpha</code>作为远程仓库，并将远程仓库命名为<code>origin</code>，获取<code>origin</code>并合并<code>FETCH_HEAD</code></p>
 <h3 id="将内容推到远程仓库的分支"><a href="#将内容推到远程仓库的分支" class="headerlink" title="将内容推到远程仓库的分支"></a>将内容推到远程仓库的分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">			~ $ <span class="built_in">cd</span> alpha</span><br><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'13'</span> &gt; data/number.txt</span><br><span class="line">~/alpha $ git add data/number.txt</span><br><span class="line">~/alpha $ git commit -m <span class="string">'13'</span></span><br><span class="line">					[master 3238468] 13</span><br></pre></td></tr></table></figure>
+
 <p>用户回到<code>alpha</code>仓库，修改<code>data/number.txt</code>的内容为<code>13</code>并提交修改到<code>alpha</code>的<code>master</code>分支</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git remote add charlie ../charlie</span><br></pre></td></tr></table></figure>
+
 <p>设置<code>charlie</code>为<code>alpha</code>仓库的远程仓库</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git push charlie master</span><br><span class="line">					Writing objects: 100%</span><br><span class="line">					remote error: refusing to update checked out </span><br><span class="line">					branch: refs/heads/master because it will make </span><br><span class="line">					the index and work tree inconsistent</span><br></pre></td></tr></table></figure>
+
 <p>用户尝试将<code>master</code>分支推到<code>charlie</code></p>
 <p>所有的提交<code>13</code>相关的对象都被拷贝到<code>charlie</code></p>
 <p>用户需要创建一个新的分支，合并提交<code>13</code>再推到推到<code>charlie</code>。但实际上，用户希望有一个能随时推随时拉的仓库，就像GitHub的远程那样，他们需要一个bare仓库。</p>
 <h3 id="克隆一个bare仓库"><a href="#克隆一个bare仓库" class="headerlink" title="克隆一个bare仓库"></a>克隆一个bare仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ <span class="built_in">cd</span> ..</span><br><span class="line">			~ $ git <span class="built_in">clone</span> alpha delta --bare</span><br><span class="line">					Cloning into bare repository <span class="string">'delta'</span></span><br></pre></td></tr></table></figure>
+
 <p>用户进入到上一级目录，把<code>delta</code>克隆为一个bare仓库。这和普通的克隆仓库有两点不同。<code>config</code>配置文件会表明这个仓库是一个bare仓库。另外，存在<code>.git</code>目录下的文件会存到根目录下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">delta</span><br><span class="line">	- HEAD</span><br><span class="line">	- config</span><br><span class="line">	- objects</span><br><span class="line">	- refs</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxsro47bt2j30pm0cx74y.jpg" alt="image-20181202222437115"></p>
 <h3 id="将分支推到bare仓库"><a href="#将分支推到bare仓库" class="headerlink" title="将分支推到bare仓库"></a>将分支推到bare仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">			~ $ <span class="built_in">cd</span> alpha</span><br><span class="line">~/alpha $ git remote add delta ../delta</span><br></pre></td></tr></table></figure>
+
 <p>用户回到<code>alpha</code>目录下，将<code>delta</code>设置为<code>alpha</code>的远程仓库</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ <span class="built_in">printf</span> <span class="string">'14'</span> &gt; data/number.txt</span><br><span class="line">~/alpha $ git add data/number.txt</span><br><span class="line">~/alpha $ git commit -m <span class="string">'14'</span></span><br><span class="line">					[master cb51da8] 14</span><br></pre></td></tr></table></figure>
+
 <p>将<code>data/number/txt</code>的内容设置为<code>14</code>，并提交到<code>alpha</code>的<code>master</code>分支</p>
-<p><img src="/Users/quanxu/Library/Application Support/typora-user-images/image-20181202222812723.png" alt="image-20181202222812723"></p>
+<p>![image-20181202222812723](/Users/quanxu/Library/Application Support/typora-user-images/image-20181202222812723.png)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~/alpha $ git push delta master</span><br><span class="line">					Writing objects: 100%</span><br><span class="line">					To ../delta</span><br><span class="line">						3238468..cb51da8 master -&gt; master</span><br></pre></td></tr></table></figure>
+
 <p>将内容推到<code>delta</code>的<code>master</code>分支，总共分三步：</p>
 <ol>
 <li>与提交<code>14</code>相关的所有对象都从<code>alpha/.git/objects/</code>路径拷贝到<code>delta/objects/</code></li>
@@ -815,9 +882,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
-          
             <a href="/tags/翻译/" rel="tag"><i class="fa fa-tag"></i> 翻译</a>
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
           
         </div>
       
@@ -931,7 +998,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1067,7 +1134,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

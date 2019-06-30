@@ -492,6 +492,7 @@
         <p>原文地址： <a href="http://www.theshulers.com/whitepapers/internet_whitepaper/index.html" target="_blank" rel="noopener">「How does the Internet work?」</a> By Rus Shuler</p>
 <p>这是一篇20年前的经典文章，里面有些概念已经过时，但仍然是一篇很好的科普文章，将互联网的每个细节都讲述得非常简单易懂。</p>
 <a id="more"></a>
+
 <hr>
 <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>互联网是如何运作的？好问题！互联网经历了爆炸式的增长，我们不可避免地接受着来自电视、广播、杂志全方位的关于<code>www.com</code>的轰炸。正因为互联网已经占据了我们生活中的重要地位，透彻理解它的运行机制才能帮助我们最高效地运用这个新工具。</p>
 <p>这份白皮书将介绍互联网运行的底层结构和技术。这篇文章并不会深入探讨，但涵盖了每个领域的内容，以便让读者对涉及的概念有基本的理解。对于有些没有回答的问题，文章末尾会有一个资源列表供大家参考。任何评论、建议、问题等都可以直接通过作者的邮箱与作者联系。</p>
@@ -514,8 +515,7 @@
 <th>注释</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>应用层</td>
 <td>针对应用的协议，如www，电子邮件，FTP等</td>
 </tr>
@@ -531,8 +531,7 @@
 <td>物理层</td>
 <td>将二进制的包数据转换成网络信号，再将网络信号转换成二进制包<br>（如以太网卡，电话线调解器等）</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>如果我们跟着计算机发送信息”你好计算机5.6.7.8”给IP地址是5.6.7.8的计算机，就会看到如下情况：</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fv1x5zp6vvj30l00693yg.jpg" alt="image-20180908102400167"></p>
 <ol>
@@ -612,6 +611,7 @@
 </ol>
 <p>下面是一个简单的SMTP客户端和SMTP服务器的简单”对话“。<strong>R</strong>表示服务器发送的信息，<strong>S</strong>表示客户端发送的信息。</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">这个SMTP案例展示了Smith在主机USC-ISIF上，给Jones, Green,和Brown的主机BBN-UNIX发送邮件的过程。这里我们假设主机USC-ISIF直接连接主机BBN-UNIX。Jones和Brown收到了邮件。Green在主机BBN-UNIX上没有邮箱。</span><br><span class="line"></span><br><span class="line">-------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">R: 220 BBN-UNIX.ARPA<span class="built_in"> Simple </span>Mail Transfer<span class="built_in"> Service </span>Ready</span><br><span class="line">S: HELO USC-ISIF.ARPA</span><br><span class="line">R: 250 BBN-UNIX.ARPA</span><br><span class="line"></span><br><span class="line">S: MAIL <span class="keyword">FROM</span>:&lt;Smith@USC-ISIF.ARPA&gt;</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: RCPT <span class="keyword">TO</span>:&lt;Jones@BBN-UNIX.ARPA&gt;</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: RCPT <span class="keyword">TO</span>:&lt;Green@BBN-UNIX.ARPA&gt;</span><br><span class="line">R: 550 <span class="literal">No</span> such<span class="built_in"> user </span>here</span><br><span class="line"></span><br><span class="line">S: RCPT <span class="keyword">TO</span>:&lt;Brown@BBN-UNIX.ARPA&gt;</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: DATA</span><br><span class="line">R: 354 Start mail input; end with &lt;CRLF&gt;.&lt;CRLF&gt;</span><br><span class="line">S: Blah blah blah<span class="built_in">..</span>.</span><br><span class="line">S: <span class="built_in">..</span>.etc. etc. etc.</span><br><span class="line">S: .</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: QUIT</span><br><span class="line">R: 221 BBN-UNIX.ARPA<span class="built_in"> Service </span>closing transmission channel</span><br></pre></td></tr></table></figure>
+
 <p>SMTP协议由RFC 821规定。</p>
 <hr>
 <h3 id="传输控制协议"><a href="#传输控制协议" class="headerlink" title="传输控制协议"></a>传输控制协议</h3><p>在协议栈中，应用层下面是TCP层。当应用与互联网中的另一台计算机建立连接时，他们（通过特定的应用层协议）发送的信息会传递到TCP层。<strong>TCP层负责将应用程序协议导向目标计算机的正确应用程序上</strong>。端口号用来达到这一目标。端口就像计算机上的不同频道。打个比方，你浏览网页的同时也能查看邮件，这是因为这两个应用程序（浏览器和邮件客户端）使用不同的端口号。当数据包传递到计算机上时，它在协议栈中一路向上传递，TCP层根据它的端口号决定哪一个程序接收到这个数据包。</p>
@@ -630,33 +630,31 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">服务</th>
-<th style="text-align:center">端口号</th>
+<th align="center">服务</th>
+<th align="center">端口号</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">FTP</td>
-<td style="text-align:center">20/21</td>
+<tbody><tr>
+<td align="center">FTP</td>
+<td align="center">20/21</td>
 </tr>
 <tr>
-<td style="text-align:center">Telnet</td>
-<td style="text-align:center">23</td>
+<td align="center">Telnet</td>
+<td align="center">23</td>
 </tr>
 <tr>
-<td style="text-align:center">SMTP</td>
-<td style="text-align:center">25</td>
+<td align="center">SMTP</td>
+<td align="center">25</td>
 </tr>
 <tr>
-<td style="text-align:center">HTTP</td>
-<td style="text-align:center">80</td>
+<td align="center">HTTP</td>
+<td align="center">80</td>
 </tr>
 <tr>
-<td style="text-align:center">Quake III Arena</td>
-<td style="text-align:center">27960</td>
+<td align="center">Quake III Arena</td>
+<td align="center">27960</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 </blockquote>
 <hr>
 <h3 id="互联网协议"><a href="#互联网协议" class="headerlink" title="互联网协议"></a>互联网协议</h3><p>不同于TCP，<strong>IP是不可靠的、无连接的协议</strong>。IP并不在意数据是否送达目的地，它也不关心连接和端口号。<strong>IP的任务就是给其他计算机发送数据包</strong>。IP数据包是独立的实体，可能无序或根本没有送达。TCP的工作才是确保数据包送达且顺序正确。IP和TCP唯一的共同之处就是，收到数据后，IP也会给数据添加自己的头信息。IP头如下：</p>
@@ -808,7 +806,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -944,7 +942,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

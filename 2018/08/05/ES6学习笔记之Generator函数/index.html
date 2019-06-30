@@ -507,6 +507,15 @@
 </li>
 </ul>
 <a id="more"></a>
+
+
+
+
+
+
+
+
+
 <hr>
 <h3 id="Generator函数是什么"><a href="#Generator函数是什么" class="headerlink" title="Generator函数是什么"></a>Generator函数是什么</h3><p>Generator函数也是解决异步操作的一种方案。阮大大在《ES6入门》里给Generator下了两个定义，一个是它是“一个状态机，封装了多个内部状态”，第二个是它还是一个“遍历器对象生成器”，可以遍历Generator函数内部的每一个状态。</p>
 <p>这些术语听起来有点复杂，个人觉得Blue在ES6的课程里说的解释比较容易记住，Generator函数是一个可以中途停下来的函数，你push它一下，它就往前进一步。</p>
@@ -517,14 +526,17 @@
 <li>函数的调用必须使用<code>next()</code></li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"a"</span>);</span><br><span class="line">  <span class="keyword">yield</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"b"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> s = show();</span><br><span class="line">show.next();  <span class="comment">// "a"</span></span><br><span class="line">show.next();  <span class="comment">// "b"</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="yield返回值"><a href="#yield返回值" class="headerlink" title="yield返回值"></a><code>yield</code>返回值</h3><p><code>yield</code>既可以传参，又可以返回值，我们先来看看<code>yield</code>如何返回值。</p>
 <p>从上面那段代码中可以看到，Generator是一个遍历器对象，调用Generator函数并不会立即执行，而是返回一个指向内部状态的指针对象，如果我们将<code>show.next()</code>打印出来，可以看到实时上，它是一个包含了两个属性的对象，一个<code>value</code>属性，它的值是当前<code>yield</code>表达式的值，另一个是<code>done</code>属性，它的值是一个布尔值，表示遍历是否结束。如果当前<code>yield</code>没有值，那么<code>value</code>属性的值就是<code>undefined</code>。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> * <span class="title">helloWorldGenerator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'a'</span>);</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'hello'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'b'</span>);</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'world'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'c'</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'ending'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> hw = helloWorldGenerator();</span><br><span class="line">hw.next()  <span class="comment">//&#123;value: 'hello', done: false&#125;</span></span><br><span class="line">hw.next()  <span class="comment">//&#123;value: 'world', done: false&#125;</span></span><br><span class="line">hw.next()  <span class="comment">//&#123;value: 'ending', done: true&#125;</span></span><br><span class="line">hw.next()  <span class="comment">//&#123;value: undefined, done: true&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p>如果我们画一个图来看每一次指针指向的对象的值（即遇到的需要暂停的<code>yield</code>后面的值）会更加清晰</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-42c80bfe30f7a2fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="yield划分"></p>
 <p>三种颜色表示了三次调用Generator函数的内容。</p>
 <h3 id="next传参"><a href="#next传参" class="headerlink" title="next传参"></a><code>next</code>传参</h3><p>前面我们提到了，<code>yield</code>后面的值会作为<code>yield</code>之前的对象的<code>value</code>值返回出去，如果<code>yield</code>后面没有值，那么返回的<code>value</code>就是<code>undefined</code>。但是<strong>Generator函数可以通过<code>next()</code>传递参数到函数内部，作为上一个<code>yield</code>表达式的返回值</strong>。还是用<code>helloWorldGenerator</code>这个例子</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> * <span class="title">helloWorldGenerator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="keyword">yield</span> <span class="string">'hello'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">  <span class="keyword">let</span> b = <span class="keyword">yield</span> a;</span><br><span class="line">  <span class="built_in">console</span>.log(b);</span><br><span class="line">  <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> hw = helloWorldGenerator();</span><br><span class="line">hw.next(<span class="number">1</span>)  </span><br><span class="line"><span class="built_in">console</span>.log(hw.next(<span class="number">1</span>)) <span class="comment">//&#123;value: 'hello', done: false&#125;</span></span><br><span class="line">hw.next(<span class="number">2</span>)  <span class="comment">//2</span></span><br><span class="line"><span class="built_in">console</span>.log(hw.next(<span class="number">2</span>)) <span class="comment">//&#123;value: 2, done: false&#125;</span></span><br><span class="line">hw.next(<span class="number">3</span>)  <span class="comment">//3</span></span><br><span class="line"><span class="built_in">console</span>.log(hw.next(<span class="number">3</span>)) <span class="comment">//&#123;value: 3, done: true&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p>我们还是画图来看这个流程</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-513a7c2318870b69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="next()传递参数"></p>
 <p>可以看出，第一个<code>next()</code>语句因为之前没有出现<code>yield</code>语句，所以第一个<code>next()</code>传的参数总是无效。</p>
@@ -665,7 +677,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -801,7 +813,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

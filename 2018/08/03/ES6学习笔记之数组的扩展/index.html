@@ -528,9 +528,13 @@
 </li>
 </ul>
 <a id="more"></a>
+
+
+
 <hr>
 <h3 id="1-扩展运算符"><a href="#1-扩展运算符" class="headerlink" title="1. 扩展运算符"></a>1. 扩展运算符</h3><p>扩展运算符的写法是<code>...</code>三个点，用于将一个数组转为用逗号分隔的参数序列</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(...[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);  <span class="comment">// 1 2 3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">array, ...items</span>) </span>&#123;</span><br><span class="line">  array.push(...items);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">4</span>, <span class="number">38</span>];</span><br><span class="line">add(...numbers) <span class="comment">//42</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="辨析：扩展运算符-VS-rest参数"><a href="#辨析：扩展运算符-VS-rest参数" class="headerlink" title="辨析：扩展运算符 VS rest参数"></a>辨析：扩展运算符 VS rest参数</h4><p>扩展运算符与rest参数正好相反。扩展运算符用于将数组转换为参数序列，即<code>...array</code>；rest参数的写法是<code>...变量</code>，传入的变量是一系列参数，但是rest参数整体作为数组使用。</p>
 <p>扩展运算符可以直接将数组转换为参数，因此不用使用<code>apply</code>方法。</p>
 <p>####应用</p>
@@ -545,40 +549,54 @@
 </li>
 <li><p>转换字符串为数组</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[...<span class="string">'hello'</span>]  <span class="comment">// ['h', 'e', 'l', 'l', 'o']</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <h3 id="数组的新方法"><a href="#数组的新方法" class="headerlink" title="数组的新方法"></a>数组的新方法</h3><h4 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from()"></a><code>Array.from()</code></h4><p><code>Array.from()</code>方法用于将类似数组的对象（array-like object）和可遍历的对象转成真正的数组。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> nameSet = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'a'</span>, <span class="string">'b'</span>]);</span><br><span class="line"><span class="built_in">Array</span>.from(nameSet) <span class="comment">//['a', 'b']</span></span><br></pre></td></tr></table></figure>
+
 <p><code>Array.from()</code>还可以接受第二个参数，起到类似于<code>map</code>的作用，对每个元素进行处理，最终返回到新的数组中</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.from([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], (x)=&gt; x * x)  <span class="comment">//[1, 4, 9]</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of()"></a><code>Array.of()</code></h4><p><code>Array.of()</code>用于将一组值转换为数组。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)  <span class="comment">//[1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
 <p>这个方法用于弥补<code>Array()</code>方法在参数较少时，无法生成由参数构成的数组的缺陷。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>() <span class="comment">//[]</span></span><br><span class="line"><span class="built_in">Array</span>(<span class="number">3</span>) <span class="comment">//[, , ,]</span></span><br><span class="line"><span class="built_in">Array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>) <span class="comment">//[1, 2, 3]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.of() <span class="comment">//[]</span></span><br><span class="line"><span class="built_in">Array</span>.of(<span class="literal">undefined</span>) <span class="comment">//[undefined]</span></span><br><span class="line"><span class="built_in">Array</span>.of(<span class="number">1</span>) <span class="comment">//[1]</span></span><br><span class="line"><span class="built_in">Array</span>.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>) [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
 <h3 id="数组实例的新方法"><a href="#数组实例的新方法" class="headerlink" title="数组实例的新方法"></a>数组实例的新方法</h3><h4 id="copyWithin"><a href="#copyWithin" class="headerlink" title="copyWithin()"></a><code>copyWithin()</code></h4><p>将指定位置的成员复制到其他位置，覆盖原有元素。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.copyWithin(target, start = <span class="number">0</span>, end = <span class="keyword">this</span>.length);</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>target(必需): 从该位置开始替换数据</li>
 <li>start(可选)：从该位置开始读取数据</li>
 <li>end(可选)： 到该位置前停止读取数据</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>].copyWithin(<span class="number">0</span>, <span class="number">3</span>)  <span class="comment">//[4, 5, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="find-和findIndex"><a href="#find-和findIndex" class="headerlink" title="find()和findIndex"></a><code>find()</code>和<code>findIndex</code></h4><p><code>find</code>用于找出第一个符合条件的数组成员</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].find(<span class="function">(<span class="params">n</span>) =&gt;</span> n &gt; <span class="number">2</span>)  <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
 <p><code>findIndex</code>用于找到第一个符合条件的数组成员的位置</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].findIndex(<span class="function">(<span class="params">n</span>) =&gt;</span> n &gt; <span class="number">2</span>)  <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
 <p>这两个方法都可以识别<code>NaN</code>，弥补<code>indexOf</code>的不足。</p>
 <h4 id="fill"><a href="#fill" class="headerlink" title="fill()"></a><code>fill()</code></h4><p>使用给定值填充数组。用于初始化空数组非常方便</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">7</span>) <span class="comment">//[7, 7, 7]</span></span><br></pre></td></tr></table></figure>
+
 <p>也可以指定填充的起始位置和结束位置</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>].fill(<span class="number">7</span>, <span class="number">1</span>, <span class="number">2</span>)  <span class="comment">//['a', 7, 'b']</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="entries-keys-values"><a href="#entries-keys-values" class="headerlink" title="entries(), keys(), values()"></a><code>entries(), keys(), values()</code></h4><p>分别对键名、键值、键值对进行遍历。</p>
 <p>可以用<code>for...of</code>循环，也可以手动调用遍历器对象的<code>next</code>方法。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> index <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'b'</span>].keys()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(index);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//0 </span></span><br><span class="line"><span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="includes"><a href="#includes" class="headerlink" title="includes"></a><code>includes</code></h4><p>返回一个布尔值，表示数组是否包含特定的值</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].includes(<span class="number">2</span>)  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
 <p>可以添加第二个参数，规定开始搜索的起始位置</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].includes(<span class="number">3</span>, <span class="number">3</span>) <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <blockquote>
 <p>ES6学习笔记的内容主要基于阮一峰老师的<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">《ECMAScript 6入门》</a>，原文请见<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">链接</a></p>
@@ -716,7 +734,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -852,7 +870,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

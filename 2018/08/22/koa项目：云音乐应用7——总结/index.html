@@ -481,6 +481,9 @@
       
         <p>前面分步骤完成了云音乐应用的基本功能，有些功能暂时没能实现，我对这次做项目的过程做了一个小结，帮助自己分析了这个项目中的收获和问题。</p>
 <a id="more"></a>
+
+
+
 <h3 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h3><p>这是我第一次尝试做前后端兼顾的项目，课程里老师提供了大部分的思路，我在看完老师的讲解之后再自己摸索做了一遍。其中有一些细节尝试了用自己的方法完成，有一些细节功能没有完全做完，这些我会在问题总结里面提到。但总体来说，明白了前后端到底是怎么一回事，有一些之前并不十分理解的概念，比如cookie和session，在项目过程中明白了是什么，以及具体用来做什么的，它们如何起作用等。</p>
 <h4 id="1-搭建项目架构"><a href="#1-搭建项目架构" class="headerlink" title="1. 搭建项目架构"></a>1. 搭建项目架构</h4><p>之前跟着视频教程学node.js还有框架的时候，都是以某个功能或者常用中间件为单位来学习的，整个服务器的搭建其实都比较简单，通常流程是<em>引用<code>http</code>模块或者express/koa框架，创建服务器，规定服务器功能，服务器监听</em>。其中，服务器功能比较单一，比如实现一个文件的读写功能、解析一个请求体等。这次的项目会相对复杂一些，需要完成的功能多一些，所以在整个项目的搭建上也更贴近真实项目。</p>
 <p>这次项目框架包括：</p>
@@ -498,26 +501,26 @@
 <ol>
 <li>访问注册、登录地址能够访问登录和注册页面</li>
 <li>实现注册功能<ul>
-<li style="list-style: none"><input type="checkbox" checked> 判断用户名是否可用（是否已经存在）</li>
-<li style="list-style: none"><input type="checkbox" checked> 判断邮箱是否可用（是否已经存在 &amp;&amp; 是否符合邮箱格式）</li>
-<li style="list-style: none"><input type="checkbox" checked> 判断密码强度，显示相应的图案</li>
-<li style="list-style: none"><input type="checkbox" checked> 发送验证码，并判断验证码是否正确</li>
-<li style="list-style: none"><input type="checkbox" checked> 完成注册功能（在数据库中添加用户信息），并跳转到登录页面</li>
+<li><input checked disabled type="checkbox"> 判断用户名是否可用（是否已经存在）</li>
+<li><input checked disabled type="checkbox"> 判断邮箱是否可用（是否已经存在 &amp;&amp; 是否符合邮箱格式）</li>
+<li><input checked disabled type="checkbox"> 判断密码强度，显示相应的图案</li>
+<li><input checked disabled type="checkbox"> 发送验证码，并判断验证码是否正确</li>
+<li><input checked disabled type="checkbox"> 完成注册功能（在数据库中添加用户信息），并跳转到登录页面</li>
 </ul>
 </li>
 <li>实现登录功能<ul>
-<li style="list-style: none"><input type="checkbox" checked> 判断用户名是否存在，以及用户名与密码是否一致</li>
-<li style="list-style: none"><input type="checkbox" checked> 完成登录，在session中保存用户的登录状态，并跳转到音乐页面</li>
+<li><input checked disabled type="checkbox"> 判断用户名是否存在，以及用户名与密码是否一致</li>
+<li><input checked disabled type="checkbox"> 完成登录，在session中保存用户的登录状态，并跳转到音乐页面</li>
 </ul>
 </li>
 <li>音乐页面功能<ul>
-<li style="list-style: none"><input type="checkbox" checked> 根据用户id显示该用户的音乐列表</li>
-<li style="list-style: none"><input type="checkbox" checked> 点击添加按钮跳转到添加音乐页面，填写信息并上传文件后，在数据库中添加该条数据信息</li>
-<li style="list-style: none"><input type="checkbox" checked> 点击修改信息跳转到修改音乐页面</li>
-<li style="list-style: none"><input type="checkbox"> <del>填写信息并上传文件后，在数据库中修改该条信息</del></li>
-<li style="list-style: none"><input type="checkbox"> <del>点击删除按钮在数据库中删除该条信息</del></li>
-<li style="list-style: none"><input type="checkbox" checked> 点击播放按钮可以播放音乐</li>
-<li style="list-style: none"><input type="checkbox" checked> 点击退出按钮删除登录状态，跳转到登录页面</li>
+<li><input checked disabled type="checkbox"> 根据用户id显示该用户的音乐列表</li>
+<li><input checked disabled type="checkbox"> 点击添加按钮跳转到添加音乐页面，填写信息并上传文件后，在数据库中添加该条数据信息</li>
+<li><input checked disabled type="checkbox"> 点击修改信息跳转到修改音乐页面</li>
+<li><input disabled type="checkbox"> <del>填写信息并上传文件后，在数据库中修改该条信息</del></li>
+<li><input disabled type="checkbox"> <del>点击删除按钮在数据库中删除该条信息</del></li>
+<li><input checked disabled type="checkbox"> 点击播放按钮可以播放音乐</li>
+<li><input checked disabled type="checkbox"> 点击退出按钮删除登录状态，跳转到登录页面</li>
 </ul>
 </li>
 </ol>
@@ -682,7 +685,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -818,7 +821,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

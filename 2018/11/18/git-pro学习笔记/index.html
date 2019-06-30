@@ -488,7 +488,9 @@
       
 
       
-        <p>已经开始工作20多天了，每天都面对一堆没见过不会做的东西，想要努力学，也总觉得时间不够。每次领导找我说话，我都担心会让我明天不要来上班了。其中，让我觉得最坑的就是Git。<br>之前也使用过git，但都是自己的小项目，不涉及到多人协作，也没什么分支的概念，所以只用master，自己push来pull去的，也没出过什么问题。但是工作之后设计到多个任务同时推进，所以需要频繁切换分支，提交给老师们review，于是闹出了许多提交代码不干净的尴尬笑话。<br>今天认真看了<em>git pro</em>，也就是git自己的官方书，类似文档。看了前面三张操作部分的内容，下周再来看原理。<br><a id="more"></a></p>
+        <p>已经开始工作20多天了，每天都面对一堆没见过不会做的东西，想要努力学，也总觉得时间不够。每次领导找我说话，我都担心会让我明天不要来上班了。其中，让我觉得最坑的就是Git。<br>之前也使用过git，但都是自己的小项目，不涉及到多人协作，也没什么分支的概念，所以只用master，自己push来pull去的，也没出过什么问题。但是工作之后设计到多个任务同时推进，所以需要频繁切换分支，提交给老师们review，于是闹出了许多提交代码不干净的尴尬笑话。<br>今天认真看了<em>git pro</em>，也就是git自己的官方书，类似文档。看了前面三张操作部分的内容，下周再来看原理。</p>
+<a id="more"></a>
+
 <h2 id="Git-Pro"><a href="#Git-Pro" class="headerlink" title="Git Pro"></a>Git Pro</h2><h3 id="Git-如何工作"><a href="#Git-如何工作" class="headerlink" title="Git 如何工作"></a>Git 如何工作</h3><h4 id="版本控制的工具"><a href="#版本控制的工具" class="headerlink" title="版本控制的工具"></a>版本控制的工具</h4><ul>
 <li>分布式版本控制系统<ul>
 <li>客户端把代码仓库完整地镜像下来，如果一处协同工作的服务器发生故障，事后可以用任何一个镜像除了的本地仓库恢复</li>
@@ -551,25 +553,31 @@
 </ol>
 <h5 id="用户信息"><a href="#用户信息" class="headerlink" title="用户信息"></a>用户信息</h5><p>设置用户名称和邮件地址，每一个git提交都会使用这些信息，并且它会写入到每一次提交中，不可更改</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"xxx"</span></span><br><span class="line">git config --global user.email xxx@xxx.com</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>如果使用了<code>--global</code>选项，那么该命令只需要运行一次</li>
 <li>如果想在当前项目中使用不同的用户名称和邮件地址，可以在当前项目目录下运行没有<code>--global</code>选项的命令来配置</li>
 </ul>
 <h5 id="文本编辑器"><a href="#文本编辑器" class="headerlink" title="文本编辑器"></a>文本编辑器</h5><p>配置默认的文本编辑器</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.editor emacs</span><br></pre></td></tr></table></figure>
+
 <h5 id="检查配置"><a href="#检查配置" class="headerlink" title="检查配置"></a>检查配置</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>可能会看到重复的变量名，因为git会从不同的文件中读取同一个配置，这种情况下，git会找到它找到的每一个变量的最后一个配置</li>
 <li>也可以通过输入<code>git config &lt;key&gt;</code>找检查某一项配置</li>
 </ul>
 <h4 id="获取帮助"><a href="#获取帮助" class="headerlink" title="获取帮助"></a>获取帮助</h4><p>需要获取帮助时，有三种方法可以找到git命令的使用手册</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">help</span> &lt;verb&gt;</span><br><span class="line">git &lt;verb&gt; --<span class="built_in">help</span></span><br><span class="line">man git-&lt;verb&gt;</span><br></pre></td></tr></table></figure>
+
 <h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><h4 id="获取git仓库"><a href="#获取git仓库" class="headerlink" title="获取git仓库"></a>获取git仓库</h4><h5 id="1-在现有目录中初始化仓库"><a href="#1-在现有目录中初始化仓库" class="headerlink" title="1. 在现有目录中初始化仓库"></a>1. 在现有目录中初始化仓库</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><p>该命令创建一个名为<code>.git</code>的子目录</p>
 </li>
 <li><p>如果需要添加文件来进行版本控制</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add *.js</span><br><span class="line">git add LICENSE</span><br><span class="line">git commit -m <span class="string">"initial project version"</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h5 id="2-克隆现有仓库"><a href="#2-克隆现有仓库" class="headerlink" title="2. 克隆现有仓库"></a>2. 克隆现有仓库</h5><ul>
@@ -578,6 +586,7 @@
 </li>
 <li><p>如果想自定义本地仓库的名字，可以使用如下命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/xxx/xxx mulibgit</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h4 id="记录每次更新"><a href="#记录每次更新" class="headerlink" title="记录每次更新"></a>记录每次更新</h4><ul>
@@ -598,7 +607,9 @@
 </li>
 </ul>
 <h5 id="跟踪新文件"><a href="#跟踪新文件" class="headerlink" title="跟踪新文件"></a>跟踪新文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
 <h5 id="暂存已修改文件"><a href="#暂存已修改文件" class="headerlink" title="暂存已修改文件"></a>暂存已修改文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>git add</code>可以理解成「添加内容到下一次提交中」</li>
 </ul>
@@ -809,6 +820,7 @@
 </li>
 <li><p>在B上完成任务后，合并分支B到master，再删除分支B</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge B </span><br><span class="line">git branch -d B</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <h5 id="遇到冲突时的分支合并"><a href="#遇到冲突时的分支合并" class="headerlink" title="遇到冲突时的分支合并"></a>遇到冲突时的分支合并</h5><ul>
@@ -1010,7 +1022,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1146,7 +1158,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

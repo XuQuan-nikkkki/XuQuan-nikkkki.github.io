@@ -132,18 +132,18 @@
 
 
 
-<meta name="description" content="这一部分npm的内容重点介绍了package.json里的信息，让学员补齐如作者、版本、描述、证书等信息。关于版本提到了两个小技巧：  正常情况下版本号就是：major.minor.patch（主版本号.次版本号.补丁版本） ~version会匹配最近的补丁版本依赖包，比如~1.2.3会匹配所有1.2.x版本，但不包括1.3.0 \^version会匹配最新的小版本依赖包，比如^1.2.3会匹配所">
+<meta name="description" content="这一部分npm的内容重点介绍了package.json里的信息，让学员补齐如作者、版本、描述、证书等信息。关于版本提到了两个小技巧：  正常情况下版本号就是：major.minor.patch（主版本号.次版本号.补丁版本） ~version会匹配最近的补丁版本依赖包，比如~1.2.3会匹配所有1.2.x版本，但不包括1.3.0 ^version会匹配最新的小版本依赖包，比如^1.2.3会匹配所有">
 <meta name="keywords" content="freecodecamp,npm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用npm管理包">
 <meta property="og:url" content="http://xuquan.site/2018/06/23/利用npm管理包/index.html">
 <meta property="og:site_name" content="Nikkkki&#39;s Notes">
-<meta property="og:description" content="这一部分npm的内容重点介绍了package.json里的信息，让学员补齐如作者、版本、描述、证书等信息。关于版本提到了两个小技巧：  正常情况下版本号就是：major.minor.patch（主版本号.次版本号.补丁版本） ~version会匹配最近的补丁版本依赖包，比如~1.2.3会匹配所有1.2.x版本，但不包括1.3.0 \^version会匹配最新的小版本依赖包，比如^1.2.3会匹配所">
+<meta property="og:description" content="这一部分npm的内容重点介绍了package.json里的信息，让学员补齐如作者、版本、描述、证书等信息。关于版本提到了两个小技巧：  正常情况下版本号就是：major.minor.patch（主版本号.次版本号.补丁版本） ~version会匹配最近的补丁版本依赖包，比如~1.2.3会匹配所有1.2.x版本，但不包括1.3.0 ^version会匹配最新的小版本依赖包，比如^1.2.3会匹配所有">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-08-07T06:53:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用npm管理包">
-<meta name="twitter:description" content="这一部分npm的内容重点介绍了package.json里的信息，让学员补齐如作者、版本、描述、证书等信息。关于版本提到了两个小技巧：  正常情况下版本号就是：major.minor.patch（主版本号.次版本号.补丁版本） ~version会匹配最近的补丁版本依赖包，比如~1.2.3会匹配所有1.2.x版本，但不包括1.3.0 \^version会匹配最新的小版本依赖包，比如^1.2.3会匹配所">
+<meta name="twitter:description" content="这一部分npm的内容重点介绍了package.json里的信息，让学员补齐如作者、版本、描述、证书等信息。关于版本提到了两个小技巧：  正常情况下版本号就是：major.minor.patch（主版本号.次版本号.补丁版本） ~version会匹配最近的补丁版本依赖包，比如~1.2.3会匹配所有1.2.x版本，但不包括1.3.0 ^version会匹配最新的小版本依赖包，比如^1.2.3会匹配所有">
 
 
 
@@ -483,9 +483,10 @@
 <ul>
 <li>正常情况下版本号就是：major.minor.patch（主版本号.次版本号.补丁版本）</li>
 <li>~version会匹配最近的补丁版本依赖包，比如~1.2.3会匹配所有1.2.x版本，但不包括1.3.0</li>
-<li>\^version会匹配最新的小版本依赖包，比如^1.2.3会匹配所有的1.x.x，但不包括2.0.0</li>
+<li>^version会匹配最新的小版本依赖包，比如^1.2.3会匹配所有的1.x.x，但不包括2.0.0</li>
 </ul>
 <a id="more"></a>
+
 <p>node.js和express的第一部分还是使用npm,新的课程解决了老的坑，但也带了新的坑，好在新的坑好解决一些。</p>
 <p>之前的课程要求在c9平台上用npm下载打包的课程学习如何使用node(learnyounode)还有mongoDB。api的部署则要求在heroku 上，同时配合FCC的一个集合了express，mongoDB等项目所需资源的轻量级包，叫clementine.js，但是我尝试了很多次，将clementine.js部署到heroku上之后，就会出现application error的错误，总之让人很头疼。</p>
 <p>新的课程用<a href="https://glitch.com/" target="_blank" rel="noopener">glitch</a>作为构建环境，使用起来方便了很多。在glitch上注册用户后，直接create project即可开始。</p>
@@ -508,19 +509,20 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"version"</span>: <span class="string">"1.0"</span>,</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/managing-packages-with-npm/expand-your-project-with-external-packages-from-npm" target="_blank" rel="noopener">Expand Your Project with External Packages from npm</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"moment"</span>: <span class="string">"2.14.0"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"<span class="selector-tag">moment</span>": "2<span class="selector-class">.14</span><span class="selector-class">.0</span>"</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/managing-packages-with-npm/manage-npm-dependencies-by-understanding-semantic-versioning" target="_blank" rel="noopener">Manage npm Dependencies By Understanding Semantic Versioning</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"moment"</span>: <span class="string">"2.10.2"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"<span class="selector-tag">moment</span>": "2<span class="selector-class">.10</span><span class="selector-class">.2</span>"</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/managing-packages-with-npm/use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-dependency" target="_blank" rel="noopener">Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"moment"</span>: <span class="string">"~2.10.2"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"<span class="selector-tag">moment</span>": "~2<span class="selector-class">.10</span><span class="selector-class">.2</span>"</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/managing-packages-with-npm/use-the-caret-character-to-use-the-latest-minor-version-of-a-dependency" target="_blank" rel="noopener">Use the Caret-Character to Use the Latest Minor Version of a Dependency</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"moment"</span>: <span class="string">"^2.10.2"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"<span class="selector-tag">moment</span>": "^2<span class="selector-class">.10</span><span class="selector-class">.2</span>"</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://learn.freecodecamp.org/apis-and-microservices/managing-packages-with-npm/remove-a-package-from-your-dependencies" target="_blank" rel="noopener">Remove a Package from Your Dependencies</a></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"dependencies"</span> &#123;</span><br><span class="line">  <span class="attr">"express"</span>: <span class="string">"4.10.0"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 
@@ -656,7 +658,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -792,7 +794,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

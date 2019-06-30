@@ -491,11 +491,15 @@
         <p>上个星期看到Mojave，一激动就点了升级，也没记得提前备份，升级完电脑卡的跟定格动画一样。后来找到一个8月的备份，勉强给装上了，结果恢复到10.13.5还是一样卡。昨天把面试的作业弄完，想着赶紧得给电脑拾捣拾捣了，于是备份了资料，摸盘重新升级到Mojave，终于流畅了，不过资料还有app啥的都得重新收拾。</p>
 <p>其实我还挺喜欢隔段时间重装一下电脑的，因为总是不知不觉攒了很多用不到的东西，摸盘重装是一个很好的给自己复盘的机会，只不过有些东西重头收拾总是会忘七忘八，这次给自己写个备忘，以后再遇到重装的情况可以提醒自己。</p>
 <a id="more"></a>
+
+
+
 <h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><h3 id="Dock栏"><a href="#Dock栏" class="headerlink" title="Dock栏"></a>Dock栏</h3><h4 id="Dock栏只保留少量图标"><a href="#Dock栏只保留少量图标" class="headerlink" title="Dock栏只保留少量图标"></a>Dock栏只保留少量图标</h4><p>基本上，每次重装完的第一件事就是把dock栏里的那些内置app都给移除掉，我一直坚信，屏幕上的内容越少，对自己的干扰就越小。我的dock栏一般只会留几个删除不掉的内容，其余的app，不管是不是常用，都通过alfred启动。</p>
 <h4 id="图标可以调大"><a href="#图标可以调大" class="headerlink" title="图标可以调大"></a>图标可以调大</h4><p>因为dock栏的图标很少，所以可以适当放大一些，找起来比较方便。</p>
 <h3 id="launchpad"><a href="#launchpad" class="headerlink" title="launchpad"></a>launchpad</h3><p>launchpad图标可以通过设置每页几行几列图标来调整图标大小，我之前每次重装都会调，这次忘了。我的习惯是把所有的图标都整理到文件夹图标里，所以不论多少应用，launchpad都不会超过一页。这样看起来很不方便查找内容，但事实上，我几乎不会进launchpad找应用，都是通过alfred启动，所以想想其实调不调整大小都没关系。</p>
 <h3 id="app来源"><a href="#app来源" class="headerlink" title="app来源"></a>app来源</h3><p>有时候下载了破解版的app会显示没法安装，或者安装了没法使用的情况，可以通过终端命令取消对来源不明的app的限制（毕竟还是有风险的，需要自己把握到底什么app可以装，什么不可以）</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
+
 <p>输入密码后，「系统偏好设置」—「安全性与隐私」—「通用」中允许下载的应用来源就会变成「任何来源」。</p>
 <p><img src="/Users/quanxu/Library/Application%20Support/typora-user-images/image-20181001113723811.png" alt="image-20181001113723811"></p>
 <p>这时，再安装一些非app store下载的软件就没有限制了。</p>
@@ -506,11 +510,13 @@
 </li>
 <li><p>切换镜像源</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm use taobao</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h5 id="下载nodemon"><a href="#下载nodemon" class="headerlink" title="下载nodemon"></a>下载nodemon</h5><ul>
 <li><p>下载</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g nodemon</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <p>变更服务器代码时，用nodemon不用重启服务器</p>
@@ -543,7 +549,7 @@
 <li><p><strong>BaiduAdFinisher</strong> 屏蔽百度上的广告</p>
 </li>
 <li><p><strong>CSS Peeper</strong> 查看关于CSS的内容，整体的包括CSS文件大小、加载速度，点击局部可以显示布局属性、字体、颜色等</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fvt2e0uuejj30g20wgjtq.jpg" width="40%"></p>
+<img src="https://ws3.sinaimg.cn/large/006tNc79ly1fvt2e0uuejj30g20wgjtq.jpg" width="40%">
 </li>
 <li><p><strong>Emmet Re:view</strong> 查看页面的响应式情况</p>
 </li>
@@ -568,7 +574,7 @@
 <li><p><strong>WhatFont</strong> 可以显示鼠标所在位置的文本字体</p>
 </li>
 <li><p><strong>what runs</strong> 显示网页上使用到的所有技术（插件、看见、数据分析系统、广告系统，甚至字体等）</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fvt22kxry5j30p60rggox.jpg" width="50%"></p>
+<img src="https://ws3.sinaimg.cn/large/006tNc79ly1fvt22kxry5j30p60rggox.jpg" width="50%">
 </li>
 <li><p><strong>windscribe</strong> 科学上网工具，一个月送10G流量，稳定，快捷，实惠</p>
 </li>
@@ -606,9 +612,14 @@
 </li>
 </ul>
 <h4 id="VS-Code"><a href="#VS-Code" class="headerlink" title="VS Code"></a>VS Code</h4><p>懒得列了。。。</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fvubamw5sbj30fu10mgqj.jpg" width="40%"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvubbmd0gvj30fm0xm0xc.jpg" width="40%"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fvubcm4qrxj30gi0no77h.jpg" width="40%"></p>
+<img src="https://ws2.sinaimg.cn/large/006tNbRwly1fvubamw5sbj30fu10mgqj.jpg" width="40%">
+
+<img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvubbmd0gvj30fm0xm0xc.jpg" width="40%">
+
+<img src="https://ws2.sinaimg.cn/large/006tNbRwly1fvubcm4qrxj30gi0no77h.jpg" width="40%">
+
+
+
 <h4 id="iTerm"><a href="#iTerm" class="headerlink" title="iTerm"></a>iTerm</h4><p>iTerm倒不需要折腾插件，主要就是UI，弄好了，每天看着命令行就很开心，没弄好，真是丑的让人不忍直视。</p>
 <p>网上的教程一大堆。这里贴一个我比较喜欢的：<a href="https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-prompt-3ca2acc967f" target="_blank" rel="noopener">十分鐘打造漂亮又好用的 zsh command line 環境</a></p>
 <p>需要注意的是安装好zsh，修改完主题后，下载字体之前，需要先安装git（新电脑需要）和配置。</p>
@@ -809,7 +820,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -945,7 +956,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

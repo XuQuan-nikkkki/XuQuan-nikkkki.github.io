@@ -484,6 +484,7 @@
       
         <p>Vue是三大前端框架之一，在国内应该是现在最火的框架了。</p>
 <a id="more"></a>
+
 <h4 id="前端框架和库的区别"><a href="#前端框架和库的区别" class="headerlink" title="前端框架和库的区别"></a>前端框架和库的区别</h4><p>前端和框架和前端库都是我们经常用到的工具。比如前几年非常火的jQuery就是一个前端库，前端库主要用于某一个专门的功能的集合，比如jQuery就用于操作DOM，库的功能由开发者来操纵，可以从封装的角度来理解库，我们从库中引用封装好的功能，再应用到项目中。</p>
 <p>前端框架是一个全方位的功能更齐全的架构。和库相比，框架更像一整套解决方案，它有自己的执行规范，同时按照它的规范来执行开发者编写的代码。</p>
 <p>我们可以将框架的使用总结为三个步骤：</p>
@@ -493,13 +494,40 @@
 <li>释放一些资源</li>
 </ol>
 <h3 id="vue起步"><a href="#vue起步" class="headerlink" title="vue起步"></a>vue起步</h3><h4 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i vue -S</span><br></pre></td></tr></table></figure>
+
 <p>下载之后我们可以在vue的包里看到<code>dist</code>文件包，里面有不同的<code>vue</code>文件：</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fum1o1aq5vj30qk0fuq58.jpg" width="70%"></p>
+<img src="https://ws2.sinaimg.cn/large/006tNbRwly1fum1o1aq5vj30qk0fuq58.jpg" width="70%">
+
+
+
 <p>这是针对不同的规范的vue版本。这里我们使用vue.js。在实际项目中可以使用vue.min.js，但在开发环境中，使用vue.js可以有报错信息，方便我们修改。</p>
 <h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>如前面所说，框架需要先初始化，那么我们就按步骤来启动一个vue框架实现的内容：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>vue project<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 1. 引入包 --&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"./node_modules/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="comment">&lt;!-- 2. 创建vue对象来启动vue --&gt;</span></span></span></span><br><span class="line"><span class="actionscript">      <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">// 3. 配置options</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">//3.1 配置发生行为的目的地(即vue在哪里生效)，建议不要用html元素，所以我们创建一个div来作为容器</span></span></span><br><span class="line"><span class="actionscript">        el: <span class="string">"#app"</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="comment">// 3.2 配置装载的模板</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">        template: '<span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><span class="template-variable">&#123;&#123;text&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>',</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// 3.3 动态数据声明</span></span></span><br><span class="line"><span class="actionscript">        data: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">            text: <span class="string">"hello world"</span></span></span><br><span class="line"><span class="undefined">          &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>这样我们就完成了vue最简单的配置，在浏览器中打开html文件就可以看到如下效果：</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fum2iir1wbj30fc086gml.jpg" width="50%"></p>
+<img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fum2iir1wbj30fc086gml.jpg" width="50%">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       
     </div>
@@ -631,7 +659,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -767,7 +795,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

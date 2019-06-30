@@ -495,6 +495,7 @@
       
         <p>浏览器是使用最广泛的软件。目前桌面端的五大浏览器包括Chrome, IE，Firefox, Safari和Opera，移动端有安卓浏览器，iPhone, Opera Mini和Opera Mobile, UC浏览器，诺基亚S40/S60浏览器还有Chrome。这些浏览器中，除了Opera，其他均是基于WebKit引擎。</p>
 <a id="more"></a>
+
 <h3 id="浏览器的主要功能"><a href="#浏览器的主要功能" class="headerlink" title="浏览器的主要功能"></a>浏览器的主要功能</h3><p>浏览器最主要的功能是将从服务器请求来的资源展现在浏览器窗口中。这些资源通常是一个HTML文档，但有时也会是PDF文件、图片或其他类型的内容。这些资源的来源由用户通过URI（统一资源辨识符）来明确（即用户输入网址地址）。</p>
 <p>W3C（World Wide Web联盟）规定了关于网页的标准，其中包括针对HTML和CSS的标准。浏览器会根据这些标准来解析和呈现HTML文件。过去浏览器们只遵循部分标准，同时发展自己的插件，这导致了严重的兼容性问题，现在大部分浏览器都遵循统一的标准。</p>
 <p>浏览器的用户界面基本一致，包括以下元素：</p>
@@ -554,6 +555,7 @@
 <p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fuzsqv3xfoj313u0ouq5n.jpg" alt="image-20180906141956594"></p>
 <h4 id="词汇和句法"><a href="#词汇和句法" class="headerlink" title="词汇和句法"></a>词汇和句法</h4><p>词汇通常用正则表达式来表示。比如数字可以这样表达：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INTEGER: <span class="number">0</span>|[<span class="number">1</span><span class="number">-9</span>][<span class="number">0</span><span class="number">-9</span>]*</span><br></pre></td></tr></table></figure>
+
 <p>语法通常遵循BNF范式。</p>
 <h4 id="解析器的种类"><a href="#解析器的种类" class="headerlink" title="解析器的种类"></a>解析器的种类</h4><p>解析器有两种：<strong>自上而下解析器</strong>和<strong>自下而上解析器</strong>。</p>
 <p>自上而下解析器是从语法的高层结构触发，尝试从中找到匹配的结构；自下而上解析器是从底层规则触发，将输入内容逐步转化成语法规则，直至满足高层规则。</p>
@@ -564,6 +566,7 @@
 <h4 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h4><p>解析器解析出的解析树是由DOM元素和属性节点共同构成的树状结构。DOM（文档对象模型）是HTML文档的对象表示，也是外部内容与HTML元素之间的接口。它的根节点是<code>document</code>对象。</p>
 <p>DOM和标记之间几乎是一一对应的。以这段代码为例：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      Hello World</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"example.png"</span>/&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>可以解析成如下DOM树：</p>
 <p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fuzt77k3fyj30b4063gm6.jpg" alt="img"></p>
 <p>和HTML一样，DOM也是W3C规定的。</p>
@@ -585,7 +588,8 @@
 <hr>
 <h3 id="CSS解析"><a href="#CSS解析" class="headerlink" title="CSS解析"></a>CSS解析</h3><p>不同于HTML，CSS是上下文无关语法，CSS规范规定了CSS的此法和语法，所以可以使用上文中描述的各种解析器来解析。</p>
 <p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fuzudg8xpmj30dw0axgmf.jpg" alt="img"></p>
-<p><br></p>
+<br>
+
 <h4 id="处理脚本和样式表的顺序"><a href="#处理脚本和样式表的顺序" class="headerlink" title="处理脚本和样式表的顺序"></a>处理脚本和样式表的顺序</h4><h5 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h5><p>网络模型是同步的。也就是说，解析器遇到<code>&lt;script&gt;</code>标记时，会立即解析并执行脚本。此时文档的解析会停止，直到脚本解析完成。（这也是为什么建议将文档内的<code>script</code>内容放到<code>body</code>底部，因为文档在未解析完成的情况下，先执行脚本，可能会导致错误）</p>
 <p>如果脚本是外部的，解析过程也会停止，直到从网络同步抓取资源完成后再解析。</p>
 <p>如果将脚本标注为”<code>defer</code>“，则不会停止文档解析，而是等到解析结束后再执行。</p>
@@ -790,7 +794,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -926,7 +930,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

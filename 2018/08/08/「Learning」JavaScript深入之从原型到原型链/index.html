@@ -483,7 +483,7 @@
       
 
       
-        <p>学习内容：<a href="https://mp.weixin.qq.com/s?__biz=MzUzOTM0MTE4OQ==&amp;mid=2247484119&amp;idx=1&amp;sn=63ce12bbf9dd4c4c8780a4568bb94975&amp;chksm=fac8ba3dcdbf332ba76f97b9b6b82b9b18116d87aaeeeae2e51ef07667836d7b6a04e1b47c2a&amp;mpshare=1&amp;scene=1&amp;srcid=0417LWrshnhirAheKZRGuZeG%23rd" target="_blank" rel="noopener">JavaScript深入之从原型到原型链</a></p>
+        <p>学习内容：<a href="https://mp.weixin.qq.com/s?__biz=MzUzOTM0MTE4OQ==&mid=2247484119&idx=1&sn=63ce12bbf9dd4c4c8780a4568bb94975&chksm=fac8ba3dcdbf332ba76f97b9b6b82b9b18116d87aaeeeae2e51ef07667836d7b6a04e1b47c2a&mpshare=1&scene=1&srcid=0417LWrshnhirAheKZRGuZeG%23rd" target="_blank" rel="noopener">JavaScript深入之从原型到原型链</a></p>
 <h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><ul>
 <li>构造函数创建对象<ul>
 <li><code>prototype</code>属性</li>
@@ -506,7 +506,11 @@
 </li>
 </ul>
 <h3 id="原型链三大定律"><a href="#原型链三大定律" class="headerlink" title="原型链三大定律"></a>原型链三大定律</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="comment">//1. 父元素的prototype 等于 子元素的__proto__</span></span><br><span class="line">Person.prototype === person.__proto__  <span class="comment">//true</span></span><br><span class="line"><span class="comment">//2. 父元素原型的constructor指向自己</span></span><br><span class="line">Person.prototype.constructor === Perosn  <span class="comment">//true</span></span><br><span class="line"><span class="comment">//3. 获取对象的原型方法</span></span><br><span class="line"><span class="built_in">Object</span>.getPrototypeOf(person) === Person.prototype  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
+
+
+
 <hr>
 <h3 id="构造函数创建对象"><a href="#构造函数创建对象" class="headerlink" title="构造函数创建对象"></a>构造函数创建对象</h3><h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a><code>prototype</code></h4><ul>
 <li><p>每个函数都有<code>prototype</code>属性</p>
@@ -545,6 +549,7 @@
 </blockquote>
 <p>因为实例本身没有<code>constructor</code>属性，当读不到时，会向<code>Father.prototype</code>查找，所以实际上是</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">person.constructor === Person.prototype.constructor;  <span class="comment">//true</span></span><br><span class="line">Person.prototype.constructor === Person;   <span class="comment">//true</span></span><br><span class="line">person.constructor === Person;   <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="proto-属性"><a href="#proto-属性" class="headerlink" title="__proto__属性"></a><code>__proto__</code>属性</h4><p><code>__proto__</code>属性是一个非标准的访问原型的方法，当使用<code>obj.__proto__</code>时，可以理解成返回了<code>Object.getPrototypeOf(obj)</code></p>
 
       
@@ -679,7 +684,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -815,7 +820,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

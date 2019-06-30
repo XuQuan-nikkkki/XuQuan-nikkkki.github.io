@@ -481,6 +481,7 @@
       
         <p>React官方文档也一直没看完，sigh</p>
 <a id="more"></a>
+
 <h3 id="Accessibility"><a href="#Accessibility" class="headerlink" title="Accessibility"></a>Accessibility</h3><ul>
 <li></li>
 </ul>
@@ -489,6 +490,7 @@
 </li>
 <li><p>A component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;DataProvider render=&#123;data =&gt; (&lt;h1&gt;Hello &#123;data.target&#125;&lt;/h1&gt;)&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h4 id="Why-render-prop"><a href="#Why-render-prop" class="headerlink" title="Why render prop?"></a>Why render prop?</h4><ul>
@@ -496,6 +498,7 @@
 </li>
 <li><p>to make components reusable, sometimes, we have to pass the state of component A to component B, without embedding it in the component A, in order to use A’s state</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Cat extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    const mouse = this.props.mouse</span><br><span class="line">    return (</span><br><span class="line">    	&lt;img src=&apos;/cat.jpg&apos; style=&#123;&#123; position: &apos;absolute&apos;, left: mouse.x, top: mouse.y &#125;&#125;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Mouse extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props)</span><br><span class="line">    this.handleMouseMove = this.handleMouseMove.bind(this)</span><br><span class="line">    this.state = &#123; x: 0, y: 0 &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  handleMouseMove(event) &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      x: event.clientX,</span><br><span class="line">      y: event.clientY,</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">    	&lt;div style=&#123;&#123; height: &apos;100%&apos; &#125;&#125; onMouseMove=&#123;this.handleMouseMove&#125;&gt;</span><br><span class="line">    		&#123;this.props.render(this.state)&#125;</span><br><span class="line">    	&lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MouseTracker extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">    	&lt;div&gt;</span><br><span class="line">    		&lt;h1&gt;Move the mouse around!&lt;/h1&gt;</span><br><span class="line">    		&lt;Mouse render=&#123;mouse =&gt; (</span><br><span class="line">    			&lt;Cat mouse=&#123;mouse&#125; /&gt;</span><br><span class="line">    		)&#125;/&gt;</span><br><span class="line">    	&lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>a render prop is a <strong>function prop</strong> that a component uses to know what to render</p>
@@ -635,7 +638,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -771,7 +774,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

@@ -482,6 +482,7 @@
         <p>koa在趋势上应该比express风头更劲，因为koa可以调用async, await来解决异步，避免了多层嵌套导致代码的混乱。</p>
 <p>但在很多基本功能上，koa和express区别不大，所以有了express的基础之后再学习koa就轻松很多。这和学习过一种模板引擎之后再学习其他模板引擎都会容易很多是一样的道理。</p>
 <a id="more"></a>
+
 <h4 id="启动步骤"><a href="#启动步骤" class="headerlink" title="启动步骤"></a>启动步骤</h4><ol>
 <li>引入koa对象 <code>const Koa = require(&quot;koa&quot;)</code></li>
 <li>创建服务器对象 <code>const app = new Koa()</code> <ul>
@@ -503,6 +504,7 @@
 </ul>
 <p>需要注意的是koa创建的服务器的<code>request</code>和<code>response</code>都在<code>context</code>身上，所以写法应该是</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">"koa"</span>);</span><br><span class="line"><span class="keyword">let</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line">app.use(<span class="function">(<span class="params">ctx, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(ctx.request.query);</span><br><span class="line">  ctx.response.body = <span class="string">"hello world"</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <p>写作<code>ctx.req</code>和<code>ctx.res</code>也可以。但是不要使用node的原生<code>res</code>对象</p>
 <h4 id="context常用属性"><a href="#context常用属性" class="headerlink" title="context常用属性"></a><code>context</code>常用属性</h4><ul>
 <li><code>ctx.cookies.get(name)</code> 获取cookies</li>
@@ -654,7 +656,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -790,7 +792,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

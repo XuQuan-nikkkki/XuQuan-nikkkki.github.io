@@ -481,6 +481,7 @@
       
         <p>学webpack是因为每次写错代码之后的调试都会因为代码被压缩过而找不到出错的原始位置，所以想学一学到底怎么配置。</p>
 <a id="more"></a>
+
 <h1 id="Webpack-文档学习"><a href="#Webpack-文档学习" class="headerlink" title="Webpack 文档学习"></a>Webpack 文档学习</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h3><h4 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h4><ul>
 <li>webpack是一个静态模块打包器</li>
 </ul>
@@ -507,6 +508,7 @@
 </li>
 <li><p>单个入口写法：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    main: <span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h5 id="对象语法"><a href="#对象语法" class="headerlink" title="对象语法"></a>对象语法</h5><ul>
@@ -514,12 +516,15 @@
 </li>
 <li><p><strong>webpack.config.js</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/app.js'</span>,</span><br><span class="line">    vendors: <span class="string">'./src/vendors.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h5 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h5><p>一个HTML页面只指定一个入口</p>
 <h3 id="出口"><a href="#出口" class="headerlink" title="出口"></a>出口</h3><h4 id="是什么-2"><a href="#是什么-2" class="headerlink" title="是什么"></a>是什么</h4><ul>
-<li>告诉webpack在哪里输出它所创建的bundles，以及如何命名这些文件（控制webpack如何向硬盘写入编译文件）</li>
-<li>主输出文件默认为<code>./dist/main.js</code></li>
+<li><p>告诉webpack在哪里输出它所创建的bundles，以及如何命名这些文件（控制webpack如何向硬盘写入编译文件）</p>
+</li>
+<li><p>主输出文件默认为<code>./dist/main.js</code></p>
+</li>
 <li><p>其他生成文件默认输出目录是<code>./dist</code></p>
 </li>
 <li><p>即使可以存在多个入口，但只指定一个输出配置</p>
@@ -532,6 +537,7 @@
 </li>
 <li><p>模板输出目录<code>path</code>的绝对路径</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'bundle.js'</span>,</span><br><span class="line">    path: <span class="string">'/home/proj/public/assets'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="模式「mode」"><a href="#模式「mode」" class="headerlink" title="模式「mode」"></a>模式「mode」</h3><h4 id="是什么-3"><a href="#是什么-3" class="headerlink" title="是什么"></a>是什么</h4><ul>
@@ -546,6 +552,7 @@
 </li>
 <li><p>命令行工具传入</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack --mode=production</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h4 id="三种模式的区别"><a href="#三种模式的区别" class="headerlink" title="三种模式的区别"></a>三种模式的区别</h4><h5 id="development"><a href="#development" class="headerlink" title="development"></a><code>development</code></h5><ul>
@@ -553,6 +560,7 @@
 </li>
 <li><p>启用<code>NamedChunksPlugin</code>和<code>NamedModulesPlugin</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.development.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">'development'</span></span><br><span class="line">  plugins: [</span><br><span class="line">  	<span class="keyword">new</span> webpack.NamedModulesPlugin(),</span><br><span class="line">    <span class="keyword">new</span> webpack.NamedChunksPlugin(),</span><br><span class="line">    <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">      <span class="string">"process.env.NODE_ENV"</span>: <span class="built_in">JSON</span>.stringify(<span class="string">"development"</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h5 id="production"><a href="#production" class="headerlink" title="production"></a><code>production</code></h5><ul>
@@ -560,6 +568,7 @@
 </li>
 <li><p>启用<code>FlagDependencyUsagePlugin</code>, <code>FLagIncludedChunksPlugin</code>, <code>ModuleConcatenationPlugin</code>, <code>NoEmitOnErrorsPlugin</code>, <code>OccurenceOrderPlugin</code>, <code>SideEffectsFlagPlugin</code>, <code>UglifyJsPlugin</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.production.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">'production'</span>,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> UglifyJsPlugin(<span class="comment">/* ... */</span>),</span><br><span class="line">    <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">      <span class="string">"process.env.NODE_ENV"</span>: <span class="built_in">JSON</span>.stringify(<span class="string">"production"</span>)</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="keyword">new</span> webpack.optimize.ModuleConcatenationPlugin(),</span><br><span class="line">    <span class="keyword">new</span> webpack.NoEmitOnErrorsPlugin()</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h3><h4 id="是什么-4"><a href="#是什么-4" class="headerlink" title="是什么"></a>是什么</h4><ul>
@@ -605,107 +614,105 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">devtool</th>
-<th style="text-align:center">构件速度</th>
-<th style="text-align:center">重新构建速度</th>
-<th style="text-align:center">生成环境</th>
-<th style="text-align:center">代码形式</th>
+<th align="center">devtool</th>
+<th align="center">构件速度</th>
+<th align="center">重新构建速度</th>
+<th align="center">生成环境</th>
+<th align="center">代码形式</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">（none）</td>
-<td style="text-align:center">+++</td>
-<td style="text-align:center">+++</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">打包后的代码</td>
+<tbody><tr>
+<td align="center">（none）</td>
+<td align="center">+++</td>
+<td align="center">+++</td>
+<td align="center">yes</td>
+<td align="center">打包后的代码</td>
 </tr>
 <tr>
-<td style="text-align:center">Eval</td>
-<td style="text-align:center">+++</td>
-<td style="text-align:center">+++</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">生成后的代码</td>
+<td align="center">Eval</td>
+<td align="center">+++</td>
+<td align="center">+++</td>
+<td align="center">no</td>
+<td align="center">生成后的代码</td>
 </tr>
 <tr>
-<td style="text-align:center">cheap-eval-source-map</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">++</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">转换过的代码（仅限行）</td>
+<td align="center">cheap-eval-source-map</td>
+<td align="center">+</td>
+<td align="center">++</td>
+<td align="center">no</td>
+<td align="center">转换过的代码（仅限行）</td>
 </tr>
 <tr>
-<td style="text-align:center">cheap-module-eval-source-map</td>
-<td style="text-align:center">o</td>
-<td style="text-align:center">++</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">原始源代码（仅限行）</td>
+<td align="center">cheap-module-eval-source-map</td>
+<td align="center">o</td>
+<td align="center">++</td>
+<td align="center">no</td>
+<td align="center">原始源代码（仅限行）</td>
 </tr>
 <tr>
-<td style="text-align:center">eval-source-map</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">原始源代码</td>
+<td align="center">eval-source-map</td>
+<td align="center">–</td>
+<td align="center">+</td>
+<td align="center">no</td>
+<td align="center">原始源代码</td>
 </tr>
 <tr>
-<td style="text-align:center">cheap-source-map</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">o</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">转换过的代码（仅限行）</td>
+<td align="center">cheap-source-map</td>
+<td align="center">+</td>
+<td align="center">o</td>
+<td align="center">yes</td>
+<td align="center">转换过的代码（仅限行）</td>
 </tr>
 <tr>
-<td style="text-align:center">cheap-module-source-map</td>
-<td style="text-align:center">o</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">原始源代码（仅限行）</td>
+<td align="center">cheap-module-source-map</td>
+<td align="center">o</td>
+<td align="center">-</td>
+<td align="center">yes</td>
+<td align="center">原始源代码（仅限行）</td>
 </tr>
 <tr>
-<td style="text-align:center">inline-cheap-source-map</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">o</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">转换过的代码（仅限行）</td>
+<td align="center">inline-cheap-source-map</td>
+<td align="center">+</td>
+<td align="center">o</td>
+<td align="center">no</td>
+<td align="center">转换过的代码（仅限行）</td>
 </tr>
 <tr>
-<td style="text-align:center">inline-cheap-module-source-map</td>
-<td style="text-align:center">o</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">原始源代码（仅限行）</td>
+<td align="center">inline-cheap-module-source-map</td>
+<td align="center">o</td>
+<td align="center">-</td>
+<td align="center">no</td>
+<td align="center">原始源代码（仅限行）</td>
 </tr>
 <tr>
-<td style="text-align:center">source-map</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">原始源代码</td>
+<td align="center">source-map</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">yes</td>
+<td align="center">原始源代码</td>
 </tr>
 <tr>
-<td style="text-align:center">inline-source-map</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">原始源代码</td>
+<td align="center">inline-source-map</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">no</td>
+<td align="center">原始源代码</td>
 </tr>
 <tr>
-<td style="text-align:center">hidden-source-map</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">原始源代码</td>
+<td align="center">hidden-source-map</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">yes</td>
+<td align="center">原始源代码</td>
 </tr>
 <tr>
-<td style="text-align:center">nosources-source-map</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">无源代码内容</td>
+<td align="center">nosources-source-map</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">yes</td>
+<td align="center">无源代码内容</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h5 id="概念辨析"><a href="#概念辨析" class="headerlink" title="概念辨析"></a>概念辨析</h5><ul>
 <li><strong>打包后的代码</strong>：将所有生成的代码视为一大块代码，看不到相互分离的模块</li>
 <li><strong>生成后的代码</strong>：每个模块相互分离，并用模块名称进行注释；可以看到webpack生成的代码</li>
@@ -845,7 +852,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -981,7 +988,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

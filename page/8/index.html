@@ -335,6 +335,227 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/05/ES6学习笔记之Generator函数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/05/ES6学习笔记之Generator函数/" itemprop="url">ES6学习笔记之Generator函数</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-05T23:56:24+08:00">
+                2018-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/05/ES6学习笔记之Generator函数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/05/ES6学习笔记之Generator函数/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/05/ES6学习笔记之Generator函数/" class="leancloud_visitors" data-flag-title="ES6学习笔记之Generator函数">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  923 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><ul>
+<li>Generator函数是什么<ul>
+<li>状态机+遍历器</li>
+<li>可以暂停的函数</li>
+<li>解决异步</li>
+</ul>
+</li>
+<li>Generator函数的特征<ul>
+<li><code>function</code>与函数名直接有星号</li>
+<li>函数内部有<code>yield</code>表达式</li>
+<li>函数用<code>next()</code>语句调用</li>
+</ul>
+</li>
+<li><code>yield</code>返回值<ul>
+<li><code>next()</code>调用返回的对象的<code>value</code>值是<code>yield</code>后面的值</li>
+<li>如果没有，就返回<code>undefined</code></li>
+</ul>
+</li>
+<li><code>next()</code>传参<ul>
+<li><code>next()</code>中的参数作为上一个<code>yield</code>语句的返回值</li>
+<li>第一个<code>next()</code>传的参数总是无效</li>
+</ul>
+</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/05/ES6学习笔记之Generator函数/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/05/「Learning」浏览器多进程与JS运行机制/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1112,7 +1333,7 @@
         
           
             <p>之前在<strong>码农翻身</strong>上看到一篇讲解线程、进程和协程的文章，觉得写得很好，所以搬过来学习一下。</p>
-<p>学习内容：<a href="https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&amp;mid=2665514652&amp;idx=1&amp;sn=e10a979f89d594f2f51255b5834b80f7&amp;chksm=80d67edfb7a1f7c987c7f2da9d1de24be5047ba2c8f20dd1735b0208d9b31a210c6f65ea545d&amp;mpshare=1&amp;scene=1&amp;srcid=0528dAYruziqeJ2IkdK9wJVT%23rd" target="_blank" rel="noopener">《一个故事讲完进程、线程和协程》</a></p>
+<p>学习内容：<a href="https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514652&idx=1&sn=e10a979f89d594f2f51255b5834b80f7&chksm=80d67edfb7a1f7c987c7f2da9d1de24be5047ba2c8f20dd1735b0208d9b31a210c6f65ea545d&mpshare=1&scene=1&srcid=0528dAYruziqeJ2IkdK9wJVT%23rd" target="_blank" rel="noopener">《一个故事讲完进程、线程和协程》</a></p>
 <h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><h4 id="阶段一："><a href="#阶段一：" class="headerlink" title="阶段一："></a>阶段一：</h4><p>背景：CPU是稀缺资源，程序必须排队轮流使用</p>
 <blockquote>
 <p><strong>批处理</strong>： 程序A执行完成后，程序B再执行</p>
@@ -2339,204 +2560,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/03/自己手动升级网易云音乐音效/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xu Quan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/03/自己手动升级网易云音乐音效/" itemprop="url">自己手动升级网易云音乐音效</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-03T00:38:36+08:00">
-                2018-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/利器/" itemprop="url" rel="index">
-                    <span itemprop="name">利器</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/03/自己手动升级网易云音乐音效/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/03/自己手动升级网易云音乐音效/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/08/03/自己手动升级网易云音乐音效/" class="leancloud_visitors" data-flag-title="自己手动升级网易云音乐音效">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  463 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>前几天在微信公众号上看到AppSo说网易云音乐有了新的特效功能可以升级听歌的效果，于是马上试了一下。。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/03/自己手动升级网易云音乐音效/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2589,7 +2612,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2709,7 +2732,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

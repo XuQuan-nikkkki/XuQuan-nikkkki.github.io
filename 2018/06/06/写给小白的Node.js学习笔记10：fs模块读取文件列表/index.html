@@ -486,8 +486,12 @@
 <p>利用<code>fs</code>模块的<code>fs.readdir()</code>读取文件列表。</p>
 </blockquote>
 <a id="more"></a>
+
+
+
 <p>之前写过如何用fs模块实现文件读写：<a href="https://www.jianshu.com/p/4a16b47aac4b" target="_blank" rel="noopener">《写给小白的Node.js学习笔记2：fs模块实现文件读写》</a>，今天我们来看看如何利用fs模块的<code>fs.readdir()</code>获取文件列表。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 引入模块</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="comment">//2. 指定需要读取的路径</span></span><br><span class="line"><span class="comment">//这里我指定的是我做node.js练习的文件夹</span></span><br><span class="line"><span class="keyword">let</span> path = <span class="string">"/Application/MAMP/htdocs/nodejs/test/"</span>;</span><br><span class="line"><span class="comment">//3. 读取路径，返回文件列表</span></span><br><span class="line">fs.readdir(path, (err, files) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="built_in">console</span>.log(files);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>返回结果是一个只包含文件名称，不包含文件路径的数组<br><img src="https://upload-images.jianshu.io/upload_images/9240001-960bf7ea762baa81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>可以把整个过程想象成一个从箱子里往外拿东西的过程，fs.readdir方法将箱子里的物品挨个拿出来做了登记<br><img src="https://upload-images.jianshu.io/upload_images/9240001-dbf010bf13b1e6c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="登记箱子里的内容"></p>
 
@@ -530,8 +534,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/06/写给小白的Node.js学习笔记11：fs.stat判断文件类型/" rel="prev" title="Node.js学习笔记11：fs.stat判断文件类型">
-                Node.js学习笔记11：fs.stat判断文件类型 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/06/Mac添加自定义快捷键/" rel="prev" title="Mac添加自定义快捷键">
+                Mac添加自定义快捷键 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -612,7 +616,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -732,7 +736,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

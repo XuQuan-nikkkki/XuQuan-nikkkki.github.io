@@ -506,6 +506,7 @@
 </blockquote>
 <p>BOM让JavaScript能够和浏览器“对话”。</p>
 <a id="more"></a>
+
 <h3 id="1-什么是BOM"><a href="#1-什么是BOM" class="headerlink" title="1. 什么是BOM"></a>1. 什么是BOM</h3><p>BOM，Browser Object Model，即<strong>浏览器对象模型</strong>。浏览器页面初始化时，会在内存创建一个全局对象，用来描述当前窗口的属性和状态，这个全局对象被称为浏览器对象模型。</p>
 <p>不同于DOM的标准化组织是W3C，JavaScript的语法标准化组织是ECMA，BOM没有官方标准，它最初是Netscape浏览器标准的一部分，也就是说，对于现代浏览器，每个浏览器都有自己的BOM实现方法，所以直接使用BOM会有<strong>兼容性问题</strong>。</p>
 <blockquote>
@@ -526,6 +527,7 @@
 <h3 id="3-1-window对象"><a href="#3-1-window对象" class="headerlink" title="3.1 window对象"></a>3.1 <code>window</code>对象</h3><p>BOM的核心对象就是<code>window</code>，<code>window</code>对象也是BOM的顶级对象，所有浏览器都支持<code>window</code>对象，它代表的是浏览器的窗口。</p>
 <p>JavaScript的所有全局对象、全局方法和全局变量全都自动被归为<code>window</code>对象的方法和属性，在调用这些方法和属性的时候可以省略<code>window</code>。DOM也是<code>window</code>对象的属性。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.document.getElementById(<span class="string">"header"</span>);</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"header"</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="window对象的size"><a href="#window对象的size" class="headerlink" title="window对象的size"></a><code>window</code>对象的<code>size</code></h4><p><code>window</code>对象有两个用来定义浏览器窗口大小的属性（两个属性均返回以<code>px</code>像素为单位的数值）：</p>
 <ul>
 <li><p><code>window.innerHeight</code> </p>
@@ -542,6 +544,7 @@
 </blockquote>
 <p>我们随便用一个页面来测试一下，在页面添加如下内容：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="string">"width: "</span> + <span class="built_in">window</span>.innerWidth);</span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="string">"height: "</span>+ <span class="built_in">window</span>.innerHeight);</span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">window</span>.innerWidth);</span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">window</span>.innerHeight);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>用chrome全屏打开：</p>
 <p><img src="https://ws3.sinaimg.cn/large/0069RVTdly1fuxcutl2yjj30y60amq4u.jpg" alt="image-20180904113858953"></p>
 <p>用safari全屏打开：</p>
@@ -559,6 +562,7 @@
 </ul>
 <p>比较全面的写法是：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> w = <span class="built_in">window</span>.innerWidth</span><br><span class="line">|| <span class="built_in">document</span>.documentElement.clientWidth</span><br><span class="line">|| <span class="built_in">document</span>.body.clientWidth;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> h = <span class="built_in">window</span>.innerHeight</span><br><span class="line">|| <span class="built_in">document</span>.documentElement.clientHeight</span><br><span class="line">|| <span class="built_in">document</span>.body.clientHeight;</span><br></pre></td></tr></table></figure>
+
 <h4 id="window的方法"><a href="#window的方法" class="headerlink" title="window的方法"></a><code>window</code>的方法</h4><h5 id="window-open-url-target-specs-replace"><a href="#window-open-url-target-specs-replace" class="headerlink" title="window.open(url, target, specs, replace)"></a><code>window.open(url, target, specs, replace)</code></h5><p>打开一个新的窗口。四个参数(均为可选）分别是:</p>
 <ul>
 <li><code>url</code> 要打开窗口的路径</li>
@@ -577,9 +581,17 @@
 <li><code>replace</code> 是否在history列表中替代当前页面</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"myFunction()"</span>&gt;</span></span><br><span class="line">  click to open</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">  <span class="function"><span class="keyword">function</span> <span class="title">myFunction</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.open(<span class="string">""</span>,<span class="string">""</span>,<span class="string">"width=200,height=100"</span>);</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fuxdnzw9oxj30be092mxg.jpg" width="40%"></p>
+
+<img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fuxdnzw9oxj30be092mxg.jpg" width="40%">
+
+
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.open(<span class="string">"https://www.w3schools.com"</span>, <span class="string">"_blank"</span>, <span class="string">"toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400"</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fuxf29mw1vj30mc0oyac8.jpg" width="40%"></p>
+
+<img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fuxf29mw1vj30mc0oyac8.jpg" width="40%">
+
+
+
 <h5 id="window-close"><a href="#window-close" class="headerlink" title="window.close()"></a><code>window.close()</code></h5><p>关闭当前窗口</p>
 <h5 id="window-moveTo"><a href="#window-moveTo" class="headerlink" title="window.moveTo()"></a><code>window.moveTo()</code></h5><p>移动窗口到特定位置</p>
 <h5 id="window-resizeTo"><a href="#window-resizeTo" class="headerlink" title="window.resizeTo()"></a><code>window.resizeTo()</code></h5><p>修改窗口大小</p>
@@ -587,6 +599,7 @@
 <h3 id="3-3-frames"><a href="#3-3-frames" class="headerlink" title="3.3 frames"></a>3.3 <code>frames</code></h3><p>frame指HTML子框架，即在浏览器里嵌入另一个窗口。父框架和子框架拥有独立的作用域和上下文。</p>
 <p><code>window.frames</code>返回的是一个类数组的对象，对象的内容是当前页面中的<code>&lt;iframe&gt;</code>元素。这些<code>&lt;iframe&gt;</code>元素可以通过索引号来获得。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.frames[<span class="number">0</span>].location = <span class="string">"https://www.baidu.com"</span>;</span><br><span class="line">frames.length;  <span class="comment">//子框架的个数</span></span><br></pre></td></tr></table></figure>
+
 <p><code>&lt;frame&gt;</code>元素也是frames的一种，是一种只读元素，但是它无法在HTML5中使用。</p>
 <h3 id="3-4-history"><a href="#3-4-history" class="headerlink" title="3.4 history"></a>3.4 <code>history</code></h3><p><code>window.history</code>对象包含浏览器的历史记录，<code>window</code>可以省略。这些历史记录<strong>以栈（FIFO）的形式保存</strong>。页面前进则入栈，页面返回则出栈。</p>
 <p>它是一个只读对象，为了保护用户的隐私，JavaScript在获取这个对象时会受到限制。History对象不允许未授权代码访问会话历史(session history)中的其他页面地址，但可以导航到其他会话历史指向的页面。未授权代码无法清除history,也不能禁止后退/前进功能。</p>
@@ -620,6 +633,7 @@
 <p><code>window.innerWidth</code> / <code>window.innerHeight</code> 是视窗的宽高；</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"width: "</span> + <span class="built_in">window</span>.innerWidth);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"height: "</span>+ <span class="built_in">window</span>.innerHeight);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"screeW:"</span> + screen.width);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"screeH:"</span> + screen.height);</span><br></pre></td></tr></table></figure>
+
 <p>我们可以测试一下这两组值的区别：</p>
 <p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fuxhkjiz9pj30yk06amy3.jpg" alt="image-20180904142208975"></p>
 <p>直接最大化打开html文件，我们可以看到视窗宽度和屏幕宽度相同，高度略有差异（因为工具栏等会占一定宽度），我们将浏览器窗口调小再测试：</p>
@@ -631,6 +645,7 @@
 </ul>
 <p>屏幕的可用宽高即屏幕宽高减去如工具栏的值.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"swidth: "</span> + screen.width);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"sheight: "</span>+ screen.height);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"availW:"</span> + screen.availWidth);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"availH:"</span> + screen.availHeight);</span><br></pre></td></tr></table></figure>
+
 <p>我们可以看看这两组值的差别：</p>
 <p>Chrome:</p>
 <p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fuxhrxge7nj30yc06cjsb.jpg" alt="image-20180904142914962"></p>
@@ -643,14 +658,17 @@
 <h4 id="1-Alert-box"><a href="#1-Alert-box" class="headerlink" title="1. Alert box"></a>1. Alert box</h4><p>当你需要确保某个信息传递给用户时，使用Alert box。</p>
 <p>Alert box弹出时，用户需要点击”OK”或者”确定”来继续下一个步骤。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"I am an alert box!"</span>);</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fuxia5vtwcj30pq07m3yv.jpg" alt="image-20180904144646394"></p>
 <h4 id="2-Confirm-box"><a href="#2-Confirm-box" class="headerlink" title="2. Confirm box"></a>2. Confirm box</h4><p>当你需要用户验证或者接受某个信息时，使用confirm box。</p>
 <p>confirm box弹出时，用户需要点击”确定”或”取消”来继续下一个步骤。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.confirm(<span class="string">"Press this confirm button"</span>);</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fuxidocj07j30po07kq3c.jpg" alt="image-20180904145009079"></p>
 <h4 id="3-Prompt-box"><a href="#3-Prompt-box" class="headerlink" title="3. Prompt box"></a>3. Prompt box</h4><p>当你希望用户进入页面前，先输入某个信息时，使用prompt box。</p>
 <p>prompt box弹出时，用户需要输入一个值，然后点击”确定”或”取消”来继续下一个步骤。如果用户点击确定，prompt box会返回用户输入的值，如果用户点击取消，prompt box返回<code>null</code>。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = prompt(<span class="string">"Please enter your name"</span>, <span class="string">"Harry Potter"</span>); <span class="comment">// prompt box可以输入默认值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (person == <span class="literal">null</span> || person == <span class="string">""</span>) &#123;</span><br><span class="line">    txt = <span class="string">"User cancelled the prompt."</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    txt = <span class="string">"Hello "</span> + person + <span class="string">"! How are you today?"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fuxih5tbcgj30pc09ujs2.jpg" alt="image-20180904145330295"></p>
 <h3 id="5-计时事件"><a href="#5-计时事件" class="headerlink" title="5. 计时事件"></a>5. 计时事件</h3><p><code>window</code>对象运行执行特定的计时事件。JavaScript的两个关键计时事件包括：</p>
 <ul>
@@ -670,6 +688,7 @@
 </ul>
 <p>cookies的存储形式就是<code>name-value pairs</code>（类似键值对）</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">username</span> = John Doe</span><br></pre></td></tr></table></figure>
+
 <p>当浏览器向服务器发送网页请求时，对应这个页面的cookies就被加入到请求中，这样服务器就能获取到辨认这个用户所需的信息。</p>
 <h4 id="操作cookies的方法"><a href="#操作cookies的方法" class="headerlink" title="操作cookies的方法"></a>操作cookies的方法</h4><p>JavaScript可以通过<code>document.cookie</code>属性来创建、读取和删除cookies。</p>
 <h5 id="创建cookie"><a href="#创建cookie" class="headerlink" title="创建cookie"></a>创建cookie</h5><p>我们可以在控制台中直接通过<code>document.cookie = &quot;username=John Doe&quot;;</code>来写入cookie。</p>
@@ -821,7 +840,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -957,7 +976,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

@@ -482,6 +482,8 @@
         <p>Sass (Syntactically Awesome StyleSheets)是CSS语言的扩展。它拥有一些原生CSS不能实现的功能，让项目的样式代码变得更为简单，更容易维护。</p>
 <p>Sass本质上是一个编译器，它使用Sass语法写代码，然后转换成CSS语言，因此我们在使用的时候可以创建变量、嵌套CSS规则、引入其他的Sass文件，这使得代码更紧凑，也更容易阅读。</p>
 <a id="more"></a>
+
+
 <p>Sass允许两种语法形式，一种是SCSS（Sassy CSS），也是这一部分习题使用的语法，它是CSS语法的扩展，也就是说所有的有效的CSS样式表在SCSS文件中都能够使用，而且语义相同，这类语法文件使用<code>.scss</code>后缀。另一种是缩进语法，或者直接被称为Sass，它使用缩进而不是括号来表示选择器的嵌套，使用转行而不是分号来切分属性设置。这类文件使用<code>.sass</code>后缀。</p>
 <p>课程习题主要介绍了Sass的一些基本语法。我参考Sass的<a href="https://www.sass.hk/" target="_blank" rel="noopener">官网</a>把内容整理了一下。</p>
 <ul>
@@ -510,11 +512,13 @@
 </li>
 <li><p>使用大括号嵌套即可</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#content</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">  <span class="selector-tag">aside</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#eee</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h5 id="伪类选择器使用标识符-amp"><a href="#伪类选择器使用标识符-amp" class="headerlink" title="伪类选择器使用标识符&amp;"></a>伪类选择器使用标识符<code>&amp;</code></h5><ul>
 <li><p>Sass解析时，将父子类的选择器通过空格连接到子选择器的前面</p>
 </li>
 <li><p>伪类如<code>:hover</code>通过这种方法会出问题，所以在前面放一个<code>&amp;</code></p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">article</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">  &amp;:hover &#123; <span class="attribute">color</span>: red &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <p>#####子组合选择器<code>&gt;</code>,<code>+</code>,<code>~</code></p>
@@ -526,6 +530,7 @@
 <h5 id="属性嵌套"><a href="#属性嵌套" class="headerlink" title="属性嵌套"></a>属性嵌套</h5></li>
 <li><p>属性嵌套的规则是把属性名从中间<code>-</code>的地方断开，在根属性后边添加一个冒号</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">border</span> &#123;</span><br><span class="line">    <span class="selector-tag">style</span>: solid;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ccc</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="导入文件"><a href="#导入文件" class="headerlink" title="导入文件"></a>导入文件</h4><h5 id="import规则"><a href="#import规则" class="headerlink" title="@import规则"></a><code>@import</code>规则</h5></li>
 <li><p>在生成<code>css</code>文件时就把相关文件导入进来，无需发起额外的下载请求</p>
 </li>
@@ -539,16 +544,25 @@
 </li>
 <li><p>混合器传参</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> link-colors(<span class="variable">$normal</span>, <span class="variable">$hover</span>, <span class="variable">$visited</span>)&#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$normal</span>;</span><br><span class="line">  &amp;:hover &#123; <span class="attribute">color</span>: <span class="variable">$hover</span>; &#125;</span><br><span class="line">  &amp;:visited &#123; <span class="attribute">color</span>: <span class="variable">$visited</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h5 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h5></li>
 <li><p>一个选择器可以继承为另一个选择器定义的所有样式</p>
 </li>
 <li><p><code>@extend</code></p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fdd</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.seriousError</span> &#123;</span><br><span class="line">  @<span class="keyword">extend</span> .error;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="控制指令"><a href="#控制指令" class="headerlink" title="控制指令"></a>控制指令</h4><h5 id="if"><a href="#if" class="headerlink" title="@if"></a><code>@if</code></h5><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$type</span>: monster;</span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  @<span class="keyword">if</span> <span class="variable">$type</span> == ocean &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">  &#125; @<span class="keyword">else</span> if <span class="variable">$type</span> == matador &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">  &#125; @<span class="keyword">else</span> if <span class="variable">$type</span> == monster &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">  &#125; @<span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h5 id="for"><a href="#for" class="headerlink" title="@for"></a><code>@for</code></h5><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">for</span> <span class="variable">$i</span> from 1 through 3 &#123;</span><br><span class="line">  <span class="selector-class">.item-</span>#&#123;<span class="variable">$i</span>&#125; &#123; <span class="attribute">width</span>: <span class="number">2em</span> * <span class="variable">$i</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h5 id="each"><a href="#each" class="headerlink" title="@each"></a><code>@each</code></h5><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">each</span> <span class="variable">$animal</span> in puma, sea-slug, egret, salamander &#123;</span><br><span class="line">  .#&#123;<span class="variable">$animal</span>&#125;-<span class="attribute">icon</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: url(<span class="string">'/images/#&#123;$animal&#125;.png'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">each</span> <span class="variable">$animal</span>, <span class="variable">$color</span>, <span class="variable">$cursor</span> in (puma, black, default),</span><br><span class="line">                                  (sea-slug, blue, pointer),</span><br><span class="line">                                  (egret, white, move) &#123;</span><br><span class="line">  .#&#123;<span class="variable">$animal</span>&#125;-<span class="attribute">icon</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: url(<span class="string">'/images/#&#123;$animal&#125;.png'</span>);</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="variable">$color</span>;</span><br><span class="line">    <span class="attribute">cursor</span>: <span class="variable">$cursor</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h5 id="while"><a href="#while" class="headerlink" title="@while"></a><code>@while</code></h5><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$i</span>: <span class="number">6</span>;</span><br><span class="line">@<span class="keyword">while</span> <span class="variable">$i</span> &gt; 0 &#123;</span><br><span class="line">  <span class="selector-class">.item-</span>#&#123;<span class="variable">$i</span>&#125; &#123; <span class="attribute">width</span>: <span class="number">2em</span> * <span class="variable">$i</span>; &#125;</span><br><span class="line">  <span class="variable">$i</span>: <span class="variable">$i</span> - <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 </li>
 </ul>
 <p>  以下是这部分的习题解答：</p>
@@ -560,6 +574,7 @@
 <p>JavaScript声明变量使用<code>let</code>和<code>const</code>关键字，Sass则用<code>$</code>后接变量名。</p>
 <p>当一些元素都使用相同的颜色的时候，使用变量会很方便，更改颜色的时候只需要更改变量值即可。</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$text-color</span>: red;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.header</span>&#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.blog-post</span>, <span class="selector-tag">h2</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$text-color</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 </li>
 </ul>
@@ -567,6 +582,7 @@
 <li><p><a href="https://learn.freecodecamp.org/front-end-libraries/sass/nest-css-with-sass" target="_blank" rel="noopener">Nest CSS with Sass</a></p>
 <p>Sass允许CSS规则嵌套，这能很好地帮助我们管理代码</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.blog-post</span> &#123;</span><br><span class="line">  <span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 </li>
 </ul>
@@ -575,10 +591,13 @@
 <p>在Sass中，<code>mixin</code>指的是一组可以反复使用的CSS声明。</p>
 <p>比如有一些新的CSS特性会存在浏览器兼容问题，这时我们需要给特性加上一些前缀，来让不同的浏览器识别，如：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">4px</span> <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">-moz-box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">4px</span> <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">-ms-box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">4px</span> <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">4px</span> <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这时我们可以利用<code>mixin</code>来保存这一组代码，并且使用参数来保证我们可以修改里面的值：</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> box-shadow(<span class="variable">$x</span>, <span class="variable">$y</span>, <span class="variable">$blur</span>, <span class="variable">$c</span>)&#123; </span><br><span class="line">  -webkit-<span class="attribute">box-shadow</span>: <span class="variable">$x</span>, <span class="variable">$y</span>, <span class="variable">$blur</span>, <span class="variable">$c</span>;</span><br><span class="line">  -moz-<span class="attribute">box-shadow</span>: <span class="variable">$x</span>, <span class="variable">$y</span>, <span class="variable">$blur</span>, <span class="variable">$c</span>;</span><br><span class="line">  -ms-<span class="attribute">box-shadow</span>: <span class="variable">$x</span>, <span class="variable">$y</span>, <span class="variable">$blur</span>, <span class="variable">$c</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="variable">$x</span>, <span class="variable">$y</span>, <span class="variable">$blur</span>, <span class="variable">$c</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*使用的时候*/</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  @<span class="keyword">include</span> box-shadow(<span class="number">0px</span>, 0px, 4px, <span class="number">#fff</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>调用<code>mixin</code>的时候需要使用<code>@include</code>关键字</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> border-radius(<span class="variable">$radius</span>) &#123;</span><br><span class="line">  -webkit-<span class="attribute">border-radius</span>: <span class="variable">$radius</span>;</span><br><span class="line">  -moz-<span class="attribute">border-radius</span>: <span class="variable">$radius</span>;</span><br><span class="line">  -ms-<span class="attribute">border-radius</span>: <span class="variable">$radius</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>:<span class="variable">$radius</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#awesome</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: green;</span><br><span class="line">  @<span class="keyword">include</span> border-radius(<span class="number">15px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 </li>
 </ul>
@@ -586,6 +605,7 @@
 <li><p><a href="https://learn.freecodecamp.org/front-end-libraries/sass/use-if-and-else-to-add-logic-to-your-styles" target="_blank" rel="noopener">Use @if and @else to Add Logic To Your Styles</a></p>
 <p><code>@if</code>语句可以用来做条件判断，和JavaScript一样，Sass也有<code>@else if</code>和<code>@else</code>语句</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> border-stroke(<span class="variable">$val</span>) &#123;</span><br><span class="line">  @<span class="keyword">if</span> <span class="variable">$val</span> == light&#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">else</span> if <span class="variable">$val</span>==medium &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">3px</span> solid black;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">else</span> if <span class="variable">$val</span>==heavy &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">6px</span> solid black;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">     </span><br><span class="line"><span class="selector-id">#box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  @<span class="keyword">include</span> border-stroke(medium);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 </li>
 </ul>
@@ -598,8 +618,10 @@
 </ul>
 <p>例子：</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">for</span> <span class="variable">$i</span> from 1 through 12 &#123;</span><br><span class="line">  <span class="selector-class">.col-</span>#&#123;<span class="variable">$i</span>&#125; &#123;<span class="attribute">width</span>: <span class="number">100%</span>/<span class="number">12</span> * <span class="variable">$i</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>习题解答</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">for</span> <span class="variable">$i</span> from 1 to 6 &#123;</span><br><span class="line">  <span class="selector-class">.text-</span>#&#123;<span class="variable">$i</span>&#125; &#123;<span class="attribute">font-size</span>: <span class="variable">$i</span> * <span class="number">10px</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 </li>
 </ul>
@@ -607,10 +629,13 @@
 <li><p><a href="https://learn.freecodecamp.org/front-end-libraries/sass/use-each-to-map-over-items-in-a-list" target="_blank" rel="noopener">Use @each to Map Over Items in a List</a></p>
 <p><code>each</code>方法用于遍历元素，如：</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">each</span> <span class="variable">$color</span> in blue, red, green &#123;</span><br><span class="line">  .#&#123;<span class="variable">$color</span>&#125;-text &#123;<span class="attribute">color</span>: <span class="variable">$color</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>另一种写法是给出一组键值对形式的值来遍历，使用<code>@each</code>语法时需要带上<code>$key</code></p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$colors</span>: (color1: blue, color2: red, color3: green);</span><br><span class="line"></span><br><span class="line">@<span class="keyword">each</span> <span class="variable">$key</span>, <span class="variable">$color</span> in <span class="variable">$colors</span> &#123;</span><br><span class="line">  .#&#123;<span class="variable">$color</span>&#125;-text &#123;<span class="attribute">color</span>: <span class="variable">$color</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>习题解答：</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">each</span> <span class="variable">$color</span> in blue, black, red &#123;</span><br><span class="line">  .#&#123;<span class="variable">$color</span>&#125;-bg &#123;<span class="attribute">background-color</span>: <span class="variable">$color</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 </li>
 </ul>
@@ -618,8 +643,10 @@
 <li><p><a href="https://learn.freecodecamp.org/front-end-libraries/sass/apply-a-style-until-a-condition-is-met-with-while" target="_blank" rel="noopener">Apply a Style Until a Condition is Met with @while</a></p>
 <p><code>@while</code>方法类似于JavaScript中的<code>while</code>循环，它的使用规则是循环创建CSS规则，直到条件满足。前面提到 的用<code>@for</code>循环创建栅格化布局的例子也可以使用<code>@while</code>来实现</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$x</span>: <span class="number">1</span>;</span><br><span class="line">@<span class="keyword">while</span> <span class="variable">$x</span> &lt; 13 &#123;</span><br><span class="line">  <span class="selector-class">.col-</span>#&#123;<span class="variable">$x</span>&#125; &#123; <span class="attribute">width</span>: <span class="number">100%</span>/<span class="number">12</span> * <span class="variable">$x</span>;&#125;</span><br><span class="line">  <span class="variable">$x</span>: <span class="variable">$x</span> + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>习题解答：</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$x</span>: <span class="number">1</span>;</span><br><span class="line">@<span class="keyword">while</span> <span class="variable">$x</span> &lt; 11 &#123;</span><br><span class="line">  <span class="selector-class">.text-</span>#&#123;<span class="variable">$x</span>&#125; &#123;<span class="attribute">font-size</span>: <span class="variable">$x</span> * <span class="number">5px</span>;&#125;</span><br><span class="line">  <span class="variable">$x</span>: <span class="variable">$x</span> + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 </li>
 </ul>
@@ -633,8 +660,10 @@
 <li>引用时使用<code>@import</code>关键字,<code>@import</code>时不需要带<code>_</code> </li>
 </ul>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* mixins存在名为"_mixins.scss"的partial中 */</span></span><br><span class="line"><span class="comment">/* In the main.scss file */</span></span><br><span class="line"></span><br><span class="line">@<span class="keyword">import</span> <span class="string">'mixins'</span></span><br></pre></td></tr></table></figure>
+
 <p>引入<code>mixins</code>之后，<code>partial</code>中的所有代码、变量都可以直接被使用</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// The main.scss file</span></span><br><span class="line"></span><br><span class="line">@<span class="keyword">import</span> <span class="string">'variables'</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 </li>
 </ul>
@@ -643,11 +672,15 @@
 <p>Sass有一个特性叫做<code>extend</code>扩展，它允许我们将一个元素的CSS样式“借”来给另一个元素使用。</p>
 <p>比如我们设置一个元素<code>.panel</code>的css样式如下：</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.panel</span>&#123;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">70px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这时另一个元素<code>.big-panel</code>拥有<code>.panel</code>相同的样式，此外，它还设置了<code>width</code>，<code>font-size</code>样式，那么我们可以直接将<code>.panel</code>的样式搬过来使用</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.big-panel</span>&#123;</span><br><span class="line">  @<span class="keyword">extend</span> .panel;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">2em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>写法是<code>@extend</code>加上元素名</p>
 <p>习题解答：</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.info-important</span> &#123;</span><br><span class="line">  @<span class="keyword">extend</span> .info;</span><br><span class="line">  <span class="attribute">background-color</span>: magenta;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 
@@ -783,7 +816,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -919,7 +952,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

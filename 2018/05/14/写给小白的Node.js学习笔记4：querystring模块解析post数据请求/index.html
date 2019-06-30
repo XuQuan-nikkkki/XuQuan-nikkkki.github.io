@@ -485,8 +485,12 @@
       
         <p>上一篇内容讲到原生node.js如何用<code>url</code>模块处理get数据请求，这篇记录如何用<code>querystring</code>模块处理post数据请求。</p>
 <a id="more"></a>
+
+
+
 <p>当form表单采用post方法提交数据时，服务器接收数据的方式不同于get方法</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">let</span> n = <span class="number">0</span>;</span><br><span class="line">  req.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//数据分段传输，每个data都是数据的一部分</span></span><br><span class="line">    <span class="comment">//传递大量数据时，可以用n来显示传递的次数</span></span><br><span class="line">    str += data;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`第<span class="subst">$&#123;++n&#125;</span>次接收数据`</span>)；</span><br><span class="line">  &#125;)</span><br><span class="line">  req.on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//数据的形式也是xxx=xxx&amp;xxx=xxx，所以用querystring.parse方法解析</span></span><br><span class="line">    <span class="keyword">let</span> POST = querystring.parse(str);</span><br><span class="line">    <span class="built_in">console</span>.log(POST);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"server running"</span>);</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-5190f445ae310413.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p>
 <p>如果将输出结果部分的<code>console.log(POST)</code>注释掉，同时增加数据量，就很容易看到post数据时是分段传输的。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/9240001-bad697d8db40030d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="我将O Captain! My Captain!复制了几十遍试了一下"></p>
@@ -613,7 +617,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -733,7 +737,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

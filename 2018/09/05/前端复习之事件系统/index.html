@@ -488,6 +488,7 @@
       
         <p>事件是用户与界面交互的基础。</p>
 <a id="more"></a>
+
 <h3 id="什么是事件驱动"><a href="#什么是事件驱动" class="headerlink" title="什么是事件驱动"></a>什么是事件驱动</h3><p>JavaScript是一种事件驱动语言。那么到底什么是事件驱动呢？</p>
 <p>事件驱动编程是一种编程范式。在事件驱动这种范式中，执行什么操作是由事件来决定的，比如用户点击事件，其他编程线程事件，数据库请求事件。事件的处理由事件处理函数或回调函数来完成。</p>
 <blockquote>
@@ -496,8 +497,10 @@
 </blockquote>
 <h4 id="I-O编程-VS-事件驱动编程"><a href="#I-O编程-VS-事件驱动编程" class="headerlink" title="I/O编程 VS 事件驱动编程"></a>I/O编程 VS 事件驱动编程</h4><p>I/O编程规定事件在某个进程结束之后执行。我们来看一组对比：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// I/O编程</span></span><br><span class="line"><span class="keyword">let</span> result = query(<span class="string">"SELECT * FROM posts WHERE id = 1"</span>);</span><br><span class="line">myResult(result);</span><br></pre></td></tr></table></figure>
+
 <p>在I/O编程中，<code>myResult</code>函数的执行需要等数据库请求这一进程结束之后才会执行。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 事件驱动编程</span></span><br><span class="line"><span class="keyword">let</span> query_finished = <span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">  myResult(result);</span><br><span class="line">&#125;</span><br><span class="line">query(<span class="string">"SELECT * FROM posts WHERE id = 1"</span>, query_finished);</span><br></pre></td></tr></table></figure>
+
 <p>在事件驱动编程中，先定义在数据库请求结束之后要进行什么操作，并将这个操作存储在一个叫做<code>query_finished</code>的函数中，然后将这个函数作为参数传递给数据库请求这一事件。当数据库请求结束时，就会自动触发<code>query_finished</code>函数，而不是仅仅返回请求结果。</p>
 <p>像这种通过定义在特定事件发生时触发特定函数，而非仅仅返回一个结果值的编程风格就叫做事件驱动或异步编程。这种编程风格在执行I/O时，当前进程不会发生阻塞，且可以多个I/O同时进行，每一个I/O的回调函数都会在操作结束时被触发。</p>
 <blockquote>
@@ -525,7 +528,8 @@
 <li><strong>定时触发器线程</strong> <code>setTimeout</code>和<code>setInterval</code>所在线程</li>
 <li><strong>异步http请求线程</strong> </li>
 </ul>
-<p><img src="https://ws2.sinaimg.cn/large/0069RVTdly1fuz00yj5yzj30eo0uc76d.jpg" width="30%"></p>
+<img src="https://ws2.sinaimg.cn/large/0069RVTdly1fuz00yj5yzj30eo0uc76d.jpg" width="30%">
+
 <p>其中，JS引擎线程用于处理任务，所有的同步任务都在这个线程上执行，形成一个<strong>执行栈</strong>。</p>
 <p>在这个线程之外，还有一个“<strong>任务队列</strong>”，其他线程的异步任务在满足触发条件后，就添加到“任务队列”中，表示这个事件可以进入“执行栈”了。主线程在空闲时会从“任务队列”中读取事件，它执行这个事件的方式就是执行这一事件对应的回调函数。</p>
 <p>“任务队列”是一个<strong>先进先出</strong>的数据结构，排在前面的事件优先被读取，主线程的读取过程是自动的，只要执行栈一清空，“任务队列”上的第一位事件就自动进入主线程。</p>
@@ -548,6 +552,7 @@
 <p>比如我们需要一个独立的线程来帮我们作平方数运算，由于平方运算非常耗时，所以我们在一个叫做”squareworker.js”的文件中来写代码。</p>
 <p>为了避免worker线程和其他线程同时操作相同的数据导致错误发生，workers线程不与主线程环境共享它的全局环境和数据，而是利用信息往返来实现数据交换。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// squareworker.js中输出结果数据</span></span><br><span class="line">addEventListener(<span class="string">"message"</span>, event =&gt; &#123;</span><br><span class="line">  postMessage(event.data * event.data);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js中创建worker</span></span><br><span class="line"><span class="keyword">let</span> squareWorker = <span class="keyword">new</span> Worker(<span class="string">"squareworker.js"</span>);</span><br><span class="line">squareWorker.addEventListener(<span class="string">"message"</span>, event =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"The worker responded:"</span>, event.data);</span><br><span class="line">&#125;)</span><br><span class="line">squareWorker.postMessage(<span class="number">10</span>);</span><br><span class="line">squareWorker.postMessage(<span class="number">24</span>);</span><br></pre></td></tr></table></figure>
+
 <p>我们可以尝试在浏览器中打开（会存在兼容性问题，Chrome需要下载subworker.js文件支持，火狐可以正常打开）</p>
 <p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fuz1j6705mj305t02zmx2.jpg" alt="image-20180905223822638"></p>
 <h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><blockquote>
@@ -566,6 +571,7 @@
 <h4 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h4><p>通过事件对象的<code>target</code>属性和冒泡过程，我们可以给父元素添加事件监听器，来监听和处理子元素的事件，避免重复为子元素绑定相同的事件。当目标元素被触发时，这个事件会向外传递，冒泡到父元素上，触发父元素绑定的事件函数，父元素可以通过<code>event.target</code>获取到被触发的目标元素。</p>
 <p>比如有一个node节点包含一串<code>button</code>元素，点击按钮会触发相同的事件，那么给这个node节点绑定点击事件就会比给每一个<code>button</code>都绑定点击事件方便得多。而通过<code>event.target</code>即可得知哪一个<code>button</code>被点击了。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>A<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>B<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>C<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.body.addEventListener(<span class="string">"click"</span>, event =&gt; &#123;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">if</span> (event.target.nodeName == <span class="string">"BUTTON"</span>) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"Clicked"</span>, event.target.textContent);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="事件对象-Event-Object"><a href="#事件对象-Event-Object" class="headerlink" title="事件对象 Event Object"></a>事件对象 Event Object</h3><p>当我们使用事件处理函数时，实际上我们传递了一个参数：事件对象(event object)。这个对象包含了关于事件的其他信息，这些信息因事件类型的不同而不同。</p>
 <p>事件对象只在事件发生时产生，并且只能在事件处理函数内部访问，在所有事件处理函数执行结束后，事件对象就被销毁。</p>
 <h4 id="事件对象的属性"><a href="#事件对象的属性" class="headerlink" title="事件对象的属性"></a>事件对象的属性</h4><h5 id="bubbles"><a href="#bubbles" class="headerlink" title="bubbles"></a><code>bubbles</code></h5><p>返回布尔值，表示事件是否是冒泡事件类型。</p>
@@ -579,10 +585,13 @@
 <h5 id="兼容性问题"><a href="#兼容性问题" class="headerlink" title="兼容性问题"></a>兼容性问题</h5><p>事件对象也存在一些兼容性问题。</p>
 <h6 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h6><p>IE8之前，注册事件处理函数时，事件对象并没有被传递到函数内部，因此需要使用<code>window.event</code>来获取事件：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getEvent</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  event = event || <span class="built_in">window</span>.event;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h6 id="preventDefault-1"><a href="#preventDefault-1" class="headerlink" title="preventDefault()"></a><code>preventDefault()</code></h6><p>IE没有<code>preventDefault()</code>方法，所以我们需要设置的是：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.event.returnValue = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+
 <h6 id="stopPropagation-1"><a href="#stopPropagation-1" class="headerlink" title="stopPropagation()"></a><code>stopPropagation()</code></h6><p>IE也没有<code>stopPropagation()</code>方法，所以需要设置<code>cancelBubble</code>属性</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">event.cancelBubble = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
 <h3 id="事件处理-1"><a href="#事件处理-1" class="headerlink" title="事件处理"></a>事件处理</h3><p>有个三种方式来给元素添加事件：</p>
 <ul>
 <li>Inline event handlers 内联事件处理器</li>
@@ -591,6 +600,7 @@
 </ul>
 <h4 id="内联事件处理器"><a href="#内联事件处理器" class="headerlink" title="内联事件处理器"></a>内联事件处理器</h4><p>内联事件处理器，也称为HTML事件处理程序，是指直接给元素添加事件属性，事件属性的属性值为事件函数：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"changeText()"</span>&gt;</span></span><br><span class="line">  Click me!</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  Try to change me.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> changeText = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> p = <span class="built_in">document</span>.querySelector(<span class="string">"p"</span>);</span></span><br><span class="line"><span class="actionscript">    p.textContent = <span class="string">"I changed because of an inline event handler."</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>当我们打开页面时：</p>
 <p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fuyn70syzdj310k0km0tx.jpg" alt="First rendering of events.html"></p>
 <p>当我们点击按钮后：</p>
@@ -599,6 +609,7 @@
 <p>内联事件处理器就和CSS内联样式一样，不易于代码维护，所以不建议使用。</p>
 <h4 id="事件处理属性（DOM0级事件处理程序）"><a href="#事件处理属性（DOM0级事件处理程序）" class="headerlink" title="事件处理属性（DOM0级事件处理程序）"></a>事件处理属性（DOM0级事件处理程序）</h4><p>事件处理属性的触发机制和内联事件处理器类似，只不过我们通过JavaScript来设置元素的属性，而不是直接在HTML中设置。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Try to change me.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> changeText = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> p = <span class="built_in">document</span>.querySelector(<span class="string">"p"</span>);</span></span><br><span class="line"><span class="actionscript">    p.textContent = <span class="string">"I changed because of an  event handler property."</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> button = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span></span><br><span class="line"><span class="undefined">  button.onclick = changeText;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>这里需要注意两个细节：</p>
 <ul>
 <li>通过JavaScript来添加<code>onclick</code>属性时，<code>onclick</code>并不用遵循驼峰命名法写成<code>onClick</code></li>
@@ -608,6 +619,7 @@
 <p>通过事件处理属性来添加函数比内联处理器要易于维护，但它同样有一些缺陷，比如它无法传递多个事件处理函数给同一个事件，如果给点击事件赋上多个<code>onclick</code>属性值，后一个事件处理函数会覆盖前一个函数。此外，这种方法也不能控制事件流到底是捕获还是冒泡。</p>
 <h4 id="事件监听器"><a href="#事件监听器" class="headerlink" title="事件监听器"></a>事件监听器</h4><p>事件监听器用于监听元素上的事件，我们通过<code>addEventListener()</code>方法来给监听事件。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Try to change me.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> changeText = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> p = <span class="built_in">document</span>.querySelector(<span class="string">"p"</span>);</span></span><br><span class="line"><span class="actionscript">    p.textContent = <span class="string">"I changed because of an event listener."</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> button = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span></span><br><span class="line"><span class="actionscript">  button.addEventListener(<span class="string">"click"</span>, changeText);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p><code>addEventListener()</code>接受三个参数：</p>
 <ol>
 <li>要处理的事件名（不需要添加前缀<code>on</code>）</li>
@@ -631,173 +643,160 @@
 <p>由于支持的是冒泡事件流，如果给元素绑定多个事件处理函数，事件触发的顺序是添加顺序的相反顺序。</p>
 <p><code>attachEvent</code>有一个缺点，不同于<code>addEventListener()</code>的<code>this</code>值指向目标元素，<code>attachEvent()</code>的<code>this</code>值指向<code>window</code>对象。</p>
 <h5 id="跨浏览器的写法"><a href="#跨浏览器的写法" class="headerlink" title="跨浏览器的写法"></a>跨浏览器的写法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> EventUtil = &#123;</span><br><span class="line">  addHandler: <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(element.addEventListener) &#123;</span><br><span class="line">      element.addEventListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.attachEvent) &#123;</span><br><span class="line">      element.attachEvent(<span class="string">"on"</span>+type, handler);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      element[<span class="string">"on"</span> + type] = handler;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  removeHandler: <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(element.removeEventListener) &#123;</span><br><span class="line">      element.removeEventListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.detachEvent) &#123;</span><br><span class="line">      element.detachEvent(<span class="string">"on"</span>+type, handler);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      element[<span class="string">"on"</span> + type] = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="常见事件"><a href="#常见事件" class="headerlink" title="常见事件"></a>常见事件</h3><h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h4><table>
 <thead>
 <tr>
-<th style="text-align:center">Event</th>
-<th style="text-align:center">Description</th>
+<th align="center">Event</th>
+<th align="center">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">click</td>
-<td style="text-align:center">鼠标点击触发</td>
+<tbody><tr>
+<td align="center">click</td>
+<td align="center">鼠标点击触发</td>
 </tr>
 <tr>
-<td style="text-align:center">dbclick</td>
-<td style="text-align:center">鼠标双击触发</td>
+<td align="center">dbclick</td>
+<td align="center">鼠标双击触发</td>
 </tr>
 <tr>
-<td style="text-align:center">mouseenter</td>
-<td style="text-align:center">鼠标进入元素触发</td>
+<td align="center">mouseenter</td>
+<td align="center">鼠标进入元素触发</td>
 </tr>
 <tr>
-<td style="text-align:center">mouseleave</td>
-<td style="text-align:center">鼠标移出元素触发</td>
+<td align="center">mouseleave</td>
+<td align="center">鼠标移出元素触发</td>
 </tr>
 <tr>
-<td style="text-align:center">mousemove</td>
-<td style="text-align:center">每一次鼠标在元素内移动触发</td>
+<td align="center">mousemove</td>
+<td align="center">每一次鼠标在元素内移动触发</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p><code>click</code>点击事件包括了<code>mousedown</code>和<code>mouseup</code>事件。</p>
 <h4 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h4><table>
 <thead>
 <tr>
-<th style="text-align:center">Event</th>
-<th style="text-align:center">Description</th>
+<th align="center">Event</th>
+<th align="center">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">submit</td>
-<td style="text-align:center">表单提交时触发</td>
+<tbody><tr>
+<td align="center">submit</td>
+<td align="center">表单提交时触发</td>
 </tr>
 <tr>
-<td style="text-align:center">focus</td>
-<td style="text-align:center">某个元素获得焦点时触发</td>
+<td align="center">focus</td>
+<td align="center">某个元素获得焦点时触发</td>
 </tr>
 <tr>
-<td style="text-align:center">blur</td>
-<td style="text-align:center">元素失去焦点时触发</td>
+<td align="center">blur</td>
+<td align="center">元素失去焦点时触发</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><table>
 <thead>
 <tr>
-<th style="text-align:center">Event</th>
-<th style="text-align:center">Description</th>
+<th align="center">Event</th>
+<th align="center">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">keydown</td>
-<td style="text-align:center">当某个键被按下时触发</td>
+<tbody><tr>
+<td align="center">keydown</td>
+<td align="center">当某个键被按下时触发</td>
 </tr>
 <tr>
-<td style="text-align:center">keyup</td>
-<td style="text-align:center">当某个键被松开时触发</td>
+<td align="center">keyup</td>
+<td align="center">当某个键被松开时触发</td>
 </tr>
 <tr>
-<td style="text-align:center">keypress</td>
-<td style="text-align:center">当某个字符键被按时触发（非字符键如<code>alt</code>,<code>shift</code>,<code>ctrl</code>)</td>
+<td align="center">keypress</td>
+<td align="center">当某个字符键被按时触发（非字符键如<code>alt</code>,<code>shift</code>,<code>ctrl</code>)</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>键盘事件是一种特殊的事件，它触发的事件对象能够返回按键的相关属性，如<code>keyCode</code>,<code>key</code>,<code>code</code>。我们以字母<code>a</code>为例：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">Property</th>
-<th style="text-align:center">Description</th>
-<th style="text-align:center">Example</th>
+<th align="center">Property</th>
+<th align="center">Description</th>
+<th align="center">Example</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>keyCode</code></td>
-<td style="text-align:center">按键对应的键码值</td>
-<td style="text-align:center">65</td>
+<tbody><tr>
+<td align="center"><code>keyCode</code></td>
+<td align="center">按键对应的键码值</td>
+<td align="center">65</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>key</code></td>
-<td style="text-align:center">按键名</td>
-<td style="text-align:center">a</td>
+<td align="center"><code>key</code></td>
+<td align="center">按键名</td>
+<td align="center">a</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>code</code></td>
-<td style="text-align:center">按键的Unicode字符</td>
-<td style="text-align:center">KeyA</td>
+<td align="center"><code>code</code></td>
+<td align="center">按键的Unicode字符</td>
+<td align="center">KeyA</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h4 id="触摸事件"><a href="#触摸事件" class="headerlink" title="触摸事件"></a>触摸事件</h4><table>
 <thead>
 <tr>
-<th style="text-align:center">Event</th>
-<th style="text-align:center">Description</th>
+<th align="center">Event</th>
+<th align="center">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">touchstart</td>
-<td style="text-align:center">当一个手指开始触碰屏幕</td>
+<tbody><tr>
+<td align="center">touchstart</td>
+<td align="center">当一个手指开始触碰屏幕</td>
 </tr>
 <tr>
-<td style="text-align:center">touchmove</td>
-<td style="text-align:center">当一个手指在屏幕上移动</td>
+<td align="center">touchmove</td>
+<td align="center">当一个手指在屏幕上移动</td>
 </tr>
 <tr>
-<td style="text-align:center">touchend</td>
-<td style="text-align:center">当手指离开屏幕</td>
+<td align="center">touchend</td>
+<td align="center">当手指离开屏幕</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h4 id="手势事件"><a href="#手势事件" class="headerlink" title="手势事件"></a>手势事件</h4><table>
 <thead>
 <tr>
-<th style="text-align:center">Event</th>
-<th style="text-align:center">Description</th>
+<th align="center">Event</th>
+<th align="center">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">gesturestart</td>
-<td style="text-align:center">两只手指触碰屏幕</td>
+<tbody><tr>
+<td align="center">gesturestart</td>
+<td align="center">两只手指触碰屏幕</td>
 </tr>
 <tr>
-<td style="text-align:center">gesturechange</td>
-<td style="text-align:center">任意手指移动</td>
+<td align="center">gesturechange</td>
+<td align="center">任意手指移动</td>
 </tr>
 <tr>
-<td style="text-align:center">gestureend</td>
-<td style="text-align:center">某一只手指离开屏幕，只剩一只手指在屏幕上</td>
+<td align="center">gestureend</td>
+<td align="center">某一只手指离开屏幕，只剩一只手指在屏幕上</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>触发手势事件的时候也会触发触摸事件。</p>
 <h4 id="滚动事件"><a href="#滚动事件" class="headerlink" title="滚动事件"></a>滚动事件</h4><table>
 <thead>
 <tr>
-<th style="text-align:center">Event</th>
-<th style="text-align:center">Description</th>
+<th align="center">Event</th>
+<th align="center">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">scroll</td>
-<td style="text-align:center">当元素开始滚动</td>
+<tbody><tr>
+<td align="center">scroll</td>
+<td align="center">当元素开始滚动</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <p>参考：</p>
 <p><a href="https://medium.com/@vsvaibhav2016/introduction-to-event-driven-programming-28161b79c223" target="_blank" rel="noopener">Introduction to Event-Driven Programming</a></p>
 <p><a href="https://www.digitalocean.com/community/tutorials/understanding-events-in-javascript" target="_blank" rel="noopener">Understanding Events in JavaScript</a></p>
 <p><a href="https://eloquentjavascript.net/15_event.html" target="_blank" rel="noopener">Handling Events:: Eloquent JavaScript</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzUzOTM0MTE4OQ==&amp;mid=2247483857&amp;idx=1&amp;sn=b67a11ccb86077d8e033ab4a999ab152&amp;chksm=fac8b93bcdbf302ddd17854f472af27cdfc1b07db5da805cbc88c738464d19cdacf5cdd3bc13&amp;mpshare=1&amp;scene=1&amp;srcid=0218iZ6Hupq3BmZ0j77RNIUD%23rd" target="_blank" rel="noopener">前端小知识–JavaScript事件流</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzUzOTM0MTE4OQ==&mid=2247483857&idx=1&sn=b67a11ccb86077d8e033ab4a999ab152&chksm=fac8b93bcdbf302ddd17854f472af27cdfc1b07db5da805cbc88c738464d19cdacf5cdd3bc13&mpshare=1&scene=1&srcid=0218iZ6Hupq3BmZ0j77RNIUD%23rd" target="_blank" rel="noopener">前端小知识–JavaScript事件流</a></p>
 <p><a href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html" target="_blank" rel="noopener">JavaScript 运行机制详解：再谈Event Loop</a></p>
 </blockquote>
 
@@ -935,7 +934,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1071,7 +1070,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

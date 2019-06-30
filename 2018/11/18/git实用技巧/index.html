@@ -482,13 +482,19 @@
         <p>Git的奇技淫巧是github上的一个git使用技巧合集，没有谈原理方面的内容，有很多小tips很有用，这里记录一下我还不太会用的。</p>
 <p>Git的奇技淫巧：<a href="https://github.com/521xueweihan/git-tips" target="_blank" rel="noopener">链接</a></p>
 <a id="more"></a>
+
 <h5 id="回到远程仓库的状态"><a href="#回到远程仓库的状态" class="headerlink" title="回到远程仓库的状态"></a>回到远程仓库的状态</h5><p>抛弃本地所有的修改，回到远程仓库的状态。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all &amp;&amp; git reset --hard origin/master</span><br></pre></td></tr></table></figure>
+
 <h5 id="重设第一个commit"><a href="#重设第一个commit" class="headerlink" title="重设第一个commit"></a>重设第一个commit</h5><p>清空所有的commit，可以重新提交第一个commit</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git update-ref -d HEAD</span><br></pre></td></tr></table></figure>
+
 <h5 id="展示两个版本之间的不同"><a href="#展示两个版本之间的不同" class="headerlink" title="展示两个版本之间的不同"></a>展示两个版本之间的不同</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;commit-id&gt; &lt;commit-id&gt;</span><br></pre></td></tr></table></figure>
+
 <h5 id="展示暂存区和本地最近版本的不同"><a href="#展示暂存区和本地最近版本的不同" class="headerlink" title="展示暂存区和本地最近版本的不同"></a>展示暂存区和本地最近版本的不同</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff --cached</span><br></pre></td></tr></table></figure>
+
 <h5 id="删除合并到master的分支"><a href="#删除合并到master的分支" class="headerlink" title="删除合并到master的分支"></a>删除合并到master的分支</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch --merged master | grep -v '^\*\|  master' | xargs -n 1 git branch -d</span><br></pre></td></tr></table></figure>
+
 <h5 id="回到某一个commit的状态"><a href="#回到某一个commit的状态" class="headerlink" title="回到某一个commit的状态"></a>回到某一个commit的状态</h5><ul>
 <li><p>新增一个commit来还原某一个commit，其余commit保留</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert &lt;commit-id&gt;</span><br></pre></td></tr></table></figure>
@@ -501,6 +507,7 @@
 </li>
 <li><p>回到某一个commit，暂存区和工作区变为指定commit版本的内容</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset -hard &lt;commit-id&gt;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 
@@ -634,7 +641,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -770,7 +777,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

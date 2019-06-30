@@ -485,9 +485,12 @@
       
         <p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fu8flnjeisj30go06jgli.jpg" alt="Image result for upload"></p>
 <a id="more"></a>
+
 <p>前面我们用<code>body-parser</code>中间件实现了解析post方式提交的数据。但是<code>body-parser</code>无法实现上传文件的功能。我们可以尝试一下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://localhost:9000"</span> <span class="attr">method</span>=<span class="string">"post"</span> &gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"file"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">"上传"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">"body-parser"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> server = express();</span><br><span class="line">server.use(bodyParser.urlencoded(&#123;</span><br><span class="line">  extended: <span class="literal">true</span></span><br><span class="line">&#125;))</span><br><span class="line">server.use(<span class="string">'/'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(req.body);</span><br><span class="line">  res.end(<span class="string">"hello"</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <p>比如我上传一张图片：</p>
 <p><img src="https://ws1.sinaimg.cn/large/0069RVTdly1fu87kzrgfmj308x01h0sm.jpg" alt="image-20180813173728565"></p>
 <p>后台的输出：</p>
@@ -504,7 +507,9 @@
 </blockquote>
 <p><code>body-parser</code>中间件则是用于解析格式是<code>application/x-www-form-urlencoded</code>的文件。要解析<code>multipart/form-data</code>文件则需要用到multer中间件。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://localhost:9000"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"file"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">"上传"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">const</span> multer = <span class="built_in">require</span>(<span class="string">"multer"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> server = express();</span><br><span class="line"><span class="keyword">let</span> upload = multer(&#123;<span class="attr">dest</span>: <span class="string">'resource/'</span>&#125;);  <span class="comment">// 需要给multer定义一个上传路径(文件夹)</span></span><br><span class="line"></span><br><span class="line">server.use(upload.any());</span><br><span class="line">server.use(<span class="string">'/'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(req.files);</span><br><span class="line">  res.end(<span class="string">"hello"</span>);</span><br><span class="line">&#125;)</span><br><span class="line">server.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <p>此时再上传文件，终端就会输出文件的相关信息：</p>
 <p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fu8d49ivg7j30d705fjs6.jpg" alt="image-20180813204859172"></p>
 <p>同时，resource文件夹中还多出了一个文件：</p>
@@ -512,6 +517,7 @@
 <p>文件以Buffer的形式储存。</p>
 <p>我们还可以将文件发送给浏览器，让浏览器读出来：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">const</span> multer = <span class="built_in">require</span>(<span class="string">"multer"</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> server = express();</span><br><span class="line"><span class="keyword">let</span> upload = multer(&#123;<span class="attr">dest</span>: <span class="string">'resource/'</span>&#125;);</span><br><span class="line"></span><br><span class="line">server.use(upload.any());</span><br><span class="line">server.use(<span class="string">'/'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  fs.readFile(req.files[<span class="number">0</span>].path, (err, data) =&gt; &#123;</span><br><span class="line">    res.end(data);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <p>我们再次上传图片，浏览器中就会把图片显示出来：</p>
 <p><img src="https://ws3.sinaimg.cn/large/0069RVTdly1fu8e5q142lj313y0j1qp3.jpg" alt="image-20180813212458833"></p>
 
@@ -640,7 +646,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -760,7 +766,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

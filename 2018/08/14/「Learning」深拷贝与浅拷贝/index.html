@@ -132,19 +132,19 @@
 
 
 
-<meta name="description" content="原文地址：低门槛彻底理解JavaScript中的深拷贝和浅拷贝     基本类型 引用类型     保存位置 保存在栈内存中 保存在堆内存中   保存方式 完全保存在内存中的一个位置 变量保存的是一个指针，指针指向内存中的一个位置   数据 简单数据段 对象   具体类型 Boolean, Null, Undefined, Number, String, Symbol Object, Array,">
+<meta name="description" content="原文地址：低门槛彻底理解JavaScript中的深拷贝和浅拷贝     基本类型 引用类型    保存位置 保存在栈内存中 保存在堆内存中   保存方式 完全保存在内存中的一个位置 变量保存的是一个指针，指针指向内存中的一个位置   数据 简单数据段 对象   具体类型 Boolean, Null, Undefined, Number, String, Symbol Object, Array,">
 <meta name="keywords" content="JavaScript,深拷贝浅拷贝,数据类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「Learning」深拷贝与浅拷贝">
 <meta property="og:url" content="http://xuquan.site/2018/08/14/「Learning」深拷贝与浅拷贝/index.html">
 <meta property="og:site_name" content="Nikkkki&#39;s Notes">
-<meta property="og:description" content="原文地址：低门槛彻底理解JavaScript中的深拷贝和浅拷贝     基本类型 引用类型     保存位置 保存在栈内存中 保存在堆内存中   保存方式 完全保存在内存中的一个位置 变量保存的是一个指针，指针指向内存中的一个位置   数据 简单数据段 对象   具体类型 Boolean, Null, Undefined, Number, String, Symbol Object, Array,">
+<meta property="og:description" content="原文地址：低门槛彻底理解JavaScript中的深拷贝和浅拷贝     基本类型 引用类型    保存位置 保存在栈内存中 保存在堆内存中   保存方式 完全保存在内存中的一个位置 变量保存的是一个指针，指针指向内存中的一个位置   数据 简单数据段 对象   具体类型 Boolean, Null, Undefined, Number, String, Symbol Object, Array,">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdly1fu99q9jpkwj30cm05ztan.jpg">
 <meta property="og:updated_time" content="2018-08-14T07:53:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「Learning」深拷贝与浅拷贝">
-<meta name="twitter:description" content="原文地址：低门槛彻底理解JavaScript中的深拷贝和浅拷贝     基本类型 引用类型     保存位置 保存在栈内存中 保存在堆内存中   保存方式 完全保存在内存中的一个位置 变量保存的是一个指针，指针指向内存中的一个位置   数据 简单数据段 对象   具体类型 Boolean, Null, Undefined, Number, String, Symbol Object, Array,">
+<meta name="twitter:description" content="原文地址：低门槛彻底理解JavaScript中的深拷贝和浅拷贝     基本类型 引用类型    保存位置 保存在栈内存中 保存在堆内存中   保存方式 完全保存在内存中的一个位置 变量保存的是一个指针，指针指向内存中的一个位置   数据 简单数据段 对象   具体类型 Boolean, Null, Undefined, Number, String, Symbol Object, Array,">
 <meta name="twitter:image" content="https://ws3.sinaimg.cn/large/0069RVTdly1fu99q9jpkwj30cm05ztan.jpg">
 
 
@@ -481,39 +481,38 @@
       
 
       
-        <p>原文地址：<a href="https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&amp;mid=2651554109&amp;idx=2&amp;sn=f37454a036264b0531b866a22b216eab&amp;chksm=802556fcb752dfea2ed9ae3fb4654a5670061217ac5476455e1553087333a60dfb4770f9711b&amp;mpshare=1&amp;scene=1&amp;srcid=05073YaTH0eNYiq9CbHqZAUh%23rd" target="_blank" rel="noopener">低门槛彻底理解JavaScript中的深拷贝和浅拷贝</a></p>
+        <p>原文地址：<a href="https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651554109&idx=2&sn=f37454a036264b0531b866a22b216eab&chksm=802556fcb752dfea2ed9ae3fb4654a5670061217ac5476455e1553087333a60dfb4770f9711b&mpshare=1&scene=1&srcid=05073YaTH0eNYiq9CbHqZAUh%23rd" target="_blank" rel="noopener">低门槛彻底理解JavaScript中的深拷贝和浅拷贝</a></p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">基本类型</th>
-<th style="text-align:center">引用类型</th>
+<th align="center"></th>
+<th align="center">基本类型</th>
+<th align="center">引用类型</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">保存位置</td>
-<td style="text-align:center">保存在栈内存中</td>
-<td style="text-align:center">保存在堆内存中</td>
+<tbody><tr>
+<td align="center">保存位置</td>
+<td align="center">保存在栈内存中</td>
+<td align="center">保存在堆内存中</td>
 </tr>
 <tr>
-<td style="text-align:center">保存方式</td>
-<td style="text-align:center">完全保存在内存中的一个位置</td>
-<td style="text-align:center">变量保存的是一个指针，<br>指针指向内存中的一个位置</td>
+<td align="center">保存方式</td>
+<td align="center">完全保存在内存中的一个位置</td>
+<td align="center">变量保存的是一个指针，<br>指针指向内存中的一个位置</td>
 </tr>
 <tr>
-<td style="text-align:center">数据</td>
-<td style="text-align:center">简单数据段</td>
-<td style="text-align:center">对象</td>
+<td align="center">数据</td>
+<td align="center">简单数据段</td>
+<td align="center">对象</td>
 </tr>
 <tr>
-<td style="text-align:center">具体类型</td>
-<td style="text-align:center"><code>Boolean, Null, Undefined, Number, String, Symbol</code></td>
-<td style="text-align:center"><code>Object, Array, Function</code></td>
+<td align="center">具体类型</td>
+<td align="center"><code>Boolean, Null, Undefined, Number, String, Symbol</code></td>
+<td align="center"><code>Object, Array, Function</code></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <a id="more"></a>
+
 <h3 id="基本类型和引用类型"><a href="#基本类型和引用类型" class="headerlink" title="基本类型和引用类型"></a>基本类型和引用类型</h3><ul>
 <li>ECMAScript变量包含基本类型和引用类型两种数据类型</li>
 <li>基本类型<ul>
@@ -555,6 +554,7 @@
 <li>递归</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj, parent = null</span>) </span>&#123;</span><br><span class="line"><span class="number">2.</span>    <span class="comment">// 创建一个新对象</span></span><br><span class="line"><span class="number">3.</span>    <span class="keyword">let</span> result = &#123;&#125;;</span><br><span class="line"><span class="number">4.</span>    <span class="keyword">let</span> keys = <span class="built_in">Object</span>.keys(obj),</span><br><span class="line"><span class="number">5.</span>        key = <span class="literal">null</span>,</span><br><span class="line"><span class="number">6.</span>        temp= <span class="literal">null</span>,</span><br><span class="line"><span class="number">7.</span>        _parent = parent;</span><br><span class="line"><span class="number">8.</span>    <span class="comment">// 该字段有父级则需要追溯该字段的父级</span></span><br><span class="line"><span class="number">9.</span>    <span class="keyword">while</span> (_parent) &#123;</span><br><span class="line"><span class="number">10.</span>        <span class="comment">// 如果该字段引用了它的父级则为循环引用</span></span><br><span class="line"><span class="number">11.</span>        <span class="keyword">if</span> (_parent.originalParent === obj) &#123;</span><br><span class="line"><span class="number">12.</span>            <span class="comment">// 循环引用直接返回同级的新对象</span></span><br><span class="line"><span class="number">13.</span>            <span class="keyword">return</span> _parent.currentParent;</span><br><span class="line"><span class="number">14.</span>        &#125;</span><br><span class="line"><span class="number">15.</span>        _parent = _parent.parent;</span><br><span class="line"><span class="number">16.</span>    &#125;</span><br><span class="line"><span class="number">17.</span>    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; keys.length; i++) &#123;</span><br><span class="line"><span class="number">18.</span>        key = keys[i];</span><br><span class="line"><span class="number">19.</span>        temp= obj[key];</span><br><span class="line"><span class="number">20.</span>        <span class="comment">// 如果字段的值也是一个对象</span></span><br><span class="line"><span class="number">21.</span>        <span class="keyword">if</span> (temp &amp;&amp; <span class="keyword">typeof</span> temp=== <span class="string">'object'</span>) &#123;</span><br><span class="line"><span class="number">22.</span>            <span class="comment">// 递归执行深拷贝 将同级的待拷贝对象与新对象传递给 parent 方便追溯循环引用</span></span><br><span class="line"><span class="number">23.</span>            result[key] = DeepCopy(temp, &#123;</span><br><span class="line"><span class="number">24.</span>                originalParent: obj,</span><br><span class="line"><span class="number">25.</span>                currentParent: result,</span><br><span class="line"><span class="number">26.</span>                parent: parent</span><br><span class="line"><span class="number">27.</span>            &#125;);</span><br><span class="line"><span class="number">28.</span>        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="number">29.</span>            result[key] = temp;</span><br><span class="line"><span class="number">30.</span>        &#125;</span><br><span class="line"><span class="number">31.</span>    &#125;</span><br><span class="line"><span class="number">32.</span>    <span class="keyword">return</span> result;</span><br><span class="line"><span class="number">33.</span>&#125;</span><br><span class="line"><span class="number">34.</span><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line"><span class="number">35.</span>    x: <span class="number">1</span>, </span><br><span class="line"><span class="number">36.</span>    y: <span class="number">2</span></span><br><span class="line"><span class="number">37.</span>&#125;;</span><br><span class="line"><span class="number">38.</span>obj1.z = obj1;</span><br><span class="line"><span class="number">39.</span><span class="keyword">var</span> obj2 = deepCopy(obj1);</span><br><span class="line"><span class="number">40.</span><span class="built_in">console</span>.log(obj1); </span><br><span class="line"><span class="number">41.</span><span class="built_in">console</span>.log(obj2);</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -690,7 +690,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -826,7 +826,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

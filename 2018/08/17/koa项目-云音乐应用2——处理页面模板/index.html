@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,313 字
+                  1,314 字
                 </span>
               
 
@@ -489,6 +489,7 @@
       
         <p>在搭建好项目的基本框架，和确认渲染模板正常工作之后，我们可以开始进行下一步，来配置注册和登录页面的渲染和功能实现。</p>
 <a id="more"></a>
+
 <h4 id="页面模板"><a href="#页面模板" class="headerlink" title="页面模板"></a>页面模板</h4><p>因为是node.js部分的作业，所以项目需要的几个页面老师都直接提供了。这里提到有几个地方可以优化。</p>
 <h5 id="网站架构优化"><a href="#网站架构优化" class="headerlink" title="网站架构优化"></a>网站架构优化</h5><p>这一部分老师提供的html文件是按页面来区分的，包括了注册<code>register</code>、登录<code>login</code>、修改<code>edit</code>，还有添加文件<code>add</code>几个页面内容，但是这些内容中其实有很多是重复的。</p>
 <p>比如网站的头部和底部都是一样的样式，比如引入的库（<code>bootstrap</code>和<code>jquery</code>）在每一个文件中都被引入了一部分，这样其实对于项目的维护会造成很多麻烦。所以这里可以先将页面文件夹(<code>views</code>)中的结构调整一下。</p>
@@ -505,11 +506,13 @@
 </li>
 <li><p>在其他的页面文件（如注册、登录页面）中，继承<code>main.html</code>的布局，并且将自己的内容填入到上面提到的<code></code>部分</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;extend "./layout/main.html"&#125;&#125;</span><br><span class="line">&#123;&#123;block 'content'&#125;&#125;</span><br><span class="line">	...</span><br><span class="line">&#123;&#123;/block&#125;&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <p>这里我们不细究具体的布局问题，主要实现node.js的功能。</p>
 <p>接着我们给<code>router</code>配置上不同的路径应该渲染哪个模板：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">"/register"</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">"register"</span>);</span><br><span class="line">&#125;)</span><br><span class="line">  .get(<span class="string">"/login"</span>, ctx =&gt; &#123;</span><br><span class="line">  ctx.render(<span class="string">"login"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <p>现在我们可以来试一试在<code>localhost:9000/register</code>来看看能不能把页面内容渲染出来：</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fud3vv4p31j30h10ekaau.jpg" alt="image-20180817231719857"></p>
 <p>这里读出文件内容是没问题的，但并没有任何样式，在控制台可以看到有一堆资源404的报错。</p>
@@ -519,12 +522,13 @@
 <p>（考虑不修改引用路径来解决）如果在按照图中路径的情况，就得让整个项目文件夹共享，这样就会导致所有代码公开，不太安全，但是如果不修改路径的情况下，我们就要做一个调整，即将引用路径中的<code>/public</code>部分去除掉。</p>
 <p>这里的解决方法是当服务器接收到以<code>/public</code>开头的请求时，将<code>/public</code>删除：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(ctx.request.url.startsWith(<span class="string">'/public'</span>)) &#123;</span><br><span class="line">    ctx.request.url = ctx.request.url.replace(<span class="string">"/public"</span>, <span class="string">""</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">await</span> next();</span><br><span class="line">&#125;)</span><br><span class="line">app.use(<span class="built_in">require</span>(<span class="string">"koa-static"</span>)&#123;<span class="string">'./public'</span>&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>_<strong>注意点1</strong>：_koa的服务器对象有两个参数，一个是<code>ctx</code>即上下文对象，另一个是<code>next</code>，用于让服务器实现链式操作。一般使用中间件的时候都没有用到这个<code>next</code>，并不是因为<code>next</code>没必要用，而是因为中间件内部已经包含了是否需要<code>next</code>的判断。如果我们自己写中间件，还是应该把<code>next()</code>给加上。</p>
 <p>现在我们再来看</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fud4j5ehjvj30i60hzwfa.jpg" alt="image-20180817233943262"></p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fud4jhe1euj30kc0e3acb.jpg" alt="image-20180817234003117"></p>
 <p>这样注册、登录页面就没问题了。</p>
-<p><em><strong>注意点2</strong>：</em>我刚开始写这两行代码的时候，把使用<code>koa-static</code>放在处理<code>request.url</code>前面了，想法是共享了文件夹，再处理请求，但是这样还是没法读到<code>public</code>文件夹，后来调换顺序解决了这个问题。</p>
+<p>_<strong>注意点2</strong>：_我刚开始写这两行代码的时候，把使用<code>koa-static</code>放在处理<code>request.url</code>前面了，想法是共享了文件夹，再处理请求，但是这样还是没法读到<code>public</code>文件夹，后来调换顺序解决了这个问题。</p>
 <p>我在网上查了一下原因，<code>koa-static</code>中间件其实是一个对<code>koa-send</code>中间件的包装。它的实现机制是根据传入的path查找下级文件是否存在，如果存在就创建一个流，如果不存在就抛出错误。如果处理静态文件的语句在前，那么在请求进来的时候，语句就判断了文件夹不存在，于是就报错了。</p>
 <p>所以处理静态资源的语句务必直接处理最终我们希望它处理的请求路径。</p>
 
@@ -660,7 +664,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -796,7 +800,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 

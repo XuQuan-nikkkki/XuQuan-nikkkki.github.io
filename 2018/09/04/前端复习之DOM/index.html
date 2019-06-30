@@ -488,13 +488,14 @@
       
         <p>DOM，Document Object Model,即文档对象模型，是HTML和XML文档的一个操作接口。通过DOM，JavaScript可以获取和操作文档上的所有元素。</p>
 <a id="more"></a>
+
 <h3 id="DOM是什么"><a href="#DOM是什么" class="headerlink" title="DOM是什么"></a>DOM是什么</h3><p><a href="https://xuquan.site/2018/09/04/%E5%89%8D%E7%AB%AF%E5%A4%8D%E4%B9%A0%E4%B9%8BBOM/">BOM</a>中曾提到，浏览器在页面初始化时，会在内存创建一个全局对象，即<code>window</code>对象，用来描述当前窗口的信息。<code>window</code>对象下回有6大核心模块，其中<code>document</code>模块即文档对象，它用来描述HTML/XML文档的内容。</p>
 <p>浏览器解析HTML/XML文档的方式是将HTML和XML文档中的每个元素/属性/文本等映射成一个节点，节点之间存在层级关系，因此，整个文档被解析完成后，会生成一个由不同节点组成的树状结构，这个树状结构被称为DOM树。<code>document</code>对象就用来描述DOM树的状态和属性，同时也提供操作DOM的API。</p>
 <p>DOM树示例：</p>
 <p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fuxk9ewb7kg30di07ewea.gif" alt="DOM HTML tree"></p>
 <p>DOM是一个W3C标准，它定义了如何操作文档的标准。它允许代码动态地获取和更新文档的内容、结构和样式。</p>
 <blockquote>
-<p><em>“The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.”</em></p>
+<p>*”The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.”*</p>
 </blockquote>
 <p>W3C DOM标准包括3个不同的部分：</p>
 <ul>
@@ -519,6 +520,7 @@
 </ul>
 <h3 id="DOM的层级"><a href="#DOM的层级" class="headerlink" title="DOM的层级"></a>DOM的层级</h3><h4 id="DOM0"><a href="#DOM0" class="headerlink" title="DOM0"></a>DOM0</h4><p>早期JavaScript版本中提供了操作Web文档的API，如图像和表单，我们可以通过这样的方法访问第一张图片或名为”user”的表单：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.images[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">document</span>.forms[<span class="string">"user"</span>];</span><br></pre></td></tr></table></figure>
+
 <p>这实际上是未形成标准的实验性质的初级阶段DOM，习惯上被称为DOM0，它出现在W3C进行标准化之前，即没有形成真正的标准。</p>
 <p>1997年6月和10月，Netscape Navigator 4和IE 4分别发布，这两种浏览器都大幅扩展了DOM，使JavaScript的功能大大增加，此时随之出现一个新的名词：DHTML。</p>
 <p>DHTML即Dynamic HTML（动态HTML）。它不是一项新技术，而是将HTML，CSS，JavaScript技术组合的一种描述。它可以</p>
@@ -702,7 +704,7 @@
 <p>参考：</p>
 <ul>
 <li><a href="https://github.com/jawil/blog/issues/9" target="_blank" rel="noopener">深入浅出DOM基础——《DOM探索之基础详解篇》学习笔记</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzUzOTM0MTE4OQ==&amp;mid=2247483745&amp;idx=1&amp;sn=06770c4adeab5826cc323150c77b17ad&amp;chksm=fac8b98bcdbf309d5fcf7a60656897c4dd5ada41a56ec92d0741e49fa0d3cf549fc339b821d2&amp;mpshare=1&amp;scene=1&amp;srcid=1210IRoWr9J3FuNya6cKgZ9g%23rd" target="_blank" rel="noopener">Web前端知识体系精简</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzUzOTM0MTE4OQ==&mid=2247483745&idx=1&sn=06770c4adeab5826cc323150c77b17ad&chksm=fac8b98bcdbf309d5fcf7a60656897c4dd5ada41a56ec92d0741e49fa0d3cf549fc339b821d2&mpshare=1&scene=1&srcid=1210IRoWr9J3FuNya6cKgZ9g%23rd" target="_blank" rel="noopener">Web前端知识体系精简</a></li>
 </ul>
 </blockquote>
 
@@ -838,7 +840,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">141</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -974,7 +976,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">207.6k</span>
+    <span title="Site words total count">208.6k</span>
   
 </div>
 
