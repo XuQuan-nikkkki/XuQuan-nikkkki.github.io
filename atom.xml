@@ -257,11 +257,11 @@
       <category term="学习笔记" scheme="http://xuquan.site/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="React" scheme="http://xuquan.site/tags/React/"/>
+    
       <category term="FreeCodeCamp" scheme="http://xuquan.site/tags/FreeCodeCamp/"/>
     
       <category term="Redux" scheme="http://xuquan.site/tags/Redux/"/>
-    
-      <category term="React" scheme="http://xuquan.site/tags/React/"/>
     
   </entry>
   
@@ -305,9 +305,9 @@
       <category term="学习笔记" scheme="http://xuquan.site/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="git" scheme="http://xuquan.site/tags/git/"/>
-    
       <category term="翻译" scheme="http://xuquan.site/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="git" scheme="http://xuquan.site/tags/git/"/>
     
   </entry>
   
