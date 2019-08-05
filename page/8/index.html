@@ -335,6 +335,226 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/08/「Learning」JavaScript深入之从原型到原型链/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/08/「Learning」JavaScript深入之从原型到原型链/" itemprop="url">「Learning」JavaScript深入之从原型到原型链</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T16:36:24+08:00">
+                2018-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/跟着大佬学编程/" itemprop="url" rel="index">
+                    <span itemprop="name">跟着大佬学编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/08/「Learning」JavaScript深入之从原型到原型链/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/08/「Learning」JavaScript深入之从原型到原型链/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/08/「Learning」JavaScript深入之从原型到原型链/" class="leancloud_visitors" data-flag-title="「Learning」JavaScript深入之从原型到原型链">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  479 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>学习内容：<a href="https://mp.weixin.qq.com/s?__biz=MzUzOTM0MTE4OQ==&mid=2247484119&idx=1&sn=63ce12bbf9dd4c4c8780a4568bb94975&chksm=fac8ba3dcdbf332ba76f97b9b6b82b9b18116d87aaeeeae2e51ef07667836d7b6a04e1b47c2a&mpshare=1&scene=1&srcid=0417LWrshnhirAheKZRGuZeG%23rd" target="_blank" rel="noopener">JavaScript深入之从原型到原型链</a></p>
+<h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><ul>
+<li>构造函数创建对象<ul>
+<li><code>prototype</code>属性</li>
+<li><code>__proto__</code>属性</li>
+<li><code>constructor</code>属性</li>
+</ul>
+</li>
+<li>实例与原型<ul>
+<li>属性逐级向上找</li>
+</ul>
+</li>
+<li>原型的原型<ul>
+<li>所有实例原型的<code>__proto__</code>最终都指向<code>Object.prototype</code></li>
+</ul>
+</li>
+<li>原型链<ul>
+<li>父类的<code>prototype</code>===实例的<code>__proto__</code></li>
+<li><code>Object.prototype.__proto__ === null</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="原型链三大定律"><a href="#原型链三大定律" class="headerlink" title="原型链三大定律"></a>原型链三大定律</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="comment">//1. 父元素的prototype 等于 子元素的__proto__</span></span><br><span class="line">Person.prototype === person.__proto__  <span class="comment">//true</span></span><br><span class="line"><span class="comment">//2. 父元素原型的constructor指向自己</span></span><br><span class="line">Person.prototype.constructor === Perosn  <span class="comment">//true</span></span><br><span class="line"><span class="comment">//3. 获取对象的原型方法</span></span><br><span class="line"><span class="built_in">Object</span>.getPrototypeOf(person) === Person.prototype  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/08/「Learning」JavaScript深入之从原型到原型链/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/08/ES6学习笔记之Class/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2228,250 +2448,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/03/ES6学习笔记之Set和Map/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xu Quan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/03/ES6学习笔记之Set和Map/" itemprop="url">ES6学习笔记之Set和Map</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-03T23:56:24+08:00">
-                2018-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/03/ES6学习笔记之Set和Map/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/03/ES6学习笔记之Set和Map/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/08/03/ES6学习笔记之Set和Map/" class="leancloud_visitors" data-flag-title="ES6学习笔记之Set和Map">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  773 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><p>Set和Map是ES6新添加的两个数据结构。</p>
-<ul>
-<li><strong><code>Set</code></strong><ul>
-<li>类似数组，没有重复值</li>
-<li>与数组相关方法<ul>
-<li><code>new Set(array)</code> 利用数组元素生成<code>Set</code>，<code>[...set]</code>实现数组去重</li>
-<li><code>Array.from(set)</code> 转换成数组</li>
-</ul>
-</li>
-<li><strong>属性</strong><ul>
-<li><code>constructor</code> 构造函数</li>
-<li><code>size</code> 成员个数</li>
-</ul>
-</li>
-<li><strong>方法</strong><ul>
-<li><code>add(value)</code> 添加值</li>
-<li><code>delete(value)</code> 删除值</li>
-<li><code>has(value)</code> 判断是否包含某值</li>
-<li><code>clear()</code> 清除所有成员</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong><code>Map</code></strong><ul>
-<li>类似对象，键可以是任意数据类型</li>
-<li><strong>属性</strong><ul>
-<li><code>size</code> 成员个数</li>
-</ul>
-</li>
-<li><strong>方法</strong><ul>
-<li><code>set(key, value)</code> 设置某个键的值</li>
-<li><code>get(key)</code> 读取某个键的值</li>
-<li><code>has(key)</code> 判断是否有某个键</li>
-<li><code>delete(key)</code> 删除某个键，返回布尔值，表明是否删除成功</li>
-<li><code>clear()</code> 清空所有成员</li>
-</ul>
-</li>
-<li>与其他数据结构互转<ul>
-<li><strong>Map =&gt; 数组</strong> 使用扩展运算符<code>...</code></li>
-<li><strong>数组 =&gt; Map</strong> 将数组传入Map构造函数</li>
-<li><strong>Map =&gt; 对象</strong> 函数将键值对传入对象</li>
-<li><strong>对象 =&gt; Map</strong> 函数设置Map对象的每个键</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/03/ES6学习笔记之Set和Map/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2524,7 +2500,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">146</span>
+                  <span class="site-state-item-count">147</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2546,7 +2522,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">105</span>
+                  <span class="site-state-item-count">107</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2644,7 +2620,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">211.2k</span>
+    <span title="Site words total count">211.8k</span>
   
 </div>
 

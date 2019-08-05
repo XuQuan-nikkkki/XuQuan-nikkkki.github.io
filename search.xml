@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>笔记：OKR工作法</title>
+      <link href="/2019/08/05/%E7%AC%94%E8%AE%B0%EF%BC%9AOKR%E5%B7%A5%E4%BD%9C%E6%B3%95/"/>
+      <url>/2019/08/05/%E7%AC%94%E8%AE%B0%EF%BC%9AOKR%E5%B7%A5%E4%BD%9C%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>又到了公司一年两度写OKR的时候，上次读的OKR的书，内容已经忘了大半，像这种情况，我都总结为书写得不够好。正好看见家里有一本《OKR工作法》，应该是张老师买的，于是拿来读了一遍，想说这本的确易读很多，且方法论陈述得很清楚，很适合我这种临时抱佛脚的人。以下是做的笔记。</p><a id="more"></a><ul><li><p>确定目标，确保团队聚焦到重要目标上</p><ul><li>定义<ul><li>Objectives and Key Results</li><li>目标：你想要做什么</li><li>关键结果：如何确认你做到了</li></ul></li></ul></li><li><p>讨论关键结果，复盘OKR实施过程中的问题</p><ul><li><p>右上象限：目标 + 关键结果 + 信心指数</p><ul><li>每个关键结果由一个信心指数，初始值为50%，每周更新</li></ul></li><li><p>左上象限：本周Plan</p><ul><li>3~5件重要的事情，每件都能有效推进OKR</li><li>按照P1 =&gt; P2 =&gt; P3 =&gt;P4 的顺序排列</li><li>不要事无巨细，而是让大家知道需要关注哪些重要的事情</li></ul></li><li><p>右下象限：状态指标</p><ul><li>完成OKR的保障（推进OKR时也需要关注这些事）</li><li>可以用颜色来标记基本情况</li></ul></li><li><p>左下象限：未来四周TODO</p><ul><li>后续计划要做的重要工作</li></ul></li><li><p><img src="http://ww3.sinaimg.cn/large/006tNc79ly1g5o4n1yof6j30u00vckjm.jpg" alt="img"></p></li><li><p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g5o4n0xzwkj314d0u0kjm.jpg" alt="img"></p></li></ul></li><li><p>评估OKR实施成果</p></li><li><p>影响目标达成的关键因素</p><ul><li>没有给目标设置优先级</li><li>缺乏充分沟通，没能准确理解目标</li><li>没有做好计划</li><li>没有把时间花在重要的事情上</li><li>轻易放弃</li></ul></li><li><p>OKR基本原理</p><ul><li>设定目标<ul><li>目标要明确方向并且鼓舞人心</li><li>要有时间期限</li><li>由独立的团队来执行目标</li></ul></li><li>关键结果<ul><li>振奋人心的语言 + 需要量化</li></ul></li></ul></li><li><p>6大使用场景</p><ul><li><p>利用OKR改进周报</p><ul><li><p>把团队OKR作为开始，并标注完成目标的信心指数</p><ul><li>1是永远不会成功，10是稳操胜券</li><li>当信心下降到3时，把它标记为红色；超过7时，标记为绿色</li></ul></li><li><p>列出上周的优先任务，并标注完成情况</p><ul><li>没有完成的任务，可以简短解释原因</li></ul></li><li><p>列出下周的优先事项</p><ul><li>列出3个重要事项（描述全面 + 具体可执行的步骤）</li></ul></li><li><p>列出风险或阻碍</p></li><li><p>备注</p></li><li><p><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g5o4mz52dej315w0u0kjo.jpg" alt="img"></p></li></ul></li></ul></li></ul><p>附一张思维导图，先忽略我的试用模式。</p><p>幕布地址：<a href="https://mubu.com/doc/3bG8wNxKFo" target="_blank" rel="noopener">https://mubu.com/doc/3bG8wNxKFo</a></p><p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g5o4sk16wlj32fj0u0wxk.jpg" alt="OKR工作法"></p>]]></content>
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> OKR </tag>
+            
+            <tag> 工作效率 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Notes: How are function components different from classes?</title>
       <link href="/2019/07/25/Notes-How-are-function-components-different-from-classes/"/>
       <url>/2019/07/25/Notes-How-are-function-components-different-from-classes/</url>
@@ -2733,10 +2756,10 @@
     </entry>
     
     <entry>
-      <title>CSS学习笔记3：CSS声明权重</title>
-      <link href="/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%EF%BC%9ACSS%E5%A3%B0%E6%98%8E%E6%9D%83%E9%87%8D/"/>
-      <url>/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%EF%BC%9ACSS%E5%A3%B0%E6%98%8E%E6%9D%83%E9%87%8D/</url>
-      <content type="html"><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/9240001-6a43bbbcbd18256a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>]]></content>
+      <title>CSS学习笔记4： CSS长度单位</title>
+      <link href="/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%9A%20CSS%E9%95%BF%E5%BA%A6%E5%8D%95%E4%BD%8D/"/>
+      <url>/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%9A%20CSS%E9%95%BF%E5%BA%A6%E5%8D%95%E4%BD%8D/</url>
+      <content type="html"><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/9240001-4f4f48fdc4ef017b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>]]></content>
       
       <categories>
           
@@ -2754,10 +2777,10 @@
     </entry>
     
     <entry>
-      <title>CSS学习笔记4： CSS长度单位</title>
-      <link href="/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%9A%20CSS%E9%95%BF%E5%BA%A6%E5%8D%95%E4%BD%8D/"/>
-      <url>/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%9A%20CSS%E9%95%BF%E5%BA%A6%E5%8D%95%E4%BD%8D/</url>
-      <content type="html"><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/9240001-4f4f48fdc4ef017b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>]]></content>
+      <title>CSS学习笔记3：CSS声明权重</title>
+      <link href="/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%EF%BC%9ACSS%E5%A3%B0%E6%98%8E%E6%9D%83%E9%87%8D/"/>
+      <url>/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%EF%BC%9ACSS%E5%A3%B0%E6%98%8E%E6%9D%83%E9%87%8D/</url>
+      <content type="html"><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/9240001-6a43bbbcbd18256a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>]]></content>
       
       <categories>
           
@@ -2817,6 +2840,27 @@
     </entry>
     
     <entry>
+      <title>Node.js学习笔记：net模块构建服务器</title>
+      <link href="/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013%EF%BC%9Anet%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <url>/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013%EF%BC%9Anet%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      <content type="html"><![CDATA[<p>最近开始了<a href="https://freecodecamp.cn/challenges/manage-packages-with-npm" target="_blank" rel="noopener">FreeCodeCamp上的Node.js课程</a>,它的课程可以通过<code>npm install learnyounode -g</code>来全局下载node.js的学习模块一步步完成课程挑战来学习基本操作，课程推荐在<a href="https://c9.io" target="_blank" rel="noopener">c9</a>的虚拟Ubuntu操作系统上完成，但是我实测非常不推荐用虚拟操作系统，非常非常慢，且资源占用非常可怕，经常会拖到浏览器卡死。而且这部分课程也不需要提交完成挑战的线上链接，所以完全可以自己用终端来下载模块学习。</p><a id="more"></a><p>FCC这部分课程的搭建服务器挑战不同于之前课程提到的通过<code>http</code>模块完成，它指定用<code>net</code>模块来完成TCP连接，所以需要用到<code>net</code>模块。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 引入模块</span></span><br><span class="line"><span class="keyword">const</span> net = <span class="built_in">require</span>(<span class="string">"net"</span>);</span><br><span class="line"><span class="comment">//2. 创建服务器</span></span><br><span class="line"><span class="keyword">let</span> server = net.createServer(<span class="function">(<span class="params">c</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 'connection' listener</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"client connected"</span>);</span><br><span class="line">  c.on(<span class="string">'end'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'client disconnected'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  c.pipe(c);</span><br><span class="line">&#125;)</span><br><span class="line">server.on(<span class="string">'error'</span>, (err) =&gt; &#123;</span><br><span class="line">  <span class="keyword">throw</span> err;</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>在浏览器打开<code>localhost:9000</code>会触发connection，后台会输出：<br><img src="https://upload-images.jianshu.io/upload_images/9240001-4040aa72a7e6ff23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="后台输出"></p>]]></content>
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>express学习笔记： express-static文件静态管理</title>
       <link href="/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%20express-static%E6%96%87%E4%BB%B6%E9%9D%99%E6%80%81%E7%AE%A1%E7%90%86/"/>
       <url>/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%20express-static%E6%96%87%E4%BB%B6%E9%9D%99%E6%80%81%E7%AE%A1%E7%90%86/</url>
@@ -2840,27 +2884,6 @@
     </entry>
     
     <entry>
-      <title>Node.js学习笔记：net模块构建服务器</title>
-      <link href="/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013%EF%BC%9Anet%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-      <url>/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013%EF%BC%9Anet%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
-      <content type="html"><![CDATA[<p>最近开始了<a href="https://freecodecamp.cn/challenges/manage-packages-with-npm" target="_blank" rel="noopener">FreeCodeCamp上的Node.js课程</a>,它的课程可以通过<code>npm install learnyounode -g</code>来全局下载node.js的学习模块一步步完成课程挑战来学习基本操作，课程推荐在<a href="https://c9.io" target="_blank" rel="noopener">c9</a>的虚拟Ubuntu操作系统上完成，但是我实测非常不推荐用虚拟操作系统，非常非常慢，且资源占用非常可怕，经常会拖到浏览器卡死。而且这部分课程也不需要提交完成挑战的线上链接，所以完全可以自己用终端来下载模块学习。</p><a id="more"></a><p>FCC这部分课程的搭建服务器挑战不同于之前课程提到的通过<code>http</code>模块完成，它指定用<code>net</code>模块来完成TCP连接，所以需要用到<code>net</code>模块。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 引入模块</span></span><br><span class="line"><span class="keyword">const</span> net = <span class="built_in">require</span>(<span class="string">"net"</span>);</span><br><span class="line"><span class="comment">//2. 创建服务器</span></span><br><span class="line"><span class="keyword">let</span> server = net.createServer(<span class="function">(<span class="params">c</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 'connection' listener</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"client connected"</span>);</span><br><span class="line">  c.on(<span class="string">'end'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'client disconnected'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  c.pipe(c);</span><br><span class="line">&#125;)</span><br><span class="line">server.on(<span class="string">'error'</span>, (err) =&gt; &#123;</span><br><span class="line">  <span class="keyword">throw</span> err;</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>在浏览器打开<code>localhost:9000</code>会触发connection，后台会输出：<br><img src="https://upload-images.jianshu.io/upload_images/9240001-4040aa72a7e6ff23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="后台输出"></p>]]></content>
-      
-      <categories>
-          
-          <category> 学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> node.js </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Mac添加自定义快捷键</title>
       <link href="/2018/06/06/Mac%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
       <url>/2018/06/06/Mac%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
@@ -2876,27 +2899,6 @@
         <tags>
             
             <tag> mac </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Node.js学习笔记12：作业——读取文件夹内所有文件列表</title>
-      <link href="/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012%EF%BC%9A%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/"/>
-      <url>/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012%EF%BC%9A%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</url>
-      <content type="html"><![CDATA[<p>结合前两节的内容：<br><a href="https://www.jianshu.com/p/86127593e93e" target="_blank" rel="noopener">写给小白的Node.js学习笔记10：fs模块读取文件列表</a><br><a href="https://www.jianshu.com/p/8cd6f60d00dc" target="_blank" rel="noopener">写给小白的Node.js学习笔记11：fs.stat判断文件类型</a><br>我们可以结合两种方法，读取文件夹内的全部文件列表。</p><a id="more"></a><p>思路如下：</p><ol><li>通过<code>fs.readdir</code>方法读取路径，获取文件列表</li><li>对文件进行判断，如果是文件，则输出文件名，如果是文件夹，则读取该文件夹的路径，并对这个文件夹内部的文件再次进行判断</li><li>我们可以将上述方法封装到一个函数中，如果文件夹内还有文件夹，对内部文件夹再次讨厌函数即可（递归）</li><li>这里需要用到<code>path.join</code>方法，可以回顾<a href="https://www.jianshu.com/p/415d0313f79f" target="_blank" rel="noopener">《写给小白的node.js学习笔记8：path核心对象》</a></li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">let</span> myPath = <span class="string">"/Application/MAMP/htdocs/nodejs/test/"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myReadFile</span>(<span class="params">tempPath</span>) </span>&#123;</span><br><span class="line">  fs.readdir(tempPath, (err, files) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    files.forEach(<span class="function"><span class="params">file</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> fPath = path.join(tempPath, file);</span><br><span class="line">      fs.stat(fPath, (err, stats) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">        <span class="keyword">if</span>(stats.isFile())&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(file);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (stats.isDirectory())&#123;</span><br><span class="line">          myReadFile(fPath);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">myReadFile(myPath);</span><br></pre></td></tr></table></figure><p>输出结果如下：<br><img src="https://upload-images.jianshu.io/upload_images/9240001-658345a83da6d56d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p>]]></content>
-      
-      <categories>
-          
-          <category> 学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> node.js </tag>
             
         </tags>
       
@@ -2928,6 +2930,27 @@
       <link href="/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011%EF%BC%9Afs.stat%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B/"/>
       <url>/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011%EF%BC%9Afs.stat%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B/</url>
       <content type="html"><![CDATA[<p>上一节提到如何用<code>fs.readdir</code>方法读取指定路径的文件列表（见[《<a href="https://www.jianshu.com/p/86127593e93e" target="_blank" rel="noopener">写给小白的Node.js学习笔记10：fs模块读取文件列表》</a>，读取出来的结果可以看到，文件夹和文件并没有作任何区分，接下来我们用<code>fs.stat</code>方法对文件类型进行判断。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入模块，沿用上一节提到的文件夹</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> path =<span class="string">"/Applications/MAMP/htdocs/nodejs/test/"</span>;</span><br><span class="line">fs.stat(path, (err, stats) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"It is a folder: "</span> + stats.isDirectory());</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"It is a file: "</span> + stats.isFile());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>返回结果<br><img src="https://upload-images.jianshu.io/upload_images/9240001-b2393d7d61153be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p><p><code>fs.stat</code>方法会读取文件，并返回一个对象<code>fs.stats</code>，<code>stats</code>对象有一下判断方法，可以判断文件类型<br><img src="https://upload-images.jianshu.io/upload_images/9240001-cd5e7856c45c26b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="fs.stats方法"></p><hr><p>[2018/09/03 更新]</p><p>文件的<code>stat</code>对象本身包含了关于文件的各种信息：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line">fs.stat(<span class="string">"./data/1.txt"</span>, (err, stat) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(stat);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fuwefs58g2j30ct0aswmm.jpg" alt="image-20180903154812921"></p>]]></content>
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Node.js学习笔记12：作业——读取文件夹内所有文件列表</title>
+      <link href="/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012%EF%BC%9A%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/"/>
+      <url>/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012%EF%BC%9A%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</url>
+      <content type="html"><![CDATA[<p>结合前两节的内容：<br><a href="https://www.jianshu.com/p/86127593e93e" target="_blank" rel="noopener">写给小白的Node.js学习笔记10：fs模块读取文件列表</a><br><a href="https://www.jianshu.com/p/8cd6f60d00dc" target="_blank" rel="noopener">写给小白的Node.js学习笔记11：fs.stat判断文件类型</a><br>我们可以结合两种方法，读取文件夹内的全部文件列表。</p><a id="more"></a><p>思路如下：</p><ol><li>通过<code>fs.readdir</code>方法读取路径，获取文件列表</li><li>对文件进行判断，如果是文件，则输出文件名，如果是文件夹，则读取该文件夹的路径，并对这个文件夹内部的文件再次进行判断</li><li>我们可以将上述方法封装到一个函数中，如果文件夹内还有文件夹，对内部文件夹再次讨厌函数即可（递归）</li><li>这里需要用到<code>path.join</code>方法，可以回顾<a href="https://www.jianshu.com/p/415d0313f79f" target="_blank" rel="noopener">《写给小白的node.js学习笔记8：path核心对象》</a></li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">let</span> myPath = <span class="string">"/Application/MAMP/htdocs/nodejs/test/"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myReadFile</span>(<span class="params">tempPath</span>) </span>&#123;</span><br><span class="line">  fs.readdir(tempPath, (err, files) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    files.forEach(<span class="function"><span class="params">file</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> fPath = path.join(tempPath, file);</span><br><span class="line">      fs.stat(fPath, (err, stats) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">        <span class="keyword">if</span>(stats.isFile())&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(file);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (stats.isDirectory())&#123;</span><br><span class="line">          myReadFile(fPath);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">myReadFile(myPath);</span><br></pre></td></tr></table></figure><p>输出结果如下：<br><img src="https://upload-images.jianshu.io/upload_images/9240001-658345a83da6d56d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p>]]></content>
       
       <categories>
           
