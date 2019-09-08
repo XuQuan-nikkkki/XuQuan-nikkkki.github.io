@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Futura:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="git,games,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nikkkki's Notes" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="我很喜欢跟着游戏学一些新上手的东西，比如学vim会找vim游戏来玩，这次发现了一个Git的游戏，所以也来试了一下。主要是之前学git其实学的并不好，有时候处理一些复杂的问题还是会粗暴地采用并不最优的方式。这次正好再来整理一下知识点。">
+<meta name="keywords" content="git,games">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learn coding by playing: Learn git branch">
+<meta property="og:url" content="http://xuquan.site/2019/09/08/Learn-coding-by-playing-Learn-git-branch/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="我很喜欢跟着游戏学一些新上手的东西，比如学vim会找vim游戏来玩，这次发现了一个Git的游戏，所以也来试了一下。主要是之前学git其实学的并不好，有时候处理一些复杂的问题还是会粗暴地采用并不最优的方式。这次正好再来整理一下知识点。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rxyi02k3j30bk0aqglo.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ry1yxtd0j30bl0av3yk.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ry4bax92j30bl0axq33.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ry674si2j30bn0ayq33.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ryg35n37j30b70avq39.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rypmoqkdj30bj0ay74j.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rz1s4gmpj30bj0as74k.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rze5xbhqj30bk0ast8y.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rzzlzdahj30bc0atmxa.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s04zc0tmj30q80cd74t.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s07sv230j30ph0bxmxq.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0bf3mkbj30ol0bwdgf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0et87gbj30p50bqjs5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0kt9d98j30of0bgwey.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0nqfev7j30or0bogm7.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s101ucynj30pe0bugmg.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s16v6umzj30ow0bu3zh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sbj1ujfsj30bi0axglp.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sbwy0dxxj30ok0bvgmc.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sc0nwp6ij30ov0c0755.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6scwlv180j30bl0aumxf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sd0tyo0cj30p90bwwff.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sd90ybduj30oz0bl3zf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sdi1vdg2j30oj0by753.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sdpsxtcfj30p50bj0ts.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sdr1h9dzj30ou0bf3zk.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sez11jgaj30ok0bjgmg.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sf02hf4aj30on0brjs8.jpg">
+<meta property="og:updated_time" content="2019-09-08T13:21:25.498Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Learn coding by playing: Learn git branch">
+<meta name="twitter:description" content="我很喜欢跟着游戏学一些新上手的东西，比如学vim会找vim游戏来玩，这次发现了一个Git的游戏，所以也来试了一下。主要是之前学git其实学的并不好，有时候处理一些复杂的问题还是会粗暴地采用并不最优的方式。这次正好再来整理一下知识点。">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rxyi02k3j30bk0aqglo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索内容","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+
+  
+</script>
+
+
+
+  <link rel="canonical" href="http://xuquan.site/2019/09/08/Learn-coding-by-playing-Learn-git-branch/">
+
+
+
+
+
+  <title>Learn coding by playing: Learn git branch | Nikkkki's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7f1b24f52dec46193016515806436227";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nikkkki's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-读书">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br>
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2019/09/08/Learn-coding-by-playing-Learn-git-branch/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Learn coding by playing: Learn git branch</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-08T10:41:54+08:00">
+                2019-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/跟着大佬学编程/" itemprop="url" rel="index">
+                    <span itemprop="name">跟着大佬学编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/08/Learn-coding-by-playing-Learn-git-branch/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/08/Learn-coding-by-playing-Learn-git-branch/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/09/08/Learn-coding-by-playing-Learn-git-branch/" class="leancloud_visitors" data-flag-title="Learn coding by playing: Learn git branch">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,537 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我很喜欢跟着游戏学一些新上手的东西，比如学vim会找vim游戏来玩，这次发现了一个Git的游戏，所以也来试了一下。主要是之前学git其实学的并不好，有时候处理一些复杂的问题还是会粗暴地采用并不最优的方式。这次正好再来整理一下知识点。</p>
+<a id="more"></a>
+
+<ul>
+<li>地址：<a href="https://learngitbranching.js.org/" target="_blank" rel="noopener">https://learngitbranching.js.org</a></li>
+</ul>
+<h2 id="本地操作"><a href="#本地操作" class="headerlink" title="本地操作"></a>本地操作</h2><h3 id="主要命令"><a href="#主要命令" class="headerlink" title="主要命令"></a>主要命令</h3><h4 id="提交内容"><a href="#提交内容" class="headerlink" title="提交内容"></a>提交内容</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rxyi02k3j30bk0aqglo.jpg" alt="image-20190908111943756"></p>
+<ul>
+<li><code>git commit</code></li>
+<li><code>C2</code> 的父节点是 <code>C1</code></li>
+<li>父节点是当前提交中变更的基础</li>
+</ul>
+<h4 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h4><ul>
+<li>git 的分支非常轻量，它们只是简单地指向某个提交记录</li>
+<li>创建再多分支也不会造成储存或内存上的开销</li>
+<li>`git </li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ry1yxtd0j30bl0av3yk.jpg" alt="创建新分支`newImage` 指向提交记录 `C1`"></p>
+<p><em>基于C1创建新的分支<code>newImage</code></em></p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ry4bax92j30bl0axq33.jpg" alt="image-20190908112521757"></p>
+<p><em>在新分支上提交内容 <code>C2</code>，但是当前<code>master</code>没有在新分支上</em></p>
+<ul>
+<li><code>git checkout &lt;name&gt;</code> 切换分支</li>
+<li><code>git checkout -b &lt;name&gt;</code>创建并切换到新分支</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ry674si2j30bn0ayq33.jpg" alt="image-20190908112710648"></p>
+<p><em>切换到新分支上，星号表示当前分支</em></p>
+<h4 id="分支与合并"><a href="#分支与合并" class="headerlink" title="分支与合并"></a>分支与合并</h4><ul>
+<li>在新分支上开发某些功能，开发完后再合并回主线</li>
+</ul>
+<h5 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a><code>git merge</code></h5><ul>
+<li><code>git merge</code> 会产生一个特殊的提交记录，它有两个父节点。这个提交记录会把两个父节点本身及它们所有的祖先都包含进来</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ryg35n37j30b70avq39.jpg" alt="image-20190908113640032"></p>
+<p><em>合并<code>bugFix</code>分支到<code>master</code>上，从<code>master</code>开始沿着箭头向上看，<code>master</code>包含了对代码库的所有修改</em></p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rypmoqkdj30bj0ay74j.jpg" alt="image-20190908114551002"></p>
+<p><em><code>git checkout bugFix; git merge master</code></em></p>
+<p><em><code>master</code>已经继承了<code>bugFix</code>，所以Git只是把<code>bugFix</code>移动到<code>master</code>所指向的那个提交记录</em></p>
+<p><em>现在每一个分支都包含了代码库的所有修改</em></p>
+<h5 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a><code>git rebase</code></h5><ul>
+<li>rebase 实际上是取出一系列的提交记录，“复制”它们，然后在另外一个地方逐个地放下去</li>
+<li>rebase 的优势是可以创造更线性的提交历史</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rz1s4gmpj30bj0as74k.jpg" alt="image-20190908115731428"></p>
+<ul>
+<li>在<code>bugFix</code> 分支上<code>git rebase master</code><ul>
+<li><code>bugFix</code>分支上的工作转移到了<code>master</code>的最顶端</li>
+<li>提交记录<code>C3</code>依然存在，<code>C3’</code>是rebase到<code>master</code>分支上的<code>C3</code>的副本</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rze5xbhqj30bk0ast8y.jpg" alt="image-20190908120925246"></p>
+<ul>
+<li><code>git checkout master; git merge bugFix</code><ul>
+<li>由于<code>bugFix</code>继承自<code>master</code>，所以只是简单地把<code>master</code>分支的引用向前移动了一下</li>
+</ul>
+</li>
+</ul>
+<h3 id="高级操作"><a href="#高级操作" class="headerlink" title="高级操作"></a>高级操作</h3><h4 id="在提交树上移动"><a href="#在提交树上移动" class="headerlink" title="在提交树上移动"></a>在提交树上移动</h4><ul>
+<li>HEAD 是一个对当前检出记录的符号引用 —— 也就是指向你正在其基础上进行工作的提交记录</li>
+<li>HEAD 总是指向当前分支上最近一次提交记录。大多数修改提交树的 Git 命令都是从改变 HEAD 的指向开始的</li>
+<li>HEAD 通常情况下是指向分支名的，当你提交时，改变了分支的状态，这一变化通过 HEAD 变得可见</li>
+<li><code>cat .git/HEAD</code> 查看 HEAD 的指向</li>
+<li>分离的 HEAD 是让其指向了某个具体的提交记录而不是分支名</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rzzlzdahj30bc0atmxa.jpg" alt="image-20190908123001915"></p>
+<h4 id="相对引用"><a href="#相对引用" class="headerlink" title="相对引用"></a>相对引用</h4><ul>
+<li>实际操作中需要使用 <code>git log</code> 查看提交记录的哈希值</li>
+<li>使用相对引用可以从易于记忆的地方开始计算<ul>
+<li>使用 <code>^</code> 向上移动 1 个提交记录</li>
+<li>使用 <code>~&lt;num&gt;</code> 向上移动多个提交记录</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s04zc0tmj30q80cd74t.jpg" alt="image-20190908123511516"></p>
+<p>*<code>git checkout master^</code></p>
+<p><em>从<code>master</code>分支的最近一次提交向上移动一个节点</em></p>
+<ul>
+<li>也可以将 <code>HEAD</code> 作为相对引用参照</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s07sv230j30ph0bxmxq.jpg" alt="image-20190908123754631"></p>
+<p><em><code>git checkout C3; git checkout HEAD^; git checkout HEAD^; git checkout HEAD^;</code></em></p>
+<h4 id="“-”-操作符"><a href="#“-”-操作符" class="headerlink" title="“~” 操作符"></a>“~” 操作符</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0bf3mkbj30ol0bwdgf.jpg" alt="image-20190908124123345"></p>
+<p><em><code>git checkout HEAD~4</code></em></p>
+<ul>
+<li><code>git branch -f master HEAD~3</code> 可以让分支指向另一个提交（让master分支强制指向 HEAD 的第3级父提交）</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0et87gbj30p50bqjs5.jpg" alt="image-20190908124438892"></p>
+<p><em><code>git branch -f master HEAD~3</code></em></p>
+<h4 id="撤销变更"><a href="#撤销变更" class="headerlink" title="撤销变更"></a>撤销变更</h4><ul>
+<li>撤销变更由底层部分（暂存区的独立文件或者片段）和上层部分（变更到底是通过哪种方式被撤销的）组成</li>
+</ul>
+<h5 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a><code>git reset</code></h5><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0kt9d98j30of0bgwey.jpg" alt="image-20190908125024971"></p>
+<p><em><code>git reset HEAD~1</code></em></p>
+<ul>
+<li>把 <code>master</code> 分支移回到 <code>C1</code>，现在本地代码库不知道有 <code>C2</code> 这个提交了</li>
+<li>reset后， <code>C2</code> 所做的变更还在，但是出于未加入暂存区状态</li>
+<li><code>git reset</code> 只对本地分支有效，对一起使用的远程分支无效</li>
+</ul>
+<h5 id="git-revert"><a href="#git-revert" class="headerlink" title="git revert"></a><code>git revert</code></h5><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0nqfev7j30or0bogm7.jpg" alt="image-20190908125313350"></p>
+<p><em><code>git revert HEAD</code></em></p>
+<ul>
+<li>revert后增加了<code>C2’</code>提交，<code>C2’</code>引入了更改，这些更改用于撤销<code>C2</code>这个提交，也就是说<code>C2’</code>的状态与<code>C1</code>是相同的 </li>
+</ul>
+<h3 id="移动提交记录"><a href="#移动提交记录" class="headerlink" title="移动提交记录"></a>移动提交记录</h3><h4 id="git-cherry-pick"><a href="#git-cherry-pick" class="headerlink" title="git cherry-pick"></a><code>git cherry-pick</code></h4><ul>
+<li>将一些提交复制到当前所在位置</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s101ucynj30pe0bugmg.jpg" alt="image-20190908130503435"></p>
+<p><em><code>git cherry-pick C2 C4</code></em></p>
+<h4 id="交互式的-rebase"><a href="#交互式的-rebase" class="headerlink" title="交互式的 rebase"></a>交互式的 rebase</h4><ul>
+<li>如果不清楚想要的提交记录的哈希值，那么使用交互式的 rebase 更好</li>
+<li><code>git rebase —interactive</code> 也可以写作 <code>git rebase -i</code> </li>
+<li>增加这个选项后，git会打开一个UI界面并列出要被复制到目标分支的备选提交记录，以及每个提交记录的哈希值和提交说明</li>
+<li>Rebase打开UI界面时，可以调整提交记录的顺序，删除不想要的提交，合并提交</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s16v6umzj30ow0bu3zh.jpg" alt="image-20190908131136752"></p>
+<p><em><code>git rebase -i HEAD~4</code></em></p>
+<h3 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h3><h4 id="只取一个提交记录"><a href="#只取一个提交记录" class="headerlink" title="只取一个提交记录"></a>只取一个提交记录</h4><p>![image-20190908185736968](/Users/nikkkki/Library/Application Support/typora-user-images/image-20190908185736968.png)</p>
+<h4 id="git-tags"><a href="#git-tags" class="headerlink" title="git tags"></a><code>git tags</code></h4><ul>
+<li>永远指向某个提交记录的标识</li>
+<li><code>git tag v1 C1</code></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sbj1ujfsj30bi0axglp.jpg" alt="image-20190908190918635"></p>
+<h4 id="git-describe"><a href="#git-describe" class="headerlink" title="git describe"></a><code>git describe</code></h4><ul>
+<li>用来描述离你最近的标签</li>
+<li><code>git describe &lt;ref&gt;</code></li>
+</ul>
+<h3 id="多次-rebase"><a href="#多次-rebase" class="headerlink" title="多次 rebase"></a>多次 <code>rebase</code></h3><h4 id="选择父提交记录"><a href="#选择父提交记录" class="headerlink" title="选择父提交记录"></a>选择父提交记录</h4><ul>
+<li><code>^</code>操作符后面也可以跟一个数字，用来指定合并提交记录的某个父提交</li>
+<li><code>git checkout master^2</code></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sbwy0dxxj30ok0bvgmc.jpg" alt="image-20190908192239237"></p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sc0nwp6ij30ov0c0755.jpg" alt="image-20190908192613384"></p>
+<p><em><code>git checkout HEAD~^2~2</code></em></p>
+<hr>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a><code>git clone</code></h3><ul>
+<li>创建一个远程仓库的拷贝</li>
+</ul>
+<h4 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h4><ul>
+<li>反映远程仓库的状态</li>
+<li>在你检出时自动进入分离 HEAD 状态</li>
+<li>格式是 <code>&lt;remote name&gt;/&lt;branch name&gt;</code></li>
+<li>也可以切换到远程分支 <code>git checkout o/master</code></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6scwlv180j30bl0aumxf.jpg" alt="image-20190908195655637"></p>
+<h4 id="git-fetch"><a href="#git-fetch" class="headerlink" title="git fetch"></a><code>git fetch</code></h4><ul>
+<li><code>git fetch</code> 用于从远程仓库获取数据，它实现了两件事：<ul>
+<li>从远程仓库下周本地仓库中缺失的提交记录</li>
+<li>更新远程分支指针</li>
+</ul>
+</li>
+<li><code>git fetch</code> 不会更新本地仓库的状态，也不会更新<code>master</code>分支，也不会修改磁盘上的文件</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sd0tyo0cj30p90bwwff.jpg" alt="image-20190908200059547"></p>
+<h4 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a><code>git pull</code></h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sd90ybduj30oz0bl3zf.jpg" alt="image-20190908200851797"></p>
+<p><em><code>git fecth; git merge o/master</code></em></p>
+<ul>
+<li><code>git pull</code> 就是 <code>git fetch; git merge &lt;just fetched branch&gt;</code>的缩写</li>
+</ul>
+<h4 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a><code>git push</code></h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sdi1vdg2j30oj0by753.jpg" alt="image-20190908201732634"></p>
+<h4 id="偏离的工作"><a href="#偏离的工作" class="headerlink" title="偏离的工作"></a>偏离的工作</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sdpsxtcfj30p50bj0ts.jpg" alt="image-20190908202459517"></p>
+<p><em><code>git fetch; git rebase o/master; git push</code></em></p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sdr1h9dzj30ou0bf3zk.jpg" alt="image-20190908202610765"></p>
+<p><em><code>git fetch; git merge o/master; git push</code></em></p>
+<h3 id="推送主分支"><a href="#推送主分支" class="headerlink" title="推送主分支"></a>推送主分支</h3><h4 id="跟踪远程分支"><a href="#跟踪远程分支" class="headerlink" title="跟踪远程分支"></a>跟踪远程分支</h4><ul>
+<li><code>git checkout -b totallyNotMaster o/master</code> 创建新分支，并跟踪远程分支<code>o/master</code></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sez11jgaj30ok0bjgmg.jpg" alt="image-20190908210826913"></p>
+<p><em><code>git checkout -b foo o/master; git pull</code></em></p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sf02hf4aj30on0brjs8.jpg" alt="image-20190908210927266"></p>
+<p><em><code>git checkout -b foo o/master; git commit; git push</code></em></p>
+<ul>
+<li><code>git branch -u</code> </li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
+            <a href="/tags/games/" rel="tag"><i class="fa fa-tag"></i> games</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/24/React学习笔记：Hooks及相关的各种/" rel="next" title="React学习笔记：Hooks及相关的各种">
+                <i class="fa fa-chevron-left"></i> React学习笔记：Hooks及相关的各种
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Xu Quan">
+            
+              <p class="site-author-name" itemprop="name">Xu Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">150</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">111</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/XuQuan-nikkkki" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuquan1225@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/nikkkki" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-ticket"></i>Douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/nikkkkki" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.freecodecamp.org/nikkkki" target="_blank" title="FreeCodeCamp">
+                      
+                        <i class="fa fa-fw fa-desktop"></i>FreeCodeCamp</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/0f50715fc17c" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-book"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地操作"><span class="nav-number">1.</span> <span class="nav-text">本地操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主要命令"><span class="nav-number">1.1.</span> <span class="nav-text">主要命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提交内容"><span class="nav-number">1.1.1.</span> <span class="nav-text">提交内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分支"><span class="nav-number">1.1.2.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分支与合并"><span class="nav-number">1.1.3.</span> <span class="nav-text">分支与合并</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#git-merge"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">git merge</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-rebase"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">git rebase</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高级操作"><span class="nav-number">1.2.</span> <span class="nav-text">高级操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在提交树上移动"><span class="nav-number">1.2.1.</span> <span class="nav-text">在提交树上移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相对引用"><span class="nav-number">1.2.2.</span> <span class="nav-text">相对引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#“-”-操作符"><span class="nav-number">1.2.3.</span> <span class="nav-text">“~” 操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#撤销变更"><span class="nav-number">1.2.4.</span> <span class="nav-text">撤销变更</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#git-reset"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">git reset</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-revert"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">git revert</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动提交记录"><span class="nav-number">1.3.</span> <span class="nav-text">移动提交记录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-cherry-pick"><span class="nav-number">1.3.1.</span> <span class="nav-text">git cherry-pick</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交互式的-rebase"><span class="nav-number">1.3.2.</span> <span class="nav-text">交互式的 rebase</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#技巧"><span class="nav-number">1.4.</span> <span class="nav-text">技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#只取一个提交记录"><span class="nav-number">1.4.1.</span> <span class="nav-text">只取一个提交记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-tags"><span class="nav-number">1.4.2.</span> <span class="nav-text">git tags</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-describe"><span class="nav-number">1.4.3.</span> <span class="nav-text">git describe</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多次-rebase"><span class="nav-number">1.5.</span> <span class="nav-text">多次 rebase</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择父提交记录"><span class="nav-number">1.5.1.</span> <span class="nav-text">选择父提交记录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程仓库"><span class="nav-number">2.</span> <span class="nav-text">远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-clone"><span class="nav-number">2.1.</span> <span class="nav-text">git clone</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#远程分支"><span class="nav-number">2.1.1.</span> <span class="nav-text">远程分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-fetch"><span class="nav-number">2.1.2.</span> <span class="nav-text">git fetch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-pull"><span class="nav-number">2.1.3.</span> <span class="nav-text">git pull</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-push"><span class="nav-number">2.1.4.</span> <span class="nav-text">git push</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#偏离的工作"><span class="nav-number">2.1.5.</span> <span class="nav-text">偏离的工作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送主分支"><span class="nav-number">2.2.</span> <span class="nav-text">推送主分支</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#跟踪远程分支"><span class="nav-number">2.2.1.</span> <span class="nav-text">跟踪远程分支</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">215.5k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+
+  
+    <script id="dsq-count-scr" src="https://xuquan.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://xuquan.site/2019/09/08/Learn-coding-by-playing-Learn-git-branch/';
+        this.page.identifier = '2019/09/08/Learn-coding-by-playing-Learn-git-branch/';
+        this.page.title = 'Learn coding by playing: Learn git branch';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuquan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rcUpiiCSwGvIaLqxFOLpjQ9G-gzGzoHsz", "5YNyahsyPErlzU5ArV4vr3Gj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
