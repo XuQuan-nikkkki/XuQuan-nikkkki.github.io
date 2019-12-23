@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuquan.site/"/>
-  <updated>2019-12-23T03:28:09.997Z</updated>
+  <updated>2019-12-23T03:35:30.963Z</updated>
   <id>http://xuquan.site/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://xuquan.site/2019/12/23/Week-51/"/>
     <id>http://xuquan.site/2019/12/23/Week-51/</id>
     <published>2019-12-23T02:58:20.000Z</published>
-    <updated>2019-12-23T03:28:09.997Z</updated>
+    <updated>2019-12-23T03:35:30.963Z</updated>
     
-    <content type="html"><![CDATA[<p>2019年转眼就只剩不到10天了。</p><p>上周做了：</p><ul><li>完成了<ul><li>做了业务环节的一个方案优化，顺带学着用axure把交互方案画出来了，还挺好玩的。</li><li>终于在私有的npm上发布成功了包（经历了配置失败、上传之后服务器重启导致包丢失、重新发布之后项目部署失败等各种问题），这周还要把之前放在另一个registry的包移过来。</li><li>准备在前台项目里增加log日志，方便排查问题。目前暂定的方案是 <code>redux middleware</code> 来收集 <code>action</code> 。周末看了一下 <code>middleware</code> ，现在能够捕获所有的 <code>action</code> 了。还需要等后续的存储和上传方案确定了再继续往下推进。</li></ul></li></ul><ul><li>未完成<ul><li>项目迁移ts的时候，每次把一个 <code>.js</code> 文件改为 <code>.tsx</code> 或 <code>.ts</code> 都需要重启本地的server，因为webpack打包的时候没法找到对应的文件，本来想通过 <code>resolve</code> 来解决，但是没成功，准备之后再找时间尝试</li></ul></li></ul><ul><li>看了四部电影<ul><li>过春天</li><li>出租车</li><li>燃烧</li><li>82年的金智英</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>2019年转眼就只剩不到10天了。</p><p>上周做了：</p><h5 id="完成了"><a href="#完成了" class="headerlink" title="完成了"></a>完成了</h5><ul><li>做了业务环节的一个方案优化，顺带学着用axure把交互方案画出来了，还挺好玩的。</li><li>终于在私有的npm上发布成功了包（经历了配置失败、上传之后服务器重启导致包丢失、重新发布之后项目部署失败等各种问题），这周还要把之前放在另一个registry的包移过来。</li><li>准备在前台项目里增加log日志，方便排查问题。目前暂定的方案是 <code>redux middleware</code> 来收集 <code>action</code> 。周末看了一下 <code>middleware</code> ，现在能够捕获所有的 <code>action</code> 了。还需要等后续的存储和上传方案确定了再继续往下推进。</li></ul><h5 id="未完成"><a href="#未完成" class="headerlink" title="未完成"></a>未完成</h5><ul><li>项目迁移ts的时候，每次把一个 <code>.js</code> 文件改为 <code>.tsx</code> 或 <code>.ts</code> 都需要重启本地的server，因为webpack打包的时候没法找到对应的文件，本来想通过 <code>resolve</code> 来解决，但是没成功，准备之后再找时间尝试</li></ul><h5 id="看了四部电影"><a href="#看了四部电影" class="headerlink" title="看了四部电影"></a>看了四部电影</h5><ul><li>过春天</li><li>出租车</li><li>燃烧</li><li>82年的金智英</li></ul>]]></content>
     
     <summary type="html">
     
@@ -31,10 +31,8 @@
       
         &lt;p&gt;2019年转眼就只剩不到10天了。&lt;/p&gt;
 &lt;p&gt;上周做了：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;完成了&lt;ul&gt;
-&lt;li&gt;做了业务环节的一个方案优化，顺带学着用axure把交互方案画出来了，还挺好玩的。&lt;/li&gt;
-&lt;li&gt;终于在私有的npm上发布成功了包（经历了配置失败、上传之后服务
+&lt;h5 id=&quot;完成了&quot;&gt;&lt;a href=&quot;#完成了&quot; class=&quot;headerlink&quot; title=&quot;完成了&quot;&gt;&lt;/a&gt;完成了&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;做了业务环节的一个方案优化，顺带学着用axu
       
     
     </summary>
