@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuquan.site/"/>
-  <updated>2019-09-08T13:21:25.498Z</updated>
+  <updated>2019-12-23T03:28:09.997Z</updated>
   <id>http://xuquan.site/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Week 51</title>
+    <link href="http://xuquan.site/2019/12/23/Week-51/"/>
+    <id>http://xuquan.site/2019/12/23/Week-51/</id>
+    <published>2019-12-23T02:58:20.000Z</published>
+    <updated>2019-12-23T03:28:09.997Z</updated>
+    
+    <content type="html"><![CDATA[<p>2019年转眼就只剩不到10天了。</p><p>上周做了：</p><ul><li>完成了<ul><li>做了业务环节的一个方案优化，顺带学着用axure把交互方案画出来了，还挺好玩的。</li><li>终于在私有的npm上发布成功了包（经历了配置失败、上传之后服务器重启导致包丢失、重新发布之后项目部署失败等各种问题），这周还要把之前放在另一个registry的包移过来。</li><li>准备在前台项目里增加log日志，方便排查问题。目前暂定的方案是 <code>redux middleware</code> 来收集 <code>action</code> 。周末看了一下 <code>middleware</code> ，现在能够捕获所有的 <code>action</code> 了。还需要等后续的存储和上传方案确定了再继续往下推进。</li></ul></li></ul><ul><li>未完成<ul><li>项目迁移ts的时候，每次把一个 <code>.js</code> 文件改为 <code>.tsx</code> 或 <code>.ts</code> 都需要重启本地的server，因为webpack打包的时候没法找到对应的文件，本来想通过 <code>resolve</code> 来解决，但是没成功，准备之后再找时间尝试</li></ul></li></ul><ul><li>看了四部电影<ul><li>过春天</li><li>出租车</li><li>燃烧</li><li>82年的金智英</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;2019年转眼就只剩不到10天了。&lt;/p&gt;
+&lt;p&gt;上周做了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;完成了&lt;ul&gt;
+&lt;li&gt;做了业务环节的一个方案优化，顺带学着用axure把交互方案画出来了，还挺好玩的。&lt;/li&gt;
+&lt;li&gt;终于在私有的npm上发布成功了包（经历了配置失败、上传之后服务
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://xuquan.site/2019/09/19/%E6%9C%AA%E5%91%BD%E5%90%8D/"/>
+    <id>http://xuquan.site/2019/09/19/未命名/</id>
+    <published>2019-09-19T07:44:03.017Z</published>
+    <updated>2019-09-19T07:44:03.018Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g74tf0nn1rj305o06vdfx.jpg" alt="image-20190919143458693"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/006y8mN6ly1g74tf0nn1rj305o06vdfx.jpg&quot; alt=&quot;image-20190919143458693&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Learn coding by playing: Learn git branch</title>
@@ -429,51 +477,6 @@
       <category term="ant design" scheme="http://xuquan.site/tags/ant-design/"/>
     
       <category term="ant design pro" scheme="http://xuquan.site/tags/ant-design-pro/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>webpack学习笔记</title>
-    <link href="http://xuquan.site/2018/11/18/webpack%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://xuquan.site/2018/11/18/webpack学习笔记/</id>
-    <published>2018-11-18T06:45:38.000Z</published>
-    <updated>2018-11-18T09:18:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>学webpack是因为每次写错代码之后的调试都会因为代码被压缩过而找不到出错的原始位置，所以想学一学到底怎么配置。</p><a id="more"></a><h1 id="Webpack-文档学习"><a href="#Webpack-文档学习" class="headerlink" title="Webpack 文档学习"></a>Webpack 文档学习</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h3><h4 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h4><ul><li>webpack是一个静态模块打包器</li></ul><h4 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h4><ul><li>在内部创建一个依赖图，用于映射到项目需要的每个模块</li><li>将这些依赖生成到一个或多个bundle</li></ul><h4 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h4><ul><li>入口</li><li>输出</li><li>loader</li><li>插件</li></ul><h3 id="入口「entry」"><a href="#入口「entry」" class="headerlink" title="入口「entry」"></a>入口「entry」</h3><h4 id="是什么-1"><a href="#是什么-1" class="headerlink" title="是什么"></a>是什么</h4><ul><li>指示webpack应该使用哪个模块来作为构建其内部依赖图的开始</li><li>webpack会找出有哪些模块和library是入口起点（直接和间接）依赖的</li><li>默认值是<code>./src/index.js</code></li></ul><h4 id="如何配置"><a href="#如何配置" class="headerlink" title="如何配置"></a>如何配置</h4><h5 id="单个入口"><a href="#单个入口" class="headerlink" title="单个入口"></a>单个入口</h5><ul><li><p>用法：<code>entry: string|Array&lt;string&gt;</code></p></li><li><p><strong>webpack.config.js</strong></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"> entry: <span class="string">'./path/to/my/entry/file.js'</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>单个入口写法：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    main: <span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h5 id="对象语法"><a href="#对象语法" class="headerlink" title="对象语法"></a>对象语法</h5><ul><li><p>用法：<code>entry: {[entryChunkName: string]: string|Array&lt;string&gt;}</code></p></li><li><p><strong>webpack.config.js</strong></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/app.js'</span>,</span><br><span class="line">    vendors: <span class="string">'./src/vendors.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h5 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h5><p>一个HTML页面只指定一个入口</p><h3 id="出口"><a href="#出口" class="headerlink" title="出口"></a>出口</h3><h4 id="是什么-2"><a href="#是什么-2" class="headerlink" title="是什么"></a>是什么</h4><ul><li><p>告诉webpack在哪里输出它所创建的bundles，以及如何命名这些文件（控制webpack如何向硬盘写入编译文件）</p></li><li><p>主输出文件默认为<code>./dist/main.js</code></p></li><li><p>其他生成文件默认输出目录是<code>./dist</code></p></li><li><p>即使可以存在多个入口，但只指定一个输出配置</p></li></ul><h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><ul><li><p>将它的值设置为一个对象</p></li><li><p><code>filename</code>用于输出文件的文件名</p></li><li><p>模板输出目录<code>path</code>的绝对路径</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'bundle.js'</span>,</span><br><span class="line">    path: <span class="string">'/home/proj/public/assets'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h3 id="模式「mode」"><a href="#模式「mode」" class="headerlink" title="模式「mode」"></a>模式「mode」</h3><h4 id="是什么-3"><a href="#是什么-3" class="headerlink" title="是什么"></a>是什么</h4><ul><li><p>将<code>mode</code>参数设置为<code>development</code>，<code>production</code>或<code>none</code>可以启用对应环境下webpack内置的优化</p></li><li><p>默认值为<code>production</code></p></li></ul><h4 id="用法-1"><a href="#用法-1" class="headerlink" title="用法"></a>用法</h4><ul><li><p>配置中提供</p>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">'production'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>命令行工具传入</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack --mode=production</span><br></pre></td></tr></table></figure></li></ul><h4 id="三种模式的区别"><a href="#三种模式的区别" class="headerlink" title="三种模式的区别"></a>三种模式的区别</h4><h5 id="development"><a href="#development" class="headerlink" title="development"></a><code>development</code></h5><ul><li><p>会将<code>process.env.NODE_ENV</code>的值设为<code>development</code></p></li><li><p>启用<code>NamedChunksPlugin</code>和<code>NamedModulesPlugin</code></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.development.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">'development'</span></span><br><span class="line">  plugins: [</span><br><span class="line">  <span class="keyword">new</span> webpack.NamedModulesPlugin(),</span><br><span class="line">    <span class="keyword">new</span> webpack.NamedChunksPlugin(),</span><br><span class="line">    <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">      <span class="string">"process.env.NODE_ENV"</span>: <span class="built_in">JSON</span>.stringify(<span class="string">"development"</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h5 id="production"><a href="#production" class="headerlink" title="production"></a><code>production</code></h5><ul><li><p>会将<code>process.env.NODE_ENV</code>的值设为<code>production</code></p></li><li><p>启用<code>FlagDependencyUsagePlugin</code>, <code>FLagIncludedChunksPlugin</code>, <code>ModuleConcatenationPlugin</code>, <code>NoEmitOnErrorsPlugin</code>, <code>OccurenceOrderPlugin</code>, <code>SideEffectsFlagPlugin</code>, <code>UglifyJsPlugin</code></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.production.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">'production'</span>,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> UglifyJsPlugin(<span class="comment">/* ... */</span>),</span><br><span class="line">    <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">      <span class="string">"process.env.NODE_ENV"</span>: <span class="built_in">JSON</span>.stringify(<span class="string">"production"</span>)</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="keyword">new</span> webpack.optimize.ModuleConcatenationPlugin(),</span><br><span class="line">    <span class="keyword">new</span> webpack.NoEmitOnErrorsPlugin()</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h3 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h3><h4 id="是什么-4"><a href="#是什么-4" class="headerlink" title="是什么"></a>是什么</h4><ul><li>loader让webpack处理非javascript文件</li><li>先将这些文件转换为有效模块，然后添加到依赖图中</li></ul><h4 id="两大特征"><a href="#两大特征" class="headerlink" title="两大特征"></a>两大特征</h4><ul><li><code>test</code>属性<ul><li>用于表示出应该被对应的loader进行转换的某个或某些文件</li></ul></li><li><code>use</code>属性<ul><li>进行转换时，应该使用哪个loader</li></ul></li></ul><h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul><li><p>先安装对应的loader</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev css-loader</span><br><span class="line">npm install --save-dev ts-loader</span><br></pre></td></tr></table></figure></li><li><p>指示给对应类型的文件使用对应loader</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;<span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">use</span>: <span class="string">'css-loader'</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">test</span>: <span class="regexp">/\.ts$/</span>, <span class="attr">use</span>: <span class="string">'ts-loader'</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>允许使用多个loader</p></li></ul><h5 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h5><ol><li>配置： 在webpack.config.js中指定loader</li><li>内联： 在每个<code>import</code>语句中显式指定loader</li><li>CLI： 在shell命令中指定它们</li></ol><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><h4 id="是什么-5"><a href="#是什么-5" class="headerlink" title="是什么"></a>是什么</h4><ul><li>用于打包优化、资源管理、注入环境变量</li><li>是一个有<code>apply</code>方法的JS对象</li></ul><h4 id="使用方法-1"><a href="#使用方法-1" class="headerlink" title="使用方法"></a>使用方法</h4><ul><li>先在配置文件中<code>require()</code>它</li><li>将它添加到<code>plugins</code>数组中</li></ul><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a>devtool</h3><ul><li>控制是否生成以及如何生成source map</li></ul><table><thead><tr><th align="center">devtool</th><th align="center">构件速度</th><th align="center">重新构建速度</th><th align="center">生成环境</th><th align="center">代码形式</th></tr></thead><tbody><tr><td align="center">（none）</td><td align="center">+++</td><td align="center">+++</td><td align="center">yes</td><td align="center">打包后的代码</td></tr><tr><td align="center">Eval</td><td align="center">+++</td><td align="center">+++</td><td align="center">no</td><td align="center">生成后的代码</td></tr><tr><td align="center">cheap-eval-source-map</td><td align="center">+</td><td align="center">++</td><td align="center">no</td><td align="center">转换过的代码（仅限行）</td></tr><tr><td align="center">cheap-module-eval-source-map</td><td align="center">o</td><td align="center">++</td><td align="center">no</td><td align="center">原始源代码（仅限行）</td></tr><tr><td align="center">eval-source-map</td><td align="center">–</td><td align="center">+</td><td align="center">no</td><td align="center">原始源代码</td></tr><tr><td align="center">cheap-source-map</td><td align="center">+</td><td align="center">o</td><td align="center">yes</td><td align="center">转换过的代码（仅限行）</td></tr><tr><td align="center">cheap-module-source-map</td><td align="center">o</td><td align="center">-</td><td align="center">yes</td><td align="center">原始源代码（仅限行）</td></tr><tr><td align="center">inline-cheap-source-map</td><td align="center">+</td><td align="center">o</td><td align="center">no</td><td align="center">转换过的代码（仅限行）</td></tr><tr><td align="center">inline-cheap-module-source-map</td><td align="center">o</td><td align="center">-</td><td align="center">no</td><td align="center">原始源代码（仅限行）</td></tr><tr><td align="center">source-map</td><td align="center">–</td><td align="center">–</td><td align="center">yes</td><td align="center">原始源代码</td></tr><tr><td align="center">inline-source-map</td><td align="center">–</td><td align="center">–</td><td align="center">no</td><td align="center">原始源代码</td></tr><tr><td align="center">hidden-source-map</td><td align="center">–</td><td align="center">–</td><td align="center">yes</td><td align="center">原始源代码</td></tr><tr><td align="center">nosources-source-map</td><td align="center">–</td><td align="center">–</td><td align="center">yes</td><td align="center">无源代码内容</td></tr></tbody></table><h5 id="概念辨析"><a href="#概念辨析" class="headerlink" title="概念辨析"></a>概念辨析</h5><ul><li><strong>打包后的代码</strong>：将所有生成的代码视为一大块代码，看不到相互分离的模块</li><li><strong>生成后的代码</strong>：每个模块相互分离，并用模块名称进行注释；可以看到webpack生成的代码</li><li><strong>转换过的代码</strong>：每个模块相互分离，并用模块名称进行注射；可以看到webpack转换前、loader转译后的代码</li><li><strong>原始源代码</strong>：每个模块相互分离，并用模块名称进行注释；可以看到转译之前的代码，正如编写它时那样</li><li><strong>无源代码内容</strong>：source map中不包含源代码内容，浏览器通常会尝试从web服务器或文件系统加在源代码</li><li><strong>（仅限行）</strong>：source map会简化为每行一个映射，通常意味着每个语句只有一个映射</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;学webpack是因为每次写错代码之后的调试都会因为代码被压缩过而找不到出错的原始位置，所以想学一学到底怎么配置。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://xuquan.site/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="webpack" scheme="http://xuquan.site/tags/webpack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git实用技巧</title>
-    <link href="http://xuquan.site/2018/11/18/git%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
-    <id>http://xuquan.site/2018/11/18/git实用技巧/</id>
-    <published>2018-11-18T05:32:20.000Z</published>
-    <updated>2018-11-18T06:32:19.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Git的奇技淫巧是github上的一个git使用技巧合集，没有谈原理方面的内容，有很多小tips很有用，这里记录一下我还不太会用的。</p><p>Git的奇技淫巧：<a href="https://github.com/521xueweihan/git-tips" target="_blank" rel="noopener">链接</a></p><a id="more"></a><h5 id="回到远程仓库的状态"><a href="#回到远程仓库的状态" class="headerlink" title="回到远程仓库的状态"></a>回到远程仓库的状态</h5><p>抛弃本地所有的修改，回到远程仓库的状态。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all &amp;&amp; git reset --hard origin/master</span><br></pre></td></tr></table></figure><h5 id="重设第一个commit"><a href="#重设第一个commit" class="headerlink" title="重设第一个commit"></a>重设第一个commit</h5><p>清空所有的commit，可以重新提交第一个commit</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git update-ref -d HEAD</span><br></pre></td></tr></table></figure><h5 id="展示两个版本之间的不同"><a href="#展示两个版本之间的不同" class="headerlink" title="展示两个版本之间的不同"></a>展示两个版本之间的不同</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;commit-id&gt; &lt;commit-id&gt;</span><br></pre></td></tr></table></figure><h5 id="展示暂存区和本地最近版本的不同"><a href="#展示暂存区和本地最近版本的不同" class="headerlink" title="展示暂存区和本地最近版本的不同"></a>展示暂存区和本地最近版本的不同</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff --cached</span><br></pre></td></tr></table></figure><h5 id="删除合并到master的分支"><a href="#删除合并到master的分支" class="headerlink" title="删除合并到master的分支"></a>删除合并到master的分支</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch --merged master | grep -v '^\*\|  master' | xargs -n 1 git branch -d</span><br></pre></td></tr></table></figure><h5 id="回到某一个commit的状态"><a href="#回到某一个commit的状态" class="headerlink" title="回到某一个commit的状态"></a>回到某一个commit的状态</h5><ul><li><p>新增一个commit来还原某一个commit，其余commit保留</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert &lt;commit-id&gt;</span><br></pre></td></tr></table></figure></li><li><p>回到某个commit，并删除后面的commit</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset &lt;commit-id&gt;</span><br></pre></td></tr></table></figure></li><li><p>回到某一个commit，但暂存区和工作区的修改与回退之前保持一致</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset -soft HEAD~3</span><br></pre></td></tr></table></figure></li><li><p>回到某一个commit，暂存区和工作区变为指定commit版本的内容</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset -hard &lt;commit-id&gt;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Git的奇技淫巧是github上的一个git使用技巧合集，没有谈原理方面的内容，有很多小tips很有用，这里记录一下我还不太会用的。&lt;/p&gt;
-&lt;p&gt;Git的奇技淫巧：&lt;a href=&quot;https://github.com/521xueweihan/git-tips&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://xuquan.site/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="git" scheme="http://xuquan.site/tags/git/"/>
     
   </entry>
   
