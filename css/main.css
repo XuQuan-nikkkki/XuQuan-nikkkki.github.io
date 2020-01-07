@@ -1390,6 +1390,9 @@ pre .javascript .function {
 .posts-expand .post-body h6:hover .header-anchor {
   visibility: visible;
 }
+.posts-expand .post-body ul {
+  margin-left: 1.8em;
+}
 .posts-expand .post-body ul li {
   list-style: circle;
 }
@@ -1892,7 +1895,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff50;
+  background: #0938ff;
 }
 .links-of-blogroll {
   font-size: 13px;
