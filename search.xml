@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>Week 6</title>
+      <link href="/2020/02/10/Week-6/"/>
+      <url>/2020/02/10/Week-6/</url>
+      <content type="html"><![CDATA[<p>在家工作一周，且预计接下来的几周都会持续在家工作。大家都以这种非自愿的方式开始了远程上班的模式。</p><a id="more"></a><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>这种上班的效率马马虎虎，比前一周好，但是离理想状态还差了一些。</p><ul><li>做完了线下店分类并且上线了</li><li>做完了库存管理的相关功能<ul><li>库存管理的MR写的不好，主要原因是心不静，导致很多细节没有注意到</li><li>最近有一个想法，觉得有必要开始梳理自己写代码的问题，像是做感恩日记那样</li></ul></li><li>写了标记问题书的question<ul><li>这个 question 是今天才写完的，前前后后改了很多次</li><li>这是我觉得能够证明自己写 sql 的能力有了明显进步的一个 question，复杂程度比以前写的都高</li><li>最开始是想参考同事写的其他 question 来实现一些去重的问题，后来觉得同事的实现方式没有想象的那么好，所以自己找了一些资料</li></ul></li><li>更新了春节的提示<ul><li>更新的内容很少</li><li>更新的时候心情很沉重，不知道还要关多久</li></ul></li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>读了《You don’t know JS: Types and Grammar》 4/5</li><li>《论中国》读了1/5，进度很慢</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li><p>我居然开始看漫画了，《非人哉》看了 100 多话</p></li><li><p>练了 5 次瑜伽，每次 1 小时左右</p></li><li><p>坚持了时间记录，虽然偶尔会有小块的时间会忘</p><p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbrqjlnhvrj30u01doamp.jpg" alt="image-20200210234442952"></p><p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbrqki1u54j30k00ivgu8.jpg" alt="image-20200210234539926"></p></li></ul><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><p>其实已经是这周计划了，这周的主要目标是：</p><ul><li>提高工作效率（上周刷信息强迫症已经有了明显的缓解，情绪也没有那么差了，所以可以把注意力转到工作上）</li><li>建立更好的生活习惯<ul><li>减少手机时间</li><li>多看书，建立系统思维</li><li>调节情绪</li></ul></li></ul><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>修复拒书拍照移动端的 bug</li><li>修复 iphone 上传图片会系统自动刷新，导致图片丢失的 bug </li><li>修复扫码组件请求状态未重置的问题</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li><p>看完《You don’t know JS: Types and Grammar》</p></li><li><p>开始看《You don’t know JS:  this &amp; Object Prototypes》</p></li><li><p>找一本关于焦虑的书，后期想了解这段时间自己心理发生变化的机制</p></li><li><p>整理 Notion</p></li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>继续坚持瑜伽</li><li>恢复早睡早起（这一点真是无能为力啊）</li><li>坚持时间记录<ul><li>坚持记 + 记得更加详细一些</li></ul></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> Journal </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Weekly Report </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Week 5</title>
       <link href="/2020/02/02/Week-5/"/>
       <url>/2020/02/02/Week-5/</url>
@@ -886,13 +907,13 @@
             
             <tag> 翻译 </tag>
             
-            <tag> Internet </tag>
-            
             <tag> HTTP </tag>
             
             <tag> TCP </tag>
             
             <tag> IP </tag>
+            
+            <tag> Internet </tag>
             
         </tags>
       
@@ -1413,9 +1434,9 @@
             
             <tag> node.js </tag>
             
-            <tag> art-template </tag>
-            
             <tag> 模板引擎 </tag>
+            
+            <tag> art-template </tag>
             
         </tags>
       
@@ -2057,29 +2078,6 @@
     </entry>
     
     <entry>
-      <title>ES6学习笔记之对象的扩展</title>
-      <link href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/"/>
-      <url>/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/</url>
-      <content type="html"><![CDATA[<h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><ul><li>新特性<ul><li>属性的简洁表达法<ul><li>可以直接写入变量和函数</li><li>即先给属性赋值，再将属性添加到对象中</li></ul></li><li>属性名表达式<ul><li>可以在大括号<code>{}</code>中使用方括号属性名<code>[]</code></li></ul></li><li>方法的<code>name</code>属性<ul><li>即函数的<code>name</code>属性</li></ul></li></ul></li><li>新方法<ul><li><code>Object.is()</code><ul><li>判断两个值是否严格相等</li></ul></li><li><code>Object.assign()</code><ul><li>用于合并对象</li></ul></li></ul></li></ul><a id="more"></a><hr><h2 id="新属性"><a href="#新属性" class="headerlink" title="新属性"></a>新属性</h2><h3 id="1-属性的简洁表达法"><a href="#1-属性的简洁表达法" class="headerlink" title="1. 属性的简洁表达法"></a>1. 属性的简洁表达法</h3><p>ES6可以直接写入变量和函数，作为对象的属性和方法</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = <span class="string">"bar"</span>;</span><br><span class="line"><span class="keyword">const</span> baz = &#123;foo&#125;;</span><br><span class="line">baz <span class="comment">//&#123;foo: "bar"&#125;</span></span><br></pre></td></tr></table></figure><p>这种方法用于写函数的返回值非常方便</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPoint</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> x = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">const</span> y = <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;x, y&#125;;</span><br><span class="line">&#125;</span><br><span class="line">getPoint()  <span class="comment">// &#123;x: 1, y: 10&#125;</span></span><br></pre></td></tr></table></figure><h3 id="2-属性名表达式"><a href="#2-属性名表达式" class="headerlink" title="2. 属性名表达式"></a>2. 属性名表达式</h3><p>ES5中，表达对象的方法有两种：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line">obj.prop = <span class="literal">true</span>;</span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line">obj[prop] = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure><p>如果使用大括号来定义对象，则只能使用方法1来定义属性</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  prop: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>ES6允许使用方法2作为属性名</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  [prop]: <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="3-方法的name属性"><a href="#3-方法的name属性" class="headerlink" title="3. 方法的name属性"></a>3. 方法的<code>name</code>属性</h3><p>函数的<code>name</code>属性返回函数名，这点在<a href="https://www.jianshu.com/p/ed21662145cf" target="_blank" rel="noopener">函数的扩展</a>中提到过。对象方法也是函数，因此也有<code>name</code>属性。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  sayName() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"hello"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">person.sayName.name  <span class="comment">//"sayName"</span></span><br></pre></td></tr></table></figure><h2 id="新方法"><a href="#新方法" class="headerlink" title="新方法"></a>新方法</h2><h3 id="Object-is"><a href="#Object-is" class="headerlink" title="Object.is()"></a><code>Object.is()</code></h3><p>用于判断两个值是否严格相等，与<code>===</code>基本一致</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.is(<span class="string">'abc'</span>, <span class="string">'abc'</span>)  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Object</span>.is(&#123;&#125;， &#123;&#125;)  <span class="comment">//false</span></span><br></pre></td></tr></table></figure><p>不同之处是正负零和<code>NaN</code>的判断</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+<span class="number">0</span> === <span class="number">-0</span>   <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Object</span>.is(+<span class="number">0</span>, <span class="number">-0</span>)  <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>   <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>, <span class="literal">NaN</span>)  <span class="comment">//true</span></span><br></pre></td></tr></table></figure><h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a><code>Object.assign()</code></h3><p>用于对象的合并，将源对象的所有可枚举属性赋值给目标对象。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> source = &#123;<span class="attr">b</span>: <span class="number">2</span>&#125;;</span><br><span class="line"><span class="built_in">Object</span>.assign(target, source);</span><br><span class="line">target <span class="comment">// &#123;a: 1, b: 2&#125;</span></span><br></pre></td></tr></table></figure><p><code>Object.assign</code>方法的第一个参数是目标对象，后面都是源对象（可以有多个）；如果目标对象和源对象有同名属性，则后面的属性会覆盖前面的属性。</p><p>注意点：</p><ol><li><p><code>Object.assign</code>实行的是浅拷贝，即当源对象的某个属性的值是对象时，目标对象只能拷贝到这个对象的引用</p></li><li><p>遇到同名对象时，后一个属性值会覆盖前一个</p></li><li><p>当<code>Object.assign</code>用来处理数组时，会把数组作为对象，即索引号被作为属性</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.assign([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>])  <span class="comment">//[4, 5, 3]</span></span><br></pre></td></tr></table></figure></li></ol><hr><blockquote><p>ES6学习笔记的内容主要基于阮一峰老师的<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">《ECMAScript 6入门》</a>，原文请见<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">链接</a></p></blockquote>]]></content>
-      
-      <categories>
-          
-          <category> 学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> ES6 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>ES6学习笔记之Set和Map</title>
       <link href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BSet%E5%92%8CMap/"/>
       <url>/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BSet%E5%92%8CMap/</url>
@@ -2153,6 +2151,29 @@
       <link href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%89%A9%E5%B1%95/"/>
       <url>/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%89%A9%E5%B1%95/</url>
       <content type="html"><![CDATA[<h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><p>  ES6中的正则表达式有这样一些改变：</p><ul><li>RegExp构造函数的写法有了更新<ul><li>可以是<strong>正则表达式+修饰符</strong></li></ul></li><li>新的修饰符<ul><li><strong><code>u</code>修饰符</strong> Unicode模式</li><li><strong><code>y</code>修饰符</strong> “粘连”修饰符</li></ul></li><li>新的属性<ul><li><strong><code>unicode</code>属性</strong> 判断是否设置了<code>u</code>修饰符</li><li><strong><code>sticky</code>属性</strong> 判断是否设置了<code>y</code>修饰符</li><li><strong><code>flags</code>属性</strong> 返回正则表达式的修饰符</li></ul></li><li>新规则<ul><li><strong>后行断言</strong><ul><li>先行断言写法 <code>/x(?=y)/</code></li><li>先行否定断言写法 <code>/x(?!y)/</code></li><li>后行断言写法 <code>/(?&lt;=y)x/</code></li><li>后行否定断言写法 <code>/(?&lt;!y)x/</code></li></ul></li><li><strong>具名组匹配</strong> 给分组添加名字</li></ul></li></ul><a id="more"></a><hr><h2 id="RegExp构造函数"><a href="#RegExp构造函数" class="headerlink" title="RegExp构造函数"></a><code>RegExp</code>构造函数</h2><h3 id="ES5中RegExp构造函数写法"><a href="#ES5中RegExp构造函数写法" class="headerlink" title="ES5中RegExp构造函数写法"></a>ES5中<code>RegExp</code>构造函数写法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 写法1 参数：字符串 + 修饰符</span></span><br><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'xyz'</span>, <span class="string">'i'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//写法2  参数：正则表达式</span></span><br><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/xyz/i</span>);</span><br></pre></td></tr></table></figure><p>不允许<code>参数：正则表达式+修饰符</code>的形式，否则会报错</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/xyz/</span>, <span class="string">'i'</span>);  <span class="comment">//Uncaught TypeError</span></span><br></pre></td></tr></table></figure><h3 id="ES6写法"><a href="#ES6写法" class="headerlink" title="ES6写法"></a>ES6写法</h3><p>参数可以是<code>正则表达式 + 修饰符</code>，且新指定的修饰符会覆盖原修饰符</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/abc/ig</span>, <span class="string">'i'</span>).flags    <span class="comment">// "i"</span></span><br></pre></td></tr></table></figure><h2 id="新的修饰符"><a href="#新的修饰符" class="headerlink" title="新的修饰符"></a>新的修饰符</h2><h3 id="u修饰符"><a href="#u修饰符" class="headerlink" title="u修饰符"></a><code>u</code>修饰符</h3><p><code>u</code>修饰符指”Unicode模式”，用于正确处理大于<code>\uFFFF</code>的Unicode字符。</p><h3 id="y修饰符"><a href="#y修饰符" class="headerlink" title="y修饰符"></a><code>y</code>修饰符</h3><p><code>y</code>修饰符叫做”粘连“（sticky）修饰符。</p><p>它和<code>g</code>修饰符类似，也是全局匹配，但是后一次匹配必须从上一次匹配成功的下一个位置开始。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'aaa_aa_a'</span>;</span><br><span class="line"><span class="keyword">let</span> r1 = <span class="regexp">/a+/g</span>;</span><br><span class="line"><span class="keyword">let</span> r2 = <span class="regexp">/a+/y</span>;</span><br><span class="line"></span><br><span class="line">r1.exec(str)   <span class="comment">//['aaa']</span></span><br><span class="line">r2.exec(str)   <span class="comment">//['aaa']</span></span><br><span class="line"></span><br><span class="line">r1.exec(str)   <span class="comment">//['aa']</span></span><br><span class="line">r2.exec(str)   <span class="comment">//null</span></span><br></pre></td></tr></table></figure><h2 id="新的属性"><a href="#新的属性" class="headerlink" title="新的属性"></a>新的属性</h2><h3 id="unicode属性"><a href="#unicode属性" class="headerlink" title="unicode属性"></a><code>unicode</code>属性</h3><p><code>unicode</code>属性表示是否设置了<code>u</code>修饰符</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> r1 = <span class="regexp">/hello/</span>;</span><br><span class="line"><span class="keyword">const</span> r2 = <span class="regexp">/hello/u</span>;</span><br><span class="line"></span><br><span class="line">r1.unicode    <span class="comment">//false</span></span><br><span class="line">r2.unicode    <span class="comment">//true</span></span><br></pre></td></tr></table></figure><h3 id="sticky属性"><a href="#sticky属性" class="headerlink" title="sticky属性"></a><code>sticky</code>属性</h3><p><code>sticky</code>属性表示是否设置了<code>y</code>修饰符</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> r = <span class="regexp">/hello\d/y</span>;</span><br><span class="line">r.sticky   <span class="comment">//true</span></span><br></pre></td></tr></table></figure><h3 id="flags属性"><a href="#flags属性" class="headerlink" title="flags属性"></a><code>flags</code>属性</h3><p><code>flags</code>属性会返回正则表达式的修饰符</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5的 source 属性会返回正则表达式的正文</span></span><br><span class="line">/abc/ig.source    <span class="comment">//"abc"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ES6的 flags 属性会返回正则表达式的修饰符</span></span><br><span class="line">/abc/ig.flags    <span class="comment">//"gi"</span></span><br></pre></td></tr></table></figure><h2 id="新规则"><a href="#新规则" class="headerlink" title="新规则"></a>新规则</h2><h3 id="后行断言"><a href="#后行断言" class="headerlink" title="后行断言"></a>后行断言</h3><p>JavaScript原本只支持先行断言和先行否定断言。ES2018引入后行断言。</p><p>先行断言指，只有<code>x</code>在<code>y</code>前面才匹配，写成<strong><code>/x(?=y)/</code></strong>，比如匹配百分号之前的数字，写成<code>/\d(?=%)/</code>，先行否定断言指石油<code>x</code>不在<code>y</code>前面才匹配，写成<strong><code>/x(?!y)/</code></strong>。这两个规则在<a href="https://www.jianshu.com/p/0ffc2b6bac0a" target="_blank" rel="noopener">正则表达式</a>这一节中提到过。</p><p>后行断言与先行断言相反，只有<code>x</code>在<code>y</code>后面才匹配，写成<strong><code>/(?&lt;=y)x/</code></strong>，比如只匹配没有符号之后的数字，要写成<code>/(?&lt;=\$)\d+/</code>。同样地，后行否定断言只有<code>x</code>不在<code>y</code>后面才匹配，写成<strong><code>/(?&lt;!y)x/</code></strong>。</p><table><thead><tr><th align="center"></th><th align="center">断言</th><th align="center">否定断言</th></tr></thead><tbody><tr><td align="center"><strong>先行</strong></td><td align="center"><strong><code>/x(?=y)/</code></strong></td><td align="center"><strong><code>/x(?!y)/</code></strong></td></tr><tr><td align="center"><strong>后行</strong></td><td align="center"><strong><code>/(?&lt;=y)x/</code></strong></td><td align="center"><strong><code>/(?&lt;!y)x/</code></strong></td></tr></tbody></table><h3 id="具名组匹配"><a href="#具名组匹配" class="headerlink" title="具名组匹配"></a>具名组匹配</h3><p>正则表达式中使用圆括号进行组匹配，并将匹配结果分别提取出来，但是每一组的匹配含义并不清晰，只能通过序号来引用。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> RE_DATE = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> matchObj = RE_DATE.exec(<span class="string">'1999-12-31'</span>);</span><br><span class="line"><span class="keyword">const</span> year = matchObj[<span class="number">1</span>];  <span class="comment">//1999</span></span><br><span class="line"><span class="keyword">const</span> month = matchObj[<span class="number">2</span>];  <span class="comment">//12</span></span><br><span class="line"><span class="keyword">const</span> day = matchObj[<span class="number">3</span>];  <span class="comment">//31</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//matchObj ['1999-12-31', '1999', '12', '31', index:0, input: '1999-12-31', groups: undefined]</span></span><br></pre></td></tr></table></figure><p>ES2018引入了具名组匹配（Named Capture Groups），允许为每一个组匹配指定一个名字。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> RE_DATE = <span class="regexp">/(?&lt;year&gt;\d&#123;4&#125;)-(?&lt;month&gt;\d&#123;2&#125;)-(?&lt;day&gt;\d&#123;2&#125;)/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> matchObj = RE_DATE.exec(<span class="string">'1999-12-31'</span>);</span><br><span class="line"><span class="keyword">const</span> year = matchObj.groups.year;  <span class="comment">//1999</span></span><br><span class="line"><span class="keyword">const</span> month = matchObj.groups.month;  <span class="comment">//12</span></span><br><span class="line"><span class="keyword">const</span> day = matchObj.groups.day;  <span class="comment">//31</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//matchObj ['1999-12-31', '1999', '12', '31', index:0, input: '1999-12-31', groups: &#123;year: '1999', month: '12', day: '31'&#125;]</span></span><br></pre></td></tr></table></figure><hr><blockquote><p>ES6学习笔记的内容主要基于阮一峰老师的<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">《ECMAScript 6入门》</a>，原文请见<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">链接</a></p></blockquote>]]></content>
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> ES6 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>ES6学习笔记之对象的扩展</title>
+      <link href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/"/>
+      <url>/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/</url>
+      <content type="html"><![CDATA[<h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><ul><li>新特性<ul><li>属性的简洁表达法<ul><li>可以直接写入变量和函数</li><li>即先给属性赋值，再将属性添加到对象中</li></ul></li><li>属性名表达式<ul><li>可以在大括号<code>{}</code>中使用方括号属性名<code>[]</code></li></ul></li><li>方法的<code>name</code>属性<ul><li>即函数的<code>name</code>属性</li></ul></li></ul></li><li>新方法<ul><li><code>Object.is()</code><ul><li>判断两个值是否严格相等</li></ul></li><li><code>Object.assign()</code><ul><li>用于合并对象</li></ul></li></ul></li></ul><a id="more"></a><hr><h2 id="新属性"><a href="#新属性" class="headerlink" title="新属性"></a>新属性</h2><h3 id="1-属性的简洁表达法"><a href="#1-属性的简洁表达法" class="headerlink" title="1. 属性的简洁表达法"></a>1. 属性的简洁表达法</h3><p>ES6可以直接写入变量和函数，作为对象的属性和方法</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = <span class="string">"bar"</span>;</span><br><span class="line"><span class="keyword">const</span> baz = &#123;foo&#125;;</span><br><span class="line">baz <span class="comment">//&#123;foo: "bar"&#125;</span></span><br></pre></td></tr></table></figure><p>这种方法用于写函数的返回值非常方便</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPoint</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> x = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">const</span> y = <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;x, y&#125;;</span><br><span class="line">&#125;</span><br><span class="line">getPoint()  <span class="comment">// &#123;x: 1, y: 10&#125;</span></span><br></pre></td></tr></table></figure><h3 id="2-属性名表达式"><a href="#2-属性名表达式" class="headerlink" title="2. 属性名表达式"></a>2. 属性名表达式</h3><p>ES5中，表达对象的方法有两种：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line">obj.prop = <span class="literal">true</span>;</span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line">obj[prop] = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure><p>如果使用大括号来定义对象，则只能使用方法1来定义属性</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  prop: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>ES6允许使用方法2作为属性名</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  [prop]: <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="3-方法的name属性"><a href="#3-方法的name属性" class="headerlink" title="3. 方法的name属性"></a>3. 方法的<code>name</code>属性</h3><p>函数的<code>name</code>属性返回函数名，这点在<a href="https://www.jianshu.com/p/ed21662145cf" target="_blank" rel="noopener">函数的扩展</a>中提到过。对象方法也是函数，因此也有<code>name</code>属性。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  sayName() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"hello"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">person.sayName.name  <span class="comment">//"sayName"</span></span><br></pre></td></tr></table></figure><h2 id="新方法"><a href="#新方法" class="headerlink" title="新方法"></a>新方法</h2><h3 id="Object-is"><a href="#Object-is" class="headerlink" title="Object.is()"></a><code>Object.is()</code></h3><p>用于判断两个值是否严格相等，与<code>===</code>基本一致</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.is(<span class="string">'abc'</span>, <span class="string">'abc'</span>)  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Object</span>.is(&#123;&#125;， &#123;&#125;)  <span class="comment">//false</span></span><br></pre></td></tr></table></figure><p>不同之处是正负零和<code>NaN</code>的判断</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+<span class="number">0</span> === <span class="number">-0</span>   <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Object</span>.is(+<span class="number">0</span>, <span class="number">-0</span>)  <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>   <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>, <span class="literal">NaN</span>)  <span class="comment">//true</span></span><br></pre></td></tr></table></figure><h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a><code>Object.assign()</code></h3><p>用于对象的合并，将源对象的所有可枚举属性赋值给目标对象。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> source = &#123;<span class="attr">b</span>: <span class="number">2</span>&#125;;</span><br><span class="line"><span class="built_in">Object</span>.assign(target, source);</span><br><span class="line">target <span class="comment">// &#123;a: 1, b: 2&#125;</span></span><br></pre></td></tr></table></figure><p><code>Object.assign</code>方法的第一个参数是目标对象，后面都是源对象（可以有多个）；如果目标对象和源对象有同名属性，则后面的属性会覆盖前面的属性。</p><p>注意点：</p><ol><li><p><code>Object.assign</code>实行的是浅拷贝，即当源对象的某个属性的值是对象时，目标对象只能拷贝到这个对象的引用</p></li><li><p>遇到同名对象时，后一个属性值会覆盖前一个</p></li><li><p>当<code>Object.assign</code>用来处理数组时，会把数组作为对象，即索引号被作为属性</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.assign([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>])  <span class="comment">//[4, 5, 3]</span></span><br></pre></td></tr></table></figure></li></ol><hr><blockquote><p>ES6学习笔记的内容主要基于阮一峰老师的<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">《ECMAScript 6入门》</a>，原文请见<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">链接</a></p></blockquote>]]></content>
       
       <categories>
           
@@ -2625,9 +2646,9 @@
             
             <tag> flex </tag>
             
-            <tag> css </tag>
-            
             <tag> freecodecamp </tag>
+            
+            <tag> css </tag>
             
         </tags>
       
@@ -2648,9 +2669,9 @@
       
         <tags>
             
-            <tag> css </tag>
-            
             <tag> freecodecamp </tag>
+            
+            <tag> css </tag>
             
             <tag> grid </tag>
             
@@ -2836,9 +2857,9 @@
       
         <tags>
             
-            <tag> css </tag>
-            
             <tag> freecodecamp </tag>
+            
+            <tag> css </tag>
             
             <tag> css3 </tag>
             
@@ -2861,9 +2882,9 @@
       
         <tags>
             
-            <tag> css </tag>
-            
             <tag> freecodecamp </tag>
+            
+            <tag> css </tag>
             
         </tags>
       
@@ -2937,27 +2958,6 @@
     </entry>
     
     <entry>
-      <title>CSS学习笔记6： calc()</title>
-      <link href="/2018/06/09/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B06%EF%BC%9A%20calc()/"/>
-      <url>/2018/06/09/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B06%EF%BC%9A%20calc()/</url>
-      <content type="html"><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/9240001-70afcec649250b24.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>]]></content>
-      
-      <categories>
-          
-          <category> 学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> css </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>CSS学习笔记5：CSS样式关键字</title>
       <link href="/2018/06/09/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05%EF%BC%9ACSS%E6%A0%B7%E5%BC%8F%E5%85%B3%E9%94%AE%E5%AD%97/"/>
       <url>/2018/06/09/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05%EF%BC%9ACSS%E6%A0%B7%E5%BC%8F%E5%85%B3%E9%94%AE%E5%AD%97/</url>
@@ -2979,10 +2979,52 @@
     </entry>
     
     <entry>
+      <title>CSS学习笔记6： calc()</title>
+      <link href="/2018/06/09/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B06%EF%BC%9A%20calc()/"/>
+      <url>/2018/06/09/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B06%EF%BC%9A%20calc()/</url>
+      <content type="html"><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/9240001-70afcec649250b24.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>]]></content>
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>CSS学习笔记2：CSS选择器类型</title>
       <link href="/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02%EF%BC%9ACSS%E9%80%89%E6%8B%A9%E5%99%A8%E7%B1%BB%E5%9E%8B/"/>
       <url>/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02%EF%BC%9ACSS%E9%80%89%E6%8B%A9%E5%99%A8%E7%B1%BB%E5%9E%8B/</url>
       <content type="html"><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/9240001-f746b3bc5b2e75c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>]]></content>
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>CSS学习笔记3：CSS声明权重</title>
+      <link href="/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%EF%BC%9ACSS%E5%A3%B0%E6%98%8E%E6%9D%83%E9%87%8D/"/>
+      <url>/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%EF%BC%9ACSS%E5%A3%B0%E6%98%8E%E6%9D%83%E9%87%8D/</url>
+      <content type="html"><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/9240001-6a43bbbcbd18256a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>]]></content>
       
       <categories>
           
@@ -3025,27 +3067,6 @@
       <link href="/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%BC%95%E5%85%A5CSS%E6%96%87%E4%BB%B6/"/>
       <url>/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%BC%95%E5%85%A5CSS%E6%96%87%E4%BB%B6/</url>
       <content type="html"><![CDATA[<p>引入CSS主要有3种方式：<strong>引入外部样式表、使用内部样式表和行间样式</strong>。</p><a id="more"></a><h3 id="1-外部样式表"><a href="#1-外部样式表" class="headerlink" title="1. 外部样式表"></a>1. 外部样式表</h3><ul><li>常见的<link>标签引入</li><li>rel和href属性不可省。type和media属性可以省略</li><li>不能混入HTML标签，包括HTML的注释，否则会影响标签之后的css样式的识别</li><li>可以加载多个样式表</li><li>可以有候选样式表，用“alternate stylesheet”标注<br></li><li>@import引入外部样式表</li><li>但是必须在style标签内引入，并且至于CSS规则之前</li><li>可以引入多个CSS样式表，同时用media来限制场景<ul><li>@import “xxx.css” print</li></ul></li><li>@import不太建议使用的原因是<ol><li>@import引入的文件会在网页加载完之后再加载，会影响网页刚开始的呈现</li><li>不支持JS对DOM的操作</li></ol></li></ul><h3 id="2-内部样式表"><a href="#2-内部样式表" class="headerlink" title="2. 内部样式表"></a>2. 内部样式表</h3><ul><li>使用style标签包含样式表</li><li>文档中可以出现多个style标签，样式规则与层叠样式规则一样</li></ul><h3 id="3-行间样式"><a href="#3-行间样式" class="headerlink" title="3. 行间样式"></a>3. 行间样式</h3><ul><li>为单个元素指定样式</li><li>通过HTML元素的style属性来设置</li><li>若存在多个style属性，则只能识别第一个</li></ul><p><img src="https://upload-images.jianshu.io/upload_images/9240001-1ba11c8632b110f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="引入CSS"></p>]]></content>
-      
-      <categories>
-          
-          <category> 学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> css </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>CSS学习笔记3：CSS声明权重</title>
-      <link href="/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%EF%BC%9ACSS%E5%A3%B0%E6%98%8E%E6%9D%83%E9%87%8D/"/>
-      <url>/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%EF%BC%9ACSS%E5%A3%B0%E6%98%8E%E6%9D%83%E9%87%8D/</url>
-      <content type="html"><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/9240001-6a43bbbcbd18256a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>]]></content>
       
       <categories>
           
@@ -3212,10 +3233,10 @@
     </entry>
     
     <entry>
-      <title>Chrome使用技巧</title>
-      <link href="/2018/06/03/Chrome%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
-      <url>/2018/06/03/Chrome%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
-      <content type="html"><![CDATA[<p>记录一些chrome的快捷操作（来自Chrome重度依赖者的备忘）</p><a id="more"></a><ol><li><p>在不退出当前页面的情况下打开新链接</p><ul><li>按住command或ctrl点击链接：在新页面打开链接</li><li>按住shift点击链接：在新窗口打开链接</li></ul></li><li><p>space：向下滚动一个完整页面长度<br> shift + space： 向上滚动一个完整页面的长度</p></li><li><p>重新打开最近关闭的页面（可以重复操作，依次打开之前关闭的页面）<br> Mac: cmd + shift + T<br> Windows: ctrl + shift + T</p></li><li><p>将所有打开选项卡保存到一个书签文件夹中<br> Mac: cmd + shift + D<br> Windows: ctrl + shift + D</p></li><li><p>重新启动Chrome： 在地址栏输入Chrome://restart</p></li><li><p>将Chrome变成记事本</p></li></ol><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:text/html;charset=utf-8, <span class="tag">&lt;<span class="name">title</span>&gt;</span>Scratchpad<span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"><span class="selector-tag">body</span> &#123;<span class="attribute">padding</span>: <span class="number">5%</span>; <span class="attribute">font-size</span>: <span class="number">1.5em</span>; <span class="attribute">font-family</span>: Arial; &#125;”&gt;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">”shortcut</span> <span class="attr">icon</span>” <span class="attr">href</span>=<span class="string">”https://ssl.gstatic.com/docs/documents/images/kix-favicon6.ico”/</span>&gt;</span><span class="tag">&lt;<span class="name">body</span> <span class="attr">OnLoad</span>=<span class="string">’document.body.focus();’</span> <span class="attr">contenteditable</span> <span class="attr">spellcheck</span>=<span class="string">”true”</span> &gt;</span></span><br></pre></td></tr></table></figure><p>将以上内容输入到地址栏中，就可以开始打字了，还可以保存到本地</p>]]></content>
+      <title>Chrome实现滚动截屏</title>
+      <link href="/2018/06/03/Chrome%E5%AE%9E%E7%8E%B0%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%B1%8F/"/>
+      <url>/2018/06/03/Chrome%E5%AE%9E%E7%8E%B0%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%B1%8F/</url>
+      <content type="html"><![CDATA[<p>在网页中截图经常会遇到需要滚动截屏的情况，之前一直想着找一个功能强大的app来实现滚动截屏，但尝试了好些，效果都不理想，后来意外发现Chrome本身就能实现滚动截图，还挺方便的。</p><a id="more"></a><ol><li>Chrome右键选择检查，进入开发者工具</li></ol><ul><li>快捷键：Alt + Command+ I (Mac) 或 Ctrl + Shift + I (Windows)<br><img src="https://upload-images.jianshu.io/upload_images/9240001-0c9b08771459c455.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="进入开发者工具"></li></ul><ol start="2"><li><p>使用快键键打开命令行：Command + Shift + P(Mac) 或 Ctrl + Shift + P (Windows)<br><img src="https://upload-images.jianshu.io/upload_images/9240001-986bcd901663ea30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打开命令行"></p></li><li><p>在命令行中输入”screen”，会出现于屏幕相关的关键字命令<br><img src="https://upload-images.jianshu.io/upload_images/9240001-6b9296c9177ab1fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p></li><li><p>选择”Capture full size screenshot”可以截取整个页面的内容</p></li></ol>]]></content>
       
       <categories>
           
@@ -3233,10 +3254,10 @@
     </entry>
     
     <entry>
-      <title>Chrome实现滚动截屏</title>
-      <link href="/2018/06/03/Chrome%E5%AE%9E%E7%8E%B0%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%B1%8F/"/>
-      <url>/2018/06/03/Chrome%E5%AE%9E%E7%8E%B0%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%B1%8F/</url>
-      <content type="html"><![CDATA[<p>在网页中截图经常会遇到需要滚动截屏的情况，之前一直想着找一个功能强大的app来实现滚动截屏，但尝试了好些，效果都不理想，后来意外发现Chrome本身就能实现滚动截图，还挺方便的。</p><a id="more"></a><ol><li>Chrome右键选择检查，进入开发者工具</li></ol><ul><li>快捷键：Alt + Command+ I (Mac) 或 Ctrl + Shift + I (Windows)<br><img src="https://upload-images.jianshu.io/upload_images/9240001-0c9b08771459c455.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="进入开发者工具"></li></ul><ol start="2"><li><p>使用快键键打开命令行：Command + Shift + P(Mac) 或 Ctrl + Shift + P (Windows)<br><img src="https://upload-images.jianshu.io/upload_images/9240001-986bcd901663ea30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打开命令行"></p></li><li><p>在命令行中输入”screen”，会出现于屏幕相关的关键字命令<br><img src="https://upload-images.jianshu.io/upload_images/9240001-6b9296c9177ab1fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p></li><li><p>选择”Capture full size screenshot”可以截取整个页面的内容</p></li></ol>]]></content>
+      <title>Chrome使用技巧</title>
+      <link href="/2018/06/03/Chrome%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+      <url>/2018/06/03/Chrome%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
+      <content type="html"><![CDATA[<p>记录一些chrome的快捷操作（来自Chrome重度依赖者的备忘）</p><a id="more"></a><ol><li><p>在不退出当前页面的情况下打开新链接</p><ul><li>按住command或ctrl点击链接：在新页面打开链接</li><li>按住shift点击链接：在新窗口打开链接</li></ul></li><li><p>space：向下滚动一个完整页面长度<br> shift + space： 向上滚动一个完整页面的长度</p></li><li><p>重新打开最近关闭的页面（可以重复操作，依次打开之前关闭的页面）<br> Mac: cmd + shift + T<br> Windows: ctrl + shift + T</p></li><li><p>将所有打开选项卡保存到一个书签文件夹中<br> Mac: cmd + shift + D<br> Windows: ctrl + shift + D</p></li><li><p>重新启动Chrome： 在地址栏输入Chrome://restart</p></li><li><p>将Chrome变成记事本</p></li></ol><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:text/html;charset=utf-8, <span class="tag">&lt;<span class="name">title</span>&gt;</span>Scratchpad<span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"><span class="selector-tag">body</span> &#123;<span class="attribute">padding</span>: <span class="number">5%</span>; <span class="attribute">font-size</span>: <span class="number">1.5em</span>; <span class="attribute">font-family</span>: Arial; &#125;”&gt;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">”shortcut</span> <span class="attr">icon</span>” <span class="attr">href</span>=<span class="string">”https://ssl.gstatic.com/docs/documents/images/kix-favicon6.ico”/</span>&gt;</span><span class="tag">&lt;<span class="name">body</span> <span class="attr">OnLoad</span>=<span class="string">’document.body.focus();’</span> <span class="attr">contenteditable</span> <span class="attr">spellcheck</span>=<span class="string">”true”</span> &gt;</span></span><br></pre></td></tr></table></figure><p>将以上内容输入到地址栏中，就可以开始打字了，还可以保存到本地</p>]]></content>
       
       <categories>
           
