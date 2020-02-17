@@ -335,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/03/ES6学习笔记之数组的扩展/">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/08/03/ES6学习笔记之正则表达式的扩展/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xu Quan">
@@ -354,7 +354,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/03/ES6学习笔记之数组的扩展/" itemprop="url">ES6学习笔记之数组的扩展</a></h2>
+                <a class="post-title-link" href="/2018/08/03/ES6学习笔记之正则表达式的扩展/" itemprop="url">ES6学习笔记之正则表达式的扩展</a></h2>
         
 
         <div class="post-meta">
@@ -407,8 +407,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/03/ES6学习笔记之数组的扩展/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/03/ES6学习笔记之数组的扩展/" itemprop="commentCount"></span>
+                <a href="/2018/08/03/ES6学习笔记之正则表达式的扩展/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/03/ES6学习笔记之正则表达式的扩展/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -416,7 +416,7 @@
 
           
           
-             <span id="/2018/08/03/ES6学习笔记之数组的扩展/" class="leancloud_visitors" data-flag-title="ES6学习笔记之数组的扩展">
+             <span id="/2018/08/03/ES6学习笔记之正则表达式的扩展/" class="leancloud_visitors" data-flag-title="ES6学习笔记之正则表达式的扩展">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,037 字
+                  944 字
                 </span>
               
 
@@ -479,57 +479,38 @@
 
       
         
-          <h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><ul>
-<li>扩展运算符<ul>
-<li>写法： <code>...</code></li>
-<li>用途：将数组转为参数序列</li>
-<li>应用<ul>
-<li>复制数组</li>
-<li>合并数组</li>
-<li>转换字符串</li>
+          <h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><p>  ES6中的正则表达式有这样一些改变：</p>
+<ul>
+<li>RegExp构造函数的写法有了更新<ul>
+<li>可以是<strong>正则表达式+修饰符</strong></li>
 </ul>
 </li>
+<li>新的修饰符<ul>
+<li><strong><code>u</code>修饰符</strong> Unicode模式</li>
+<li><strong><code>y</code>修饰符</strong> “粘连”修饰符</li>
 </ul>
 </li>
-<li>数组的新方法<ul>
-<li><code>Array.from()</code><ul>
-<li>将类似数组的及有遍历接口的对象转换成数组</li>
+<li>新的属性<ul>
+<li><strong><code>unicode</code>属性</strong> 判断是否设置了<code>u</code>修饰符</li>
+<li><strong><code>sticky</code>属性</strong> 判断是否设置了<code>y</code>修饰符</li>
+<li><strong><code>flags</code>属性</strong> 返回正则表达式的修饰符</li>
 </ul>
 </li>
-<li><code>Array.of()</code></li>
+<li>新规则<ul>
+<li><strong>后行断言</strong><ul>
+<li>先行断言写法 <code>/x(?=y)/</code></li>
+<li>先行否定断言写法 <code>/x(?!y)/</code></li>
+<li>后行断言写法 <code>/(?&lt;=y)x/</code></li>
+<li>后行否定断言写法 <code>/(?&lt;!y)x/</code></li>
 </ul>
 </li>
-<li>数组实例的新方法<ul>
-<li><code>copyWith(target, start, end)</code><ul>
-<li>复制数组内的元素到特定位置</li>
-</ul>
-</li>
-<li><code>find</code><ul>
-<li>找到第一个符合条件的元素</li>
-</ul>
-</li>
-<li><code>findIndex</code><ul>
-<li>找到第一个符合条件的元素的位置</li>
-</ul>
-</li>
-<li><code>fill()</code><ul>
-<li>填充数组</li>
-</ul>
-</li>
-<li><code>keys(), values(), entries()</code><ul>
-<li>遍历数组的键名、键值、键值对</li>
-</ul>
-</li>
-<li><code>includes</code><ul>
-<li>检查数组中是否包含某个元素</li>
-</ul>
-</li>
+<li><strong>具名组匹配</strong> 给分组添加名字</li>
 </ul>
 </li>
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/08/03/ES6学习笔记之数组的扩展/#more" rel="contents">
+            <a class="btn" href="/2018/08/03/ES6学习笔记之正则表达式的扩展/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
