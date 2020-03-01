@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuquan.site/"/>
-  <updated>2020-02-23T15:42:12.834Z</updated>
+  <updated>2020-03-01T08:43:56.382Z</updated>
   <id>http://xuquan.site/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Week 9</title>
+    <link href="http://xuquan.site/2020/03/01/Week-9/"/>
+    <id>http://xuquan.site/2020/03/01/Week-9/</id>
+    <published>2020-03-01T08:26:10.000Z</published>
+    <updated>2020-03-01T08:43:56.382Z</updated>
+    
+    <content type="html"><![CDATA[<p>不知不觉又一周。关在家里会有种和时空脱节的感觉，分不清到底时间以及自己该在这个时间里应有的状态，也搞不清是怎么一眨眼就又过完了一周。非常深的 detached 的感觉。</p><a id="more"></a><p>这周已经感知不到变化了。小区不让出门，大家每天在家，起床吃饭上班吃饭上班吃饭锻炼睡觉，每天做的事情都没有变过。这种规律的生活没有带来平静，反而因为不得不这么做，而变得格外压抑。</p><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>这周的工作效率也不错，可能因为所有的事情都没有激起心中的涟漪，只有工作这件事还让我觉得自己没有被社会抛弃，也只有工作这件事还在带给我满足感。</p><ul><li>做完了调拨单的第一部分：拣货和问题单，提了MR，等待review</li><li>做了一些前台文案的调整，很小的活儿</li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>给 FCC 翻译的 <em>The React Handbook</em> 完成了 Section 1 的一半，Section 1 真是太长了</li><li>读完了《血疫》，可以说是很不喜欢了，读的时候是想了解一个烈性传染病的传播历史，结果是个很没劲的小说，居然豆瓣评分 8.7 ，非常不理解了</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li><p>做了 3 天瑜伽，有 3 天都偷懒了，其中 2 天因为加班，1 天因为偷懒，还有 1 天是今晚，今晚保证不偷懒。</p></li><li><p>因为关在家里突然很烦躁，所以找了无脑电视剧来看。看了 50 集《三生三世枕上书》，猛嗑了帝君和凤九的 CP，然后我就觉得帝君不那么帅了，我真是个容易变心的人。</p></li><li><p>时间记录没有每天记，看电视剧没好意思记，然后连带着其他时间有些没记上</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcein6zua2j30u01t0wow.jpg" alt="image-20200301163930345"></p></li><li><p>forest 种树漏掉了周五周六，因为周五开了一天会，开会的时候没有种树，周六看电视剧也没种，希望下周看完大结局赶紧回到正轨。</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gceiorg6l1j30k00ivain.jpg" alt="image-20200301164104530"></p></li><li><p>过去一周玩手机比较少，可能是因为看电视剧去了</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gceipku4iyj30u01t0qcn.jpg" alt="image-20200301164152288"></p></li></ul><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>做完调拨单第 2 部分：打包出库</li><li>标品的方案</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li>看完《You don’t know JS: Sync and Async》</li><li><em>The React Handbook</em> 翻译完成 section 1剩下的 50%</li><li>这周准备看一本关于咖啡的书</li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>坚持每天练瑜伽，因为我妈最近开始自己练了，所以可以把我的强度调高一点</li><li>早睡早起</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;不知不觉又一周。关在家里会有种和时空脱节的感觉，分不清到底时间以及自己该在这个时间里应有的状态，也搞不清是怎么一眨眼就又过完了一周。非常深的 detached 的感觉。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://xuquan.site/categories/Journal/"/>
+    
+    
+      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
+    
+  </entry>
   
   <entry>
     <title>Week 8</title>
@@ -460,28 +482,6 @@
     
     
       <category term="JavaScript" scheme="http://xuquan.site/tags/JavaScript/"/>
-    
-      <category term="React" scheme="http://xuquan.site/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React-Basic Theoretical Concepts笔记</title>
-    <link href="http://xuquan.site/2019/07/14/React-Basic-Theoretical-Concepts%E7%AC%94%E8%AE%B0/"/>
-    <id>http://xuquan.site/2019/07/14/React-Basic-Theoretical-Concepts笔记/</id>
-    <published>2019-07-14T15:54:57.000Z</published>
-    <updated>2019-07-14T16:40:45.939Z</updated>
-    
-    <content type="html"><![CDATA[<p>关于React的核心概念。仓库的地址是：<a href="https://github.com/reactjs/react-basic" target="_blank" rel="noopener">React - Basic Theoretical Concepts</a>，写的比较简单，最开始学React的时候看过一遍，但其实完全没有get到任何有效信息，因为当时只是简单的看了一下React的文档，都没怎么真的写过。现在回头重看一遍，有很多启发。我翻译了一下。</p><a id="more"></a><h3 id="Transformation"><a href="#Transformation" class="headerlink" title="Transformation"></a>Transformation</h3><p>React最核心的概念是它是一个UI层的数据转换，将一种形式的数据转换成另一种形式的数据。相同的内容总会有相同的呈现。是一个<code>pure function</code>。</p><h3 id="Abstraction"><a href="#Abstraction" class="headerlink" title="Abstraction"></a>Abstraction</h3><p>复杂的UI可以被抽象化成一个个可复用的小的组件。使用起来也是和使用函数一样。</p><h3 id="Composition"><a href="#Composition" class="headerlink" title="Composition"></a>Composition</h3><p>想要真的拥有可复用的模块，只不断为它们提供外层的容器是不够的，需要将不同的抽象组件组合起来，形成新的组件，从而实现真正的可复用。</p><h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><p>有一些state应该是专属于某一个组件，而无法被另一个组件共享的。比如滚动页面的位置，这是一个典型的不希望在其他页面中被共享的状态。</p><h3 id="Memoization"><a href="#Memoization" class="headerlink" title="Memoization"></a>Memoization</h3><p>对于纯函数，当我们知道无论什么时候调用它都能够获得相同的结果时，重复调用就会变成一种浪费。我们可以创建一个记忆版本，用来保存最后一个参数和最终的结果。这样我们就不必为了相同的结果来重复调用了。</p><h3 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h3><p>很多UI某种程度上都是列表的变形，每个列表元素会有不同的值，从而构建一种层级结构。我们可以通过<code>map</code>来管理每个元素的状态。</p><h3 id="Continuations"><a href="#Continuations" class="headerlink" title="Continuations"></a>Continuations</h3><p>当我们使用太多的列表时，需要维护的模板会越来越多。这时我们可以通过延迟函数执行来将一些模板移除到核心逻辑以外，比如通过<code>bind</code>来实现<code>currying</code>，之后通过从外面将数据传入函数的方式来简化核心逻辑。</p><h3 id="State-Map"><a href="#State-Map" class="headerlink" title="State Map"></a>State Map</h3><p>前面提到，当有重复的代码逻辑出现时，我们可以通过抽象和组合的方式去避免重复执行相同的内容。我们可以通过将抽象化和传入状态的部分移到更低层级的函数里来实现。</p><h3 id="Memoization-Map"><a href="#Memoization-Map" class="headerlink" title="Memoization Map"></a>Memoization Map</h3><p>如果需要memoize一个列表中的多个元素，这样就会变得比较复杂。但是UI又很稳定，每次掉啊用都会得到相同的值，因此我们可以通过传入memoization cache给组合函数来优化。</p><h3 id="Algebraic-Effects"><a href="#Algebraic-Effects" class="headerlink" title="Algebraic Effects"></a>Algebraic Effects</h3><p>层层传递一个值有时候并不方便，我们需要有一种更方便的方法来将数据从一个组件传递到另一个组件，同时略过中间层级的组件。React里，这个被称为<code>context</code>。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关于React的核心概念。仓库的地址是：&lt;a href=&quot;https://github.com/reactjs/react-basic&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;React - Basic Theoretical Concepts&lt;/a&gt;，写的比较简单，最开始学React的时候看过一遍，但其实完全没有get到任何有效信息，因为当时只是简单的看了一下React的文档，都没怎么真的写过。现在回头重看一遍，有很多启发。我翻译了一下。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="跟着大佬学编程" scheme="http://xuquan.site/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/"/>
-    
     
       <category term="React" scheme="http://xuquan.site/tags/React/"/>
     
