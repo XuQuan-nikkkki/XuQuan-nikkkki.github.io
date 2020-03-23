@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuquan.site/"/>
-  <updated>2020-03-15T12:11:16.510Z</updated>
+  <updated>2020-03-23T16:05:21.973Z</updated>
   <id>http://xuquan.site/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Week 12</title>
+    <link href="http://xuquan.site/2020/03/23/Week-12/"/>
+    <id>http://xuquan.site/2020/03/23/Week-12/</id>
+    <published>2020-03-23T15:15:14.000Z</published>
+    <updated>2020-03-23T16:05:21.973Z</updated>
+    
+    <content type="html"><![CDATA[<p>哎呀，这周的周记延迟了一天，不是因为偷懒，是因为真的太忙了。</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd49zz0xpjj31910u04qp.jpg" alt="WechatIMG6"><a id="more"></a></p><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>这周最开心的事是收到了升职的提名，所以准备述职花了很多时间，导致工作进度严重滞后，周末在家疯赶进度，完全没有过周末。</p><ul><li>调拨单和出库单的基础页面 MR 后来没有人 review，因为手头有其他事，所以我也没催，现在也不急着上线，先 pending 一下</li><li>kindle 项目在工作日真的只动了一点点，导致我周末很着急地感到晚上1点，到今晚做完了 2/3 的流程，明后天再赶一赶，这周做完应该没问题</li><li>之前项目里加了一个捕获重复请求的功能，结果 sentry 不小心把同事触发登录的二次请求给捕获了，密码暴露了，上周修了这个 bug ，还厚着脸皮跟各个暴露了的同事通知改密码</li><li>改了一个 sentry 的设置，可以屏蔽不必要的请求，还有些没讨论清楚的地方，决定在 kindle 之前先不管了，还是分清轻重缓急</li><li>修了一个审核的 bug ，审核真的是 bug 重灾区，上周突然发现 mentor 把其他同事的审核 bug 转到我这儿了，应该是因为责任人太久不修复了，也不知道这周来不来得及改</li><li>湖北恢复卖书服务了，把前台的卖书限制给去掉了</li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><p>我上周没有学什么。。。翻译没来得及做，书只前两天看了一点点，然后就在准备述职了。</p><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li><p>锻炼了 4 天，三天晚上偷懒了，其中两天准备述职，一天晚上加班。最近的感受是 Barre 好累啊，不过能够保证自己练不动 Barre 的时候，也能保证 1 个小时的瑜伽。今天试了一下中级的流瑜伽，累到趴下。</p></li><li><p>上周星期天看了《爱的捆绑》，岩井俊二早期的电影真的很美，但是我看得很懵，有点不是特别理解。<img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd4ahjrkatj30j40bkdns.jpg" alt="p1261203965"></p></li><li><p>其他的电影电视都没看，连公众号都没来得及看。</p></li><li><p>但是最近听了很多歌，最近很喜欢加班的时候听 Macy Gray，还很喜欢 Big Thief 的 Paul，Bee Gees 的 Spicks and Specks </p></li><li><p>不知道是不是因为开始看《被讨厌的勇气》，还是其他什么原因，我最近突然变得非常非常开心，整个人的性格都发生了很大的变化，无法理解的变化。似乎人生在某一个瞬间开窍了，但我连那个 Aha moment 都没有捕捉到。我突然变得非常非常爱自己，能够放下之前对自己的所有不满，坦然接受自己的各种优点和缺点。也因为这个原因，突然很多以前因为害怕给人留下不好印象而做起来畏首畏尾的事情都变得轻松容易起来。</p></li><li><p>这周的时间记录，品类如此单一：</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd4b2vfhxxj30u01t0jzg.jpg" alt="image-20200324000230858"></p></li><li><p>上周种的树，周五和周六准备述职没有种：</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd4b34ma87j30k00ivth4.jpg" alt="image-20200324000245798"></p></li></ul><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>做完 kindle 项目的几个流程，和后端联调，提交代码，下周给运营测试</li><li>拍照问题得顺便在这次的项目里解决了</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li>看完《You don’t know JS: Sync and Async》</li><li><em>The React Handbook</em> 翻译完成 section 2</li><li>看完《被讨厌的勇气》</li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>少玩手机，发现自己一紧张就很喜欢看手机缓解焦虑</li><li>每天记录自己做的事情吧</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;哎呀，这周的周记延迟了一天，不是因为偷懒，是因为真的太忙了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/00831rSTgy1gd49zz0xpjj31910u04qp.jpg&quot; alt=&quot;WechatIMG6&quot;&gt;
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://xuquan.site/categories/Journal/"/>
+    
+    
+      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
+    
+  </entry>
   
   <entry>
     <title>Week 11</title>
@@ -455,32 +478,6 @@
       <category term="git" scheme="http://xuquan.site/tags/git/"/>
     
       <category term="games" scheme="http://xuquan.site/tags/games/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React学习笔记：Hooks及相关的各种</title>
-    <link href="http://xuquan.site/2019/08/24/React%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9AHooks%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%9A%84%E5%90%84%E7%A7%8D/"/>
-    <id>http://xuquan.site/2019/08/24/React学习笔记：Hooks及相关的各种/</id>
-    <published>2019-08-24T05:27:27.000Z</published>
-    <updated>2019-08-24T08:03:12.779Z</updated>
-    
-    <content type="html"><![CDATA[<p>关注了React的作者之一Dan Abramov的博客，看了其中几篇文章（算是一个小的系列吧），非常受用。</p><a id="more"></a><h2 id="A-complete-guide-to-useEffect"><a href="#A-complete-guide-to-useEffect" class="headerlink" title="A complete guide to  useEffect"></a><a href="https://overreacted.io/a-complete-guide-to-useeffect/" target="_blank" rel="noopener">A complete guide to  <code>useEffect</code></a></h2><p>文如其名，这是一篇关于<code>useEffect</code>的完整使用指南。但它并不是科普式地告诉你如何使用，而且基于读者已经尝试过使用useEffect`，对它有一定的了解的基础上，对它实现的机制以及大家容易犯的错误进行了总结。</p><h3 id="props和state在当前渲染中不会变化"><a href="#props和state在当前渲染中不会变化" class="headerlink" title="props和state在当前渲染中不会变化"></a><code>props</code>和<code>state</code>在当前渲染中不会变化</h3><p>他首先澄清了React中<code>state</code>的本质。我们会通过<code>setState</code>来改变<code>state</code>，然后观察到页面的变化，但实际上，<code>state</code>并不是<code>data binding</code>、<code>watcher</code>或是<code>proxy</code>。<code>state</code>在当前render的结果里是一个常量，它在当前的render中是不变的。不仅是<code>state</code>，<code>event handlers</code>、<code>effects</code>在当前的render中都是不变的。用Dan的话说，each render has its own everything。</p><p>当<code>state</code>更新时，React重新渲染组件，每一次渲染的时候，组件只“看到”这次渲染的<code>state</code>值。同样地，<code>event handler</code>在执行的时候获取当前的值，返回的也是此次渲染的<code>event</code>的返回值。即使是异步函数也只获取此次渲染的<code>state</code>值。<code>effect</code>亦是如此。</p><p>但如果你想试图读取下一次渲染的<code>state</code>时，有一个方法是通过<code>Ref</code>来实现，只是这个方法无法保证每一次调用都拿到相同的值。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Example() &#123;</span><br><span class="line">  const [count, setCount] = useState(0)</span><br><span class="line">  const latestCount = useRef(count)</span><br><span class="line">  </span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    latestCount.current = count;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      console.log(`You clicked $&#123;latestCount.current&#125; times`)</span><br><span class="line">    &#125;, 3000)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="关于cleanup"><a href="#关于cleanup" class="headerlink" title="关于cleanup"></a>关于cleanup</h3><p>有一些函数会清除掉函数副作用。比如我们会在<code>componentWillUnmount</code>时取消定时任务，或者新的<code>effect</code>写法是在<code>useEffect</code>中<code>return ()=&gt; cleanup function</code>。</p><p>React为了实现性能的优化，不影响浏览器重新<code>paint</code>的过程，会在<code>paint</code>结束后再执行<code>effect</code>，因此<code>effect</code>中的cleanup会被延迟，它实际上是在新的一次渲染后执行的。</p><h3 id="同步，与生命周期无关"><a href="#同步，与生命周期无关" class="headerlink" title="同步，与生命周期无关"></a>同步，与生命周期无关</h3><p>React会根据当前的<code>props</code>和<code>state</code>更新DOM节点，因此在渲染时，<code>mount</code>和<code>update</code>并没有区别。</p><h3 id="何时调用useEffect中的任务"><a href="#何时调用useEffect中的任务" class="headerlink" title="何时调用useEffect中的任务"></a>何时调用<code>useEffect</code>中的任务</h3><p>为了避免不必要的重复渲染，可以给<code>useEffect</code>传一个数组参数作为依赖，只有当数组中的值发生变化时才会触发<code>useEffect</code>中的函数。当依赖中的值和前一次相同时，react会跳过这一次<code>effect</code>。</p><p>当我们使用时，会情不自禁地套用class的思维模式使用<code>effect</code>，比如传一个空数组给<code>useEffect</code>来实现<code>componentDidMount</code>的效果，但这并不是一个好的选择，Dan把这张用法称作“欺骗React”。正确的用法是，所有<code>effect</code>用到的<code>props</code>、<code>state</code>、<code>functions</code>都应该作为依赖传给<code>useEffect</code>。这是因为传入空数组的效果是只渲染一次（即我们想要的类似<code>componentDidMount</code>的效果），但这样也会漏掉<code>props</code>、<code>state</code>发生变化时本应触发的再次渲染。</p><p>Dan提到有两个使用原则，第一是所有<code>effect</code>用到的内容都应该放入依赖。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">  const id = setInterval(() =&gt; &#123;</span><br><span class="line">    setCount(count + 1)</span><br><span class="line">  &#125;, 1000)</span><br><span class="line">  return () =&gt; clearInterval(id)</span><br><span class="line">&#125;, [count])</span><br></pre></td></tr></table></figure><p>第二是让<code>effect</code>内的函数“自给自足”，这样如果我们传入一个空数组作为依赖并不是因为欺骗，而是整个函数的确不必依赖任何值。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">  const id = setInterval(() =&gt; &#123;</span><br><span class="line">    setCount(c =&gt; c + 1)</span><br><span class="line">  &#125;, 1000)</span><br><span class="line">  return () =&gt; clearInterval(id)</span><br><span class="line">&#125;, [])</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关注了React的作者之一Dan Abramov的博客，看了其中几篇文章（算是一个小的系列吧），非常受用。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="跟着大佬学编程" scheme="http://xuquan.site/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="React" scheme="http://xuquan.site/tags/React/"/>
-    
-      <category term="Hooks" scheme="http://xuquan.site/tags/Hooks/"/>
-    
-      <category term="useEffect" scheme="http://xuquan.site/tags/useEffect/"/>
     
   </entry>
   
