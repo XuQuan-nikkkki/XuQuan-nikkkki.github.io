@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuquan.site/"/>
-  <updated>2020-03-29T15:29:50.719Z</updated>
+  <updated>2020-04-13T04:06:44.987Z</updated>
   <id>http://xuquan.site/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Week 15 &amp; Week 16</title>
+    <link href="http://xuquan.site/2020/04/13/Week-14-Week-15/"/>
+    <id>http://xuquan.site/2020/04/13/Week-14-Week-15/</id>
+    <published>2020-04-13T03:45:21.000Z</published>
+    <updated>2020-04-13T04:06:44.987Z</updated>
+    
+    <content type="html"><![CDATA[<p>武汉气温升高了，天气特别好，爸爸种的花都开了</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds0bd36r6j30u01904qx.jpg" alt="image-20200413120330702"></p><a id="more"></a><p>###工作</p><p>忙活了两周 kindle 项目，清明假期也在加班（虽然清明假期和我也没什么关系），终于把功能全部弄完了。剩下的就是联调，优化细节，做好准备上线。</p><ul><li>做完了 kindle 的审核。偷偷学了苹果的交互方式，觉得挺有意思的。因为团队没有交互设计师，交互一直是自己在摸索。mentor 有时候会提醒哪里做的不好，但是后台的交互和页面设计一直都出于各自为政的阶段。这次反而提供了一个好的思路，至少可以学各种大公司的交互方式，从中理解和探索什么样的交互会给人带来好的体验。这也是接下来 OKR 的一个小目标吧。</li><li>做完了 kindle 的拍照，这项的代码和花的时间都不算太多。但是在从头做新的拍照项目的时候，对老的拍照项目有了很多更深的理解。在项目开始的时候把系统之间的数据联动做好，真的是能给整个系统也好、操作人员也好，带来巨大的效率、质量收益。反之，一旦让每个环节都孤立起来，就让所有的事情都变成了的 1 + 1 = 1.5。</li><li>kindle 的取回做完了。做这一部分的时候会不断地想，操作人员需要哪些数据来判断自己接下来的操作，站在操作人员的角度去思考问题才能更深刻地理解程序员应该如何跳出编码的范畴思考产品。</li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>看完了《被讨厌的勇气》，真是一本好书</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li>上上周练了 4 天瑜伽，偷了 3 天懒。上周应该也偷了 3 天懒，做了 3 天瑜伽，做完去跑了个步。80 天了，我终于下楼了</li><li>昨天为了跑步，想准备个跑步歌单，结果在多年未用的虾米里找到了很多年前的歌单。跑的时候听到熟悉的歌就会想起当年跑步的情形，想想已经好几年了。那个时候也是在武汉，在家楼下的院子里跑圈，那个时候我应该觉得 30 岁的自己已经瘦成一道闪电了吧</li><li>昨天为了庆祝项目代码初步完成，看了《1917》，喝了点酒</li></ul><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><h4 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h4><ul><li>把 kindle 项目联调、测试做完</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li>看完《You don’t know JS: Sync and Async》</li><li><em>The React Handbook</em> 翻译完成 section 2</li><li>整理《被讨厌的勇气》的笔记</li><li>接着读《论中国》</li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>要恢复跑步，需要一些除了瑜伽之外的心肺要求更高的运动</li><li>除了跑步，瑜伽还是不能停</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;武汉气温升高了，天气特别好，爸爸种的花都开了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gds0bd36r6j30u01904qx.jpg&quot; alt=&quot;image-20200413120330702&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://xuquan.site/categories/Journal/"/>
+    
+    
+      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
+    
+  </entry>
   
   <entry>
     <title>Week 13</title>
@@ -453,30 +476,6 @@
       <category term="技能" scheme="http://xuquan.site/tags/%E6%8A%80%E8%83%BD/"/>
     
       <category term="软技能" scheme="http://xuquan.site/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Week 51</title>
-    <link href="http://xuquan.site/2019/12/23/Week-51/"/>
-    <id>http://xuquan.site/2019/12/23/Week-51/</id>
-    <published>2019-12-23T02:58:20.000Z</published>
-    <updated>2019-12-23T03:35:30.963Z</updated>
-    
-    <content type="html"><![CDATA[<p>2019年转眼就只剩不到10天了。</p><p>上周做了：</p><h5 id="完成了"><a href="#完成了" class="headerlink" title="完成了"></a>完成了</h5><ul><li>做了业务环节的一个方案优化，顺带学着用axure把交互方案画出来了，还挺好玩的。</li><li>终于在私有的npm上发布成功了包（经历了配置失败、上传之后服务器重启导致包丢失、重新发布之后项目部署失败等各种问题），这周还要把之前放在另一个registry的包移过来。</li><li>准备在前台项目里增加log日志，方便排查问题。目前暂定的方案是 <code>redux middleware</code> 来收集 <code>action</code> 。周末看了一下 <code>middleware</code> ，现在能够捕获所有的 <code>action</code> 了。还需要等后续的存储和上传方案确定了再继续往下推进。</li></ul><h5 id="未完成"><a href="#未完成" class="headerlink" title="未完成"></a>未完成</h5><ul><li>项目迁移ts的时候，每次把一个 <code>.js</code> 文件改为 <code>.tsx</code> 或 <code>.ts</code> 都需要重启本地的server，因为webpack打包的时候没法找到对应的文件，本来想通过 <code>resolve</code> 来解决，但是没成功，准备之后再找时间尝试</li></ul><h5 id="看了四部电影"><a href="#看了四部电影" class="headerlink" title="看了四部电影"></a>看了四部电影</h5><ul><li>过春天</li><li>出租车</li><li>燃烧</li><li>82年的金智英</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;2019年转眼就只剩不到10天了。&lt;/p&gt;
-&lt;p&gt;上周做了：&lt;/p&gt;
-&lt;h5 id=&quot;完成了&quot;&gt;&lt;a href=&quot;#完成了&quot; class=&quot;headerlink&quot; title=&quot;完成了&quot;&gt;&lt;/a&gt;完成了&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;做了业务环节的一个方案优化，顺带学着用axu
-      
-    
-    </summary>
-    
     
   </entry>
   
