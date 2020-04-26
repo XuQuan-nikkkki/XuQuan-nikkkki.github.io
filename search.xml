@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>Week 17</title>
+      <link href="/2020/04/26/Week-17/"/>
+      <url>/2020/04/26/Week-17/</url>
+      <content type="html"><![CDATA[<p>天气好，像徐妙妙一样惬意。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ge7g01xx2ej30u011ikjr.jpg" alt="image-20200426202945755"></p><a id="more"></a><p>最近真的是非常舒适。工作井然有序，忙碌又有成就感；其他的事情也都有条不紊地推进。天气又好得不像话，想要一直停留在这个时候。</p><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><ul><li>kindle 项目终于接近尾声了。代码全部写完了，也基本 review 了一遍。测试全部完成了，陆陆续续把一些小的想要优化的交互细节都给加上了。静待周三上线。</li><li>今天把新人培训的方案给做了，等方案通过之后又要开始忙碌了。</li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li><p>看了几节《论中国》，这周应该就要结束这本书了。真的是非常非常棒的一本书，尤其是在近期国际形势诡谲的情况下读，会对社会还有我们正身处的情况有更深刻的理解。同时对国家的信心反而更足。我应该从来没有像现在这样对祖国充满信息过。今天早上读到邓小平给下一任领导人留下的 24 字箴言，到现在来看也还是觉得这 24 个字充满了中国人含蓄而深厚的智慧，它看似什么都没有明说，但实际上把所有都说了。这 24 个字是：“冷静观察，稳住阵脚，沉着应付，韬光养晦，善于守拙，决不当头。”</p></li><li><p>听了两期关于酒的博客：《杯弓舌瘾》，听了一期关于日本威士忌的内容，还有一期 old fashion 的内容。</p></li><li><p>听了一期《硅谷早知道》，主题是疫情下的美国企业就业</p></li><li><p>最近想要先听很早就停更的《硅谷堂》，里面有很多关于用户和产品的内容，应该会对最近做项目有很大的帮助。</p></li><li><p>清理了一波 Inbox </p></li><li><p>在读《简单冥想术》</p></li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li>练了 3 天瑜伽，其中有一天配合了 HIIT 和 keep 的课，跑了 3 次步，一会儿写完周记会再去跑一下。最近跑步的感觉有很明显的回升，刚开始差不多一公里要 7 分多，前天开始可以稳定在 7 分内了，速度几乎是以前跑得比较差的状态。另外我的肱二头肌真的练得很明显了，就是腿还是不太行，需要加强一下。</li><li>这周没有看电影，等着五一好好休假。</li><li>我妈今天去染了一头奶奶灰，可以说是非常酷了。</li><li>最近没有用 aTimeLogger 记录时间了，换了个方式，直接用了日历，反而每天时间用在哪里一目了然。唯一的缺陷是安卓和 mac 之间没有找到非常好的共享日历的平台。</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ge7gsjsc71j31t90u0gsy.jpg" alt="image-20200426205714389"><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ge7gt2rjamj32800gi41l.jpg" alt="image-20200426205745366"></p><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>kindle 上线</li><li>新人审核方案敲定</li><li>调拨单第二期细化方案 + 开发</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li>看完《论中国》</li><li>整理《被讨厌的勇气》的笔记</li><li><em>The React Handbook</em> 翻译完成 section 2</li><li>接着看 《You don’t know JS》</li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li><p>坚持每天锻炼。增加腿部无氧训练</p></li><li><p>早睡早起。最近早上醒之后读会做一下瑜伽拉伸，正好听一集播客。晚上 11 点之后关工作项目内容，看 1 小时书。</p></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> Journal </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Weekly Report </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Week 16</title>
       <link href="/2020/04/20/Week-16/"/>
       <url>/2020/04/20/Week-16/</url>
@@ -751,11 +772,11 @@
       
         <tags>
             
-            <tag> React </tag>
-            
             <tag> FreeCodeCamp </tag>
             
             <tag> Redux </tag>
+            
+            <tag> React </tag>
             
         </tags>
       
@@ -797,9 +818,9 @@
       
         <tags>
             
-            <tag> 翻译 </tag>
-            
             <tag> git </tag>
+            
+            <tag> 翻译 </tag>
             
         </tags>
       
@@ -1015,9 +1036,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> flex </tag>
+            
+            <tag> CSS </tag>
             
             <tag> position </tag>
             
@@ -1159,13 +1180,13 @@
             
             <tag> 翻译 </tag>
             
-            <tag> Internet </tag>
-            
             <tag> HTTP </tag>
             
             <tag> TCP </tag>
             
             <tag> IP </tag>
+            
+            <tag> Internet </tag>
             
         </tags>
       
@@ -1686,9 +1707,9 @@
             
             <tag> node.js </tag>
             
-            <tag> art-template </tag>
-            
             <tag> 模板引擎 </tag>
+            
+            <tag> art-template </tag>
             
         </tags>
       
@@ -1832,9 +1853,9 @@
             
             <tag> express </tag>
             
-            <tag> multer </tag>
-            
             <tag> 中间件 </tag>
+            
+            <tag> multer </tag>
             
         </tags>
       
@@ -2595,9 +2616,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> freecodecamp </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -2754,9 +2775,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> freecodecamp </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -2777,9 +2798,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> freecodecamp </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -2800,9 +2821,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> freecodecamp </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> 正则 </tag>
             
@@ -2825,9 +2846,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> freecodecamp </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> ES6 </tag>
             
@@ -2850,9 +2871,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> freecodecamp </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -2873,9 +2894,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> freecodecamp </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -3252,27 +3273,6 @@
     </entry>
     
     <entry>
-      <title>CSS学习笔记1：引入CSS文件</title>
-      <link href="/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%BC%95%E5%85%A5CSS%E6%96%87%E4%BB%B6/"/>
-      <url>/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%BC%95%E5%85%A5CSS%E6%96%87%E4%BB%B6/</url>
-      <content type="html"><![CDATA[<p>引入CSS主要有3种方式：<strong>引入外部样式表、使用内部样式表和行间样式</strong>。</p><a id="more"></a><h3 id="1-外部样式表"><a href="#1-外部样式表" class="headerlink" title="1. 外部样式表"></a>1. 外部样式表</h3><ul><li>常见的<link>标签引入</li><li>rel和href属性不可省。type和media属性可以省略</li><li>不能混入HTML标签，包括HTML的注释，否则会影响标签之后的css样式的识别</li><li>可以加载多个样式表</li><li>可以有候选样式表，用“alternate stylesheet”标注<br></li><li>@import引入外部样式表</li><li>但是必须在style标签内引入，并且至于CSS规则之前</li><li>可以引入多个CSS样式表，同时用media来限制场景<ul><li>@import “xxx.css” print</li></ul></li><li>@import不太建议使用的原因是<ol><li>@import引入的文件会在网页加载完之后再加载，会影响网页刚开始的呈现</li><li>不支持JS对DOM的操作</li></ol></li></ul><h3 id="2-内部样式表"><a href="#2-内部样式表" class="headerlink" title="2. 内部样式表"></a>2. 内部样式表</h3><ul><li>使用style标签包含样式表</li><li>文档中可以出现多个style标签，样式规则与层叠样式规则一样</li></ul><h3 id="3-行间样式"><a href="#3-行间样式" class="headerlink" title="3. 行间样式"></a>3. 行间样式</h3><ul><li>为单个元素指定样式</li><li>通过HTML元素的style属性来设置</li><li>若存在多个style属性，则只能识别第一个</li></ul><p><img src="https://upload-images.jianshu.io/upload_images/9240001-1ba11c8632b110f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="引入CSS"></p>]]></content>
-      
-      <categories>
-          
-          <category> 学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> css </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>CSS学习笔记2：CSS选择器类型</title>
       <link href="/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02%EF%BC%9ACSS%E9%80%89%E6%8B%A9%E5%99%A8%E7%B1%BB%E5%9E%8B/"/>
       <url>/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02%EF%BC%9ACSS%E9%80%89%E6%8B%A9%E5%99%A8%E7%B1%BB%E5%9E%8B/</url>
@@ -3294,10 +3294,10 @@
     </entry>
     
     <entry>
-      <title>CSS学习笔记4： CSS长度单位</title>
-      <link href="/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%9A%20CSS%E9%95%BF%E5%BA%A6%E5%8D%95%E4%BD%8D/"/>
-      <url>/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%9A%20CSS%E9%95%BF%E5%BA%A6%E5%8D%95%E4%BD%8D/</url>
-      <content type="html"><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/9240001-4f4f48fdc4ef017b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>]]></content>
+      <title>CSS学习笔记1：引入CSS文件</title>
+      <link href="/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%BC%95%E5%85%A5CSS%E6%96%87%E4%BB%B6/"/>
+      <url>/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%BC%95%E5%85%A5CSS%E6%96%87%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<p>引入CSS主要有3种方式：<strong>引入外部样式表、使用内部样式表和行间样式</strong>。</p><a id="more"></a><h3 id="1-外部样式表"><a href="#1-外部样式表" class="headerlink" title="1. 外部样式表"></a>1. 外部样式表</h3><ul><li>常见的<link>标签引入</li><li>rel和href属性不可省。type和media属性可以省略</li><li>不能混入HTML标签，包括HTML的注释，否则会影响标签之后的css样式的识别</li><li>可以加载多个样式表</li><li>可以有候选样式表，用“alternate stylesheet”标注<br></li><li>@import引入外部样式表</li><li>但是必须在style标签内引入，并且至于CSS规则之前</li><li>可以引入多个CSS样式表，同时用media来限制场景<ul><li>@import “xxx.css” print</li></ul></li><li>@import不太建议使用的原因是<ol><li>@import引入的文件会在网页加载完之后再加载，会影响网页刚开始的呈现</li><li>不支持JS对DOM的操作</li></ol></li></ul><h3 id="2-内部样式表"><a href="#2-内部样式表" class="headerlink" title="2. 内部样式表"></a>2. 内部样式表</h3><ul><li>使用style标签包含样式表</li><li>文档中可以出现多个style标签，样式规则与层叠样式规则一样</li></ul><h3 id="3-行间样式"><a href="#3-行间样式" class="headerlink" title="3. 行间样式"></a>3. 行间样式</h3><ul><li>为单个元素指定样式</li><li>通过HTML元素的style属性来设置</li><li>若存在多个style属性，则只能识别第一个</li></ul><p><img src="https://upload-images.jianshu.io/upload_images/9240001-1ba11c8632b110f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="引入CSS"></p>]]></content>
       
       <categories>
           
@@ -3336,6 +3336,27 @@
     </entry>
     
     <entry>
+      <title>CSS学习笔记4： CSS长度单位</title>
+      <link href="/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%9A%20CSS%E9%95%BF%E5%BA%A6%E5%8D%95%E4%BD%8D/"/>
+      <url>/2018/06/08/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%9A%20CSS%E9%95%BF%E5%BA%A6%E5%8D%95%E4%BD%8D/</url>
+      <content type="html"><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/9240001-4f4f48fdc4ef017b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>]]></content>
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>写给小白的CSS学习笔记</title>
       <link href="/2018/06/08/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
       <url>/2018/06/08/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
@@ -3357,27 +3378,6 @@
     </entry>
     
     <entry>
-      <title>Node.js学习笔记：net模块构建服务器</title>
-      <link href="/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013%EF%BC%9Anet%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-      <url>/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013%EF%BC%9Anet%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
-      <content type="html"><![CDATA[<p>最近开始了<a href="https://freecodecamp.cn/challenges/manage-packages-with-npm" target="_blank" rel="noopener">FreeCodeCamp上的Node.js课程</a>,它的课程可以通过<code>npm install learnyounode -g</code>来全局下载node.js的学习模块一步步完成课程挑战来学习基本操作，课程推荐在<a href="https://c9.io" target="_blank" rel="noopener">c9</a>的虚拟Ubuntu操作系统上完成，但是我实测非常不推荐用虚拟操作系统，非常非常慢，且资源占用非常可怕，经常会拖到浏览器卡死。而且这部分课程也不需要提交完成挑战的线上链接，所以完全可以自己用终端来下载模块学习。</p><a id="more"></a><p>FCC这部分课程的搭建服务器挑战不同于之前课程提到的通过<code>http</code>模块完成，它指定用<code>net</code>模块来完成TCP连接，所以需要用到<code>net</code>模块。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 引入模块</span></span><br><span class="line"><span class="keyword">const</span> net = <span class="built_in">require</span>(<span class="string">"net"</span>);</span><br><span class="line"><span class="comment">//2. 创建服务器</span></span><br><span class="line"><span class="keyword">let</span> server = net.createServer(<span class="function">(<span class="params">c</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 'connection' listener</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"client connected"</span>);</span><br><span class="line">  c.on(<span class="string">'end'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'client disconnected'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  c.pipe(c);</span><br><span class="line">&#125;)</span><br><span class="line">server.on(<span class="string">'error'</span>, (err) =&gt; &#123;</span><br><span class="line">  <span class="keyword">throw</span> err;</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>在浏览器打开<code>localhost:9000</code>会触发connection，后台会输出：<br><img src="https://upload-images.jianshu.io/upload_images/9240001-4040aa72a7e6ff23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="后台输出"></p>]]></content>
-      
-      <categories>
-          
-          <category> 学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> node.js </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>express学习笔记： express-static文件静态管理</title>
       <link href="/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%20express-static%E6%96%87%E4%BB%B6%E9%9D%99%E6%80%81%E7%AE%A1%E7%90%86/"/>
       <url>/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%20express-static%E6%96%87%E4%BB%B6%E9%9D%99%E6%80%81%E7%AE%A1%E7%90%86/</url>
@@ -3393,6 +3393,27 @@
         <tags>
             
             <tag> express </tag>
+            
+            <tag> node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Node.js学习笔记：net模块构建服务器</title>
+      <link href="/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013%EF%BC%9Anet%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <url>/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013%EF%BC%9Anet%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      <content type="html"><![CDATA[<p>最近开始了<a href="https://freecodecamp.cn/challenges/manage-packages-with-npm" target="_blank" rel="noopener">FreeCodeCamp上的Node.js课程</a>,它的课程可以通过<code>npm install learnyounode -g</code>来全局下载node.js的学习模块一步步完成课程挑战来学习基本操作，课程推荐在<a href="https://c9.io" target="_blank" rel="noopener">c9</a>的虚拟Ubuntu操作系统上完成，但是我实测非常不推荐用虚拟操作系统，非常非常慢，且资源占用非常可怕，经常会拖到浏览器卡死。而且这部分课程也不需要提交完成挑战的线上链接，所以完全可以自己用终端来下载模块学习。</p><a id="more"></a><p>FCC这部分课程的搭建服务器挑战不同于之前课程提到的通过<code>http</code>模块完成，它指定用<code>net</code>模块来完成TCP连接，所以需要用到<code>net</code>模块。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 引入模块</span></span><br><span class="line"><span class="keyword">const</span> net = <span class="built_in">require</span>(<span class="string">"net"</span>);</span><br><span class="line"><span class="comment">//2. 创建服务器</span></span><br><span class="line"><span class="keyword">let</span> server = net.createServer(<span class="function">(<span class="params">c</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 'connection' listener</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"client connected"</span>);</span><br><span class="line">  c.on(<span class="string">'end'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'client disconnected'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  c.pipe(c);</span><br><span class="line">&#125;)</span><br><span class="line">server.on(<span class="string">'error'</span>, (err) =&gt; &#123;</span><br><span class="line">  <span class="keyword">throw</span> err;</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(<span class="number">9000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at 9000"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>在浏览器打开<code>localhost:9000</code>会触发connection，后台会输出：<br><img src="https://upload-images.jianshu.io/upload_images/9240001-4040aa72a7e6ff23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="后台输出"></p>]]></content>
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> node.js </tag>
             
@@ -3443,10 +3464,10 @@
     </entry>
     
     <entry>
-      <title>Node.js学习笔记10：fs模块读取文件列表</title>
-      <link href="/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010%EF%BC%9Afs%E6%A8%A1%E5%9D%97%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/"/>
-      <url>/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010%EF%BC%9Afs%E6%A8%A1%E5%9D%97%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</url>
-      <content type="html"><![CDATA[<blockquote><p>利用<code>fs</code>模块的<code>fs.readdir()</code>读取文件列表。</p></blockquote><a id="more"></a><p>之前写过如何用fs模块实现文件读写：<a href="https://www.jianshu.com/p/4a16b47aac4b" target="_blank" rel="noopener">《写给小白的Node.js学习笔记2：fs模块实现文件读写》</a>，今天我们来看看如何利用fs模块的<code>fs.readdir()</code>获取文件列表。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 引入模块</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="comment">//2. 指定需要读取的路径</span></span><br><span class="line"><span class="comment">//这里我指定的是我做node.js练习的文件夹</span></span><br><span class="line"><span class="keyword">let</span> path = <span class="string">"/Application/MAMP/htdocs/nodejs/test/"</span>;</span><br><span class="line"><span class="comment">//3. 读取路径，返回文件列表</span></span><br><span class="line">fs.readdir(path, (err, files) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="built_in">console</span>.log(files);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>返回结果是一个只包含文件名称，不包含文件路径的数组<br><img src="https://upload-images.jianshu.io/upload_images/9240001-960bf7ea762baa81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>可以把整个过程想象成一个从箱子里往外拿东西的过程，fs.readdir方法将箱子里的物品挨个拿出来做了登记<br><img src="https://upload-images.jianshu.io/upload_images/9240001-dbf010bf13b1e6c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="登记箱子里的内容"></p>]]></content>
+      <title>Node.js学习笔记12：作业——读取文件夹内所有文件列表</title>
+      <link href="/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012%EF%BC%9A%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/"/>
+      <url>/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012%EF%BC%9A%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</url>
+      <content type="html"><![CDATA[<p>结合前两节的内容：<br><a href="https://www.jianshu.com/p/86127593e93e" target="_blank" rel="noopener">写给小白的Node.js学习笔记10：fs模块读取文件列表</a><br><a href="https://www.jianshu.com/p/8cd6f60d00dc" target="_blank" rel="noopener">写给小白的Node.js学习笔记11：fs.stat判断文件类型</a><br>我们可以结合两种方法，读取文件夹内的全部文件列表。</p><a id="more"></a><p>思路如下：</p><ol><li>通过<code>fs.readdir</code>方法读取路径，获取文件列表</li><li>对文件进行判断，如果是文件，则输出文件名，如果是文件夹，则读取该文件夹的路径，并对这个文件夹内部的文件再次进行判断</li><li>我们可以将上述方法封装到一个函数中，如果文件夹内还有文件夹，对内部文件夹再次讨厌函数即可（递归）</li><li>这里需要用到<code>path.join</code>方法，可以回顾<a href="https://www.jianshu.com/p/415d0313f79f" target="_blank" rel="noopener">《写给小白的node.js学习笔记8：path核心对象》</a></li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">let</span> myPath = <span class="string">"/Application/MAMP/htdocs/nodejs/test/"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myReadFile</span>(<span class="params">tempPath</span>) </span>&#123;</span><br><span class="line">  fs.readdir(tempPath, (err, files) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    files.forEach(<span class="function"><span class="params">file</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> fPath = path.join(tempPath, file);</span><br><span class="line">      fs.stat(fPath, (err, stats) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">        <span class="keyword">if</span>(stats.isFile())&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(file);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (stats.isDirectory())&#123;</span><br><span class="line">          myReadFile(fPath);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">myReadFile(myPath);</span><br></pre></td></tr></table></figure><p>输出结果如下：<br><img src="https://upload-images.jianshu.io/upload_images/9240001-658345a83da6d56d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p>]]></content>
       
       <categories>
           
@@ -3464,10 +3485,10 @@
     </entry>
     
     <entry>
-      <title>Node.js学习笔记12：作业——读取文件夹内所有文件列表</title>
-      <link href="/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012%EF%BC%9A%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/"/>
-      <url>/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012%EF%BC%9A%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</url>
-      <content type="html"><![CDATA[<p>结合前两节的内容：<br><a href="https://www.jianshu.com/p/86127593e93e" target="_blank" rel="noopener">写给小白的Node.js学习笔记10：fs模块读取文件列表</a><br><a href="https://www.jianshu.com/p/8cd6f60d00dc" target="_blank" rel="noopener">写给小白的Node.js学习笔记11：fs.stat判断文件类型</a><br>我们可以结合两种方法，读取文件夹内的全部文件列表。</p><a id="more"></a><p>思路如下：</p><ol><li>通过<code>fs.readdir</code>方法读取路径，获取文件列表</li><li>对文件进行判断，如果是文件，则输出文件名，如果是文件夹，则读取该文件夹的路径，并对这个文件夹内部的文件再次进行判断</li><li>我们可以将上述方法封装到一个函数中，如果文件夹内还有文件夹，对内部文件夹再次讨厌函数即可（递归）</li><li>这里需要用到<code>path.join</code>方法，可以回顾<a href="https://www.jianshu.com/p/415d0313f79f" target="_blank" rel="noopener">《写给小白的node.js学习笔记8：path核心对象》</a></li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">let</span> myPath = <span class="string">"/Application/MAMP/htdocs/nodejs/test/"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myReadFile</span>(<span class="params">tempPath</span>) </span>&#123;</span><br><span class="line">  fs.readdir(tempPath, (err, files) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    files.forEach(<span class="function"><span class="params">file</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> fPath = path.join(tempPath, file);</span><br><span class="line">      fs.stat(fPath, (err, stats) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">        <span class="keyword">if</span>(stats.isFile())&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(file);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (stats.isDirectory())&#123;</span><br><span class="line">          myReadFile(fPath);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">myReadFile(myPath);</span><br></pre></td></tr></table></figure><p>输出结果如下：<br><img src="https://upload-images.jianshu.io/upload_images/9240001-658345a83da6d56d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p>]]></content>
+      <title>Node.js学习笔记10：fs模块读取文件列表</title>
+      <link href="/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010%EF%BC%9Afs%E6%A8%A1%E5%9D%97%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/"/>
+      <url>/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B010%EF%BC%9Afs%E6%A8%A1%E5%9D%97%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</url>
+      <content type="html"><![CDATA[<blockquote><p>利用<code>fs</code>模块的<code>fs.readdir()</code>读取文件列表。</p></blockquote><a id="more"></a><p>之前写过如何用fs模块实现文件读写：<a href="https://www.jianshu.com/p/4a16b47aac4b" target="_blank" rel="noopener">《写给小白的Node.js学习笔记2：fs模块实现文件读写》</a>，今天我们来看看如何利用fs模块的<code>fs.readdir()</code>获取文件列表。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 引入模块</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="comment">//2. 指定需要读取的路径</span></span><br><span class="line"><span class="comment">//这里我指定的是我做node.js练习的文件夹</span></span><br><span class="line"><span class="keyword">let</span> path = <span class="string">"/Application/MAMP/htdocs/nodejs/test/"</span>;</span><br><span class="line"><span class="comment">//3. 读取路径，返回文件列表</span></span><br><span class="line">fs.readdir(path, (err, files) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="built_in">console</span>.log(files);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>返回结果是一个只包含文件名称，不包含文件路径的数组<br><img src="https://upload-images.jianshu.io/upload_images/9240001-960bf7ea762baa81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>可以把整个过程想象成一个从箱子里往外拿东西的过程，fs.readdir方法将箱子里的物品挨个拿出来做了登记<br><img src="https://upload-images.jianshu.io/upload_images/9240001-dbf010bf13b1e6c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="登记箱子里的内容"></p>]]></content>
       
       <categories>
           
@@ -3569,10 +3590,10 @@
     </entry>
     
     <entry>
-      <title>node.js学习笔记7：process全局对象的filename和dirname属性</title>
-      <link href="/2018/05/19/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07%EF%BC%9Aprocess%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84filename%E5%92%8Cdirname%E5%B1%9E%E6%80%A7/"/>
-      <url>/2018/05/19/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07%EF%BC%9Aprocess%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84filename%E5%92%8Cdirname%E5%B1%9E%E6%80%A7/</url>
-      <content type="html"><![CDATA[<ul><li><code>__filename</code>用于获取当前文件的绝对路径</li><li><code>__dirname</code>用于获取当前文件夹/模块的路径</li></ul><a id="more"></a><p>很多资料上写的都是<strong>filename和</strong>dirname是全局对象，但是node.js官网上是这样写的<br><img src="https://upload-images.jianshu.io/upload_images/9240001-4986c49539cfe232.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>但这两个对象的确都可以在不引用的情况下获取。<br><img src="https://upload-images.jianshu.io/upload_images/9240001-4a8cfb6ae1cb49c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="js文件"></p><p><img src="https://upload-images.jianshu.io/upload_images/9240001-c66d74715ee59b9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p><p>实际上,<code>__filename</code>和<code>__dirname</code>都是模块作用域下的对象，从打印出的module对象可以看到<br><img src="https://upload-images.jianshu.io/upload_images/9240001-c1ee5313ed273447.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="只打印module对象"><br><img src="https://upload-images.jianshu.io/upload_images/9240001-f63f008a139b3155.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p><p><code>__filename</code>就是模块下的filename对象，直接用<code>console.log(module.filename)</code>可以打印出同样的结果，<code>__dirname</code>则和模块下<code>path.dirname(__filename)</code>方法的作用相同。</p>]]></content>
+      <title>node.js学习笔记8：path核心对象</title>
+      <link href="/2018/05/19/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08%EF%BC%9Apath%E6%A0%B8%E5%BF%83%E5%AF%B9%E8%B1%A1/"/>
+      <url>/2018/05/19/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08%EF%BC%9Apath%E6%A0%B8%E5%BF%83%E5%AF%B9%E8%B1%A1/</url>
+      <content type="html"><![CDATA[<p>path核心模块用于处理<strong>文件的绝对路径和目录路径</strong>（区别于url模块）</p><ul><li><code>path.join</code> 组合路径名称</li><li><code>path.parse</code> 将文件路径解析成对象</li></ul><a id="more"></a><h5 id="1-path-join方法"><a href="#1-path-join方法" class="headerlink" title="1. path.join方法"></a>1. <code>path.join</code>方法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> strPath = path.join(_dirname, <span class="string">'///files/'</span>, <span class="string">'jpg'</span>, <span class="string">'1.jpg'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(strPath);</span><br></pre></td></tr></table></figure><p><code>path.join</code>方法会自动解析参数中的’/‘符，并组合路径名称<br><img src="https://upload-images.jianshu.io/upload_images/9240001-aed3f3e92661964e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p><h5 id="2-path-parse方法"><a href="#2-path-parse方法" class="headerlink" title="2. path.parse方法"></a>2. <code>path.parse</code>方法</h5><p><code>path/parse</code>方法用于将文件路径解析成对象。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> strPath = path.join(_dirname,<span class="string">'///files/'</span>, <span class="string">'jpg'</span>, <span class="string">'1.jpg'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pathObj = path.parse(strPath);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pathObj);</span><br></pre></td></tr></table></figure><p><img src="https://upload-images.jianshu.io/upload_images/9240001-f1f3541e4d22e2d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="解析为对象"></p><p><code>pathObj</code>的属性依据原字符串生成，可以改动，但不会对文件路径生效</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接上面</span></span><br><span class="line"><span class="keyword">const</span> pathObj = path.parse(strPath);</span><br><span class="line"></span><br><span class="line">pathObj.ext = <span class="string">'.txt'</span>;</span><br><span class="line">pathObj.name = <span class="string">'2'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pathObj);</span><br><span class="line"><span class="built_in">console</span>.log(strPath);</span><br></pre></td></tr></table></figure><p><img src="https://upload-images.jianshu.io/upload_images/9240001-9aa454756b5ccf1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ext和name属性被修改，但是修改对dir属性无效"></p><p>修改dir属性的唯一入口是base属性，修改base属性能够达到修改文件名信息和文件后缀的效果</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接上面</span></span><br><span class="line">pathObj.base = <span class="string">"newFile.txt"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(pathObj);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> strPathNew = path.formath(pathObj);</span><br><span class="line"><span class="built_in">console</span>.log(strPathNew);</span><br></pre></td></tr></table></figure><p><img src="https://upload-images.jianshu.io/upload_images/9240001-2ba8143f9f5a6364.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="通过base属性修改文件信息"></p><p><img src="https://upload-images.jianshu.io/upload_images/9240001-f1916e4a3e669e85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="node.js的内置对象不完全小结"></p>]]></content>
       
       <categories>
           
@@ -3590,10 +3611,10 @@
     </entry>
     
     <entry>
-      <title>node.js学习笔记8：path核心对象</title>
-      <link href="/2018/05/19/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08%EF%BC%9Apath%E6%A0%B8%E5%BF%83%E5%AF%B9%E8%B1%A1/"/>
-      <url>/2018/05/19/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08%EF%BC%9Apath%E6%A0%B8%E5%BF%83%E5%AF%B9%E8%B1%A1/</url>
-      <content type="html"><![CDATA[<p>path核心模块用于处理<strong>文件的绝对路径和目录路径</strong>（区别于url模块）</p><ul><li><code>path.join</code> 组合路径名称</li><li><code>path.parse</code> 将文件路径解析成对象</li></ul><a id="more"></a><h5 id="1-path-join方法"><a href="#1-path-join方法" class="headerlink" title="1. path.join方法"></a>1. <code>path.join</code>方法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> strPath = path.join(_dirname, <span class="string">'///files/'</span>, <span class="string">'jpg'</span>, <span class="string">'1.jpg'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(strPath);</span><br></pre></td></tr></table></figure><p><code>path.join</code>方法会自动解析参数中的’/‘符，并组合路径名称<br><img src="https://upload-images.jianshu.io/upload_images/9240001-aed3f3e92661964e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p><h5 id="2-path-parse方法"><a href="#2-path-parse方法" class="headerlink" title="2. path.parse方法"></a>2. <code>path.parse</code>方法</h5><p><code>path/parse</code>方法用于将文件路径解析成对象。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> strPath = path.join(_dirname,<span class="string">'///files/'</span>, <span class="string">'jpg'</span>, <span class="string">'1.jpg'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pathObj = path.parse(strPath);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pathObj);</span><br></pre></td></tr></table></figure><p><img src="https://upload-images.jianshu.io/upload_images/9240001-f1f3541e4d22e2d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="解析为对象"></p><p><code>pathObj</code>的属性依据原字符串生成，可以改动，但不会对文件路径生效</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接上面</span></span><br><span class="line"><span class="keyword">const</span> pathObj = path.parse(strPath);</span><br><span class="line"></span><br><span class="line">pathObj.ext = <span class="string">'.txt'</span>;</span><br><span class="line">pathObj.name = <span class="string">'2'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pathObj);</span><br><span class="line"><span class="built_in">console</span>.log(strPath);</span><br></pre></td></tr></table></figure><p><img src="https://upload-images.jianshu.io/upload_images/9240001-9aa454756b5ccf1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ext和name属性被修改，但是修改对dir属性无效"></p><p>修改dir属性的唯一入口是base属性，修改base属性能够达到修改文件名信息和文件后缀的效果</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接上面</span></span><br><span class="line">pathObj.base = <span class="string">"newFile.txt"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(pathObj);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> strPathNew = path.formath(pathObj);</span><br><span class="line"><span class="built_in">console</span>.log(strPathNew);</span><br></pre></td></tr></table></figure><p><img src="https://upload-images.jianshu.io/upload_images/9240001-2ba8143f9f5a6364.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="通过base属性修改文件信息"></p><p><img src="https://upload-images.jianshu.io/upload_images/9240001-f1916e4a3e669e85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="node.js的内置对象不完全小结"></p>]]></content>
+      <title>node.js学习笔记7：process全局对象的filename和dirname属性</title>
+      <link href="/2018/05/19/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07%EF%BC%9Aprocess%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84filename%E5%92%8Cdirname%E5%B1%9E%E6%80%A7/"/>
+      <url>/2018/05/19/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07%EF%BC%9Aprocess%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84filename%E5%92%8Cdirname%E5%B1%9E%E6%80%A7/</url>
+      <content type="html"><![CDATA[<ul><li><code>__filename</code>用于获取当前文件的绝对路径</li><li><code>__dirname</code>用于获取当前文件夹/模块的路径</li></ul><a id="more"></a><p>很多资料上写的都是<strong>filename和</strong>dirname是全局对象，但是node.js官网上是这样写的<br><img src="https://upload-images.jianshu.io/upload_images/9240001-4986c49539cfe232.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>但这两个对象的确都可以在不引用的情况下获取。<br><img src="https://upload-images.jianshu.io/upload_images/9240001-4a8cfb6ae1cb49c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="js文件"></p><p><img src="https://upload-images.jianshu.io/upload_images/9240001-c66d74715ee59b9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p><p>实际上,<code>__filename</code>和<code>__dirname</code>都是模块作用域下的对象，从打印出的module对象可以看到<br><img src="https://upload-images.jianshu.io/upload_images/9240001-c1ee5313ed273447.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="只打印module对象"><br><img src="https://upload-images.jianshu.io/upload_images/9240001-f63f008a139b3155.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p><p><code>__filename</code>就是模块下的filename对象，直接用<code>console.log(module.filename)</code>可以打印出同样的结果，<code>__dirname</code>则和模块下<code>path.dirname(__filename)</code>方法的作用相同。</p>]]></content>
       
       <categories>
           
