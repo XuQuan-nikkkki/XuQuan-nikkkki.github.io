@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuquan.site/"/>
-  <updated>2020-05-24T15:31:48.085Z</updated>
+  <updated>2020-06-01T07:43:12.386Z</updated>
   <id>http://xuquan.site/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Week 22</title>
+    <link href="http://xuquan.site/2020/06/01/Week-22/"/>
+    <id>http://xuquan.site/2020/06/01/Week-22/</id>
+    <published>2020-06-01T07:31:18.000Z</published>
+    <updated>2020-06-01T07:43:12.386Z</updated>
+    
+    <content type="html"><![CDATA[<p>终于确定要回北京了，挺舍不得武汉的。我在前 8 年都特别排斥这座城市，觉得她不够洋气，不够温柔，但是越长大越明白，她留在我身上的烙印远比我意识到的多得多。我是那么自然地接受了她的强势、倔强、大气。</p><a id="more"></a><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><ul><li>拍照组件优化找到了能够直接调用相机的方法，但是没来得及写代码</li><li>确定了服饰的方案，已经开始开发</li><li>上线了 kindle 点货时二次确认补录的序列号</li><li>写了点货的时候，给无法开机的 kindle 绑码的方案</li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>翻译了 <em>The React Handbook</em> section 3 的一部分</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li>做了第二次核酸，感受了从未见过的空空荡荡的医院。买到了周二回北京的票，颇为波折，京心相助真的是一个非常不人性化的小程序，用起来惊心动魄</li><li>周末去给外公外婆扫墓。归元寺到现在都没开门，今年没办法去拜拜了</li><li>周末一直陪妈妈，没有锻炼，也没干别的</li><li>上周锻炼了 3 天</li></ul><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gfctxn0djzj31570u0wm0.jpg" alt="image-20200601153950061"></p><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>开发完服饰的基本流程</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li>翻译 The React Handbook</li><li>整理《你不知道的 JS（上）》笔记</li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>回北京开始隔离</li><li>坚持锻炼</li><li>坚持看书，少刷手机</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;终于确定要回北京了，挺舍不得武汉的。我在前 8 年都特别排斥这座城市，觉得她不够洋气，不够温柔，但是越长大越明白，她留在我身上的烙印远比我意识到的多得多。我是那么自然地接受了她的强势、倔强、大气。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://xuquan.site/categories/Journal/"/>
+    
+    
+      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
+    
+  </entry>
   
   <entry>
     <title>Week 21</title>
@@ -438,28 +460,6 @@
     <summary type="html">
     
       &lt;p&gt;这周武汉气温一度升到了 17 度，然后又一夜大雪降到零下。在家看大雪纷飞是很美的，但是总忍不住想，那些不得不在外奔波的人，那些进不了医院又没有车的人，他们该怎么办，他们是不是还在徒步寻找希望，最终又有多少失望和绝望。我为自己没能做什么感到愧疚。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Journal" scheme="http://xuquan.site/categories/Journal/"/>
-    
-    
-      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Week 6</title>
-    <link href="http://xuquan.site/2020/02/10/Week-6/"/>
-    <id>http://xuquan.site/2020/02/10/Week-6/</id>
-    <published>2020-02-10T06:48:34.000Z</published>
-    <updated>2020-02-11T02:32:49.115Z</updated>
-    
-    <content type="html"><![CDATA[<p>在家工作一周，且预计接下来的几周都会持续在家工作。大家都以这种非自愿的方式开始了远程上班的模式。</p><a id="more"></a><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>这周上班的效率马马虎虎，比前一周好，但是离理想状态还差了一些。</p><ul><li>做完了线下店分类并且上线了</li><li>做完了库存管理的相关功能<ul><li>库存管理的MR写的不好，主要原因是心不静，导致很多细节没有注意到</li><li>最近有一个想法，觉得有必要开始梳理和总结自己写代码的问题，像是做感恩日记那样</li></ul></li><li>写了标记问题书的 question<ul><li>这个 question 是今天才写完的，前前后后改了很多次</li><li>这是我觉得能够证明自己写 sql 的能力有了明显进步的一个 question，复杂程度比以前写的都高</li><li>最开始是想参考同事写的其他 question 来实现一些去重的问题，后来觉得同事的实现方式没有想象的那么好，所以自己找了一些资料</li></ul></li><li>更新了春节的提示<ul><li>更新的内容很少</li><li>更新的时候心情很沉重，不知道还要关多久</li></ul></li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>读了《You don’t know JS: Types and Grammar》 4/5</li><li>《论中国》读了1/5，进度很慢</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li><p>我居然开始看漫画了，《非人哉》看了 100 多话</p></li><li><p>练了 5 次瑜伽，每次 1 小时左右</p></li><li><p>坚持了时间记录，虽然偶尔会有小块的时间会忘</p><p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbrqjlnhvrj30u01doamp.jpg" alt="image-20200210234442952"></p><p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbrqki1u54j30k00ivgu8.jpg" alt="image-20200210234539926"></p></li></ul><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><p>其实已经是这周计划了，这周的主要目标是：</p><ul><li>提高工作效率（上周刷信息强迫症已经有了明显的缓解，情绪也没有那么差了，所以可以把注意力转到工作上）</li><li>建立更好的生活习惯<ul><li>减少手机时间</li><li>多看书，建立系统思维</li><li>调节情绪</li></ul></li></ul><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>修复拒书拍照移动端的 bug</li><li>修复 iphone 上传图片会系统自动刷新，导致图片丢失的 bug </li><li>修复扫码组件请求状态未重置的问题</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li><p>看完《You don’t know JS: Types and Grammar》</p></li><li><p>开始看《You don’t know JS:  this &amp; Object Prototypes》</p></li><li><p>找一本关于焦虑的书，后期想了解这段时间自己心理发生变化的机制</p></li><li><p>整理 Notion</p></li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>继续坚持瑜伽</li><li>恢复早睡早起（这一点真是无能为力啊）</li><li>坚持时间记录<ul><li>坚持记 + 记得更加详细一些</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在家工作一周，且预计接下来的几周都会持续在家工作。大家都以这种非自愿的方式开始了远程上班的模式。&lt;/p&gt;
     
     </summary>
     
