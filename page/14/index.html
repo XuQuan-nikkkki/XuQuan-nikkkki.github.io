@@ -335,6 +335,448 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/07/06/ES6学习笔记之解构赋值/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/06/ES6学习笔记之解构赋值/" itemprop="url">ES6学习笔记之解构赋值</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-06T23:56:24+08:00">
+                2018-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/06/ES6学习笔记之解构赋值/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/06/ES6学习笔记之解构赋值/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/07/06/ES6学习笔记之解构赋值/" class="leancloud_visitors" data-flag-title="ES6学习笔记之解构赋值">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,927 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><ul>
+<li><strong>规则</strong><ul>
+<li>只要等号两边形式相同，就可以将右边的值赋予左边的变量</li>
+<li>有遍历接口的类型都可以解构赋值（字符串、数组、Set、generator函数…）</li>
+</ul>
+</li>
+<li><strong>数组的解构赋值</strong><ul>
+<li><strong>完全解构</strong> 左边完全等同于右边</li>
+<li><strong>不完全解构</strong> 左边形式仅为右边形式的一部分</li>
+</ul>
+</li>
+<li><strong>对象的解构赋值</strong><ul>
+<li><strong>变量与属性同名</strong>，根据属性赋值</li>
+</ul>
+</li>
+<li><strong>默认值</strong><ul>
+<li>等号左边形式中给变量赋值</li>
+<li>对应变量的值严格等于<code>undefined</code>即可生效</li>
+</ul>
+</li>
+<li><strong>字符串的解构赋值</strong><ul>
+<li>转换成类似数组的对象</li>
+</ul>
+</li>
+<li><strong>数值和布尔值的解构赋值</strong><ul>
+<li>县转换为对象</li>
+</ul>
+</li>
+<li><strong>函数的参数也可以解构赋值</strong></li>
+<li><strong>常见用途</strong><ul>
+<li>交换变量的值</li>
+<li>函数返回多个值</li>
+<li>提取JSON数据</li>
+<li>遍历Map结构</li>
+<li>输入模块的指定方法</li>
+</ul>
+</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/06/ES6学习笔记之解构赋值/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/07/06/知识管理学习笔记3： 工具论/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/06/知识管理学习笔记3： 工具论/" itemprop="url">知识管理学习笔记3： 工具论</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-06T23:36:20+08:00">
+                2018-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/知识管理/" itemprop="url" rel="index">
+                    <span itemprop="name">知识管理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/06/知识管理学习笔记3： 工具论/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/06/知识管理学习笔记3： 工具论/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/07/06/知识管理学习笔记3： 工具论/" class="leancloud_visitors" data-flag-title="知识管理学习笔记3： 工具论">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,073 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在第一篇<a href="https://www.jianshu.com/p/5b744288f69a" target="_blank" rel="noopener">inbox体系</a>里提到的知识管理的4个阶段：</p>
+<blockquote>
+<p>输入 ==&gt; 加工整理 ==&gt; 建立体系 ==&gt; 内化&amp;输出 </p>
+</blockquote>
+<p>其中，第二阶段「加工整理」重点讲了我们如何处理知识（<a href="https://www.jianshu.com/p/8c4e335f1bf6" target="_blank" rel="noopener">费曼技巧</a>)以及我们如何管理知识（Evernote印象笔记）。第3课「工具论」是对使用印象笔记方法的一个概括。</p>
+<p>我们在使用工具的时候，最初的目标都是提供学习/工作的效率，然而，我们很容易陷入两个极端，一种叫做「工具癖」，就是找来很多工具，每个都试一试，花很多实际研究它们，最后忘记了为什么使用工具；还有一种属于「工具恐惧症」，这类人害怕使用工具，就像《禅与摩托车维修艺术》里的那对夫妻，他们不愿意了解和学习使用新工具，比如电子产品，内心对使用这些新鲜事物充满了恐惧。</p>
+<p>事实上，我就是一个典型的工具癖，对于感兴趣的主题的app，我一般都会下载好几个来试一试，然后再确定最终使用哪一个。而且每次发现有新的好玩的APP，我也一定会下载下来。遇到好看的app会格外的爱不释手。虽然有时候也的确觉得自己花费了太多时间在尝试上，但是这些尝试的过程还挺有有趣的。</p>
+<p>课程里提倡使用工具之前需要<strong>明白工具设计的目的</strong>，先梳理工作流程，再确定怎么使用。这点我还挺同意的，因为如果不是出于目的去使用某个工具的话，之后根本就不太会用到这个工具，只是留在手机或者电脑里占空间。但如果是按需使用的话，会不断强化对工具的熟悉，从而在工具本身提升效率的基础之上，再提升使用工具的效率。</p>
+<p>此外，课程还提出使用<strong>20%的核心操作与80%的奇淫巧技</strong>，认为只需要掌握20%的核心操作即可，这点我认为不能这么专断地下结论，对于课程里提到的比如印象笔记、forest等工具，实际上我们的使用都不止20%，像印象笔记，课程还花了挺多篇幅来介绍用法。此外，像程序员使用的sublime text或者atom, vs code这类编辑器都会在很多场合下不断扩展它的用途。何况研究工具本身也是帮我们了解自己工作需求的一个过程，很多时候我都是通过工具本身的功能来了解到工作流程中还有哪些方面是可以有改进的。使用工具到底是被工具驾驭还是驾驭工具根本上还是看个人，工作方法也一定会因人而异。</p>
+<p>这一课用来举例的工具是印象笔记，课程以使用印象笔记来整理资料的基本流程来解释了我们该如何使用它。</p>
+<p>比如我们要做的第一步就是<strong>「收集」</strong>资料，这里我们就可以通过注入浏览器的web clipper插件、微信号「我的印象笔记」等来收集，这一点我在第一篇里也写过，像Alfred和PopClip都有相关插件可以使用。</p>
+<p>第二步是「整理加工」，这一步的方法就是上一篇提到过的通过高光和卡片来实现费曼技巧，此外还可以结合印象笔记的「本地链接」和「网络链接」来实现知识之间的互通，在使用XMind一类的思维导图软件时，都可以将链接加入进去，从而慢慢构建出一个系统性的知识框架。</p>
+<p>第三步是系统管理印象笔记内的知识，这里提出要构建一个笔记本体系，具体方法将在下一篇中详细解释。</p>
+<p>总之，使用工具的核心都应该是克制和极致的。不在工具上纠结而浪费时间，使用工具只为解决问题，并在使用上达到极致。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/07/06/算法基础/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1945,423 +2387,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/06/28/CSS网格布局/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xu Quan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/28/CSS网格布局/" itemprop="url">CSS网格布局</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T00:38:36+08:00">
-                2018-06-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index">
-                    <span itemprop="name">FreeCodeCamp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/28/CSS网格布局/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/28/CSS网格布局/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/06/28/CSS网格布局/" class="leancloud_visitors" data-flag-title="CSS网格布局">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,961 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  10 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>这一部分详细介绍了网格布局的用法。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/28/CSS网格布局/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/06/28/响应式页面设计准则/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xu Quan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/28/响应式页面设计准则/" itemprop="url">响应式页面设计准则</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T00:38:36+08:00">
-                2018-06-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index">
-                    <span itemprop="name">FreeCodeCamp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/28/响应式页面设计准则/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/28/响应式页面设计准则/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/06/28/响应式页面设计准则/" class="leancloud_visitors" data-flag-title="响应式页面设计准则">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  199 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这一部分内容不多，算是对响应式页面设计提供的一些小tips。内容包括：</p>
-<ul>
-<li>利用媒体查询设置文本的对应字体大小（可以延伸到任意元素的任意属性）</li>
-<li>图片的响应式呈现（利用百分比设置宽度）</li>
-<li>新添加了viewport（可视区域）的内容，利用vw, vh, vmin, vmax来设置宽高</li>
-</ul>
-<p><em>以下是这一部分习题的解答：</em></p>
-<hr>
-<h4 id="Introduction-to-the-Responsive-Web-Design-Challenges"><a href="#Introduction-to-the-Responsive-Web-Design-Challenges" class="headerlink" title="Introduction to the Responsive Web Design Challenges"></a><a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles" target="_blank" rel="noopener">Introduction to the Responsive Web Design Challenges</a></h4><ul>
-<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/create-a-media-query" target="_blank" rel="noopener">Create a Media Query</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  @<span class="keyword">media</span> (max-height: <span class="number">800px</span>) &#123; </span></span><br><span class="line"><span class="css">	  <span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">10px</span>; &#125; </span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/make-an-image-responsive" target="_blank" rel="noopener">Make an Image Responsive</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  img &#123;</span></span><br><span class="line"><span class="undefined">      max-width: 100%;</span></span><br><span class="line"><span class="undefined">      display: block;</span></span><br><span class="line"><span class="undefined">      height: auto;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/use-a-retina-image-for-higher-resolution-displays" target="_blank" rel="noopener">Use a Retina Image for Higher Resolution Displays</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  img &#123;</span></span><br><span class="line"><span class="css">      <span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="undefined">      height: 100px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/make-typography-responsive" target="_blank" rel="noopener">Make Typography Responsive</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  h2 &#123;</span></span><br><span class="line"><span class="undefined">      width: 80vw;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  p &#123;</span></span><br><span class="line"><span class="undefined">      width: 75vmin;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2409,7 +2439,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">180</span>
+                  <span class="site-state-item-count">182</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2431,7 +2461,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">122</span>
+                  <span class="site-state-item-count">123</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2529,7 +2559,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">264.2k</span>
+    <span title="Site words total count">268.1k</span>
   
 </div>
 
