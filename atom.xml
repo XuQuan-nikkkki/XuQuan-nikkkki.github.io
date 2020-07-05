@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuquan.site/"/>
-  <updated>2020-06-28T14:52:30.426Z</updated>
+  <updated>2020-07-05T15:14:49.190Z</updated>
   <id>http://xuquan.site/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Week 27</title>
+    <link href="http://xuquan.site/2020/07/05/Week-27/"/>
+    <id>http://xuquan.site/2020/07/05/Week-27/</id>
+    <published>2020-07-05T14:43:09.000Z</published>
+    <updated>2020-07-05T15:14:49.190Z</updated>
+    
+    <content type="html"><![CDATA[<p>住新家一周（之前的收拾不算），一切圆满，把两只捣蛋鬼也结果来了。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggghfqylfqj30u011i7wo.jpg" alt="image-20200705225014005"></p><a id="more"></a><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><ul><li><p>服饰 0.3 真是曲折。第一波代码写完，LGTM 了，开始改交互。经历了小黑屋测试，写了 bug 的工程师被挨个进行灵魂的拷问，还好我这边只有两个交互优化。改完交互，LGTM 了，后端方案需要大改。目前代码已经改完，还没测，下周进行第二次小黑屋测试，希望一切顺利。</p></li><li><p>产能配置交互方案写完了，代码没来得及动</p></li><li><p>鱼塘菜单栏的优化方案写完了，讨论了一波，周末梳理了讨论结果，下周该动手改了，目测会有一波同事的不爽反馈（突然有点明白每次 app 大改版时 app 团队的忐忑心情）</p></li><li><p>协助新来的后端同事做了拍照组件的重复请求拦截</p></li><li><p>协助新来的后端同事做了拒书拍照的采购和无主书提示</p></li><li><p>上周帮同事 code review 占用的时间比以前长，主要因为最开始水平不够，不太会帮同事 review 太复杂的代码；后来开始可以 review 的时候，人手不够，几乎都是我写，mentor 帮我 review；现在来了新同事，mentor 把一部分 review 的工作分给了我。code review 真的非常适合学习如何写好代码，好的代码让你发现原来可以这样写，自己之前哪些地方没注意；不好的代码则让你体会到怎样写代码会让其他工程师看不懂，或者之后会难以维护。有些我以前写的代码，现在由新同事来改，我也会看着自己以前的代码汗颜，怎么会写成这样，这些都是进步的表现。</p></li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>读了一两章《认知与设计》，这周看书的时间明显不够</li><li>翻译了一部分 <em>The React Handbook</em>，翻译内容依然很少，愁死人</li><li>每天早餐时间听《今日简史》，这周应该会听完</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li>这周有大概 4 天坚持了锻炼，继 Down Dog 的瑜伽、HIIT、芭蕾腿之后，我解锁了帕梅拉，现在差不多能够一次坚持完两组 15 分钟的锻炼，到第三组就扛不住了</li><li>张老师租了一个 switch + 健身环，本来想试一个月，好玩就买一个，结果今天收到货之后就玩到停不下来。我试了健身环大冒险，虽然出了很多汗，也算是有点喘，但是测心率的反馈一直是「运动强度较低」，看来我近半年的锻炼还是很有效果的</li><li>上周去做了体检。每次体检的心情都很矛盾，很怕什么都没检查出来，老觉得是不是在糊弄人，但是又怕检查出什么。这次受打击比较大的是，我的视力降到了 1.0 和 0.8。因为之前做了矫正手术，视力应该还挺好的，突然下降让我始料未及。所以最近每天坚持吃蓝莓，还给自己买了一个可以喷雾和加热的眼部按摩仪和一堆蒸汽眼罩</li><li>上周的早睡坚持得不算太长，至少没有一天超过 1 点，大多数时候在 12 点半睡。另外坚持了每天手环检测睡眠情况。之前一直觉得自己的睡眠挺好，入睡快，中途不醒，少梦，检测之后发现我决然深度睡眠的连续性每天都没有达标，目前还挺无解的，不知道要怎么改善</li></ul><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>完成和上线服饰 0.3</li><li>写完产能配置代码</li><li>集中处理 sentry 中的重复请求问题</li><li>上线鱼塘菜单栏的优化</li><li>优化拍照组件（点击两次才能唤起相机 + ios 拍照可能会变成横的）</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li>读完《认知与设计》</li><li>读完 gitlab 的网站原则</li><li>整理《你不知道的 JS（上）》笔记</li><li>整理《你不知道的 JS（中）》笔记</li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>早睡早起</li><li>坚持锻炼</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;住新家一周（之前的收拾不算），一切圆满，把两只捣蛋鬼也结果来了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1ggghfqylfqj30u011i7wo.jpg&quot; alt=&quot;image-20200705225014005&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://xuquan.site/categories/Journal/"/>
+    
+    
+      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
+    
+  </entry>
   
   <entry>
     <title>Week 26</title>
@@ -439,28 +462,6 @@
     <summary type="html">
     
       &lt;p&gt;不知不觉又一周。关在家里会有种和时空脱节的感觉，分不清到底时间以及自己该在这个时间里应有的状态，也搞不清是怎么一眨眼就又过完了一周。非常深的 detached 的感觉。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Journal" scheme="http://xuquan.site/categories/Journal/"/>
-    
-    
-      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Week 8</title>
-    <link href="http://xuquan.site/2020/02/23/Week-8/"/>
-    <id>http://xuquan.site/2020/02/23/Week-8/</id>
-    <published>2020-02-23T14:59:34.000Z</published>
-    <updated>2020-02-23T15:42:12.834Z</updated>
-    
-    <content type="html"><![CDATA[<p>截止到今天，武汉封城整整一周了。据说还要封到 3 月 25 号。</p><a id="more"></a><p>这周开始小区不让出门了，爸爸没法出去买菜，于是我加入了小区里的无数团购群，每天和阿姨们一起抢菜。由于每个群对接的供应商不一样，所以买菜、买水果、买粮油、买面包都要进不同的群，甚至细分到归元寺包子群都有。但是这些群也挺耗精力的，通过接龙的方式团购真的只适合没什么事情的阿姨们，可以一天都盯着群，不然平时上班的时候，根本没法关注这些动辄上百条信息的群。</p><p>团购的物资也很单一，为了减少拣货配送的人力，也为了销售一些不那么受欢迎的菜，团购只提供套餐，100 块买一大堆包菜大白菜萝卜，近期已经吃大白菜吃到想吐了。也因为套餐的事情，武汉的一位嫂子在群里骂社区不作为和骂超市卖阴阳套餐的视频在网上大火，不得不说，武汉人真的骨子里就是匪气的，骂起人来真的让其他地方的人民汗颜。</p><p>为了买一些不一样的蔬菜水果，还有我的生命能量——咖啡，最近每天晚上 10 点，准时对着秒表在盒马下单，在连续失败多次后，昨天终于在盒马上买到了咖啡，算是近期最欣慰的事情了。</p><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>这周的工作效率也还可以。习惯了书房里高矮不太合适的桌椅——我爸妈当年看上的红木豪华老板座椅真的是给老板做的，员工完全没法工作；也习惯了没有大屏幕和外接键盘，不过还能工作就已经不错了。</p><ul><li>再次更新了春节提示，仓库复工又推迟一周。</li><li>上线了审核环节品相tips的强制选择和对审核结果的推断<ul><li>自己觉得这个 MR 写的还不错，逻辑很清晰，有明显进步</li><li>测试用例非常全面</li></ul></li><li>做完了调拨单的方案，得到了表扬。<ul><li>每个页面都画了原型图，比较了 Sketch、Figma 和 Axure，似乎还是更习惯 Axure 一些。</li><li>把整体流程梳理得非常清晰。</li><li>缺点是对于技术实现，还是会有细节考虑得不够周全。</li></ul></li><li>调拨单已经开始了准备阶段的开发<ul><li>把涉及到的组件都迁移到了 ts</li><li>对部分组件做了重构</li></ul></li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>读了 《You don’t know JS: Async and Performance》 1 节内容</li><li>给 FCC 翻译 <em>The React Handbook</em>，完成了 Introduction 部分，达到这周的目标</li><li>《论中国》没怎么看，主要原因是起太晚，早上读书时间都睡过去了</li><li>开始读《血疫》</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li><p>看了《孟买酒店》，冷静克制，但是非常紧张，看完觉得相比起恐怖主义，新冠肺炎算是很温和了。</p></li><li><p>看了《发条橙》，我觉得库布里克是很伟大的导演，但是他的电影我看完都要心悸很久，且不太敢看第二遍。</p></li><li><p>连续 7 天瑜伽。除了今天因为喝了点酒，心跳太快甚至感到心慌，所以练得比较舒缓外，其余 6 天都是高强度练习。再一次为 Down Dog 打 call 。</p></li><li><p>每天都坚持了时间记录，但是没有做到每时每刻，遗漏的时间大多在玩手机、做一些杂七杂八的事情上：</p><p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc6r4c4bquj30u01t0k1r.jpg" alt="image-20200223232804713"></p></li><li><p>和上周的时间对比可以看到</p><ul><li>睡眠时间还是差不多</li><li>工作时间有了增强，主要原因是周末加了一会儿班</li><li>吃饭时间变动不大</li><li>阅读完全没有记录</li><li>运动时间应该是记漏了一天，手机上 Down Dog 的使用时间是 7个小时 14分钟</li></ul></li><li><p>工作日用 forest 种树了，周六没种，也不记得为啥了。。。今天很少，是因为一直在用手机盯着群里的团购，今天到货了盒马上买的咖啡，草莓群里订的草莓，水果群里订的水果（是的，草莓和其他水果不能在同一个群里买）</p><p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc6r7vyfwhj30u01t0kfg.jpg" alt="image-20200223233130972"></p></li><li><p>手机还是用的很多</p><p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc6rb2d9x0j30u01t0gvm.jpg" alt="image-20200223233419449"></p></li></ul><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>前台的卖书单上门时间调整（方案还没最终确定）</li><li>调拨单内容<ul><li>把调拨单的批次拣货和问题单处理做完</li><li>调拨单的几个基础页面可以做了</li></ul></li><li>修复 iphone 上传图片会系统自动刷新，导致图片丢失的 bug<ul><li>这个没找到原因，且监控过期了，还不知道怎么处理</li></ul></li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li>看完《You don’t know JS: Sync and Async》</li><li>看完《血疫》</li><li><em>The React Handbook</em> 翻译完成 section 1</li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>坚持每天练瑜伽</li><li>坚持时间记录——其实应该结合 workflow 来做记录，免得自己老忘</li><li>早睡早起，用这种方法来倒逼读书</li><li>最近会刷抖音，但是刷抖音的确是什么都没收获，还浪费时间，所以给自己下了个豆瓣阅读，之后就看看小说好了。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;截止到今天，武汉封城整整一周了。据说还要封到 3 月 25 号。&lt;/p&gt;
     
     </summary>
     
