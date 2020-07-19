@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuquan.site/"/>
-  <updated>2020-07-05T15:14:49.190Z</updated>
+  <updated>2020-07-19T16:33:46.887Z</updated>
   <id>http://xuquan.site/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Week 29</title>
+    <link href="http://xuquan.site/2020/07/20/Week-29/"/>
+    <id>http://xuquan.site/2020/07/20/Week-29/</id>
+    <published>2020-07-19T16:01:23.000Z</published>
+    <updated>2020-07-19T16:33:46.887Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近又到了工作之外效率低下，时间总嫌不够阶段。盛夏和我从来八字不合。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggwqguo5xmj30u011iu13.jpg" alt="image-20200720001145984"></p><a id="more"></a><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><ul><li><p>服饰 0.3 上线了，又一新业务面世。最近就是在不断赶死线，不断紧张上线，但是又不断有成就感的起起伏伏紧紧缩缩中度过</p></li><li><p>上线了产能配置。这也是一个 born to be mine 的功能。一开始写完了方案，mentor 说方案都定好了，那就给别人做吧，让我接着赶服饰项目。结果服饰项目都赶完了，产能配置居然还没开动，大领导很生气，于是这项目又回归到我头上。上周做完上线，了却一桩大事</p></li><li><p>鱼塘菜单栏优化方案确定好了，和产能配置一样，mentor 让我确定好方案之后就分配给了新同事，估计之后会花些时间 review 以及和各个组沟通</p></li><li><p>上线了拍照功能优化。这是我拖得时间最长的活儿了。一方面有一部分没那么急，于是优先级总是在其他项目前败下阵来，另一方面有些问题要花很多时间排查，之前陆陆续续排查几次，但是总是没能完整弄完。这次优化了三个点：拍照从点两次调用相机优化为点一次调用；解决了 ios 拍照之后突然白屏的问题（原因是之前的代码里在拍照之后有个把文件转换成 base64 格式的步骤，但是文件太大，导致内存不够）；解决了 ios 拍照会横过来的问题（原因是原来代码中的 resize 功能顺带做了旋转，现在牺牲了 resize 这部分优化，但是能保证不会横过来，所以还需要花些时间研究）</p></li><li><p>做了服饰 0.4 的部分方案，开始确定下来的功能的代码</p></li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>读完了《认知与设计》，是一本很不错的关于设计原则的书，笔记做了一半</li><li>上周翻译了部分 <em>The React Handbook</em>，下次不能翻译这么长的内容了</li><li>听完了《今日简史》</li><li>最近在听《自卑与超越》，已经听了一半</li><li>《深入理解 React 技术栈》读了 40%</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li>这周的锻炼有点划水。帕梅拉没坚持下来，瑜伽也没坚持下来。主要原因是最近睡眠不太好，睡得晚导致早上没精神，加上没吃早饭就锻炼，老是觉得头晕</li><li>自从张老师给我买了健康手环，我就每天用它检测睡眠。之前我一直觉得自己的睡眠质量不错，但是检测以来，我惊讶地发现，我每晚的深睡连续性都没有达标，一直偏低，这件事竟然意外地让我这个从来不困扰睡觉的人开始担心自己的睡眠了</li><li>自从体检发现自己视力下降，我就开始每天坚持用蒸汽眼罩，虽然也没感觉到有什么作用</li><li>最近爱上了 Just Dance，真的太好玩了，感觉自己天生是个舞者。现在已经把所有的曲目都跳了一遍，接下来要精进了。也因为 Just Dance，现在在和张老师商量买日版的 Switch，这样 Just Dance 就能多解锁 400 首歌了</li><li>最近坚持了一件聊胜于无的养生习惯：每天午饭时用水涮菜。因为公司的午饭越来越油，且变得不太好吃了，所以每天中午都忍不住涮一下，减少热量摄入</li><li>同事每天在公司做冷萃，中午总是悄咪咪去蹭一杯，但是像我这样蹭咖啡的人太多而做咖啡的人太少，所以经常去晚了就抢不到。于是上周买了冷萃咖啡包和冷萃壶。从下周开始，我也要加入每日冷萃的队伍了。正好买咖啡还送了小冷萃杯，可以保证自己每天早上下午都能有咖啡喝了。</li></ul><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>服饰 0.4 应该是下周的重点</li><li>和后端联调调拨单第二期</li><li>做退货单方案（也不知道是下周做还是下下周）</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li>听完《自卑与超越》</li><li>读完《深入理解 React 技术栈》</li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li><p>找到适合的锻炼时间（现在很纠结到底早上锻炼还是晚上锻炼）</p></li><li><p>早睡早起</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近又到了工作之外效率低下，时间总嫌不够阶段。盛夏和我从来八字不合。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1ggwqguo5xmj30u011iu13.jpg&quot; alt=&quot;image-20200720001145984&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://xuquan.site/categories/Journal/"/>
+    
+    
+      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读书笔记：认知与设计(未完成)</title>
+    <link href="http://xuquan.site/2020/07/19/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%9B%E8%AE%A4%E7%9F%A5%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E6%9C%AA%E5%AE%8C%E6%88%90%EF%BC%89/"/>
+    <id>http://xuquan.site/2020/07/19/读书笔记；认知与设计（未完成）/</id>
+    <published>2020-07-19T07:27:41.000Z</published>
+    <updated>2020-07-19T16:10:04.569Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggwblscj58j30b80dwdhv.jpg" alt="img"></p><a id="more"></a><h2 id="我们感知自己的期望"><a href="#我们感知自己的期望" class="headerlink" title="我们感知自己的期望"></a>我们感知自己的期望</h2><h3 id="经验影响感知"><a href="#经验影响感知" class="headerlink" title="经验影响感知"></a>经验影响感知</h3><ul><li>经验调整我们到期望的地方依据期望的特征去寻找事物/内容</li><li>预期会导致盲目性</li></ul><h3 id="环境影响感知"><a href="#环境影响感知" class="headerlink" title="环境影响感知"></a>环境影响感知</h3><ul><li>视觉感知，尤其是阅读，不完全是一个自下而上的过程，其中也有自上而下的作用。同样的字母序列可以因前后段落的含义不同而被理解成不同的单词</li><li>周围环境对感知的影响也同样存在于不同干管支架。五个感官任何之一的感知都可能同时影响其他感官的感知</li></ul><h3 id="目标影响感知"><a href="#目标影响感知" class="headerlink" title="目标影响感知"></a>目标影响感知</h3><ul><li>与目标无关的东西会被提前过滤掉，而不会进入到意识层面</li><li>当前的目标影响我的感知的机理：<ol><li><strong>影响我们注意什么</strong>——感知是主动的，我们始终移动眼睛、耳朵、手等去寻找周围与我们正在做或者正要做的事最相关的东西</li><li><strong>使我们的感知系统对某些特性敏感</strong></li></ol></li></ul><h3 id="对设计意味着什么"><a href="#对设计意味着什么" class="headerlink" title="对设计意味着什么"></a>对设计意味着什么</h3><ol><li><strong>避免歧义</strong><ul><li>避免显示有歧义的信息，并通过测试确认所有用户对信息的理解是一致的</li><li>如果无法消除歧义，要么依靠标准或者惯例，要么告知用户用你期望的方式去理解歧义之处</li></ul></li><li><strong>保持一致</strong><ul><li>在一致的位置摆放信息和控件</li><li>不同页面提供的相同功能的控件和数据摆放在每一页相同的位置，用相同的颜色、字体和阴影等</li></ul></li><li><strong>理解目标</strong><ol><li>在每一个交互的点上，确保提供了用户需要的信息，并非常清晰地对应到一个可能的用户目标，使用户能够注意到并使用这些信息</li></ol></li></ol><h2 id="为观察结构优化我们的视觉"><a href="#为观察结构优化我们的视觉" class="headerlink" title="为观察结构优化我们的视觉"></a>为观察结构优化我们的视觉</h2><p>人类的视觉是整体的：我们的视觉系统自动对视觉输入构建结构，并且在神经系统层面上感知形状、图形和物体。</p><h3 id="格式塔原理：接近性"><a href="#格式塔原理：接近性" class="headerlink" title="格式塔原理：接近性"></a>格式塔原理：接近性</h3><blockquote><p>物体之间的相对距离会影响我们感知它们是否以及如何组织在一起。互相靠近（相对于其他物体）的物体看起来属于一组，而那些距离较远的就不是。</p></blockquote><ul><li>接近性原理与软件、网站和电器设备中的控件面板和数据表单的布局明显相关</li><li>根据接近性原理，可以通过拉近某些对象之间的距离，拉开与其他对象的距离使它们在视觉上成为一组，而不需要分组框或者可见的边界</li></ul><h3 id="格式塔原理：相似性"><a href="#格式塔原理：相似性" class="headerlink" title="格式塔原理：相似性"></a>格式塔原理：相似性</h3><blockquote><p>如果其他因素相同，那么相似的物体看起来归属于一组。</p></blockquote><h3 id="格式塔原理：连续性"><a href="#格式塔原理：连续性" class="headerlink" title="格式塔原理：连续性"></a>格式塔原理：连续性</h3><blockquote><p>我们的视觉倾向于感知连续的形式而不是离散的碎片</p></blockquote><h3 id="格式塔原理：封闭性"><a href="#格式塔原理：封闭性" class="headerlink" title="格式塔原理：封闭性"></a>格式塔原理：封闭性</h3><blockquote><p>我们的视觉系统自动尝试将敞开的图形关闭起来，从而将其感知为完整的物体而不是分散的碎片。</p></blockquote><ul><li>封闭性原理经常被应用于图形用户界面(GUI) =&gt; 部分可见的对象被感知为一个整体</li></ul><h3 id="格式塔原理：对称性"><a href="#格式塔原理：对称性" class="headerlink" title="格式塔原理：对称性"></a>格式塔原理：对称性</h3><blockquote><p>我们倾向于分解复杂的场景来降低复杂度</p></blockquote><p>i.e. 利用视觉系统对对称性原理的依赖，用平面显示来表现三维物体</p><h3 id="格式塔原理：主体-背景"><a href="#格式塔原理：主体-背景" class="headerlink" title="格式塔原理：主体 / 背景"></a>格式塔原理：主体 / 背景</h3><blockquote><p>我们的大脑将视觉区域分为主体和背景。主体包括一个场景中占据我们主要注意力的所有元素，其余的则是背景。</p></blockquote><ul><li>场景的特点会影响视觉系统对场景中的主体和背景的解析。如我们倾向于认为小的物体是主体而大的物体是背景</li><li>我们对主体与背景的差别感知并不完全由场景的特点决定，也依赖于观者的注意力的焦点</li></ul><h4 id="应用："><a href="#应用：" class="headerlink" title="应用："></a>应用：</h4><ol><li><p>在用户界面设计和网页设计中用来在主要显示内容“之后”放置印象诱导的背景</p></li><li><p>用来在其他内容之上弹出信息（Modal）</p></li></ol><h3 id="格式塔原理：共同命运"><a href="#格式塔原理：共同命运" class="headerlink" title="格式塔原理：共同命运"></a>格式塔原理：共同命运</h3><blockquote><p>一起运动的物体被甘志伟属于一组或者是彼此相关的</p></blockquote><h3 id="将格式塔原理综合起来"><a href="#将格式塔原理综合起来" class="headerlink" title="将格式塔原理综合起来"></a>将格式塔原理综合起来</h3><p>同时涌上所有的格式塔原理时，可能会导致<em>无意</em>产生的视觉关系。</p><h2 id="我们寻找和使用视觉结构"><a href="#我们寻找和使用视觉结构" class="headerlink" title="我们寻找和使用视觉结构"></a>我们寻找和使用视觉结构</h2><p>信息呈现方式越是结构化和精炼，人们就越能更快和更容易地扫描和理解。</p><h3 id="结构提高了用户浏览长数字的能力"><a href="#结构提高了用户浏览长数字的能力" class="headerlink" title="结构提高了用户浏览长数字的能力"></a>结构提高了用户浏览长数字的能力</h3><p>即使是少量的信息也能通过结构化使其更容易被浏览。例如：电话号码和信用卡号码</p><h3 id="数据专用控件提供了更多的结构"><a href="#数据专用控件提供了更多的结构" class="headerlink" title="数据专用控件提供了更多的结构"></a>数据专用控件提供了更多的结构</h3><ul><li>可以用控件而不是用简单的文本输入框来显示某个具体类型的数据的值和接收输入</li><li>将分段的文本字段和数据专用 控件合并起来也可以提供可视化结构</li></ul><h3 id="视觉层次让人专注于相关的信息"><a href="#视觉层次让人专注于相关的信息" class="headerlink" title="视觉层次让人专注于相关的信息"></a>视觉层次让人专注于相关的信息</h3><p>可视化信息显示的最重要目标之一是提供一个视觉层次，即信息的布置安排能够：</p><ul><li>将信息分段，把大块整段的信息分割为各个小段</li><li>显著标记每个信息段和子段，以便清晰地确认各自的内容</li><li>以一个层次结构来展示各段及其子段，使得上层的段能够比下层更重点地被展示</li></ul><h2 id="阅读不是自然的"><a href="#阅读不是自然的" class="headerlink" title="阅读不是自然的"></a>阅读不是自然的</h2><h3 id="我们的大脑是为语言而不是为阅读设计的"><a href="#我们的大脑是为语言而不是为阅读设计的" class="headerlink" title="我们的大脑是为语言而不是为阅读设计的"></a>我们的大脑是为语言而不是为阅读设计的</h3><p>学习阅读就是训练我们的大脑（包括视觉系统）去识别模式。大脑要学习识别的这些模式有一个从低到高的层次：</p><ul><li>线条、轮廓和形状是大脑先天能够识别的基本视觉特征 =&gt; 不必学习</li><li>基本的是视觉特征结合形成模式，即我们认识的字符：字母、数字和其他标准符号</li><li>在拼音文字里，字符形成的模式成为词素，我们把它们识别为一些小块的含义，如-ing、-ed</li><li>词素合并形成我们所说的单词</li><li>单词组成我们所学的词组、成语和语句</li><li>语句组成段落</li></ul><h3 id="阅读是特征驱动还是语境驱动"><a href="#阅读是特征驱动还是语境驱动" class="headerlink" title="阅读是特征驱动还是语境驱动"></a>阅读是特征驱动还是语境驱动</h3><p>阅读涉及识别特征和模式。模式识别可以是自下而上，特征驱动的过程，也可以是自上而下、语境驱动的过程。</p><h4 id="特征驱动的阅读"><a href="#特征驱动的阅读" class="headerlink" title="特征驱动的阅读"></a>特征驱动的阅读</h4><ul><li>过程<ul><li>从辨别简单特征开始</li><li>大脑将某些形状识别为字符或者符号</li><li>在所有文字中，单词序列都被理解成带有含义的词组、句子和段落</li></ul></li><li>“自下而上的”、“无语境的”</li></ul><h4 id="语境驱动的阅读"><a href="#语境驱动的阅读" class="headerlink" title="语境驱动的阅读"></a>语境驱动的阅读</h4><ul><li>从完整的句子或者段落的主旨，到单词和字符。</li><li>视觉系统从识别高层的模式（如单词、短语和句子）或者实现知晓文字的含义开始，接着利用对文字内容的实现了解去弄清楚或者猜测出高层模式的各个组成部分应该是什么</li></ul><p>最有效的阅读方式是无语境的、自下而上特征驱动的方式，这需要熟练掌握到无意识的程度。尽管两种方式并行，但语境驱动阅读被视为一种候补的方法，只有在特征驱动阅读存在困难或者不能够达到足够无意识的时候才起作用。</p><h3 id="熟练阅读和不熟练阅读使用大脑的不同部位"><a href="#熟练阅读和不熟练阅读使用大脑的不同部位" class="headerlink" title="熟练阅读和不熟练阅读使用大脑的不同部位"></a>熟练阅读和不熟练阅读使用大脑的不同部位</h3><ul><li>初级阅读者：单词分析区</li><li>高级阅读者：跳过单词分析区，激活负责单词含义和心理成像的部分</li></ul><h3 id="糟糕的信息设计会影响阅读"><a href="#糟糕的信息设计会影响阅读" class="headerlink" title="糟糕的信息设计会影响阅读"></a>糟糕的信息设计会影响阅读</h3><ul><li><p>不常见和不熟悉的词汇，如计算机术语、专业词汇</p></li><li><p>难以辨认的书写和字型</p></li><li><p>微小的字体</p></li><li><p>嘈杂背景下的文字</p></li><li><p>信息被重复的内容研磨</p></li><li><p>居中对齐的文字</p><ul><li>当自动（快速）阅读时，我们的视线被训练成回到同样的水平位置，同时向下移一行。如果水平起始位置不一样，视线会被带到错误的位置</li></ul></li><li><p>妨碍阅读的设计缺陷的组合</p></li></ul><h3 id="软件里要求的阅读很多都是不必要的"><a href="#软件里要求的阅读很多都是不必要的" class="headerlink" title="软件里要求的阅读很多都是不必要的"></a>软件里要求的阅读很多都是不必要的</h3><ul><li>尽量少让人阅读</li></ul><h2 id="色觉是有限的"><a href="#色觉是有限的" class="headerlink" title="色觉是有限的"></a>色觉是有限的</h2><h3 id="色觉是如何工作的"><a href="#色觉是如何工作的" class="headerlink" title="色觉是如何工作的"></a>色觉是如何工作的</h3><ul><li>视杆细胞察觉光线强度但是感觉不到颜色；视锥细胞能察觉颜色</li><li>工业化社会中几乎用不到视杆细胞，它们只在低亮度下工作</li><li>视锥细胞的敏感度相差非常大：低、中、高频视锥细胞对不同颜色敏感</li></ul><p><strong>颜色对抗通道</strong>：大脑通过减掉一些区域的信号来综合所有信号，从而看到各种颜色</p><h3 id="视觉是为边缘反差而不是为亮度优化的"><a href="#视觉是为边缘反差而不是为亮度优化的" class="headerlink" title="视觉是为边缘反差而不是为亮度优化的"></a>视觉是为边缘反差而不是为亮度优化的</h3><p>对比鲜明的边缘比对绝对的亮度水平要敏感得多。</p><h3 id="区别颜色的能力取决于颜色是如何呈现的"><a href="#区别颜色的能力取决于颜色是如何呈现的" class="headerlink" title="区别颜色的能力取决于颜色是如何呈现的"></a>区别颜色的能力取决于颜色是如何呈现的</h3><ul><li>深浅度：两个颜色越浅（不饱和），就越难将它们区分开</li><li>色块的大小：对象越小越难辨别颜色</li><li>分隔的距离：两个色块距离越远越难区分它们的颜色</li></ul><h3 id="色盲"><a href="#色盲" class="headerlink" title="色盲"></a>色盲</h3><ul><li>使用的颜色能否被常见类型的色盲用户分开</li><li>色盲只是一个或者多个色彩减影通道无法正常工作，以致不能区分某些颜色对</li><li>可以将图像转换成灰度图来了解图上哪些颜色是难以区分的</li></ul><h3 id="影响色彩区分能力的外部因素"><a href="#影响色彩区分能力的外部因素" class="headerlink" title="影响色彩区分能力的外部因素"></a>影响色彩区分能力的外部因素</h3><ul><li>彩色显示器的差异</li><li>灰度显示器</li><li>显示器角度</li><li>环境光线</li></ul><h3 id="使用色彩的准则"><a href="#使用色彩的准则" class="headerlink" title="使用色彩的准则"></a>使用色彩的准则</h3><ol><li>用饱和度、亮度以及色相来区分颜色<ul><li>如果不能在灰度模式下区分出不同的颜色，那么这些颜色之间的差别就不够</li></ul></li><li>使用独特的颜色<ul><li>只在一个颜色对抗通道产生一个强信号</li></ul></li><li>避免使用色盲的人无法区分的颜色对</li><li>在颜色之外使用其他提示</li><li>将强烈的对抗色分开</li></ol><h2 id="我们的边界视力很糟糕"><a href="#我们的边界视力很糟糕" class="headerlink" title="我们的边界视力很糟糕"></a>我们的边界视力很糟糕</h2><h3 id="中央凹的分辨率与边界视野的分辨率比较"><a href="#中央凹的分辨率与边界视野的分辨率比较" class="headerlink" title="中央凹的分辨率与边界视野的分辨率比较"></a>中央凹的分辨率与边界视野的分辨率比较</h3><ul><li>人类视野的空间分辨率从中央向边缘锐减</li><li>边界视觉的信息在被传递到大脑之前是经压缩的，而中央凹的视觉信息这不是</li><li>眼睛以大约每秒三次的速度不断快速移动，选择性地将焦点投射在周围的环境物体上</li></ul><h3 id="边界视觉有什么用"><a href="#边界视觉有什么用" class="headerlink" title="边界视觉有什么用"></a>边界视觉有什么用</h3><ul><li>为了提供低分辨率的线索，以引导眼球运动，使得中央凹能够看到视野里所有有趣和重要的东西</li><li>边界视觉能够很好地察觉移动，且这是潜意识的、自动的，非常快</li></ul><h3 id="让信息可见的常用方法"><a href="#让信息可见的常用方法" class="headerlink" title="让信息可见的常用方法"></a>让信息可见的常用方法</h3><ul><li>放在用户所看的位置上</li><li>标记出错误</li><li>使用错误符号</li><li>保留红色以呈现错误（信息）</li></ul><h3 id="让用户注意到信息的重武器：请小心使用"><a href="#让用户注意到信息的重武器：请小心使用" class="headerlink" title="让用户注意到信息的重武器：请小心使用"></a>让用户注意到信息的重武器：请小心使用</h3><ul><li>弹出式对话框中的信息</li><li>使用声音</li><li>闪烁或者短暂的晃动</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1ggwblscj58j30b80dwdhv.jpg&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://xuquan.site/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="读书笔记" scheme="http://xuquan.site/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="UX" scheme="http://xuquan.site/tags/UX/"/>
+    
+  </entry>
   
   <entry>
     <title>Week 27</title>
@@ -425,50 +472,6 @@
     
     
       <category term="读书笔记" scheme="http://xuquan.site/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Week 10</title>
-    <link href="http://xuquan.site/2020/03/08/Week-10/"/>
-    <id>http://xuquan.site/2020/03/08/Week-10/</id>
-    <published>2020-03-08T12:41:33.000Z</published>
-    <updated>2020-03-15T11:53:25.195Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天是 3.8 妇女节。刚封城的时候，我妈说没事，关到元宵节就可以出去了；过元宵的时候，我们说没事，3.8 妇女节的时候就出去了；现在到 3.8 了，似乎离出去还遥遥无期。每天在这样无尽的等待里，有些让人泄气。</p><a id="more"></a><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>这周的工作就是开会开会开会。周一开了今年的第一个月会，总共开了一天。接着开了各种周会、讨论会。因为要开始一个新的大项目，正好又遇上架构调整，所以变得特别忙碌，但是又有点混乱。</p><ul><li>做完了调拨单和出库单的基本页面，等待 review</li><li>做了一个简单的系统颜色方案</li><li>上周的调拨单内容全部 review 完了，基本上没什么修改</li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>给 FCC 翻译的 The React Handbook 又完成了一部分，上周说的 section 1 的一半实际上只有 1/3，这周又完成了 1/3，下周把 section 1 做完吧</li><li>读完了 《神奇的肌肤能量书》，在豆瓣阅读上看到的，把豆瓣阅读的评分错当成了豆瓣的评分，不然我应该不会看这本书吧。里面的很多建议不适合亚洲人，但是有一条建议我很喜欢：提倡根据食物消化效率的不同安排饮食顺序，先轻后重。准备在之后慢慢实践。</li><li>读完了《咖啡咖啡处处开》，了解了一下咖啡种植</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li><p>练了 4 天瑜伽，1 天偷懒，2 天来大姨妈</p></li><li><p>最近尝试了用 Down Dog 家出的另一款 app ，叫 Barre ，偏小肌肉的力量训练，比 Down Dog 要累得多，尝试了两天 20 分钟 Barre 再配半小时 Down Dog ，下周可以继续</p></li><li><p>看完了《三生三世枕上书》，见鬼，我还挺喜欢帝君的</p></li><li><p>看了《朱迪》，电影很一般，芮妮齐薇格是真的演得不错。最后唱 <em>Somewhere over the rainbow</em> 的片段还是很感人的</p></li><li><p>今天看了一个很喜欢的 TED 演讲，叫 <a href="https://mp.weixin.qq.com/s/dG6eJC2C-R8Kaeyp7jPSfA" target="_blank" rel="noopener">Never give up</a>，是第一个完成从古巴游泳到弗洛里达的人，一名 64 岁的女性。里面有个片段非常非常喜欢，是她形容在夜里游的时候，为了不吸引鲨鱼和其他动物，必须把灯都关掉，她一个人一边在海里游，一边听 John Lennon 唱 Imagine ，这个片段让我想起《夜航西飞》</p></li><li><p>刚发现时间记录 app 自己把同步断开了，搞了个重新激活，这周算是白记了，电脑上的同步不了，重新登录了一下，信息全没了</p></li><li><p>这周种树时间不多</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcmu31f0jzj30u01t0qpt.jpg" alt="image-20200308211951637"></p></li></ul><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>新项目开动，明天先把接下来要做的事情都排一遍</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li><p>看完《You don’t know JS: Sync and Async》</p></li><li><p><em>The React Handbook</em> 翻译完成 section 1</p></li><li><p>读《被讨厌的勇气》</p></li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>明天可能还得偷一天懒，之后开始恢复瑜伽（大姨妈果然是锻炼的最大敌人）</li><li>早睡早起</li><li>恢复纸笔写字</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天是 3.8 妇女节。刚封城的时候，我妈说没事，关到元宵节就可以出去了；过元宵的时候，我们说没事，3.8 妇女节的时候就出去了；现在到 3.8 了，似乎离出去还遥遥无期。每天在这样无尽的等待里，有些让人泄气。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Journal" scheme="http://xuquan.site/categories/Journal/"/>
-    
-    
-      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Week 9</title>
-    <link href="http://xuquan.site/2020/03/01/Week-9/"/>
-    <id>http://xuquan.site/2020/03/01/Week-9/</id>
-    <published>2020-03-01T08:26:10.000Z</published>
-    <updated>2020-03-01T08:43:56.382Z</updated>
-    
-    <content type="html"><![CDATA[<p>不知不觉又一周。关在家里会有种和时空脱节的感觉，分不清到底时间以及自己该在这个时间里应有的状态，也搞不清是怎么一眨眼就又过完了一周。非常深的 detached 的感觉。</p><a id="more"></a><p>这周已经感知不到变化了。小区不让出门，大家每天在家，起床吃饭上班吃饭上班吃饭锻炼睡觉，每天做的事情都没有变过。这种规律的生活没有带来平静，反而因为不得不这么做，而变得格外压抑。</p><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>这周的工作效率也不错，可能因为所有的事情都没有激起心中的涟漪，只有工作这件事还让我觉得自己没有被社会抛弃，也只有工作这件事还在带给我满足感。</p><ul><li>做完了调拨单的第一部分：拣货和问题单，提了MR，等待review</li><li>做了一些前台文案的调整，很小的活儿</li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>给 FCC 翻译的 <em>The React Handbook</em> 完成了 Section 1 的一半，Section 1 真是太长了</li><li>读完了《血疫》，可以说是很不喜欢了，读的时候是想了解一个烈性传染病的传播历史，结果是个很没劲的小说，居然豆瓣评分 8.7 ，非常不理解了</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li><p>做了 3 天瑜伽，有 3 天都偷懒了，其中 2 天因为加班，1 天因为偷懒，还有 1 天是今晚，今晚保证不偷懒。</p></li><li><p>因为关在家里突然很烦躁，所以找了无脑电视剧来看。看了 50 集《三生三世枕上书》，猛嗑了帝君和凤九的 CP，然后我就觉得帝君不那么帅了，我真是个容易变心的人。</p></li><li><p>时间记录没有每天记，看电视剧没好意思记，然后连带着其他时间有些没记上</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcein6zua2j30u01t0wow.jpg" alt="image-20200301163930345"></p></li><li><p>forest 种树漏掉了周五周六，因为周五开了一天会，开会的时候没有种树，周六看电视剧也没种，希望下周看完大结局赶紧回到正轨。</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gceiorg6l1j30k00ivain.jpg" alt="image-20200301164104530"></p></li><li><p>过去一周玩手机比较少，可能是因为看电视剧去了</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gceipku4iyj30u01t0qcn.jpg" alt="image-20200301164152288"></p></li></ul><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>做完调拨单第 2 部分：打包出库</li><li>标品的方案</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li>看完《You don’t know JS: Sync and Async》</li><li><em>The React Handbook</em> 翻译完成 section 1剩下的 50%</li><li>这周准备看一本关于咖啡的书</li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>坚持每天练瑜伽，因为我妈最近开始自己练了，所以可以把我的强度调高一点</li><li>早睡早起</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;不知不觉又一周。关在家里会有种和时空脱节的感觉，分不清到底时间以及自己该在这个时间里应有的状态，也搞不清是怎么一眨眼就又过完了一周。非常深的 detached 的感觉。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Journal" scheme="http://xuquan.site/categories/Journal/"/>
-    
-    
-      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
     
   </entry>
   
