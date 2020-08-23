@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="Nikkkki&#39;s Notes">
 <meta property="og:description" content="2019年转眼就只剩不到10天了。 上周做了： 完成了 做了业务环节的一个方案优化，顺带学着用axure把交互方案画出来了，还挺好玩的。 终于在私有的npm上发布成功了包（经历了配置失败、上传之后服务器重启导致包丢失、重新发布之后项目部署失败等各种问题），这周还要把之前放在另一个registry的包移过来。 准备在前台项目里增加log日志，方便排查问题。目前暂定的方案是 redux middlew">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-23T03:35:30.963Z">
+<meta property="og:updated_time" content="2019-12-23T03:35:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Week 51">
 <meta name="twitter:description" content="2019年转眼就只剩不到10天了。 上周做了： 完成了 做了业务环节的一个方案优化，顺带学着用axure把交互方案画出来了，还挺好玩的。 终于在私有的npm上发布成功了包（经历了配置失败、上传之后服务器重启导致包丢失、重新发布之后项目部署失败等各种问题），这周还要把之前放在另一个registry的包移过来。 准备在前台项目里增加log日志，方便排查问题。目前暂定的方案是 redux middlew">
@@ -159,7 +159,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: 'author'
     },
     algolia: {
       applicationID: '',
@@ -251,7 +251,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            首页
+            home
           </a>
         </li>
       
@@ -261,7 +261,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
-            标签
+            tags
           </a>
         </li>
       
@@ -271,7 +271,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
-            分类
+            categories
           </a>
         </li>
       
@@ -301,7 +301,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            归档
+            archives
           </a>
         </li>
       
@@ -367,7 +367,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-23T10:58:20+08:00">
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2019-12-23T10:58:20+08:00">
                 2019-12-23
               </time>
             
@@ -419,7 +419,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">
+                <span title="post.wordcount">
                   290 字
                 </span>
               
@@ -435,7 +435,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="post.min2read">
                   1 分钟
                 </span>
               
@@ -573,10 +573,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
+            sidebar.toc
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
+            sidebar.overview
           </li>
         </ul>
       
@@ -598,8 +598,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">187</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-count">189</span>
+                  <span class="site-state-item-name">state.posts</span>
                 </a>
               </div>
             
@@ -610,7 +610,7 @@
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
                   <span class="site-state-item-count">13</span>
-                  <span class="site-state-item-name">分类</span>
+                  <span class="site-state-item-name">state.categories</span>
                 </a>
               </div>
             
@@ -621,7 +621,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">124</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-name">state.tags</span>
                 </a>
               </div>
             
@@ -732,9 +732,9 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-      <span class="post-meta-item-text">Site words total count&#58;</span>
+      <span class="post-meta-item-text">post.totalcount&#58;</span>
     
-    <span title="Site words total count">275.2k</span>
+    <span title="post.totalcount">276.4k</span>
   
 </div>
 

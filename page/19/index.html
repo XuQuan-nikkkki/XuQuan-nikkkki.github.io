@@ -155,7 +155,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: 'author'
     },
     algolia: {
       applicationID: '',
@@ -248,7 +248,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            首页
+            home
           </a>
         </li>
       
@@ -258,7 +258,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
-            标签
+            tags
           </a>
         </li>
       
@@ -268,7 +268,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
-            分类
+            categories
           </a>
         </li>
       
@@ -298,7 +298,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            归档
+            archives
           </a>
         </li>
       
@@ -321,6 +321,409 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/05/17/写给小白的node.js学习笔记6：全局对象process/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/17/写给小白的node.js学习笔记6：全局对象process/" itemprop="url">node.js学习笔记6：全局对象process</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2018-05-17T00:38:36+08:00">
+                2018-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/17/写给小白的node.js学习笔记6：全局对象process/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/17/写给小白的node.js学习笔记6：全局对象process/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/17/写给小白的node.js学习笔记6：全局对象process/" class="leancloud_visitors" data-flag-title="node.js学习笔记6：全局对象process">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="post.wordcount">
+                  519 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="post.min2read">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="node内置对象分为三类"><a href="#node内置对象分为三类" class="headerlink" title="node内置对象分为三类"></a>node内置对象分为三类</h4><ol>
+<li>全局对象：何时何处都能访问（如：process）</li>
+<li>核心对象：向系统索要，引入即可使用（如http,fs)</li>
+<li>自定义对象： 按路径引入即可</li>
+</ol>
+<p>其中通过<code>process</code>全局对象能够获取与进程相关的内容。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/17/写给小白的node.js学习笔记6：全局对象process/#post.more" rel="contents">
+              post.read_more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuquan.site/2018/05/16/写给小白的node.js学习笔记5：作业（结合fs,get:post数据)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/16/写给小白的node.js学习笔记5：作业（结合fs,get:post数据)/" itemprop="url">node.js学习笔记5：作业（结合fs,get/post数据)</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2018-05-16T00:38:36+08:00">
+                2018-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/16/写给小白的node.js学习笔记5：作业（结合fs,get:post数据)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/16/写给小白的node.js学习笔记5：作业（结合fs,get:post数据)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/16/写给小白的node.js学习笔记5：作业（结合fs,get:post数据)/" class="leancloud_visitors" data-flag-title="node.js学习笔记5：作业（结合fs,get/post数据)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="post.wordcount">
+                  361 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="post.min2read">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>前面几篇内容按照node.js中不同模块的不同功能，分别记录了它们实现的方式。<br>这篇内容将前面几篇提到的功能结合起来，来实现一个简单的结合数据请求来实现文件读写的小页面。</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/16/写给小白的node.js学习笔记5：作业（结合fs,get:post数据)/#post.more" rel="contents">
+              post.read_more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -366,7 +769,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T00:38:36+08:00">
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2018-05-14T00:38:36+08:00">
                 2018-05-14
               </time>
             
@@ -440,7 +843,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">
+                <span title="post.wordcount">
                   737 字
                 </span>
               
@@ -456,7 +859,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="post.min2read">
                   3 分钟
                 </span>
               
@@ -484,8 +887,8 @@
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/14/写给小白的Node-js学习笔记3：url模块解析get数据请求/#more" rel="contents">
-              阅读全文 &raquo;
+            <a class="btn" href="/2018/05/14/写给小白的Node-js学习笔记3：url模块解析get数据请求/#post.more" rel="contents">
+              post.read_more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -566,7 +969,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T00:38:36+08:00">
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2018-05-14T00:38:36+08:00">
                 2018-05-14
               </time>
             
@@ -640,7 +1043,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">
+                <span title="post.wordcount">
                   233 字
                 </span>
               
@@ -656,7 +1059,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="post.min2read">
                   1 分钟
                 </span>
               
@@ -682,8 +1085,8 @@
           <p>上一篇内容讲到原生node.js如何用<code>url</code>模块处理get数据请求，这篇记录如何用<code>querystring</code>模块处理post数据请求。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/14/写给小白的Node.js学习笔记4：querystring模块解析post数据请求/#more" rel="contents">
-              阅读全文 &raquo;
+            <a class="btn" href="/2018/05/14/写给小白的Node.js学习笔记4：querystring模块解析post数据请求/#post.more" rel="contents">
+              post.read_more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -764,7 +1167,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T00:30:08+08:00">
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2018-05-14T00:30:08+08:00">
                 2018-05-14
               </time>
             
@@ -816,7 +1219,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">
+                <span title="post.wordcount">
                   646 字
                 </span>
               
@@ -832,7 +1235,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="post.min2read">
                   3 分钟
                 </span>
               
@@ -858,8 +1261,8 @@
           <p>用node.js读写文件时，需要引入一个新的模块fs(file system文件系统）。文件系统的操作都有异步和同步的形式，案例使用异步方法，防止阻塞。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/14/写给小白的Node-js学习笔记2：fs模块实现文件读写/#more" rel="contents">
-              阅读全文 &raquo;
+            <a class="btn" href="/2018/05/14/写给小白的Node-js学习笔记2：fs模块实现文件读写/#post.more" rel="contents">
+              post.read_more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -940,7 +1343,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T00:14:18+08:00">
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2018-05-14T00:14:18+08:00">
                 2018-05-14
               </time>
             
@@ -1014,7 +1417,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">
+                <span title="post.wordcount">
                   326 字
                 </span>
               
@@ -1030,7 +1433,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="post.min2read">
                   1 分钟
                 </span>
               
@@ -1058,8 +1461,8 @@
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/14/写给小白的Node-js学习笔记1：http模块创建服务器/#more" rel="contents">
-              阅读全文 &raquo;
+            <a class="btn" href="/2018/05/14/写给小白的Node-js学习笔记1：http模块创建服务器/#post.more" rel="contents">
+              post.read_more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1140,7 +1543,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T23:56:24+08:00">
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2018-05-13T23:56:24+08:00">
                 2018-05-13
               </time>
             
@@ -1214,7 +1617,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">
+                <span title="post.wordcount">
                   1,492 字
                 </span>
               
@@ -1230,7 +1633,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="post.min2read">
                   6 分钟
                 </span>
               
@@ -1256,8 +1659,8 @@
           <p>​       ES6在原有<code>var</code>关键字的基础上，增加了<code>let</code>和<code>const</code>两个关键字用来声明变量。新增加的关键字在使用上更为严谨，解决了很多原来<code>var</code>声明变量时造成的问题。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/13/ES6学习笔记之变量声明/#more" rel="contents">
-              阅读全文 &raquo;
+            <a class="btn" href="/2018/05/13/ES6学习笔记之变量声明/#post.more" rel="contents">
+              post.read_more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1338,7 +1741,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T00:13:04+08:00">
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2018-05-13T00:13:04+08:00">
                 2018-05-13
               </time>
             
@@ -1412,7 +1815,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">
+                <span title="post.wordcount">
                   881 字
                 </span>
               
@@ -1428,7 +1831,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="post.min2read">
                   4 分钟
                 </span>
               
@@ -1456,8 +1859,8 @@
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/13/工具学习笔记：Git/#more" rel="contents">
-              阅读全文 &raquo;
+            <a class="btn" href="/2018/05/13/工具学习笔记：Git/#post.more" rel="contents">
+              post.read_more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1538,7 +1941,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T23:36:20+08:00">
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2018-05-10T23:36:20+08:00">
                 2018-05-10
               </time>
             
@@ -1612,7 +2015,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">
+                <span title="post.wordcount">
                   2,011 字
                 </span>
               
@@ -1628,7 +2031,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="post.min2read">
                   7 分钟
                 </span>
               
@@ -1656,8 +2059,8 @@
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/10/知识管理学习笔记1：inbox体系/#more" rel="contents">
-              阅读全文 &raquo;
+            <a class="btn" href="/2018/05/10/知识管理学习笔记1：inbox体系/#post.more" rel="contents">
+              post.read_more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1746,8 +2149,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">187</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-count">189</span>
+                  <span class="site-state-item-name">state.posts</span>
                 </a>
               </div>
             
@@ -1758,7 +2161,7 @@
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
                   <span class="site-state-item-count">13</span>
-                  <span class="site-state-item-name">分类</span>
+                  <span class="site-state-item-name">state.categories</span>
                 </a>
               </div>
             
@@ -1769,7 +2172,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">124</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-name">state.tags</span>
                 </a>
               </div>
             
@@ -1864,9 +2267,9 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-      <span class="post-meta-item-text">Site words total count&#58;</span>
+      <span class="post-meta-item-text">post.totalcount&#58;</span>
     
-    <span title="Site words total count">275.2k</span>
+    <span title="post.totalcount">276.4k</span>
   
 </div>
 

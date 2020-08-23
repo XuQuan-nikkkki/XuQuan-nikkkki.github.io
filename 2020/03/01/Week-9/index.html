@@ -143,7 +143,7 @@
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcein6zua2j30u01t0wow.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gceiorg6l1j30k00ivain.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gceipku4iyj30u01t0qcn.jpg">
-<meta property="og:updated_time" content="2020-03-01T08:43:56.382Z">
+<meta property="og:updated_time" content="2020-03-01T08:43:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Week 9">
 <meta name="twitter:description" content="不知不觉又一周。关在家里会有种和时空脱节的感觉，分不清到底时间以及自己该在这个时间里应有的状态，也搞不清是怎么一眨眼就又过完了一周。非常深的 detached 的感觉。">
@@ -163,7 +163,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: 'author'
     },
     algolia: {
       applicationID: '',
@@ -255,7 +255,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            首页
+            home
           </a>
         </li>
       
@@ -265,7 +265,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
-            标签
+            tags
           </a>
         </li>
       
@@ -275,7 +275,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
-            分类
+            categories
           </a>
         </li>
       
@@ -305,7 +305,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            归档
+            archives
           </a>
         </li>
       
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-01T16:26:10+08:00">
+              <time title="post.created" itemprop="dateCreated datePublished" datetime="2020-03-01T16:26:10+08:00">
                 2020-03-01
               </time>
             
@@ -445,7 +445,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">
+                <span title="post.wordcount">
                   654 字
                 </span>
               
@@ -461,7 +461,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="post.min2read">
                   2 分钟
                 </span>
               
@@ -630,10 +630,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
+            sidebar.toc
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
+            sidebar.overview
           </li>
         </ul>
       
@@ -655,8 +655,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">187</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-count">189</span>
+                  <span class="site-state-item-name">state.posts</span>
                 </a>
               </div>
             
@@ -667,7 +667,7 @@
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
                   <span class="site-state-item-count">13</span>
-                  <span class="site-state-item-name">分类</span>
+                  <span class="site-state-item-name">state.categories</span>
                 </a>
               </div>
             
@@ -678,7 +678,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">124</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-name">state.tags</span>
                 </a>
               </div>
             
@@ -789,9 +789,9 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-      <span class="post-meta-item-text">Site words total count&#58;</span>
+      <span class="post-meta-item-text">post.totalcount&#58;</span>
     
-    <span title="Site words total count">275.2k</span>
+    <span title="post.totalcount">276.4k</span>
   
 </div>
 
