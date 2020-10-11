@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuquan.site/"/>
-  <updated>2020-08-10T14:19:02.688Z</updated>
+  <updated>2020-10-11T14:48:34.922Z</updated>
   <id>http://xuquan.site/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Week 41</title>
+    <link href="http://xuquan.site/2020/10/11/Week-41/"/>
+    <id>http://xuquan.site/2020/10/11/Week-41/</id>
+    <published>2020-10-11T14:30:58.000Z</published>
+    <updated>2020-10-11T14:48:34.922Z</updated>
+    
+    <content type="html"><![CDATA[<p>前两周的周记一直没能发出来，命令行一直报错，后来才发现 autojump 进入的文件夹是备份之前的，有些文件缺失了，但是自己一直没发现。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gjlrnsfopkj31900u07wn.jpg" alt="image-20201011223244842"></p><a id="more"></a><p>十一在广东呆了 10 天。先去深圳参加了老王的婚礼，人生第一次当伴娘的机会献给了最重要的闺蜜。说实话，结婚真的挺累的，从早忙到晚，加上广东特别热，我一直处于懵逼状态。婚礼结束之后去广州接了爸妈，然后去了顺德，之后是普宁、潮州、汕头。</p><p>几个城市里面，我最喜欢汕头，符合我想象中的潮汕 local 老城，其他城市要么有些乱，要么太 local 了，缺了点范儿。潮州似乎都有，但是又太过商业了。</p><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><ul><li><p>在放假之前上线了服饰的正式版，上海地区的一部分符合条件的用户可以直接下单了</p></li><li><p>为了国庆之后两天请假，在放假前赶完了耳机项目的全部代码，节前大家都欢天喜地提前下班时，我捱到最后一个下班</p></li><li><p>放假前公司又组织了一年一度的博饼。今年本来想去赢一台烤箱，结果烤箱组意外满员，其他奖品都没什么兴趣，所以掷骰子也没胜负欲，有点亏待了我的这双天生好手</p></li><li><p>Material Design 的 Design System 看了 40%</p></li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>在飞机上看了一半 《Unit Testing》，这周可以看完</li><li>妈妈在去广东前开始有轻度抑郁的症状，在整个旅行途中都不太提得起兴趣，最后提前回家了。之前虽然我也会给爸妈普及一些精神疾病的知识，但是在疾病如此接近的时候，我突然发现其实我对抑郁症知之甚少，以至于当我想要帮她时，竟不知从何下手。在旅行的最后几天的路途中，我听了抑郁研究所的《亲友抑郁该怎么办》的课程，对抑郁症有了最基础的一些了解</li><li>今天在家做卫生时，听了一部分《伯恩斯情绪疗法》</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li>旅行途中看完了《这就是街舞》，结尾看到明年将会有那么多世界冠军参加，开始对明年的节目无比期待</li><li>今天晚饭看完了《乐队的夏天》，越到后面，越没啥兴趣了</li><li>在酒店看了《我和我的祖国》，电影拍摄的确不咋地，但是人物都是戳中泪点的，毕竟没有这些人也就没有我们今天如此硬气的名族自豪感</li></ul><h3 id="下周安排"><a href="#下周安排" class="headerlink" title="下周安排"></a>下周安排</h3><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>耳机项目上线</li><li>技术写作课程完善</li><li>出鱼塘 UI 框架的大纲</li></ul><p>####学习</p><ul><li>翻译 The React Handbook</li><li>看完 Unit Testing</li><li>听 《伯恩斯情绪疗法》</li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>这周尽量自己做饭，在潮汕实在吃得太多了</li><li>恢复普拉提课程</li><li>和妈妈分享最近学习的关于抑郁症的知识</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前两周的周记一直没能发出来，命令行一直报错，后来才发现 autojump 进入的文件夹是备份之前的，有些文件缺失了，但是自己一直没发现。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gjlrnsfopkj31900u07wn.jpg&quot; alt=&quot;image-20201011223244842&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Journal" scheme="http://xuquan.site/categories/Journal/"/>
+    
+    
+      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Week 33-38</title>
+    <link href="http://xuquan.site/2020/09/21/Week-33-38/"/>
+    <id>http://xuquan.site/2020/09/21/Week-33-38/</id>
+    <published>2020-09-21T15:36:31.000Z</published>
+    <updated>2020-09-21T16:45:10.948Z</updated>
+    
+    <content type="html"><![CDATA[<p>以为只是漏掉了两三周的周记，今天看日期才知道，居然不知不觉就过了 5 周。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1giypkdt94xj31900u01kx.jpg" alt="image-20200921235219370"></p><a id="more"></a><p>这 5 周都做了哪些事呢，说起来似乎特别丰富。</p><p>8月底去了一趟青岛。张老师在青岛出差，周末正好没事，于是我周六一大早赶着去过了个周末。回想了一下之前两次去青岛，一次是 10 岁左右，和奶奶一起去，是很常规的中老年路线，去了五四广场、崂山；之后一次是 20 岁左右，去烟台找黄苕，随后去了青岛，逛了海洋大学附近的咖啡馆一条街、八大关、总督府。这次来已经 30 岁了，去了啤酒节，吃了海鲜宵夜，沿着海边走了一下午，浑身黏黏的。</p><p>这次去青岛的时间点也是很特别。当时要上线服饰 0.4，约好周五晚上 10 点，特地买了第二天早上的机票，结果同事没能改完代码，推迟到周六。于是我在青岛的酒店里，一面对着海，一面远程连线上线。6 个同事身处 5 个城市，现代科技功不可没。</p><p>上完线立马跑去啤酒节。听司机师傅说，受疫情影响，今年的啤酒节没有往年人多，但是进了园区的一瞬间，我还是高兴地立马跳起来，真的有太久太久没有见过这么热闹的场景了。和张老师一起端着酒，跟着每一个帐篷里的音乐嗨；看酒王争霸；还意外遇到南征北战的演出，跟着唱了《我的天空》。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1giyqivm22bj31400u0u19.jpg" alt="image-20200922002529624"></p><p>9 月初的时候去了一趟上海，为了服饰的上线，去上海办公室和服饰团队一起开了动员大会。感觉还挺神奇的，我们 3 个中心的 6 个前后端一起肝了整个服饰项目，虽然现在看来，它离结束还有一些距离，但终归看到一个可以上线的成果了，非常有成就感。在上海的时候，为了逃避垃圾分类，我们每餐都一起去外面吃，和一起肝项目的同事喝点酒，吹个牛，觉得自己离厉害的工程师又近了一点。</p><p>上海办公室在泰安路，是法租界区，周围的环境都特别好，大梧桐树，干净的街道，每天一场雨让空气特别干净，这个时候听《南方》会让我想起武汉，想起大学的时候和黄苕一起在租界区轧马路。</p><p>在上海的周末见了刘欣。毕业之后的几年里，我们一直断断续续保持着联系，这么想来会觉得时间维度被缩得很短，可是仔细回想，我们上一次见面已经是 6 年前了。当时她还在读研，我回武汉的时候去群光找她吃饭。原来 6 年这么快就过了。吃饭那天她带了一本我帮前老板翻译的书，我在给她写 to 签的时候偷偷想，原来我也在不自觉的情况下，完成过一些不错的事情。</p><p>那天吃完饭，我骑着自行车从延安路骑回泰安路，一路都没什么车，下过雨之后，潮湿的空气浮起来，在昏暗的路灯下像是雾。我一边欢快地骑，一边后悔没学会单手骑车，不然这一路录下来应该会很美好。</p><p>去完上海之后，公司团建去了千岛湖。很多年前，妈妈带我从杭州去千岛湖一日游过，对千岛湖的印象还停留在吃豆花鱼头，买蚕丝被。这次去的西坡千岛湖在一个远离市区的山里，是一家国营炼油厂改造的度假酒店。晚上气温降下来，我们在湖边聊天吃自助，我在发呆的时候觉得，我何其幸运，逃过那么多不幸，见证这么多美好。</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1giyq0wzd2lj31900u0x6z.jpg" alt="image-20200922000813892"></p><p>![image-20200922000827954](/Users/nikkkki/Library/Application Support/typora-user-images/image-20200922000827954.png)</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1giyq1lwk9yj31900u0b2e.jpg" alt="image-20200922000850843"></p><p>中元节那天，和同事一起骑车进了山，回程路上遇到了大暴雨，为了找躲雨的地方，冒着眼睛被雨淋到睁不开的危险，骑了 2 公里山路。雨停之后，山里起了雾，意外变得特外诗意，像是水墨画一般。</p><p>团建的时候，mentor 告诉我，上半年我的绩效评到了 A，他和同事对我的表现都很满意。虽然这件事并不太在意料之外，我觉得我是值得一个 A 的，但是得知真的达到目标的时候，还是非常开心。不过他也对我提出了更多的要求，希望我下半年能够在团队的建设、效率提升、流程规范上都做出一些贡献，争取拿到 AA。</p><p>从千岛湖回来之后，花了一些时间梳理下半年要做的事情，制定了 OKR，有些下半年准备完成的项目也都开始着手搭框架了，看起来下半年会非常非常忙碌。</p><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><ul><li>服饰已经做到临近 1.0 了，上周又做了一些优化。最近的项目都非常严格地按照交互方案—技术方案—开发—测试文档的流程推进，算是拿自己测试，逐步规范团队的开发流程</li><li>做了书的多版本的创建优化</li><li>kindle 和 服饰的回仓优化也出了交互方案、技术方案，做完了开发</li><li>耳机的回收出了交互方案和技术方案</li><li>配置了在个人测试环境开启 logRocket 监控</li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>翻译了一个 section 的 The React Handbook，并且 review 了以前翻译的一部分内容</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li>绩效拿 A 会有额外的奖金，所以我给自己报了普拉提私教，希望能在 3 个月的时间内矫正体态</li><li>最近每周都和张老师一起看乐夏和街舞，算是周末固定节目了</li><li>开始看《沉默的真相》</li></ul><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>上线多版本优化</li><li>出回仓优化的测试文档 + code review</li><li>耳机回收的开发</li><li>解决前端 MST getRoot 导致的类型报错问题</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li>翻译 The React Handbook</li><li>读《代码大全》</li><li>开始学 FCC 的python 课程</li><li>能够一周做 3 次 leetCode 的题目</li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>最近健身非常固定，每周1、3、5早上上课，晚上回家可以不用监督自己了</li><li>最近的作息非常不好，经常熬夜，希望能尽快改掉</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以为只是漏掉了两三周的周记，今天看日期才知道，居然不知不觉就过了 5 周。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1giypkdt94xj31900u01kx.jpg&quot; alt=&quot;image-20200921235219370&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Jounal" scheme="http://xuquan.site/categories/Jounal/"/>
+    
+    
+      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
+    
+  </entry>
   
   <entry>
     <title>Week 32</title>
@@ -418,52 +464,6 @@
     
       &lt;p&gt;武汉到了天气最美好的时候。不冷不热，楼下的花儿都开了。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1ge01ohw00mj30u011inpj.jpg&quot; alt=&quot;image-20200420105434091&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Journal" scheme="http://xuquan.site/categories/Journal/"/>
-    
-    
-      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Week 14 &amp; Week 15</title>
-    <link href="http://xuquan.site/2020/04/13/Week-14-Week-15/"/>
-    <id>http://xuquan.site/2020/04/13/Week-14-Week-15/</id>
-    <published>2020-04-13T03:45:21.000Z</published>
-    <updated>2020-04-20T02:56:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>武汉气温升高了，天气特别好，爸爸种的花都开了</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gds0bd36r6j30u01904qx.jpg" alt="image-20200413120330702"></p><a id="more"></a><p>###工作</p><p>忙活了两周 kindle 项目，清明假期也在加班（虽然清明假期和我也没什么关系），终于把功能全部弄完了。剩下的就是联调，优化细节，做好准备上线。</p><ul><li>做完了 kindle 的审核。偷偷学了苹果的交互方式，觉得挺有意思的。因为团队没有交互设计师，交互一直是自己在摸索。mentor 有时候会提醒哪里做的不好，但是后台的交互和页面设计一直都出于各自为政的阶段。这次反而提供了一个好的思路，至少可以学各种大公司的交互方式，从中理解和探索什么样的交互会给人带来好的体验。这也是接下来 OKR 的一个小目标吧。</li><li>做完了 kindle 的拍照，这项的代码和花的时间都不算太多。但是在从头做新的拍照项目的时候，对老的拍照项目有了很多更深的理解。在项目开始的时候把系统之间的数据联动做好，真的是能给整个系统也好、操作人员也好，带来巨大的效率、质量收益。反之，一旦让每个环节都孤立起来，就让所有的事情都变成了的 1 + 1 = 1.5。</li><li>kindle 的取回做完了。做这一部分的时候会不断地想，操作人员需要哪些数据来判断自己接下来的操作，站在操作人员的角度去思考问题才能更深刻地理解程序员应该如何跳出编码的范畴思考产品。</li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>看完了《被讨厌的勇气》，真是一本好书</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li>上上周练了 4 天瑜伽，偷了 3 天懒。上周应该也偷了 3 天懒，做了 3 天瑜伽，做完去跑了个步。80 天了，我终于下楼了</li><li>昨天为了跑步，想准备个跑步歌单，结果在多年未用的虾米里找到了很多年前的歌单。跑的时候听到熟悉的歌就会想起当年跑步的情形，想想已经好几年了。那个时候也是在武汉，在家楼下的院子里跑圈，那个时候我应该觉得 30 岁的自己已经瘦成一道闪电了吧</li><li>昨天为了庆祝项目代码初步完成，看了《1917》，喝了点酒</li></ul><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><h4 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h4><ul><li>把 kindle 项目联调、测试做完</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><ul><li>看完《You don’t know JS: Sync and Async》</li><li><em>The React Handbook</em> 翻译完成 section 2</li><li>整理《被讨厌的勇气》的笔记</li><li>接着读《论中国》</li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>要恢复跑步，需要一些除了瑜伽之外的心肺要求更高的运动</li><li>除了跑步，瑜伽还是不能停</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;武汉气温升高了，天气特别好，爸爸种的花都开了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlly1gds0bd36r6j30u01904qx.jpg&quot; alt=&quot;image-20200413120330702&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Journal" scheme="http://xuquan.site/categories/Journal/"/>
-    
-    
-      <category term="Weekly Report" scheme="http://xuquan.site/tags/Weekly-Report/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Week 13</title>
-    <link href="http://xuquan.site/2020/03/29/Week-13/"/>
-    <id>http://xuquan.site/2020/03/29/Week-13/</id>
-    <published>2020-03-29T15:07:32.000Z</published>
-    <updated>2020-03-29T15:29:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>又是紧张的一周。。。</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdb7ii5se5j30u011i4qw.jpg" alt="image-20200329231759145"></p><a id="more"></a><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>升职的情况不太理想，不过工资还是涨了，也算是不错的结果，同时也反馈了很多问题。上周工作进度比想象的慢，这周还是继续忙碌的一周：</p><ul><li><p>kindle 的点货绑码做完了，和后端联调花了一天的时间，非常艰难，因为新的团队划分导致牵一发动全身，很多改动变得麻烦，很多后端间的沟通和设计也不够清楚，总之不容易</p></li><li><p>kindle 的拍照没有太多时间做，现在已经把需要的组件抽出来了，这周可以做完加联调</p></li><li><p>kindle 的审核写完了，来不及测，都没有接口</p></li><li><p>修复了微信扫新二维码无法识别的问题</p></li><li><p>前端兼容了新的批次策略</p></li><li><p>sentry 屏蔽了 4xx 的报错</p></li></ul><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><ul><li>看了 1/3 的《被讨厌的勇气》</li></ul><h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><ul><li><p>锻炼坚持了 4 天，有两天加班，有 1 天偷懒 </p></li><li><p>看了《痛苦和荣耀》，是阿莫多瓦的自传性电影，没有讲很具体的故事，更像是他当前状态的陈述和对这种状态的原因的追溯——还是回归到童年</p></li><li><p>今天点了奈雪，武汉的奶茶外卖复工了，虽然并没有很想喝，但还是出于仪式感点了一杯，好像这一杯宣告阶段性的胜利一样</p></li><li><p>这周没有记录时间，开始觉得自己记录时间没有起到很好的指导作用，最近需要重温一下时间管理的书</p></li><li><p>收拾了书房的书，把我喜欢的类别重新整理了一遍，把爸妈的老书也分了一下类，发现一本封面特别好看的萨特</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdb7unwoygj30om194npd.jpg" alt="image-20200329232945631"></p></li></ul><h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><h4 id="工作-1"><a href="#工作-1" class="headerlink" title="工作"></a>工作</h4><ul><li>做完 kindle 项目的审核和拍照——目标是明天能做完拍照组件的抽象，然后能周三前做完审核和拍照流程，留一天联调，一天运营测试</li><li>顺便解决拍照问题</li></ul><h4 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h4><p>太可怕了，这几个目标弄了这么久，还没完成</p><ul><li>看完《You don’t know JS: Sync and Async》</li><li><em>The React Handbook</em> 翻译完成 section 2</li><li>看完《被讨厌的勇气》</li></ul><h4 id="生活-1"><a href="#生活-1" class="headerlink" title="生活"></a>生活</h4><ul><li>少玩手机多读书</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;又是紧张的一周。。。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/00831rSTgy1gdb7ii5se5j30u011i4qw.jpg&quot; alt=&quot;image-20200329231759145&quot;&gt;&lt;/p&gt;
     
     </summary>
     
