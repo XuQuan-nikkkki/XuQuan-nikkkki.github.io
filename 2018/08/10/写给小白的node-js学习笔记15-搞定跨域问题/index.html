@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>node.js学习笔记: 搞定跨域问题 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="所谓跨域，就是浏览器对于JavaScript的同源策略的限制。 浏览器认为跨域情况下的数据请求是不安全的。  那么同源策略是什么呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node.js学习笔记: 搞定跨域问题">
+<meta property="og:url" content="http://example.com/2018/08/10/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B015-%E6%90%9E%E5%AE%9A%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="所谓跨域，就是浏览器对于JavaScript的同源策略的限制。 浏览器认为跨域情况下的数据请求是不安全的。  那么同源策略是什么呢？">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fu5s7x3gx5j30dc02h0t0.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu5s8t1qguj30gw021q3g.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdgy1fu5u1s8n9aj30gn01bt8j.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fu5u99xcd6j30h70243yi.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu5w999kplj31kw0ffgoy.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu61digye0j30h001ymx7.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu62rws290j30ma07cdi3.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62l7jztxj30a90290su.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu62ngkp80j30ab01z3yn.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62pds4g4j30a302dt8v.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fu62tp6s8zj30gm019jr8.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62x0co2sj30cq08mgmq.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62y5yo9tj30bp08mab4.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu666k0ic8j30id074dgm.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu66ghc7v6j30qp0li42f.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu67ntgwh1j308003ejrk.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fu67ov99a5j30d208ojt4.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdgy1fu67v5inboj317u0oin18.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdgy1fu680t7tv8j30l00d10tm.jpg">
+<meta property="article:published_time" content="2018-08-10T14:38:00.000Z">
+<meta property="article:modified_time" content="2018-08-14T03:59:33.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="node.js">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fu5s7x3gx5j30dc02h0t0.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="posts-写给小白的node-js学习笔记15-搞定跨域问题" class="h-entry article article-type-posts" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/08/10/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B015-%E6%90%9E%E5%AE%9A%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2018-08-10T14:38:00.000Z" itemprop="datePublished">2018-08-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      node.js学习笔记: 搞定跨域问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>所谓<strong>跨域</strong>，就是<strong>浏览器对于JavaScript的同源策略的限制</strong>。</p>
+<p>浏览器认为跨域情况下的数据请求是不安全的。</p>
+</blockquote>
+<p>那么同源策略是什么呢？</p>
+<span id="more"></span>
+
+<h3 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h3><p><strong>同源</strong>保证指A网页设置的Cookie，B网页不能打开，除非这两个网页同源，同源指的是：</p>
+<blockquote>
+<ul>
+<li>协议相同（protocol）</li>
+<li>域名相同（host）</li>
+<li>端口相同（port）</li>
+</ul>
+</blockquote>
+<p>这三个中任意一个不同，网站间的数据请求与传输就构成了跨域调用，会受到同源策略的限制。</p>
+<p>举例来说，<a target="_blank" rel="noopener" href="http://www.example.com,`http//%60%E5%B0%B1%E6%98%AF%E5%8D%8F%E8%AE%AE%EF%BC%8C%60www.example.com%60%E5%B0%B1%E6%98%AF%E5%9F%9F%E5%90%8D%EF%BC%8C%E7%AB%AF%E5%8F%A3%E6%98%AF%6080%60%EF%BC%88%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3%E5%8F%AF%E4%BB%A5%E7%9C%81%E7%95%A5%EF%BC%89">http://www.example.com，`http://`就是协议，`www.example.com`就是域名，端口是`80`（默认端口可以省略）</a></p>
+<blockquote>
+<p><strong>同源策略</strong>限制了从一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的关键安全机制。</p>
+</blockquote>
+<h3 id="解决跨域"><a href="#解决跨域" class="headerlink" title="解决跨域"></a>解决跨域</h3><p>虽然同源策略是出于安全考虑，但是在使用时会有很多麻烦，所以我们还是会想办法规避它的限制。</p>
+<p>我们可以写一个简单的ajax请求作为请求失败的例子：</p>
+<ul>
+<li>html部分就只有一个按钮，点击按钮会向<code>http://localhost:9000</code>发送一个ajax请求</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">id</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;提交&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="keyword">let</span> oBtn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;submit&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">  oBtn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="title function_">open</span>(<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;http://localhost:9000&quot;</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="title function_">send</span>();</span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span>(xhr.<span class="property">readyState</span> === <span class="number">4</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span>(xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;succeed: &quot;</span> + xhr.<span class="property">responseText</span>);</span></span><br><span class="line"><span class="language-javascript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;failed: &quot;</span> + xhr.<span class="property">status</span>);</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>后端部分是一个简单的服务器，只要接收到请求，就回复一个字符串</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&quot;http&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">end</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">&#125;)</span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">9000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;server running at 9000&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>页面如下：</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fu5s7x3gx5j30dc02h0t0.jpg" alt="image-20180811151447726"></p>
+<p>点击后我们可以在控制台看到报错信息：</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu5s8t1qguj30gw021q3g.jpg" alt="image-20180811151531666"></p>
+<p>那么解决方法有哪些呢？</p>
+<h4 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h4><p>在HTML标签里，有一些标签比如img, script是不受跨域限制的，所以我们可以利用这一点绕过限制。</p>
+<ul>
+<li>前端</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&#x27;btn&#x27;</span>&gt;</span>点我发送ajax请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 1. 创建一个script标签</span></span></span><br><span class="line"><span class="language-javascript">	<span class="keyword">var</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 2. 挂载一个全局函数，我们先给函数一个函数名</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">var</span> callbackName = <span class="string">&#x27;callback_&#x27;</span> + <span class="title class_">Date</span>.<span class="title function_">now</span>();</span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 3. 服务器会返回数据，这个数据会在函数中执行</span></span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">window</span>[callbackName] = <span class="keyword">function</span>(<span class="params">data</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 4. 把函数名传递给服务器</span></span></span><br><span class="line"><span class="language-javascript">  script.<span class="property">scr</span> = <span class="string">&#x27;http://localhost:9000/?callback=&#x27;</span> + callbackName;</span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 5. 把script标签插入到body中</span></span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(script);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>后端</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 引入必要模块</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&quot;http&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>);</span><br><span class="line"><span class="comment">// 2. 创建服务器</span></span><br><span class="line"><span class="keyword">let</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 3. 获取请求的url，解析出函数名</span></span><br><span class="line">  <span class="keyword">let</span> fnName = url.<span class="title function_">parse</span>(req.<span class="property">url</span>, <span class="literal">true</span>).<span class="property">query</span>.<span class="property">callback</span>;</span><br><span class="line">  <span class="comment">// 4. 将函数数据返回给前端</span></span><br><span class="line">  res.<span class="title function_">end</span>(fnName + <span class="string">&#x27;(&quot;hello world)&#x27;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 5. 服务器监听</span></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">9000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;server running at 9000&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>我们做了这样几件事：</p>
+<ol>
+<li><p>我们在前端代码中写了一个<code>script</code>文件的内容，并且插入到body当中，这个文件会和其他<code>script</code>文件一样被执行，这里如果写成平时嵌入的script文件的形式，应该是这样的(我们假设callback函数名是callback_1234）：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://localhost:9000?calback=callback_1234&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="comment">//现在已有一个定义好的全局函数，即callback_1234</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">//现在要执行的内容就是返回回来的data</span></span></span><br><span class="line"><span class="language-javascript">  $&#123;data&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>前端的请求发送到了<code>http://localhost:9000</code>，后端拿到的完整<code>req.url</code>是<code>http://localhost:9000/?callback=callback_1234</code>，我们用<code>url</code>模块解析url，可以获取到<code>query</code>是一个json数据</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span>callback<span class="punctuation">:</span> callback_1234<span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>我们将获取到的<code>callback</code>数据保存为<code>fnName</code>，这样方便我们加入我们想要返回给前端的数据，然后让前端依照这个函数执行</p>
+</li>
+<li><p>我们先尝试只返回给前端一个字符串，我们希望前端能输出这个字符串：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res.<span class="title function_">end</span>(fnName + <span class="string">&quot;(&#x27;hello world&#x27;)&quot;</span>);</span><br><span class="line"><span class="comment">//实际返回给前端的内容就是callback_1234(&quot;hello world&quot;)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>前端收到了这个字符串<code>callback_1234(&quot;hello world&quot;)</code>，前面提到前端已经有这个<code>callback_1234</code>的全局函数了，那么前端要执行的<code>$&#123;data&#125;</code>就是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;http://localhost:9000?calback=callback_1234&quot;</span>&gt;</span><br><span class="line">	<span class="title function_">callback_1234</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>即：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>我们再看一看浏览器的控制台</p>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fu5u1s8n9aj30gn01bt8j.jpg" alt="image-20180811161805232"></p>
+</li>
+</ol>
+<p>这样我们就实现了用jsonp的方法来解决跨域。</p>
+<p>需要注意的是，<code>response.end()</code>方法只能传输字符串或者Buffer，如果我们需要传输其他数据结构，还需要添加解析的步骤：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>点我发ajax请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">var</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">var</span> callbackName = <span class="string">&#x27;callback_&#x27;</span> + <span class="title class_">Date</span>.<span class="title function_">now</span>();</span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">window</span>[callbackName] = <span class="keyword">function</span> (<span class="params">data</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">parse</span>(data)); <span class="comment">//把字符串解析成data</span></span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">  script.<span class="property">src</span> = <span class="string">&#x27;http://localhost:9000?callback=&#x27;</span> + callbackName;</span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(script);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> fnName = url.<span class="title function_">parse</span>(req.<span class="property">url</span>,<span class="literal">true</span>).<span class="property">query</span>.<span class="property">callback</span>;</span><br><span class="line">  <span class="keyword">let</span> data = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123;<span class="attr">msg</span>:<span class="string">&#x27;hello world&#x27;</span>&#125;); <span class="comment">//json解析成字符串</span></span><br><span class="line">  <span class="keyword">let</span> str = fnName + <span class="string">`(&#x27;<span class="subst">$&#123;data&#125;</span>&#x27;)`</span>;      </span><br><span class="line">  res.<span class="title function_">end</span>(str);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">9000</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;server running at 9000&quot;</span>); </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fu5u99xcd6j30h70243yi.jpg" alt="image-20180811162517851"></p>
+<blockquote>
+<p>jsonp总结：</p>
+<ol>
+<li>前端代码<ul>
+<li>创建<strong>script标签</strong></li>
+<li>添加<strong>全局函数</strong></li>
+<li><strong>传递函数名</strong>到后端</li>
+</ul>
+</li>
+<li>后端代码<ul>
+<li>获取<strong>响应数据</strong></li>
+<li>返回<strong>函数名（“数据”）</strong>的<strong>字符串</strong>给前端script执行</li>
+</ul>
+</li>
+</ol>
+<p>特征：</p>
+<ul>
+<li>jsonp的请求方式是GET</li>
+<li>没有兼容性问题</li>
+</ul>
+</blockquote>
+<h4 id="CORS（跨域资源共享）"><a href="#CORS（跨域资源共享）" class="headerlink" title="CORS（跨域资源共享）"></a>CORS（跨域资源共享）</h4><p>CORS，跨域资源共享（Cross-Origin Resource Sharing)， 是一个W3C标准。它允许浏览器向跨源服务器发出<code>XMLHttpRequest</code>请求，从而克服了AJAX只能同源使用的限制。</p>
+<p>完成CORS通信需要浏览器和服务器同时支持，目前浏览器都支持该功能，IE浏览器不能低于IE10。服务器则需要实现CORS接口。</p>
+<h5 id="CORS的两种请求"><a href="#CORS的两种请求" class="headerlink" title="CORS的两种请求"></a>CORS的两种请求</h5><p>浏览器将CORS请求分为两种：简单请求和非简单请求。</p>
+<ol>
+<li><p><strong>简单请求</strong></p>
+<p>满足：</p>
+<ul>
+<li>方法： HEAD &#x2F; GET &#x2F; POST</li>
+<li>HTTP头信息不超出以下几种字段<ul>
+<li>Accept</li>
+<li>Accept-Language</li>
+<li>Content-Language</li>
+<li>Last-Event-ID</li>
+<li>Content-Type(只接受以下3个值)<ul>
+<li>application&#x2F;x-www-form-urlencoded</li>
+<li>multipart&#x2F;form-data</li>
+<li>text&#x2F;plain</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu5w999kplj31kw0ffgoy.jpg" alt="image-20180811173426777"></p>
+<p>通信条件：</p>
+<ul>
+<li>服务器设置的<code>Access-Control-Allow-Origin</code>中包含CORS请求，这样有两种方式，一个是设置成CORS请求中的<code>origin</code>，还有一种是设置成<code>*</code>，即接受任意域名的请求；</li>
+<li><code>Access-Control-Allow-Credentials</code>设置一个布尔值，表示是否允许浏览器发送Cookie给服务器。设置成<code>true</code>表示服务器明确允许浏览器把Cookie放在请求中一起发给服务器。事实上，这个值也只能设为<code>true</code>，服务器如果不需要cookie，删除该字段即可；</li>
+<li>CORS请求默认不发送Cookie和HTTP认证信息，所以服务器即使设置<code>Access-Control-Allow-Credentials: true</code>也不表示浏览器就会发送cookie，因为还需要开发者在AJAX请求中打开<code>withCredentials</code>属性，将其设置为<code>true</code></li>
+<li>需要注意，如果要发送cookie,<code>Access-Control-Allow-Origin</code>就不能设置为<code>*</code>，必须指定请求中的域名（如果所有域名都可以获取cookie，那也是挺危险的）</li>
+<li>同样地，cookie也会遵循同源策略，只会将设置为服务器域名的cookie发送给服务器，其他域名下的cookie不会发送</li>
+<li><code>Access-Control-Expose-Headers</code>用来指定特定字段</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>点我发ajax请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">let</span> oBtn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">		oBtn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">let</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span></span><br><span class="line"><span class="language-javascript">			xhr.<span class="title function_">open</span>(<span class="string">&quot;get&quot;</span>, <span class="string">&quot;http://localhost:9000&quot;</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="language-javascript">			xhr.<span class="title function_">send</span>();</span></span><br><span class="line"><span class="language-javascript">			xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">if</span>(xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;succeed: &quot;</span> + xhr.<span class="property">responseText</span>);</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">		&#125;</span></span><br><span class="line"><span class="language-javascript">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>, <span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Access-Control-Allow-Credentials&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line">  res.<span class="title function_">end</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">9000</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;server running at 9000&quot;</span>); </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu61digye0j30h001ymx7.jpg" alt="image-20180811203127014"></p>
+<ol start="2">
+<li><p><strong>非简单请求</strong></p>
+<p>非简单请求即不满足上面简单请求的两个要求，一般有三种情况：</p>
+<ul>
+<li>请求方法是<code>GET</code>或<code>POST</code>之外的方法，如<code>PUT</code>或<code>DELETE</code></li>
+<li>请求头里包含自定义头</li>
+<li><code>Content-Type</code>是<code>application/json</code></li>
+</ul>
+<p>非简单请求会在正式通信前请示服务器，发送一个OPTIONS预检请求（preflight），询问服务器当前页面所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有服务器许可之后，浏览器才会发出正式的<code>XMLHttpRequest</code>请求，否则就会报错。</p>
+<p>预检请求的请求方法是<code>OPTIONS</code>，表明这个请求是用来询问的。</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu62rws290j30ma07cdi3.jpg" alt="image-20180811211959958"></p>
+<p>我们还是用上面的例子做演示：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>点我发ajax请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">let</span> oBtn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">  oBtn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="title function_">open</span>(<span class="string">&quot;get&quot;</span>, <span class="string">&quot;http://localhost:9000&quot;</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="title function_">send</span>();</span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span>(xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;succeed: &quot;</span> + xhr.<span class="property">responseText</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>, <span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Access-Control-Allow-Credentials&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line">  res.<span class="title function_">end</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">9000</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;server running at 9000&quot;</span>); </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>第一个触发点（get&#x2F;post方法之外）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//xhr.open(&quot;get&quot;, &quot;http://localhost:9000&quot;, true);</span></span><br><span class="line">xhr.<span class="title function_">open</span>(<span class="string">&quot;put&quot;</span>, <span class="string">&quot;http://localhost:9000&quot;</span>, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62l7jztxj30a90290su.jpg" alt="image-20180811211333327"></p>
+</li>
+<li><p>第二个触发点（加入自定义头）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xhr.<span class="title function_">open</span>(<span class="string">&quot;get&quot;</span>, <span class="string">&quot;http://localhost:9000&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&#x27;my-token&#x27;</span>, <span class="string">&#x27;abc&#x27;</span>);</span><br><span class="line">xhr.<span class="title function_">send</span>();</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu62ngkp80j30ab01z3yn.jpg" alt="image-20180811211543137"></p>
+</li>
+<li><p>第三个触发点（<code>Content-Type</code>是<code>application/json</code>)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xhr.<span class="title function_">open</span>(<span class="string">&quot;get&quot;</span>, <span class="string">&quot;http://localhost:9000&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;application/json&#x27;</span>);</span><br><span class="line">xhr.<span class="title function_">send</span>();</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62pds4g4j30a302dt8v.jpg" alt="image-20180811211734111"></p>
+</li>
+</ol>
+<p>我们可以从报错的信息里看到，预检请求的头信息中有两个重要的特殊字段：</p>
+<ul>
+<li><code>Access-Control-Request-Methods</code>：用来列出CORS请求用到哪些HTTP方法</li>
+<li><code>Access-Control-Request-Headers</code>：指定CORS请求会额外发送的头字段信息</li>
+</ul>
+<p>我们在例子中加入这两个设置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> oBtn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>);</span><br><span class="line">oBtn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">  xhr.<span class="title function_">open</span>(<span class="string">&quot;get&quot;</span>, <span class="string">&quot;http://localhost:9000&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">  xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&#x27;my-token&#x27;</span>, <span class="string">&#x27;abc&#x27;</span>)</span><br><span class="line">  xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;application/json&#x27;</span>)</span><br><span class="line">  xhr.<span class="title function_">send</span>();</span><br><span class="line">  xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;succeed: &quot;</span> + xhr.<span class="property">responseText</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>, <span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Access-Control-Allow-Credentials&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Access-Control-Allow-Methods&#x27;</span>, <span class="string">&#x27;GET, POST, PUT, DELETE&#x27;</span>);</span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Access-Control-Allow-Headers&#x27;</span>, <span class="string">&#x27;my-token, content-type&#x27;</span>)</span><br><span class="line">  res.<span class="title function_">end</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">9000</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;server running at 9000&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fu62tp6s8zj30gm019jr8.jpg" alt="image-20180811212142934"></p>
+<p>这时我们可以在NETWORK里看到两次请求：</p>
+<ul>
+<li><p>预检请求</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62x0co2sj30cq08mgmq.jpg" alt="image-20180811212451993"></p>
+</li>
+<li><p><code>XMLHttpRequest</code>请求</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu62y5yo9tj30bp08mab4.jpg" alt="image-20180811212600259"></p>
+</li>
+</ul>
+</li>
+</ol>
+<p>总结：</p>
+<ul>
+<li>CORS需要在服务器端编写代码，浏览器端正常发送ajax请求</li>
+<li>和JSONP相比，CORS支持所有类型的HTTP请求，JSONP的优势则在于支持老式浏览器，以及可以向不支持CORS的网站请求数据</li>
+</ul>
+<h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h4><p>服务器本身不受浏览器同源策略的影响，所以我们可以通过代理来实现跨域数据请求。</p>
+<blockquote>
+<p><strong>核心思路：</strong></p>
+<p>跨域的本质是浏览器向服务器请求数据，浏览器和服务器不同源，导致请求被拒。那么如果我们能让服务器代为发送请求，再由服务器把数据返回给浏览器的话，就可以规避限制了。所以我们实现代理要做的就是：</p>
+<ol>
+<li>浏览器将需要发送的请求告诉服务器（而不是自己发送请求）</li>
+<li>服务器接收到浏览器告诉自己的请求要求并替浏览器发送请求</li>
+<li>服务器获取到请求返回的数据，再回传给浏览器</li>
+</ol>
+</blockquote>
+<h5 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h5><p>我们首先需要配置nginx。</p>
+<ol>
+<li><p>下载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>nginx安装后，我们可以在浏览器访问，默认端口是8080，在<code>http://localhost:8080</code>我们会看到这样的界面：</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu666k0ic8j30id074dgm.jpg" alt="image-20180811231751868"></p>
+<p>接着需要配置，我在mac上的配置文件路径是<code>/usr/local/etc/nginx</code>，找到nginx.config文件。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">location /apis &#123;</span><br><span class="line">    	    rewrite  ^/apis/(.*)$ /$<span class="number">1</span> <span class="keyword">break</span>; <span class="comment">#重写URL</span></span><br><span class="line">            include  uwsgi_params; <span class="comment"># 携带请求参数</span></span><br><span class="line">            proxy_pass   http://localhost:<span class="number">8888</span>;</span><br><span class="line">            <span class="comment"># 服务器回写的cookie的domain是 代理服务器,</span></span><br><span class="line">            <span class="comment"># 如此操作可以修改cookie的domain为 浏览器 </span></span><br><span class="line">            <span class="comment"># 浏览器cookie -&gt; 代理服务器cookie -&gt; 自动到目标服务器</span></span><br><span class="line">            proxy_cookie_domain domino_server nginx_server;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>配置好之后，我们可以开始写代理服务器的代码。这里我们拿豆瓣api来做例子。</p>
+<ul>
+<li><p>豆瓣api接口：<a target="_blank" rel="noopener" href="https://api.douban.com/">https://api.douban.com</a></p>
+</li>
+<li><p>正在热映： <code>/v2/movie/in_theaters</code></p>
+</li>
+</ul>
+<p>我们请求正在热映的电影信息就是输入以上两部分地址，直接在地址输入<code>https://api.douban.com/v2/movie/in_theaters</code>，可以看到：</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu66ghc7v6j30qp0li42f.jpg" alt="image-20180811232724024"></p>
+<p>（有可能会是写成一堆的json数据，我安装了插件，所以信息美化了）</p>
+<p>确认好地址无误后，我们在html页面里用XMLHttpRequest将地址发送给服务器。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>点我发本服务器的node代理<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">let</span> oBtn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">  oBtn.<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 发请求</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 将请求地址放在url中发送给服务器</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 因为要区分登录和发送请求，这里我们用&#x27;/proxy&#x27;来区分</span></span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="title function_">open</span>(<span class="string">&#x27;get&#x27;</span>,<span class="string">&#x27;/proxy?url=http://api.douban.com/v2/movie/in_theaters&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="title function_">send</span>();</span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span>(xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">alert</span>(xhr.<span class="property">responseText</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 引入模块</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="comment">// 这里需要用到一个新的插件request</span></span><br><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">&#x27;request&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 创建服务器</span></span><br><span class="line"><span class="keyword">let</span> server = http.<span class="title function_">createServer</span>();</span><br><span class="line"><span class="comment">// 3. 为服务器接受请求绑定事件</span></span><br><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 判断请求和登录</span></span><br><span class="line">  <span class="keyword">if</span>(req.<span class="property">url</span> === <span class="string">&#x27;/&#x27;</span>) &#123;</span><br><span class="line">    <span class="comment">// 如果是访问localhost:8888就返回html页面</span></span><br><span class="line">    <span class="comment">// 注意这里要用同步，否则会直接读取nginx的index页面</span></span><br><span class="line">    <span class="keyword">let</span> data = fs.<span class="title function_">readFileSync</span>(<span class="string">&#x27;./proxy.html&#x27;</span>);</span><br><span class="line">    res.<span class="title function_">end</span>(data);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span>(req.<span class="property">url</span>.<span class="title function_">startsWith</span>(<span class="string">&#x27;/proxy&#x27;</span>)) &#123;</span><br><span class="line">    <span class="comment">// 如果发送的是请求(以&#x27;/proxy‘开头)</span></span><br><span class="line">    <span class="comment">// 解析出请求地址 req.query是&#123;url: 豆瓣api地址&#125;</span></span><br><span class="line">    <span class="keyword">let</span> obj = url.<span class="title function_">parse</span>(req.<span class="property">url</span>, <span class="literal">true</span>);</span><br><span class="line">    <span class="comment">// 新建对象x 它是一个请求</span></span><br><span class="line">    <span class="keyword">let</span> x = <span class="title function_">request</span>(obj.<span class="property">query</span>.<span class="property">url</span>);</span><br><span class="line">    <span class="comment">// 将req中的数据通过“管道”流给x</span></span><br><span class="line">    req.<span class="title function_">pipe</span>(x);</span><br><span class="line">    <span class="comment">// 返回给x的数据通过“管道”流给res用于返回给浏览器</span></span><br><span class="line">    x.<span class="title function_">pipe</span>(res);  </span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">8888</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;server running at 8888&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu67ntgwh1j308003ejrk.jpg" alt="image-20180812000903565"></p>
+<p>点击按钮会返回豆瓣数据：</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fu67ov99a5j30d208ojt4.jpg" alt="image-20180812001003822"></p>
+<p>我们可以解析一下这些步骤</p>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fu67v5inboj317u0oin18.jpg" alt="image-20180812001606364"></p>
+<p>登录的时候，直接到<code>localhost:8888</code>页面，服务器解析到url是<code>/</code>，于是把proxy.html页面的代码返回给浏览器，浏览器解析出来，呈现在页面上。</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdgy1fu680t7tv8j30l00d10tm.jpg" alt="image-20180812002132380"></p>
+<p>请求数据则是浏览器只把请求内容告诉服务器，服务器代为请求。这里可以把前端代码中的豆瓣api地址部分替换成任何其他我们想要请求的数据地址。</p>
+<p>以上就是常见的解决跨域的三种方法：</p>
+<ul>
+<li>JSONP</li>
+<li>CORS</li>
+<li>代理</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/08/10/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B015-%E6%90%9E%E5%AE%9A%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" data-id="clnpqd44t00p0p1200htf2ufo" data-title="node.js学习笔记: 搞定跨域问题" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/08/12/Nikkkki%E7%9A%84%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB003/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Nikkkki的一周分享003
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/10/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B014:%20req-header%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%BF%A1%E6%81%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node.js学习笔记14:读写请求/响应头体</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/FreeCodeCamp/">FreeCodeCamp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jounal/">Jounal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/">习题集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%A9%E5%99%A8/">利器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/">工作备忘</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/">知识管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/">跟着大佬学编程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2020/" rel="tag">2020</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOM/" rel="tag">BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eloquent-JavaScript/" rel="tag">Eloquent JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeCodeCamp/" rel="tag">FreeCodeCamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fuji-Rock-Festival/" rel="tag">Fuji Rock Festival</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hooks/" rel="tag">Hooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/" rel="tag">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Course/" rel="tag">Learning, Course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OIS/" rel="tag">OIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OKR/" rel="tag">OKR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/" rel="tag">OOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading/" rel="tag">Reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/" rel="tag">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/" rel="tag">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/" rel="tag">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/" rel="tag">UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UX/" rel="tag">UX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Report/" rel="tag">Weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Reports/" rel="tag">Weekly Reports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Summary/" rel="tag">Weekly Summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design/" rel="tag">ant design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design-pro/" rel="tag">ant design pro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/art-template/" rel="tag">art-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/auth/" rel="tag">auth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/autojump/" rel="tag">autojump</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/box-model/" rel="tag">box model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codewars/" rel="tag">codewars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejs/" rel="tag">ejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/event/" rel="tag">event</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/" rel="tag">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex/" rel="tag">flex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/float/" rel="tag">float</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freecodecamp/" rel="tag">freecodecamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grid/" rel="tag">grid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/" rel="tag">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jade/" rel="tag">jade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/journal/" rel="tag">journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jwt/" rel="tag">jwt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/" rel="tag">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/layout/" rel="tag">layout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multer/" rel="tag">multer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ndoe-js/" rel="tag">ndoe.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodemon/" rel="tag">nodemon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nrm/" rel="tag">nrm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/" rel="tag">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/responsive/" rel="tag">responsive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/" rel="tag">terminal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/" rel="tag">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/useEffect/" rel="tag">useEffect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-Report/" rel="tag">weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" rel="tag">一周分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%9E%8B/" rel="tag">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" rel="tag">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" rel="tag">年度计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86/" rel="tag">心理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E8%83%BD/" rel="tag">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" rel="tag">效率提升</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E6%B8%B8/" rel="tag">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%AC/" rel="tag">日本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" rel="tag">本地存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" rel="tag">模板引擎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="tag">深拷贝浅拷贝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" rel="tag">知识管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" rel="tag">线程 进程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" rel="tag">翻译， HTTPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" rel="tag">软技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" rel="tag">选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" rel="tag">重装电脑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2020/" style="font-size: 10px;">2020</a> <a href="/tags/Algorithm/" style="font-size: 10.77px;">Algorithm</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 11.54px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 16.92px;">ES6</a> <a href="/tags/Eloquent-JavaScript/" style="font-size: 10px;">Eloquent JavaScript</a> <a href="/tags/FreeCodeCamp/" style="font-size: 10px;">FreeCodeCamp</a> <a href="/tags/Fuji-Rock-Festival/" style="font-size: 10px;">Fuji Rock Festival</a> <a href="/tags/HTML/" style="font-size: 12.31px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.54px;">HTTP</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/IP/" style="font-size: 11.54px;">IP</a> <a href="/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/tags/JavaScript/" style="font-size: 19.23px;">JavaScript</a> <a href="/tags/Learning-Course/" style="font-size: 10px;">Learning, Course</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/OIS/" style="font-size: 10px;">OIS</a> <a href="/tags/OKR/" style="font-size: 10.77px;">OKR</a> <a href="/tags/OOP/" style="font-size: 11.54px;">OOP</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/React/" style="font-size: 13.08px;">React</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/TCP/" style="font-size: 11.54px;">TCP</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UX/" style="font-size: 10px;">UX</a> <a href="/tags/Weekly-Report/" style="font-size: 18.46px;">Weekly Report</a> <a href="/tags/Weekly-Reports/" style="font-size: 10.77px;">Weekly Reports</a> <a href="/tags/Weekly-Summary/" style="font-size: 10px;">Weekly Summary</a> <a href="/tags/ant-design/" style="font-size: 10px;">ant design</a> <a href="/tags/ant-design-pro/" style="font-size: 10px;">ant design pro</a> <a href="/tags/art-template/" style="font-size: 10px;">art-template</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/box-model/" style="font-size: 10px;">box model</a> <a href="/tags/chrome/" style="font-size: 10.77px;">chrome</a> <a href="/tags/codewars/" style="font-size: 10px;">codewars</a> <a href="/tags/computer-science/" style="font-size: 10.77px;">computer science</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/css/" style="font-size: 16.15px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/event/" style="font-size: 10px;">event</a> <a href="/tags/express/" style="font-size: 13.08px;">express</a> <a href="/tags/flex/" style="font-size: 10.77px;">flex</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/freecodecamp/" style="font-size: 17.69px;">freecodecamp</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.77px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/journal/" style="font-size: 10px;">journal</a> <a href="/tags/jwt/" style="font-size: 11.54px;">jwt</a> <a href="/tags/koa/" style="font-size: 14.62px;">koa</a> <a href="/tags/layout/" style="font-size: 10px;">layout</a> <a href="/tags/mac/" style="font-size: 10.77px;">mac</a> <a href="/tags/multer/" style="font-size: 10px;">multer</a> <a href="/tags/ndoe-js/" style="font-size: 10px;">ndoe.js</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/nodemon/" style="font-size: 10px;">nodemon</a> <a href="/tags/npm/" style="font-size: 10.77px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/responsive/" style="font-size: 10px;">responsive</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/token/" style="font-size: 11.54px;">token</a> <a href="/tags/translation/" style="font-size: 10px;">translation</a> <a href="/tags/useEffect/" style="font-size: 10px;">useEffect</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/weekly-Report/" style="font-size: 10.77px;">weekly Report</a> <a href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" style="font-size: 15.38px;">一周分享</a> <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 12.31px;">中间件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%8E%9F%E5%9E%8B/" style="font-size: 10.77px;">原型</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" style="font-size: 10px;">工作效率</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" style="font-size: 10px;">年度计划</a> <a href="/tags/%E5%BF%83%E7%90%86/" style="font-size: 10px;">心理</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 10px;">心理学</a> <a href="/tags/%E6%8A%80%E8%83%BD/" style="font-size: 10px;">技能</a> <a href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" style="font-size: 10px;">效率提升</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">数据类型</a> <a href="/tags/%E6%97%85%E6%B8%B8/" style="font-size: 10px;">旅游</a> <a href="/tags/%E6%97%A5%E6%9C%AC/" style="font-size: 10px;">日本</a> <a href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" style="font-size: 10px;">本地存储</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" style="font-size: 11.54px;">模板引擎</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10.77px;">浏览器</a> <a href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" style="font-size: 10px;">深拷贝浅拷贝</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" style="font-size: 11.54px;">知识管理</a> <a href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" style="font-size: 10.77px;">线程 进程</a> <a href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">网易云音乐</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 12.31px;">翻译</a> <a href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" style="font-size: 10px;">翻译， HTTPS</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 13.85px;">读书笔记</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 10px;">负载均衡</a> <a href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" style="font-size: 10px;">软技能</a> <a href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" style="font-size: 10px;">选择器</a> <a href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" style="font-size: 10px;">重装电脑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">代码注释规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/">代码命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/06/Week-49/">Week 49</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/29/Week-48/">Week 48</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/01/Week-44/">Week 44</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

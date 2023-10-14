@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>本地存储方式小结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="浏览器最原始的本地存储方式是cookies，后来HTML5提供了新的客户端存储数据的方法：localStorage和sessionStorage，以及数据库形式Web SQL和IndexedDB。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="本地存储方式小结">
+<meta property="og:url" content="http://example.com/2018/09/06/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%B0%8F%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="浏览器最原始的本地存储方式是cookies，后来HTML5提供了新的客户端存储数据的方法：localStorage和sessionStorage，以及数据库形式Web SQL和IndexedDB。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fv12qw0eolj30ji0cutb2.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fv12qz4fk8j30jk0ca40j.jpg">
+<meta property="article:published_time" content="2018-09-06T12:24:19.000Z">
+<meta property="article:modified_time" content="2018-09-07T09:36:42.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="浏览器">
+<meta property="article:tag" content="本地存储">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fv12qw0eolj30ji0cutb2.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="posts-本地存储方式小结" class="h-entry article article-type-posts" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/09/06/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2018-09-06T12:24:19.000Z" itemprop="datePublished">2018-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      本地存储方式小结
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>浏览器最原始的本地存储方式是<code>cookies</code>，后来HTML5提供了新的客户端存储数据的方法：<code>localStorage</code>和<code>sessionStorage</code>，以及数据库形式<code>Web SQL</code>和<code>IndexedDB</code>。</p>
+<span id="more"></span>
+
+<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p><code>cookie</code>是最原始的本地存储方式，它起到让服务器辨识浏览器身份的作用。</p>
+<p>由于HTTP协议是无状态的，即用户在关闭网页的时候，浏览器和服务器的连接就断开了，用户下次登录同一网页时，服务器无法辨识用户的身份。这会带来不好的用户体验。为了解决这一问题，<code>cookie</code>用来存储用户的身份Id，下一次访问时，浏览器会在请求头中携带<code>cookie</code>，这样服务器就能够通过<code>cookie</code>来得知用户身份，同时根据<code>cookie</code>来找到服务器上存储的用户的相关信息。</p>
+<p><code>cookie</code>是一段纯文本，数据以键值对的形式保存，每次浏览器发送请求都会携带<code>cookie</code>。由此可以想象，如果<code>cookie</code>存储大量的数据，会导致请求非常的缓慢，占用大量网络资源。而如果<code>cookie</code>只用来存储用户身份信息就比较合适。</p>
+<p>事实上，浏览器的确对<code>cookie</code>的大小作了规定，不同的浏览器允许的<code>cookie</code>大小不同，但一般都在4kb左右。</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>不同浏览器存放<code>cookie</code>的位置不一样，互相不通用</li>
+<li><code>cookie</code>的存储是以域名的形式区分的，不同域下存储的<code>cookie</code>是独立的</li>
+<li>设置的<code>cookie</code>对当前域和它的子域都有效</li>
+<li>一个域名下存放的<code>cookie</code>个数是有限的，一般为20个</li>
+</ul>
+<h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><p><code>cookie</code>的值可以读取和设置，也可以删除。</p>
+<h5 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h5><ul>
+<li>浏览器可以直接在控制台中通过<code>document.cookie</code>读取当前域的<code>cookie</code></li>
+<li>服务端如node.js可以通过<code>request.cookies</code>来读取（可能需要中间件解析）</li>
+</ul>
+<h5 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h5><ul>
+<li><p>浏览器直接在控制台中通过<code>document.cookie=&quot;xxx=xxx&quot;</code>的形式来设置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span>=<span class="string">&quot;name=value&quot;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span>=<span class="string">&quot;name=valueldomain=www.baidu.com&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>浏览器可以设置<code>cookie</code>的<code>expires</code>,<code>domain</code>,<code>path</code>,<code>secure</code>等属性</p>
+</li>
+<li><p>服务器端可以通过<code>response</code>的<code>Set-Cookie</code>方法来设置</p>
+</li>
+</ul>
+<h5 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h5><p>修改<code>cookie</code>只需要按照设置<code>cookie</code>的方法重新赋值就行了。</p>
+<h5 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h5><p>把<code>cookie</code>的过期时间设置成一个过去的时间即可。</p>
+<hr>
+<h3 id="HTML-Web-Storage"><a href="#HTML-Web-Storage" class="headerlink" title="HTML Web Storage"></a>HTML Web Storage</h3><blockquote>
+<p><em>HTML web storage, better than cookies.</em></p>
+</blockquote>
+<p>HTML5之前，页面的数据会存储在cookie中，并在每一次服务器请求中携带发送。HTML5提出了新的本地存储方式，它们更加安全，允许更大量的数据存储到本地，但不会影响到页面性能。</p>
+<p>不同于<code>cookies</code>，新的存储方式提供<strong>至少5MB的存储空间</strong>，而且存储的信息<strong>不会发送给服务器</strong>。</p>
+<p>网页存储是<strong>按源（域和协议）来区分的</strong>，所有同源的页面都能够存储和获取相同的数据。</p>
+<p>HTML网页存储在浏览器端提供了两个用与存储数据的对象：</p>
+<ul>
+<li><code>window.localStorage</code> 用来存储不会过期的数据</li>
+<li><code>window.sessionStorage</code> 用来存储会话数据，即当浏览器标签页关闭时，会话数据会被清空</li>
+</ul>
+<p>使用之前，我们可以先检测浏览器是否支持<code>localStorage</code>和<code>sessionStorage</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="title class_">Storage</span> !== <span class="string">&quot;undefined&quot;</span>)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">localStorage</span>);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">sessionStorage</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Web storage not suppoerted&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>比如我使用之前做过的一个弹幕项目的页面来测试，可以看见<code>localStorage</code>里是存储了数据的：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fv12qw0eolj30ji0cutb2.jpg" alt="image-20180907103004447"></p>
+<p>下面是<code>localStorage</code>的方法。</p>
+<p><code>sessionStorage</code>里没有数据，但同样有一些方法：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fv12qz4fk8j30jk0ca40j.jpg" alt="image-20180907103042541"></p>
+<h4 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a><code>localStorage</code></h4><p><code>localStorage</code>是HTML5的新方法，不过IE8及以上浏览器都兼容。</p>
+<p><code>localStorage</code>用来<strong>存储没有过期时间的数据</strong>，它也是<strong>以键&#x2F;值对的形式存储的字符串</strong>。当浏览器关闭时，数据不会被删除，下一次打开浏览器时依然能够使用（除非手动删除数据，否则数据永不过期）。</p>
+<h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><ul>
+<li><p><code>localStorage.setItem(&quot;name&quot;, &quot;value&quot;);</code> 设置</p>
+</li>
+<li><p><code>localStorage.getItem(&quot;name&quot;);</code> 读取</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// store</span></span><br><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&quot;lastname&quot;</span>, <span class="string">&quot;Smith&quot;</span>);</span><br><span class="line"><span class="comment">// Retrieve</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;result&quot;</span>).<span class="property">innerHTML</span> = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&quot;lastname&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>  <code>localStorage</code>的值也可以和<code>cookies</code>一样直接设置：</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// store</span></span><br><span class="line"><span class="variable language_">localStorage</span>.<span class="property">lastname</span> = <span class="string">&quot;Smith&quot;</span>;</span><br><span class="line"><span class="comment">// retrieve</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;result&quot;</span>).<span class="property">innerHTML</span> = <span class="variable language_">localStorage</span>.<span class="property">lastname</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>localStorage.removeItem(&quot;name&quot;);</code> 删除</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">removeItem</span>(<span class="string">&quot;lastname&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>localStorage.clear()</code> 清空</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>注意：</strong></p>
+<ul>
+<li><code>localStorage</code>的存储形式是字符串，但它存储的内容不限于字符串，也可以是数组、图片、JSON、样式、脚本…（只要是能序列化成字符串的内容都可以存储）</li>
+<li>在本页面操作<code>localStorage</code>不会触发<code>storage</code>事件，但是别的页面会触发<code>storage</code>事件</li>
+<li>IE9的<code>localStorage</code>不支持本地文件，需要将项目部署到服务器才能支持</li>
+</ul>
+</blockquote>
+<h4 id="sessionStorage"><a href="#sessionStorage" class="headerlink" title="sessionStorage"></a><code>sessionStorage</code></h4><p><code>sessionStorage</code>和<code>localStorage</code>类似，区别在于它只用来存储会话的数据，当会话结束时（浏览器页面关闭时），数据就会被删除掉，如果页面没有关闭，此时刷新页面或进入同源的另一个页面，数据仍然存在。</p>
+<p>需要注意的是，打开一个新的标签或窗口时会在顶级浏览上下文中初始化一个新的会话，这点和<code>session cookies</code>的运行机制是不一样的。</p>
+<p><code>sessionStorage</code>的使用方法和<code>localStorage</code>一致。</p>
+<hr>
+<h3 id="Web-SQL"><a href="#Web-SQL" class="headerlink" title="Web SQL"></a>Web SQL</h3><p>Web SQL是浏览器端的关系数据库，它并不是HTML5规范的一部分，而是一个独立的规范，通过SQL语句访问数据库。但在2010年W3C宣布放弃更新Web SQL。</p>
+<p>尽管不会再更新了，但还是有一部分浏览器支持Web SQL，我们简单看一看它的使用方法，在遇到使用Web SQL的时候不至于完全不了解。</p>
+<h4 id="支持情况"><a href="#支持情况" class="headerlink" title="支持情况"></a>支持情况</h4><p>目前，最新版的Safari, Chrome和Opeara都支持Web SQL。</p>
+<h4 id="核心方法"><a href="#核心方法" class="headerlink" title="核心方法"></a>核心方法</h4><p>Web SQL有三大核心方法：</p>
+<ul>
+<li><code>openDatabase</code> - 创建一个新的数据库对象（可以通过使用已有数据库，也可以创建新数据库）</li>
+<li><code>transaction</code> - 这个方法允许我们创建一个事务，基于事务来提交或者回滚</li>
+<li><code>executeSql</code> - 执行实际的SQL请求</li>
+</ul>
+<h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> db = <span class="title function_">openDatabase</span>(<span class="string">&quot;mydb&quot;</span>, <span class="string">&quot;1.0&quot;</span>, <span class="string">&quot;Test DB&quot;</span>, <span class="number">2</span>*<span class="number">1024</span>*<span class="number">1024</span>, fn);</span><br><span class="line"><span class="comment">// openDatabase方法对应的5个参数分别是：数据库名称、版本号、描述文本、数据库大小、回调函数</span></span><br></pre></td></tr></table></figure>
+
+<p>数据库被创建完毕时，第5个参数对应的回调函数会被触发，如果没有设置第五个参数，数据库也能够被创建。</p>
+<h4 id="执行请求"><a href="#执行请求" class="headerlink" title="执行请求"></a>执行请求</h4><p><code>database.transaction()</code>函数用来执行请求。这个函数接受一个函数参数，用来指明需要执行的内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> db = <span class="title function_">openDatabase</span>(<span class="string">&quot;mydb&quot;</span>, <span class="string">&quot;1.0&quot;</span>, <span class="string">&quot;Test DB&quot;</span>, <span class="number">2</span>*<span class="number">1024</span>*<span class="number">1024</span>);</span><br><span class="line"></span><br><span class="line">db.<span class="title function_">transaction</span>(<span class="keyword">function</span>(<span class="params">tx</span>) &#123;</span><br><span class="line">  tx.<span class="title function_">executeSql</span>(<span class="string">&#x27;CREATE TABLE IF NOT EXISTS LOGS (id unique, log)&#x27;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>上述代码会在’mydb’数据库中创建一个名叫LOGS的表。</p>
+<h4 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h4><p>我们可以通过简单的SQL语句为数据库插入数据：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> db = <span class="title function_">openDatabase</span>(<span class="string">&quot;mydb&quot;</span>, <span class="string">&quot;1.0&quot;</span>, <span class="string">&quot;Test DB&quot;</span>, <span class="number">2</span>*<span class="number">1024</span>*<span class="number">1024</span>);</span><br><span class="line"></span><br><span class="line">db.<span class="title function_">transaction</span>(<span class="keyword">function</span>(<span class="params">tx</span>) &#123;</span><br><span class="line">  tx.<span class="title function_">executeSql</span>(<span class="string">&quot;CREATE TABLE IF NOT EXISTS LOGS(id unique, log)&quot;</span>);</span><br><span class="line">  tx.<span class="title function_">executeSql</span>(<span class="string">&quot;INSERT INTO LOGS (id, log) VALUES (1, &#x27;foobar&#x27;)&quot;</span>);</span><br><span class="line">  tx.<span class="title function_">executeSql</span>(<span class="string">&quot;INSERT INTO LOGS (id, log) VALUES (2, &#x27;logmsg&#x27;)&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>我们也可以通过动态数据来操作数据库：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> db = <span class="title function_">openDatabase</span>(<span class="string">&quot;mydb&quot;</span>, <span class="string">&quot;1.0&quot;</span>, <span class="string">&quot;Test DB&quot;</span>, <span class="number">2</span>*<span class="number">1024</span>*<span class="number">1024</span>);</span><br><span class="line"></span><br><span class="line">db.<span class="title function_">transaction</span>(<span class="keyword">function</span>(<span class="params">tx</span>) &#123;</span><br><span class="line">  tx.<span class="title function_">executeSql</span>(<span class="string">&quot;CREATE TABLE IF NOT EXISTS LOGS(id unique, log)&quot;</span>);</span><br><span class="line">  tx.<span class="title function_">executeSql</span>(<span class="string">&quot;INSERT INTO LOGS (id, log) VALUES (?, ?)&quot;</span>, [e_id, e_log]);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>这里的<code>e_id</code>和<code>e_log</code>都是外部变量，<code>executeSql</code>方法会遍历数组变量中的参数赋给<code>?</code>。</p>
+<h4 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">db.<span class="title function_">transaction</span>(<span class="keyword">function</span>(<span class="params">tx</span>) &#123;</span><br><span class="line">  tx.<span class="title function_">executeSql</span>(<span class="string">&quot;SELECT * FROM LOGS&quot;</span>, [], <span class="keyword">function</span>(<span class="params">tx, results</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> len = results.<span class="property">rows</span>.<span class="property">length</span>, i;</span><br><span class="line">    msg = <span class="string">&quot;&lt;p&gt;Found rows: &quot;</span> + len + <span class="string">&quot;&lt;/p&gt;&quot;</span>;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;#status&quot;</span>).<span class="property">innerHTML</span> += msg;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; len; i ++)&#123;</span><br><span class="line">      <span class="title function_">alert</span>(results.<span class="property">rows</span>.<span class="title function_">item</span>(i).<span class="property">log</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="literal">null</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h3 id="IndexedDB"><a href="#IndexedDB" class="headerlink" title="IndexedDB"></a>IndexedDB</h3><p>IndexedDB是一个在用户端存储包括文件和二进制数据在内的结构化数据的低级API。它使用索引来实现高性能的数据搜索。由于网页存储对于较少量的数据存储有用，但对于更大量的结构化数据来说不太适用，IndexedDB提供了一个解决方案。</p>
+<blockquote>
+<p><strong>低级API VS 高级API：</strong></p>
+<p>没找到官方的解释为什么说IndexedDB是低级API。找到一些比较低级API和高级API的官方文章，大体意思如下：</p>
+<p>低级API(low-level api)指原生API，高级API是通过封装低级API来的。</p>
+<p>低级API用于管理用户自定义的硬件事件，它为有经验的程序员或工具开发者提供深度评测和控制接口。由于低级API更为底层，所以使用低级API能够提高效率。</p>
+</blockquote>
+<p>IndexedDB与基于SQL的关系型数据库类似，它是一个事务型数据库系统。不同的是，基于SQL的关系型数据库使用固定列表，IndexedDB是基于JavaScript的基于对象的数据库，它允许用户通过一个键（key）来存储和检索对象。所有支持<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm">结构化克隆算法</a>的对象都能够被存储到数据库中。</p>
+<p>IndexedDB可以将数据长期存储在用户的浏览器中，而且在无网络的情况下也可以访问，所以使用IndexedDB的应用在离线状态下也可以使用。IndexedDB比较适用的场景包括：</p>
+<ul>
+<li>需要存储大量的数据（如图书馆租赁系统中存储DVD的目录）</li>
+<li>不需要长期连接网络的应用（如事件清单、记事本、电子邮箱客户端）</li>
+</ul>
+<h4 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h4><ul>
+<li><p><strong>IndexedDB数据库通过键值对存储</strong></p>
+<p>IndexedDB数据库通过键值对（key-value pairs）的方式来存储数据。数据的值可以是负责的结构化对象，键可以是这些对象的属性。用户可以用对象的任意属性作为索引来实现快速查找。键也可以是二进制对象。</p>
+</li>
+<li><p><strong>IndexedDB是事务模式的数据库</strong></p>
+<p>IndexedDB数据库的所有操作都是通过事务来完成。IndexedDB API提供包括索引、表、指针等多种对象，但这些对象全都通过相应的事务来实现功能。事务有生命周期，在生命周期之后使用会报错。</p>
+</li>
+<li><p><strong>IndexedDB API基本上是异步的</strong></p>
+<p>IndexedDB不通过return语句返回数据，而是需要提供回调函数来接受数据。执行API时，向数据库发送操作请求，操作完成时，数据库会以DOM事件的方式通知用户。</p>
+</li>
+<li><p><strong>“请求”无处不在</strong></p>
+<p>每一个请求都包含<code>onsuccess</code>和<code>onerror</code>事件属性。</p>
+</li>
+<li><p><strong>IndexedDB是面向对象的</strong></p>
+</li>
+</ul>
+<h4 id="操作-1"><a href="#操作-1" class="headerlink" title="操作"></a>操作</h4><h5 id="初始化数据库"><a href="#初始化数据库" class="headerlink" title="初始化数据库"></a>初始化数据库</h5><p><code>IndexedDB</code>在不同的浏览器中需要添加前缀，可以用以下代码来实现统一。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">indexdDB</span> = <span class="variable language_">window</span>.<span class="property">indexdDB</span> || <span class="variable language_">window</span>.<span class="property">webkitIndexedDB</span> || <span class="variable language_">window</span>.<span class="property">mozIndexedDB</span> || <span class="variable language_">window</span>.<span class="property">msIndexedDB</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="string">&#x27;webkitIndexedDB&#x27;</span> <span class="keyword">in</span> <span class="variable language_">window</span>) &#123;</span><br><span class="line">  <span class="variable language_">window</span>.<span class="property">IDBTransaction</span> = <span class="variable language_">window</span>.<span class="property">webkitIDBTransaction</span>;</span><br><span class="line">  <span class="variable language_">window</span>.<span class="property">IDBKeyRange</span> = <span class="variable language_">window</span>.<span class="property">webkitIDBKeyRange</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但使用前缀的方法还是会造成一些BUG，或者功能实现不完整，这样会造成一些不太好的用户体验。还是建议明确告知客户有些浏览器并不支持IndexedDB。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!<span class="variable language_">window</span>.<span class="property">indexedDB</span>) &#123;</span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">alert</span>(<span class="string">&quot;Your browser doesn&#x27;t support a stable version of IndexedDB.&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="打开数据库"><a href="#打开数据库" class="headerlink" title="打开数据库"></a>打开数据库</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> request = <span class="variable language_">window</span>.<span class="property">indexedDB</span>.<span class="title function_">open</span>(<span class="string">&quot;mydb&quot;</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<p>IndexedDB使用数据库是通过请求来实现的，它并不马上打开数据库或者马上开始一个事务，发送打开请求会返回一个<code>IDBOpenDBRequest</code>对象，对象包含了请求成功的<code>result</code>值和请求失败的<code>error</code>值。IndexedDB中的大部分异步函数都以这样的机制运行——返回一个包含成功和错误值<code>IDBRequest</code>对象。<code>open</code>函数返回的结果是一个<code>IDBDatabase</code>实例。</p>
+<p>请求中传入的第二个参数是数据库的版本。数据库的版本决定了数据库的架构（包括数据库中存储的对象和它们的结构）。</p>
+<h5 id="生成处理函数"><a href="#生成处理函数" class="headerlink" title="生成处理函数"></a>生成处理函数</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> db;</span><br><span class="line"><span class="keyword">let</span> request = indexedDB.<span class="title function_">open</span>(<span class="string">&quot;mydb&quot;</span>);</span><br><span class="line">request.<span class="property">onerror</span> = <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Database error: &quot;</span> + e.<span class="property">target</span>.<span class="property">errorCode</span>);</span><br><span class="line">&#125;;</span><br><span class="line">request.<span class="property">onsuccess</span> = <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  db = request.<span class="property">result</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="构建数据库"><a href="#构建数据库" class="headerlink" title="构建数据库"></a>构建数据库</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">request.<span class="property">onupgradeneeded</span> = <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> db = e.<span class="property">target</span>.<span class="property">result</span>;</span><br><span class="line">  <span class="keyword">let</span> objectStore = db.<span class="title function_">createObjectStore</span>(<span class="string">&quot;customers&quot;</span>, &#123;<span class="attr">keyPath</span>: <span class="string">&#x27;ssn&#x27;</span>&#125;);</span><br><span class="line">  objectStore.<span class="title function_">createIndex</span>(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;name&quot;</span>, &#123;<span class="attr">unique</span>: <span class="literal">false</span>&#125;);</span><br><span class="line">  objectStore.<span class="title function_">createIndex</span>(<span class="string">&quot;email&quot;</span>, <span class="string">&quot;email&quot;</span>, &#123;<span class="attr">unique</span>:<span class="literal">true</span>&#125;);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> customerData) &#123;</span><br><span class="line">    objectStore.<span class="title function_">add</span>(customerData[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>IndexedDB没有表的概念，而是objectStore，一个数据库可以包含多个objectStore，objectStore是一个灵活的数据结构，可以存放多种类型的数据。</p>
+<p>我们可以使用每条记录中的某个指定字段作为键值（keyPath），也可以使用自动生成的递增数字作为键值(keyGenerator)，也可以不指定。</p>
+<p>选择键的类型不同，objectStore可以存储的数据结构也有差异。</p>
+<h5 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> transaction = db.<span class="title function_">transaction</span>([<span class="string">&quot;customers&quot;</span>], <span class="string">&quot;readwirte&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> request = db.<span class="title function_">objectStore</span>(<span class="string">&quot;customers&quot;</span>).<span class="title function_">delete</span>(value);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<blockquote>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://www.w3schools.com/html/html5_webstorage.asp">W3C: HTML5 Web Storage</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">MDN: window.localStorage</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage">MDN: window.sessionStorage</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/entry/5a41b7f4f265da43152427b6">很全很全的前端本地存储讲解</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.html5rocks.com/en/tutorials/webdatabase/websql-indexeddb/">Migrating your WebSQL DB to IndexedDB</a></p>
+<p><a href="tutorialspoint.com/html5/html5_web_sql.htm">HTML5 - Web SQL Database</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">MDN: IndexedDB API</a></p>
+<p><a target="_blank" rel="noopener" href="https://icl.cs.utk.edu/projects/papi/wiki/PAPIC:Low_Level">PAPIC:Low Level</a></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/09/06/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%B0%8F%E7%BB%93/" data-id="clnpqd42o00elp12001thhyw9" data-title="本地存储方式小结" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" rel="tag">本地存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/07/%E3%80%8C%E7%BF%BB%E8%AF%91%E3%80%8D%E4%BA%92%E8%81%94%E7%BD%91%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84%EF%BC%9F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          「翻译」互联网是如何运作的？
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/06/HTML%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B%E5%85%A8%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTML解析过程全解</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/FreeCodeCamp/">FreeCodeCamp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jounal/">Jounal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/">习题集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%A9%E5%99%A8/">利器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/">工作备忘</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/">知识管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/">跟着大佬学编程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2020/" rel="tag">2020</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOM/" rel="tag">BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eloquent-JavaScript/" rel="tag">Eloquent JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeCodeCamp/" rel="tag">FreeCodeCamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fuji-Rock-Festival/" rel="tag">Fuji Rock Festival</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hooks/" rel="tag">Hooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/" rel="tag">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Course/" rel="tag">Learning, Course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OIS/" rel="tag">OIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OKR/" rel="tag">OKR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/" rel="tag">OOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading/" rel="tag">Reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/" rel="tag">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/" rel="tag">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/" rel="tag">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/" rel="tag">UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UX/" rel="tag">UX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Report/" rel="tag">Weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Reports/" rel="tag">Weekly Reports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Summary/" rel="tag">Weekly Summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design/" rel="tag">ant design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design-pro/" rel="tag">ant design pro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/art-template/" rel="tag">art-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/auth/" rel="tag">auth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/autojump/" rel="tag">autojump</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/box-model/" rel="tag">box model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codewars/" rel="tag">codewars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejs/" rel="tag">ejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/event/" rel="tag">event</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/" rel="tag">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex/" rel="tag">flex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/float/" rel="tag">float</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freecodecamp/" rel="tag">freecodecamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grid/" rel="tag">grid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/" rel="tag">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jade/" rel="tag">jade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/journal/" rel="tag">journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jwt/" rel="tag">jwt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/" rel="tag">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/layout/" rel="tag">layout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multer/" rel="tag">multer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ndoe-js/" rel="tag">ndoe.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodemon/" rel="tag">nodemon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nrm/" rel="tag">nrm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/" rel="tag">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/responsive/" rel="tag">responsive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/" rel="tag">terminal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/" rel="tag">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/useEffect/" rel="tag">useEffect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-Report/" rel="tag">weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" rel="tag">一周分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%9E%8B/" rel="tag">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" rel="tag">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" rel="tag">年度计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86/" rel="tag">心理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E8%83%BD/" rel="tag">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" rel="tag">效率提升</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E6%B8%B8/" rel="tag">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%AC/" rel="tag">日本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" rel="tag">本地存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" rel="tag">模板引擎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="tag">深拷贝浅拷贝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" rel="tag">知识管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" rel="tag">线程 进程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" rel="tag">翻译， HTTPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" rel="tag">软技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" rel="tag">选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" rel="tag">重装电脑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2020/" style="font-size: 10px;">2020</a> <a href="/tags/Algorithm/" style="font-size: 10.77px;">Algorithm</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 11.54px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 16.92px;">ES6</a> <a href="/tags/Eloquent-JavaScript/" style="font-size: 10px;">Eloquent JavaScript</a> <a href="/tags/FreeCodeCamp/" style="font-size: 10px;">FreeCodeCamp</a> <a href="/tags/Fuji-Rock-Festival/" style="font-size: 10px;">Fuji Rock Festival</a> <a href="/tags/HTML/" style="font-size: 12.31px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.54px;">HTTP</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/IP/" style="font-size: 11.54px;">IP</a> <a href="/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/tags/JavaScript/" style="font-size: 19.23px;">JavaScript</a> <a href="/tags/Learning-Course/" style="font-size: 10px;">Learning, Course</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/OIS/" style="font-size: 10px;">OIS</a> <a href="/tags/OKR/" style="font-size: 10.77px;">OKR</a> <a href="/tags/OOP/" style="font-size: 11.54px;">OOP</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/React/" style="font-size: 13.08px;">React</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/TCP/" style="font-size: 11.54px;">TCP</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UX/" style="font-size: 10px;">UX</a> <a href="/tags/Weekly-Report/" style="font-size: 18.46px;">Weekly Report</a> <a href="/tags/Weekly-Reports/" style="font-size: 10.77px;">Weekly Reports</a> <a href="/tags/Weekly-Summary/" style="font-size: 10px;">Weekly Summary</a> <a href="/tags/ant-design/" style="font-size: 10px;">ant design</a> <a href="/tags/ant-design-pro/" style="font-size: 10px;">ant design pro</a> <a href="/tags/art-template/" style="font-size: 10px;">art-template</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/box-model/" style="font-size: 10px;">box model</a> <a href="/tags/chrome/" style="font-size: 10.77px;">chrome</a> <a href="/tags/codewars/" style="font-size: 10px;">codewars</a> <a href="/tags/computer-science/" style="font-size: 10.77px;">computer science</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/css/" style="font-size: 16.15px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/event/" style="font-size: 10px;">event</a> <a href="/tags/express/" style="font-size: 13.08px;">express</a> <a href="/tags/flex/" style="font-size: 10.77px;">flex</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/freecodecamp/" style="font-size: 17.69px;">freecodecamp</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.77px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/journal/" style="font-size: 10px;">journal</a> <a href="/tags/jwt/" style="font-size: 11.54px;">jwt</a> <a href="/tags/koa/" style="font-size: 14.62px;">koa</a> <a href="/tags/layout/" style="font-size: 10px;">layout</a> <a href="/tags/mac/" style="font-size: 10.77px;">mac</a> <a href="/tags/multer/" style="font-size: 10px;">multer</a> <a href="/tags/ndoe-js/" style="font-size: 10px;">ndoe.js</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/nodemon/" style="font-size: 10px;">nodemon</a> <a href="/tags/npm/" style="font-size: 10.77px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/responsive/" style="font-size: 10px;">responsive</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/token/" style="font-size: 11.54px;">token</a> <a href="/tags/translation/" style="font-size: 10px;">translation</a> <a href="/tags/useEffect/" style="font-size: 10px;">useEffect</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/weekly-Report/" style="font-size: 10.77px;">weekly Report</a> <a href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" style="font-size: 15.38px;">一周分享</a> <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 12.31px;">中间件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%8E%9F%E5%9E%8B/" style="font-size: 10.77px;">原型</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" style="font-size: 10px;">工作效率</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" style="font-size: 10px;">年度计划</a> <a href="/tags/%E5%BF%83%E7%90%86/" style="font-size: 10px;">心理</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 10px;">心理学</a> <a href="/tags/%E6%8A%80%E8%83%BD/" style="font-size: 10px;">技能</a> <a href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" style="font-size: 10px;">效率提升</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">数据类型</a> <a href="/tags/%E6%97%85%E6%B8%B8/" style="font-size: 10px;">旅游</a> <a href="/tags/%E6%97%A5%E6%9C%AC/" style="font-size: 10px;">日本</a> <a href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" style="font-size: 10px;">本地存储</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" style="font-size: 11.54px;">模板引擎</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10.77px;">浏览器</a> <a href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" style="font-size: 10px;">深拷贝浅拷贝</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" style="font-size: 11.54px;">知识管理</a> <a href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" style="font-size: 10.77px;">线程 进程</a> <a href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">网易云音乐</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 12.31px;">翻译</a> <a href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" style="font-size: 10px;">翻译， HTTPS</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 13.85px;">读书笔记</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 10px;">负载均衡</a> <a href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" style="font-size: 10px;">软技能</a> <a href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" style="font-size: 10px;">选择器</a> <a href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" style="font-size: 10px;">重装电脑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">代码注释规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/">代码命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/06/Week-49/">Week 49</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/29/Week-48/">Week 48</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/01/Week-44/">Week 44</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

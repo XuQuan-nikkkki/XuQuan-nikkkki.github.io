@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>「翻译」互联网是如何运作的？ | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="原文地址： 「How does the Internet work?」 By Rus Shuler 这是一篇20年前的经典文章，里面有些概念已经过时，但仍然是一篇很好的科普文章，将互联网的每个细节都讲述得非常简单易懂。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「翻译」互联网是如何运作的？">
+<meta property="og:url" content="http://example.com/2018/09/07/%E3%80%8C%E7%BF%BB%E8%AF%91%E3%80%8D%E4%BA%92%E8%81%94%E7%BD%91%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84%EF%BC%9F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="原文地址： 「How does the Internet work?」 By Rus Shuler 这是一篇20年前的经典文章，里面有些概念已经过时，但仍然是一篇很好的科普文章，将互联网的每个细节都讲述得非常简单易懂。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fv1d5f9qh3j30ky042gli.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fv1x5zp6vvj30l00693yg.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fv1x6awr08j30ks075q2z.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fv1z60q0itj30ks09uq34.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fv209os5fsj30ks0axt8s.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fv242aj2nhj30l009pmx7.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fv26fsmf1jj30kv07wq2y.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fv26qrbw6nj30kb07iwei.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fv26so3uzej30ky052q2u.jpg">
+<meta property="article:published_time" content="2018-09-07T14:22:54.000Z">
+<meta property="article:modified_time" content="2018-09-08T09:22:23.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="翻译">
+<meta property="article:tag" content="HTTP">
+<meta property="article:tag" content="TCP">
+<meta property="article:tag" content="IP">
+<meta property="article:tag" content="Internet">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fv1d5f9qh3j30ky042gli.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="posts-「翻译」互联网是如何运行的？" class="h-entry article article-type-posts" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/09/07/%E3%80%8C%E7%BF%BB%E8%AF%91%E3%80%8D%E4%BA%92%E8%81%94%E7%BD%91%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84%EF%BC%9F/" class="article-date">
+  <time class="dt-published" datetime="2018-09-07T14:22:54.000Z" itemprop="datePublished">2018-09-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/">跟着大佬学编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      「翻译」互联网是如何运作的？
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>原文地址： <a target="_blank" rel="noopener" href="http://www.theshulers.com/whitepapers/internet_whitepaper/index.html">「How does the Internet work?」</a> By Rus Shuler</p>
+<p>这是一篇20年前的经典文章，里面有些概念已经过时，但仍然是一篇很好的科普文章，将互联网的每个细节都讲述得非常简单易懂。</p>
+<span id="more"></span>
+
+<hr>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>互联网是如何运作的？好问题！互联网经历了爆炸式的增长，我们不可避免地接受着来自电视、广播、杂志全方位的关于<code>www.com</code>的轰炸。正因为互联网已经占据了我们生活中的重要地位，透彻理解它的运行机制才能帮助我们最高效地运用这个新工具。</p>
+<p>这份白皮书将介绍互联网运行的底层结构和技术。这篇文章并不会深入探讨，但涵盖了每个领域的内容，以便让读者对涉及的概念有基本的理解。对于有些没有回答的问题，文章末尾会有一个资源列表供大家参考。任何评论、建议、问题等都可以直接通过作者的邮箱与作者联系。</p>
+<hr>
+<h3 id="从哪儿开始？互联网地址"><a href="#从哪儿开始？互联网地址" class="headerlink" title="从哪儿开始？互联网地址"></a>从哪儿开始？互联网地址</h3><p>由于互联网是一个全球的计算机网络，因此每台连接到互联网的计算机都<strong>必须</strong>拥有一个独一无二的地址。互联网地址都是<strong>nnn.nnn.nnn.nnn</strong>的形式，其中nnn必须是一个0-255的数字。这个地址被称为IP地址（IP是互联网协议Internet Protocol的缩写，后文会有更多关于这个概念的内容）。</p>
+<p>下图是两台计算机连接互联网的示意图，你的计算机的IP地址是1.2.3.4，另一台计算机的IP地址是5.6.7.8。互联网是两者之间的一个抽象物体。（在本文中，随着对互联网解释的逐步深入，这幅图会逐步详细起来）</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fv1d5f9qh3j30ky042gli.jpg" alt="image-20180907225128804"></p>
+<p>如果你通过一个互联网服务供应商(Internet Service Provider, ISP)连接到互联网，你通常会在连接期间被分配到一个临时的IP地址。如果你通过一个局域网(Local Area Network, LAN)连接到互联网，你的计算机可能会有一个永久的IP地址，或者通过动态主机配置协议(Dynamic Host Configuration Protocol, DHCP)服务器获取一个临时IP地址。但不管怎样，只要你连接到互联网，你的计算机就会有一个独一无二的IP地址。</p>
+<blockquote>
+<p><strong>试一试： Ping程序</strong></p>
+<p>如果你正在使用Windows系统或者某一种Unix系统，并且正连着互联网，有一个方便的方法来检测你的网络是否在线，这个方法就是<strong>ping。</strong>它很可能是依照一种老式的潜水艇声呐系统来命名的。如果你在使用Windows系统，打开命令行窗口。如果你在使用某一种Unix系统，则打开终端窗口。输入<code>ping www.yahoo.com</code>。ping程序会发送一个’ping’ (实际上是一个因特网控制信息协议(Internet Control Message Protocol, ICMP)回应请求信息)给特定的计算机。被ping到的计算机会回应一个消息。ping程序会计算消息返回的时间（如果有返回消息）。同样地，如果你输入的是一个域名（比如<code>www.yahoo.com</code>），而非一个IP地址，ping程序会解析域名，并显示对应的计算机IP地址。后文会深入讨论域名和地址。</p>
+</blockquote>
+<hr>
+<h3 id="协议栈和协议包"><a href="#协议栈和协议包" class="headerlink" title="协议栈和协议包"></a>协议栈和协议包</h3><p>现在你的计算机已经连上互联网，而且有一个独一无二的地址了。那么它如何与其他连接互联网的计算机”对话“呢？我们来看看这个例子：假设你的IP地址是1.2.3.4，你希望给IP地址是5.6.7.8的计算机发送一个内容是”你好计算机5.6.7.8”的消息。</p>
+<p>显然，这条消息必须通过某种连接你的计算机和互联网的线路来送达。假设你正在家中接入互联网服务供应商（ISP）的线路，这条消息需要通过家里的电话线来传达。那么，这条文字消息就必须翻译成电子信号传递到互联网的另一端，然后再翻译回文字信息。这是如何做到的呢？这就需要使用<strong>协议栈</strong>。每台计算机都需要协议栈来实现网络沟通，而且通常协议栈是嵌入到计算机的操作系统(如Windows, Unix等)中的。互联网使用的协议栈指的是TCP&#x2F;IP协议栈，因为这是最主要的两个通讯协议。TCP&#x2F;IP栈的内容如下：</p>
+<table>
+<thead>
+<tr>
+<th>协议层</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>应用层</td>
+<td>针对应用的协议，如www，电子邮件，FTP等</td>
+</tr>
+<tr>
+<td>传输控制层</td>
+<td>TCP通过端口号将包发送给计算机上的应用</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>IP通过IP地址将包发送给特定的计算机</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>将二进制的包数据转换成网络信号，再将网络信号转换成二进制包<br />（如以太网卡，电话线调解器等）</td>
+</tr>
+</tbody></table>
+<p>如果我们跟着计算机发送信息”你好计算机5.6.7.8”给IP地址是5.6.7.8的计算机，就会看到如下情况：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fv1x5zp6vvj30l00693yg.jpg" alt="image-20180908102400167"></p>
+<ol>
+<li>信息从你的计算机的协议栈顶层开始，一路向下；</li>
+<li>如果发送的信息内容过长，信息通过的每一层栈会将信息分解成小块的数据。这是因为数据在互联网（以及大部分计算机网络）中是以易控制的数据块形式传送的。在互联网中，这些数据块被称为<strong>包</strong>；</li>
+<li>这些包会通过应用层到达TCP层。每一个包都会分配到一个<strong>端口</strong>。我们在后文中解释端口，目前知道很多程序使用TCP&#x2F;IP栈来传送信息就足够了。我们通过特定的端口号来确定信息要传递给目标计算机的哪一个程序；</li>
+<li>在TCP层之后，包来到IP层。在这里，每个包会接收到它们的目的地地址，5.6.7.8；</li>
+<li>现在我们的信息包已经有了端口号和IP地址，它们可以通过互联网发送出去了。硬件层负责将包含有文字信息的包转换成电子信号，并通过电话线传递出去。</li>
+<li>在电话线的另一头，你的ISP已经将电话线连入互联网。ISP的<strong>路由</strong>会检查每个包的目的地地址并确定将它们送到何处。通常包会被送到下一个路由。我们在后面讨论路由和互联网的架构；</li>
+<li>最终，包被送给IP地址为5.6.7.8的计算机。这时，包会从目的地计算机的TCP&#x2F;IP栈的最底层开始，并一路向上；</li>
+<li>信息在协议栈逐步向上的过程中，所有由发送信息的计算机添加的路由数据（如IP地址和端口号）会从数据包上剥离出来；</li>
+<li>当数据到达栈的顶层时，数据被重新组装成原始信息”你好计算机5.6.7.8”;</li>
+</ol>
+<hr>
+<h3 id="网络基础设施"><a href="#网络基础设施" class="headerlink" title="网络基础设施"></a>网络基础设施</h3><p>现在你知道包是如何从一台计算机通过互联网传递到另一台计算机的了。但计算机和计算机中间是什么呢？到底是什么构成了互联网呢？让我们看看下面这个图：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fv1x6awr08j30ks075q2z.jpg" alt="image-20180908102418275"></p>
+<p>这张图在图1的基础上添加了一些细节。计算机通过电话线连接到ISP的部分很容易理解，但是其余的部分可能需要解释一下。</p>
+<p>ISP有许多调制器供他们的客户来拨入，并且有专门的计算机来控制调制器池发送到主干路由器或专门的路由线路的数据流。这个设置被称为端口服务器，它负责连入互联网。网络账单和使用信息都是从这里收集的。</p>
+<p>当你的包穿过电话线路和你的ISP的本地设备后，他们就进入到ISP的主干线路或者ISP购买的带宽。从此刻开始，数据包通常要经历数个路由和数个主干线路、专用线路，和其他网络，直到最终到达终点——地址是5.6.7.8的计算机。但是如果我们能知道包应该送到哪个路由不是更好吗？的确有一个办法：</p>
+<blockquote>
+<p><strong>试一试：路由跟踪</strong></p>
+<p>如果你使用的是Windows或某种Unix的系统，并且正连着网络，有一个方便的检测程序叫做<strong>路由跟踪</strong>，它能够显示你的包传送给特定互联网地址的路径。和ping一样，你需要在命令行工具中使用路由跟踪。Windows系统输入<code>tracert www.yahoo.com</code>，Unix系统输入<code>traceroute www.yahoo.com</code>。和ping一样，你也可以输入一个IP地址，而不是域名。路由跟踪程序会列出到达终点需要经过的路由、计算机或其他互联网入口。</p>
+<p>通过路由跟踪，你会发现你的包要经过很多地方才能到达终点。大多数地点都有很长的名字，例如<code>sjc2-core1-h2-0-0.atlas.digex.net</code>和<code>fddi0-0.br4.SJC.globalcenter.net</code>。这些互联网路由决定了你的包被发往何处。图3中标出了一些网络路由，但是数量并不多。它只是一个简易的网络结构示意。真实的互联网要复杂得多。</p>
+</blockquote>
+<hr>
+<h3 id="互联网架构"><a href="#互联网架构" class="headerlink" title="互联网架构"></a>互联网架构</h3><p>互联网主干是由很多相互连接的大型网络构成的。这些大型网络被称为**网络服务供应商（Network Service Providers, NSPs)<strong>。网络服务供应商包括UUNet, CerfNet, IBM, BBN Planet, SprintNet, PSINet，还有其他的供应商。这些网络同行互相交换信息包。每个网络服务供应商都被要求连接三个</strong>网络接入点(Network Access Points, NAPs)<strong>。在网络接入点，包信息从一个NSP的主干传递到另一个NSP的主干。NSP们和</strong>城域交换机(Metropolitan Area Excahnges, MAEs)<strong>相互连接。城域交换机的作用和网络接入点一样，只不过它们是私人的，NAP是最原始的互联网连接点。网络接入点和城域交换机都是</strong>网络交换点(Internet Exchange Points, IXs)**。网络服务供应商也向小型网络（如互联网服务供应商，和小型带宽供应商）出售带宽。下图显示的是他们之间的层级关系。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fv1z60q0itj30ks09uq34.jpg" alt="image-20180908113313776"></p>
+<p>这并不是真实的互联网。图4只是为了展示网络服务供应商之间以及网络服务供应商与互联网服务供应商之间是如何相互连接的。图3中展示的物理网络组件并没有在图4中展现出来，这是因为每个独立的网络服务供应商的主干架构都能够绘制一张复杂的图示，大多数网络服务供应商都绘制了自己的主干架构并发布在他们的官网上。考虑到互联网的大小、复杂程度和不断变化的结构，想要绘制一张真实的互联网地图几乎是不可能完成的事。</p>
+<hr>
+<h3 id="互联网路由层级"><a href="#互联网路由层级" class="headerlink" title="互联网路由层级"></a>互联网路由层级</h3><p>那么信息包是如何在网络中找到正确路径的呢？连接网络的计算机是否知道需要联络的另一台计算机在哪里呢？信息包会直接“广播”信息给每一台连接网络的计算机吗？以上两个问题的答案都是否定的。没有计算机知道需要联络的另一台计算机在哪儿，信息包也不会把信息发送给每一台计算机。让信息包找到传送路线的信息包含在连接互联网的每一台路由的路由表中。</p>
+<p><strong>路由是包交换机</strong>。路由连接着不同的网络，并在网络间传递信息包。每个路由都知道他们的子网络和子网络使用那些IP地址。路由通常不知道它的上级的IP地址。从图5可以看到，那些连接主干网络的黑色盒子就是路由。顶部大型网络服务供应商的主干网络通过网络接入点连接。在他们下面有很多子网络，子网络下面有更多的子网络。底部是连接着数台计算机的城域网络。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fv209os5fsj30ks0axt8s.jpg" alt="image-20180908121121893"></p>
+<p>当数据包传递到路由时，路由会检查原始计算机上IP协议层的IP地址，接着检查自己的路由表。如果它的网络中包含这个IP地址，数据包就会传送到这个网络，如果不包含这个IP地址，路由就会将数据包传递给一个默认的路径，通常是顺着主干网络层级传给上一级路由，看看上一级路由是否能检查到数据包的传送地址。如果还是没有包含这个IP地址，数据包会再一次向上一级路由传递，直到传递到网络服务供应商主干（NSP Backbone）。连接各个路由的网络服务供应站拥有信息量最大的路由表，数据包在这里能够找到相应的主干网络，接着一级一级向下传递给越来越小的网络，直到到达目的地。</p>
+<hr>
+<h3 id="域名和地址解析"><a href="#域名和地址解析" class="headerlink" title="域名和地址解析"></a>域名和地址解析</h3><p>但是如果你不知道你想要连接的计算机的IP地址呢？如果你想要连接另一个叫做<code>www.anothercomputer.com</code>的服务器呢？你的浏览器如何知道这台计算机在互联网的什么地方呢？这些问题的答案就是**域名服务(Domain Name Service, DNS)**。DNS是一个记录互联网中各计算机的名称和他们对应的IP地址的分布式数据库。</p>
+<p>许多连接到网络的计算机都是DNS数据库的一部分，也允许软件访问它们。这些计算机被称为DNS服务器。没有任何一个DNS服务器拥有整个数据库，它们都只包含数据库的一部分。如果计算机访问了一台DNS服务器，并请求了这台服务器没有的域名，服务器会把这条请求重定向给另一台DNS服务器。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fv242aj2nhj30l009pmx7.jpg" alt="image-20180908142239057"></p>
+<p>DNS的层级结构与IP路由层级类似。当计算机发出域名解析请求时，DNS会逐级向上重定向，直到有一条DNS服务器能够解析请求中的域名。图6展示了这个层级结构的一部分。在层级的顶部是根域。一些古老的、常见的域名都出现在靠近根域的部分。这样一来，所有需要解析域名的互联网应用都能正常运行。打个比方，当你在浏览器的地址栏输入一个地址后，浏览器会首先连接你的主域名服务器。在获取到你输入的域名的IP地址后，浏览器会连接目标计算机，并请求你想要的网页。</p>
+<blockquote>
+<p><strong>试一试： 在Windows中禁用DNS</strong></p>
+<p>如果你在使用Windows 95&#x2F;NT并且连着网，你可以查看你的DNS服务器，甚至禁用它们。</p>
+<p><em>如果你使用电话拨号上网：</em></p>
+<p>打开你的拨号窗口，右键点击网络连接，并选择属性，在底部点击TCP&#x2F;IP设置按钮。</p>
+<p><em>如果你永久连接到网络：</em></p>
+<p>右键点击网络邻居并选择属性，点击TCP&#x2F;IP属性，选择顶部的DNS配置。</p>
+<p>你现在就能看见你的DNS服务器的IP地址了。在这里你可以选择禁用DNS，或者将你的DNS服务器地址设置成0.0.0.0（先记下你的DNS服务器的IP地址，你还需要重启计算机）现在在浏览器中输入一个地址。浏览器此时就无法解析域名了，你还有可能会受到一个对话框告诉你找不到DNS服务器了。但不管怎样，如果你输入的是相应的IP地址，而不是域名的话，浏览器还是能够获取到你想要查找的网页。（ping在禁用DNS之前会先找到IP地址）其他Windows操作系统的操作方法都类似。</p>
+</blockquote>
+<hr>
+<h3 id="互联网协议回顾"><a href="#互联网协议回顾" class="headerlink" title="互联网协议回顾"></a>互联网协议回顾</h3><p>如我们在协议栈那一节中提到的，大家可能会猜测互联网涉及到很多协议。的确是这样，互联网的运行需要很多通信协议，包括TCP和IP协议，路由协议，媒体访问控制协议，应用层协议等。接下来这一节会讨论互联网中更重要也更常用的协议。我们先讨论高级协议，再讨论低级协议。</p>
+<hr>
+<h3 id="应用协议：-HTTP和万维网"><a href="#应用协议：-HTTP和万维网" class="headerlink" title="应用协议： HTTP和万维网"></a>应用协议： HTTP和万维网</h3><p>互联网中最常用的服务就是万维网(World Wide Web, WWW)。使网页能够运作的应用协议叫做**超文本传输协议(Hypertext Transfer Protocol, HTTP)**。不要将它和超文本标记语言(Hypertext Markup Language, HTML)搞混淆了。HTML是用来写网页的语言。HTTP是浏览器和服务器在互联网上彼此通信的协议。它是应用层协议，因为它位于协议栈的顶层，而且是特定应用用来彼此通信的。在这里，应用指的是浏览器和web服务器。</p>
+<p>HTTP是一种基于无连接文本的协议。用户端（浏览器）给web服务器发送web元素（如文本页面或图片）的请求。服务器提供服务请求后，客户端和服务器之间的连接就会断开。每次请求都必须建立新的连接。大多数协议是面向连接的。也就是还说两台计算机在保持连接的情况下互相通信。但是HTTP并不是这样。在客户端发出HTTP请求前，必须先与服务器建立连接。</p>
+<p>当你在浏览器中输入url网址后，会发生如下事件：</p>
+<ol>
+<li>如果url网址包含一个域名，浏览器会先连接域名所在服务器，并检索web服务器的相应IP地址</li>
+<li>浏览器连接到web服务器，并（通过协议栈）发送HTTP请求，请求想要获取的网页</li>
+<li>web服务器收到请求后检查请求的网页是否存在，如果网页存在，服务器就会发送网页回去，如果服务器找不到请求的页面，就会发送一个HTTP 404错误信息（404表示”页面不存在（Page Not Found)）</li>
+<li>浏览器收到返回的页面，连接断开</li>
+<li>浏览器开始解析页面，并查找完成页面需要的其他元素，通常包括图片、小程序等</li>
+<li>对于其他需要的元素，浏览器会创建额外的连接，并给元素所在的服务器发送HTTP请求</li>
+<li>当浏览器加载完所有的图片、小程序等后，页面就完整地呈现在浏览器窗口中</li>
+</ol>
+<blockquote>
+<p><strong>试一试：试试用远程客户端通过HTTP请求网页</strong></p>
+<p>远程客户端是互联网上的一个远程终端服务。近几年使用它的人减少了很多，但它是一个非常有用的学习互联网的工具。在Windows中找到默认的远程程序，它通常在Windows目录下，名称为telnet.exe。打开程序后，拉终端菜单到最下方，选择”偏好”。在偏好窗口中，选择Local Echo。（这样你就在输入HTTP请求时就能看见它了）接着来到连接菜单，并选择远程系统。输入<code>www.google.com</code>作为域名，80作为端口号。（通常web服务器默认监听80端口）点击连接，输入<br><code>GET/HTTP/1.0</code><br>点击回车两次。这是一个简单的根页面HTTP请求。你应该会看见网页闪了一下，然后一个对话框弹出来，告诉你连接断开。如果你想要保存检索到的页面，在终端程序中打开日志选项。接着就能浏览检索到的页面，并且查看它的HTML文件。</p>
+</blockquote>
+<p>大多数互联网协议由被称为**请求评议（Request For Comments, RFCs)**的网络文档来指定。RFCs可以在网上很多地方找到。资源那一小结中有URL的RFC，HTTP第1.0版是由RFC 1945规定的。</p>
+<hr>
+<h3 id="应用协议：-SMTP和电子邮件"><a href="#应用协议：-SMTP和电子邮件" class="headerlink" title="应用协议： SMTP和电子邮件"></a>应用协议： SMTP和电子邮件</h3><p>另一个常用的网络服务是电子邮件。电子邮件使用一个叫做**简单邮件传输协议(Simple Mail Transfer Protocol, SMTP)**的应用层协议。STMP同时也是一个基于文本的协议，不同于HTTP，它是面向连接的。SMTP比HTTP更复杂一些，SMTP中的命令和注意事项比HTTP多得多。</p>
+<p>当你打开邮件客户端读取你的电子邮件时，会发生以下事件：</p>
+<ol>
+<li>邮件客户端连接到它的默认邮件服务器。邮件服务器的IP地址或域名通常在邮件客户端下载时就设置好了</li>
+<li>总是由邮件服务器发送第一条信息，标识自己的身份</li>
+<li>客户端会发送一个SMTP HELO命令，接着服务器会回复一个250 OK信息</li>
+<li>根据实际情况，客户端会发送相应的SMTP命令给服务器来检查或发送邮件，服务器会给出相应的回复</li>
+<li>客户端和服务器会一直保持请求&#x2F;回复状态，直到客户端发送SMTP QUIT命令。接着服务器会发送再见信息，连接会关闭</li>
+</ol>
+<p>下面是一个简单的SMTP客户端和SMTP服务器的简单”对话“。<strong>R</strong>表示服务器发送的信息，<strong>S</strong>表示客户端发送的信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">这个SMTP案例展示了Smith在主机USC-ISIF上，给Jones, Green,和Brown的主机BBN-UNIX发送邮件的过程。这里我们假设主机USC-ISIF直接连接主机BBN-UNIX。Jones和Brown收到了邮件。Green在主机BBN-UNIX上没有邮箱。</span><br><span class="line"></span><br><span class="line">-------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">R: 220 BBN-UNIX.ARPA Simple Mail Transfer Service Ready</span><br><span class="line">S: HELO USC-ISIF.ARPA</span><br><span class="line">R: 250 BBN-UNIX.ARPA</span><br><span class="line"></span><br><span class="line">S: MAIL FROM:&lt;Smith@USC-ISIF.ARPA&gt;</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: RCPT TO:&lt;Jones@BBN-UNIX.ARPA&gt;</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: RCPT TO:&lt;Green@BBN-UNIX.ARPA&gt;</span><br><span class="line">R: 550 No such user here</span><br><span class="line"></span><br><span class="line">S: RCPT TO:&lt;Brown@BBN-UNIX.ARPA&gt;</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: DATA</span><br><span class="line">R: 354 Start mail input; end with &lt;CRLF&gt;.&lt;CRLF&gt;</span><br><span class="line">S: Blah blah blah...</span><br><span class="line">S: ...etc. etc. etc.</span><br><span class="line">S: .</span><br><span class="line">R: 250 OK</span><br><span class="line"></span><br><span class="line">S: QUIT</span><br><span class="line">R: 221 BBN-UNIX.ARPA Service closing transmission channel</span><br></pre></td></tr></table></figure>
+
+<p>SMTP协议由RFC 821规定。</p>
+<hr>
+<h3 id="传输控制协议"><a href="#传输控制协议" class="headerlink" title="传输控制协议"></a>传输控制协议</h3><p>在协议栈中，应用层下面是TCP层。当应用与互联网中的另一台计算机建立连接时，他们（通过特定的应用层协议）发送的信息会传递到TCP层。<strong>TCP层负责将应用程序协议导向目标计算机的正确应用程序上</strong>。端口号用来达到这一目标。端口就像计算机上的不同频道。打个比方，你浏览网页的同时也能查看邮件，这是因为这两个应用程序（浏览器和邮件客户端）使用不同的端口号。当数据包传递到计算机上时，它在协议栈中一路向上传递，TCP层根据它的端口号决定哪一个程序接收到这个数据包。</p>
+<p>TCP的工作机制如下：</p>
+<ul>
+<li>当TCP层接收到来自上层的应用层协议数据时，TCP层将数据拆分成可管理的”块“，并给每个”块“添加一个包含特定TCP层信息的TCP头。TCP头中的信息包括数据需要送达的应用程序的端口号；</li>
+<li>当TCP层收到来自下层的IP层的数据包时，TCP层将TCP头数据从数据包上剥离开，如有必要会重建部分数据，然后根据TCP头中的端口号将数据传递给正确的应用程序；</li>
+</ul>
+<p>这就是TCP如何在协议栈中将数据导向正确的应用程序。</p>
+<p>TCP不是文本协议。<strong>TCP是一个面向连接的、可靠的字节流服务</strong>。面向连接意味着当两个应用程序使用TCP时，必须先建立连接，再交换数据。TCP可靠是因为每接收到一个数据包，它都会给发送者发送一个确认送达的信息。TCP头信息中还包括检查收到的数据是否有错误的校验码。TCP头如下：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fv26fsmf1jj30kv07wq2y.jpg" alt="image-20180908154449390"></p>
+<p>需要注意的是，TCP头中不包含IP地址，这是因为TCP并不知道关于IP地址的任何信息。TCP只负责准确地将应用层的数据从应用程序导向应用程序。负责将数据从计算机导向计算机是IP层的活儿。</p>
+<blockquote>
+<p><strong>试一试：众所周知的互联网端口号</strong></p>
+<p>下面是一些常用的互联网服务的端口号：</p>
+<table>
+<thead>
+<tr>
+<th align="center">服务</th>
+<th align="center">端口号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">FTP</td>
+<td align="center">20&#x2F;21</td>
+</tr>
+<tr>
+<td align="center">Telnet</td>
+<td align="center">23</td>
+</tr>
+<tr>
+<td align="center">SMTP</td>
+<td align="center">25</td>
+</tr>
+<tr>
+<td align="center">HTTP</td>
+<td align="center">80</td>
+</tr>
+<tr>
+<td align="center">Quake III Arena</td>
+<td align="center">27960</td>
+</tr>
+</tbody></table>
+</blockquote>
+<hr>
+<h3 id="互联网协议"><a href="#互联网协议" class="headerlink" title="互联网协议"></a>互联网协议</h3><p>不同于TCP，<strong>IP是不可靠的、无连接的协议</strong>。IP并不在意数据是否送达目的地，它也不关心连接和端口号。<strong>IP的任务就是给其他计算机发送数据包</strong>。IP数据包是独立的实体，可能无序或根本没有送达。TCP的工作才是确保数据包送达且顺序正确。IP和TCP唯一的共同之处就是，收到数据后，IP也会给数据添加自己的头信息。IP头如下：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fv26qrbw6nj30kb07iwei.jpg" alt="image-20180908155521466"></p>
+<p>上图中，我们能看到IP头信息时包含发送和接收数据的计算机的IP地址的。下图显示了当一个数据包依次从应用层、TCP层和IP层传递后的样子。应用层数据在TCP层被拆分，并添加TCP头，然后到达IP层，添加IP头，接着数据被传递到互联网的另一边。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fv26so3uzej30ky052q2u.jpg" alt="image-20180908155711869"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>现在你知道互联网是如何运作的了。但这样会持续多久呢？当前的互联网IP版本(v4)仅允许2<sup>32</sup>个地址。最终不会有免费的IP地址可用使用。惊讶吗？别担心。IP v6正在被测试。但那之后呢？谁知道呢。互联网从最初作为国防部门的研究项目一路走来，没人知道它最终会变成什么样子。但有一件事是肯定的，那就是互联网能够将事件连接到一起，这是从前任何机制都未做到的。信息时代正朝我们全力奔来，我很高兴自己是其中一员，</p>
+<h3 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h3><p><a target="_blank" rel="noopener" href="http://www.ietf.org/">http://www.ietf.org</a> IETF(互联网工程任务组)的官网</p>
+<p><a target="_blank" rel="noopener" href="http://www.internic.org/">http://www.internic.org</a> 负责管理域名的机构</p>
+<p><a target="_blank" rel="noopener" href="http://www.faqs.org/rfcs/rfcsearch.html">http://www.faqs.org/rfcs/rfcsearch.html</a> RFC搜索引擎</p>
+<p><a target="_blank" rel="noopener" href="http://navigators.com/isp.html">http://navigators.com/isp.html</a> Russ Haynal的网络服务供应商页面。提供几乎所有网络服务器供应商的架构图</p>
+<p>&lt;<a target="_blank" rel="noopener" href="http://www.investintech.com/content/historyinternet/">http://www.investintech.com/content/historyinternet/</a> 互联网历史概要</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/09/07/%E3%80%8C%E7%BF%BB%E8%AF%91%E3%80%8D%E4%BA%92%E8%81%94%E7%BD%91%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84%EF%BC%9F/" data-id="clnpqd44s00oxp1202hca03yd" data-title="「翻译」互联网是如何运作的？" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IP/" rel="tag">IP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TCP/" rel="tag">TCP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/08/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%85%A8%E8%BF%87%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          从输入URL到页面加载全过程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/06/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%B0%8F%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">本地存储方式小结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/FreeCodeCamp/">FreeCodeCamp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jounal/">Jounal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/">习题集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%A9%E5%99%A8/">利器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/">工作备忘</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/">知识管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/">跟着大佬学编程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2020/" rel="tag">2020</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOM/" rel="tag">BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eloquent-JavaScript/" rel="tag">Eloquent JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeCodeCamp/" rel="tag">FreeCodeCamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fuji-Rock-Festival/" rel="tag">Fuji Rock Festival</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hooks/" rel="tag">Hooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/" rel="tag">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Course/" rel="tag">Learning, Course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OIS/" rel="tag">OIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OKR/" rel="tag">OKR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/" rel="tag">OOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading/" rel="tag">Reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/" rel="tag">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/" rel="tag">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/" rel="tag">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/" rel="tag">UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UX/" rel="tag">UX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Report/" rel="tag">Weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Reports/" rel="tag">Weekly Reports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Summary/" rel="tag">Weekly Summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design/" rel="tag">ant design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design-pro/" rel="tag">ant design pro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/art-template/" rel="tag">art-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/auth/" rel="tag">auth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/autojump/" rel="tag">autojump</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/box-model/" rel="tag">box model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codewars/" rel="tag">codewars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejs/" rel="tag">ejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/event/" rel="tag">event</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/" rel="tag">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex/" rel="tag">flex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/float/" rel="tag">float</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freecodecamp/" rel="tag">freecodecamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grid/" rel="tag">grid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/" rel="tag">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jade/" rel="tag">jade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/journal/" rel="tag">journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jwt/" rel="tag">jwt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/" rel="tag">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/layout/" rel="tag">layout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multer/" rel="tag">multer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ndoe-js/" rel="tag">ndoe.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodemon/" rel="tag">nodemon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nrm/" rel="tag">nrm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/" rel="tag">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/responsive/" rel="tag">responsive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/" rel="tag">terminal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/" rel="tag">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/useEffect/" rel="tag">useEffect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-Report/" rel="tag">weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" rel="tag">一周分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%9E%8B/" rel="tag">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" rel="tag">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" rel="tag">年度计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86/" rel="tag">心理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E8%83%BD/" rel="tag">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" rel="tag">效率提升</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E6%B8%B8/" rel="tag">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%AC/" rel="tag">日本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" rel="tag">本地存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" rel="tag">模板引擎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="tag">深拷贝浅拷贝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" rel="tag">知识管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" rel="tag">线程 进程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" rel="tag">翻译， HTTPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" rel="tag">软技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" rel="tag">选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" rel="tag">重装电脑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2020/" style="font-size: 10px;">2020</a> <a href="/tags/Algorithm/" style="font-size: 10.77px;">Algorithm</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 11.54px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 16.92px;">ES6</a> <a href="/tags/Eloquent-JavaScript/" style="font-size: 10px;">Eloquent JavaScript</a> <a href="/tags/FreeCodeCamp/" style="font-size: 10px;">FreeCodeCamp</a> <a href="/tags/Fuji-Rock-Festival/" style="font-size: 10px;">Fuji Rock Festival</a> <a href="/tags/HTML/" style="font-size: 12.31px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.54px;">HTTP</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/IP/" style="font-size: 11.54px;">IP</a> <a href="/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/tags/JavaScript/" style="font-size: 19.23px;">JavaScript</a> <a href="/tags/Learning-Course/" style="font-size: 10px;">Learning, Course</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/OIS/" style="font-size: 10px;">OIS</a> <a href="/tags/OKR/" style="font-size: 10.77px;">OKR</a> <a href="/tags/OOP/" style="font-size: 11.54px;">OOP</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/React/" style="font-size: 13.08px;">React</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/TCP/" style="font-size: 11.54px;">TCP</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UX/" style="font-size: 10px;">UX</a> <a href="/tags/Weekly-Report/" style="font-size: 18.46px;">Weekly Report</a> <a href="/tags/Weekly-Reports/" style="font-size: 10.77px;">Weekly Reports</a> <a href="/tags/Weekly-Summary/" style="font-size: 10px;">Weekly Summary</a> <a href="/tags/ant-design/" style="font-size: 10px;">ant design</a> <a href="/tags/ant-design-pro/" style="font-size: 10px;">ant design pro</a> <a href="/tags/art-template/" style="font-size: 10px;">art-template</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/box-model/" style="font-size: 10px;">box model</a> <a href="/tags/chrome/" style="font-size: 10.77px;">chrome</a> <a href="/tags/codewars/" style="font-size: 10px;">codewars</a> <a href="/tags/computer-science/" style="font-size: 10.77px;">computer science</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/css/" style="font-size: 16.15px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/event/" style="font-size: 10px;">event</a> <a href="/tags/express/" style="font-size: 13.08px;">express</a> <a href="/tags/flex/" style="font-size: 10.77px;">flex</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/freecodecamp/" style="font-size: 17.69px;">freecodecamp</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.77px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/journal/" style="font-size: 10px;">journal</a> <a href="/tags/jwt/" style="font-size: 11.54px;">jwt</a> <a href="/tags/koa/" style="font-size: 14.62px;">koa</a> <a href="/tags/layout/" style="font-size: 10px;">layout</a> <a href="/tags/mac/" style="font-size: 10.77px;">mac</a> <a href="/tags/multer/" style="font-size: 10px;">multer</a> <a href="/tags/ndoe-js/" style="font-size: 10px;">ndoe.js</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/nodemon/" style="font-size: 10px;">nodemon</a> <a href="/tags/npm/" style="font-size: 10.77px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/responsive/" style="font-size: 10px;">responsive</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/token/" style="font-size: 11.54px;">token</a> <a href="/tags/translation/" style="font-size: 10px;">translation</a> <a href="/tags/useEffect/" style="font-size: 10px;">useEffect</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/weekly-Report/" style="font-size: 10.77px;">weekly Report</a> <a href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" style="font-size: 15.38px;">一周分享</a> <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 12.31px;">中间件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%8E%9F%E5%9E%8B/" style="font-size: 10.77px;">原型</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" style="font-size: 10px;">工作效率</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" style="font-size: 10px;">年度计划</a> <a href="/tags/%E5%BF%83%E7%90%86/" style="font-size: 10px;">心理</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 10px;">心理学</a> <a href="/tags/%E6%8A%80%E8%83%BD/" style="font-size: 10px;">技能</a> <a href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" style="font-size: 10px;">效率提升</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">数据类型</a> <a href="/tags/%E6%97%85%E6%B8%B8/" style="font-size: 10px;">旅游</a> <a href="/tags/%E6%97%A5%E6%9C%AC/" style="font-size: 10px;">日本</a> <a href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" style="font-size: 10px;">本地存储</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" style="font-size: 11.54px;">模板引擎</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10.77px;">浏览器</a> <a href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" style="font-size: 10px;">深拷贝浅拷贝</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" style="font-size: 11.54px;">知识管理</a> <a href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" style="font-size: 10.77px;">线程 进程</a> <a href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">网易云音乐</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 12.31px;">翻译</a> <a href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" style="font-size: 10px;">翻译， HTTPS</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 13.85px;">读书笔记</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 10px;">负载均衡</a> <a href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" style="font-size: 10px;">软技能</a> <a href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" style="font-size: 10px;">选择器</a> <a href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" style="font-size: 10px;">重装电脑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">代码注释规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/">代码命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/06/Week-49/">Week 49</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/29/Week-48/">Week 48</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/01/Week-44/">Week 44</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

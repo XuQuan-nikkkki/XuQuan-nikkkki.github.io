@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>「翻译」什么是REST？ | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="原文地址：What is REST? By Codecademy 学习使用REST范式来设计网页应用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「翻译」什么是REST？">
+<meta property="og:url" content="http://example.com/2018/09/11/%E3%80%8C%E7%BF%BB%E8%AF%91%E3%80%8D%E4%BB%80%E4%B9%88%E6%98%AFREST%EF%BC%9F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="原文地址：What is REST? By Codecademy 学习使用REST范式来设计网页应用。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-09-11T08:26:16.000Z">
+<meta property="article:modified_time" content="2018-09-11T13:24:09.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="REST">
+<meta property="article:tag" content="翻译">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="posts-「翻译」什么是REST？" class="h-entry article article-type-posts" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/09/11/%E3%80%8C%E7%BF%BB%E8%AF%91%E3%80%8D%E4%BB%80%E4%B9%88%E6%98%AFREST%EF%BC%9F/" class="article-date">
+  <time class="dt-published" datetime="2018-09-11T08:26:16.000Z" itemprop="datePublished">2018-09-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      「翻译」什么是REST？
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>原文地址：<a target="_blank" rel="noopener" href="https://www.codecademy.com/articles/what-is-rest">What is REST?</a> By Codecademy</p>
+<p>学习使用REST范式来设计网页应用。</p>
+<span id="more"></span>
+
+<h3 id="Representational-State-Transfer-表述性状态传递"><a href="#Representational-State-Transfer-表述性状态传递" class="headerlink" title="Representational State Transfer(表述性状态传递)"></a>Representational State Transfer(表述性状态传递)</h3><p>REST，全称REpresentational State Transfer(表述性状态传递)是一种结构风格，它为Web上的计算机系统提供了一个标准，使得计算机之间的通信更为简单。符合REST范式的系统，通常被称为RESTful系统，最大的特点是无状态，以及将客户端和服务器分离开。接着我们会来探讨这些术语是什么意思，以及它们能给Web应用带来哪些好处。</p>
+<h4 id="客户端与服务器分离"><a href="#客户端与服务器分离" class="headerlink" title="客户端与服务器分离"></a>客户端与服务器分离</h4><p>在REST结构风格中，客户端和服务器端能够在不了解彼此功能的情况下，分别独立实现各自的功能。这就意味着，客户端的代码能够在任何时候被修改，但并不影响服务器的运行，同样的，服务器端的代码也能够在不影响客户端功能的情况下被修改。</p>
+<p>只要两端知道以什么格式的信息来彼此互通，它们就能够保持模块化和分离。通过将用户界面与数据存储分离开，我们通过简化服务器组件来提高跨平台界面的灵活性，提升可扩展性。此外，两端分离允许每一个组件可以独立改进。</p>
+<p>通过使用REST接口，不同的客户端能够访问相同的REST入口，执行相同的操作，并收到相同的响应。</p>
+<h4 id="无状态"><a href="#无状态" class="headerlink" title="无状态"></a>无状态</h4><p>使用REST范式的系统是无状态的，也就是说服务器不用知道客户端当前处于什么状态，同样地，客户端也不必知道服务器的状态。这样，服务器和客户端都能够在不查看以前的信息的情况下，理解收到的任意信息。这种无状态的限制因为使用<em>资源</em>而非<em>命令</em>得到进一步加强。资源是Web名词，它指的是那些你需要存储或者发送给其他设备的对象、文档或者任何东西。</p>
+<p>由于REST系统通过对资源的标准操作来完成交互，它们不依赖接口来实现。</p>
+<p>这些限制有助于RESTful应用实现可靠性、快速性能和可扩展性，因为即使是在系统运作期间，组件也能够在不影响系统的情况下被管理、升级和重复使用。</p>
+<p>现在，我们来看看客户端和服务器之间的通信究竟是如果通过RESTful接口实现的。</p>
+<h3 id="客户端与服务器通信"><a href="#客户端与服务器通信" class="headerlink" title="客户端与服务器通信"></a>客户端与服务器通信</h3><p>在REST架构中，客户发送获取或修改资源的请求，服务器则回复这些请求。我们来看看标准的发送请求和回应请求的方式。</p>
+<h4 id="发送请求"><a href="#发送请求" class="headerlink" title="发送请求"></a>发送请求</h4><p>REST要求客户端通过给服务器发送请求来获取或修改服务器上的数据。请求通常包括：</p>
+<ul>
+<li>HTTP请求类型，明确请求要执行什么操作</li>
+<li><em>请求头</em>，包含客户端的请求信息</li>
+<li>资源路径</li>
+<li>包含数据的信息体（可选）</li>
+</ul>
+<h5 id="HTTP请求类型"><a href="#HTTP请求类型" class="headerlink" title="HTTP请求类型"></a>HTTP请求类型</h5><p>在REST系统中，我们请求资源的基本类型有4种：</p>
+<ul>
+<li>GET——（通过id）检索特定的资源或一组资源</li>
+<li>POST——创建一个新的资源</li>
+<li>PUT——（通过id）更新一个特定的资源</li>
+<li>DELETE——通过id删除一个特定的资源</li>
+</ul>
+<p>如果想了解更多关于HTTP请求的内容，可以看看这篇文章：<a target="_blank" rel="noopener" href="https://www.codecademy.com/articles/what-is-crud">What is CRUD?</a></p>
+<h5 id="请求头和接受参数"><a href="#请求头和接受参数" class="headerlink" title="请求头和接受参数"></a>请求头和接受参数</h5><p>在请求头中，客户端会发送它能够从服务器端接收的内容类型。这个被称为<code>Accept字段</code>，它确保服务器不会返回客户端无法理解或处理的数据。内容类型也被称为MIME类型（Multipurpose Internet Mail Extensions, 多用途因特网邮件扩展）。</p>
+<p>MIME类型被用来在<code>Accept</code>字段指定内容的类别，其中包括<code>type</code>类别和<code>subtype</code>子类别。它们通过斜线<code>/</code>符号分隔。</p>
+<p>比如，一个包含HTML的文本文件就可以用<code>text/html</code>来表示，如果这个文本文件包含的是CSS内容，就是<code>text/css</code>类别。通用的文本文件可以被标记为<code>text/plain</code>。但<code>text/plain</code>也不是万能药，如果客户端指定的是<code>text/css</code>类别，但接收到的是<code>text/plain</code>文件，它也无法识别文件的内容。</p>
+<p>其他类别和它们的常用子类别：</p>
+<ul>
+<li><code>image</code>——<code>image/png</code>, <code>img/jpeg</code>, <code>image/gif</code></li>
+<li><code>audio</code>——<code>audio/wav</code>, <code>audio/mpeg</code></li>
+<li><code>video</code>——<code>video/mp4</code>,<code>video/ogg</code></li>
+<li><code>application</code>——<code>application/json</code>,<code>application/pdf</code>,<code>application/xml</code>,<code>application/octet-stream</code></li>
+</ul>
+<p>比如，当客户端想要获取服务器端<code>articles</code>路径中的<code>id</code>是23的资源，它就会发送一个这样的请求：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET /articles/23</span><br><span class="line">Accept: text/html, application/xhtml</span><br></pre></td></tr></table></figure>
+
+<p>这里，请求头中的<code>Accept</code>字段指的是客户端可以接受<code>text/html</code>或<code>application/xhtml</code>类型的内容。</p>
+<h5 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h5><p>请求中必须包含执行请求操作的资源路径。在RESTful API中，路径应该让客户端明白在执行什么操作。</p>
+<p>通常，路径的第一部分应该以资源的复数形式命名，这样能够让嵌套的路径更易于阅读和理解。</p>
+<p>比如一个叫做<code>fashionboutique.com/customers/223/orders/12</code>的路径就很清晰，即使你之前从没见过这个路径，因为它层级清楚，而且使用了描述性的语言。我们可以知道这是在获取<code>id</code>是223号的顾客的<code>id</code>为12的订单。</p>
+<p>路径应该根据资源的特异性程度包含定位资源所需的内容。当我们想要获取一组资源时，并不需要在请求中添加<code>id</code>属性；当我们给<code>fashionboutique.com/customers</code>路径发送POST请求时也不用添加额外的标识符，因为服务器会给新对象自动生成一个<code>id</code>。</p>
+<p>如果我们想要获取一个单独资源，就需要在路径中添加<code>id</code>了。比如，<code>GET fashionboutique.com/customers/:id</code>路径就是检索<code>cutomers</code>资源中<code>id</code>为指定值的资源。<code>DELETE fashionboutique.com/customers/:id</code>是删除<code>customers</code>资源中<code>id</code>为指定值的资源。</p>
+<h4 id="响应请求"><a href="#响应请求" class="headerlink" title="响应请求"></a>响应请求</h4><h5 id="内容类型"><a href="#内容类型" class="headerlink" title="内容类型"></a>内容类型</h5><p>当服务器给客户端发送数据时，响应的头部必须设置<code>content-type</code>。这个<code>content-type</code>头字段告知客户端响应体的数据类型。这些内容类型是MIME类型，和请求头中的<code>accept</code>字段是一样的。服务器响应回去的<code>content-type</code>必须是请求头中<code>accept</code>指定类型中的一种。</p>
+<p>比如，客户端请求获取<code>articles</code>资源中<code>id</code>为23的资源，它会发送一个GET请求：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET /articles/23 HTTP/1.1</span><br><span class="line">Accept: text/html, application/xhtml</span><br></pre></td></tr></table></figure>
+
+<p>服务器会回复如下响应头：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200(OK)</span><br><span class="line">Content-Type: text/html</span><br></pre></td></tr></table></figure>
+
+<p>这表示响应体中的数据是遵循客户端要求的那样，以<code>text/html</code>的内容类型返回给客户端的。</p>
+<h5 id="响应码"><a href="#响应码" class="headerlink" title="响应码"></a>响应码</h5><p>服务器的响应还包括状态码，用来告诉客户端操作成功与否。作为开发者，你不必知道每一个状态码（真的有很多状态码），但你应该知道最常见的，以及如何使用它们。</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>200（成功）</td>
+<td>这是一个成功的HTTP请求的标准响应</td>
+</tr>
+<tr>
+<td>201（创建成功）</td>
+<td>这意味着HTTP请求成功创建了一个项目</td>
+</tr>
+<tr>
+<td>204（无内容）</td>
+<td>这意味着HTTP请求成功，但是响应体中没有内容</td>
+</tr>
+<tr>
+<td>400（错误请求）</td>
+<td>这意味着请求无法处理，错误原因可能是语法错误、内容过大或客户端的其他错误</td>
+</tr>
+<tr>
+<td>403（请求被禁止）</td>
+<td>客户端没有请求资源的权限</td>
+</tr>
+<tr>
+<td>404（资源不存在）</td>
+<td>资源无法找到，可能被删除或者根本不存在</td>
+</tr>
+<tr>
+<td>500（服务器内部错误）</td>
+<td>当出现意外错误又无法提供具体错误信息时的标准回复</td>
+</tr>
+</tbody></table>
+<p>对于不同的HTTP请求类型，请求成功时服务器的响应如下：</p>
+<ul>
+<li>GET：返回200(成功)</li>
+<li>POST：返回201（创建成功）</li>
+<li>PUT：返回200（成功）</li>
+<li>DELETE：返回204（无内容)如果请求失败，则返回最接近导致错误原因的状态码</li>
+</ul>
+<h5 id="请求和响应示例"><a href="#请求和响应示例" class="headerlink" title="请求和响应示例"></a>请求和响应示例</h5><p>假设我们有一个部署在<code>fashionboutique.com</code>上的服装店应用，可以用来查看、创建、编辑和删除顾客和订单。我们可以通过HTTP API来允许客户端实现这些功能：</p>
+<p>如果我们想要查看所有的顾客，请求内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET http://fashionboutique.com/customers</span><br><span class="line">Accept: application/json</span><br></pre></td></tr></table></figure>
+
+<p>响应头则如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Status Code: 200(OK)</span><br><span class="line">Content-type: application/json</span><br></pre></td></tr></table></figure>
+
+<p>顾客数据会按照<code>application/json</code>的格式在响应中返回给客户端。</p>
+<p>通过POST添加一个新的顾客：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">POST http://fashionboutique.com/customers</span><br><span class="line">Body:</span><br><span class="line">&#123;</span><br><span class="line">  &quot;customers&quot;: &#123;</span><br><span class="line">    &quot;name&quot; = &quot;Scylla Buss&quot;</span><br><span class="line">    &quot;email&quot; = &quot;scylla.buss@codecademy.org&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>服务器会给这个对象生成一个<code>id</code>，并给客户端返回响应，响应头如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">201(CREATED)</span><br><span class="line">Content-type: application/json</span><br></pre></td></tr></table></figure>
+
+<p>想要查看一个顾客的信息可以发送GET请求，指定顾客的<code>id</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET http://fashionboutique.com/customers/123</span><br><span class="line">Accept: application/json</span><br></pre></td></tr></table></figure>
+
+<p>服务器的响应头如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Status Code: 200(OK)</span><br><span class="line">Content-type: application/json</span><br></pre></td></tr></table></figure>
+
+<p><code>id</code>为123的顾客的信息就会通过<code>application/json</code>的格式返回来。</p>
+<p>我们还可以通过PUT方法来更新一个顾客的新数据：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PUT http://fashionboutique.com/customers/123</span><br><span class="line">Body: </span><br><span class="line">&#123;</span><br><span class="line">  &quot;customers&quot;: &#123;</span><br><span class="line">    &quot;name&quot; = &quot;Scylla Buss&quot;</span><br><span class="line">    &quot;email&quot; = &quot;scyllabuss1@codecademy.com</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>服务器会返回一个包含<code>Status Code: 200(OK)</code>的响应头，告诉客户的<code>id</code>是123的顾客的信息已经更新了。</p>
+<p>我们也可以通过指定<code>id</code>来删掉某个顾客：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE http://fashionboutique.com/customers/123</span><br></pre></td></tr></table></figure>
+
+<p>服务器会返回一个包含<code>Status Code: 204(NO CONTENT)</code>的响应头，告知客户端<code>id</code>是123的数据已经被删掉了，返回的响应体中没有任何内容。</p>
+<p>###REST练习</p>
+<p>假设我们现在要搭建一个相册网站，这个网站有一个API能够记录用户、地点以及在这些地点拍摄的照片。网站有<code>index.html</code>和<code>style.css</code>文件。每个用户都有用户名和密码。每张照片都有一个地点和一个拍摄者（拍摄照片的用户）。每个地点都有一个名称和一个街道地址。你能不能设计一个REST系统实现这样的功能：</p>
+<ul>
+<li>保存用户、照片和地点</li>
+<li>获取地点以及根据特定的地点获取照片</li>
+</ul>
+<p>从这里开始：</p>
+<ul>
+<li>我们要发送什么类型的请求</li>
+<li>服务器可能会响应什么</li>
+<li>响应的内容类型应该是什么</li>
+</ul>
+<h3 id="解决方案：结构"><a href="#解决方案：结构" class="headerlink" title="解决方案：结构"></a>解决方案：结构</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="string">&quot;user&quot;</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> &lt;数字&gt;，</span><br><span class="line">    <span class="string">&quot;username“：&lt;字符串&gt;,</span></span><br><span class="line"><span class="string">    &quot;</span>password<span class="string">&quot;：&lt;字符串&gt;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;photo&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> &lt;数字&gt;<span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;venue_id&quot;</span><span class="punctuation">:</span> &lt;数字&gt;<span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;author_id&quot;</span><span class="punctuation">:</span> &lt;数字&gt;</span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;venue&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> &lt;数字&gt;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> &lt;字符串&gt;</span><br><span class="line">    <span class="attr">&quot;address&quot;</span><span class="punctuation">:</span> &lt;字符串&gt;</span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="解决方案：-请求-响应"><a href="#解决方案：-请求-响应" class="headerlink" title="解决方案： 请求&#x2F;响应"></a>解决方案： 请求&#x2F;响应</h3><h4 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h4><ul>
+<li>请求：<code>GET /index.html</code> Accept:<code>text/html</code>  响应：200(OK) Content-type: <code>text/html</code></li>
+<li>请求：<code>GET /style.css</code> Accept:<code>text/css</code>   响应：200(OK) Content-type: <code>text/css</code></li>
+<li>请求：<code>GET /venues</code> Accept:<code>application/json</code>   响应：200(OK) Content-type: <code>appliation/json</code></li>
+<li>请求：<code>GET /venues/:id</code> Accept:<code>application/json</code>   响应：200(OK) Content-type: <code>appliation/json</code></li>
+<li>请求：<code>GET /venues/:id/photos/:id</code> Accept:<code>image/png</code>   响应：200(OK) Content-type: <code>image/png</code></li>
+</ul>
+<h4 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h4><ul>
+<li>请求：<code>POST/users</code> 响应：201（CREATED） Content-type:<code>application/json</code></li>
+<li>请求：<code>POST/venues</code> 响应：201（CREATED） Content-type:<code>application/json</code></li>
+<li>请求：<code>POST/venues/:id/photos</code> 响应：201（CREATED） Content-type:<code>application/json</code></li>
+</ul>
+<h4 id="PUT请求"><a href="#PUT请求" class="headerlink" title="PUT请求"></a>PUT请求</h4><ul>
+<li>请求：<code>PUT/users/:id</code> 响应：200（OK）</li>
+<li>请求：<code>PUT/venues/:id</code> 响应：200（OK）</li>
+<li>请求：<code>PUT/venues/:id/photos/:id</code> 响应：200（OK）</li>
+</ul>
+<h4 id="DELETE请求"><a href="#DELETE请求" class="headerlink" title="DELETE请求"></a>DELETE请求</h4><ul>
+<li>请求：<code>DELETE/venues/:id</code> 响应：204（NO CONTENT）</li>
+<li>请求：<code>DELETE/venues/:id/photos/:id</code> 响应：204（NO CONTENT）</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/09/11/%E3%80%8C%E7%BF%BB%E8%AF%91%E3%80%8D%E4%BB%80%E4%B9%88%E6%98%AFREST%EF%BC%9F/" data-id="clnpqd41l00bep1202wi78hff" data-title="「翻译」什么是REST？" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/15/apply-call%E5%92%8Cbind/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          apply, call和bind
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/10/CSS%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS布局方式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/FreeCodeCamp/">FreeCodeCamp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jounal/">Jounal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/">习题集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%A9%E5%99%A8/">利器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/">工作备忘</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/">知识管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/">跟着大佬学编程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2020/" rel="tag">2020</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOM/" rel="tag">BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eloquent-JavaScript/" rel="tag">Eloquent JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeCodeCamp/" rel="tag">FreeCodeCamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fuji-Rock-Festival/" rel="tag">Fuji Rock Festival</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hooks/" rel="tag">Hooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/" rel="tag">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Course/" rel="tag">Learning, Course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OIS/" rel="tag">OIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OKR/" rel="tag">OKR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/" rel="tag">OOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading/" rel="tag">Reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/" rel="tag">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/" rel="tag">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/" rel="tag">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/" rel="tag">UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UX/" rel="tag">UX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Report/" rel="tag">Weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Reports/" rel="tag">Weekly Reports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Summary/" rel="tag">Weekly Summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design/" rel="tag">ant design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design-pro/" rel="tag">ant design pro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/art-template/" rel="tag">art-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/auth/" rel="tag">auth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/autojump/" rel="tag">autojump</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/box-model/" rel="tag">box model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codewars/" rel="tag">codewars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejs/" rel="tag">ejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/event/" rel="tag">event</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/" rel="tag">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex/" rel="tag">flex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/float/" rel="tag">float</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freecodecamp/" rel="tag">freecodecamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grid/" rel="tag">grid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/" rel="tag">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jade/" rel="tag">jade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/journal/" rel="tag">journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jwt/" rel="tag">jwt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/" rel="tag">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/layout/" rel="tag">layout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multer/" rel="tag">multer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ndoe-js/" rel="tag">ndoe.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodemon/" rel="tag">nodemon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nrm/" rel="tag">nrm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/" rel="tag">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/responsive/" rel="tag">responsive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/" rel="tag">terminal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/" rel="tag">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/useEffect/" rel="tag">useEffect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-Report/" rel="tag">weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" rel="tag">一周分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%9E%8B/" rel="tag">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" rel="tag">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" rel="tag">年度计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86/" rel="tag">心理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E8%83%BD/" rel="tag">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" rel="tag">效率提升</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E6%B8%B8/" rel="tag">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%AC/" rel="tag">日本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" rel="tag">本地存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" rel="tag">模板引擎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="tag">深拷贝浅拷贝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" rel="tag">知识管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" rel="tag">线程 进程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" rel="tag">翻译， HTTPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" rel="tag">软技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" rel="tag">选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" rel="tag">重装电脑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2020/" style="font-size: 10px;">2020</a> <a href="/tags/Algorithm/" style="font-size: 10.77px;">Algorithm</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 11.54px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 16.92px;">ES6</a> <a href="/tags/Eloquent-JavaScript/" style="font-size: 10px;">Eloquent JavaScript</a> <a href="/tags/FreeCodeCamp/" style="font-size: 10px;">FreeCodeCamp</a> <a href="/tags/Fuji-Rock-Festival/" style="font-size: 10px;">Fuji Rock Festival</a> <a href="/tags/HTML/" style="font-size: 12.31px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.54px;">HTTP</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/IP/" style="font-size: 11.54px;">IP</a> <a href="/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/tags/JavaScript/" style="font-size: 19.23px;">JavaScript</a> <a href="/tags/Learning-Course/" style="font-size: 10px;">Learning, Course</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/OIS/" style="font-size: 10px;">OIS</a> <a href="/tags/OKR/" style="font-size: 10.77px;">OKR</a> <a href="/tags/OOP/" style="font-size: 11.54px;">OOP</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/React/" style="font-size: 13.08px;">React</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/TCP/" style="font-size: 11.54px;">TCP</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UX/" style="font-size: 10px;">UX</a> <a href="/tags/Weekly-Report/" style="font-size: 18.46px;">Weekly Report</a> <a href="/tags/Weekly-Reports/" style="font-size: 10.77px;">Weekly Reports</a> <a href="/tags/Weekly-Summary/" style="font-size: 10px;">Weekly Summary</a> <a href="/tags/ant-design/" style="font-size: 10px;">ant design</a> <a href="/tags/ant-design-pro/" style="font-size: 10px;">ant design pro</a> <a href="/tags/art-template/" style="font-size: 10px;">art-template</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/box-model/" style="font-size: 10px;">box model</a> <a href="/tags/chrome/" style="font-size: 10.77px;">chrome</a> <a href="/tags/codewars/" style="font-size: 10px;">codewars</a> <a href="/tags/computer-science/" style="font-size: 10.77px;">computer science</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/css/" style="font-size: 16.15px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/event/" style="font-size: 10px;">event</a> <a href="/tags/express/" style="font-size: 13.08px;">express</a> <a href="/tags/flex/" style="font-size: 10.77px;">flex</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/freecodecamp/" style="font-size: 17.69px;">freecodecamp</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.77px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/journal/" style="font-size: 10px;">journal</a> <a href="/tags/jwt/" style="font-size: 11.54px;">jwt</a> <a href="/tags/koa/" style="font-size: 14.62px;">koa</a> <a href="/tags/layout/" style="font-size: 10px;">layout</a> <a href="/tags/mac/" style="font-size: 10.77px;">mac</a> <a href="/tags/multer/" style="font-size: 10px;">multer</a> <a href="/tags/ndoe-js/" style="font-size: 10px;">ndoe.js</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/nodemon/" style="font-size: 10px;">nodemon</a> <a href="/tags/npm/" style="font-size: 10.77px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/responsive/" style="font-size: 10px;">responsive</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/token/" style="font-size: 11.54px;">token</a> <a href="/tags/translation/" style="font-size: 10px;">translation</a> <a href="/tags/useEffect/" style="font-size: 10px;">useEffect</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/weekly-Report/" style="font-size: 10.77px;">weekly Report</a> <a href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" style="font-size: 15.38px;">一周分享</a> <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 12.31px;">中间件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%8E%9F%E5%9E%8B/" style="font-size: 10.77px;">原型</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" style="font-size: 10px;">工作效率</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" style="font-size: 10px;">年度计划</a> <a href="/tags/%E5%BF%83%E7%90%86/" style="font-size: 10px;">心理</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 10px;">心理学</a> <a href="/tags/%E6%8A%80%E8%83%BD/" style="font-size: 10px;">技能</a> <a href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" style="font-size: 10px;">效率提升</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">数据类型</a> <a href="/tags/%E6%97%85%E6%B8%B8/" style="font-size: 10px;">旅游</a> <a href="/tags/%E6%97%A5%E6%9C%AC/" style="font-size: 10px;">日本</a> <a href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" style="font-size: 10px;">本地存储</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" style="font-size: 11.54px;">模板引擎</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10.77px;">浏览器</a> <a href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" style="font-size: 10px;">深拷贝浅拷贝</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" style="font-size: 11.54px;">知识管理</a> <a href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" style="font-size: 10.77px;">线程 进程</a> <a href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">网易云音乐</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 12.31px;">翻译</a> <a href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" style="font-size: 10px;">翻译， HTTPS</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 13.85px;">读书笔记</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 10px;">负载均衡</a> <a href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" style="font-size: 10px;">软技能</a> <a href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" style="font-size: 10px;">选择器</a> <a href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" style="font-size: 10px;">重装电脑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">代码注释规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/">代码命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/06/Week-49/">Week 49</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/29/Week-48/">Week 48</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/01/Week-44/">Week 44</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

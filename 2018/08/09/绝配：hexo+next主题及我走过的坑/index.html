@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>绝配：hexo+next主题及我走过的坑 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="这篇内容详细记述了我在使用hexo搭载博客的过程中走过的路和跌过的坑。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="绝配：hexo+next主题及我走过的坑">
+<meta property="og:url" content="http://example.com/2018/08/09/%E7%BB%9D%E9%85%8D%EF%BC%9Ahexo+next%E4%B8%BB%E9%A2%98%E5%8F%8A%E6%88%91%E8%B5%B0%E8%BF%87%E7%9A%84%E5%9D%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这篇内容详细记述了我在使用hexo搭载博客的过程中走过的路和跌过的坑。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmw3c9b6j309i0253ym.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmw9gle0j30ra06fgnx.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmwkof78j30ms0b475v.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g5mmwqtwxaj30lo0fiad8.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmws9vaij30tc076myw.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g5mmwv39efj30ku0bjwgm.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g5mmwza00jj30f70250sx.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79ly1g5mmx3u1spj31340gg42e.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmx6rmvcj306w02ewec.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g5mmx92e04j30hn0diab3.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmxdsbuij313g0iqt9r.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmxf77o6j313g0iu40z.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g5mmxhvzmzj313j0it77l.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g5mmxith83j313f0iuq6a.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmxn0s3gj30mp019mx0.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79ly1g5mmxs6bxtj302y00twe9.jpg">
+<meta property="article:published_time" content="2018-08-09T03:20:42.000Z">
+<meta property="article:modified_time" content="2019-08-03T09:50:26.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="next">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmw3c9b6j309i0253ym.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-绝配：hexo+next主题及我走过的坑" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/08/09/%E7%BB%9D%E9%85%8D%EF%BC%9Ahexo+next%E4%B8%BB%E9%A2%98%E5%8F%8A%E6%88%91%E8%B5%B0%E8%BF%87%E7%9A%84%E5%9D%91/" class="article-date">
+  <time class="dt-published" datetime="2018-08-09T03:20:42.000Z" itemprop="datePublished">2018-08-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%88%A9%E5%99%A8/">利器</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      绝配：hexo+next主题及我走过的坑
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>这篇内容详细记述了我在使用hexo搭载博客的过程中走过的路和跌过的坑。</p>
+<span id="more"></span>
+
+<h3 id="从印象笔记到简书到Hexo"><a href="#从印象笔记到简书到Hexo" class="headerlink" title="从印象笔记到简书到Hexo"></a>从印象笔记到简书到Hexo</h3><p>我一直有收集资料的习惯，最开始把资料都放在印象笔记里，然后自己平时处理消化之后会添加一个Learning Card部分开资料开头，方便自己复习和记忆。但是时间一久，资料就特别多，加上处理过和没处理过的都积攒在一起就显得特别臃肿，于是我就考虑将消化过的内容发布到简书上，给自己做一个记录，也算是自己的技术博客。</p>
+<p>但使用了简书3个月之后，我就发现了一些问题：</p>
+<p>首先，我是用Typora来写内容的，简书虽然支持Markdown，但是自带的编辑器功能不是特别完善，有些时候还得反复切换Markdown和富文本模式，很麻烦麻烦；</p>
+<p>其次，直接复制Typora的内容到简书是无法同步图片的，因为Typora的图片是放在文件夹内的asset文件夹内的，复制到简书需要图片挨个重新上传，图片多的时候简直想放弃这一篇内容；</p>
+<p>另外，简书无法添加标签，只能分笔记本来写不同的内容，而且也不能添加置顶，功能比较单一；</p>
+<p>在综合考虑之后，我决定搭建一个自己的博客。正好看到有人推荐hexo搭建，而且大家搭建的博客都挺赏心悦目的，我就开始动手搭建自己的了。</p>
+<h3 id="Hexo部署"><a href="#Hexo部署" class="headerlink" title="Hexo部署"></a>Hexo部署</h3><p>hexo有中文的文档，这一点非常方便，但是在安装过程中还是很容易有疏忽的地方，导致安装失败。</p>
+<h4 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h4><p>安装Hexo之前，必须保证自己的电脑中<strong>已经安装好了Node.js和Git</strong>。因为这两个软件我之前都安装过，这里就不重复安装过程了，检验方式如下：</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmw3c9b6j309i0253ym.jpg" alt="image-20180809141924679"></p>
+<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>安装好node.js和git后，可以通过npm来安装Hexo。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h4><p>之后就可以在电脑里新建一个文件夹来作为存放博客全部内容的大本营了。我们直接用hexo命令来初始化博客文件夹：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p><code>&lt;folder&gt;</code>就是文件夹的名字，我们可以自己随意取这个名字，我的经验是，现在初始化应该不需要后面<code>npm install</code>这个步骤了，在创建的时候 ，文件夹初始化已经把需要的内容都下载进去了。</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmw9gle0j30ra06fgnx.jpg" alt="文件夹开始初始化了"></p>
+<h4 id="站内内容"><a href="#站内内容" class="headerlink" title="站内内容"></a>站内内容</h4><p>新建好的文件夹目录如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">.</span></span><br><span class="line"><span class="string">├──</span> <span class="string">_config.yml</span></span><br><span class="line"><span class="string">├──</span> <span class="string">package.json</span></span><br><span class="line"><span class="string">├──</span> <span class="string">scaffolds</span></span><br><span class="line"><span class="string">├──</span> <span class="string">source</span></span><br><span class="line"><span class="string">|</span>   <span class="string">├──</span> <span class="string">_drafts</span></span><br><span class="line"><span class="string">|</span>   <span class="string">└──</span> <span class="string">_posts</span></span><br><span class="line"><span class="string">└──</span> <span class="string">themes</span></span><br></pre></td></tr></table></figure>
+
+<p>这里解释一下各个文件夹的作用：</p>
+<h5 id="config-yml"><a href="#config-yml" class="headerlink" title="config.yml"></a>config.yml</h5><p>博客的配置文件，博客的名称、关键词、作者、语言、博客主题…设置都在里面。</p>
+<h5 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h5><p>应用程序信息，新添加的插件内容也会出现在这里面，我们可以不修改这里的内容。</p>
+<h5 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h5><p>scaffolds就是脚手架的意思，这里放了三个模板文件，分别是新添加博客文章（posts）、新添加博客页（page）和新添加草稿（draft）的目标样式。</p>
+<p>这部分可以修改的内容是，我们可以在模板上添加比如categories等自定义内容</p>
+<h5 id="source"><a href="#source" class="headerlink" title="source"></a>source</h5><p>source是放置我们博客内容的地方，里面初始只有两个文件夹，一个是drafts（草稿），一个posts（文章），但之后我们通过命令新建tags（标签）还有categories（分类）页后，这里会相应地增加文件夹。</p>
+<h5 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h5><p>放置主题文件包的地方。Hexo会根据这个文件来生成静态页面。</p>
+<p>初始状态下只有landscape一个文件夹，后续我们可以添加自己喜欢的。</p>
+<h4 id="Hexo命令"><a href="#Hexo命令" class="headerlink" title="Hexo命令"></a>Hexo命令</h4><h5 id="init"><a href="#init" class="headerlink" title="init"></a><code>init</code></h5><p>新建一个网站。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="new"><a href="#new" class="headerlink" title="new"></a><code>new</code></h5><p>新建文章或页面。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &lt;layout&gt; &quot;title&quot;</span><br></pre></td></tr></table></figure>
+
+<p>这里的<code>&lt;layout&gt;</code>对应我们要添加的内容，如果是<code>posts</code>就是添加新的文章，如果是<code>page</code>就是添加新的页面。</p>
+<p>默认是添加<code>posts</code>。</p>
+<p>然后我们就可以在对应的posts或drafts文件夹里找到我们新建的文件，然后在文件里用Markdown的格式来写作了。</p>
+<h5 id="generate"><a href="#generate" class="headerlink" title="generate"></a><code>generate</code></h5><p>生成静态页面</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>也可以简写成</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<h5 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a><code>deploy</code></h5><p>将内容部署到网站</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>也可以简写成</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -d</span><br></pre></td></tr></table></figure>
+
+<h5 id="publish"><a href="#publish" class="headerlink" title="publish"></a><code>publish</code></h5><p>发布内容，实际上是将内容从drafts（草稿）文件夹移到posts（文章）文件夹。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo publish &lt;layout&gt; &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="server"><a href="#server" class="headerlink" title="server"></a><code>server</code></h5><p>启动服务器，默认情况下，访问网站为<code>http://localhost:4000/</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>也可以简写成</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>根据我的经验，除了第一次部署的时候，我们会重点用到<code>hexo init</code>这个命令外，在平时写博客和发布过程中最常用的就是：</p>
+<ul>
+<li><code>hexo n &lt;filename&gt;</code> 新建文章</li>
+<li><code>hexo s</code> 启动服务器，在本地查看内容</li>
+<li><code>hexo g</code> 生成静态页面</li>
+<li><code>hexo deploy</code> 部署到网站</li>
+</ul>
+<p>以上四个步骤。</p>
+</blockquote>
+<p>其实以上命令我觉得就足够了，文档里还有很多功能，但我在实际使用的过程中都还没有遇到。</p>
+<p>搭建好后我们在<code>localhost:4000</code>就可以看到这样的博客内容：</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmwkof78j30ms0b475v.jpg" alt="image-20180809152743968"></p>
+<h4 id="实际操作"><a href="#实际操作" class="headerlink" title="实际操作"></a>实际操作</h4><p>我在新建博客之后，做了以下改动：</p>
+<h5 id="1-创建“分类”页面"><a href="#1-创建“分类”页面" class="headerlink" title="1. 创建“分类”页面"></a>1. 创建“分类”页面</h5><ul>
+<li><p>新建分类页面</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给分类页面添加类型</p>
+<p> 我们在source文件夹中的categories文件夹下找到index.md文件，并在它的头部加上type属性。</p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">文章分类</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017-05-27 13:47:40</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;categories&quot;</span>   <span class="comment">#这部分是新添加的</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给模板添加分类属性</p>
+<p> 现在我们打开scarffolds文件夹里的post.md文件，给它的头部加上<code>categories: </code>，这样我们创建的所有新的文章都会自带这个属性，我们只需要往里填分类，就可以自动在网站上形成分类了。</p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> &#123;&#123; <span class="string">title</span> &#125;&#125;</span><br><span class="line"><span class="attr">date:</span> &#123;&#123; <span class="string">date</span> &#125;&#125;</span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="attr">tags:</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给文章添加分类</p>
+<p> 现在我们可以找到一篇文章，然后尝试给它添加分类</p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">layout:</span> <span class="string">posts</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">写给小白的express学习笔记1：</span> <span class="string">express-static文件静态管理</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018-06-07 00:38:36</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">学习笔记</span></span><br><span class="line"><span class="attr">tags:</span> [<span class="string">node.js</span>, <span class="string">express</span>]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="2-创建“标签”页面"><a href="#2-创建“标签”页面" class="headerlink" title="2. 创建“标签”页面"></a>2. 创建“标签”页面</h5><p>创建”标签”页的方式和创建“分类”一样。</p>
+<ul>
+<li><p>新建“标签”页面</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给标签页面添加类型</p>
+<p>我们在source文件夹中的tags文件夹下找到index.md文件，并在它的头部加上type属性。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018-08-06 22:48:29</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span> <span class="comment">#新添加的内容</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给文章添加标签</p>
+<p>有两种写法都可以，第一种是类似数组的写法，把标签放在中括号<code>[]</code>里，用英文逗号隔开</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">layout:</span> <span class="string">posts</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">写给小白的express学习笔记1：</span> <span class="string">express-static文件静态管理</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018-06-07 00:38:36</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">学习笔记</span></span><br><span class="line"><span class="attr">tags:</span> [<span class="string">node.js</span>, <span class="string">express</span>]</span><br></pre></td></tr></table></figure>
+
+<p>第二种写法是用<code>-</code>短划线列出来</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">layout:</span> <span class="string">posts</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">写给小白的express学习笔记1：</span> <span class="string">express-static文件静态管理</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018-06-07 00:38:36</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">学习笔记</span></span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">node.js</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">express</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="部署域名"><a href="#部署域名" class="headerlink" title="部署域名"></a>部署域名</h3><p>紧接着我们就可以把这些内容添加到Github页面上，然后生成我们自己的博客了。</p>
+<h4 id="部署Github"><a href="#部署Github" class="headerlink" title="部署Github"></a>部署Github</h4><ul>
+<li><p>首先你必须有一个github账号</p>
+</li>
+<li><p>然后新建一个仓库，这一有第一个坑，我之前用了<code>hexoblog</code>来作为项目名称，一直没能搭建成功，后来看到其他大牛的经验，才发现项目名一定要是<code>用户名.github.io</code>的形式(README.md可选可不选)</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g5mmwqtwxaj30lo0fiad8.jpg" alt="image-20180809153134467"></p>
+</li>
+<li><p>然后在setting里添加生成页面的选项</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmws9vaij30tc076myw.jpg" alt="image-20180809153304980"></p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g5mmwv39efj30ku0bjwgm.jpg" alt="image-20180809153343362"></p>
+</li>
+<li><p>这个时候github页面其实就生成好了，但是我们的内容还需要同步到github上，所以打开hexo文件夹里的配置文件config.yml，添加部署路径</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g5mmwza00jj30f70250sx.jpg" alt="image-20180809153610047"></p>
+<p>这里注意两小点：</p>
+<ul>
+<li>属性和内容之间一定要有一个空格，配置文件有自己的格式规范</li>
+<li>如果你之前没有用git关联过自己的github库，需要配置SSH等参数，否则无法成功，这部分搜git就有很多相关教程</li>
+</ul>
+</li>
+<li><p>我们再用<code>hexo g &amp;&amp; hexo deploy</code>就能将内容推送到github上了，在github页面上也能看到自己的内容了</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79ly1g5mmx3u1spj31340gg42e.jpg" alt="image-20180809153933270"></p>
+</li>
+</ul>
+<h4 id="部署自己的域名"><a href="#部署自己的域名" class="headerlink" title="部署自己的域名"></a>部署自己的域名</h4><ul>
+<li><p>首先我们需要获取一个域名，我是在阿里云上购买了，上面可以根据自己想要的内容搜，比如我用了自己的名字，推荐给你的域名根据后缀不同会有价格上的区别，我选了一个不太贵的；</p>
+</li>
+<li><p>购买域名之后需要实名认证，这是另一个坑，我之前不知道实名认证审核完成前域名无法用，一直以为自己搭建失败了；</p>
+</li>
+<li><p>认证成功后需要解析域名</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmx6rmvcj306w02ewec.jpg" alt="image-20180809154942783"></p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g5mmx92e04j30hn0diab3.jpg" alt="image-20180809155013659"></p>
+<p>记录类型选CNAME，记录值是自己github生成页面的地址。</p>
+</li>
+<li><p>在博客的页面添加CNAME文件，并在里面记录自己域名的地址，将这个文件放在public文件夹下</p>
+</li>
+<li><p>这里还有一个小坑，CNAME文件经常被覆盖，导致我们重新部署博客后，链接就不可用了，这里可以下载一个叫<code>hexo-generator-cname</code>的插件，这样它会自动搞定CNAME的问题，只需要第一次手动将域名添加到文件里即可</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-generator-cname --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最后<code>hexo g &amp;&amp; hexo deploy</code>就可以了</p>
+</li>
+</ul>
+<h3 id="NexT主题"><a href="#NexT主题" class="headerlink" title="NexT主题"></a>NexT主题</h3><p>hexo有很多开源的主题，我选了<a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">NexT</a>，开始只是觉得很简洁清爽，后来发现它的功能挺齐全的，提前解决了很多搭建过程中会遇到的问题。这里强烈推荐一下。</p>
+<p>首先，NexT也有<a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next/blob/master/README.cn.md">中文文档</a>，然后我们就可以开始了。</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>我是用的<code>git clone</code>的方法，文档中还有其他方法</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h4><p>在<strong>hexo根目录</strong>下的配置文件config.yml里设置主题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h4><p>接下来我们就可以来按需配置主题内容了，所有内容都在<strong>themes&#x2F;next</strong>文件夹下的config.yml文件里修改。</p>
+<p>官方文档里写的是有些配置需要将一部分代码添加到配置文件中，但其实不用，我们逐行看配置文件就会发现，有很多功能都已经放在配置文件里了，只是注释掉了，我们只需要取消注释，把需要的相关信息补全即可使用</p>
+<h5 id="菜单栏-menu"><a href="#菜单栏-menu" class="headerlink" title="菜单栏 menu"></a>菜单栏 <code>menu</code></h5><p>原生菜单栏有主页、关于、分类、标签等数个选项，但是在配置文件中是注释掉的状态，这里我们自行修改注释就行</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="comment"># about: /about/ || user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="comment"># schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment"># sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment"># commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
+
+<p>注意点：</p>
+<ul>
+<li>如果事先没有通过<code>hexo new page &lt;pageName&gt;</code>来创建页面的话，即使在配置文件中取消注释，页面也没法显示</li>
+<li>我们也可以添加自己想要添加的页面，不用局限在配置文件里提供的选择里</li>
+<li><code>||</code>后面是fontAwesome里的文件对应的名称</li>
+<li><code>menu_icons</code>记得选<code>enable: true</code>（默认应该是<code>true</code>）</li>
+</ul>
+<p>我在这部分添加了两个自定义的页面，后面在第三方插件部分我会再提到。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="comment"># about: /about/ || user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line">  <span class="string">读书:</span> <span class="string">/books</span> <span class="string">||</span> <span class="string">book</span></span><br><span class="line">  <span class="string">电影:</span> <span class="string">/movies</span> <span class="string">||</span> <span class="string">film</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="comment"># schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment"># sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment"># commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="主题风格-schemes"><a href="#主题风格-schemes" class="headerlink" title="主题风格 schemes"></a>主题风格 <code>schemes</code></h5><p>主题提供了4个，我们把想要选择的取消注释，其他三个保持注释掉的状态即可。</p>
+<ul>
+<li><p><code>Muse</code></p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmxdsbuij313g0iqt9r.jpg" alt="image-20180809164700600"></p>
+</li>
+<li><p>Mist</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmxf77o6j313g0iu40z.jpg" alt="image-20180809164749052"></p>
+</li>
+<li><p>Pisces </p>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g5mmxhvzmzj313j0it77l.jpg" alt="image-20180809164925685"></p>
+</li>
+<li><p>Gemini </p>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g5mmxith83j313f0iuq6a.jpg" alt="image-20180809165023401"></p>
+</li>
+</ul>
+<p>选择主题后也可以自定义，不过我还没摸清楚有哪些地方可以自定义，等弄清楚了我再来更新。</p>
+<h5 id="底部建站时间和图标修改"><a href="#底部建站时间和图标修改" class="headerlink" title="底部建站时间和图标修改"></a>底部建站时间和图标修改</h5><p>修改主题的配置文件：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">footer:</span></span><br><span class="line">  <span class="comment"># Specify the date when the site was setup.</span></span><br><span class="line">  <span class="comment"># If not defined, current year will be used.</span></span><br><span class="line">  <span class="attr">since:</span> <span class="number">2018</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Icon between year and copyright info.</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">snowflake-o</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># If not defined, will be used `author` from Hexo main config.</span></span><br><span class="line">  <span class="attr">copyright:</span></span><br><span class="line">  <span class="comment"># -------------------------------------------------------------</span></span><br><span class="line">  <span class="comment"># Hexo link (Powered by Hexo).</span></span><br><span class="line">  <span class="attr">powered:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="comment"># Theme &amp; scheme info link (Theme - NexT.scheme).</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># Version info of NexT after scheme info (vX.X.X).</span></span><br><span class="line">    <span class="comment"># version: false</span></span><br></pre></td></tr></table></figure>
+
+<p>我在这部分做了这样几件事：</p>
+<ul>
+<li>把用户的图标从小人<code>user</code>改成了雪花<code>snowflake-o</code></li>
+<li><code>copyright</code>留空，显示成页面<code>author</code>即我的名字</li>
+<li><code>powered: false</code>把hexo的授权图片取消了</li>
+<li><code>theme: enable:false</code> 把主题的内容也取消了</li>
+</ul>
+<p>这样底部信息比较简单。</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g5mmxn0s3gj30mp019mx0.jpg" alt="image-20180809172835606"></p>
+<h5 id="个人社交信息-social"><a href="#个人社交信息-social" class="headerlink" title="个人社交信息 social"></a>个人社交信息 <code>social</code></h5><p>在<code>social</code>里我们可以自定义自己想要在个人信息部分展现的账号，同时给他们加上图标。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/XuQuan-nikkkki</span> <span class="string">||</span> <span class="string">github</span></span><br><span class="line">  <span class="attr">E-Mail:</span> <span class="string">mailto:xuquan1225@hotmail.com</span> <span class="string">||</span> <span class="string">envelope</span></span><br><span class="line">  <span class="comment">#Google: https://plus.google.com/yourname || google</span></span><br><span class="line">  <span class="comment">#Twitter: https://twitter.com/yourname || twitter</span></span><br><span class="line">  <span class="comment">#FB Page: https://www.facebook.com/yourname || facebook</span></span><br></pre></td></tr></table></figure>
+
+<p>注意点：</p>
+<ul>
+<li><code>||</code>后面对应的名称是fontAwesome里图标的名称，如果我们选择的账号没有对应的图标（如豆瓣、知乎），我们可以在fontAwesome库里去选择自己喜欢的图标</li>
+<li>建议不要找太新的fontAwesome图标，主题关联的库版本没有那么新，很可能显示不了或者显示一个地球</li>
+</ul>
+<h5 id="网站动画效果"><a href="#网站动画效果" class="headerlink" title="网站动画效果"></a>网站动画效果</h5><p>为了网站响应速度我们可以把网站的动画关掉</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">motion:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>但我觉得页面比较素，所以开了动画，选择了<code>canvas-nest</code>这一个，主题自带四种效果，可以选自己喜欢的。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">motion:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">async:</span> <span class="literal">true</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># Canvas-nest</span></span><br><span class="line"><span class="attr">canvas_nest:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># three_waves</span></span><br><span class="line"><span class="attr">three_waves:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># canvas_lines</span></span><br><span class="line"><span class="attr">canvas_lines:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># canvas_sphere</span></span><br><span class="line"><span class="attr">canvas_sphere:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h5><p>NexT原生支持多说、Disqus、hypercomments等多种评论系统。我选择了Disqus。</p>
+<p>方法也非常简单。直接去Disqus注册，注册完了在配置的时候会给你一个名为shortname的ID，将这个ID填在配置文件里即可。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Disqus</span></span><br><span class="line"><span class="attr">disqus:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">shortname:</span> <span class="string">xuquan</span></span><br><span class="line">  <span class="attr">count:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="统计文章字数和阅读时间"><a href="#统计文章字数和阅读时间" class="headerlink" title="统计文章字数和阅读时间"></a>统计文章字数和阅读时间</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_wordcount:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">wordcount:</span> <span class="literal">true</span>  <span class="comment"># 文章字数</span></span><br><span class="line">  <span class="attr">min2read:</span> <span class="literal">true</span>   <span class="comment"># 阅读时间</span></span><br><span class="line">  <span class="attr">totalcount:</span> <span class="literal">true</span>  <span class="comment"># 总共字数</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="统计阅读次数"><a href="#统计阅读次数" class="headerlink" title="统计阅读次数"></a>统计阅读次数</h5><p>这里我用的是leancloud的服务，具体方法参考NexT上的<a target="_blank" rel="noopener" href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud">教程</a>,添加完之后效果如下：</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79ly1g5mmxs6bxtj302y00twe9.jpg" alt="image-20180809175133462"></p>
+<h3 id="第三方插件"><a href="#第三方插件" class="headerlink" title="第三方插件"></a>第三方插件</h3><h4 id="Hexo-admin"><a href="#Hexo-admin" class="headerlink" title="Hexo-admin"></a>Hexo-admin</h4><p>Hexo-admin插件允许我们直接在本地页面上修改文章内容。</p>
+<ul>
+<li><p>下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-admin --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>登录<code>http://localhost:4000/admin</code>即可看到我们所有的文章内容，并且在可视化界面中操作文章内容</p>
+</li>
+</ul>
+<h4 id="Hexo-douban"><a href="#Hexo-douban" class="headerlink" title="Hexo-douban"></a>Hexo-douban</h4><p><a target="_blank" rel="noopener" href="https://github.com/mythsman/hexo-douban"><code>hexo-douban</code></a>插件可以在博客中添加豆瓣电影、读书和游戏页面，关联我们自己的账号。</p>
+<ul>
+<li><p>下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-douban --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置</p>
+<p>在<strong>hexo根目录</strong>下的config.yml文件中添加如下内容</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">douban:</span></span><br><span class="line">  <span class="attr">user:</span> </span><br><span class="line">  <span class="attr">builtin:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">book:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">&#x27;This is my book title&#x27;</span></span><br><span class="line">    <span class="attr">quote:</span> <span class="string">&#x27;This is my book quote&#x27;</span></span><br><span class="line">  <span class="attr">movie:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">&#x27;This is my movie title&#x27;</span></span><br><span class="line">    <span class="attr">quote:</span> <span class="string">&#x27;This is my movie quote&#x27;</span></span><br><span class="line">  <span class="attr">game:</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">&#x27;This is my game title&#x27;</span></span><br><span class="line">    <span class="attr">quote:</span> <span class="string">&#x27;This is my game quote&#x27;</span></span><br><span class="line">  <span class="attr">timeout:</span> <span class="number">10000</span> </span><br></pre></td></tr></table></figure>
+
+<p>title和quote后面的内容会分别作为电影&#x2F;读书&#x2F;游戏页面的标题和副标题（引言）呈现在博客里。</p>
+<p><code>user</code>就写我们豆瓣的id，可以在“我的豆瓣”页面中找到，<code>builtin</code>指是否将生成页面功能嵌入<code>hexo s</code>和<code>hexo g</code>中，建议选<code>false</code>，因为<code>true</code>会导致页面每次启动本地服务器都需要很长时间生成豆瓣页面，长到怀疑人生。</p>
+</li>
+<li><p>生成页面</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo douban   #生成读书、电影、游戏三个页面</span><br><span class="line">hexo douban -b  #生成读书页面</span><br><span class="line">hexo douban -m  #生成电影页面</span><br><span class="line">hexo douban -g  #生成游戏页面</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在博客中生成页面</p>
+<p>这里就需要用到我们前面提过的<code>hexo new</code>命令了。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new page books</span><br><span class="line">hexo new page movies</span><br><span class="line">hexo new page games</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在博客中添加页面</p>
+<p>在<code>menu</code>部分添加我们需要添加的页面名称和相对路径</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">Home:</span> <span class="string">/</span></span><br><span class="line">  <span class="attr">Archives:</span> <span class="string">/archives</span></span><br><span class="line">  <span class="attr">Books:</span> <span class="string">/books</span>     <span class="comment">#This is your books page</span></span><br><span class="line">  <span class="attr">Movies:</span> <span class="string">/movies</span>   <span class="comment">#This is your movies page</span></span><br><span class="line">  <span class="attr">Games:</span> <span class="string">/games</span>   <span class="comment">#This is your games page</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署到博客</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="我踩过的坑"><a href="#我踩过的坑" class="headerlink" title="我踩过的坑"></a>我踩过的坑</h3><h4 id="iPic图片上传"><a href="#iPic图片上传" class="headerlink" title="iPic图片上传"></a>iPic图片上传</h4><p>hexo博客发布Typora写好的内容也会出现图片无法同步的问题，网上有大佬给出的解决方案是使用<code>hexo-asset-image</code>插件，这样在创建博客时会有一个与<code>.md</code>文件同名的文件夹，将图片同步到文件夹内即可。</p>
+<p>但时间下来还是比较麻烦，因为Typora并没有自定义图片路径的功能，它会放在与文件相关的asset文件夹内。</p>
+<p>我找到的最终方案是使用Typora自带的一个功能：图片上传iPic图床。这样在添加图片的时候，图片链接就自动更换成了图床的地址，这时同步到博客就没有问题了。</p>
+<h4 id="评论系统-1"><a href="#评论系统-1" class="headerlink" title="评论系统"></a>评论系统</h4><p>因为多说已经停止服务了，最开始看到有人说Disqus得翻墙，就选了一个韩国的评论服务，叫来必力，但事实证明墙外就没有稳定的服务，在我挂VPN的情况下也要加载好半天，后来就还是换成了Disqus，具体配置方法看前文。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/08/09/%E7%BB%9D%E9%85%8D%EF%BC%9Ahexo+next%E4%B8%BB%E9%A2%98%E5%8F%8A%E6%88%91%E8%B5%B0%E8%BF%87%E7%9A%84%E5%9D%91/" data-id="clnpqd44z00pip12086ha8t5c" data-title="绝配：hexo+next主题及我走过的坑" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/next/" rel="tag">next</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/08/10/nrm-npm%E9%95%9C%E5%83%8F%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          nrm: npm镜像管理工具
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/08/ES6%E6%80%BB%E5%A4%8D%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ES6总复习</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/FreeCodeCamp/">FreeCodeCamp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jounal/">Jounal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/">习题集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%A9%E5%99%A8/">利器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/">工作备忘</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/">知识管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/">跟着大佬学编程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2020/" rel="tag">2020</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOM/" rel="tag">BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eloquent-JavaScript/" rel="tag">Eloquent JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeCodeCamp/" rel="tag">FreeCodeCamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fuji-Rock-Festival/" rel="tag">Fuji Rock Festival</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hooks/" rel="tag">Hooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/" rel="tag">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Course/" rel="tag">Learning, Course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OIS/" rel="tag">OIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OKR/" rel="tag">OKR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/" rel="tag">OOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading/" rel="tag">Reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/" rel="tag">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/" rel="tag">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/" rel="tag">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/" rel="tag">UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UX/" rel="tag">UX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Report/" rel="tag">Weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Reports/" rel="tag">Weekly Reports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Summary/" rel="tag">Weekly Summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design/" rel="tag">ant design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design-pro/" rel="tag">ant design pro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/art-template/" rel="tag">art-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/auth/" rel="tag">auth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/autojump/" rel="tag">autojump</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/box-model/" rel="tag">box model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codewars/" rel="tag">codewars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejs/" rel="tag">ejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/event/" rel="tag">event</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/" rel="tag">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex/" rel="tag">flex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/float/" rel="tag">float</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freecodecamp/" rel="tag">freecodecamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grid/" rel="tag">grid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/" rel="tag">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jade/" rel="tag">jade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/journal/" rel="tag">journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jwt/" rel="tag">jwt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/" rel="tag">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/layout/" rel="tag">layout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multer/" rel="tag">multer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ndoe-js/" rel="tag">ndoe.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodemon/" rel="tag">nodemon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nrm/" rel="tag">nrm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/" rel="tag">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/responsive/" rel="tag">responsive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/" rel="tag">terminal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/" rel="tag">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/useEffect/" rel="tag">useEffect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-Report/" rel="tag">weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" rel="tag">一周分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%9E%8B/" rel="tag">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" rel="tag">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" rel="tag">年度计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86/" rel="tag">心理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E8%83%BD/" rel="tag">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" rel="tag">效率提升</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E6%B8%B8/" rel="tag">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%AC/" rel="tag">日本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" rel="tag">本地存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" rel="tag">模板引擎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="tag">深拷贝浅拷贝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" rel="tag">知识管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" rel="tag">线程 进程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" rel="tag">翻译， HTTPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" rel="tag">软技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" rel="tag">选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" rel="tag">重装电脑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2020/" style="font-size: 10px;">2020</a> <a href="/tags/Algorithm/" style="font-size: 10.77px;">Algorithm</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 11.54px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 16.92px;">ES6</a> <a href="/tags/Eloquent-JavaScript/" style="font-size: 10px;">Eloquent JavaScript</a> <a href="/tags/FreeCodeCamp/" style="font-size: 10px;">FreeCodeCamp</a> <a href="/tags/Fuji-Rock-Festival/" style="font-size: 10px;">Fuji Rock Festival</a> <a href="/tags/HTML/" style="font-size: 12.31px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.54px;">HTTP</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/IP/" style="font-size: 11.54px;">IP</a> <a href="/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/tags/JavaScript/" style="font-size: 19.23px;">JavaScript</a> <a href="/tags/Learning-Course/" style="font-size: 10px;">Learning, Course</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/OIS/" style="font-size: 10px;">OIS</a> <a href="/tags/OKR/" style="font-size: 10.77px;">OKR</a> <a href="/tags/OOP/" style="font-size: 11.54px;">OOP</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/React/" style="font-size: 13.08px;">React</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/TCP/" style="font-size: 11.54px;">TCP</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UX/" style="font-size: 10px;">UX</a> <a href="/tags/Weekly-Report/" style="font-size: 18.46px;">Weekly Report</a> <a href="/tags/Weekly-Reports/" style="font-size: 10.77px;">Weekly Reports</a> <a href="/tags/Weekly-Summary/" style="font-size: 10px;">Weekly Summary</a> <a href="/tags/ant-design/" style="font-size: 10px;">ant design</a> <a href="/tags/ant-design-pro/" style="font-size: 10px;">ant design pro</a> <a href="/tags/art-template/" style="font-size: 10px;">art-template</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/box-model/" style="font-size: 10px;">box model</a> <a href="/tags/chrome/" style="font-size: 10.77px;">chrome</a> <a href="/tags/codewars/" style="font-size: 10px;">codewars</a> <a href="/tags/computer-science/" style="font-size: 10.77px;">computer science</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/css/" style="font-size: 16.15px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/event/" style="font-size: 10px;">event</a> <a href="/tags/express/" style="font-size: 13.08px;">express</a> <a href="/tags/flex/" style="font-size: 10.77px;">flex</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/freecodecamp/" style="font-size: 17.69px;">freecodecamp</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.77px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/journal/" style="font-size: 10px;">journal</a> <a href="/tags/jwt/" style="font-size: 11.54px;">jwt</a> <a href="/tags/koa/" style="font-size: 14.62px;">koa</a> <a href="/tags/layout/" style="font-size: 10px;">layout</a> <a href="/tags/mac/" style="font-size: 10.77px;">mac</a> <a href="/tags/multer/" style="font-size: 10px;">multer</a> <a href="/tags/ndoe-js/" style="font-size: 10px;">ndoe.js</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/nodemon/" style="font-size: 10px;">nodemon</a> <a href="/tags/npm/" style="font-size: 10.77px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/responsive/" style="font-size: 10px;">responsive</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/token/" style="font-size: 11.54px;">token</a> <a href="/tags/translation/" style="font-size: 10px;">translation</a> <a href="/tags/useEffect/" style="font-size: 10px;">useEffect</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/weekly-Report/" style="font-size: 10.77px;">weekly Report</a> <a href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" style="font-size: 15.38px;">一周分享</a> <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 12.31px;">中间件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%8E%9F%E5%9E%8B/" style="font-size: 10.77px;">原型</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" style="font-size: 10px;">工作效率</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" style="font-size: 10px;">年度计划</a> <a href="/tags/%E5%BF%83%E7%90%86/" style="font-size: 10px;">心理</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 10px;">心理学</a> <a href="/tags/%E6%8A%80%E8%83%BD/" style="font-size: 10px;">技能</a> <a href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" style="font-size: 10px;">效率提升</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">数据类型</a> <a href="/tags/%E6%97%85%E6%B8%B8/" style="font-size: 10px;">旅游</a> <a href="/tags/%E6%97%A5%E6%9C%AC/" style="font-size: 10px;">日本</a> <a href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" style="font-size: 10px;">本地存储</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" style="font-size: 11.54px;">模板引擎</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10.77px;">浏览器</a> <a href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" style="font-size: 10px;">深拷贝浅拷贝</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" style="font-size: 11.54px;">知识管理</a> <a href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" style="font-size: 10.77px;">线程 进程</a> <a href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">网易云音乐</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 12.31px;">翻译</a> <a href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" style="font-size: 10px;">翻译， HTTPS</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 13.85px;">读书笔记</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 10px;">负载均衡</a> <a href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" style="font-size: 10px;">软技能</a> <a href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" style="font-size: 10px;">选择器</a> <a href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" style="font-size: 10px;">重装电脑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">代码注释规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/">代码命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/06/Week-49/">Week 49</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/29/Week-48/">Week 48</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/01/Week-44/">Week 44</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

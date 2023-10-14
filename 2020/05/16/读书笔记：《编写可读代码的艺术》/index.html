@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>读书笔记：《编写可读代码的艺术》 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="这是我刚入职的时候，mentor 推荐的一本书。当时的代码写得真的挺糟糕的，根本不知道什么是好的代码。这本书帮我建立了一个模糊的标准，知道写好代码应该有哪几个可以努力的方向。最近又重读了一遍，很多之前不能完全理解的内容慢慢开始理解，以前觉得自己懂了的内容又有了新的认识。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读书笔记：《编写可读代码的艺术》">
+<meta property="og:url" content="http://example.com/2020/05/16/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%9A%E3%80%8A%E7%BC%96%E5%86%99%E5%8F%AF%E8%AF%BB%E4%BB%A3%E7%A0%81%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这是我刚入职的时候，mentor 推荐的一本书。当时的代码写得真的挺糟糕的，根本不知道什么是好的代码。这本书帮我建立了一个模糊的标准，知道写好代码应该有哪几个可以努力的方向。最近又重读了一遍，很多之前不能完全理解的内容慢慢开始理解，以前觉得自己懂了的内容又有了新的认识。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1geu5eyjetmj30u0133n0j.jpg">
+<meta property="article:published_time" content="2020-05-16T03:47:49.000Z">
+<meta property="article:modified_time" content="2020-05-16T08:31:55.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1geu5eyjetmj30u0133n0j.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-读书笔记：《编写可读代码的艺术》" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/05/16/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%9A%E3%80%8A%E7%BC%96%E5%86%99%E5%8F%AF%E8%AF%BB%E4%BB%A3%E7%A0%81%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B/" class="article-date">
+  <time class="dt-published" datetime="2020-05-16T03:47:49.000Z" itemprop="datePublished">2020-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      读书笔记：《编写可读代码的艺术》
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>这是我刚入职的时候，mentor 推荐的一本书。当时的代码写得真的挺糟糕的，根本不知道什么是好的代码。这本书帮我建立了一个模糊的标准，知道写好代码应该有哪几个可以努力的方向。最近又重读了一遍，很多之前不能完全理解的内容慢慢开始理解，以前觉得自己懂了的内容又有了新的认识。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geu5eyjetmj30u0133n0j.jpg" alt="img"></p>
+<span id="more"></span>
+
+<blockquote>
+<p>软件成本由开发成本与维护成本组成，而往往维护成本要远高于开发成本。这其中耗费的主要成本就是由于理解代码和修改代码造成的。</p>
+<p>​                                                                                             ——— 《Structured Design》 </p>
+</blockquote>
+<h3 id="代码应当易于理解"><a href="#代码应当易于理解" class="headerlink" title="代码应当易于理解"></a>代码应当易于理解</h3><h4 id="可读性基本定理"><a href="#可读性基本定理" class="headerlink" title="可读性基本定理"></a>可读性基本定理</h4><ul>
+<li><strong>代码的写法应当使别人理解它所需的时间最小化</strong></li>
+<li>那个“其他人”可能就是 6 个月后的你自己，那时你自己的代码看上去已经很陌生了</li>
+</ul>
+<h4 id="代码总是越小越好吗？"><a href="#代码总是越小越好吗？" class="headerlink" title="代码总是越小越好吗？"></a>代码总是越小越好吗？</h4><ul>
+<li>相比减少代码行数，把理解代码所需的时间最小化是一个更好的目标</li>
+</ul>
+<h4 id="理解代码所需的时间是否与其他目标有冲突"><a href="#理解代码所需的时间是否与其他目标有冲突" class="headerlink" title="理解代码所需的时间是否与其他目标有冲突"></a>理解代码所需的时间是否与其他目标有冲突</h4><ul>
+<li>让你的代码容易理解往往会把它引向好的架构且容易测试</li>
+</ul>
+<hr>
+<h2 id="表面层次的改进"><a href="#表面层次的改进" class="headerlink" title="表面层次的改进"></a>表面层次的改进</h2><p>选择好的名字、写好的注释以及把代码整洁地写成更好的格式。</p>
+<h3 id="1-把信息装到名字里"><a href="#1-把信息装到名字里" class="headerlink" title="1. 把信息装到名字里"></a>1. 把信息装到名字里</h3><h4 id="1-选择专业的词"><a href="#1-选择专业的词" class="headerlink" title="1. 选择专业的词"></a>1. 选择专业的词</h4><ul>
+<li><p>“把信息装入名字中”包括要选择非常<strong>专业</strong>的词，避免使用“空洞”的词</p>
+</li>
+<li><p>找到更有<strong>表现力</strong>的词：用于使用同义词典或者问朋友更好的名字建议</p>
+</li>
+</ul>
+<h4 id="2-避免泛泛的名字"><a href="#2-避免泛泛的名字" class="headerlink" title="2. 避免泛泛的名字"></a>2. 避免泛泛的名字</h4><ul>
+<li>避免使用像 tmp 或 retval 这样的名字</li>
+<li>好的名字应当描述变量的目的或者它所承载的值</li>
+<li>tmp 这个名字只应用于短期存在且临时性为其主要存在因素的变量</li>
+<li>循环迭代器中长使用 i、 j、 iter、 it 等名字做索引，但在嵌套的循环迭代器中，可以将索引的第一个字母与数据的第一个字符匹配</li>
+</ul>
+<h4 id="3-用具体的名字替代抽象的名字"><a href="#3-用具体的名字替代抽象的名字" class="headerlink" title="3. 用具体的名字替代抽象的名字"></a>3. 用具体的名字替代抽象的名字</h4><ul>
+<li>把名字描述得更具体而不是更抽象</li>
+<li>因为一个名字含糊婉转而选择它可能不是一个好主意</li>
+</ul>
+<h4 id="4-使用前缀或后缀来给名字附带更多信息"><a href="#4-使用前缀或后缀来给名字附带更多信息" class="headerlink" title="4. 使用前缀或后缀来给名字附带更多信息"></a>4. 使用前缀或后缀来给名字附带更多信息</h4><ul>
+<li>一个变量名就像是一个小小的注释</li>
+<li>如果变量是一个度量的话，最后把名字带上它的<strong>单位</strong></li>
+<li>对于变量存在危险或意外的时候都应该附带上额外信息</li>
+<li><strong>匈牙利表示法</strong>：把变量的“类型”信息编写进名字的前缀</li>
+</ul>
+<h4 id="5-决定名字的长度"><a href="#5-决定名字的长度" class="headerlink" title="5. 决定名字的长度"></a>5. 决定名字的长度</h4><ul>
+<li>选择好名字时，有一个隐含的约束是名字不能太长</li>
+<li>在小的作用域里可以使用短的名字<ul>
+<li>所有的信息（变量的类型、初值等）都很容易看到，所以可以用很短的名字</li>
+</ul>
+</li>
+<li>“不会输入”不再是避免使用长名字的理由，编辑器的补全功能可以解决这个问题</li>
+<li>使用项目所特有的缩写词是糟糕的选择——经验原则是：团队的新成员是否能理解这个名字的含义</li>
+<li>丢掉没用的词——拿掉后不会损失任何信息的单词</li>
+</ul>
+<h4 id="6-利用名字的格式来表达含义"><a href="#6-利用名字的格式来表达含义" class="headerlink" title="6. 利用名字的格式来表达含义"></a>6. 利用名字的格式来表达含义</h4><ul>
+<li>对于下划线、连字符和大小写的使用方式可以把更多信息装到名字中</li>
+<li>对不同的实体使用不同的格式，能帮你更容易地阅读代码</li>
+</ul>
+<h3 id="2-不会误解的名字"><a href="#2-不会误解的名字" class="headerlink" title="2. 不会误解的名字"></a>2. 不会误解的名字</h3><ul>
+<li><strong>要多问自己几遍：“这个名字会被别人解读成其他的含义吗？”也仔细审视这个名字</strong>——可以主动寻找“误解点”</li>
+<li>推荐用 min 和 max 来表示（包含）极限</li>
+<li>推荐用 first 和 last 来表示包含的范围<ul>
+<li>尽管 start 是个合理的参数名，但 stop 可以有多重解读。对于这样包含的范围（这种范围包含开头和结尾），一个好的选择是 first&#x2F;last</li>
+</ul>
+</li>
+<li>推荐用 begin 和 end 来表示包含&#x2F;排除范围</li>
+<li>当为布尔变量或者返回布尔值的函数选择名字时，要确保返回 true 和 false 的意义很明确<ul>
+<li>加上像 is、 has、 can 或 should 这样的词，可以把布尔值变得更明确</li>
+<li>最后避免使用反义名字</li>
+</ul>
+</li>
+<li>避免使用用户对它的含义有先入为主印象的名字，从而导致误解</li>
+</ul>
+<h3 id="3-审美"><a href="#3-审美" class="headerlink" title="3. 审美"></a>3. 审美</h3><p>使用从审美角度讲让人愉悦的代码</p>
+<h4 id="三大原则"><a href="#三大原则" class="headerlink" title="三大原则"></a>三大原则</h4><ol>
+<li><p>使用一致的布局，让读者很快习惯这种风格</p>
+</li>
+<li><p>让相似的代码看上去相似</p>
+</li>
+<li><p>让相关的代码行分组，形成代码块</p>
+</li>
+</ol>
+<h4 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h4><ul>
+<li>重新安排换行来保持一致和紧凑</li>
+<li>用方法来整理不规则的东西——“看上去漂亮”通常会带来不限于表面层次的改进，它可能会帮你把代码的结构做得更好</li>
+<li>在需要时使用列对齐</li>
+<li>选择一个有意义的顺序，始终一致地使用它<ul>
+<li>让变量的顺序与对应的 HTML 表单中的字段顺序相匹配</li>
+<li>从“最重要”到“最不重要”排序</li>
+<li>按字母顺序排序</li>
+</ul>
+</li>
+<li>把声明按块组织起来</li>
+<li>把代码分成“段落”</li>
+<li>选择一种风格——选择哪种风格不会影响到代码的可读性，但是把两种风格混在一起就会影响了</li>
+</ul>
+<h3 id="4-该写什么样的注释"><a href="#4-该写什么样的注释" class="headerlink" title="4. 该写什么样的注释"></a>4. 该写什么样的注释</h3><p><strong>注释的目的是尽量帮助读者了解得和作者一样多</strong></p>
+<h4 id="什么不需要注释"><a href="#什么不需要注释" class="headerlink" title="什么不需要注释"></a>什么不需要注释</h4><ul>
+<li><strong>不要为那些从代码本身就能快速推断的事实写注释</strong></li>
+<li>不要为了注释而注释——避免“没有价值的注释”</li>
+<li>不要给不好的名字加注释——应该把名字改好<ul>
+<li>注释不应用于粉饰不好的名字</li>
+<li>一个好的名字比一个好的注释更重要，因为在任何用到这个函数的地方偶读能看得到它</li>
+<li>不要“拐杖式注释”——试图粉饰可读性差的代码的注释</li>
+<li><strong>好代码 &gt; 坏代码 + 好注释</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="用代码记录你的思想"><a href="#用代码记录你的思想" class="headerlink" title="用代码记录你的思想"></a>用代码记录你的思想</h4><ul>
+<li>加入注释记录你对代码的有价值的见解</li>
+<li>为代码中的瑕疵写注释<ul>
+<li><code>TODO:</code> 还没有处理的事情</li>
+<li><code>FIXME:</code> 已知的无法运行的代码</li>
+<li><code>HACK:</code> 对一个问题不得不采用的比较粗糙的解决方案</li>
+<li><code>XXX:</code> 危险！这里有重要的问题</li>
+</ul>
+</li>
+<li>给常量加注释——它是什么或者为什么它是这个值</li>
+</ul>
+<h4 id="站在读者的角度，去详细他们需要知道什么"><a href="#站在读者的角度，去详细他们需要知道什么" class="headerlink" title="站在读者的角度，去详细他们需要知道什么"></a>站在读者的角度，去详细他们需要知道什么</h4><ul>
+<li>给意料之中的提问加上注释</li>
+<li>可能的陷阱——预料人们使用你的代码时可能会遇到的问题</li>
+<li>“全局观”注释——各部分如何一起工作</li>
+<li>总结性注释——避免读者迷失在细节中</li>
+</ul>
+<h3 id="5-写出言简意赅的注释"><a href="#5-写出言简意赅的注释" class="headerlink" title="5. 写出言简意赅的注释"></a>5. 写出言简意赅的注释</h3><p><strong>注释应当有很高的信息&#x2F;空间率</strong></p>
+<ul>
+<li>让注释保持紧凑</li>
+<li>避免使用不明确的代词</li>
+<li>润色粗糙的句子</li>
+<li>精确地描述函数的行为</li>
+<li>用输入&#x2F;输出例子来说明特别的情况</li>
+<li>声明代码的高层次意图，而非明显的细节</li>
+<li>用嵌入的注释来解释难以理解的函数参数</li>
+<li>用含义丰富的词来使注释简洁</li>
+</ul>
+<hr>
+<h2 id="简化循环和逻辑"><a href="#简化循环和逻辑" class="headerlink" title="简化循环和逻辑"></a>简化循环和逻辑</h2><h3 id="1-把控制流变得易读"><a href="#1-把控制流变得易读" class="headerlink" title="1. 把控制流变得易读"></a>1. 把控制流变得易读</h3><ul>
+<li><strong>把条件、循环以及其他对控制流的改变做得越“自然”越好。运用一种方式使读者不用停下来重读你的代码。</strong></li>
+</ul>
+<h4 id="条件语句中参数的顺序"><a href="#条件语句中参数的顺序" class="headerlink" title="条件语句中参数的顺序"></a>条件语句中参数的顺序</h4><ul>
+<li>左侧更倾向于不断变化，右侧更倾向于常量</li>
+</ul>
+<h4 id="if-else-语句块的顺序"><a href="#if-else-语句块的顺序" class="headerlink" title="if&#x2F;else 语句块的顺序"></a>if&#x2F;else 语句块的顺序</h4><ul>
+<li>首先处理正逻辑而不是负逻辑的情况</li>
+<li>先处理简单的情况</li>
+<li>先处理有趣的或者说可疑的情况</li>
+</ul>
+<h4 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h4><ul>
+<li><strong>相对于追求最小化代码行数，一个更好的度量方法是最小化人们理解它所需的时间</strong></li>
+<li>默认情况下都用 if&#x2F;else。三目运算符只有在最简单的情况下使用</li>
+</ul>
+<h4 id="避免-do-while-循环"><a href="#避免-do-while-循环" class="headerlink" title="避免 do&#x2F;while 循环"></a>避免 do&#x2F;while 循环</h4><ul>
+<li>一般会从前向后读代码，do&#x2F;while由其后的一个条件决定是否执行，不太滋润</li>
+<li>do&#x2F;while 循环中的 continue 语句让人迷惑</li>
+</ul>
+<h4 id="从函数中提前返回"><a href="#从函数中提前返回" class="headerlink" title="从函数中提前返回"></a>从函数中提前返回</h4><h4 id="最小化嵌套"><a href="#最小化嵌套" class="headerlink" title="最小化嵌套"></a>最小化嵌套</h4><ul>
+<li><strong>当你对代码做改动时，从全新的角度审视它。把它当做一个整体来看待</strong></li>
+<li>通过提前返回来减少嵌套</li>
+<li>减少循环内的嵌套</li>
+</ul>
+<h3 id="2-拆分超长的表达式"><a href="#2-拆分超长的表达式" class="headerlink" title="2. 拆分超长的表达式"></a>2. 拆分超长的表达式</h3><ul>
+<li>代码中的表达式越长，它就越难以理解</li>
+<li><strong>把你的超长表达式拆分成更容易理解的小块</strong></li>
+</ul>
+<h4 id="解释变量"><a href="#解释变量" class="headerlink" title="解释变量"></a>解释变量</h4><ul>
+<li>拆分表达式最简单的方法是引入一个额外的变量，让它来表示一个小一点的子表达式</li>
+</ul>
+<h4 id="总结变量"><a href="#总结变量" class="headerlink" title="总结变量"></a>总结变量</h4><ul>
+<li>用一个短很多的名字来替代一大块代码，会更容易管理和思考</li>
+</ul>
+<h4 id="德摩根定理"><a href="#德摩根定理" class="headerlink" title="德摩根定理"></a>德摩根定理</h4><ul>
+<li>分别取反，转换与&#x2F;或</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">not (a or b or c) &lt;=&gt; (not a) and (not b) and (not c)</span><br><span class="line">not (a and b and c) &lt;=&gt; (not a) or (not b) or (not c)</span><br></pre></td></tr></table></figure>
+
+<h4 id="不滥用短路逻辑"><a href="#不滥用短路逻辑" class="headerlink" title="不滥用短路逻辑"></a>不滥用短路逻辑</h4><ul>
+<li>布尔操作会做短路计算</li>
+<li><strong>要小心“智能”的小代码段——它们往往在以后会让别人读起来感到困惑</strong></li>
+</ul>
+<h4 id="找到更优雅的方式"><a href="#找到更优雅的方式" class="headerlink" title="找到更优雅的方式"></a>找到更优雅的方式</h4><ul>
+<li>看看能否从“反方向”解决问题</li>
+</ul>
+<h3 id="3-变量与可读性"><a href="#3-变量与可读性" class="headerlink" title="3. 变量与可读性"></a>3. 变量与可读性</h3><ul>
+<li>变量越多，就越难全部跟踪它们的动向</li>
+<li>变量的作用域越大，就需要跟踪它的动向越久</li>
+<li>变量改变得越频繁，就越难以跟踪它的当前值</li>
+</ul>
+<h4 id="减少变量"><a href="#减少变量" class="headerlink" title="减少变量"></a>减少变量</h4><ul>
+<li>没有价值的临时变量</li>
+<li>减少中间结果</li>
+<li>减少控制流变量——没有保护任何程序的数据，只是控制程序的执行</li>
+</ul>
+<h4 id="缩小变量的作用域"><a href="#缩小变量的作用域" class="headerlink" title="缩小变量的作用域"></a>缩小变量的作用域</h4><ul>
+<li><strong>让你的变量对尽量少的代码行可见</strong></li>
+</ul>
+<h4 id="只写一次的变量更好"><a href="#只写一次的变量更好" class="headerlink" title="只写一次的变量更好"></a>只写一次的变量更好</h4><ul>
+<li><strong>操作一个变量的地方越多，越难确定它的当前值</strong></li>
+<li>中间变量通常可以通过提前返回来消除</li>
+</ul>
+<hr>
+<h2 id="重新组织代码"><a href="#重新组织代码" class="headerlink" title="重新组织代码"></a>重新组织代码</h2><h3 id="1-抽取不相关的子问题"><a href="#1-抽取不相关的子问题" class="headerlink" title="1. 抽取不相关的子问题"></a>1. 抽取不相关的子问题</h3><ul>
+<li><strong>积极地发现并抽取出不相关的子逻辑</strong> </li>
+<li><strong>把一般代码和项目专有代码分开</strong></li>
+</ul>
+<h4 id="通用代码"><a href="#通用代码" class="headerlink" title="通用代码"></a>通用代码</h4><ul>
+<li>从项目的其他部分解耦出来</li>
+</ul>
+<h3 id="2-一次只做一件事"><a href="#2-一次只做一件事" class="headerlink" title="2. 一次只做一件事"></a>2. 一次只做一件事</h3><ul>
+<li><strong>应该把代码组织得一次只做一件事情</strong></li>
+</ul>
+<h3 id="把想法变成代码"><a href="#把想法变成代码" class="headerlink" title="把想法变成代码"></a>把想法变成代码</h3><ul>
+<li>用自然语言描述程序然后用这个描述来帮助你写出更自然的代码。</li>
+</ul>
+<h3 id="少写代码"><a href="#少写代码" class="headerlink" title="少写代码"></a>少写代码</h3><ul>
+<li><strong>最好读的代码就是没有代码</strong></li>
+</ul>
+<h4 id="质疑和拆分需求"><a href="#质疑和拆分需求" class="headerlink" title="质疑和拆分需求"></a>质疑和拆分需求</h4><ul>
+<li>把需求削减成一个简单的问题，只需要较少的代码</li>
+<li><strong>让你的代码块越小，越轻量级越好</strong><ul>
+<li>创建好的“工具”代码来减少重复代码</li>
+<li>减少无用代码或没有用的功能</li>
+<li>让你的项目保持分开的子项目状态</li>
+<li>小心代码的“重量”</li>
+</ul>
+</li>
+</ul>
+<h4 id="熟悉周边的库"><a href="#熟悉周边的库" class="headerlink" title="熟悉周边的库"></a>熟悉周边的库</h4><ul>
+<li><strong>每隔一段时间，花 15 分钟来阅读标准库中的所有函数&#x2F;模块&#x2F;类型的名字</strong></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/05/16/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%9A%E3%80%8A%E7%BC%96%E5%86%99%E5%8F%AF%E8%AF%BB%E4%BB%A3%E7%A0%81%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B/" data-id="clnpqd43000flp120eyc72j32" data-title="读书笔记：《编写可读代码的艺术》" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/05/16/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%9A%E3%80%8A%E7%AE%80%E5%8D%95%E5%86%A5%E6%83%B3%E6%9C%AF%E3%80%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          读书笔记：《简单冥想术》
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/04/Week-18/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Week 18</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/FreeCodeCamp/">FreeCodeCamp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jounal/">Jounal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/">习题集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%A9%E5%99%A8/">利器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/">工作备忘</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/">知识管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/">跟着大佬学编程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2020/" rel="tag">2020</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOM/" rel="tag">BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eloquent-JavaScript/" rel="tag">Eloquent JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeCodeCamp/" rel="tag">FreeCodeCamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fuji-Rock-Festival/" rel="tag">Fuji Rock Festival</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hooks/" rel="tag">Hooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/" rel="tag">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Course/" rel="tag">Learning, Course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OIS/" rel="tag">OIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OKR/" rel="tag">OKR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/" rel="tag">OOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading/" rel="tag">Reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/" rel="tag">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/" rel="tag">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/" rel="tag">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/" rel="tag">UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UX/" rel="tag">UX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Report/" rel="tag">Weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Reports/" rel="tag">Weekly Reports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Summary/" rel="tag">Weekly Summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design/" rel="tag">ant design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design-pro/" rel="tag">ant design pro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/art-template/" rel="tag">art-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/auth/" rel="tag">auth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/autojump/" rel="tag">autojump</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/box-model/" rel="tag">box model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codewars/" rel="tag">codewars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejs/" rel="tag">ejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/event/" rel="tag">event</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/" rel="tag">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex/" rel="tag">flex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/float/" rel="tag">float</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freecodecamp/" rel="tag">freecodecamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grid/" rel="tag">grid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/" rel="tag">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jade/" rel="tag">jade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/journal/" rel="tag">journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jwt/" rel="tag">jwt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/" rel="tag">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/layout/" rel="tag">layout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multer/" rel="tag">multer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ndoe-js/" rel="tag">ndoe.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodemon/" rel="tag">nodemon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nrm/" rel="tag">nrm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/" rel="tag">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/responsive/" rel="tag">responsive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/" rel="tag">terminal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/" rel="tag">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/useEffect/" rel="tag">useEffect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-Report/" rel="tag">weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" rel="tag">一周分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%9E%8B/" rel="tag">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" rel="tag">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" rel="tag">年度计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86/" rel="tag">心理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E8%83%BD/" rel="tag">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" rel="tag">效率提升</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E6%B8%B8/" rel="tag">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%AC/" rel="tag">日本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" rel="tag">本地存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" rel="tag">模板引擎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="tag">深拷贝浅拷贝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" rel="tag">知识管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" rel="tag">线程 进程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" rel="tag">翻译， HTTPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" rel="tag">软技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" rel="tag">选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" rel="tag">重装电脑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2020/" style="font-size: 10px;">2020</a> <a href="/tags/Algorithm/" style="font-size: 10.77px;">Algorithm</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 11.54px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 16.92px;">ES6</a> <a href="/tags/Eloquent-JavaScript/" style="font-size: 10px;">Eloquent JavaScript</a> <a href="/tags/FreeCodeCamp/" style="font-size: 10px;">FreeCodeCamp</a> <a href="/tags/Fuji-Rock-Festival/" style="font-size: 10px;">Fuji Rock Festival</a> <a href="/tags/HTML/" style="font-size: 12.31px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.54px;">HTTP</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/IP/" style="font-size: 11.54px;">IP</a> <a href="/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/tags/JavaScript/" style="font-size: 19.23px;">JavaScript</a> <a href="/tags/Learning-Course/" style="font-size: 10px;">Learning, Course</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/OIS/" style="font-size: 10px;">OIS</a> <a href="/tags/OKR/" style="font-size: 10.77px;">OKR</a> <a href="/tags/OOP/" style="font-size: 11.54px;">OOP</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/React/" style="font-size: 13.08px;">React</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/TCP/" style="font-size: 11.54px;">TCP</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UX/" style="font-size: 10px;">UX</a> <a href="/tags/Weekly-Report/" style="font-size: 18.46px;">Weekly Report</a> <a href="/tags/Weekly-Reports/" style="font-size: 10.77px;">Weekly Reports</a> <a href="/tags/Weekly-Summary/" style="font-size: 10px;">Weekly Summary</a> <a href="/tags/ant-design/" style="font-size: 10px;">ant design</a> <a href="/tags/ant-design-pro/" style="font-size: 10px;">ant design pro</a> <a href="/tags/art-template/" style="font-size: 10px;">art-template</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/box-model/" style="font-size: 10px;">box model</a> <a href="/tags/chrome/" style="font-size: 10.77px;">chrome</a> <a href="/tags/codewars/" style="font-size: 10px;">codewars</a> <a href="/tags/computer-science/" style="font-size: 10.77px;">computer science</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/css/" style="font-size: 16.15px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/event/" style="font-size: 10px;">event</a> <a href="/tags/express/" style="font-size: 13.08px;">express</a> <a href="/tags/flex/" style="font-size: 10.77px;">flex</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/freecodecamp/" style="font-size: 17.69px;">freecodecamp</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.77px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/journal/" style="font-size: 10px;">journal</a> <a href="/tags/jwt/" style="font-size: 11.54px;">jwt</a> <a href="/tags/koa/" style="font-size: 14.62px;">koa</a> <a href="/tags/layout/" style="font-size: 10px;">layout</a> <a href="/tags/mac/" style="font-size: 10.77px;">mac</a> <a href="/tags/multer/" style="font-size: 10px;">multer</a> <a href="/tags/ndoe-js/" style="font-size: 10px;">ndoe.js</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/nodemon/" style="font-size: 10px;">nodemon</a> <a href="/tags/npm/" style="font-size: 10.77px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/responsive/" style="font-size: 10px;">responsive</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/token/" style="font-size: 11.54px;">token</a> <a href="/tags/translation/" style="font-size: 10px;">translation</a> <a href="/tags/useEffect/" style="font-size: 10px;">useEffect</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/weekly-Report/" style="font-size: 10.77px;">weekly Report</a> <a href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" style="font-size: 15.38px;">一周分享</a> <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 12.31px;">中间件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%8E%9F%E5%9E%8B/" style="font-size: 10.77px;">原型</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" style="font-size: 10px;">工作效率</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" style="font-size: 10px;">年度计划</a> <a href="/tags/%E5%BF%83%E7%90%86/" style="font-size: 10px;">心理</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 10px;">心理学</a> <a href="/tags/%E6%8A%80%E8%83%BD/" style="font-size: 10px;">技能</a> <a href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" style="font-size: 10px;">效率提升</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">数据类型</a> <a href="/tags/%E6%97%85%E6%B8%B8/" style="font-size: 10px;">旅游</a> <a href="/tags/%E6%97%A5%E6%9C%AC/" style="font-size: 10px;">日本</a> <a href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" style="font-size: 10px;">本地存储</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" style="font-size: 11.54px;">模板引擎</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10.77px;">浏览器</a> <a href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" style="font-size: 10px;">深拷贝浅拷贝</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" style="font-size: 11.54px;">知识管理</a> <a href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" style="font-size: 10.77px;">线程 进程</a> <a href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">网易云音乐</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 12.31px;">翻译</a> <a href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" style="font-size: 10px;">翻译， HTTPS</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 13.85px;">读书笔记</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 10px;">负载均衡</a> <a href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" style="font-size: 10px;">软技能</a> <a href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" style="font-size: 10px;">选择器</a> <a href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" style="font-size: 10px;">重装电脑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">代码注释规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/">代码命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/06/Week-49/">Week 49</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/29/Week-48/">Week 48</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/01/Week-44/">Week 44</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

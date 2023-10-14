@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>前端复习之事件系统 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="事件是用户与界面交互的基础。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端复习之事件系统">
+<meta property="og:url" content="http://example.com/2018/09/05/%E5%89%8D%E7%AB%AF%E5%A4%8D%E4%B9%A0%E4%B9%8B%E4%BA%8B%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="事件是用户与界面交互的基础。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdly1fuz00yj5yzj30eo0uc76d.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdly1fuz0qota2vj317q0r4gtl.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdgy1fuz1j6705mj305t02zmx2.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdgy1fuyr0gzkmvj30he080jso.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdgy1fuyn70syzdj310k0km0tx.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdgy1fuyn7h5p61j310k0jy75k.jpg">
+<meta property="article:published_time" content="2018-09-05T03:24:05.000Z">
+<meta property="article:modified_time" content="2018-09-08T14:15:20.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="HTML">
+<meta property="article:tag" content="event">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/0069RVTdly1fuz00yj5yzj30eo0uc76d.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="posts-前端复习之事件系统" class="h-entry article article-type-posts" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/09/05/%E5%89%8D%E7%AB%AF%E5%A4%8D%E4%B9%A0%E4%B9%8B%E4%BA%8B%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="article-date">
+  <time class="dt-published" datetime="2018-09-05T03:24:05.000Z" itemprop="datePublished">2018-09-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      前端复习之事件系统
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>事件是用户与界面交互的基础。</p>
+<span id="more"></span>
+
+<h3 id="什么是事件驱动"><a href="#什么是事件驱动" class="headerlink" title="什么是事件驱动"></a>什么是事件驱动</h3><p>JavaScript是一种事件驱动语言。那么到底什么是事件驱动呢？</p>
+<p>事件驱动编程是一种编程范式。在事件驱动这种范式中，执行什么操作是由事件来决定的，比如用户点击事件，其他编程线程事件，数据库请求事件。事件的处理由事件处理函数或回调函数来完成。</p>
+<blockquote>
+<p><em>Event callback is a function that is invoked when something significant happens like when click event is performed by user or the result of database query is available.</em></p>
+<p>事件回调函数由某个特定的事件来触发，比如用户点击或者请求数据库数据。</p>
+</blockquote>
+<h4 id="I-O编程-VS-事件驱动编程"><a href="#I-O编程-VS-事件驱动编程" class="headerlink" title="I&#x2F;O编程 VS 事件驱动编程"></a>I&#x2F;O编程 VS 事件驱动编程</h4><p>I&#x2F;O编程规定事件在某个进程结束之后执行。我们来看一组对比：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// I/O编程</span></span><br><span class="line"><span class="keyword">let</span> result = <span class="title function_">query</span>(<span class="string">&quot;SELECT * FROM posts WHERE id = 1&quot;</span>);</span><br><span class="line"><span class="title function_">myResult</span>(result);</span><br></pre></td></tr></table></figure>
+
+<p>在I&#x2F;O编程中，<code>myResult</code>函数的执行需要等数据库请求这一进程结束之后才会执行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 事件驱动编程</span></span><br><span class="line"><span class="keyword">let</span> query_finished = <span class="keyword">function</span>(<span class="params">result</span>)&#123;</span><br><span class="line">  <span class="title function_">myResult</span>(result);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">query</span>(<span class="string">&quot;SELECT * FROM posts WHERE id = 1&quot;</span>, query_finished);</span><br></pre></td></tr></table></figure>
+
+<p>在事件驱动编程中，先定义在数据库请求结束之后要进行什么操作，并将这个操作存储在一个叫做<code>query_finished</code>的函数中，然后将这个函数作为参数传递给数据库请求这一事件。当数据库请求结束时，就会自动触发<code>query_finished</code>函数，而不是仅仅返回请求结果。</p>
+<p>像这种通过定义在特定事件发生时触发特定函数，而非仅仅返回一个结果值的编程风格就叫做事件驱动或异步编程。这种编程风格在执行I&#x2F;O时，当前进程不会发生阻塞，且可以多个I&#x2F;O同时进行，每一个I&#x2F;O的回调函数都会在操作结束时被触发。</p>
+<blockquote>
+<p>可以把事件驱动联想成一个联动装置，一个动作会触发另一个动作，即一个事件触发一个函数。</p>
+</blockquote>
+<h4 id="事件循环-Event-Loop"><a href="#事件循环-Event-Loop" class="headerlink" title="事件循环 Event Loop"></a>事件循环 Event Loop</h4><p>和事件驱动相辅相成的是事件循环机制。事件循环机制是在不断的循环过程中实现两大功能：</p>
+<ul>
+<li>事件监测</li>
+<li>事件处理器触发</li>
+</ul>
+<p>事件循环机制监测任意时间内是否有某个事件发生，如果有，则需要触发相应的事件回调函数。</p>
+<p>JavaScript的事件循环是一个大的话题，这里我们简单梳理一下:</p>
+<h5 id="浏览器是多进程的"><a href="#浏览器是多进程的" class="headerlink" title="浏览器是多进程的"></a>浏览器是多进程的</h5><p>浏览器是多线程运行的，每打开一个tab标签页，都会有独立的进程被创建出来。如果我们打开任务管理器就会发现，浏览器中每个tab也都有一个独立的进程，此外浏览器还有一个主进程。</p>
+<h5 id="浏览器包含哪些进程"><a href="#浏览器包含哪些进程" class="headerlink" title="浏览器包含哪些进程"></a>浏览器包含哪些进程</h5><ul>
+<li><strong>Browser进程</strong> 是浏览器的主进程（有且只有一个）。负责浏览器界面显示、页面管理、网络资源管理等</li>
+<li><strong>第三方插件进程</strong> 每种类型的插件对应一个进程（仅当使用时才创建）</li>
+<li><strong>GPU进程</strong> 最多一个，用于3D绘制等</li>
+<li><strong>浏览器渲染进程</strong> 是浏览器内核，默认每个Tab页面一个进程，用于页面渲染、脚本执行、事件处理等</li>
+</ul>
+<h5 id="浏览器渲染进程"><a href="#浏览器渲染进程" class="headerlink" title="浏览器渲染进程"></a>浏览器渲染进程</h5><p>浏览器渲染进程是浏览器内核，页面渲染、JS的执行、事件的循环都在这个进程中进行。渲染进程是多线程的。渲染进程中包括以下线程：</p>
+<ul>
+<li><strong>GUI渲染线程</strong> 负责渲染浏览器界面（解析HTML、CSS等）、重绘和回流，它与JS引擎线程互斥</li>
+<li><strong>JS引擎线程</strong> 负责处理JS脚本程序</li>
+<li><strong>事件触发线程</strong> 用来控制时间循环</li>
+<li><strong>定时触发器线程</strong> <code>setTimeout</code>和<code>setInterval</code>所在线程</li>
+<li><strong>异步http请求线程</strong></li>
+</ul>
+<img src="https://ws2.sinaimg.cn/large/0069RVTdly1fuz00yj5yzj30eo0uc76d.jpg" width="30%" />
+
+<p>其中，JS引擎线程用于处理任务，所有的同步任务都在这个线程上执行，形成一个<strong>执行栈</strong>。</p>
+<p>在这个线程之外，还有一个“<strong>任务队列</strong>”，其他线程的异步任务在满足触发条件后，就添加到“任务队列”中，表示这个事件可以进入“执行栈”了。主线程在空闲时会从“任务队列”中读取事件，它执行这个事件的方式就是执行这一事件对应的回调函数。</p>
+<p>“任务队列”是一个<strong>先进先出</strong>的数据结构，排在前面的事件优先被读取，主线程的读取过程是自动的，只要执行栈一清空，“任务队列”上的第一位事件就自动进入主线程。</p>
+<p>主线程的这一不断执行——读取“任务队列”——执行的运行机制成为<strong>Event Loop（事件循环）</strong>。</p>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdly1fuz0qota2vj317q0r4gtl.jpg" alt="image-20180905221100238"></p>
+<h5 id="JS的多线程：Web-Worker"><a href="#JS的多线程：Web-Worker" class="headerlink" title="JS的多线程：Web Worker"></a>JS的多线程：Web Worker</h5><p>事件循环机制意味着如果页面中有大量的同步任务在执行，那么事件函数很可能需要长时间在消息队列中，无法被执行，导致页面看起来很迟钝，影响使用体验。</p>
+<p>如果真的遇到这样的问题，浏览器提供了一个新的解决方案，叫做Web Workers。一个Worker就是一个独立于主程序的JS进程。</p>
+<blockquote>
+<p>MDN的官方解释是：</p>
+<p>Web Worker为Web内容在后台线程中运行脚本提供了一种简单的方法。线程可以执行任务而不干扰用户界面；</p>
+<p>一个worker是使用一个构造函数创建的一个对象(e.g. Worker()) 运行一个命名的JavaScript文件, 这个文件包含将在工作线程中运行的代码；</p>
+<p>workers 运行在另一个全局上下文中,不同于当前的window；</p>
+<p>因此，使用 window快捷方式获取当前全局的范围 (而不是self) 在一个 Worker 内将返回错误</p>
+</blockquote>
+<p>简单来说，</p>
+<ul>
+<li>创建Worker时，JS引擎向浏览器申请创建一个子线程（完全受主线程控制，且不能操作DOM）</li>
+<li>JS引擎线程与worker线程之间通过特定的方式通信</li>
+</ul>
+<p>比如我们需要一个独立的线程来帮我们作平方数运算，由于平方运算非常耗时，所以我们在一个叫做”squareworker.js”的文件中来写代码。</p>
+<p>为了避免worker线程和其他线程同时操作相同的数据导致错误发生，workers线程不与主线程环境共享它的全局环境和数据，而是利用信息往返来实现数据交换。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// squareworker.js中输出结果数据</span></span><br><span class="line"><span class="title function_">addEventListener</span>(<span class="string">&quot;message&quot;</span>, <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">postMessage</span>(event.<span class="property">data</span> * event.<span class="property">data</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js中创建worker</span></span><br><span class="line"><span class="keyword">let</span> squareWorker = <span class="keyword">new</span> <span class="title class_">Worker</span>(<span class="string">&quot;squareworker.js&quot;</span>);</span><br><span class="line">squareWorker.<span class="title function_">addEventListener</span>(<span class="string">&quot;message&quot;</span>, <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;The worker responded:&quot;</span>, event.<span class="property">data</span>);</span><br><span class="line">&#125;)</span><br><span class="line">squareWorker.<span class="title function_">postMessage</span>(<span class="number">10</span>);</span><br><span class="line">squareWorker.<span class="title function_">postMessage</span>(<span class="number">24</span>);</span><br></pre></td></tr></table></figure>
+
+<p>我们可以尝试在浏览器中打开（会存在兼容性问题，Chrome需要下载subworker.js文件支持，火狐可以正常打开）</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fuz1j6705mj305t02zmx2.jpg" alt="image-20180905223822638"></p>
+<h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><blockquote>
+<p>事件流指从页面中接收事件的顺序，也可以理解为事件在页面中传播的顺序。</p>
+</blockquote>
+<h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>早期的IE事件传播方向是从上至下，即从document逐级向下传播到模板元素；而Netscape Navigator则是相反的顺序，从目标元素开始向上逐级传播至window。</p>
+<p>后来ECMAScript在DOM2中对事件流进行了进一步规范，基本上是上述两者的结合。事件流要经历三个阶段：</p>
+<h4 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h4><p>当事件发生时，document对象会发出一个事件流，由上至下逐级DOM节点传播，直到到达触发事件的目标元素为止，这个过程叫做<strong>事件捕获</strong>。</p>
+<h4 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h4><p>到达目标元素之后，执行目标元素绑定的处理函数。如果目标元素没有绑定监听函数，则不做任何处理。</p>
+<h4 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h4><p>事件流从目标元素开始，向最外层的DOM节点逐级依次传递，途中如果有节点绑定了事件处理函数，这些函数会被执行。</p>
+<p>对于事件处理器来说，可以调用<code>stopPropagation</code>方法来<strong>取消传播</strong>，从而阻止目标对象的外层元素的事件处理器被触发。比如当一个按钮被包含在另一个可点击元素内，我们不希望点击按钮触发外层元素的点击事件时，就可以使用取消冒泡的方法。</p>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fuyr0gzkmvj30he080jso.jpg" alt="image-20180905163425057"></p>
+<blockquote>
+<p><em><strong>所以捕获先于冒泡执行。</strong></em></p>
+</blockquote>
+<h4 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h4><p>通过事件对象的<code>target</code>属性和冒泡过程，我们可以给父元素添加事件监听器，来监听和处理子元素的事件，避免重复为子元素绑定相同的事件。当目标元素被触发时，这个事件会向外传递，冒泡到父元素上，触发父元素绑定的事件函数，父元素可以通过<code>event.target</code>获取到被触发的目标元素。</p>
+<p>比如有一个node节点包含一串<code>button</code>元素，点击按钮会触发相同的事件，那么给这个node节点绑定点击事件就会比给每一个<code>button</code>都绑定点击事件方便得多。而通过<code>event.target</code>即可得知哪一个<code>button</code>被点击了。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>A<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>B<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>C<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">if</span> (event.<span class="property">target</span>.<span class="property">nodeName</span> == <span class="string">&quot;BUTTON&quot;</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Clicked&quot;</span>, event.<span class="property">target</span>.<span class="property">textContent</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="事件对象-Event-Object"><a href="#事件对象-Event-Object" class="headerlink" title="事件对象 Event Object"></a>事件对象 Event Object</h3><p>当我们使用事件处理函数时，实际上我们传递了一个参数：事件对象(event object)。这个对象包含了关于事件的其他信息，这些信息因事件类型的不同而不同。</p>
+<p>事件对象只在事件发生时产生，并且只能在事件处理函数内部访问，在所有事件处理函数执行结束后，事件对象就被销毁。</p>
+<h4 id="事件对象的属性"><a href="#事件对象的属性" class="headerlink" title="事件对象的属性"></a>事件对象的属性</h4><h5 id="bubbles"><a href="#bubbles" class="headerlink" title="bubbles"></a><code>bubbles</code></h5><p>返回布尔值，表示事件是否是冒泡事件类型。</p>
+<h5 id="cancelable"><a href="#cancelable" class="headerlink" title="cancelable"></a><code>cancelable</code></h5><p>返回布尔值，表示事件是否拥有可取消的默认动作。</p>
+<h5 id="target"><a href="#target" class="headerlink" title="target"></a><code>target</code></h5><p>大多数事件对象都有<code>target</code>属性，指的是触发事件的目标节点。我们可以通过这个属性来确保触发的是目标元素，而不是冒泡过程中意外触发的其他节点。</p>
+<h5 id="type"><a href="#type" class="headerlink" title="type"></a><code>type</code></h5><p>返回当前事件对象表示的事件的名称。</p>
+<h4 id="事件对象的方法"><a href="#事件对象的方法" class="headerlink" title="事件对象的方法"></a>事件对象的方法</h4><h5 id="preventDefault"><a href="#preventDefault" class="headerlink" title="preventDefault()"></a><code>preventDefault()</code></h5><p>通知浏览器不要执行与事件关联的默认动作。</p>
+<p>很多事件都有自己的默认动作，比如点击链接会自动跳转到链接的目标地址，点击右键会自动出现右键菜单。对于大多数事件类型来说，事件处理器会在默认动作前被调用，但是如果不希望默认动作出现，则可以使用<code>preventDefault()</code>事件来阻止默认动作触发。</p>
+<p>但是建议只有在必需的时候使用这一方法，因为破坏用户习惯的默认动作会带来不好的使用体验。此外，在某些浏览器上，有些事件的默认动作无法被完全屏蔽，比如在chrome上，关闭当前标签页的快捷键就无法被改变。</p>
+<h5 id="stopPropagation"><a href="#stopPropagation" class="headerlink" title="stopPropagation()"></a><code>stopPropagation()</code></h5><p>不要派发事件。</p>
+<h5 id="兼容性问题"><a href="#兼容性问题" class="headerlink" title="兼容性问题"></a>兼容性问题</h5><p>事件对象也存在一些兼容性问题。</p>
+<h6 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h6><p>IE8之前，注册事件处理函数时，事件对象并没有被传递到函数内部，因此需要使用<code>window.event</code>来获取事件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getEvent</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  event = event || <span class="variable language_">window</span>.<span class="property">event</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="preventDefault-1"><a href="#preventDefault-1" class="headerlink" title="preventDefault()"></a><code>preventDefault()</code></h6><p>IE没有<code>preventDefault()</code>方法，所以我们需要设置的是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">event</span>.<span class="property">returnValue</span> = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="stopPropagation-1"><a href="#stopPropagation-1" class="headerlink" title="stopPropagation()"></a><code>stopPropagation()</code></h6><p>IE也没有<code>stopPropagation()</code>方法，所以需要设置<code>cancelBubble</code>属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">event.<span class="property">cancelBubble</span> = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="事件处理-1"><a href="#事件处理-1" class="headerlink" title="事件处理"></a>事件处理</h3><p>有个三种方式来给元素添加事件：</p>
+<ul>
+<li>Inline event handlers 内联事件处理器</li>
+<li>Event handler properties 事件处理属性</li>
+<li>Event listeners 事件监听器</li>
+</ul>
+<h4 id="内联事件处理器"><a href="#内联事件处理器" class="headerlink" title="内联事件处理器"></a>内联事件处理器</h4><p>内联事件处理器，也称为HTML事件处理程序，是指直接给元素添加事件属性，事件属性的属性值为事件函数：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;changeText()&quot;</span>&gt;</span></span><br><span class="line">  Click me!</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  Try to change me.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> <span class="title function_">changeText</span> = (<span class="params"></span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> p = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;p&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    p.<span class="property">textContent</span> = <span class="string">&quot;I changed because of an inline event handler.&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当我们打开页面时：</p>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdgy1fuyn70syzdj310k0km0tx.jpg" alt="First rendering of events.html"></p>
+<p>当我们点击按钮后：</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fuyn7h5p61j310k0jy75k.jpg" alt="First response to event on events.html rendering"></p>
+<p>内联事件处理器是最直接的理解事件的方式，但是在实际编程过程中，除了测试和教学目的，很少真正使用它们。</p>
+<p>内联事件处理器就和CSS内联样式一样，不易于代码维护，所以不建议使用。</p>
+<h4 id="事件处理属性（DOM0级事件处理程序）"><a href="#事件处理属性（DOM0级事件处理程序）" class="headerlink" title="事件处理属性（DOM0级事件处理程序）"></a>事件处理属性（DOM0级事件处理程序）</h4><p>事件处理属性的触发机制和内联事件处理器类似，只不过我们通过JavaScript来设置元素的属性，而不是直接在HTML中设置。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Try to change me.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> <span class="title function_">changeText</span> = (<span class="params"></span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> p = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;p&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    p.<span class="property">textContent</span> = <span class="string">&quot;I changed because of an  event handler property.&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> button = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;button&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">  button.<span class="property">onclick</span> = changeText;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这里需要注意两个细节：</p>
+<ul>
+<li>通过JavaScript来添加<code>onclick</code>属性时，<code>onclick</code>并不用遵循驼峰命名法写成<code>onClick</code></li>
+<li>给<code>onclick</code>属性添加函数作为属性值时，不需要添加括号<code>()</code>，因为我们仅将函数传递给属性，而不是在此时触发函数</li>
+</ul>
+<p>通过<code>button.onclick = null</code>可以删除事件处理程序。</p>
+<p>通过事件处理属性来添加函数比内联处理器要易于维护，但它同样有一些缺陷，比如它无法传递多个事件处理函数给同一个事件，如果给点击事件赋上多个<code>onclick</code>属性值，后一个事件处理函数会覆盖前一个函数。此外，这种方法也不能控制事件流到底是捕获还是冒泡。</p>
+<h4 id="事件监听器"><a href="#事件监听器" class="headerlink" title="事件监听器"></a>事件监听器</h4><p>事件监听器用于监听元素上的事件，我们通过<code>addEventListener()</code>方法来给监听事件。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Try to change me.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> <span class="title function_">changeText</span> = (<span class="params"></span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> p = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;p&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    p.<span class="property">textContent</span> = <span class="string">&quot;I changed because of an event listener.&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> button = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;button&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">  button.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, changeText);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>addEventListener()</code>接受三个参数：</p>
+<ol>
+<li>要处理的事件名（不需要添加前缀<code>on</code>）</li>
+<li>作为事件处理程序的函数</li>
+<li>一个Boolean值，默认false表示使用冒泡机制，true表示使用捕获机制</li>
+</ol>
+<p><code>addEventListener()</code>有以下优势：</p>
+<ul>
+<li><code>addEventListener()</code>可以给同一个元素的同一个事件添加多个函数（同一个事件触发同一个函数的情况，添加数次只生效一次），触发顺序即添加顺序</li>
+<li>可以给事件添加匿名函数</li>
+<li>可以通过<code>removeEventListener()</code>来移除所有事件</li>
+<li>可以给<code>document</code>和<code>window</code>对象来添加事件</li>
+</ul>
+<p>因此，<code>addEventListener()</code>是目前JavaScript中使用最广泛的事件处理方法。</p>
+<h5 id="IE处理方法"><a href="#IE处理方法" class="headerlink" title="IE处理方法"></a>IE处理方法</h5><p>IE9之前都不支持<code>addEventListener()</code>方法，而是使用两个相似的方法：</p>
+<ul>
+<li><code>attachEvent()</code> 添加事件处理器</li>
+<li><code>detachEvent()</code> 删除事件处理器</li>
+</ul>
+<p>它们都接受两个参数，第一个是事件处理程序的名称（不是事件，所以要添加<code>on</code>前缀）；第二个是事件处理函数；之所以没有第三个参数是因为IE8之前只支持冒泡事件流。</p>
+<p>由于支持的是冒泡事件流，如果给元素绑定多个事件处理函数，事件触发的顺序是添加顺序的相反顺序。</p>
+<p><code>attachEvent</code>有一个缺点，不同于<code>addEventListener()</code>的<code>this</code>值指向目标元素，<code>attachEvent()</code>的<code>this</code>值指向<code>window</code>对象。</p>
+<h5 id="跨浏览器的写法"><a href="#跨浏览器的写法" class="headerlink" title="跨浏览器的写法"></a>跨浏览器的写法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title class_">EventUtil</span> = &#123;</span><br><span class="line">  <span class="attr">addHandler</span>: <span class="keyword">function</span>(<span class="params">element, type, handler</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(element.<span class="property">addEventListener</span>) &#123;</span><br><span class="line">      element.<span class="title function_">addEventListener</span>(type, handler, <span class="literal">false</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.<span class="property">attachEvent</span>) &#123;</span><br><span class="line">      element.<span class="title function_">attachEvent</span>(<span class="string">&quot;on&quot;</span>+type, handler);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      element[<span class="string">&quot;on&quot;</span> + type] = handler;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">removeHandler</span>: <span class="keyword">function</span>(<span class="params">element, type, handler</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(element.<span class="property">removeEventListener</span>) &#123;</span><br><span class="line">      element.<span class="title function_">removeEventListener</span>(type, handler, <span class="literal">false</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.<span class="property">detachEvent</span>) &#123;</span><br><span class="line">      element.<span class="title function_">detachEvent</span>(<span class="string">&quot;on&quot;</span>+type, handler);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      element[<span class="string">&quot;on&quot;</span> + type] = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="常见事件"><a href="#常见事件" class="headerlink" title="常见事件"></a>常见事件</h3><h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h4><table>
+<thead>
+<tr>
+<th align="center">Event</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">click</td>
+<td align="center">鼠标点击触发</td>
+</tr>
+<tr>
+<td align="center">dbclick</td>
+<td align="center">鼠标双击触发</td>
+</tr>
+<tr>
+<td align="center">mouseenter</td>
+<td align="center">鼠标进入元素触发</td>
+</tr>
+<tr>
+<td align="center">mouseleave</td>
+<td align="center">鼠标移出元素触发</td>
+</tr>
+<tr>
+<td align="center">mousemove</td>
+<td align="center">每一次鼠标在元素内移动触发</td>
+</tr>
+</tbody></table>
+<p><code>click</code>点击事件包括了<code>mousedown</code>和<code>mouseup</code>事件。</p>
+<h4 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h4><table>
+<thead>
+<tr>
+<th align="center">Event</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">submit</td>
+<td align="center">表单提交时触发</td>
+</tr>
+<tr>
+<td align="center">focus</td>
+<td align="center">某个元素获得焦点时触发</td>
+</tr>
+<tr>
+<td align="center">blur</td>
+<td align="center">元素失去焦点时触发</td>
+</tr>
+</tbody></table>
+<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><table>
+<thead>
+<tr>
+<th align="center">Event</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">keydown</td>
+<td align="center">当某个键被按下时触发</td>
+</tr>
+<tr>
+<td align="center">keyup</td>
+<td align="center">当某个键被松开时触发</td>
+</tr>
+<tr>
+<td align="center">keypress</td>
+<td align="center">当某个字符键被按时触发（非字符键如<code>alt</code>,<code>shift</code>,<code>ctrl</code>)</td>
+</tr>
+</tbody></table>
+<p>键盘事件是一种特殊的事件，它触发的事件对象能够返回按键的相关属性，如<code>keyCode</code>,<code>key</code>,<code>code</code>。我们以字母<code>a</code>为例：</p>
+<table>
+<thead>
+<tr>
+<th align="center">Property</th>
+<th align="center">Description</th>
+<th align="center">Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>keyCode</code></td>
+<td align="center">按键对应的键码值</td>
+<td align="center">65</td>
+</tr>
+<tr>
+<td align="center"><code>key</code></td>
+<td align="center">按键名</td>
+<td align="center">a</td>
+</tr>
+<tr>
+<td align="center"><code>code</code></td>
+<td align="center">按键的Unicode字符</td>
+<td align="center">KeyA</td>
+</tr>
+</tbody></table>
+<h4 id="触摸事件"><a href="#触摸事件" class="headerlink" title="触摸事件"></a>触摸事件</h4><table>
+<thead>
+<tr>
+<th align="center">Event</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">touchstart</td>
+<td align="center">当一个手指开始触碰屏幕</td>
+</tr>
+<tr>
+<td align="center">touchmove</td>
+<td align="center">当一个手指在屏幕上移动</td>
+</tr>
+<tr>
+<td align="center">touchend</td>
+<td align="center">当手指离开屏幕</td>
+</tr>
+</tbody></table>
+<h4 id="手势事件"><a href="#手势事件" class="headerlink" title="手势事件"></a>手势事件</h4><table>
+<thead>
+<tr>
+<th align="center">Event</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">gesturestart</td>
+<td align="center">两只手指触碰屏幕</td>
+</tr>
+<tr>
+<td align="center">gesturechange</td>
+<td align="center">任意手指移动</td>
+</tr>
+<tr>
+<td align="center">gestureend</td>
+<td align="center">某一只手指离开屏幕，只剩一只手指在屏幕上</td>
+</tr>
+</tbody></table>
+<p>触发手势事件的时候也会触发触摸事件。</p>
+<h4 id="滚动事件"><a href="#滚动事件" class="headerlink" title="滚动事件"></a>滚动事件</h4><table>
+<thead>
+<tr>
+<th align="center">Event</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">scroll</td>
+<td align="center">当元素开始滚动</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://medium.com/@vsvaibhav2016/introduction-to-event-driven-programming-28161b79c223">Introduction to Event-Driven Programming</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/understanding-events-in-javascript">Understanding Events in JavaScript</a></p>
+<p><a target="_blank" rel="noopener" href="https://eloquentjavascript.net/15_event.html">Handling Events:: Eloquent JavaScript</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUzOTM0MTE4OQ==&mid=2247483857&idx=1&sn=b67a11ccb86077d8e033ab4a999ab152&chksm=fac8b93bcdbf302ddd17854f472af27cdfc1b07db5da805cbc88c738464d19cdacf5cdd3bc13&mpshare=1&scene=1&srcid=0218iZ6Hupq3BmZ0j77RNIUD%23rd">前端小知识–JavaScript事件流</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html">JavaScript 运行机制详解：再谈Event Loop</a></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/09/05/%E5%89%8D%E7%AB%AF%E5%A4%8D%E4%B9%A0%E4%B9%8B%E4%BA%8B%E4%BB%B6%E7%B3%BB%E7%BB%9F/" data-id="clnpqd44v00p6p1205r6f2e49" data-title="前端复习之事件系统" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/event/" rel="tag">event</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/06/HTML%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B%E5%85%A8%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          HTML解析过程全解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/04/%E5%89%8D%E7%AB%AF%E5%A4%8D%E4%B9%A0%E4%B9%8BDOM/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">前端复习之DOM</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/FreeCodeCamp/">FreeCodeCamp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jounal/">Jounal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/">习题集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%A9%E5%99%A8/">利器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/">工作备忘</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/">知识管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/">跟着大佬学编程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2020/" rel="tag">2020</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOM/" rel="tag">BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eloquent-JavaScript/" rel="tag">Eloquent JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeCodeCamp/" rel="tag">FreeCodeCamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fuji-Rock-Festival/" rel="tag">Fuji Rock Festival</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hooks/" rel="tag">Hooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/" rel="tag">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Course/" rel="tag">Learning, Course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OIS/" rel="tag">OIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OKR/" rel="tag">OKR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/" rel="tag">OOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading/" rel="tag">Reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/" rel="tag">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/" rel="tag">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/" rel="tag">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/" rel="tag">UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UX/" rel="tag">UX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Report/" rel="tag">Weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Reports/" rel="tag">Weekly Reports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Summary/" rel="tag">Weekly Summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design/" rel="tag">ant design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design-pro/" rel="tag">ant design pro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/art-template/" rel="tag">art-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/auth/" rel="tag">auth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/autojump/" rel="tag">autojump</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/box-model/" rel="tag">box model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codewars/" rel="tag">codewars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejs/" rel="tag">ejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/event/" rel="tag">event</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/" rel="tag">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex/" rel="tag">flex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/float/" rel="tag">float</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freecodecamp/" rel="tag">freecodecamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grid/" rel="tag">grid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/" rel="tag">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jade/" rel="tag">jade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/journal/" rel="tag">journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jwt/" rel="tag">jwt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/" rel="tag">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/layout/" rel="tag">layout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multer/" rel="tag">multer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ndoe-js/" rel="tag">ndoe.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodemon/" rel="tag">nodemon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nrm/" rel="tag">nrm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/" rel="tag">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/responsive/" rel="tag">responsive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/" rel="tag">terminal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/" rel="tag">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/useEffect/" rel="tag">useEffect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-Report/" rel="tag">weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" rel="tag">一周分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%9E%8B/" rel="tag">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" rel="tag">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" rel="tag">年度计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86/" rel="tag">心理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E8%83%BD/" rel="tag">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" rel="tag">效率提升</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E6%B8%B8/" rel="tag">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%AC/" rel="tag">日本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" rel="tag">本地存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" rel="tag">模板引擎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="tag">深拷贝浅拷贝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" rel="tag">知识管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" rel="tag">线程 进程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" rel="tag">翻译， HTTPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" rel="tag">软技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" rel="tag">选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" rel="tag">重装电脑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2020/" style="font-size: 10px;">2020</a> <a href="/tags/Algorithm/" style="font-size: 10.77px;">Algorithm</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 11.54px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 16.92px;">ES6</a> <a href="/tags/Eloquent-JavaScript/" style="font-size: 10px;">Eloquent JavaScript</a> <a href="/tags/FreeCodeCamp/" style="font-size: 10px;">FreeCodeCamp</a> <a href="/tags/Fuji-Rock-Festival/" style="font-size: 10px;">Fuji Rock Festival</a> <a href="/tags/HTML/" style="font-size: 12.31px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.54px;">HTTP</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/IP/" style="font-size: 11.54px;">IP</a> <a href="/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/tags/JavaScript/" style="font-size: 19.23px;">JavaScript</a> <a href="/tags/Learning-Course/" style="font-size: 10px;">Learning, Course</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/OIS/" style="font-size: 10px;">OIS</a> <a href="/tags/OKR/" style="font-size: 10.77px;">OKR</a> <a href="/tags/OOP/" style="font-size: 11.54px;">OOP</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/React/" style="font-size: 13.08px;">React</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/TCP/" style="font-size: 11.54px;">TCP</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UX/" style="font-size: 10px;">UX</a> <a href="/tags/Weekly-Report/" style="font-size: 18.46px;">Weekly Report</a> <a href="/tags/Weekly-Reports/" style="font-size: 10.77px;">Weekly Reports</a> <a href="/tags/Weekly-Summary/" style="font-size: 10px;">Weekly Summary</a> <a href="/tags/ant-design/" style="font-size: 10px;">ant design</a> <a href="/tags/ant-design-pro/" style="font-size: 10px;">ant design pro</a> <a href="/tags/art-template/" style="font-size: 10px;">art-template</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/box-model/" style="font-size: 10px;">box model</a> <a href="/tags/chrome/" style="font-size: 10.77px;">chrome</a> <a href="/tags/codewars/" style="font-size: 10px;">codewars</a> <a href="/tags/computer-science/" style="font-size: 10.77px;">computer science</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/css/" style="font-size: 16.15px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/event/" style="font-size: 10px;">event</a> <a href="/tags/express/" style="font-size: 13.08px;">express</a> <a href="/tags/flex/" style="font-size: 10.77px;">flex</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/freecodecamp/" style="font-size: 17.69px;">freecodecamp</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.77px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/journal/" style="font-size: 10px;">journal</a> <a href="/tags/jwt/" style="font-size: 11.54px;">jwt</a> <a href="/tags/koa/" style="font-size: 14.62px;">koa</a> <a href="/tags/layout/" style="font-size: 10px;">layout</a> <a href="/tags/mac/" style="font-size: 10.77px;">mac</a> <a href="/tags/multer/" style="font-size: 10px;">multer</a> <a href="/tags/ndoe-js/" style="font-size: 10px;">ndoe.js</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/nodemon/" style="font-size: 10px;">nodemon</a> <a href="/tags/npm/" style="font-size: 10.77px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/responsive/" style="font-size: 10px;">responsive</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/token/" style="font-size: 11.54px;">token</a> <a href="/tags/translation/" style="font-size: 10px;">translation</a> <a href="/tags/useEffect/" style="font-size: 10px;">useEffect</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/weekly-Report/" style="font-size: 10.77px;">weekly Report</a> <a href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" style="font-size: 15.38px;">一周分享</a> <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 12.31px;">中间件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%8E%9F%E5%9E%8B/" style="font-size: 10.77px;">原型</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" style="font-size: 10px;">工作效率</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" style="font-size: 10px;">年度计划</a> <a href="/tags/%E5%BF%83%E7%90%86/" style="font-size: 10px;">心理</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 10px;">心理学</a> <a href="/tags/%E6%8A%80%E8%83%BD/" style="font-size: 10px;">技能</a> <a href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" style="font-size: 10px;">效率提升</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">数据类型</a> <a href="/tags/%E6%97%85%E6%B8%B8/" style="font-size: 10px;">旅游</a> <a href="/tags/%E6%97%A5%E6%9C%AC/" style="font-size: 10px;">日本</a> <a href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" style="font-size: 10px;">本地存储</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" style="font-size: 11.54px;">模板引擎</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10.77px;">浏览器</a> <a href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" style="font-size: 10px;">深拷贝浅拷贝</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" style="font-size: 11.54px;">知识管理</a> <a href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" style="font-size: 10.77px;">线程 进程</a> <a href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">网易云音乐</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 12.31px;">翻译</a> <a href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" style="font-size: 10px;">翻译， HTTPS</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 13.85px;">读书笔记</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 10px;">负载均衡</a> <a href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" style="font-size: 10px;">软技能</a> <a href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" style="font-size: 10px;">选择器</a> <a href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" style="font-size: 10px;">重装电脑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">代码注释规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/">代码命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/06/Week-49/">Week 49</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/29/Week-48/">Week 48</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/01/Week-44/">Week 44</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

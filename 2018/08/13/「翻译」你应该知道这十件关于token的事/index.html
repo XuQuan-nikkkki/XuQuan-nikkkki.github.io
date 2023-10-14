@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>「翻译」你应该知道这十件关于token的事 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="原文地址： 10 Things You Should Know about Tokens 几周前，我们发表了一篇_《在AngularJS框架下，单页面应用中的cookies和tokens》_的文章。显然这个话题很受欢迎，因此我们发表了第二篇文章_《实时通讯框架（如socket.io)如何基于token实现身份验证》_。出于对这个话题的强烈兴趣，我们决定在这篇文章中继续探索更多关于基于token实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「翻译」你应该知道这十件关于token的事">
+<meta property="og:url" content="http://example.com/2018/08/13/%E3%80%8C%E7%BF%BB%E8%AF%91%E3%80%8D%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E8%BF%99%E5%8D%81%E4%BB%B6%E5%85%B3%E4%BA%8Etoken%E7%9A%84%E4%BA%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="原文地址： 10 Things You Should Know about Tokens 几周前，我们发表了一篇_《在AngularJS框架下，单页面应用中的cookies和tokens》_的文章。显然这个话题很受欢迎，因此我们发表了第二篇文章_《实时通讯框架（如socket.io)如何基于token实现身份验证》_。出于对这个话题的强烈兴趣，我们决定在这篇文章中继续探索更多关于基于token实现">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-08-13T03:11:56.000Z">
+<meta property="article:modified_time" content="2018-08-14T04:12:01.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="jwt">
+<meta property="article:tag" content="token">
+<meta property="article:tag" content="翻译">
+<meta property="article:tag" content="auth">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="posts-「翻译」你应该知道这十件关于token的事" class="h-entry article article-type-posts" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/08/13/%E3%80%8C%E7%BF%BB%E8%AF%91%E3%80%8D%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E8%BF%99%E5%8D%81%E4%BB%B6%E5%85%B3%E4%BA%8Etoken%E7%9A%84%E4%BA%8B/" class="article-date">
+  <time class="dt-published" datetime="2018-08-13T03:11:56.000Z" itemprop="datePublished">2018-08-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/">跟着大佬学编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      「翻译」你应该知道这十件关于token的事
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>原文地址： <a target="_blank" rel="noopener" href="https://auth0.com/blog/ten-things-you-should-know-about-tokens-and-cookies//#token-storage">10 Things You Should Know about Tokens</a></p>
+<p>几周前，我们发表了一篇_《在AngularJS框架下，单页面应用中的cookies和tokens》_的文章。显然这个话题很受欢迎，因此我们发表了第二篇文章_《实时通讯框架（如socket.io)如何基于token实现身份验证》_。出于对这个话题的强烈兴趣，我们决定在这篇文章中继续探索更多关于基于token实现身份认证的问题和实现细节。那我们开始吧：</p>
+<ol>
+<li>tokens需要被储存起来（在local&#x2F;session storage或cookies里）</li>
+<li>tokens可以和cookies一样设置过期时间，但更容易掌控</li>
+<li>local&#x2F;session storage无法跨域，所以需要一个标记cookie</li>
+<li>CORS请求会发送预检请求</li>
+<li>当你需要使用流传送时，使用token来获取已签名的请求</li>
+<li>XSS比XSRF更好预防</li>
+<li>每一个请求都会发送token，所以要注意它的大小</li>
+<li>如果你要保存机密信息，对token加密</li>
+<li>JSON Web Tokens可以在OAuth中使用</li>
+<li>tokens不是万能的，根据你的验证需求谨慎使用</li>
+</ol>
+<span id="more"></span>
+
+
+
+<h4 id="1-tokens需要被储存起来（在local-session-storage或cookies里）"><a href="#1-tokens需要被储存起来（在local-session-storage或cookies里）" class="headerlink" title="1. tokens需要被储存起来（在local&#x2F;session storage或cookies里）"></a>1. tokens需要被储存起来（在local&#x2F;session storage或cookies里）</h4><p>在单页面应用情景下使用token的问题上，有些人会有“刷新浏览器之后，tokens去哪儿了”的疑惑，答案很简单：你需要把token保存在某个地方，无论是session storage, local storage还是客户端的cookie里。当浏览器不支持session storage时，浏览器会把数据转存到cookies里。</p>
+<p>也许你会有“但是如果我把token存在cookie里和以前的做法有什么区别？”的疑问。其实并不尽然，这里你其实是将cookies作为一个存储机制，而<u>非验证机制</u>（也就是说，cookie不会被浏览器用来验证用户的身份，因此也不会有XSRF攻击的潜在威胁）。</p>
+<h4 id="2-tokens可以和cookies一样设置过期时间，但更容易掌控"><a href="#2-tokens可以和cookies一样设置过期时间，但更容易掌控" class="headerlink" title="2.  tokens可以和cookies一样设置过期时间，但更容易掌控"></a>2.  tokens可以和cookies一样设置过期时间，但更容易掌控</h4><p>tokens也有过期时间（JSON Web Tokens中的<code>exp</code>属性），否则用户在登录过一次后就可以永久无限地通过身份验证了。cookies同样有过期时间。</p>
+<p>但使用cookie时，我们通过不同的方法来控制cookie的使用时限：</p>
+<ol>
+<li>cookies可以在浏览器关闭后立即被销毁（session cookies)</li>
+<li>此外你还可以设置服务器端检查（通常由你的web框架来替你完成），也可以设置绝对过期时间或有效时长</li>
+<li>cookies可以在过期时间前长期有效（浏览器关闭后不销毁）</li>
+</ol>
+<p>在使用token时，当token过期了，你仅仅需要获取一个新的。你可以在端口刷新token，这样就可以：</p>
+<ol>
+<li>激活旧的token</li>
+<li>检查用户是否还存在，或者权限是否被激活，或者任何其他必要的操作</li>
+<li>授权一个新的token，并更新它的过期时间</li>
+</ol>
+<p>你甚至可以在token中储存最初的授权时间，实现14天免登陆等操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/refresh_token&#x27;</span>, <span class="keyword">function</span> (<span class="params">req, res</span>) &#123;</span><br><span class="line">  <span class="comment">// verify the existing token</span></span><br><span class="line">  <span class="keyword">var</span> profile = jwt.<span class="title function_">verify</span>(req.<span class="property">body</span>.<span class="property">token</span>, secret);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// if more than 14 days old, force login</span></span><br><span class="line">  <span class="keyword">if</span> (profile.<span class="property">original_iat</span> - <span class="keyword">new</span> <span class="title class_">Date</span>() &gt; <span class="number">14</span>) &#123; <span class="comment">// iat == issued at</span></span><br><span class="line">    <span class="keyword">return</span> res.<span class="title function_">send</span>(<span class="number">401</span>); <span class="comment">// re-logging</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// check if the user still exists or if authorization hasn&#x27;t been revoked</span></span><br><span class="line">  <span class="keyword">if</span> (!valid) <span class="keyword">return</span> res.<span class="title function_">send</span>(<span class="number">401</span>); <span class="comment">// re-logging</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// issue a new token</span></span><br><span class="line">  <span class="keyword">var</span> refreshed_token = jwt.<span class="title function_">sign</span>(profile, secret, &#123; <span class="attr">expiresInMinutes</span>: <span class="number">60</span>*<span class="number">5</span> &#125;);</span><br><span class="line">  res.<span class="title function_">json</span>(&#123; <span class="attr">token</span>: refreshed_token &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>如果你需要重新激活tokens（长期有效的tokens是很有用的设置），你需要设置一些注册授权的操作来检测用户的tokens。</p>
+<h4 id="3-local-session-storage无法跨域，所以需要一个标记cookie"><a href="#3-local-session-storage无法跨域，所以需要一个标记cookie" class="headerlink" title="3. local&#x2F;session storage无法跨域，所以需要一个标记cookie"></a>3. local&#x2F;session storage无法跨域，所以需要一个标记cookie</h4><p>如果你将一个cookie的域名设置为<code>.yourdomain.com</code>，那么从<code>yourdomain.com</code>和<code>app.youdomain.com</code>路径都可以获取到这个cookie，我们假设用户在你的购物网站上，就能很容易地检测到他&#x2F;她已经在主页面上登录，从而重定向到移动端<code>app.youdoumain.com</code>。</p>
+<p>但另一方面，存储在local&#x2F;session storage中的tokens无法跨域获取，就算是子域也不可以。那么我们该怎么办呢？</p>
+<p>一个可行的方法是，当用户在<code>app.domain.com</code>上进行身份验证时，你可以生成一个token，同时还设置一个用于<code>.youdomain.com</code>的cookie。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.<span class="title function_">post</span>(<span class="string">&#x27;/authenticate&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// store token on local/session storage or cookie</span></span><br><span class="line">    ....</span><br><span class="line"></span><br><span class="line">    <span class="comment">// create a cookie signaling that user is logged in</span></span><br><span class="line">  $.<span class="title function_">cookie</span>(<span class="string">&#x27;loggedin&#x27;</span>, profile.<span class="property">name</span>, <span class="string">&#x27;.yourdomain.com&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>那么， 在<code>domain.com</code>上，你就能检测是否有用于这个域名的cookie，如果有，就可以重定向到<code>app.yourdomain.com</code>。token就可以在app的子域上使用，接下来就可以进行常规操作了（如果token仍然有效，就继续使用这个token，如果距离上次登录的时间已经超过了你设置的使用token的有效时长，那么久需要获取一个新的token）。</p>
+<p>有时会有cookie仍然存在，但是token被删除或者有其他误操作的情况发生。如果出现这样的状况，用户需要重新登录。但需要强调的是，正如我们前面提到的，我们并没有将cookie作为验证机制去使用，而是仅仅将它作为一种存储机制，协助我们在跨域的情况下完成信息的存储。</p>
+<h4 id="4-CORS请求会发送预检请求"><a href="#4-CORS请求会发送预检请求" class="headerlink" title="4. CORS请求会发送预检请求"></a>4. CORS请求会发送预检请求</h4><p>有人提出验证请求的头信息不满足简单请求的头信息要求，所以发送到特定地址的所有的请求都需要先发送预检请求。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">OPTIONS</span> <span class="string">https://api.foo.com/bar</span></span><br><span class="line"><span class="string">GET</span> <span class="string">https://api.foo.com/bar</span></span><br><span class="line">   <span class="attr">Authorization:</span> <span class="string">Bearer</span> <span class="string">....</span></span><br><span class="line"></span><br><span class="line"><span class="string">OPTIONS</span> <span class="string">https://api.foo.com/bar2</span></span><br><span class="line"><span class="string">GET</span> <span class="string">https://api.foo.com/bar2</span></span><br><span class="line">   <span class="attr">Authorization:</span> <span class="string">Bearer</span> <span class="string">....</span></span><br><span class="line"></span><br><span class="line"><span class="string">GET</span> <span class="string">https://api.foo.com/bar</span></span><br><span class="line">   <span class="attr">Authorization:</span> <span class="string">Bearer</span> <span class="string">....</span></span><br></pre></td></tr></table></figure>
+
+<p>但这种情况只在你设置了<code>Content-Type: application/json</code>的情况下会发生。尽管对于绝大多数情况下都有这一设置。</p>
+<p>一个小的警告是，<code>OPTIONS</code>请求头信息本身并没有包含验证(Authorization)，所以你的web框架在处理<code>OPTION</code>请求和后续请求的时候应该区别对待（注意：Microsoft IIS在处理这个情况时会有一些问题）。</p>
+<h4 id="5-当你需要使用流传送时，使用token来获取已签名的请求"><a href="#5-当你需要使用流传送时，使用token来获取已签名的请求" class="headerlink" title="5. 当你需要使用流传送时，使用token来获取已签名的请求"></a>5. 当你需要使用流传送时，使用token来获取已签名的请求</h4><p>当使用cookie时，你可以很容易地触发文件下载并且对其内容进行流传送操作。但使用token时，因为它的请求是通过XHR实现的，你不能依赖它实现。解决方法是像AWS一样，生成一个签名的请求，<a target="_blank" rel="noopener" href="https://github.com/hueniverse/hawk">Hawk Bewits</a>就是一个很好的实现框架：</p>
+<p><strong>请求</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">POST</span> <span class="string">/download-file/123</span></span><br><span class="line"><span class="attr">Authorization:</span> <span class="string">Bearer...</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>响应</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">ticket=lahdoiasdhoiwdowijaksjdoaisdjoasidja</span></span><br></pre></td></tr></table></figure>
+
+<p>这个ticket是无状态的，而且基于地址URL来生成：域名+路径+请求+头信息+时间戳+HMAC，并且有过期时间。因此可以在有效期内，比如接下来的5分钟内，用于下载文件。</p>
+<p>接下来你可以重定向到<code>/download-file/123?ticket=lahdoiasdhoiwdowijaksjdoaisdjoasidja</code>。服务器会检查ticke是否有效，从而执行接下来的操作。</p>
+<h4 id="6-XSS比XSRF更好预防"><a href="#6-XSS比XSRF更好预防" class="headerlink" title="6. XSS比XSRF更好预防"></a>6. XSS比XSRF更好预防</h4><p>cookie可以在服务器端设置<code>HttpOnly</code>属性，从而使它只能在服务器端被获取，而不能通过JavaScript获取。这能够有效防范植入浏览器端的代码窃取cookie内容（XSS 跨站脚本攻击）。</p>
+<p>由于token是存储在local&#x2F;session storage或客户端的cookie中的，攻击者很容易获取token实现XSS跨站脚本攻击。这是一个很现实的考虑，基于此，你应该让你的token的有效期尽量短一些。</p>
+<p>如果从防范攻击的层面去考虑，一个主要的隐患是XSRF。事实上，XSRF是最被误解的一种攻击，对于普通开发者来说，他们也许还没有意识到这个风险，所以很多应用都没有防范XSRF的机制。但不管怎么说，谁都明白注入代码是什么意思。简单来说，如果你允许在你的网站上植入一段代码，并且将它一同渲染出来，你就对XSS打开了大门。因此基于我们的经验，防范XSS比防范XSRF更容易。除此之外，防范XSRF并没有在每一个网页框架上实现。换句话说，防范XSS更容易因为大部分模板引擎已经默认对代码进行转义处理了。</p>
+<h4 id="7-每一个请求都会发送token，所以要注意它的大小"><a href="#7-每一个请求都会发送token，所以要注意它的大小" class="headerlink" title="7. 每一个请求都会发送token，所以要注意它的大小"></a>7. 每一个请求都会发送token，所以要注意它的大小</h4><p>每次你发送一个API请求时，你都需要在验证头信息中发送token。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">GET</span> <span class="string">/foo</span></span><br><span class="line"><span class="attr">Authorization:</span> <span class="string">Bearer</span> <span class="string">...2kb</span> <span class="string">token...</span></span><br></pre></td></tr></table></figure>
+
+<p>VS</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">GET</span> <span class="string">/foo</span></span><br><span class="line"><span class="attr">connect.sid:</span> <span class="string">...20</span> <span class="string">bytes</span> <span class="string">cookie...</span></span><br></pre></td></tr></table></figure>
+
+<p>取决于你在token中存储多少信息，它也可以变得很大。另一方面，session cookies只是一个标识符（如connect.sid, PHPSESSID），其余的内容都存储在服务器上（如果你只有一台服务器，那么它就在你的内存中，如果你有一个服务器集群，它就会在一个数据库里）。</p>
+<p>现在，没什么能够阻止你利用token实现一个简单的机制了。token包含了所需的基本信息，同时在服务器端，你可以在每一次请求中丰富token信息。cookie也会这么做，只不过现在由你来决定增加哪些信息，你能在代码中完全掌控这一步骤。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">GET</span> <span class="string">/foo</span></span><br><span class="line"><span class="attr">Authorization:</span> <span class="string">Bearer</span> <span class="string">……500</span> <span class="string">bytes</span> <span class="string">token….</span></span><br></pre></td></tr></table></figure>
+
+<p>接着服务器：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">use</span>(<span class="string">&#x27;/api&#x27;</span>,</span><br><span class="line">  <span class="comment">// validate token first</span></span><br><span class="line">  <span class="title function_">expressJwt</span>(&#123;<span class="attr">secret</span>: secret&#125;),</span><br><span class="line"></span><br><span class="line">  <span class="comment">// enrich req.user with more data from db</span></span><br><span class="line">  <span class="keyword">function</span>(<span class="params">req, res, next</span>) &#123;</span><br><span class="line">    req.<span class="property">user</span>.<span class="property">extra_data</span> = <span class="title function_">get_from_db</span>();</span><br><span class="line">    <span class="title function_">next</span>();</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>值得注意的是，你也可以将session完全存储在cookie中（而不是只将cookie作为标识符）。有些web平台支持这一做法，有些则不行。比如，在node.js中，你也可以使用<a target="_blank" rel="noopener" href="https://github.com/mozilla/node-client-sessions">mozilla&#x2F;node-client-sessions</a>。</p>
+<h4 id="8-如果你要保存机密信息，对token加密"><a href="#8-如果你要保存机密信息，对token加密" class="headerlink" title="8. 如果你要保存机密信息，对token加密"></a>8. 如果你要保存机密信息，对token加密</h4><p>token签名能够防止它被篡改。TLS&#x2F;SSL防止使用过程中用户收到攻击。但如果有效载荷中包括用户的敏感信息（如SSN或其他），你可以对他们加密。JWT和JWE规范，但是大部分库都没有支持JWE，因此最简单的方法就是利用AES-CBC加密：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/authenticate&#x27;</span>, <span class="keyword">function</span> (<span class="params">req, res</span>) &#123;</span><br><span class="line">  <span class="comment">// validate user</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// encrypt profile</span></span><br><span class="line">  <span class="keyword">var</span> encrypted = &#123; <span class="attr">token</span>: <span class="title function_">encryptAesSha256</span>(<span class="string">&#x27;shhhh&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(profile)) &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// sing the token</span></span><br><span class="line">  <span class="keyword">var</span> token = jwt.<span class="title function_">sign</span>(encrypted, secret, &#123; <span class="attr">expiresInMinutes</span>: <span class="number">60</span>*<span class="number">5</span> &#125;);</span><br><span class="line"></span><br><span class="line">  res.<span class="title function_">json</span>(&#123; <span class="attr">token</span>: token &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">encryptAesSha256</span> (password, textToEncrypt) &#123;</span><br><span class="line">  <span class="keyword">var</span> cipher = crypto.<span class="title function_">createCipher</span>(<span class="string">&#x27;aes-256-cbc&#x27;</span>, password);</span><br><span class="line">  <span class="keyword">var</span> crypted = cipher.<span class="title function_">update</span>(textToEncrypt, <span class="string">&#x27;utf8&#x27;</span>, <span class="string">&#x27;hex&#x27;</span>);</span><br><span class="line">  crypted += cipher.<span class="title function_">final</span>(<span class="string">&#x27;hex&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> crypted;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然，你也可以使用第7条中的方法，将机密信息保存在数据库中。</p>
+<h4 id="9-JSON-Web-Tokens可以在OAuth中使用"><a href="#9-JSON-Web-Tokens可以在OAuth中使用" class="headerlink" title="9. JSON Web Tokens可以在OAuth中使用"></a>9. JSON Web Tokens可以在OAuth中使用</h4><p>tokens经常与OAuth一起使用。OAuth 2是用于解决身份认证的授权协议。用户在获取他们的数据时，认证服务器会返回一个<code>access_token</code>用于让接口记住用户。</p>
+<p>通常这些token是不透明的，他们被称为<code>bearer</code>tokens，是通过某种形式的哈希表保存在服务器上的随机字符串，并配有过期时间。服务器请求数据（如关联用户的通讯录），用户同意。下一次使用这个API时，token被发送给服务器，服务器在哈希表中查询，根据当下情景（token有没有过期？token是否有权获取相关数据？）决定是否通过验证。</p>
+<p>这类token和我们前面讨论的token最大的区别就是签名的token（如JWT）是”无状态的“。他们不需要保存在哈希表在，因此是一种更轻量级的方法。OAuth2没有要求<code>access_token</code>的格式，因此你可以返回一个包含权限和过期时间的JWT。</p>
+<h4 id="10-tokens不是万能的，根据你的验证需求谨慎使用"><a href="#10-tokens不是万能的，根据你的验证需求谨慎使用" class="headerlink" title="10. tokens不是万能的，根据你的验证需求谨慎使用"></a>10. tokens不是万能的，根据你的验证需求谨慎使用</h4><p>几年之前，我们帮一个大公司完成了一个基于token的架构项目。这个公司拥有超过10万名员工及大量的信息需要维护。他们希望有一个集中式的企业级的验证存储系统。想象一下“用户W可以获取在X国的Y医院中的Z床位的用户id和姓名”。对于这个密集度的认证系统，你能想象，无论从技术层面还是行政层面，都将很快变得无法管理。</p>
+<ul>
+<li>token会变得非常大</li>
+<li>应用或接口都会变得非常复杂</li>
+<li>无论谁想要获取这些权限都需要花很长时间管理它们</li>
+</ul>
+<p>我们最终将工作集中在信息架构方面，以保障创建正确的权限。</p>
+<p>总结：抑制住将所有东西都放进token的想法，在使用token前做一些分析和大小预估。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/08/13/%E3%80%8C%E7%BF%BB%E8%AF%91%E3%80%8D%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E8%BF%99%E5%8D%81%E4%BB%B6%E5%85%B3%E4%BA%8Etoken%E7%9A%84%E4%BA%8B/" data-id="clnpqd41m00bip1208pia7fzz" data-title="「翻译」你应该知道这十件关于token的事" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/auth/" rel="tag">auth</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jwt/" rel="tag">jwt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/token/" rel="tag">token</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/08/13/%E3%80%8CLearning%E3%80%8DJSON-Web-Token-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          「Learning」JSON Web Token 入门教程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/12/node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0:%20jsonwebtoken%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%8A%A0%E5%AF%86token/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node.js学习笔记: jsonwebtoken中间件加密token</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/FreeCodeCamp/">FreeCodeCamp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jounal/">Jounal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/">习题集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%A9%E5%99%A8/">利器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/">工作备忘</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/">知识管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/">跟着大佬学编程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2020/" rel="tag">2020</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOM/" rel="tag">BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eloquent-JavaScript/" rel="tag">Eloquent JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeCodeCamp/" rel="tag">FreeCodeCamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fuji-Rock-Festival/" rel="tag">Fuji Rock Festival</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hooks/" rel="tag">Hooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/" rel="tag">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Course/" rel="tag">Learning, Course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OIS/" rel="tag">OIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OKR/" rel="tag">OKR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/" rel="tag">OOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading/" rel="tag">Reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/" rel="tag">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/" rel="tag">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/" rel="tag">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/" rel="tag">UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UX/" rel="tag">UX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Report/" rel="tag">Weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Reports/" rel="tag">Weekly Reports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Summary/" rel="tag">Weekly Summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design/" rel="tag">ant design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design-pro/" rel="tag">ant design pro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/art-template/" rel="tag">art-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/auth/" rel="tag">auth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/autojump/" rel="tag">autojump</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/box-model/" rel="tag">box model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codewars/" rel="tag">codewars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejs/" rel="tag">ejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/event/" rel="tag">event</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/" rel="tag">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex/" rel="tag">flex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/float/" rel="tag">float</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freecodecamp/" rel="tag">freecodecamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grid/" rel="tag">grid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/" rel="tag">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jade/" rel="tag">jade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/journal/" rel="tag">journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jwt/" rel="tag">jwt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/" rel="tag">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/layout/" rel="tag">layout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multer/" rel="tag">multer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ndoe-js/" rel="tag">ndoe.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodemon/" rel="tag">nodemon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nrm/" rel="tag">nrm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/" rel="tag">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/responsive/" rel="tag">responsive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/" rel="tag">terminal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/" rel="tag">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/useEffect/" rel="tag">useEffect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-Report/" rel="tag">weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" rel="tag">一周分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%9E%8B/" rel="tag">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" rel="tag">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" rel="tag">年度计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86/" rel="tag">心理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E8%83%BD/" rel="tag">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" rel="tag">效率提升</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E6%B8%B8/" rel="tag">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%AC/" rel="tag">日本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" rel="tag">本地存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" rel="tag">模板引擎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="tag">深拷贝浅拷贝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" rel="tag">知识管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" rel="tag">线程 进程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" rel="tag">翻译， HTTPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" rel="tag">软技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" rel="tag">选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" rel="tag">重装电脑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2020/" style="font-size: 10px;">2020</a> <a href="/tags/Algorithm/" style="font-size: 10.77px;">Algorithm</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 11.54px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 16.92px;">ES6</a> <a href="/tags/Eloquent-JavaScript/" style="font-size: 10px;">Eloquent JavaScript</a> <a href="/tags/FreeCodeCamp/" style="font-size: 10px;">FreeCodeCamp</a> <a href="/tags/Fuji-Rock-Festival/" style="font-size: 10px;">Fuji Rock Festival</a> <a href="/tags/HTML/" style="font-size: 12.31px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.54px;">HTTP</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/IP/" style="font-size: 11.54px;">IP</a> <a href="/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/tags/JavaScript/" style="font-size: 19.23px;">JavaScript</a> <a href="/tags/Learning-Course/" style="font-size: 10px;">Learning, Course</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/OIS/" style="font-size: 10px;">OIS</a> <a href="/tags/OKR/" style="font-size: 10.77px;">OKR</a> <a href="/tags/OOP/" style="font-size: 11.54px;">OOP</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/React/" style="font-size: 13.08px;">React</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/TCP/" style="font-size: 11.54px;">TCP</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UX/" style="font-size: 10px;">UX</a> <a href="/tags/Weekly-Report/" style="font-size: 18.46px;">Weekly Report</a> <a href="/tags/Weekly-Reports/" style="font-size: 10.77px;">Weekly Reports</a> <a href="/tags/Weekly-Summary/" style="font-size: 10px;">Weekly Summary</a> <a href="/tags/ant-design/" style="font-size: 10px;">ant design</a> <a href="/tags/ant-design-pro/" style="font-size: 10px;">ant design pro</a> <a href="/tags/art-template/" style="font-size: 10px;">art-template</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/box-model/" style="font-size: 10px;">box model</a> <a href="/tags/chrome/" style="font-size: 10.77px;">chrome</a> <a href="/tags/codewars/" style="font-size: 10px;">codewars</a> <a href="/tags/computer-science/" style="font-size: 10.77px;">computer science</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/css/" style="font-size: 16.15px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/event/" style="font-size: 10px;">event</a> <a href="/tags/express/" style="font-size: 13.08px;">express</a> <a href="/tags/flex/" style="font-size: 10.77px;">flex</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/freecodecamp/" style="font-size: 17.69px;">freecodecamp</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.77px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/journal/" style="font-size: 10px;">journal</a> <a href="/tags/jwt/" style="font-size: 11.54px;">jwt</a> <a href="/tags/koa/" style="font-size: 14.62px;">koa</a> <a href="/tags/layout/" style="font-size: 10px;">layout</a> <a href="/tags/mac/" style="font-size: 10.77px;">mac</a> <a href="/tags/multer/" style="font-size: 10px;">multer</a> <a href="/tags/ndoe-js/" style="font-size: 10px;">ndoe.js</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/nodemon/" style="font-size: 10px;">nodemon</a> <a href="/tags/npm/" style="font-size: 10.77px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/responsive/" style="font-size: 10px;">responsive</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/token/" style="font-size: 11.54px;">token</a> <a href="/tags/translation/" style="font-size: 10px;">translation</a> <a href="/tags/useEffect/" style="font-size: 10px;">useEffect</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/weekly-Report/" style="font-size: 10.77px;">weekly Report</a> <a href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" style="font-size: 15.38px;">一周分享</a> <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 12.31px;">中间件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%8E%9F%E5%9E%8B/" style="font-size: 10.77px;">原型</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" style="font-size: 10px;">工作效率</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" style="font-size: 10px;">年度计划</a> <a href="/tags/%E5%BF%83%E7%90%86/" style="font-size: 10px;">心理</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 10px;">心理学</a> <a href="/tags/%E6%8A%80%E8%83%BD/" style="font-size: 10px;">技能</a> <a href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" style="font-size: 10px;">效率提升</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">数据类型</a> <a href="/tags/%E6%97%85%E6%B8%B8/" style="font-size: 10px;">旅游</a> <a href="/tags/%E6%97%A5%E6%9C%AC/" style="font-size: 10px;">日本</a> <a href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" style="font-size: 10px;">本地存储</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" style="font-size: 11.54px;">模板引擎</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10.77px;">浏览器</a> <a href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" style="font-size: 10px;">深拷贝浅拷贝</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" style="font-size: 11.54px;">知识管理</a> <a href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" style="font-size: 10.77px;">线程 进程</a> <a href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">网易云音乐</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 12.31px;">翻译</a> <a href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" style="font-size: 10px;">翻译， HTTPS</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 13.85px;">读书笔记</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 10px;">负载均衡</a> <a href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" style="font-size: 10px;">软技能</a> <a href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" style="font-size: 10px;">选择器</a> <a href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" style="font-size: 10px;">重装电脑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">代码注释规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/">代码命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/06/Week-49/">Week 49</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/29/Week-48/">Week 48</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/01/Week-44/">Week 44</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

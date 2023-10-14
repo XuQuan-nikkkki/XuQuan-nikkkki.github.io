@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Learn coding by playing: Learn git branch | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="我很喜欢跟着游戏学一些新上手的东西，比如学vim会找vim游戏来玩，这次发现了一个Git的游戏，所以也来试了一下。主要是之前学git其实学的并不好，有时候处理一些复杂的问题还是会粗暴地采用并不最优的方式。这次正好再来整理一下知识点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learn coding by playing: Learn git branch">
+<meta property="og:url" content="http://example.com/2019/09/08/Learn-coding-by-playing-Learn-git-branch/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我很喜欢跟着游戏学一些新上手的东西，比如学vim会找vim游戏来玩，这次发现了一个Git的游戏，所以也来试了一下。主要是之前学git其实学的并不好，有时候处理一些复杂的问题还是会粗暴地采用并不最优的方式。这次正好再来整理一下知识点。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rxyi02k3j30bk0aqglo.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ry1yxtd0j30bl0av3yk.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ry4bax92j30bl0axq33.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ry674si2j30bn0ayq33.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ryg35n37j30b70avq39.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rypmoqkdj30bj0ay74j.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rz1s4gmpj30bj0as74k.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rze5xbhqj30bk0ast8y.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rzzlzdahj30bc0atmxa.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s04zc0tmj30q80cd74t.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s07sv230j30ph0bxmxq.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0bf3mkbj30ol0bwdgf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0et87gbj30p50bqjs5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0kt9d98j30of0bgwey.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0nqfev7j30or0bogm7.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s101ucynj30pe0bugmg.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s16v6umzj30ow0bu3zh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sbj1ujfsj30bi0axglp.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sbwy0dxxj30ok0bvgmc.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sc0nwp6ij30ov0c0755.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6scwlv180j30bl0aumxf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sd0tyo0cj30p90bwwff.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sd90ybduj30oz0bl3zf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sdi1vdg2j30oj0by753.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sdpsxtcfj30p50bj0ts.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sdr1h9dzj30ou0bf3zk.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sez11jgaj30ok0bjgmg.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sf02hf4aj30on0brjs8.jpg">
+<meta property="article:published_time" content="2019-09-08T02:41:54.000Z">
+<meta property="article:modified_time" content="2019-09-08T13:21:25.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="games">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rxyi02k3j30bk0aqglo.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Learn-coding-by-playing-Learn-git-branch" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/09/08/Learn-coding-by-playing-Learn-git-branch/" class="article-date">
+  <time class="dt-published" datetime="2019-09-08T02:41:54.000Z" itemprop="datePublished">2019-09-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/">跟着大佬学编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Learn coding by playing: Learn git branch
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>我很喜欢跟着游戏学一些新上手的东西，比如学vim会找vim游戏来玩，这次发现了一个Git的游戏，所以也来试了一下。主要是之前学git其实学的并不好，有时候处理一些复杂的问题还是会粗暴地采用并不最优的方式。这次正好再来整理一下知识点。</p>
+<span id="more"></span>
+
+<ul>
+<li>地址：<a target="_blank" rel="noopener" href="https://learngitbranching.js.org/">https://learngitbranching.js.org</a></li>
+</ul>
+<h2 id="本地操作"><a href="#本地操作" class="headerlink" title="本地操作"></a>本地操作</h2><h3 id="主要命令"><a href="#主要命令" class="headerlink" title="主要命令"></a>主要命令</h3><h4 id="提交内容"><a href="#提交内容" class="headerlink" title="提交内容"></a>提交内容</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rxyi02k3j30bk0aqglo.jpg" alt="image-20190908111943756"></p>
+<ul>
+<li><code>git commit</code></li>
+<li><code>C2</code> 的父节点是 <code>C1</code></li>
+<li>父节点是当前提交中变更的基础</li>
+</ul>
+<h4 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h4><ul>
+<li>git 的分支非常轻量，它们只是简单地指向某个提交记录</li>
+<li>创建再多分支也不会造成储存或内存上的开销</li>
+<li>&#96;git</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ry1yxtd0j30bl0av3yk.jpg" alt="创建新分支`newImage` 指向提交记录 `C1`"></p>
+<p><em>基于C1创建新的分支<code>newImage</code></em></p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ry4bax92j30bl0axq33.jpg" alt="image-20190908112521757"></p>
+<p><em>在新分支上提交内容 <code>C2</code>，但是当前<code>master</code>没有在新分支上</em></p>
+<ul>
+<li><code>git checkout &lt;name&gt;</code> 切换分支</li>
+<li><code>git checkout -b &lt;name&gt;</code>创建并切换到新分支</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ry674si2j30bn0ayq33.jpg" alt="image-20190908112710648"></p>
+<p><em>切换到新分支上，星号表示当前分支</em></p>
+<h4 id="分支与合并"><a href="#分支与合并" class="headerlink" title="分支与合并"></a>分支与合并</h4><ul>
+<li>在新分支上开发某些功能，开发完后再合并回主线</li>
+</ul>
+<h5 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a><code>git merge</code></h5><ul>
+<li><code>git merge</code> 会产生一个特殊的提交记录，它有两个父节点。这个提交记录会把两个父节点本身及它们所有的祖先都包含进来</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ryg35n37j30b70avq39.jpg" alt="image-20190908113640032"></p>
+<p><em>合并<code>bugFix</code>分支到<code>master</code>上，从<code>master</code>开始沿着箭头向上看，<code>master</code>包含了对代码库的所有修改</em></p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rypmoqkdj30bj0ay74j.jpg" alt="image-20190908114551002"></p>
+<p><em><code>git checkout bugFix; git merge master</code></em></p>
+<p><em><code>master</code>已经继承了<code>bugFix</code>，所以Git只是把<code>bugFix</code>移动到<code>master</code>所指向的那个提交记录</em></p>
+<p><em>现在每一个分支都包含了代码库的所有修改</em></p>
+<h5 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a><code>git rebase</code></h5><ul>
+<li>rebase 实际上是取出一系列的提交记录，“复制”它们，然后在另外一个地方逐个地放下去</li>
+<li>rebase 的优势是可以创造更线性的提交历史</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rz1s4gmpj30bj0as74k.jpg" alt="image-20190908115731428"></p>
+<ul>
+<li>在<code>bugFix</code> 分支上<code>git rebase master</code><ul>
+<li><code>bugFix</code>分支上的工作转移到了<code>master</code>的最顶端</li>
+<li>提交记录<code>C3</code>依然存在，<code>C3’</code>是rebase到<code>master</code>分支上的<code>C3</code>的副本</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rze5xbhqj30bk0ast8y.jpg" alt="image-20190908120925246"></p>
+<ul>
+<li><code>git checkout master; git merge bugFix</code><ul>
+<li>由于<code>bugFix</code>继承自<code>master</code>，所以只是简单地把<code>master</code>分支的引用向前移动了一下</li>
+</ul>
+</li>
+</ul>
+<h3 id="高级操作"><a href="#高级操作" class="headerlink" title="高级操作"></a>高级操作</h3><h4 id="在提交树上移动"><a href="#在提交树上移动" class="headerlink" title="在提交树上移动"></a>在提交树上移动</h4><ul>
+<li>HEAD 是一个对当前检出记录的符号引用 —— 也就是指向你正在其基础上进行工作的提交记录</li>
+<li>HEAD 总是指向当前分支上最近一次提交记录。大多数修改提交树的 Git 命令都是从改变 HEAD 的指向开始的</li>
+<li>HEAD 通常情况下是指向分支名的，当你提交时，改变了分支的状态，这一变化通过 HEAD 变得可见</li>
+<li><code>cat .git/HEAD</code> 查看 HEAD 的指向</li>
+<li>分离的 HEAD 是让其指向了某个具体的提交记录而不是分支名</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6rzzlzdahj30bc0atmxa.jpg" alt="image-20190908123001915"></p>
+<h4 id="相对引用"><a href="#相对引用" class="headerlink" title="相对引用"></a>相对引用</h4><ul>
+<li>实际操作中需要使用 <code>git log</code> 查看提交记录的哈希值</li>
+<li>使用相对引用可以从易于记忆的地方开始计算<ul>
+<li>使用 <code>^</code> 向上移动 1 个提交记录</li>
+<li>使用 <code>~&lt;num&gt;</code> 向上移动多个提交记录</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s04zc0tmj30q80cd74t.jpg" alt="image-20190908123511516"></p>
+<p>*<code>git checkout master^</code></p>
+<p><em>从<code>master</code>分支的最近一次提交向上移动一个节点</em></p>
+<ul>
+<li>也可以将 <code>HEAD</code> 作为相对引用参照</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s07sv230j30ph0bxmxq.jpg" alt="image-20190908123754631"></p>
+<p><em><code>git checkout C3; git checkout HEAD^; git checkout HEAD^; git checkout HEAD^;</code></em></p>
+<h4 id="“-”-操作符"><a href="#“-”-操作符" class="headerlink" title="“~” 操作符"></a>“~” 操作符</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0bf3mkbj30ol0bwdgf.jpg" alt="image-20190908124123345"></p>
+<p><em><code>git checkout HEAD~4</code></em></p>
+<ul>
+<li><code>git branch -f master HEAD~3</code> 可以让分支指向另一个提交（让master分支强制指向 HEAD 的第3级父提交）</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0et87gbj30p50bqjs5.jpg" alt="image-20190908124438892"></p>
+<p><em><code>git branch -f master HEAD~3</code></em></p>
+<h4 id="撤销变更"><a href="#撤销变更" class="headerlink" title="撤销变更"></a>撤销变更</h4><ul>
+<li>撤销变更由底层部分（暂存区的独立文件或者片段）和上层部分（变更到底是通过哪种方式被撤销的）组成</li>
+</ul>
+<h5 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a><code>git reset</code></h5><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0kt9d98j30of0bgwey.jpg" alt="image-20190908125024971"></p>
+<p><em><code>git reset HEAD~1</code></em></p>
+<ul>
+<li>把 <code>master</code> 分支移回到 <code>C1</code>，现在本地代码库不知道有 <code>C2</code> 这个提交了</li>
+<li>reset后， <code>C2</code> 所做的变更还在，但是出于未加入暂存区状态</li>
+<li><code>git reset</code> 只对本地分支有效，对一起使用的远程分支无效</li>
+</ul>
+<h5 id="git-revert"><a href="#git-revert" class="headerlink" title="git revert"></a><code>git revert</code></h5><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s0nqfev7j30or0bogm7.jpg" alt="image-20190908125313350"></p>
+<p><em><code>git revert HEAD</code></em></p>
+<ul>
+<li>revert后增加了<code>C2’</code>提交，<code>C2’</code>引入了更改，这些更改用于撤销<code>C2</code>这个提交，也就是说<code>C2’</code>的状态与<code>C1</code>是相同的</li>
+</ul>
+<h3 id="移动提交记录"><a href="#移动提交记录" class="headerlink" title="移动提交记录"></a>移动提交记录</h3><h4 id="git-cherry-pick"><a href="#git-cherry-pick" class="headerlink" title="git cherry-pick"></a><code>git cherry-pick</code></h4><ul>
+<li>将一些提交复制到当前所在位置</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s101ucynj30pe0bugmg.jpg" alt="image-20190908130503435"></p>
+<p><em><code>git cherry-pick C2 C4</code></em></p>
+<h4 id="交互式的-rebase"><a href="#交互式的-rebase" class="headerlink" title="交互式的 rebase"></a>交互式的 rebase</h4><ul>
+<li>如果不清楚想要的提交记录的哈希值，那么使用交互式的 rebase 更好</li>
+<li><code>git rebase —interactive</code> 也可以写作 <code>git rebase -i</code> </li>
+<li>增加这个选项后，git会打开一个UI界面并列出要被复制到目标分支的备选提交记录，以及每个提交记录的哈希值和提交说明</li>
+<li>Rebase打开UI界面时，可以调整提交记录的顺序，删除不想要的提交，合并提交</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6s16v6umzj30ow0bu3zh.jpg" alt="image-20190908131136752"></p>
+<p><em><code>git rebase -i HEAD~4</code></em></p>
+<h3 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h3><h4 id="只取一个提交记录"><a href="#只取一个提交记录" class="headerlink" title="只取一个提交记录"></a>只取一个提交记录</h4><p>![image-20190908185736968](&#x2F;Users&#x2F;nikkkki&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20190908185736968.png)</p>
+<h4 id="git-tags"><a href="#git-tags" class="headerlink" title="git tags"></a><code>git tags</code></h4><ul>
+<li>永远指向某个提交记录的标识</li>
+<li><code>git tag v1 C1</code></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sbj1ujfsj30bi0axglp.jpg" alt="image-20190908190918635"></p>
+<h4 id="git-describe"><a href="#git-describe" class="headerlink" title="git describe"></a><code>git describe</code></h4><ul>
+<li>用来描述离你最近的标签</li>
+<li><code>git describe &lt;ref&gt;</code></li>
+</ul>
+<h3 id="多次-rebase"><a href="#多次-rebase" class="headerlink" title="多次 rebase"></a>多次 <code>rebase</code></h3><h4 id="选择父提交记录"><a href="#选择父提交记录" class="headerlink" title="选择父提交记录"></a>选择父提交记录</h4><ul>
+<li><code>^</code>操作符后面也可以跟一个数字，用来指定合并提交记录的某个父提交</li>
+<li><code>git checkout master^2</code></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sbwy0dxxj30ok0bvgmc.jpg" alt="image-20190908192239237"></p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sc0nwp6ij30ov0c0755.jpg" alt="image-20190908192613384"></p>
+<p><em><code>git checkout HEAD~^2~2</code></em></p>
+<hr>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a><code>git clone</code></h3><ul>
+<li>创建一个远程仓库的拷贝</li>
+</ul>
+<h4 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h4><ul>
+<li>反映远程仓库的状态</li>
+<li>在你检出时自动进入分离 HEAD 状态</li>
+<li>格式是 <code>&lt;remote name&gt;/&lt;branch name&gt;</code></li>
+<li>也可以切换到远程分支 <code>git checkout o/master</code></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6scwlv180j30bl0aumxf.jpg" alt="image-20190908195655637"></p>
+<h4 id="git-fetch"><a href="#git-fetch" class="headerlink" title="git fetch"></a><code>git fetch</code></h4><ul>
+<li><code>git fetch</code> 用于从远程仓库获取数据，它实现了两件事：<ul>
+<li>从远程仓库下周本地仓库中缺失的提交记录</li>
+<li>更新远程分支指针</li>
+</ul>
+</li>
+<li><code>git fetch</code> 不会更新本地仓库的状态，也不会更新<code>master</code>分支，也不会修改磁盘上的文件</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sd0tyo0cj30p90bwwff.jpg" alt="image-20190908200059547"></p>
+<h4 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a><code>git pull</code></h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sd90ybduj30oz0bl3zf.jpg" alt="image-20190908200851797"></p>
+<p><em><code>git fecth; git merge o/master</code></em></p>
+<ul>
+<li><code>git pull</code> 就是 <code>git fetch; git merge &lt;just fetched branch&gt;</code>的缩写</li>
+</ul>
+<h4 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a><code>git push</code></h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sdi1vdg2j30oj0by753.jpg" alt="image-20190908201732634"></p>
+<h4 id="偏离的工作"><a href="#偏离的工作" class="headerlink" title="偏离的工作"></a>偏离的工作</h4><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sdpsxtcfj30p50bj0ts.jpg" alt="image-20190908202459517"></p>
+<p><em><code>git fetch; git rebase o/master; git push</code></em></p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sdr1h9dzj30ou0bf3zk.jpg" alt="image-20190908202610765"></p>
+<p><em><code>git fetch; git merge o/master; git push</code></em></p>
+<h3 id="推送主分支"><a href="#推送主分支" class="headerlink" title="推送主分支"></a>推送主分支</h3><h4 id="跟踪远程分支"><a href="#跟踪远程分支" class="headerlink" title="跟踪远程分支"></a>跟踪远程分支</h4><ul>
+<li><code>git checkout -b totallyNotMaster o/master</code> 创建新分支，并跟踪远程分支<code>o/master</code></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sez11jgaj30ok0bjgmg.jpg" alt="image-20190908210826913"></p>
+<p><em><code>git checkout -b foo o/master; git pull</code></em></p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g6sf02hf4aj30on0brjs8.jpg" alt="image-20190908210927266"></p>
+<p><em><code>git checkout -b foo o/master; git commit; git push</code></em></p>
+<ul>
+<li><code>git branch -u</code></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/09/08/Learn-coding-by-playing-Learn-git-branch/" data-id="clnpqd3zk003jp12006rx8ey9" data-title="Learn coding by playing: Learn git branch" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/12/23/Week-51/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Week 51
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/24/React%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9AHooks%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%9A%84%E5%90%84%E7%A7%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">React学习笔记：Hooks及相关的各种</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/FreeCodeCamp/">FreeCodeCamp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jounal/">Jounal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/">习题集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%A9%E5%99%A8/">利器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/">工作备忘</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/">知识管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/">跟着大佬学编程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2020/" rel="tag">2020</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOM/" rel="tag">BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eloquent-JavaScript/" rel="tag">Eloquent JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeCodeCamp/" rel="tag">FreeCodeCamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fuji-Rock-Festival/" rel="tag">Fuji Rock Festival</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hooks/" rel="tag">Hooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/" rel="tag">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Course/" rel="tag">Learning, Course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OIS/" rel="tag">OIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OKR/" rel="tag">OKR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/" rel="tag">OOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading/" rel="tag">Reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/" rel="tag">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/" rel="tag">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/" rel="tag">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/" rel="tag">UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UX/" rel="tag">UX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Report/" rel="tag">Weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Reports/" rel="tag">Weekly Reports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Summary/" rel="tag">Weekly Summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design/" rel="tag">ant design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design-pro/" rel="tag">ant design pro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/art-template/" rel="tag">art-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/auth/" rel="tag">auth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/autojump/" rel="tag">autojump</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/box-model/" rel="tag">box model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codewars/" rel="tag">codewars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejs/" rel="tag">ejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/event/" rel="tag">event</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/" rel="tag">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex/" rel="tag">flex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/float/" rel="tag">float</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freecodecamp/" rel="tag">freecodecamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grid/" rel="tag">grid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/" rel="tag">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jade/" rel="tag">jade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/journal/" rel="tag">journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jwt/" rel="tag">jwt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/" rel="tag">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/layout/" rel="tag">layout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multer/" rel="tag">multer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ndoe-js/" rel="tag">ndoe.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodemon/" rel="tag">nodemon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nrm/" rel="tag">nrm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/" rel="tag">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/responsive/" rel="tag">responsive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/" rel="tag">terminal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/" rel="tag">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/useEffect/" rel="tag">useEffect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-Report/" rel="tag">weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" rel="tag">一周分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%9E%8B/" rel="tag">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" rel="tag">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" rel="tag">年度计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86/" rel="tag">心理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E8%83%BD/" rel="tag">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" rel="tag">效率提升</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E6%B8%B8/" rel="tag">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%AC/" rel="tag">日本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" rel="tag">本地存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" rel="tag">模板引擎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="tag">深拷贝浅拷贝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" rel="tag">知识管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" rel="tag">线程 进程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" rel="tag">翻译， HTTPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" rel="tag">软技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" rel="tag">选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" rel="tag">重装电脑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2020/" style="font-size: 10px;">2020</a> <a href="/tags/Algorithm/" style="font-size: 10.77px;">Algorithm</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 11.54px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 16.92px;">ES6</a> <a href="/tags/Eloquent-JavaScript/" style="font-size: 10px;">Eloquent JavaScript</a> <a href="/tags/FreeCodeCamp/" style="font-size: 10px;">FreeCodeCamp</a> <a href="/tags/Fuji-Rock-Festival/" style="font-size: 10px;">Fuji Rock Festival</a> <a href="/tags/HTML/" style="font-size: 12.31px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.54px;">HTTP</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/IP/" style="font-size: 11.54px;">IP</a> <a href="/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/tags/JavaScript/" style="font-size: 19.23px;">JavaScript</a> <a href="/tags/Learning-Course/" style="font-size: 10px;">Learning, Course</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/OIS/" style="font-size: 10px;">OIS</a> <a href="/tags/OKR/" style="font-size: 10.77px;">OKR</a> <a href="/tags/OOP/" style="font-size: 11.54px;">OOP</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/React/" style="font-size: 13.08px;">React</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/TCP/" style="font-size: 11.54px;">TCP</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UX/" style="font-size: 10px;">UX</a> <a href="/tags/Weekly-Report/" style="font-size: 18.46px;">Weekly Report</a> <a href="/tags/Weekly-Reports/" style="font-size: 10.77px;">Weekly Reports</a> <a href="/tags/Weekly-Summary/" style="font-size: 10px;">Weekly Summary</a> <a href="/tags/ant-design/" style="font-size: 10px;">ant design</a> <a href="/tags/ant-design-pro/" style="font-size: 10px;">ant design pro</a> <a href="/tags/art-template/" style="font-size: 10px;">art-template</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/box-model/" style="font-size: 10px;">box model</a> <a href="/tags/chrome/" style="font-size: 10.77px;">chrome</a> <a href="/tags/codewars/" style="font-size: 10px;">codewars</a> <a href="/tags/computer-science/" style="font-size: 10.77px;">computer science</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/css/" style="font-size: 16.15px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/event/" style="font-size: 10px;">event</a> <a href="/tags/express/" style="font-size: 13.08px;">express</a> <a href="/tags/flex/" style="font-size: 10.77px;">flex</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/freecodecamp/" style="font-size: 17.69px;">freecodecamp</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.77px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/journal/" style="font-size: 10px;">journal</a> <a href="/tags/jwt/" style="font-size: 11.54px;">jwt</a> <a href="/tags/koa/" style="font-size: 14.62px;">koa</a> <a href="/tags/layout/" style="font-size: 10px;">layout</a> <a href="/tags/mac/" style="font-size: 10.77px;">mac</a> <a href="/tags/multer/" style="font-size: 10px;">multer</a> <a href="/tags/ndoe-js/" style="font-size: 10px;">ndoe.js</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/nodemon/" style="font-size: 10px;">nodemon</a> <a href="/tags/npm/" style="font-size: 10.77px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/responsive/" style="font-size: 10px;">responsive</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/token/" style="font-size: 11.54px;">token</a> <a href="/tags/translation/" style="font-size: 10px;">translation</a> <a href="/tags/useEffect/" style="font-size: 10px;">useEffect</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/weekly-Report/" style="font-size: 10.77px;">weekly Report</a> <a href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" style="font-size: 15.38px;">一周分享</a> <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 12.31px;">中间件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%8E%9F%E5%9E%8B/" style="font-size: 10.77px;">原型</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" style="font-size: 10px;">工作效率</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" style="font-size: 10px;">年度计划</a> <a href="/tags/%E5%BF%83%E7%90%86/" style="font-size: 10px;">心理</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 10px;">心理学</a> <a href="/tags/%E6%8A%80%E8%83%BD/" style="font-size: 10px;">技能</a> <a href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" style="font-size: 10px;">效率提升</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">数据类型</a> <a href="/tags/%E6%97%85%E6%B8%B8/" style="font-size: 10px;">旅游</a> <a href="/tags/%E6%97%A5%E6%9C%AC/" style="font-size: 10px;">日本</a> <a href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" style="font-size: 10px;">本地存储</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" style="font-size: 11.54px;">模板引擎</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10.77px;">浏览器</a> <a href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" style="font-size: 10px;">深拷贝浅拷贝</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" style="font-size: 11.54px;">知识管理</a> <a href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" style="font-size: 10.77px;">线程 进程</a> <a href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">网易云音乐</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 12.31px;">翻译</a> <a href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" style="font-size: 10px;">翻译， HTTPS</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 13.85px;">读书笔记</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 10px;">负载均衡</a> <a href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" style="font-size: 10px;">软技能</a> <a href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" style="font-size: 10px;">选择器</a> <a href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" style="font-size: 10px;">重装电脑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">代码注释规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/">代码命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/06/Week-49/">Week 49</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/29/Week-48/">Week 48</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/01/Week-44/">Week 44</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

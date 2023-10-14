@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>git pro学习笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="已经开始工作20多天了，每天都面对一堆没见过不会做的东西，想要努力学，也总觉得时间不够。每次领导找我说话，我都担心会让我明天不要来上班了。其中，让我觉得最坑的就是Git。之前也使用过git，但都是自己的小项目，不涉及到多人协作，也没什么分支的概念，所以只用master，自己push来pull去的，也没出过什么问题。但是工作之后设计到多个任务同时推进，所以需要频繁切换分支，提交给老师们review，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git pro学习笔记">
+<meta property="og:url" content="http://example.com/2018/11/18/git-pro%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="已经开始工作20多天了，每天都面对一堆没见过不会做的东西，想要努力学，也总觉得时间不够。每次领导找我说话，我都担心会让我明天不要来上班了。其中，让我觉得最坑的就是Git。之前也使用过git，但都是自己的小项目，不涉及到多人协作，也没什么分支的概念，所以只用master，自己push来pull去的，也没出过什么问题。但是工作之后设计到多个任务同时推进，所以需要频繁切换分支，提交给老师们review，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxb2j5svcij30m808mq33.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxb2kn1ijfj30m808h74k.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxb2y2pjjwj30m80c90sy.jpg">
+<meta property="og:image" content="https://git-scm.com/book/en/v2/images/lifecycle.png">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxb4v8pd60j30it02tq3a.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxb5hkc0b4j30b70jcwga.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxb5ncszw0j30ii0cbq4v.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxb67sxs4dj30c409gab0.jpg">
+<meta property="article:published_time" content="2018-11-17T16:18:34.000Z">
+<meta property="article:modified_time" content="2018-11-18T05:36:13.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxb2j5svcij30m808mq33.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-git-pro学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/11/18/git-pro%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2018-11-17T16:18:34.000Z" itemprop="datePublished">2018-11-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      git pro学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>已经开始工作20多天了，每天都面对一堆没见过不会做的东西，想要努力学，也总觉得时间不够。每次领导找我说话，我都担心会让我明天不要来上班了。其中，让我觉得最坑的就是Git。<br>之前也使用过git，但都是自己的小项目，不涉及到多人协作，也没什么分支的概念，所以只用master，自己push来pull去的，也没出过什么问题。但是工作之后设计到多个任务同时推进，所以需要频繁切换分支，提交给老师们review，于是闹出了许多提交代码不干净的尴尬笑话。<br>今天认真看了<em>git pro</em>，也就是git自己的官方书，类似文档。看了前面三张操作部分的内容，下周再来看原理。</p>
+<span id="more"></span>
+
+<h2 id="Git-Pro"><a href="#Git-Pro" class="headerlink" title="Git Pro"></a>Git Pro</h2><h3 id="Git-如何工作"><a href="#Git-如何工作" class="headerlink" title="Git 如何工作"></a>Git 如何工作</h3><h4 id="版本控制的工具"><a href="#版本控制的工具" class="headerlink" title="版本控制的工具"></a>版本控制的工具</h4><ul>
+<li>分布式版本控制系统<ul>
+<li>客户端把代码仓库完整地镜像下来，如果一处协同工作的服务器发生故障，事后可以用任何一个镜像除了的本地仓库恢复</li>
+<li>每一次克隆操作，实际上都是一次对代码仓库的完整备份</li>
+</ul>
+</li>
+</ul>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><ul>
+<li>直接记录快照</li>
+</ul>
+<blockquote>
+<p><strong>git VS 其他版本控制系统</strong></p>
+<ul>
+<li><p>其他版本控制系统记录以文件列表的方式存储信息，将保存的信息看作是一组基本文件和每个文件随时间逐步累积的差异</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxb2j5svcij30m808mq33.jpg" alt="å­å¨æ¯ä¸ªæä&quot;¶ä¸åå§çæ¬çå·®å¼ã"></p>
+</li>
+<li><p>git在每次提交时，对全部文件制作一个快照，并保存这个快照的索引，如果文件没有修改，就保留一个指向之前文件的索引</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxb2kn1ijfj30m808h74k.jpg" alt="Git å­å¨é¡¹ç®éæ¶é´æ¹åçå¿&quot;ç§ã"></p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>所有操作都在本地执行<ul>
+<li>执行速度快</li>
+<li>执行历史在本地保存，清晰</li>
+<li>无网络连接时，不影响工作</li>
+</ul>
+</li>
+<li>所有数据在存储钱都计算校验和，以校验和来引用<ul>
+<li>如果传送过程中丢失信息或损坏文件，git会发现</li>
+<li>也不会再Git不知情时更改任何文件内容或目录内容</li>
+<li>计算校验和的机制叫做SHA-1散列</li>
+</ul>
+</li>
+<li>一般只添加数据<ul>
+<li>很难执行不可逆操作或者清除数据</li>
+</ul>
+</li>
+</ul>
+<p>	</p>
+<h4 id="三种状态"><a href="#三种状态" class="headerlink" title="三种状态"></a>三种状态</h4><ul>
+<li>已提交（commited）: 数据已安全地保存在本地数据库中</li>
+<li>已修改（modified）：修改了文件，但还没有被保存到数据库中</li>
+<li>已暂存（staged）：对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中</li>
+</ul>
+<h4 id="三个工作区域"><a href="#三个工作区域" class="headerlink" title="三个工作区域"></a>三个工作区域</h4><ul>
+<li>git仓库（.git directory &#x2F; repository）：git用来保存项目的元数据和对象数据库的地方</li>
+<li>工作目录（working directory）：对项目的某个版本独立提取出来的内容</li>
+<li>暂存区域（staging area）：是一个文件，保存了下次要提交的文件列表信息，一般在git仓库目录中</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxb2y2pjjwj30m80c90sy.jpg" alt="å·¥ä½ç®å½ãæå­åºåä&quot;¥å Git ä&quot;åºã"></p>
+<h4 id="git-基本工作流"><a href="#git-基本工作流" class="headerlink" title="git 基本工作流"></a>git 基本工作流</h4><ol>
+<li>在工作目录中修改文件</li>
+<li>暂存文件，将文件的快照放入暂存区域</li>
+<li>提交更新，找到暂存区域的文件，将快照永久性存储到git仓库目录</li>
+</ol>
+<h3 id="Git-如何操作"><a href="#Git-如何操作" class="headerlink" title="Git 如何操作"></a>Git 如何操作</h3><h4 id="配置git-config"><a href="#配置git-config" class="headerlink" title="配置git config"></a>配置<code>git config</code></h4><h5 id="存储位置"><a href="#存储位置" class="headerlink" title="存储位置"></a>存储位置</h5><ol>
+<li><code>/etc/gitconfig</code> ：包含系统上每一个用户及他们仓库的通用配置</li>
+<li><code>~/.gitconfig</code>或<code>~/.config/git/config</code>： 针对当前用户，可以传递<code>--global</code>选项让Git读写此文件</li>
+<li>当前使用仓库的git目录中的<code>config</code>文件：针对该仓库</li>
+</ol>
+<h5 id="用户信息"><a href="#用户信息" class="headerlink" title="用户信息"></a>用户信息</h5><p>设置用户名称和邮件地址，每一个git提交都会使用这些信息，并且它会写入到每一次提交中，不可更改</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;xxx&quot;</span></span><br><span class="line">git config --global user.email xxx@xxx.com</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果使用了<code>--global</code>选项，那么该命令只需要运行一次</li>
+<li>如果想在当前项目中使用不同的用户名称和邮件地址，可以在当前项目目录下运行没有<code>--global</code>选项的命令来配置</li>
+</ul>
+<h5 id="文本编辑器"><a href="#文本编辑器" class="headerlink" title="文本编辑器"></a>文本编辑器</h5><p>配置默认的文本编辑器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.editor emacs</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="检查配置"><a href="#检查配置" class="headerlink" title="检查配置"></a>检查配置</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可能会看到重复的变量名，因为git会从不同的文件中读取同一个配置，这种情况下，git会找到它找到的每一个变量的最后一个配置</li>
+<li>也可以通过输入<code>git config &lt;key&gt;</code>找检查某一项配置</li>
+</ul>
+<h4 id="获取帮助"><a href="#获取帮助" class="headerlink" title="获取帮助"></a>获取帮助</h4><p>需要获取帮助时，有三种方法可以找到git命令的使用手册</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">help</span> &lt;verb&gt;</span><br><span class="line">git &lt;verb&gt; --<span class="built_in">help</span></span><br><span class="line">man git-&lt;verb&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><h4 id="获取git仓库"><a href="#获取git仓库" class="headerlink" title="获取git仓库"></a>获取git仓库</h4><h5 id="1-在现有目录中初始化仓库"><a href="#1-在现有目录中初始化仓库" class="headerlink" title="1. 在现有目录中初始化仓库"></a>1. 在现有目录中初始化仓库</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>该命令创建一个名为<code>.git</code>的子目录</p>
+</li>
+<li><p>如果需要添加文件来进行版本控制</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add *.js</span><br><span class="line">git add LICENSE</span><br><span class="line">git commit -m <span class="string">&quot;initial project version&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="2-克隆现有仓库"><a href="#2-克隆现有仓库" class="headerlink" title="2. 克隆现有仓库"></a>2. 克隆现有仓库</h5><ul>
+<li><p>默认配置下远程git仓库中的每一个文件的每一个版本都将被拉取下来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/xxx/xxx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果想自定义本地仓库的名字，可以使用如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/xxx/xxx mulibgit</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="记录每次更新"><a href="#记录每次更新" class="headerlink" title="记录每次更新"></a>记录每次更新</h4><ul>
+<li>每一个文件都只有两种状态<ul>
+<li>已跟踪：被纳入了版本控制的文件，在上一次快照中有它们的记录</li>
+<li>未跟踪：既不存在于上次快照的记录中，也没有放入暂存区</li>
+</ul>
+</li>
+<li>初次克隆某个仓库的时候，工作目录中的所有文件都属于已跟踪文件，并处于未修改状态</li>
+</ul>
+<p><img src="https://git-scm.com/book/en/v2/images/lifecycle.png" alt="Git ä¸æä&quot;¶çå½å¨æå¾ã"></p>
+<h5 id="检查当前文件状态"><a href="#检查当前文件状态" class="headerlink" title="检查当前文件状态"></a>检查当前文件状态</h5><ul>
+<li><code>git status</code>查看哪些文件处于什么状态，显示内容包：<ul>
+<li>所有文件是否都被跟踪</li>
+<li>文件是否有修改</li>
+<li>当前分支</li>
+</ul>
+</li>
+</ul>
+<h5 id="跟踪新文件"><a href="#跟踪新文件" class="headerlink" title="跟踪新文件"></a>跟踪新文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="暂存已修改文件"><a href="#暂存已修改文件" class="headerlink" title="暂存已修改文件"></a>暂存已修改文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><code>git add</code>可以理解成「添加内容到下一次提交中」</li>
+</ul>
+<h5 id="提示语"><a href="#提示语" class="headerlink" title="提示语"></a>提示语</h5><ul>
+<li><code>changes to be commited</code> <ul>
+<li>文件是已暂存状态，如果此时提交，那么该文件此时的版本将被留存在历史记录中</li>
+<li>如果参数是目录的路径，该命令将递归地跟踪该目录下的所有文件</li>
+</ul>
+</li>
+<li><code>changes not staged for commit</code><ul>
+<li>已跟踪文件的内容发生了变化，但还没有放到暂存区</li>
+<li>要暂存这次更新，需要运行<code>git add</code>命令</li>
+</ul>
+</li>
+</ul>
+<h5 id="状态简览"><a href="#状态简览" class="headerlink" title="状态简览"></a>状态简览</h5><ul>
+<li><code>git status -s</code> &#x2F; <code>git status --short</code> 可以更为紧凑地输出状态</li>
+<li><strong>文件标记</strong><ul>
+<li><code>??</code> ：未跟踪文件</li>
+<li><code>A</code> ：新增加到暂存区的文件</li>
+<li>出现在右边的<code>M</code> ：表示该文件被修改了，但是还没放入暂存区</li>
+<li>出现在左边的<code>M</code> ：文件被修改了，并放入了暂存区</li>
+</ul>
+</li>
+</ul>
+<h5 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h5><ul>
+<li><code>.gitignore</code>文件</li>
+<li>无需纳入git管理的文件，通常是一些自动生成的文件</li>
+<li>要养成一开始就设置好<code>.gitignore</code>文件的习惯，以免将来误提交这类无用的文件</li>
+</ul>
+<h5 id="查看已暂存和未暂存的修改"><a href="#查看已暂存和未暂存的修改" class="headerlink" title="查看已暂存和未暂存的修改"></a>查看已暂存和未暂存的修改</h5><ul>
+<li><p><code>git diff</code> : 比较工作目录中当前文件和暂存区域快照直接的差异，也就是修改之后还<strong>没有暂存起来</strong>的变化内容</p>
+</li>
+<li><p><code>git diff --cached</code> &#x2F; <code>git diff --staged</code>：查看已暂存的将要添加到下次提交里的内容</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxb4v8pd60j30it02tq3a.jpg" alt="image-20181117162037399"></p>
+</li>
+</ul>
+<h5 id="提交更新"><a href="#提交更新" class="headerlink" title="提交更新"></a>提交更新</h5><p>正确顺序：</p>
+<ul>
+<li><code>git status</code> 查看文件是否都暂存起来了</li>
+<li><code>git commit</code> 提交</li>
+</ul>
+<p><code>git commit -m &quot;xxx&quot;</code> 提交+提交内容的信息</p>
+<h5 id="跳过使用暂存区域"><a href="#跳过使用暂存区域" class="headerlink" title="跳过使用暂存区域"></a>跳过使用暂存区域</h5><p><code>git commit -a</code> 自动把所有已经跟踪过的文件暂存起来一并提交，跳过<code>git add</code>步骤</p>
+<h5 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h5><ul>
+<li><code>git rm</code> 从已跟踪文件清单中移除制定的文件，下一次提交时，该文件就不再纳入版本管理了</li>
+<li><code>git rm xxx -f</code> 删除之前修改过并且已经放到暂存区的文件，这样的数据不能被git恢复</li>
+<li><code>git rm --cached xxx</code> 把文件从git仓库中删除，但仍保留在当前的工作目录中</li>
+</ul>
+<h5 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h5><p><code>git mv file_from file_to</code> 将文件从一个文件夹移动到另一个文件夹</p>
+<p><code>git mv README.md README</code>实际执行的是：</p>
+<ul>
+<li><code>mv README.md README</code></li>
+<li><code>git rm README.md</code></li>
+<li><code>git add README</code></li>
+</ul>
+<h4 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h4><ul>
+<li><p><code>git log</code> 会按提交时间列出所有的更新，最新的更新排在最上面，内容包括</p>
+<ul>
+<li>每次提交的SHA-1校验和</li>
+<li>作者名字</li>
+<li>电子邮件地址</li>
+<li>提交时间</li>
+<li>提交说明</li>
+</ul>
+</li>
+<li><p><code>git log -n</code> 最近n次提交</p>
+</li>
+<li><p><code>git log -p</code>显示每次提交的内容差异</p>
+</li>
+<li><p><code>git log --stat</code> 查看每次提交的简略的统计信息</p>
+</li>
+<li><p><code>git log --pretty</code> 可以指定使用不同于默认格式的方式展示提交历史</p>
+<ul>
+<li><p><code>git log --pretty=oneline</code> 每个提交显示一行</p>
+</li>
+<li><p><code>git log --pretty=short</code> 有commit信息</p>
+</li>
+<li><p><code>git log --pretty=full</code> 详细信息，包括author，commit</p>
+</li>
+<li><p><code>git log --pretty=fuller</code> 详细信息，包括具体author，authordate，commit，commitdate</p>
+</li>
+<li><p><code>git log --pretty=format: &quot;xxx&quot;</code> 定制要显示的记录格式（可以自己规定中间的分隔符）</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxb5hkc0b4j30b70jcwga.jpg" alt="image-20181117164212429"></p>
+</li>
+</ul>
+</li>
+<li><p><code>git log --graph</code> 图形显示分支、合并历史</p>
+</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxb5ncszw0j30ii0cbq4v.jpg" alt="image-20181117164745734"></p>
+<h5 id="限制输出长度"><a href="#限制输出长度" class="headerlink" title="限制输出长度"></a>限制输出长度</h5><ul>
+<li><code>git log -&lt;n&gt;</code> 只输出n条提交</li>
+<li><code>git log --since=2.weeks</code> 最近两周的提交<ul>
+<li>可以是<code>weeks</code>, <code>years</code>, <code>months</code> </li>
+<li>可以是具体的某一个天<code>2008-01-15</code></li>
+<li>可以是相对多久以前 <code>2years 1day 3minutes ago</code></li>
+</ul>
+</li>
+<li><code>git log --until=</code> 截止到什么时候</li>
+<li><code>git log --author</code> 指定作者的提交</li>
+<li><code>git log --grep</code> 搜索提交说明中的关键字<ul>
+<li><code>git log --all-match</code> 同时满足两个选项搜索条件</li>
+</ul>
+</li>
+<li><code>git log -S</code> 列出添加或溢出了某些字符串的提交</li>
+<li><code>git log path</code> 只关心某些文件或者目录的历史提交</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxb67sxs4dj30c409gab0.jpg" alt="image-20181117170724901"></p>
+<h4 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h4><ul>
+<li><p><code>git commit --amend</code> 重新提交上一次提交（在漏掉文件或提交信息写错的情况下使用）</p>
+<ul>
+<li>会将暂存区的文件提交，如果上次提交后未做修改，那么快照不变，只修改提交信息</li>
+</ul>
+</li>
+<li><p>取消暂存的文件： <code>git reset HEAD &lt;file&gt;</code> 	</p>
+</li>
+<li><p>取消对文件的修改： <code>git checkout -- &lt;file&gt;</code></p>
+</li>
+</ul>
+<h4 id="远程仓库的使用"><a href="#远程仓库的使用" class="headerlink" title="远程仓库的使用"></a>远程仓库的使用</h4><h5 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h5><ul>
+<li><code>git remote</code>: 列出你指定的每一个远程服务器的简写</li>
+<li><code>git remote -v</code> 远程服务器简写 +  对于的URL</li>
+</ul>
+<h5 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h5><ul>
+<li><code>git remote add &lt;shrotname&gt; &lt;url&gt;</code> </li>
+<li><code>git fetch xx</code> 拉取远程仓库中有单你没有的信息</li>
+</ul>
+<h5 id="从远程仓库抓取和拉取"><a href="#从远程仓库抓取和拉取" class="headerlink" title="从远程仓库抓取和拉取"></a>从远程仓库抓取和拉取</h5><ul>
+<li><code>git fetch [remote-name]</code> <ul>
+<li>访问远程仓库，从中拉取所有你还没有的数据</li>
+<li>执行完后，你会永远那个远程仓库中所有分支的引用，可以随时合并或查看</li>
+<li>它不会自动合并或修改你当前的工作，需要手动将其合并入你的工作</li>
+</ul>
+</li>
+<li><code>git pull</code><ul>
+<li>有一个分支设置为跟踪一个远程分支，可以使用<code>git pull</code>来自动抓鱼然后合并远程分支到当前分支</li>
+</ul>
+</li>
+</ul>
+<h5 id="推送到远程仓库"><a href="#推送到远程仓库" class="headerlink" title="推送到远程仓库"></a>推送到远程仓库</h5><ul>
+<li><code>git push [remote-name] [branch-name]</code> 将内容推送到上游</li>
+<li>多人合作时，需要先将他人的工作拉取下来，合并进你的工作，然后才能推送</li>
+</ul>
+<h5 id="查看远程仓库-1"><a href="#查看远程仓库-1" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h5><ul>
+<li><code>git remote show [remote-name]</code> 查看某一个远程仓库的更多信息</li>
+</ul>
+<h5 id="远程仓库的移除与重命名"><a href="#远程仓库的移除与重命名" class="headerlink" title="远程仓库的移除与重命名"></a>远程仓库的移除与重命名</h5><ul>
+<li><code>git remote rename</code> 修改远程仓库的简写名</li>
+<li><code>git remote rm xxx</code> 移除一个远程仓库</li>
+</ul>
+<h4 id="打标签"><a href="#打标签" class="headerlink" title="打标签"></a>打标签</h4><p>人们会使用这个功能来标记发布节点</p>
+<h5 id="列出标签"><a href="#列出标签" class="headerlink" title="列出标签"></a>列出标签</h5><ul>
+<li><code>git tag</code></li>
+<li><code>git tag -l &#39;v1.8.5*&#39;</code> 列出1.8.5系列的标签</li>
+</ul>
+<h5 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h5><ul>
+<li>两种类型<ul>
+<li>轻量标签（lightweight）：特定提交的引用（像一个不会改变的分支）</li>
+<li>附注标签（annotated）：存储在git数据库汇总的一个完整对象</li>
+</ul>
+</li>
+</ul>
+<h5 id="附注标签"><a href="#附注标签" class="headerlink" title="附注标签"></a>附注标签</h5><ul>
+<li><code>git tag -a v1.4 -m &quot;my version 1.4&quot;</code> </li>
+<li><code>git show v1.4</code> 显示标签信息和对应的提交信息</li>
+</ul>
+<h5 id="轻量标签"><a href="#轻量标签" class="headerlink" title="轻量标签"></a>轻量标签</h5><ul>
+<li>本质上是将提交校验和存储到到一个文件中，没有保存任何其他是信息</li>
+<li><code>git tag v1.4-lw</code></li>
+<li><code>git show v1.4-lw</code> 不会显示额外的标签信息，只显示提交信息</li>
+</ul>
+<h5 id="后期打标签"><a href="#后期打标签" class="headerlink" title="后期打标签"></a>后期打标签</h5><ul>
+<li><code>git tag -a v1.2 xxxxxx</code> 后面接校验和</li>
+</ul>
+<h5 id="共享标签"><a href="#共享标签" class="headerlink" title="共享标签"></a>共享标签</h5><ul>
+<li>默认情况下，<code>git push</code>不会传送标签到远程仓库服务器上</li>
+<li>所以必须显式地推送标签到共享服务器上</li>
+<li><code>git push origin [tagname]</code></li>
+<li><code>git push origin --tags</code> 会把所有不再远程仓库服务器上的标签全部传送过去</li>
+</ul>
+<h5 id="检出标签"><a href="#检出标签" class="headerlink" title="检出标签"></a>检出标签</h5><ul>
+<li><code>git checkout -b [branchname] v2.0.0</code> 在特定标签上创建一个新分支</li>
+</ul>
+<h4 id="git别名"><a href="#git别名" class="headerlink" title="git别名"></a>git别名</h4><ul>
+<li>可以通过<code>git config</code>来为每一个命令设置一个别名</li>
+</ul>
+<h3 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h3><ul>
+<li>分支本质上仅仅是指向提交对象的可变指针</li>
+</ul>
+<h4 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h4><h5 id="分支创建"><a href="#分支创建" class="headerlink" title="分支创建"></a>分支创建</h5><ul>
+<li><code>git branch &lt;branchname&gt;</code>  创建分支</li>
+<li><code>git log --decorate</code> 查看各个分支当前所指的对象</li>
+</ul>
+<h5 id="分支切换"><a href="#分支切换" class="headerlink" title="分支切换"></a>分支切换</h5><ul>
+<li><code>git checkout &lt;branchname&gt;</code> 切换分支（<code>HEAD</code>会指向切换的分支）</li>
+</ul>
+<h4 id="分支的新建与合并"><a href="#分支的新建与合并" class="headerlink" title="分支的新建与合并"></a>分支的新建与合并</h4><ul>
+<li><code>git checkout -b &lt;branchname&gt;</code> 创建并切换到新分支</li>
+<li><code>git merge &lt;branchname&gt;</code> 将其他分支的内容合并到当前分支上</li>
+<li><code>git branch -d &lt;branchname&gt;</code> 删除分支</li>
+</ul>
+<h5 id="正确工作流"><a href="#正确工作流" class="headerlink" title="正确工作流"></a>正确工作流</h5><ol>
+<li><p>做任务A时，创建A分支 （当前分支<code>master</code>）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b A   </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>需要执行任务B，先保存任务A的修改，再从master上创建新分支B</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git stash  </span><br><span class="line">git checkout master</span><br><span class="line">git checkout -b B </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在B上完成任务后，合并分支B到master，再删除分支B</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge B </span><br><span class="line">git branch -d B </span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="遇到冲突时的分支合并"><a href="#遇到冲突时的分支合并" class="headerlink" title="遇到冲突时的分支合并"></a>遇到冲突时的分支合并</h5><ul>
+<li><p><code>git status</code> 可以在任何时候使用这一命令来查看因包含合并冲突而处于未合并状态的文件</p>
+</li>
+<li><p>解决方案</p>
+<ul>
+<li>手动解决</li>
+<li>mergetool</li>
+</ul>
+</li>
+</ul>
+<h4 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h4><ul>
+<li><p><code>git branch -v</code> 查看所有分支的最后一次提交</p>
+</li>
+<li><p><code>git branch --merged</code> &#x2F; <code>git branch --no-merged</code> 查看哪些分支已经合并及未合并</p>
+</li>
+</ul>
+<h4 id="分支的开发工作流"><a href="#分支的开发工作流" class="headerlink" title="分支的开发工作流"></a>分支的开发工作流</h4><ul>
+<li>不同分支可以维护不同层次的稳定性</li>
+<li>对于大型项目来说，稳定分支（master）通常会在提交历史中落后一大截</li>
+<li>分类<ul>
+<li>特性分支<ul>
+<li>短期分支</li>
+<li>用来实现单一特性或其相关工作</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h4><ul>
+<li>远程引用是对远程仓库的引用（指针）</li>
+<li><code>git ls-remote</code> 获取远程引用的完整列表</li>
+<li><strong>远程跟踪分支</strong>： 远程分支状态的引用<ul>
+<li>本地引用不能移动</li>
+<li>在做网络通信操作时，它们会自动移动</li>
+</ul>
+</li>
+<li>推送 <code>git push origin serverfix</code> 后一个分支即<code>refs/heads/serverfix:refs/heads/serverfix</code><ul>
+<li>推送本地的<code>serverfix</code>分支来更新远程仓库上的<code>serverfix</code>分支</li>
+</ul>
+</li>
+<li><strong>跟踪分支</strong>：从一个远程跟踪分支检出一个本地分支会自动创建一个叫做“跟踪分支”</li>
+<li><code>git checkout -track [remotename]/[branch]</code> 设置跟踪分支</li>
+<li><code>git branch -vv</code> 查看设置的所有跟踪分支</li>
+</ul>
+<h4 id="变基"><a href="#变基" class="headerlink" title="变基"></a>变基</h4><h5 id="变基的基本操作"><a href="#变基的基本操作" class="headerlink" title="变基的基本操作"></a>变基的基本操作</h5><ul>
+<li><strong>变基</strong>：提取在B分支引入的补丁和修改，在A分支上再应用一次</li>
+<li><code>rebase</code> ：将提交到某一分支上的所有修改都移至另一分支上</li>
+</ul>
+<h5 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h5><ul>
+<li>找到A、B分支最近的共同祖先</li>
+<li>对比当前分支（B）的历次提交，提取相应的修改保存为临时文件</li>
+<li>将该分支指向目标基底A，将另存为临时文件的修改依序应用</li>
+</ul>
+<h5 id="变基-VS-合并"><a href="#变基-VS-合并" class="headerlink" title="变基 VS 合并"></a>变基 VS 合并</h5><ul>
+<li><p>将dev分支的内容并入到master中</p>
+<ol>
+<li><p>在master分支上执行<code> git merge dev</code></p>
+</li>
+<li><p>在dev分支上依次执行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rebase master</span><br><span class="line">git checkout master</span><br><span class="line">git merge experiment</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>以上两种方法的结果是一样的，只是变基会使提交历史看起来更整洁</p>
+</li>
+<li><p>不要对在你的仓库外有副本的分支进行变基</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/11/18/git-pro%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="clnpqd40t008gp120hueu964l" data-title="git pro学习笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/18/git%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          git实用技巧
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/10/04/Nikkki%E7%9A%84%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB009/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Nikkki的一周分享009</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/FreeCodeCamp/">FreeCodeCamp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jounal/">Jounal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Journal/">Journal</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/">习题集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%A9%E5%99%A8/">利器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E5%A4%87%E5%BF%98/">工作备忘</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/">知识管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/">跟着大佬学编程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2020/" rel="tag">2020</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOM/" rel="tag">BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eloquent-JavaScript/" rel="tag">Eloquent JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeCodeCamp/" rel="tag">FreeCodeCamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fuji-Rock-Festival/" rel="tag">Fuji Rock Festival</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hooks/" rel="tag">Hooks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/" rel="tag">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Course/" rel="tag">Learning, Course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OIS/" rel="tag">OIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OKR/" rel="tag">OKR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/" rel="tag">OOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading/" rel="tag">Reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/" rel="tag">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/" rel="tag">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/" rel="tag">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/" rel="tag">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/" rel="tag">UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UX/" rel="tag">UX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Report/" rel="tag">Weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Reports/" rel="tag">Weekly Reports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weekly-Summary/" rel="tag">Weekly Summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design/" rel="tag">ant design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ant-design-pro/" rel="tag">ant design pro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/art-template/" rel="tag">art-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/auth/" rel="tag">auth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/autojump/" rel="tag">autojump</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/box-model/" rel="tag">box model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codewars/" rel="tag">codewars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejs/" rel="tag">ejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/event/" rel="tag">event</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/" rel="tag">express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex/" rel="tag">flex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/float/" rel="tag">float</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freecodecamp/" rel="tag">freecodecamp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grid/" rel="tag">grid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/" rel="tag">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jade/" rel="tag">jade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/journal/" rel="tag">journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jwt/" rel="tag">jwt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/" rel="tag">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/layout/" rel="tag">layout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multer/" rel="tag">multer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ndoe-js/" rel="tag">ndoe.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodemon/" rel="tag">nodemon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nrm/" rel="tag">nrm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/" rel="tag">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/responsive/" rel="tag">responsive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/" rel="tag">terminal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/" rel="tag">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/token/" rel="tag">token</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/" rel="tag">translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/useEffect/" rel="tag">useEffect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weekly-Report/" rel="tag">weekly Report</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" rel="tag">一周分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%9E%8B/" rel="tag">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" rel="tag">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" rel="tag">年度计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86/" rel="tag">心理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E8%83%BD/" rel="tag">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" rel="tag">效率提升</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag">数据类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E6%B8%B8/" rel="tag">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%AC/" rel="tag">日本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" rel="tag">本地存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" rel="tag">模板引擎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="tag">深拷贝浅拷贝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" rel="tag">知识管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" rel="tag">线程 进程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" rel="tag">翻译， HTTPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="tag">负载均衡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" rel="tag">软技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" rel="tag">选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" rel="tag">重装电脑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2020/" style="font-size: 10px;">2020</a> <a href="/tags/Algorithm/" style="font-size: 10.77px;">Algorithm</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/CSS/" style="font-size: 11.54px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/ES6/" style="font-size: 16.92px;">ES6</a> <a href="/tags/Eloquent-JavaScript/" style="font-size: 10px;">Eloquent JavaScript</a> <a href="/tags/FreeCodeCamp/" style="font-size: 10px;">FreeCodeCamp</a> <a href="/tags/Fuji-Rock-Festival/" style="font-size: 10px;">Fuji Rock Festival</a> <a href="/tags/HTML/" style="font-size: 12.31px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.54px;">HTTP</a> <a href="/tags/Hooks/" style="font-size: 10px;">Hooks</a> <a href="/tags/IP/" style="font-size: 11.54px;">IP</a> <a href="/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/tags/JavaScript/" style="font-size: 19.23px;">JavaScript</a> <a href="/tags/Learning-Course/" style="font-size: 10px;">Learning, Course</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/OIS/" style="font-size: 10px;">OIS</a> <a href="/tags/OKR/" style="font-size: 10.77px;">OKR</a> <a href="/tags/OOP/" style="font-size: 11.54px;">OOP</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/React/" style="font-size: 13.08px;">React</a> <a href="/tags/Reading/" style="font-size: 10px;">Reading</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/TCP/" style="font-size: 11.54px;">TCP</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UX/" style="font-size: 10px;">UX</a> <a href="/tags/Weekly-Report/" style="font-size: 18.46px;">Weekly Report</a> <a href="/tags/Weekly-Reports/" style="font-size: 10.77px;">Weekly Reports</a> <a href="/tags/Weekly-Summary/" style="font-size: 10px;">Weekly Summary</a> <a href="/tags/ant-design/" style="font-size: 10px;">ant design</a> <a href="/tags/ant-design-pro/" style="font-size: 10px;">ant design pro</a> <a href="/tags/art-template/" style="font-size: 10px;">art-template</a> <a href="/tags/auth/" style="font-size: 10px;">auth</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/box-model/" style="font-size: 10px;">box model</a> <a href="/tags/chrome/" style="font-size: 10.77px;">chrome</a> <a href="/tags/codewars/" style="font-size: 10px;">codewars</a> <a href="/tags/computer-science/" style="font-size: 10.77px;">computer science</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/css/" style="font-size: 16.15px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/event/" style="font-size: 10px;">event</a> <a href="/tags/express/" style="font-size: 13.08px;">express</a> <a href="/tags/flex/" style="font-size: 10.77px;">flex</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/freecodecamp/" style="font-size: 17.69px;">freecodecamp</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.77px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/journal/" style="font-size: 10px;">journal</a> <a href="/tags/jwt/" style="font-size: 11.54px;">jwt</a> <a href="/tags/koa/" style="font-size: 14.62px;">koa</a> <a href="/tags/layout/" style="font-size: 10px;">layout</a> <a href="/tags/mac/" style="font-size: 10.77px;">mac</a> <a href="/tags/multer/" style="font-size: 10px;">multer</a> <a href="/tags/ndoe-js/" style="font-size: 10px;">ndoe.js</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/nodemon/" style="font-size: 10px;">nodemon</a> <a href="/tags/npm/" style="font-size: 10.77px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/responsive/" style="font-size: 10px;">responsive</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/token/" style="font-size: 11.54px;">token</a> <a href="/tags/translation/" style="font-size: 10px;">translation</a> <a href="/tags/useEffect/" style="font-size: 10px;">useEffect</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/weekly-Report/" style="font-size: 10.77px;">weekly Report</a> <a href="/tags/%E4%B8%80%E5%91%A8%E5%88%86%E4%BA%AB/" style="font-size: 15.38px;">一周分享</a> <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 12.31px;">中间件</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%8E%9F%E5%9E%8B/" style="font-size: 10.77px;">原型</a> <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/" style="font-size: 10px;">工作效率</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" style="font-size: 10px;">年度计划</a> <a href="/tags/%E5%BF%83%E7%90%86/" style="font-size: 10px;">心理</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 10px;">心理学</a> <a href="/tags/%E6%8A%80%E8%83%BD/" style="font-size: 10px;">技能</a> <a href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" style="font-size: 10px;">效率提升</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">数据类型</a> <a href="/tags/%E6%97%85%E6%B8%B8/" style="font-size: 10px;">旅游</a> <a href="/tags/%E6%97%A5%E6%9C%AC/" style="font-size: 10px;">日本</a> <a href="/tags/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" style="font-size: 10px;">本地存储</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" style="font-size: 11.54px;">模板引擎</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10.77px;">浏览器</a> <a href="/tags/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/" style="font-size: 10px;">深拷贝浅拷贝</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" style="font-size: 11.54px;">知识管理</a> <a href="/tags/%E7%BA%BF%E7%A8%8B-%E8%BF%9B%E7%A8%8B/" style="font-size: 10.77px;">线程 进程</a> <a href="/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">网易云音乐</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 12.31px;">翻译</a> <a href="/tags/%E7%BF%BB%E8%AF%91%EF%BC%8C-HTTPS/" style="font-size: 10px;">翻译， HTTPS</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 13.85px;">读书笔记</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 10px;">负载均衡</a> <a href="/tags/%E8%BD%AF%E6%8A%80%E8%83%BD/" style="font-size: 10px;">软技能</a> <a href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" style="font-size: 10px;">选择器</a> <a href="/tags/%E9%87%8D%E8%A3%85%E7%94%B5%E8%84%91/" style="font-size: 10px;">重装电脑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">代码注释规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/">代码命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/06/Week-49/">Week 49</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/29/Week-48/">Week 48</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/01/Week-44/">Week 44</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
