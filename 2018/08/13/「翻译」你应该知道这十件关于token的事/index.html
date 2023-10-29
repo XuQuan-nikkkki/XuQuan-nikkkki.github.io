@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"xuquan.site","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xuquan.site","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="原文地址： 10 Things You Should Know about Tokens 几周前，我们发表了一篇_《在AngularJS框架下，单页面应用中的cookies和tokens》_的文章。显然这个话题很受欢迎，因此我们发表了第二篇文章_《实时通讯框架（如socket.io)如何基于token实现身份验证》_。出于对这个话题的强烈兴趣，我们决定在这篇文章中继续探索更多关于基于token实现">
 <meta property="og:type" content="article">
@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-08-13T03:11:56.000Z">
 <meta property="article:modified_time" content="2018-08-14T04:12:01.000Z">
-<meta property="article:author" content="Xu Quan">
+<meta property="article:author" content="Xu Quan（Nikkkki）">
 <meta property="article:tag" content="jwt">
 <meta property="article:tag" content="token">
 <meta property="article:tag" content="翻译">
@@ -121,7 +121,9 @@
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Xu Quan</p>
+    <img class="site-author-image" itemprop="image" alt="Xu Quan（Nikkkki）"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">Xu Quan（Nikkkki）</p>
   <div class="site-description" itemprop="description">一个程序员的自我进修之路</div>
 </div>
 <div class="site-state-wrap animated">
@@ -152,7 +154,7 @@
         <a href="mailto:xuquan1225@gmail.com" title="E-Mail → mailto:xuquan1225@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.douban.com/people/nikkkki/?_i=8570912tq6k9lM" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;nikkkki&#x2F;?_i&#x3D;8570912tq6k9lM" rel="noopener me" target="_blank"><i class="豆 fa-fw"></i>Douban</a>
+        <a href="https://www.douban.com/people/nikkkki/?_i=8570912tq6k9lM" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;nikkkki&#x2F;?_i&#x3D;8570912tq6k9lM" rel="noopener me" target="_blank"><i class="fa fa-book fa-fw"></i>Douban</a>
       </span>
   </div>
 
@@ -180,8 +182,8 @@
     <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/08/13/%E3%80%8C%E7%BF%BB%E8%AF%91%E3%80%8D%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E8%BF%99%E5%8D%81%E4%BB%B6%E5%85%B3%E4%BA%8Etoken%E7%9A%84%E4%BA%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xu Quan">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -398,9 +400,9 @@
     &copy; 2018 – 
     <span itemprop="copyrightYear">2023</span>
     <span class="with-love">
-      <i class=""></i>
+      <i class="fa fa-user"></i>
     </span>
-    <span class="author" itemprop="copyrightHolder">Xu Quan</span>
+    <span class="author" itemprop="copyrightHolder">Xu Quan（Nikkkki）</span>
   </div>
 
     </div>
