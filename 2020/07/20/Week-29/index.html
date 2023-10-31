@@ -26,13 +26,13 @@
 <meta property="og:site_name" content="Nikkkki&#39;s Notes">
 <meta property="og:description" content="最近又到了工作之外效率低下，时间总嫌不够阶段。盛夏和我从来八字不合。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1ggwqguo5xmj30u011iu13.jpg">
+<meta property="og:image" content="https://p.ipic.vip/3jj7ma.jpg">
 <meta property="article:published_time" content="2020-07-19T16:01:23.000Z">
-<meta property="article:modified_time" content="2020-07-19T16:33:46.000Z">
+<meta property="article:modified_time" content="2023-10-31T07:34:14.990Z">
 <meta property="article:author" content="Xu Quan（Nikkkki）">
 <meta property="article:tag" content="Weekly Report">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1ggwqguo5xmj30u011iu13.jpg">
+<meta name="twitter:image" content="https://p.ipic.vip/3jj7ma.jpg">
 
 
 <link rel="canonical" href="https://xuquan.site/2020/07/20/Week-29/">
@@ -206,9 +206,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2020-07-20 00:01:23 / 修改时间：00:33:46" itemprop="dateCreated datePublished" datetime="2020-07-20T00:01:23+08:00">2020-07-20</time>
+      <time title="创建时间：2020-07-20 00:01:23" itemprop="dateCreated datePublished" datetime="2020-07-20T00:01:23+08:00">2020-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-10-31 15:34:14" itemprop="dateModified" datetime="2023-10-31T15:34:14+08:00">2023-10-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -251,7 +257,7 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>最近又到了工作之外效率低下，时间总嫌不够阶段。盛夏和我从来八字不合。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ggwqguo5xmj30u011iu13.jpg" alt="image-20200720001145984"></p>
+<p><img src="https://p.ipic.vip/3jj7ma.jpg" alt="7f8ede7ca455f6783a775de5d1b9f05f"></p>
 <span id="more"></span>
 
 <h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><ul>
@@ -261,7 +267,7 @@
 </li>
 <li><p>鱼塘菜单栏优化方案确定好了，和产能配置一样，mentor 让我确定好方案之后就分配给了新同事，估计之后会花些时间 review 以及和各个组沟通</p>
 </li>
-<li><p>上线了拍照功能优化。这是我拖得时间最长的活儿了。一方面有一部分没那么急，于是优先级总是在其他项目前败下阵来，另一方面有些问题要花很多时间排查，之前陆陆续续排查几次，但是总是没能完整弄完。这次优化了三个点：拍照从点两次调用相机优化为点一次调用；解决了 ios 拍照之后突然白屏的问题（原因是之前的代码里在拍照之后有个把文件转换成 base64 格式的步骤，但是文件太大，导致内存不够）；解决了 ios 拍照会横过来的问题（原因是原来代码中的 resize 功能顺带做了旋转，现在牺牲了 resize 这部分优化，但是能保证不会横过来，所以还需要花些时间研究）</p>
+<li><p>上线了拍照功能优化。这是我拖得时间最长的活儿了。一方面没那么急，于是优先级总是在其他项目前败下阵来，另一方面有些问题要花很多时间排查，之前陆陆续续排查几次，但是总是没能完整弄完。这次优化了三个点：拍照从点两次调用相机优化为点一次调用；解决了 ios 拍照之后突然白屏的问题（原因是之前的代码里在拍照之后有个把文件转换成 base64 格式的步骤，但是文件太大，导致内存不够）；解决了 ios 拍照会横过来的问题（原因是原来代码中的 resize 功能顺带做了旋转，现在牺牲了 resize 这部分优化，但是能保证不会横过来，所以还需要花些时间研究）</p>
 </li>
 <li><p>做了服饰 0.4 的部分方案，开始确定下来的功能的代码</p>
 </li>
