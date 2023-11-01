@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">214</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -135,7 +135,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">113</span>
+        <span class="site-state-item-count">114</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -172,7 +172,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2023/10/31/9-Palindrome-Number/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2022/10/26/67-Add-Binary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -190,7 +190,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/10/31/9-Palindrome-Number/" class="post-title-link" itemprop="url">LeetCode 算法题【Easy】：9. Palindrome Number</a>
+          <a href="/2022/10/26/67-Add-Binary/" class="post-title-link" itemprop="url">LeetCode 算法题【Easy】：67. Add Binary</a>
         </h2>
 
         <div class="post-meta-container">
@@ -200,9 +200,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-10-31 23:05:26 / 修改时间：23:10:32" itemprop="dateCreated datePublished" datetime="2023-10-31T23:05:26+08:00">2023-10-31</time>
+      <time title="创建时间：2022-10-26 22:20:46" itemprop="dateCreated datePublished" datetime="2022-10-26T22:20:46+08:00">2022-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-01 22:21:24" itemprop="dateModified" datetime="2023-11-01T22:21:24+08:00">2023-11-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -215,7 +221,7 @@
     </span>
 
   
-    <span id="/2023/10/31/9-Palindrome-Number/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 算法题【Easy】：9. Palindrome Number" title="阅读次数">
+    <span id="/2022/10/26/67-Add-Binary/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 算法题【Easy】：67. Add Binary" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -230,8 +236,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2023/10/31/9-Palindrome-Number/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/10/31/9-Palindrome-Number/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/10/26/67-Add-Binary/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/26/67-Add-Binary/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -245,22 +251,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given an integer <code>x</code>, return <code>true</code> if <code>x</code> is palindrome integer.</p>
-<p>An integer is a <strong>palindrome</strong> when it reads the same backward as forward.</p>
-<ul>
-<li>For example, <code>121</code> is a palindrome while <code>123</code> is not.</li>
-</ul>
+          <p>链接：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/add-binary/">https://leetcode.com/problems/add-binary/</a></p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given two binary strings <code>a</code> and <code>b</code>, return <em>their sum as a binary string</em>.</p>
 <p><strong>Example 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: x = 121</span><br><span class="line">Output: true</span><br><span class="line">Explanation: 121 reads as 121 from left to right and from right to left.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: a = &quot;11&quot;, b = &quot;1&quot;</span><br><span class="line">Output: &quot;100&quot;</span><br></pre></td></tr></table></figure>
 
 <p><strong>Example 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: x = -121</span><br><span class="line">Output: false</span><br><span class="line">Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>Example 3:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: x = 10</span><br><span class="line">Output: false</span><br><span class="line">Explanation: Reads 01 from right to left. Therefore it is not a palindrome.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: a = &quot;1010&quot;, b = &quot;1011&quot;</span><br><span class="line">Output: &quot;10101&quot;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2023/10/31/9-Palindrome-Number/#more" rel="contents">
+              <a class="btn" href="/2022/10/26/67-Add-Binary/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -291,7 +291,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2023/10/31/1.%20Two%20Sum/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2022/10/26/69-Sqrt-x/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -309,7 +309,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/10/31/1.%20Two%20Sum/" class="post-title-link" itemprop="url">LeetCode 算法题【Easy】：1. Two Sum</a>
+          <a href="/2022/10/26/69-Sqrt-x/" class="post-title-link" itemprop="url">LeetCode 算法题【Easy】：69. Sqrt(x)</a>
         </h2>
 
         <div class="post-meta-container">
@@ -319,9 +319,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-10-31 22:57:01 / 修改时间：23:09:56" itemprop="dateCreated datePublished" datetime="2023-10-31T22:57:01+08:00">2023-10-31</time>
+      <time title="创建时间：2022-10-26 22:19:31" itemprop="dateCreated datePublished" datetime="2022-10-26T22:19:31+08:00">2022-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-01 22:20:48" itemprop="dateModified" datetime="2023-11-01T22:20:48+08:00">2023-11-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -334,7 +340,7 @@
     </span>
 
   
-    <span id="/2023/10/31/1.%20Two%20Sum/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 算法题【Easy】：1. Two Sum" title="阅读次数">
+    <span id="/2022/10/26/69-Sqrt-x/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 算法题【Easy】：69. Sqrt(x)" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -349,8 +355,126 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2023/10/31/1.%20Two%20Sum/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/10/31/1. Two Sum/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/10/26/69-Sqrt-x/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/26/69-Sqrt-x/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>链接：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/sqrtx/">https://leetcode.com/problems/sqrtx/</a></p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a non-negative integer <code>x</code>, return <em>the square root of</em> <code>x</code> <em>rounded down to the nearest integer</em>. The returned integer should be <strong>non-negative</strong> as well.</p>
+<p>You <strong>must not use</strong> any built-in exponent function or operator.</p>
+<ul>
+<li>For example, do not use <code>pow(x, 0.5)</code> in c++ or <code>x ** 0.5</code> in python.</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/10/26/69-Sqrt-x/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2022/10/26/1.%20Two%20Sum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/26/1.%20Two%20Sum/" class="post-title-link" itemprop="url">LeetCode 算法题【Easy】：1. Two Sum</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-10-26 20:32:01" itemprop="dateCreated datePublished" datetime="2022-10-26T20:32:01+08:00">2022-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-01 22:24:59" itemprop="dateModified" datetime="2023-11-01T22:24:59+08:00">2023-11-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">习题集</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2022/10/26/1.%20Two%20Sum/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 算法题【Easy】：1. Two Sum" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/10/26/1.%20Two%20Sum/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/26/1. Two Sum/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -377,7 +501,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [3,3], target = 6</span><br><span class="line">Output: [0,1]</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2023/10/31/1.%20Two%20Sum/#more" rel="contents">
+              <a class="btn" href="/2022/10/26/1.%20Two%20Sum/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -408,7 +532,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2022/10/25/66-Plus-One/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -426,263 +550,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/" class="post-title-link" itemprop="url">代码注释规范</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-01-09 18:27:48 / 修改时间：18:28:32" itemprop="dateCreated datePublished" datetime="2021-01-09T18:27:48+08:00">2021-01-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/" class="post-meta-item leancloud_visitors" data-flag-title="代码注释规范" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2021/01/09/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/01/09/代码注释规范/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><ul>
-<li>注释是为了让读代码的人和写代码的人对代码的了解一样多</li>
-<li>随着鱼塘业务复杂性的增加，代码中关于业务的内容不应只存在于写代码的人脑子里，而应该通过注释保留在代码中</li>
-<li>提高代码的可维护性，减少团队协作的沟通成本</li>
-</ul>
-<h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><ul>
-<li>注释应注重”为何做（why）“而不是”怎么做（how）“</li>
-<li>如果你发现自己需要写注释，再想想是否有办法翻盘，用代码来表达，很多时候，只要创建一个描述与注释所言同一事物的函数即可；如果最终决定要写注释，就要花必要的时间确保写出最好的注释ÏÏ</li>
-<li>注释存在的时间越久，就离其所描述的代码越远，越来越变得全然错误；因此，程序员应当负责将注释保持在可维护、有关联、精确的高度</li>
-</ul>
-<h2 id="注释的种类"><a href="#注释的种类" class="headerlink" title="注释的种类"></a>注释的种类</h2><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>内容&#x2F;目的</th>
-<th>优劣</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>重复性注释</td>
-<td>只是用不同文字把代码的工作又描述一次</td>
-<td>除了增加阅读量，没有提供更多信息</td>
-</tr>
-<tr>
-<td>解释性注释</td>
-<td>用于解释复杂、精巧、敏感的代码块</td>
-<td>通常因为代码含混不清才体现出这类注释的价值</td>
-</tr>
-<tr>
-<td>标记性注释</td>
-<td>提醒开发者某处的工作未做完</td>
-<td></td>
-</tr>
-<tr>
-<td>概述性注释</td>
-<td>将若干代码行的意思以一两句话说出来</td>
-<td>对于修改代码的其他人来说非常有用</td>
-</tr>
-<tr>
-<td>目的性注释</td>
-<td>用来指明一段代码的意图，而非解决的方法</td>
-<td></td>
-</tr>
-<tr>
-<td>代码无法表述的信息</td>
-<td>包括版权声明、保密要求、版本号等</td>
-<td></td>
-</tr>
-</tbody></table>
-<p>对于完工的代码，只允许有三种注释类型：代码无法表述的信息、目的性注释和概述性注释</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/" class="post-title-link" itemprop="url">代码命名规范</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-01-09 18:23:16 / 修改时间：18:27:37" itemprop="dateCreated datePublished" datetime="2021-01-09T18:23:16+08:00">2021-01-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/" class="post-meta-item leancloud_visitors" data-flag-title="代码命名规范" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/01/09/代码命名规范/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>最近读《代码简洁之道》、《代码大全》和《编写可读代码的艺术》总结了一些通用的内容，作为团队代码的规范。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/01/09/%E4%BB%A3%E7%A0%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2020/12/06/Week-49/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/12/06/Week-49/" class="post-title-link" itemprop="url">Week 49</a>
+          <a href="/2022/10/25/66-Plus-One/" class="post-title-link" itemprop="url">LeetCode 算法题【Easy】：66. Plus One</a>
         </h2>
 
         <div class="post-meta-container">
@@ -693,14 +561,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-12-06 21:18:46" itemprop="dateCreated datePublished" datetime="2020-12-06T21:18:46+08:00">2020-12-06</time>
+      <time title="创建时间：2022-10-25 22:02:57" itemprop="dateCreated datePublished" datetime="2022-10-25T22:02:57+08:00">2022-10-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-31 15:26:46" itemprop="dateModified" datetime="2023-10-31T15:26:46+08:00">2023-10-31</time>
+      <time title="修改时间：2023-11-01 22:18:47" itemprop="dateModified" datetime="2023-11-01T22:18:47+08:00">2023-11-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -708,12 +576,12 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Journal/" itemprop="url" rel="index"><span itemprop="name">Journal</span></a>
+          <a href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">习题集</span></a>
         </span>
     </span>
 
   
-    <span id="/2020/12/06/Week-49/" class="post-meta-item leancloud_visitors" data-flag-title="Week 49" title="阅读次数">
+    <span id="/2022/10/25/66-Plus-One/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 算法题【Easy】：66. Plus One" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -728,8 +596,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2020/12/06/Week-49/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/12/06/Week-49/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/10/25/66-Plus-One/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/25/66-Plus-One/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -743,11 +611,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>提前拿到生日礼物，是 1988 的签名照。对着签名照感动地流了一会儿泪。想跟自己说，你不要担心啊。</p>
-<p><img src="https://p.ipic.vip/qm8b5x.jpg" alt="93d4c4c94590daca26a87b1cb0ece0cf"></p>
+          <p>链接：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/plus-one/">https://leetcode.com/problems/plus-one/</a></p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>You are given a <strong>large integer</strong> represented as an integer array <code>digits</code>, where each <code>digits[i]</code> is the <code>ith</code> digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading <code>0</code>‘s.</p>
+<p>Increment the large integer by one and return <em>the resulting array of digits</em>.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: digits = [1,2,3]</span><br><span class="line">Output: [1,2,4]</span><br><span class="line">Explanation: The array represents the integer 123.</span><br><span class="line">Incrementing by one gives 123 + 1 = 124.</span><br><span class="line">Thus, the result should be [1,2,4].</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: digits = [4,3,2,1]</span><br><span class="line">Output: [4,3,2,2]</span><br><span class="line">Explanation: The array represents the integer 4321.</span><br><span class="line">Incrementing by one gives 4321 + 1 = 4322.</span><br><span class="line">Thus, the result should be [4,3,2,2].</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: digits = [9]</span><br><span class="line">Output: [1,0]</span><br><span class="line">Explanation: The array represents the integer 9.</span><br><span class="line">Incrementing by one gives 9 + 1 = 10.</span><br><span class="line">Thus, the result should be [1,0].</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/12/06/Week-49/#more" rel="contents">
+              <a class="btn" href="/2022/10/25/66-Plus-One/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -778,7 +655,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2020/11/29/Week-48/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2022/10/24/35-Search-Insert-Position/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -796,7 +673,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/29/Week-48/" class="post-title-link" itemprop="url">Week 48</a>
+          <a href="/2022/10/24/35-Search-Insert-Position/" class="post-title-link" itemprop="url">LeetCode 算法题【Easy】：35. Search Insert Position</a>
         </h2>
 
         <div class="post-meta-container">
@@ -807,14 +684,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-11-29 20:56:20" itemprop="dateCreated datePublished" datetime="2020-11-29T20:56:20+08:00">2020-11-29</time>
+      <time title="创建时间：2022-10-24 21:59:01" itemprop="dateCreated datePublished" datetime="2022-10-24T21:59:01+08:00">2022-10-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-31 15:27:19" itemprop="dateModified" datetime="2023-10-31T15:27:19+08:00">2023-10-31</time>
+      <time title="修改时间：2023-11-01 22:18:10" itemprop="dateModified" datetime="2023-11-01T22:18:10+08:00">2023-11-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -822,12 +699,12 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Journal/" itemprop="url" rel="index"><span itemprop="name">Journal</span></a>
+          <a href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">习题集</span></a>
         </span>
     </span>
 
   
-    <span id="/2020/11/29/Week-48/" class="post-meta-item leancloud_visitors" data-flag-title="Week 48" title="阅读次数">
+    <span id="/2022/10/24/35-Search-Insert-Position/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 算法题【Easy】：35. Search Insert Position" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -842,8 +719,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2020/11/29/Week-48/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/29/Week-48/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/10/24/35-Search-Insert-Position/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/24/35-Search-Insert-Position/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -857,11 +734,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>又偷懒了一个月，这一个月不知怎么地开始进入一种自我怀疑的情绪中，导致很多事情都没有做到很好。</p>
-<p><img src="https://p.ipic.vip/0zf0ci.jpg" alt="d3d98c17036c5fa836ee9780b3b96aae">
+          <p>链接：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-insert-position/">https://leetcode.com/problems/search-insert-position/</a></p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
+<p>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [1,3,5,6], target = 5</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [1,3,5,6], target = 2</span><br><span class="line">Output: 1</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [1,3,5,6], target = 7</span><br><span class="line">Output: 4</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/29/Week-48/#more" rel="contents">
+              <a class="btn" href="/2022/10/24/35-Search-Insert-Position/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -892,7 +778,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2020/11/01/Week-44/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2022/10/24/183-Customers-Who-Never-Order/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -910,7 +796,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/01/Week-44/" class="post-title-link" itemprop="url">Week 44</a>
+          <a href="/2022/10/24/183-Customers-Who-Never-Order/" class="post-title-link" itemprop="url">LeetCode 数据库查询题【Easy】：183. Customers Who Never Order</a>
         </h2>
 
         <div class="post-meta-container">
@@ -921,14 +807,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-11-01 19:29:14" itemprop="dateCreated datePublished" datetime="2020-11-01T19:29:14+08:00">2020-11-01</time>
+      <time title="创建时间：2022-10-24 21:06:12" itemprop="dateCreated datePublished" datetime="2022-10-24T21:06:12+08:00">2022-10-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-31 15:29:11" itemprop="dateModified" datetime="2023-10-31T15:29:11+08:00">2023-10-31</time>
+      <time title="修改时间：2023-11-01 22:13:44" itemprop="dateModified" datetime="2023-11-01T22:13:44+08:00">2023-11-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -936,12 +822,12 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Journal/" itemprop="url" rel="index"><span itemprop="name">Journal</span></a>
+          <a href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">习题集</span></a>
         </span>
     </span>
 
   
-    <span id="/2020/11/01/Week-44/" class="post-meta-item leancloud_visitors" data-flag-title="Week 44" title="阅读次数">
+    <span id="/2022/10/24/183-Customers-Who-Never-Order/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 数据库查询题【Easy】：183. Customers Who Never Order" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -956,8 +842,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2020/11/01/Week-44/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/01/Week-44/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/10/24/183-Customers-Who-Never-Order/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/24/183-Customers-Who-Never-Order/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -971,11 +857,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>得赶紧抓住秋天的尾巴了。</p>
-<p><img src="https://p.ipic.vip/3ymps0.jpg" alt="d9c6cdaf4aae2a865175be5bb0823087"></p>
+          <p>链接：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/customers-who-never-order/">https://leetcode.com/problems/customers-who-never-order/</a></p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Table: <code>Customers</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| Column Name | Type    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| id          | int     |</span><br><span class="line">| name        | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line">id is the primary key column for this table.</span><br><span class="line">Each row of this table indicates the ID and name of a customer.</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/01/Week-44/#more" rel="contents">
+              <a class="btn" href="/2022/10/24/183-Customers-Who-Never-Order/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1006,7 +893,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2020/10/18/Week-42/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2022/10/24/21-Merge-Two-Sorted-Lists/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -1024,7 +911,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/10/18/Week-42/" class="post-title-link" itemprop="url">Week 42</a>
+          <a href="/2022/10/24/21-Merge-Two-Sorted-Lists/" class="post-title-link" itemprop="url">LeetCode 算法题【Easy】：21. Merge Two Sorted Lists</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1035,14 +922,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-10-18 22:02:32" itemprop="dateCreated datePublished" datetime="2020-10-18T22:02:32+08:00">2020-10-18</time>
+      <time title="创建时间：2022-10-24 11:01:19" itemprop="dateCreated datePublished" datetime="2022-10-24T11:01:19+08:00">2022-10-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-31 15:29:36" itemprop="dateModified" datetime="2023-10-31T15:29:36+08:00">2023-10-31</time>
+      <time title="修改时间：2023-11-01 22:18:32" itemprop="dateModified" datetime="2023-11-01T22:18:32+08:00">2023-11-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1050,12 +937,12 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Journal/" itemprop="url" rel="index"><span itemprop="name">Journal</span></a>
+          <a href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">习题集</span></a>
         </span>
     </span>
 
   
-    <span id="/2020/10/18/Week-42/" class="post-meta-item leancloud_visitors" data-flag-title="Week 42" title="阅读次数">
+    <span id="/2022/10/24/21-Merge-Two-Sorted-Lists/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 算法题【Easy】：21. Merge Two Sorted Lists" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -1070,8 +957,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2020/10/18/Week-42/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/18/Week-42/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/10/24/21-Merge-Two-Sorted-Lists/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/24/21-Merge-Two-Sorted-Lists/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1085,11 +972,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>好想去江之岛啊！</p>
-<p><img src="https://p.ipic.vip/c28i59.jpg" alt="ad14bad45c3d66046a62c336591f63a7"></p>
+          <p>链接：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-two-sorted-lists/">https://leetcode.com/problems/merge-two-sorted-lists/</a></p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a string <code>s</code> consisting of words and spaces, return <em>the length of the <strong>last</strong> word in the string.</em></p>
+<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;Hello World&quot;</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: The last word is &quot;World&quot; with length 5.</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;   fly me   to   the moon  &quot;</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: The last word is &quot;moon&quot; with length 4.</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;luffy is still joyboy&quot;</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: The last word is &quot;joyboy&quot; with length 6.</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/10/18/Week-42/#more" rel="contents">
+              <a class="btn" href="/2022/10/24/21-Merge-Two-Sorted-Lists/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1120,7 +1016,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2020/10/11/Week-41/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2022/10/23/182-Duplicate-Emails/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -1138,7 +1034,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/10/11/Week-41/" class="post-title-link" itemprop="url">Week 41</a>
+          <a href="/2022/10/23/182-Duplicate-Emails/" class="post-title-link" itemprop="url">LeetCode 数据库查询题【Easy】：182. Duplicate Emails</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1149,14 +1045,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-10-11 22:30:58" itemprop="dateCreated datePublished" datetime="2020-10-11T22:30:58+08:00">2020-10-11</time>
+      <time title="创建时间：2022-10-23 22:08:15" itemprop="dateCreated datePublished" datetime="2022-10-23T22:08:15+08:00">2022-10-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-31 15:30:00" itemprop="dateModified" datetime="2023-10-31T15:30:00+08:00">2023-10-31</time>
+      <time title="修改时间：2023-11-01 22:13:25" itemprop="dateModified" datetime="2023-11-01T22:13:25+08:00">2023-11-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1164,12 +1060,12 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Journal/" itemprop="url" rel="index"><span itemprop="name">Journal</span></a>
+          <a href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">习题集</span></a>
         </span>
     </span>
 
   
-    <span id="/2020/10/11/Week-41/" class="post-meta-item leancloud_visitors" data-flag-title="Week 41" title="阅读次数">
+    <span id="/2022/10/23/182-Duplicate-Emails/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 数据库查询题【Easy】：182. Duplicate Emails" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -1184,8 +1080,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2020/10/11/Week-41/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/11/Week-41/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/10/23/182-Duplicate-Emails/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/23/182-Duplicate-Emails/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1199,11 +1095,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>前两周的周记一直没能发出来，命令行一直报错，后来才发现 autojump 进入的文件夹是备份之前的，有些文件缺失了，但是自己一直没发现。</p>
-<p><img src="https://p.ipic.vip/j2urpm.jpg" alt="3e0e53db8effd4e4293f8749242c43d1"></p>
+          <p>链接：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/duplicate-emails/">https://leetcode.com/problems/duplicate-emails/</a></p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Table: <code>Person</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| Column Name | Type    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| id          | int     |</span><br><span class="line">| email       | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line">id is the primary key column for this table.</span><br><span class="line">Each row of this table contains an email. The emails will not contain uppercase letters.</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/10/11/Week-41/#more" rel="contents">
+              <a class="btn" href="/2022/10/23/182-Duplicate-Emails/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1234,7 +1131,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2020/09/21/Week-33-38/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2022/10/23/20-Valid-Parentheses/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -1252,7 +1149,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/09/21/Week-33-38/" class="post-title-link" itemprop="url">Week 33-38</a>
+          <a href="/2022/10/23/20-Valid-Parentheses/" class="post-title-link" itemprop="url">LeetCode 算法题【Easy】：20. Valid Parentheses</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1263,14 +1160,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-09-21 23:36:31" itemprop="dateCreated datePublished" datetime="2020-09-21T23:36:31+08:00">2020-09-21</time>
+      <time title="创建时间：2022-10-23 12:09:13" itemprop="dateCreated datePublished" datetime="2022-10-23T12:09:13+08:00">2022-10-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-31 16:17:58" itemprop="dateModified" datetime="2023-10-31T16:17:58+08:00">2023-10-31</time>
+      <time title="修改时间：2023-11-01 22:17:59" itemprop="dateModified" datetime="2023-11-01T22:17:59+08:00">2023-11-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1278,12 +1175,12 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Journal/" itemprop="url" rel="index"><span itemprop="name">Journal</span></a>
+          <a href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">习题集</span></a>
         </span>
     </span>
 
   
-    <span id="/2020/09/21/Week-33-38/" class="post-meta-item leancloud_visitors" data-flag-title="Week 33-38" title="阅读次数">
+    <span id="/2022/10/23/20-Valid-Parentheses/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 算法题【Easy】：20. Valid Parentheses" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -1298,8 +1195,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2020/09/21/Week-33-38/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/21/Week-33-38/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/10/23/20-Valid-Parentheses/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/23/20-Valid-Parentheses/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1313,11 +1210,147 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>以为只是漏掉了两三周的周记，今天看日期才知道，居然不知不觉就过了 5 周。</p>
-<p><img src="https://p.ipic.vip/uylebe.jpg" alt="4c210cb66f314c808cc2ae8166acdcd6"></p>
+          <p>链接：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/valid-parentheses/">https://leetcode.com/problems/valid-parentheses/</a></p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a string <code>s</code> containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;&#123;&#39;</code>, <code>&#39;&#125;&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p>
+<p>An input string is valid if:</p>
+<ol>
+<li>Open brackets must be closed by the same type of brackets.</li>
+<li>Open brackets must be closed in the correct order.</li>
+<li>Every close bracket has a corresponding open bracket of the same type.</li>
+</ol>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;()&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;()[]&#123;&#125;&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;(]&quot;</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/09/21/Week-33-38/#more" rel="contents">
+              <a class="btn" href="/2022/10/23/20-Valid-Parentheses/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2022/10/20/3-Longest-Substring-Without-Repeating-Characters/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/20/3-Longest-Substring-Without-Repeating-Characters/" class="post-title-link" itemprop="url">LeetCode 算法题【Medium】：3. Longest Substring Without Repeating Characters</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-10-20 21:55:26" itemprop="dateCreated datePublished" datetime="2022-10-20T21:55:26+08:00">2022-10-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-01 22:17:38" itemprop="dateModified" datetime="2023-11-01T22:17:38+08:00">2023-11-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%B9%A0%E9%A2%98%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">习题集</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2022/10/20/3-Longest-Substring-Without-Repeating-Characters/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 算法题【Medium】：3. Longest Substring Without Repeating Characters" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/10/20/3-Longest-Substring-Without-Repeating-Characters/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/20/3-Longest-Substring-Without-Repeating-Characters/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>链接：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">https://leetcode.com/problems/longest-substring-without-repeating-characters/</a></p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a string <code>s</code>, find the length of the <strong>longest substring</strong> without repeating characters.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;abcabcbb&quot;</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: The answer is &quot;abc&quot;, with the length of 3.</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;bbbbb&quot;</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: The answer is &quot;b&quot;, with the length of 1.</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;pwwkew&quot;</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: The answer is &quot;wke&quot;, with the length of 3.</span><br><span class="line">Notice that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring.</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/10/20/3-Longest-Substring-Without-Repeating-Characters/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1341,7 +1374,7 @@
 
 
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>

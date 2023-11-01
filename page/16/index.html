@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">214</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -135,7 +135,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">113</span>
+        <span class="site-state-item-count">114</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -172,7 +172,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/07/04/Debugging/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%89%A9%E5%B1%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -190,7 +190,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/07/04/Debugging/" class="post-title-link" itemprop="url">Debugging</a>
+          <a href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%89%A9%E5%B1%95/" class="post-title-link" itemprop="url">ES6学习笔记之正则表达式的扩展</a>
         </h2>
 
         <div class="post-meta-container">
@@ -201,14 +201,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-07-04 00:38:36" itemprop="dateCreated datePublished" datetime="2018-07-04T00:38:36+08:00">2018-07-04</time>
+      <time title="创建时间：2018-08-03 23:56:24" itemprop="dateCreated datePublished" datetime="2018-08-03T23:56:24+08:00">2018-08-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-08-07 14:52:42" itemprop="dateModified" datetime="2018-08-07T14:52:42+08:00">2018-08-07</time>
+      <time title="修改时间：2018-09-08 16:16:38" itemprop="dateModified" datetime="2018-09-08T16:16:38+08:00">2018-09-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -216,12 +216,12 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
         </span>
     </span>
 
   
-    <span id="/2018/07/04/Debugging/" class="post-meta-item leancloud_visitors" data-flag-title="Debugging" title="阅读次数">
+    <span id="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%89%A9%E5%B1%95/" class="post-meta-item leancloud_visitors" data-flag-title="ES6学习笔记之正则表达式的扩展" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -236,8 +236,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2018/07/04/Debugging/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/04/Debugging/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%89%A9%E5%B1%95/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/03/ES6学习笔记之正则表达式的扩展/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -251,608 +251,38 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>这部分主要列举了一些实际写代码过程中容易犯的错误和测试方法.</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/07/04/Debugging/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/07/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/07/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">数据结构基础</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-07-04 00:38:36" itemprop="dateCreated datePublished" datetime="2018-07-04T00:38:36+08:00">2018-07-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-08-07 14:53:29" itemprop="dateModified" datetime="2018-08-07T14:53:29+08:00">2018-08-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2018/07/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/" class="post-meta-item leancloud_visitors" data-flag-title="数据结构基础" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/07/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/04/数据结构基础/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>数据结构基础主要讲了数组和对象的特性和基本方法。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/07/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/07/04/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/07/04/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">正则表达式</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-07-04 00:38:36" itemprop="dateCreated datePublished" datetime="2018-07-04T00:38:36+08:00">2018-07-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-08-07 14:53:30" itemprop="dateModified" datetime="2018-08-07T14:53:30+08:00">2018-08-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2018/07/04/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-meta-item leancloud_visitors" data-flag-title="正则表达式" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/07/04/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/04/正则表达式/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>正则这部分习题不算多，但是我还是被卡住了挺久的，比预计要用的番茄时间多了好几个，主要是有几个之前没有弄懂的地方耽误了时间，加上习题pass需要完全满足检验指定的方法，否则在编辑器里测试没问题，但是test还是一直过不了。</p>
-<p>旧版的正则只讲了最基础的内容，如\s, \d, [a-z]等基本语法，总共只有4、5道习题，新版内容添加了很多难度更高的知识，覆盖的范围更大。另外我把之前在其他地方学过的正则的内容一并总结过来，当做一次复习。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/07/04/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/07/02/ES6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/07/02/ES6/" class="post-title-link" itemprop="url">ES6</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-07-02 00:38:36" itemprop="dateCreated datePublished" datetime="2018-07-02T00:38:36+08:00">2018-07-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-09-07 11:03:06" itemprop="dateModified" datetime="2018-09-07T11:03:06+08:00">2018-09-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2018/07/02/ES6/" class="post-meta-item leancloud_visitors" data-flag-title="ES6" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/07/02/ES6/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/02/ES6/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>新版的习题将ES6单独设置成一个模块，而且重点集中在新添加的基础语法上，如：</p>
+          <h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><p>  ES6中的正则表达式有这样一些改变：</p>
 <ul>
-<li>新增加的let和const两个命名关键字，以及它们和var的区别，重点说了变量提升，这一部分可以参照之前写的<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f8acdb55090d"><em>ES6学习笔记之变量声明</em></a></li>
-<li>参数的扩展，包括函数的扩展（默认参数）以及数组的扩展</li>
-<li>重点讲了解构赋值</li>
-<li>模板字符串的使用</li>
-<li>Class的基本语法</li>
-<li>模块化（import，export的使用）</li>
+<li>RegExp构造函数的写法有了更新<ul>
+<li>可以是<strong>正则表达式+修饰符</strong></li>
 </ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/07/02/ES6/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/06/29/JS%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%81%E4%B9%A6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/06/29/JS%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%81%E4%B9%A6/" class="post-title-link" itemprop="url">JS算法与数据结构证书</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-06-29 00:38:36" itemprop="dateCreated datePublished" datetime="2018-06-29T00:38:36+08:00">2018-06-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-08-07 01:35:49" itemprop="dateModified" datetime="2018-08-07T01:35:49+08:00">2018-08-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2018/06/29/JS%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%81%E4%B9%A6/" class="post-meta-item leancloud_visitors" data-flag-title="JS算法与数据结构证书" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/06/29/JS%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%81%E4%B9%A6/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/29/JS算法与数据结构证书/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>旧版FCC内容的划分是前端（包括HTML,CSS,JS,JQUERY,BOOTSTRAP)，数据可视化内容（包括D3,REACT,SASS)，后端（包括node.js, express，MongoDB),新版的习题对以上内容作了新的划分，目前划分为6大模块，包括</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/fc39991246bb">响应式页面设计</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b7743c548e1f">JavaScript算法与数据结构</a></li>
-<li>前端框架（包括bootstrap，jQuery, Sass, React, Redux,)</li>
-<li>数据可视化（包括d3, ajax)</li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/82e0a61bde24">Api与微服务</a>（即原来的后端，包括node.js和MongoDB)</li>
-<li>信息安全与质量保证（包括HelmetJS, Chai,高级node.js和express）</li>
+</li>
+<li>新的修饰符<ul>
+<li><strong><code>u</code>修饰符</strong> Unicode模式</li>
+<li><strong><code>y</code>修饰符</strong> “粘连”修饰符</li>
 </ul>
-<p>其中，JavaScript算法与数据结构的内容也更加丰富，包括：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/7c64e9fb35b5">JavaScript基础</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/05fd1ba5d39a">ES6</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0ffc2b6bac0a">正则表达式</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/12bb037557b8">Debugging</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/17af34de052a">数据结构基础</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/34de6427efc4">算法基础</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b2585632d99a">面向对象编程</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/331c76ae8092">函数式编程</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/dacc1152efcf">算法中级</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ae7fbd27c481">算法与数据结构项目测试</a><ul>
-<li>回文测试</li>
-<li>罗马数字转换器</li>
-<li>凯撒密码</li>
-<li>电话号码验证器</li>
-<li>现金收款机</li>
+</li>
+<li>新的属性<ul>
+<li><strong><code>unicode</code>属性</strong> 判断是否设置了<code>u</code>修饰符</li>
+<li><strong><code>sticky</code>属性</strong> 判断是否设置了<code>y</code>修饰符</li>
+<li><strong><code>flags</code>属性</strong> 返回正则表达式的修饰符</li>
+</ul>
+</li>
+<li>新规则<ul>
+<li><strong>后行断言</strong><ul>
+<li>先行断言写法 <code>/x(?=y)/</code></li>
+<li>先行否定断言写法 <code>/x(?!y)/</code></li>
+<li>后行断言写法 <code>/(?&lt;=y)x/</code></li>
+<li>后行否定断言写法 <code>/(?&lt;!y)x/</code></li>
+</ul>
+</li>
+<li><strong>具名组匹配</strong> 给分组添加名字</li>
 </ul>
 </li>
 </ul>
-<p>JS这一部分内容就完成了，这是FCC的证书。<br><img src="https://upload-images.jianshu.io/upload_images/9240001-946da6c25ab5aca3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="证书"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/06/29/JavaScript%E5%9F%BA%E7%A1%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/06/29/JavaScript%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">JavaScript基础</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-06-29 00:38:36" itemprop="dateCreated datePublished" datetime="2018-06-29T00:38:36+08:00">2018-06-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-08-07 14:52:50" itemprop="dateModified" datetime="2018-08-07T14:52:50+08:00">2018-08-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2018/06/29/JavaScript%E5%9F%BA%E7%A1%80/" class="post-meta-item leancloud_visitors" data-flag-title="JavaScript基础" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/06/29/JavaScript%E5%9F%BA%E7%A1%80/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/29/JavaScript基础/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>JavaScript基础这一部分算是非常入门级的内容，包括JS的基本变量类型以及相应的基本操作。这一部分就不做过多的总结了，习题解答如下：</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2018/06/29/JavaScript%E5%9F%BA%E7%A1%80/#more" rel="contents">
+              <a class="btn" href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%89%A9%E5%B1%95/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -883,7 +313,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/06/28/CSS%20Flex%E5%B8%83%E5%B1%80/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -901,7 +331,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/06/28/CSS%20Flex%E5%B8%83%E5%B1%80/" class="post-title-link" itemprop="url">CSS Flex布局</a>
+          <a href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95/" class="post-title-link" itemprop="url">ES6学习笔记之数组的扩展</a>
         </h2>
 
         <div class="post-meta-container">
@@ -912,14 +342,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-06-28 00:38:36" itemprop="dateCreated datePublished" datetime="2018-06-28T00:38:36+08:00">2018-06-28</time>
+      <time title="创建时间：2018-08-03 23:56:24" itemprop="dateCreated datePublished" datetime="2018-08-03T23:56:24+08:00">2018-08-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-08-07 14:52:32" itemprop="dateModified" datetime="2018-08-07T14:52:32+08:00">2018-08-07</time>
+      <time title="修改时间：2018-09-08 16:16:29" itemprop="dateModified" datetime="2018-09-08T16:16:29+08:00">2018-09-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -927,12 +357,12 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
         </span>
     </span>
 
   
-    <span id="/2018/06/28/CSS%20Flex%E5%B8%83%E5%B1%80/" class="post-meta-item leancloud_visitors" data-flag-title="CSS Flex布局" title="阅读次数">
+    <span id="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95/" class="post-meta-item leancloud_visitors" data-flag-title="ES6学习笔记之数组的扩展" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -947,8 +377,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2018/06/28/CSS%20Flex%E5%B8%83%E5%B1%80/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/28/CSS Flex布局/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/03/ES6学习笔记之数组的扩展/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -962,12 +392,57 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>flex布局只要掌握了容器和项目的属性，就能很轻松地完成页面的布局。</p>
-</blockquote>
+          <h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><ul>
+<li>扩展运算符<ul>
+<li>写法： <code>...</code></li>
+<li>用途：将数组转为参数序列</li>
+<li>应用<ul>
+<li>复制数组</li>
+<li>合并数组</li>
+<li>转换字符串</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数组的新方法<ul>
+<li><code>Array.from()</code><ul>
+<li>将类似数组的及有遍历接口的对象转换成数组</li>
+</ul>
+</li>
+<li><code>Array.of()</code></li>
+</ul>
+</li>
+<li>数组实例的新方法<ul>
+<li><code>copyWith(target, start, end)</code><ul>
+<li>复制数组内的元素到特定位置</li>
+</ul>
+</li>
+<li><code>find </code><ul>
+<li>找到第一个符合条件的元素</li>
+</ul>
+</li>
+<li><code>findIndex</code><ul>
+<li>找到第一个符合条件的元素的位置</li>
+</ul>
+</li>
+<li><code>fill()</code><ul>
+<li>填充数组</li>
+</ul>
+</li>
+<li><code>keys(), values(), entries()</code><ul>
+<li>遍历数组的键名、键值、键值对</li>
+</ul>
+</li>
+<li><code>includes</code><ul>
+<li>检查数组中是否包含某个元素</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2018/06/28/CSS%20Flex%E5%B8%83%E5%B1%80/#more" rel="contents">
+              <a class="btn" href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -998,7 +473,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/06/28/CSS%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/08/03/%E8%87%AA%E5%B7%B1%E6%89%8B%E5%8A%A8%E5%8D%87%E7%BA%A7%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E9%9F%B3%E6%95%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -1016,7 +491,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/06/28/CSS%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/" class="post-title-link" itemprop="url">CSS网格布局</a>
+          <a href="/2018/08/03/%E8%87%AA%E5%B7%B1%E6%89%8B%E5%8A%A8%E5%8D%87%E7%BA%A7%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E9%9F%B3%E6%95%88/" class="post-title-link" itemprop="url">自己手动升级网易云音乐音效</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1027,14 +502,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-06-28 00:38:36" itemprop="dateCreated datePublished" datetime="2018-06-28T00:38:36+08:00">2018-06-28</time>
+      <time title="创建时间：2018-08-03 00:38:36" itemprop="dateCreated datePublished" datetime="2018-08-03T00:38:36+08:00">2018-08-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-09-13 14:21:28" itemprop="dateModified" datetime="2018-09-13T14:21:28+08:00">2018-09-13</time>
+      <time title="修改时间：2018-08-07 14:53:36" itemprop="dateModified" datetime="2018-08-07T14:53:36+08:00">2018-08-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1042,12 +517,12 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
+          <a href="/categories/%E5%88%A9%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">利器</span></a>
         </span>
     </span>
 
   
-    <span id="/2018/06/28/CSS%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/" class="post-meta-item leancloud_visitors" data-flag-title="CSS网格布局" title="阅读次数">
+    <span id="/2018/08/03/%E8%87%AA%E5%B7%B1%E6%89%8B%E5%8A%A8%E5%8D%87%E7%BA%A7%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E9%9F%B3%E6%95%88/" class="post-meta-item leancloud_visitors" data-flag-title="自己手动升级网易云音乐音效" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -1062,8 +537,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2018/06/28/CSS%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/28/CSS网格布局/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2018/08/03/%E8%87%AA%E5%B7%B1%E6%89%8B%E5%8A%A8%E5%8D%87%E7%BA%A7%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E9%9F%B3%E6%95%88/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/03/自己手动升级网易云音乐音效/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1077,10 +552,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>这一部分详细介绍了网格布局的用法。</p>
+          <p>前几天在微信公众号上看到AppSo说网易云音乐有了新的特效功能可以升级听歌的效果，于是马上试了一下。。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2018/06/28/CSS%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/#more" rel="contents">
+              <a class="btn" href="/2018/08/03/%E8%87%AA%E5%B7%B1%E6%89%8B%E5%8A%A8%E5%8D%87%E7%BA%A7%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E9%9F%B3%E6%95%88/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1111,7 +586,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/06/28/%E5%93%8D%E5%BA%94%E5%BC%8F%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/07/15/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%A9%E5%B1%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -1129,7 +604,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/06/28/%E5%93%8D%E5%BA%94%E5%BC%8F%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99/" class="post-title-link" itemprop="url">响应式页面设计准则</a>
+          <a href="/2018/07/15/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%A9%E5%B1%95/" class="post-title-link" itemprop="url">ES6学习笔记之字符串扩展</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1140,14 +615,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-06-28 00:38:36" itemprop="dateCreated datePublished" datetime="2018-06-28T00:38:36+08:00">2018-06-28</time>
+      <time title="创建时间：2018-07-15 23:56:24" itemprop="dateCreated datePublished" datetime="2018-07-15T23:56:24+08:00">2018-07-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-08-07 01:32:39" itemprop="dateModified" datetime="2018-08-07T01:32:39+08:00">2018-08-07</time>
+      <time title="修改时间：2018-09-08 16:15:03" itemprop="dateModified" datetime="2018-09-08T16:15:03+08:00">2018-09-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1155,12 +630,12 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
         </span>
     </span>
 
   
-    <span id="/2018/06/28/%E5%93%8D%E5%BA%94%E5%BC%8F%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99/" class="post-meta-item leancloud_visitors" data-flag-title="响应式页面设计准则" title="阅读次数">
+    <span id="/2018/07/15/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%A9%E5%B1%95/" class="post-meta-item leancloud_visitors" data-flag-title="ES6学习笔记之字符串扩展" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -1175,8 +650,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2018/06/28/%E5%93%8D%E5%BA%94%E5%BC%8F%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/28/响应式页面设计准则/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2018/07/15/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%A9%E5%B1%95/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/15/ES6学习笔记之字符串扩展/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1190,26 +665,507 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>这一部分内容不多，算是对响应式页面设计提供的一些小tips。内容包括：</p>
+          <ul>
+<li><h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><p>ES6中，字符串有了以下变化：</p>
 <ul>
-<li>利用媒体查询设置文本的对应字体大小（可以延伸到任意元素的任意属性）</li>
-<li>图片的响应式呈现（利用百分比设置宽度）</li>
-<li>新添加了viewport（可视区域）的内容，利用vw, vh, vmin, vmax来设置宽高</li>
+<li><p><strong>新特性</strong></p>
+<ul>
+<li>增加了<strong>遍历器接口</strong>，可以被<code>for...of</code>来遍历</li>
 </ul>
-<p><em>以下是这一部分习题的解答：</em></p>
-<hr>
-<h4 id="Introduction-to-the-Responsive-Web-Design-Challenges"><a href="#Introduction-to-the-Responsive-Web-Design-Challenges" class="headerlink" title="Introduction to the Responsive Web Design Challenges"></a><a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles">Introduction to the Responsive Web Design Challenges</a></h4><ul>
-<li><p><a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/create-a-media-query">Create a Media Query</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="keyword">@media</span> (<span class="attribute">max-height</span>: <span class="number">800px</span>) &#123; </span></span><br><span class="line"><span class="language-css">	  <span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">10px</span>; &#125; </span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/make-an-image-responsive">Make an Image Responsive</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">img</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">max-width</span>: <span class="number">100%</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">display</span>: block;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: auto;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li><p><strong>模板字符串</strong></p>
+<ul>
+<li>用反引号标识字符串</li>
+<li>字符串可以转行</li>
+<li>字符串可以嵌入变量</li>
+</ul>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/use-a-retina-image-for-higher-resolution-displays">Use a Retina Image for Higher Resolution Displays</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">img</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>:<span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li><p><strong>新方法</strong></p>
+<ul>
+<li><p><strong>判断字符串 <code>includes(), startsWith(), endsWith()</code></strong></p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/make-typography-responsive">Make Typography Responsive</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">h2</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">80vw</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">p</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">75vmin</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>创建字符串 <code>repeat()</code></strong></p>
+</li>
+<li><p><strong>修改字符串 <code>padStart(), padEnd()</code></strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/07/15/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%A9%E5%B1%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/07/13/Sass/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/13/Sass/" class="post-title-link" itemprop="url">Sass</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-07-13 00:38:36" itemprop="dateCreated datePublished" datetime="2018-07-13T00:38:36+08:00">2018-07-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2018-08-07 14:53:06" itemprop="dateModified" datetime="2018-08-07T14:53:06+08:00">2018-08-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/07/13/Sass/" class="post-meta-item leancloud_visitors" data-flag-title="Sass" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/07/13/Sass/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/13/Sass/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Sass (Syntactically Awesome StyleSheets)是CSS语言的扩展。它拥有一些原生CSS不能实现的功能，让项目的样式代码变得更为简单，更容易维护。</p>
+<p>Sass本质上是一个编译器，它使用Sass语法写代码，然后转换成CSS语言，因此我们在使用的时候可以创建变量、嵌套CSS规则、引入其他的Sass文件，这使得代码更紧凑，也更容易阅读。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/07/13/Sass/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/07/13/%E4%BD%BF%E7%94%A8autojump%E5%8F%96%E4%BB%A3%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%87%8C%E7%9A%84cd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/13/%E4%BD%BF%E7%94%A8autojump%E5%8F%96%E4%BB%A3%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%87%8C%E7%9A%84cd/" class="post-title-link" itemprop="url">使用autojump取代命令行里的cd</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-07-13 00:38:36" itemprop="dateCreated datePublished" datetime="2018-07-13T00:38:36+08:00">2018-07-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2018-08-07 01:56:27" itemprop="dateModified" datetime="2018-08-07T01:56:27+08:00">2018-08-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%88%A9%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">利器</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/07/13/%E4%BD%BF%E7%94%A8autojump%E5%8F%96%E4%BB%A3%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%87%8C%E7%9A%84cd/" class="post-meta-item leancloud_visitors" data-flag-title="使用autojump取代命令行里的cd" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/07/13/%E4%BD%BF%E7%94%A8autojump%E5%8F%96%E4%BB%A3%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%87%8C%E7%9A%84cd/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/13/使用autojump取代命令行里的cd/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>当我们每次打开命令行工具，需要进入到新的文件夹的时候，我们都要不停地<code>cd</code>或者<code>ls</code>来判断我们是否进入了正确的文件夹，如果我们能记住文件夹的路径还好，如果记不住（比如我最近开始学MongoDB，总是记不住安装路径），那就不得不反复地<code>cd ls cd../</code>来查找文件了。</p>
+<p>不过最近意外地发现了一个很好用的插件，简直就是人间利器，就是这个叫做autojump的插件，附上<a target="_blank" rel="noopener" href="https://github.com/wting/autojump">github地址</a>.</p>
+<p>当我们安装autojump之后，只要我们进入一次某个文件夹，插件就会记住这个路径，之后我们只需要</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">j</span> project</span><br></pre></td></tr></table></figure>
+<p>就可以跳转到<code>project</code>文件夹，不仅如此，我们还可以使用简写来替代文件名，如</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">j</span> <span class="keyword">p</span></span><br></pre></td></tr></table></figure>
+<p>总之，在跳转文件路径这件事上，autojump真的是太方便了！</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/07/12/Bootstrap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/12/Bootstrap/" class="post-title-link" itemprop="url">Bootstrap</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-07-12 00:38:36" itemprop="dateCreated datePublished" datetime="2018-07-12T00:38:36+08:00">2018-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2018-08-07 14:52:22" itemprop="dateModified" datetime="2018-08-07T14:52:22+08:00">2018-08-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/07/12/Bootstrap/" class="post-meta-item leancloud_visitors" data-flag-title="Bootstrap" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/07/12/Bootstrap/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/12/Bootstrap/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Bootstrap严格来说不是一个前端框架，它是一个组件库，相当于在这个框架内它提前设定好了各个类该如何呈现，我们在做WEB开发的时候，引用bootstrap之后直接将这些类名套用到元素上，就能快速地对元素修改样式。</p>
+<p>Bootstrap的确非常方便，上手很快：</p>
+<ul>
+<li>它需要我们自己去定义的东西很少，我们只用搭积木似的把元素往页面上安装就可以了，一个类名就对应了一组样式</li>
+<li>它是用于响应式布局、移动设备优先的框架，能够帮我们快速搞定大屏幕和小屏幕的布局</li>
+<li>它的兼容性比较好</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/07/12/Bootstrap/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/07/12/FCC:%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6%E8%AF%81%E4%B9%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/12/FCC:%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6%E8%AF%81%E4%B9%A6/" class="post-title-link" itemprop="url">FCC: 前端框架证书</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-07-12 00:38:36" itemprop="dateCreated datePublished" datetime="2018-07-12T00:38:36+08:00">2018-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2018-08-07 12:45:43" itemprop="dateModified" datetime="2018-08-07T12:45:43+08:00">2018-08-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/07/12/FCC:%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6%E8%AF%81%E4%B9%A6/" class="post-meta-item leancloud_visitors" data-flag-title="FCC: 前端框架证书" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/07/12/FCC:%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6%E8%AF%81%E4%B9%A6/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/12/FCC: 前端框架证书/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>新改版的FreeCodeCamp把前端框架单独拆出来，除了旧版就有的Bootstrap和jQuery库的内容之外，补全了Sass内容，添加了React和Redux内容。</p>
+<h4 id="FCC前端框架"><a href="#FCC前端框架" class="headerlink" title="FCC前端框架"></a>FCC前端框架</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/18d612d277fe">Bootstrap</a></li>
+<li>jQuery</li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4d25069e5b36">Sass</a></li>
+<li>React</li>
+<li>Redux</li>
+<li>React and Redux</li>
+<li>Front End Libraries Projects<ul>
+<li>Build a Random Quote Machine</li>
+<li>Build a Markdown Previewer</li>
+<li>Build a Drum Machine</li>
+<li>Build a JavaScript Calculator</li>
+<li>Build a Pomodoro Clock</li>
+</ul>
+</li>
 </ul>
 
       
@@ -1237,7 +1193,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/06/27/node%E5%92%8Cexpress%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/07/11/JavaScript%E7%AE%97%E6%B3%95%E9%A1%B9%E7%9B%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -1255,7 +1211,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/06/27/node%E5%92%8Cexpress%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">node和express基础</a>
+          <a href="/2018/07/11/JavaScript%E7%AE%97%E6%B3%95%E9%A1%B9%E7%9B%AE/" class="post-title-link" itemprop="url">JavaScript算法项目</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1266,14 +1222,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-06-27 00:38:36" itemprop="dateCreated datePublished" datetime="2018-06-27T00:38:36+08:00">2018-06-27</time>
+      <time title="创建时间：2018-07-11 00:38:36" itemprop="dateCreated datePublished" datetime="2018-07-11T00:38:36+08:00">2018-07-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-08-07 14:53:04" itemprop="dateModified" datetime="2018-08-07T14:53:04+08:00">2018-08-07</time>
+      <time title="修改时间：2018-08-07 14:52:48" itemprop="dateModified" datetime="2018-08-07T14:52:48+08:00">2018-08-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1286,7 +1242,7 @@
     </span>
 
   
-    <span id="/2018/06/27/node%E5%92%8Cexpress%E5%9F%BA%E7%A1%80/" class="post-meta-item leancloud_visitors" data-flag-title="node和express基础" title="阅读次数">
+    <span id="/2018/07/11/JavaScript%E7%AE%97%E6%B3%95%E9%A1%B9%E7%9B%AE/" class="post-meta-item leancloud_visitors" data-flag-title="JavaScript算法项目" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -1301,8 +1257,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2018/06/27/node%E5%92%8Cexpress%E5%9F%BA%E7%A1%80/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/27/node和express基础/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2018/07/11/JavaScript%E7%AE%97%E6%B3%95%E9%A1%B9%E7%9B%AE/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/11/JavaScript算法项目/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1316,16 +1272,138 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>这一部分介绍了使用express框架操作服务器的一些基础知识，包括：</p>
-<ul>
-<li>response的扩展函数，如<code>res.send()</code>发送字符串、<code>res.sendFile()</code>发送文件、<code>res.json(&#123;&#125;)</code>响应json对象</li>
-<li>通过request获取请求数据，如<code>req.method</code>获取请求方式、<code>req.path</code>获取请求路径、<code>req.ip</code>获取请求方ip</li>
-<li>如何获得get和post方式请求的数据，详细可见<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5d52edc64243">《body-parser解析请求体》</a></li>
-<li>代码风格，利用next实现操作链，在前一次操作中获取变量供下一次操作使用等</li>
+          <p>JS算法项目是5道题目，没有具体的知识点讲解，我把题目的解答和思路放在下面：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/07/11/JavaScript%E7%AE%97%E6%B3%95%E9%A1%B9%E7%9B%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/07/11/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/11/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="post-title-link" itemprop="url">函数式编程</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-07-11 00:38:36" itemprop="dateCreated datePublished" datetime="2018-07-11T00:38:36+08:00">2018-07-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2018-08-07 14:53:23" itemprop="dateModified" datetime="2018-08-07T14:53:23+08:00">2018-08-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/07/11/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="post-meta-item leancloud_visitors" data-flag-title="函数式编程" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/07/11/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/11/函数式编程/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>函数式编程是新添加的一个模块，其中重点讲了函数式编程的特点以及一些能用于函数式编程的方法。</p>
+<h4 id="函数式编程的特色"><a href="#函数式编程的特色" class="headerlink" title="函数式编程的特色"></a>函数式编程的特色</h4><ul>
+<li><strong>方法独立</strong>：对于环境变量的依赖小</li>
+<li><strong>用法单纯</strong>：输入相同的参数总是产生相同的结果</li>
+<li><strong>对环境污染小</strong>：会谨慎控制对函数外部数据产生的影响</li>
+</ul>
+<h4 id="函数式编程的准则"><a href="#函数式编程的准则" class="headerlink" title="函数式编程的准则"></a>函数式编程的准则</h4><ul>
+<li><strong>不改变任何东西</strong>，无论是全局变量还是对象</li>
+<li><strong>明确依赖</strong>，把函数依赖的对象直接作为参数传递给函数</li>
+</ul>
+<h4 id="函数式编程相关的概念"><a href="#函数式编程相关的概念" class="headerlink" title="函数式编程相关的概念"></a>函数式编程相关的概念</h4><ul>
+<li><strong><code>callback</code>回调函数</strong></li>
+<li><strong><code>first class function</code>一级函数</strong></li>
+<li><strong><code>high-order function</code>高阶函数</strong></li>
+<li><strong><code>lambda</code>函数</strong></li>
 </ul>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2018/06/27/node%E5%92%8Cexpress%E5%9F%BA%E7%A1%80/#more" rel="contents">
+              <a class="btn" href="/2018/07/11/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1349,7 +1427,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/17/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/17/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
