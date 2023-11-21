@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">214</span>
+          <span class="site-state-item-count">217</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -135,7 +135,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">116</span>
+        <span class="site-state-item-count">118</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -163,6 +163,345 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012%EF%BC%9A%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012%EF%BC%9A%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/" class="post-title-link" itemprop="url">Node.js学习笔记12：作业——读取文件夹内所有文件列表</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-06-06 00:38:36" itemprop="dateCreated datePublished" datetime="2018-06-06T00:38:36+08:00">2018-06-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2018-08-12 11:42:55" itemprop="dateModified" datetime="2018-08-12T11:42:55+08:00">2018-08-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012%EF%BC%9A%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/" class="post-meta-item leancloud_visitors" data-flag-title="Node.js学习笔记12：作业——读取文件夹内所有文件列表" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012%EF%BC%9A%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/06/写给小白的Node.js学习笔记12：作业——读取文件夹内所有文件列表/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>结合前两节的内容：<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/86127593e93e">写给小白的Node.js学习笔记10：fs模块读取文件列表</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8cd6f60d00dc">写给小白的Node.js学习笔记11：fs.stat判断文件类型</a><br>我们可以结合两种方法，读取文件夹内的全部文件列表。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/06/06/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B012%EF%BC%9A%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/06/03/Chrome%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/06/03/Chrome%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">Chrome使用技巧</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-06-03 00:38:36" itemprop="dateCreated datePublished" datetime="2018-06-03T00:38:36+08:00">2018-06-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2018-09-13 10:07:09" itemprop="dateModified" datetime="2018-09-13T10:07:09+08:00">2018-09-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%88%A9%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">利器</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/06/03/Chrome%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="post-meta-item leancloud_visitors" data-flag-title="Chrome使用技巧" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/06/03/Chrome%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/03/Chrome使用技巧/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>记录一些chrome的快捷操作（来自Chrome重度依赖者的备忘）</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/06/03/Chrome%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/06/03/Chrome%E5%AE%9E%E7%8E%B0%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%B1%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/06/03/Chrome%E5%AE%9E%E7%8E%B0%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%B1%8F/" class="post-title-link" itemprop="url">Chrome实现滚动截屏</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-06-03 00:38:36" itemprop="dateCreated datePublished" datetime="2018-06-03T00:38:36+08:00">2018-06-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2018-08-07 01:02:37" itemprop="dateModified" datetime="2018-08-07T01:02:37+08:00">2018-08-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%88%A9%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">利器</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/06/03/Chrome%E5%AE%9E%E7%8E%B0%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%B1%8F/" class="post-meta-item leancloud_visitors" data-flag-title="Chrome实现滚动截屏" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/06/03/Chrome%E5%AE%9E%E7%8E%B0%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%B1%8F/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/03/Chrome实现滚动截屏/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在网页中截图经常会遇到需要滚动截屏的情况，之前一直想着找一个功能强大的app来实现滚动截屏，但尝试了好些，效果都不理想，后来意外发现Chrome本身就能实现滚动截图，还挺方便的。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/06/03/Chrome%E5%AE%9E%E7%8E%B0%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%B1%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -950,338 +1289,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/05/16/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05%EF%BC%9A%E4%BD%9C%E4%B8%9A%EF%BC%88%E7%BB%93%E5%90%88fs,get:post%E6%95%B0%E6%8D%AE)/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%EF%BC%9Aurl%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90get%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%EF%BC%9Aurl%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90get%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/" class="post-title-link" itemprop="url">Node.js学习笔记3：url模块解析get数据请求</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-05-14 00:38:36" itemprop="dateCreated datePublished" datetime="2018-05-14T00:38:36+08:00">2018-05-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-08-12 11:41:36" itemprop="dateModified" datetime="2018-08-12T11:41:36+08:00">2018-08-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%EF%BC%9Aurl%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90get%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/" class="post-meta-item leancloud_visitors" data-flag-title="Node.js学习笔记3：url模块解析get数据请求" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%EF%BC%9Aurl%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90get%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/14/写给小白的Node-js学习笔记3：url模块解析get数据请求/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>数据请求的方式不同，解析请求的方法也相应地有区别。<br>这里先分析原生node.js如何处理get数据请求，在express和koa框架中还会再提到这个内容。</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%EF%BC%9Aurl%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90get%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%9Aquerystring%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90post%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%9Aquerystring%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90post%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/" class="post-title-link" itemprop="url">Node.js学习笔记4：querystring模块解析post数据请求</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-05-14 00:38:36" itemprop="dateCreated datePublished" datetime="2018-05-14T00:38:36+08:00">2018-05-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-08-12 11:41:53" itemprop="dateModified" datetime="2018-08-12T11:41:53+08:00">2018-08-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%9Aquerystring%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90post%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/" class="post-meta-item leancloud_visitors" data-flag-title="Node.js学习笔记4：querystring模块解析post数据请求" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%9Aquerystring%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90post%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/14/写给小白的Node.js学习笔记4：querystring模块解析post数据请求/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>上一篇内容讲到原生node.js如何用<code>url</code>模块处理get数据请求，这篇记录如何用<code>querystring</code>模块处理post数据请求。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04%EF%BC%9Aquerystring%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90post%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02%EF%BC%9Afs%E6%A8%A1%E5%9D%97%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02%EF%BC%9Afs%E6%A8%A1%E5%9D%97%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/" class="post-title-link" itemprop="url">Node.js学习笔记：fs模块实现文件读写</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-05-14 00:30:08" itemprop="dateCreated datePublished" datetime="2018-05-14T00:30:08+08:00">2018-05-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-09-03 15:43:51" itemprop="dateModified" datetime="2018-09-03T15:43:51+08:00">2018-09-03</time>
-    </span>
-
-  
-    <span id="/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02%EF%BC%9Afs%E6%A8%A1%E5%9D%97%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/" class="post-meta-item leancloud_visitors" data-flag-title="Node.js学习笔记：fs模块实现文件读写" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02%EF%BC%9Afs%E6%A8%A1%E5%9D%97%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/14/写给小白的Node-js学习笔记2：fs模块实现文件读写/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>用node.js读写文件时，需要引入一个新的模块fs(file system文件系统）。文件系统的操作都有异步和同步的形式，案例使用异步方法，防止阻塞。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/05/14/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02%EF%BC%9Afs%E6%A8%A1%E5%9D%97%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
