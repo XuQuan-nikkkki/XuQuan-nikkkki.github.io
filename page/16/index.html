@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -163,6 +163,134 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/08/04/%E3%80%8CLearning%E3%80%8D%E5%8C%BA%E5%88%AB%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/04/%E3%80%8CLearning%E3%80%8D%E5%8C%BA%E5%88%AB%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B/" class="post-title-link" itemprop="url">「Learning」区别线程和进程</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-08-04 00:38:36" itemprop="dateCreated datePublished" datetime="2018-08-04T00:38:36+08:00">2018-08-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2018-08-08 16:42:14" itemprop="dateModified" datetime="2018-08-08T16:42:14+08:00">2018-08-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">跟着大佬学编程</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/08/04/%E3%80%8CLearning%E3%80%8D%E5%8C%BA%E5%88%AB%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B/" class="post-meta-item leancloud_visitors" data-flag-title="「Learning」区别线程和进程" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/08/04/%E3%80%8CLearning%E3%80%8D%E5%8C%BA%E5%88%AB%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/04/「Learning」区别线程和进程/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>之前在<strong>码农翻身</strong>上看到一篇讲解线程、进程和协程的文章，觉得写得很好，所以搬过来学习一下。</p>
+<p>学习内容：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514652&idx=1&sn=e10a979f89d594f2f51255b5834b80f7&chksm=80d67edfb7a1f7c987c7f2da9d1de24be5047ba2c8f20dd1735b0208d9b31a210c6f65ea545d&mpshare=1&scene=1&srcid=0528dAYruziqeJ2IkdK9wJVT%23rd">《一个故事讲完进程、线程和协程》</a></p>
+<h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><h4 id="阶段一："><a href="#阶段一：" class="headerlink" title="阶段一："></a>阶段一：</h4><p>背景：CPU是稀缺资源，程序必须排队轮流使用</p>
+<blockquote>
+<p><strong>批处理</strong>： 程序A执行完成后，程序B再执行</p>
+</blockquote>
+<h4 id="阶段二："><a href="#阶段二：" class="headerlink" title="阶段二："></a>阶段二：</h4><p>背景：CPU速度越来越快，批处理效率太低，资源浪费太大</p>
+<blockquote>
+<p><strong>进程</strong>：一个执行中的程序，它可以暂停下来，暂停的地方即执行到哪一行程序指令了，是这个进程的执行现场，暂停之后再次执行时，从执行现场开始继续。程序之间是相互交替执行的。<br><strong>并发</strong>：由于CPU的运行速度特别快，虽然程序再不断切换运行，但看起来像是在同时执行<br><strong>并行</strong>：每个程序能够占用一个CPU，真正地同时执行<br><strong>线程</strong>：程序中的单一的顺序控制流程，是最小的调度单位。每个程序都至少有一个线程，如果只有一个线程，就是程序本身；也可以同时运行多个线程完成不同的工作，成为<strong>多线程</strong>。</p>
+</blockquote>
+<h4 id="阶段三："><a href="#阶段三：" class="headerlink" title="阶段三："></a>阶段三：</h4><p>背景：多线程的协作有时会比较麻烦，需要加锁和线程的通知、等待等。</p>
+<blockquote>
+<p><strong>协程</strong>：比线程更加轻量级，它就像是有多个轻量级的线程，它们之间会切换控制权，控制权在谁手里，谁就执行</p>
+</blockquote>
+<p>协程近几年在Lua和Python中应用比较多。</p>
+<hr>
+<p>为了方便记忆，我整理了一下以上知识点。</p>
+<blockquote>
+<p>一个程序一个进程<br>程序里面还有线程<br>一个线程叫单线程<br>多个线程叫多线程<br>线程里还能有协程</p>
+</blockquote>
+<blockquote>
+<p>一个CPU配多个进程叫并发<br>每个进程配一个CPU叫并行</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -301,150 +429,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8BSet%E5%92%8CMap/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95/" class="post-title-link" itemprop="url">ES6学习笔记之函数的扩展</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-08-03 23:56:24" itemprop="dateCreated datePublished" datetime="2018-08-03T23:56:24+08:00">2018-08-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-09-08 16:16:14" itemprop="dateModified" datetime="2018-09-08T16:16:14+08:00">2018-09-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95/" class="post-meta-item leancloud_visitors" data-flag-title="ES6学习笔记之函数的扩展" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/03/ES6学习笔记之函数的扩展/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><ul>
-<li><p>函数参数的<strong>默认值</strong></p>
-<ul>
-<li>可以直接为函数指定参数的默认值</li>
-<li>参数严格等于<code>undefined</code>时默认值生效</li>
-<li>指定默认值的参数应作为尾参数</li>
-<li>函数参数的<code>length</code>属性不包括默认值参数</li>
-</ul>
-</li>
-<li><p>rest参数</p>
-<ul>
-<li>写法： <code>…变量名</code></li>
-<li>用来获取多余的参数</li>
-<li>是一个真实的数组</li>
-<li>rest参数之后不能有其他参数</li>
-<li><code>length</code>属性不包括rest参数</li>
-</ul>
-</li>
-<li><p><code>name</code>属性</p>
-<ul>
-<li>返回函数的函数名</li>
-</ul>
-</li>
-<li><p>箭头函数</p>
-<ul>
-<li><code>function</code>改为<code>=&gt;</code></li>
-<li>当函数不需要参数或者需要多个参数时，使用<code>()</code>来包含参数，只有一个参数时可以省略圆括号</li>
-<li>如果箭头函数的代码块部分多余一条语句，用<code>&#123;&#125;</code>括起来，使用<code>return</code>返回；如果只有一条语句，可以省略<code>&#123;&#125;</code>和&#96;return</li>
-<li><code>this</code>总是指向定义时的对象</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -887,6 +871,150 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%89%A9%E5%B1%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95/" class="post-title-link" itemprop="url">ES6学习笔记之函数的扩展</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-08-03 23:56:24" itemprop="dateCreated datePublished" datetime="2018-08-03T23:56:24+08:00">2018-08-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2018-09-08 16:16:14" itemprop="dateModified" datetime="2018-09-08T16:16:14+08:00">2018-09-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95/" class="post-meta-item leancloud_visitors" data-flag-title="ES6学习笔记之函数的扩展" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/03/ES6学习笔记之函数的扩展/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="Learning-Card"><a href="#Learning-Card" class="headerlink" title="Learning Card"></a>Learning Card</h3><ul>
+<li><p>函数参数的<strong>默认值</strong></p>
+<ul>
+<li>可以直接为函数指定参数的默认值</li>
+<li>参数严格等于<code>undefined</code>时默认值生效</li>
+<li>指定默认值的参数应作为尾参数</li>
+<li>函数参数的<code>length</code>属性不包括默认值参数</li>
+</ul>
+</li>
+<li><p>rest参数</p>
+<ul>
+<li>写法： <code>…变量名</code></li>
+<li>用来获取多余的参数</li>
+<li>是一个真实的数组</li>
+<li>rest参数之后不能有其他参数</li>
+<li><code>length</code>属性不包括rest参数</li>
+</ul>
+</li>
+<li><p><code>name</code>属性</p>
+<ul>
+<li>返回函数的函数名</li>
+</ul>
+</li>
+<li><p>箭头函数</p>
+<ul>
+<li><code>function</code>改为<code>=&gt;</code></li>
+<li>当函数不需要参数或者需要多个参数时，使用<code>()</code>来包含参数，只有一个参数时可以省略圆括号</li>
+<li>如果箭头函数的代码块部分多余一条语句，用<code>&#123;&#125;</code>括起来，使用<code>return</code>返回；如果只有一条语句，可以省略<code>&#123;&#125;</code>和&#96;return</li>
+<li><code>this</code>总是指向定义时的对象</li>
+</ul>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/03/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1388,125 +1516,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/07/12/Bootstrap/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/07/12/Bootstrap/" class="post-title-link" itemprop="url">Bootstrap</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-07-12 00:38:36" itemprop="dateCreated datePublished" datetime="2018-07-12T00:38:36+08:00">2018-07-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-08-07 14:52:22" itemprop="dateModified" datetime="2018-08-07T14:52:22+08:00">2018-08-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FreeCodeCamp/" itemprop="url" rel="index"><span itemprop="name">FreeCodeCamp</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2018/07/12/Bootstrap/" class="post-meta-item leancloud_visitors" data-flag-title="Bootstrap" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/07/12/Bootstrap/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/12/Bootstrap/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Bootstrap严格来说不是一个前端框架，它是一个组件库，相当于在这个框架内它提前设定好了各个类该如何呈现，我们在做WEB开发的时候，引用bootstrap之后直接将这些类名套用到元素上，就能快速地对元素修改样式。</p>
-<p>Bootstrap的确非常方便，上手很快：</p>
-<ul>
-<li>它需要我们自己去定义的东西很少，我们只用搭积木似的把元素往页面上安装就可以了，一个类名就对应了一组样式</li>
-<li>它是用于响应式布局、移动设备优先的框架，能够帮我们快速搞定大屏幕和小屏幕的布局</li>
-<li>它的兼容性比较好</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/07/12/Bootstrap/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/17/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1519,7 +1528,7 @@
 
   <div class="copyright">
     &copy; 2018 – 
-    <span itemprop="copyrightYear">2023</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="fa fa-user"></i>
     </span>
