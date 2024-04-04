@@ -202,7 +202,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-04-04 22:07:07 / 修改时间：22:22:35" itemprop="dateCreated datePublished" datetime="2024-04-04T22:07:07+08:00">2024-04-04</time>
+      <time title="创建时间：2024-04-04 22:07:07 / 修改时间：22:25:14" itemprop="dateCreated datePublished" datetime="2024-04-04T22:07:07+08:00">2024-04-04</time>
     </span>
 
   
@@ -253,54 +253,14 @@
 <li>日语最好能有音调标注</li>
 <li>能够发音</li>
 </ol>
-<h2 id="技术调研"><a href="#技术调研" class="headerlink" title="技术调研"></a>技术调研</h2><h3 id="1-确定-API"><a href="#1-确定-API" class="headerlink" title="1. 确定 API"></a>1. 确定 API</h3><p>第一反应找了 google translate，原因包括</p>
-<ol>
-<li>大厂的 API，可信度较高</li>
-<li>平时我在网上会直接打开网页使用，有熟悉度和亲切度</li>
-<li>支持多种语言互译</li>
-<li>可以自动检测源语言</li>
-<li>网页版免费</li>
-</ol>
-<h4 id="问题-1：如何开发-Alfred-Workflow"><a href="#问题-1：如何开发-Alfred-Workflow" class="headerlink" title="问题 1：如何开发 Alfred Workflow"></a>问题 1：如何开发 Alfred Workflow</h4><ul>
-<li>尝试阅读了 Alfred 的官方文档，内容较多，看完再开发反而找不着重点</li>
-<li>决定直接开发，在终端验证流程，最后移植到 Alfred 里用，针对它的设置方式调试</li>
-</ul>
-<h4 id="问题-2：结算方式配置困难"><a href="#问题-2：结算方式配置困难" class="headerlink" title="问题 2：结算方式配置困难"></a>问题 2：结算方式配置困难</h4><ul>
-<li>google translate api 是免费额度 + 增量收费的模式，免费额度是 50 万个字符（50 万字符对于我这种翻译需求量不算太高的人来说应该够用）</li>
-<li>安装好 gcloud，创建好项目，准备启用 API 了。此时需要在 google cloud 上配置结算方式，意外发现目前不支持银联的 visa 卡（卡号输入后报错无效，目前手上只有一张 visa 卡，PayPal 不支持），只能放弃</li>
-</ul>
-<h3 id="2-切换-API"><a href="#2-切换-API" class="headerlink" title="2. 切换 API"></a>2. 切换 API</h3><p>搜到一个生成免费且开源的字典 API：<a target="_blank" rel="noopener" href="https://github.com/LibreTranslate/LibreTranslate">LibreTranslate</a></p>
-<h4 id="问题-1：准确性问题"><a href="#问题-1：准确性问题" class="headerlink" title="问题 1：准确性问题"></a>问题 1：准确性问题</h4><ul>
-<li>新的 API 没有额度限制，但提到其准确性可能会有问题（鼓励遇到问题时向社区）</li>
-<li>无法确定准确性在多大程度上有问题，但准备先用着</li>
-</ul>
-<h4 id="问题-2：申请-API-Key-要付费"><a href="#问题-2：申请-API-Key-要付费" class="headerlink" title="问题 2：申请 API Key 要付费"></a>问题 2：申请 API Key 要付费</h4><ul>
-<li>尽管这个 API 生成免费且开源，但是申请 API Key 需要付费，每月$29，一点也不便宜</li>
-</ul>
-<h3 id="3-再次切换-API"><a href="#3-再次切换-API" class="headerlink" title="3. 再次切换 API"></a>3. 再次切换 API</h3><ul>
-<li>准备换到 DeepL，和 Google 一样有免费额度</li>
-<li>申请会员时发现信用卡可选国家里没有中国，于是再次无法通过（技术无国界都是骗人的！）</li>
-</ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>最终写了一个超级简单的 workflow：</p>
-<ol>
-<li>不调用 API，直接打开 google translate 网页</li>
-<li>支持通过关键词区分目标语言，源语言则默认 <code>auto</code></li>
-</ol>
-<p>目前存在的问题包括：</p>
-<ol>
-<li>打开页面需要在 app 之间切换，没有那么方便</li>
-<li>打开页面略慢</li>
-</ol>
-<p>但好处是：</p>
-<ol>
-<li>信源可靠且稳定</li>
-<li>免费</li>
-</ol>
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://cloud.google.com/translate/docs">Google Translate Documentation</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/LibreTranslate/LibreTranslate">LibreTranslate Github</a></li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/04/04/%E5%BC%80%E5%8F%91Project-1-Alfred-Workflow-%E5%85%8D%E8%B4%B9%E7%BF%BB%E8%AF%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
