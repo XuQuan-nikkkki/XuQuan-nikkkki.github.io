@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">218</span>
+          <span class="site-state-item-count">221</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -135,7 +135,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">118</span>
+        <span class="site-state-item-count">119</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -163,6 +163,363 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/08/14/%E3%80%8CLearning%E3%80%8D%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/14/%E3%80%8CLearning%E3%80%8D%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="post-title-link" itemprop="url">「Learning」深拷贝与浅拷贝</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2018-08-14 14:55:51 / 修改时间：15:53:44" itemprop="dateCreated datePublished" datetime="2018-08-14T14:55:51+08:00">2018-08-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">跟着大佬学编程</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/08/14/%E3%80%8CLearning%E3%80%8D%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="post-meta-item leancloud_visitors" data-flag-title="「Learning」深拷贝与浅拷贝" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/08/14/%E3%80%8CLearning%E3%80%8D%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/14/「Learning」深拷贝与浅拷贝/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>原文地址：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651554109&idx=2&sn=f37454a036264b0531b866a22b216eab&chksm=802556fcb752dfea2ed9ae3fb4654a5670061217ac5476455e1553087333a60dfb4770f9711b&mpshare=1&scene=1&srcid=05073YaTH0eNYiq9CbHqZAUh%23rd">低门槛彻底理解JavaScript中的深拷贝和浅拷贝</a></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">基本类型</th>
+<th align="center">引用类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">保存位置</td>
+<td align="center">保存在栈内存中</td>
+<td align="center">保存在堆内存中</td>
+</tr>
+<tr>
+<td align="center">保存方式</td>
+<td align="center">完全保存在内存中的一个位置</td>
+<td align="center">变量保存的是一个指针，<br />指针指向内存中的一个位置</td>
+</tr>
+<tr>
+<td align="center">数据</td>
+<td align="center">简单数据段</td>
+<td align="center">对象</td>
+</tr>
+<tr>
+<td align="center">具体类型</td>
+<td align="center"><code>Boolean, Null, Undefined, Number, String, Symbol</code></td>
+<td align="center"><code>Object, Array, Function</code></td>
+</tr>
+</tbody></table>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/14/%E3%80%8CLearning%E3%80%8D%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/08/13/node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%AD%E9%97%B4%E4%BB%B6consolidate%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/13/node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%AD%E9%97%B4%E4%BB%B6consolidate%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" class="post-title-link" itemprop="url">node.js学习笔记:中间件consolidate配置模板引擎</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-08-13 21:30:20" itemprop="dateCreated datePublished" datetime="2018-08-13T21:30:20+08:00">2018-08-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2018-08-14 12:00:05" itemprop="dateModified" datetime="2018-08-14T12:00:05+08:00">2018-08-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/08/13/node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%AD%E9%97%B4%E4%BB%B6consolidate%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/" class="post-meta-item leancloud_visitors" data-flag-title="node.js学习笔记:中间件consolidate配置模板引擎" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/08/13/node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%AD%E9%97%B4%E4%BB%B6consolidate%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/13/node-js学习笔记-中间件consolidate配置模板引擎/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在node.js的实际使用中，我们并不会把传送给浏览器的页面都挨个去写，尤其是在一个网站中，会有很多范式相同的页面，我们通常会使用模板去减少重复的工作量。</p>
+<p>模板引擎有很多种，包括我们后面会提到的ejs和art-template，它们除了本身，还需要有一个工具来把它们转换成供浏览器辨识的格式。consolidate就是起到这个作用的。它支持绝大多数主流的模板引擎。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/13/node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%AD%E9%97%B4%E4%BB%B6consolidate%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/08/13/express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-multer%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xu Quan（Nikkkki）">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nikkkki's Notes">
+      <meta itemprop="description" content="一个程序员的自我进修之路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Nikkkki's Notes">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/13/express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-multer%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="post-title-link" itemprop="url">express学习笔记:multer中间件处理文件上传</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2018-08-13 17:19:41 / 修改时间：22:14:57" itemprop="dateCreated datePublished" datetime="2018-08-13T17:19:41+08:00">2018-08-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2018/08/13/express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-multer%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="post-meta-item leancloud_visitors" data-flag-title="express学习笔记:multer中间件处理文件上传" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/08/13/express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-multer%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/13/express学习笔记-multer中间件处理文件上传/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fu8flnjeisj30go06jgli.jpg" alt="Image result for upload"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/13/express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-multer%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -993,352 +1350,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/08/10/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B014:%20req-header%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%BF%A1%E6%81%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/08/10/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B014:%20req-header%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%BF%A1%E6%81%AF/" class="post-title-link" itemprop="url">node.js学习笔记14:读写请求/响应头体</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2018-08-10 21:08:05 / 修改时间：22:43:49" itemprop="dateCreated datePublished" datetime="2018-08-10T21:08:05+08:00">2018-08-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2018/08/10/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B014:%20req-header%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%BF%A1%E6%81%AF/" class="post-meta-item leancloud_visitors" data-flag-title="node.js学习笔记14:读写请求/响应头体" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/08/10/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B014:%20req-header%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%BF%A1%E6%81%AF/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/10/写给小白的node-js学习笔记14: req-header获取请求头信息/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="主体对象"><a href="#主体对象" class="headerlink" title="主体对象"></a>主体对象</h3><p>服务器对象与客户端对象通过报文来传输数据，根据两方可以分为请求报文和响应报文，对于服务器来说，请求报文是可读的，响应报文是可写的。</p>
-<blockquote>
-<h6 id="主体对象-1"><a href="#主体对象-1" class="headerlink" title="主体对象"></a>主体对象</h6><ul>
-<li>服务器对象</li>
-<li>客户端对象</li>
-<li>请求报文对象（对于服务器来说，是可读）</li>
-<li>响应报文对象（对于服务器来说，是可写）</li>
-</ul>
-</blockquote>
-<p>我们在前面提到的通过<code>http</code>模块来创建的服务器中有两个参数，一个<code>request</code>即请求对象，一个<code>response</code>即响应对象。</p>
-<p>我们可以通过<code>request</code>请求对象来获得一些请求的信息。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/08/10/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84node-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B014:%20req-header%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%BF%A1%E6%81%AF/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/08/10/nrm-npm%E9%95%9C%E5%83%8F%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/08/10/nrm-npm%E9%95%9C%E5%83%8F%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" class="post-title-link" itemprop="url">nrm: npm镜像管理工具</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2018-08-10 20:38:39 / 修改时间：23:23:29" itemprop="dateCreated datePublished" datetime="2018-08-10T20:38:39+08:00">2018-08-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%88%A9%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">利器</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2018/08/10/nrm-npm%E9%95%9C%E5%83%8F%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" class="post-meta-item leancloud_visitors" data-flag-title="nrm: npm镜像管理工具" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/08/10/nrm-npm%E9%95%9C%E5%83%8F%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/10/nrm-npm镜像管理工具/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>推荐一个速度很不错的npm镜像管理工具：nrm。</p>
-<p>因为一些众所周知的原因，npm在国内的速度比较慢，大家一般都会用一些镜像工具来替代。</p>
-<p>我之前用的是cnpm。cnpm是淘宝的npm镜像，而且10分钟更新一次，同步频率很高。后来一次课上，老师推荐了nrm，就尝试了一下，还挺好用的，最大的特点在于可以切换镜像源，在cnpm速度也不快的时候有个备选。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g nrm</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h4 id="可以查看镜像的列表"><a href="#可以查看镜像的列表" class="headerlink" title="可以查看镜像的列表"></a>可以查看镜像的列表</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fu4w50yt7oj30hv04y0tm.jpg" alt="image-20180810204450608"></p>
-<h4 id="选择镜像"><a href="#选择镜像" class="headerlink" title="选择镜像"></a>选择镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm use &lt;<span class="built_in">source</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<p>可以选择列表中的任意源来使用。</p>
-<h4 id="查看自己正在使用的镜像"><a href="#查看自己正在使用的镜像" class="headerlink" title="查看自己正在使用的镜像"></a>查看自己正在使用的镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm current</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fu4w7oqxy3j30hr015jrb.jpg" alt="image-20180810204724006"></p>
-<p>以上，就完成了设置，在下载的时候还是正常使用npm就行了。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/08/09/%E7%BB%9D%E9%85%8D%EF%BC%9Ahexo+next%E4%B8%BB%E9%A2%98%E5%8F%8A%E6%88%91%E8%B5%B0%E8%BF%87%E7%9A%84%E5%9D%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xu Quan（Nikkkki）">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nikkkki's Notes">
-      <meta itemprop="description" content="一个程序员的自我进修之路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Nikkkki's Notes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/08/09/%E7%BB%9D%E9%85%8D%EF%BC%9Ahexo+next%E4%B8%BB%E9%A2%98%E5%8F%8A%E6%88%91%E8%B5%B0%E8%BF%87%E7%9A%84%E5%9D%91/" class="post-title-link" itemprop="url">绝配：hexo+next主题及我走过的坑</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-08-09 11:20:42" itemprop="dateCreated datePublished" datetime="2018-08-09T11:20:42+08:00">2018-08-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2019-08-03 17:50:26" itemprop="dateModified" datetime="2019-08-03T17:50:26+08:00">2019-08-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%88%A9%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">利器</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2018/08/09/%E7%BB%9D%E9%85%8D%EF%BC%9Ahexo+next%E4%B8%BB%E9%A2%98%E5%8F%8A%E6%88%91%E8%B5%B0%E8%BF%87%E7%9A%84%E5%9D%91/" class="post-meta-item leancloud_visitors" data-flag-title="绝配：hexo+next主题及我走过的坑" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2018/08/09/%E7%BB%9D%E9%85%8D%EF%BC%9Ahexo+next%E4%B8%BB%E9%A2%98%E5%8F%8A%E6%88%91%E8%B5%B0%E8%BF%87%E7%9A%84%E5%9D%91/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/09/绝配：hexo+next主题及我走过的坑/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>这篇内容详细记述了我在使用hexo搭载博客的过程中走过的路和跌过的坑。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/08/09/%E7%BB%9D%E9%85%8D%EF%BC%9Ahexo+next%E4%B8%BB%E9%A2%98%E5%8F%8A%E6%88%91%E8%B5%B0%E8%BF%87%E7%9A%84%E5%9D%91/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/15/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/15/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
