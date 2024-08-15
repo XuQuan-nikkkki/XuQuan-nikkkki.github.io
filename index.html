@@ -202,7 +202,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-08-15 16:24:24 / 修改时间：16:25:33" itemprop="dateCreated datePublished" datetime="2024-08-15T16:24:24+08:00">2024-08-15</time>
+      <time title="创建时间：2024-08-15 16:24:24 / 修改时间：16:29:14" itemprop="dateCreated datePublished" datetime="2024-08-15T16:24:24+08:00">2024-08-15</time>
     </span>
 
   
@@ -236,212 +236,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
-<li>可以要求侧重不同方面，同时可以要求字数限制</li>
-<li>可以遍历多条数据</li>
-</ol>
-<blockquote>
-<p>上传pdf文件《The_ideal_PR_is_50_lines_long》 “帮我总结这篇文章的内容，写出概要以及要点”概要：</p>
-<p>概要： 文章探讨了理想的代码提交（Pull Request, PR）大小，提出理想的PR应该为50行代码。通过分析数据，作者得出小型PR在速度、评论数、回滚率等方面的表现都优于大型PR。尽管小PR有许多优点，但过小的PR（少于25行）可能会导致更高的回滚率，而过大的PR（超过100行）则可能降低总代码量的输出效率。</p>
-<p>要点：</p>
-<ol>
-<li><strong>理想PR大小</strong>：作者主张50行代码是理想的PR大小，因为它在审查速度、回滚率和代码评论数量方面表现最佳。</li>
-<li><strong>审查和合并时间</strong>：较小的PR（25-100行）比大型PR更快审查和合并，而大于5000行的PR往往由于其复杂性反而可能变得较快，可能是因为审查者的疲劳或放弃仔细审查。</li>
-<li><strong>回滚率</strong>：25-50行的PR回滚率最低，但小于10行的PR可能因危险的配置更易回滚，而超过10000行的PR由于工程师的情感依附等因素，回滚率也较低。</li>
-<li><strong>评论数量</strong>：1-2000行代码的PR评论最多，而大于2000行的PR评论显著减少，表明审查者不愿意阅读过长的代码提交。</li>
-<li><strong>代码输出效率</strong>：过小（小于20行）或过大（大于100行）的PR会影响总体代码输出效率。40-80行的PR可能是最高效的。</li>
-<li><strong>结论</strong>：大多数开发者在团队协作中应将PR大小控制在50行左右，以平衡审查质量、速度和代码回滚的风险。</li>
-</ol>
-</blockquote>
-<p>调整侧重点：</p>
-<blockquote>
-<p>“按照思维导图内容的格式产出以上内容”</p>
-<p>以下是将概要和要点以思维导图格式展示的内容：</p>
-<p>中心节点：理想的PR是50行</p>
-<ul>
-<li>子节点 1：理想PR大小<ul>
-<li>50行代码是理想的PR大小</li>
-<li>25-100行代码也是有效范围</li>
-<li>过小（小于25行）和过大（大于100行）的PR效果较差</li>
-</ul>
-</li>
-<li>子节点 2：审查和合并时间<ul>
-<li>小PR更快审查和合并</li>
-<li>小于5k行的PR审查速度最快</li>
-<li>大于5k行的PR因审查者疲劳可能导致速度较快</li>
-</ul>
-</li>
-<li>子节点 3：回滚率<ul>
-<li>25-50行的PR回滚率最低</li>
-<li>小于10行的PR回滚率较高</li>
-<li>超过10k行的PR回滚率因情感依附等因素较低</li>
-</ul>
-</li>
-<li>子节点 4：评论数量<ul>
-<li>1-2000行的PR评论最多</li>
-<li>大于2000行的PR评论显著减少</li>
-<li>审查者不愿意阅读过长的代码提交</li>
-</ul>
-</li>
-<li>子节点 5：代码输出效率<ul>
-<li>小于20行或大于100行的PR影响代码输出效率</li>
-<li>40-80行的PR可能是最高效的</li>
-</ul>
-</li>
-<li>子节点 6：结论<ul>
-<li>PR大小应控制在50行左右</li>
-<li>平衡审查质量、速度和代码回滚风险</li>
-</ul>
-</li>
-</ul>
-<p>这样呈现的思维导图可以帮助你更清晰地理解和组织文章内容。</p>
-</blockquote>
-<p>增加场景需求：</p>
-<blockquote>
-<p>”我想从指导团队提交 PR 的角度总结这篇文章“</p>
-<p>从指导团队提交 PR 的角度，总结这篇文章可以围绕以下几个关键点展开，以帮助团队优化代码提交流程：</p>
-<ol>
-<li>建议 PR 大小：50 行<ul>
-<li><strong>最佳实践</strong>：建议团队将 PR 控制在 50 行左右。这一大小在审查速度、代码质量反馈和降低回滚率方面表现最优。</li>
-<li><strong>灵活范围</strong>：允许 25-100 行的 PR，因为这一区间在效率和质量之间实现了平衡。</li>
-</ul>
-</li>
-<li>审查效率<ul>
-<li><strong>加快审查和合并</strong>：较小的 PR 更容易审查，通常可以更快地合并。鼓励团队将较大的功能拆分为多个小的、独立的 PR，以加快审查过程。</li>
-<li><strong>避免超大 PR</strong>：避免提交超过 5000 行的 PR，因为审查者可能由于过度复杂性而草草通过审查，降低代码质量。</li>
-</ul>
-</li>
-<li>回滚风险控制<ul>
-<li><strong>降低回滚率</strong>：鼓励团队保持 PR 在 25-50 行之间，以尽量减少回滚的可能性。太小（小于 10 行）的 PR 可能因不完整的更改而增加回滚风险。</li>
-<li><strong>警惕超大 PR</strong>：尽量避免提交超过 10000 行的 PR，因为这些超大 PR 虽然可能在回滚率上较低，但存在工程师依赖和情感因素影响决策的风险。</li>
-</ul>
-</li>
-<li>提高代码评论的参与度<ul>
-<li><strong>适度增加 PR 规模</strong>：为确保代码得到充分审查和反馈，建议团队将 PR 控制在 1000-2000 行之间，以获得更多的评论和讨论。</li>
-<li><strong>避免审查疲劳</strong>：超大的 PR 往往导致审查者阅读疲劳，减少反馈量，影响代码质量。</li>
-</ul>
-</li>
-<li>优化代码输出效率<ul>
-<li><strong>平衡效率与质量</strong>：引导团队在提交 PR 时，注意将代码拆分为合理大小的部分（40-80 行），以优化整体代码输出效率，避免过小或过大的 PR 降低开发速度。</li>
-<li><strong>关注总量控制</strong>：避免过分追求小 PR，而导致整体开发效率下降，确保团队的代码提交保持在高效的节奏中。</li>
-</ul>
-</li>
-<li>总体建议<ul>
-<li><strong>建立团队规范</strong>：为团队制定明确的 PR 提交规范，建议标准大小为 50 行，同时提供适度的灵活性，以适应不同类型的代码更改。</li>
-<li><strong>持续优化流程</strong>：定期审查团队的 PR 提交情况，根据数据反馈调整策略，确保在效率、代码质量和审查体验之间实现最佳平衡。</li>
-</ul>
-</li>
-</ol>
-<p>通过这些指导，团队可以更有效地管理代码提交流程，提升代码质量和开发效率。</p>
-</blockquote>
-<h3 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h3><ol>
-<li>可以推测情绪 &#x2F;&#x2F; 可以给出选项，积极或消极</li>
-<li>支持从文本中获取特定信息，并按规定格式输出</li>
-<li>提炼主题</li>
-</ol>
-<blockquote>
-<p>”能帮我梳理《百年孤独》中的角色关系吗”</p>
-<p>《百年孤独》（<strong>Cien años de soledad</strong>）是加夫列尔·加西亚·马尔克斯（<strong>Gabriel García Márquez</strong>）创作的一部魔幻现实主义小说，讲述了布恩迪亚家族七代人的兴衰历史。书中的角色关系复杂，涉及多代人的纠葛。以下是主要角色及其关系的梳理：</p>
-<ol>
-<li>布恩迪亚家族的奠基者<ul>
-<li>何塞·阿尔卡蒂奥·布恩迪亚（José Arcadio Buendía）<ul>
-<li>家族的始祖，与妻子乌尔苏拉（Úrsula Iguarán）一起创建了马孔多镇。</li>
-<li>对科学和炼金术痴迷，最终陷入疯狂，被绑在树上度过余生。</li>
-</ul>
-</li>
-<li>乌尔苏拉·伊瓜兰（Úrsula Iguarán）<ul>
-<li>何塞·阿尔卡蒂奥的妻子，家族的坚强支柱，长寿且精力充沛。</li>
-<li>担心家族因近亲婚姻而生出有猪尾巴的孩子。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>第一代<ul>
-<li>何塞·阿尔卡蒂奥（José Arcadio）<ul>
-<li>何塞·阿尔卡蒂奥·布恩迪亚和乌尔苏拉的长子。</li>
-<li>性格强悍，喜欢冒险，年轻时离家出走，后来返回并结婚。</li>
-<li>最终被枪杀，尸体神秘消失。</li>
-</ul>
-</li>
-<li>奥雷里亚诺·布恩迪亚上校（Colonel Aureliano Buendía）<ul>
-<li>何塞·阿尔卡蒂奥·布恩迪亚和乌尔苏拉的次子。</li>
-<li>成为著名的革命领袖，参与了多次内战。</li>
-<li>尽管有17个私生子，但晚年孤独，选择用金鱼度日。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>第二代<ul>
-<li>雷贝卡（Rebeca）<ul>
-<li>收养的女儿，何塞·阿尔卡蒂奥·布恩迪亚和乌尔苏拉的养女。</li>
-<li>与何塞·阿尔卡蒂奥结婚，但婚姻不幸福，后来陷入孤独。</li>
-</ul>
-</li>
-<li>阿玛兰塔（Amaranta）<ul>
-<li>何塞·阿尔卡蒂奥·布恩迪亚和乌尔苏拉的女儿。</li>
-<li>一生充满痛苦和怨恨，拒绝了所有的求婚者，最终死于孤独。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>第三代<ul>
-<li>奥雷里亚诺·何塞（Aureliano José）<ul>
-<li>奥雷里亚诺上校的私生子，深爱阿玛兰塔。</li>
-<li>被枪杀，成为战争牺牲品。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>第四代<ul>
-<li>雷梅迪奥斯·美丽（Remedios la Bella）<ul>
-<li>阿尔卡蒂奥·布恩迪亚和雷贝卡的孙女，以其非凡的美丽闻名。</li>
-<li>性格单纯，最终神秘地升天，成为神话般的人物。</li>
-</ul>
-</li>
-<li>阿玛兰塔·乌尔苏拉（Amaranta Úrsula）<ul>
-<li>奥雷里亚诺·第二与费尔南达的女儿。</li>
-<li>与侄子阿玛兰塔·乌尔苏拉相恋，并意外地产下有猪尾巴的孩子。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>其他重要角色<ul>
-<li>梅尔基亚德斯（Melquíades）<ul>
-<li>吉卜赛人，布恩迪亚家族的朋友。</li>
-<li>留下了预言家族命运的手稿，最终由阿玛兰塔·乌尔苏拉破解。</li>
-</ul>
-</li>
-<li>佩特拉·科特斯（Petra Cotes）<ul>
-<li>奥雷里亚诺·第二的情妇，富有魅力并掌握了繁殖能力。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>家族命运的终结<ul>
-<li>阿玛兰塔·乌尔苏拉和阿玛兰塔·乌尔苏拉<ul>
-<li>最后一代的布恩迪亚家族成员。</li>
-<li>家族因阿玛兰塔·乌尔苏拉产下畸形孩子而结束，马孔多镇也被飓风摧毁。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<p>家族关系图的简化</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">css</span><br><span class="line">复制代码</span><br><span class="line">何塞·阿尔卡蒂奥·布恩迪亚（José Arcadio Buendía） + 乌尔苏拉（Úrsula Iguarán）</span><br><span class="line">      │</span><br><span class="line">├── 何塞·阿尔卡蒂奥（José Arcadio）+ 雷贝卡（Rebeca）</span><br><span class="line">│          ├── 阿尔卡蒂奥·布恩迪亚（Arcadio）→雷梅迪奥斯·美丽（Remedios la Bella）</span><br><span class="line">│          └── 阿玛兰塔·乌尔苏拉（Amaranta Úrsula）+ 阿玛兰塔·乌尔苏拉（Aureliano）</span><br><span class="line">│               └──有猪尾巴的孩子</span><br><span class="line">│</span><br><span class="line">├── 奥雷里亚诺·布恩迪亚（Aureliano Buendía）+17私生子</span><br><span class="line">│          └──奥雷里亚诺·何塞（Aureliano José）</span><br><span class="line">│</span><br><span class="line">└── 阿玛兰塔（Amaranta）+ 未婚</span><br></pre></td></tr></table></figure>
-
-<p>这个简化的关系图和角色概述可以帮助你更好地理解《百年孤独》中复杂的家族关系及其命运。</p>
-</blockquote>
-<h3 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h3><ol>
-<li>语言类翻译</li>
-<li>支持遍历</li>
-<li>改成正式&#x2F;非正式的内容</li>
-<li>翻译成多种语言</li>
-<li>鉴别语言</li>
-<li>改说法</li>
-<li>格式互换 &#x2F;&#x2F; JSON &#x3D;&gt; HTML</li>
-<li>语法检查 &#x2F;&#x2F; 拼写、语法，可以看修订情况</li>
-</ol>
-
+          <p>GPT 可以用于帮助我们总结、提炼、转换文本。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/08/15/DeepLearning-AI-ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B04-%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -497,7 +300,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-08-15 16:19:41 / 修改时间：16:27:42" itemprop="dateCreated datePublished" datetime="2024-08-15T16:19:41+08:00">2024-08-15</time>
+      <time title="创建时间：2024-08-15 16:19:41 / 修改时间：16:28:22" itemprop="dateCreated datePublished" datetime="2024-08-15T16:19:41+08:00">2024-08-15</time>
     </span>
 
   
@@ -532,46 +335,14 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="模型的局限性"><a href="#模型的局限性" class="headerlink" title="模型的局限性"></a>模型的局限性</h2><p>模型会给出看似真实的回答</p>
-<p><img src="https://p.ipic.vip/ssjml4.png"></p>
-<p>重新生成之后：</p>
-<p><img src="https://p.ipic.vip/0srert.png"></p>
-<p><img src="https://p.ipic.vip/ssdnov.png"></p>
-<p><img src="https://p.ipic.vip/zymxmz.png"></p>
-<p><img src="https://p.ipic.vip/k26i7l.png"></p>
-<p>主打一个情绪价值，你说得对</p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ol>
-<li>让模型找出相关信息</li>
-<li>让模型基于相关信息回答</li>
-</ol>
-<p>我问了 GPT 如何防止防止看似真实的答案，GPT 自己给了我一些建议：</p>
-<blockquote>
-<p>“我听说GPT有时候会给出看似真实的答案，我要如何避免这种情况呢”</p>
-<p>为了避免 GPT 给出看似真实但实际上可能不准确的答案，你可以采取以下几种方法：</p>
-<ol>
-<li><p><strong>明确提出要求</strong>：</p>
-<p>在向 GPT 提问时，明确要求其只提供已知的信息或提出其不确定的部分。例如，你可以使用类似以下的指令：</p>
-<ol>
-<li>“如果你不确定答案，请告诉我。”</li>
-<li>“请仅根据你已知的事实回答这个问题。”</li>
-</ol>
-</li>
-<li><p><strong>要求参考来源</strong>：</p>
-<p>当你向 GPT 提出需要事实支持的问题时，要求其提供参考来源。如果 GPT 无法提供明确的来源，说明该信息可能不准确。</p>
-</li>
-<li><p><strong>细分问题</strong>：</p>
-<p>将问题细化，避免复杂的、模棱两可的问题。这样可以减少 GPT 编造答案的可能性。例如，将一个大问题拆分成几个具体的小问题。</p>
-</li>
-<li><p><strong>询问概率或不确定性</strong>：</p>
-<p>询问 GPT 对于某个答案的信心程度，或明确要求其指出某个回答中的不确定性。</p>
-</li>
-<li><p><strong>验证信息</strong>：</p>
-<p>如果可能的话，将 GPT 提供的信息与其他可信来源进行对比，尤其是当你需要作出重要决策或使用该信息进行进一步操作时。</p>
-</li>
-</ol>
-<p>通过这些方法，你可以更好地过滤和验证 GPT 提供的信息，减少获取虚假或不准确信息的风险。</p>
-</blockquote>
-<p>这一点上 Gemini 在交互上有一点做的很好，它主动提供了通过 Google 搜索回答内容来判定内容是否有依据的按钮。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/08/15/DeepLearning-AI-ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B03-%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -627,7 +398,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-08-15 16:15:19 / 修改时间：16:19:25" itemprop="dateCreated datePublished" datetime="2024-08-15T16:15:19+08:00">2024-08-15</time>
+      <time title="创建时间：2024-08-15 16:15:19 / 修改时间：16:29:14" itemprop="dateCreated datePublished" datetime="2024-08-15T16:15:19+08:00">2024-08-15</time>
     </span>
 
   
@@ -665,66 +436,14 @@
 <p>不明确的指令：告诉我关于健康的知识。</p>
 <p>明确的指令：请告诉我如何通过饮食改善心脏健康。</p>
 </blockquote>
-<ul>
-<li><p>给模型提供示意，让模型模仿回答</p>
-<blockquote>
-<p>请撰写一个类似以下示例的文章介绍： 示例：‘在今天的数字时代，社交媒体成为人们日常生活中不可或缺的一部分。无论是与朋友保持联系，还是获取新闻，社交媒体平台都扮演着重要角色。’</p>
-</blockquote>
-</li>
-<li><p>让模型检查语料内容是否符合条件</p>
-<blockquote>
-<p> “请帮我检查以下产品描述，确保它们符合以下条件：</p>
-<ol>
-<li>产品名称必须在首句。</li>
-<li>产品特点至少列出两个。</li>
-<li>产品描述为简洁的完整句子。</li>
-</ol>
-<p>语料：</p>
-<ol>
-<li>‘超轻便旅行包 - 特点：防水、防撕裂、容量大。这款旅行包设计简洁，适合各种旅行场合。’</li>
-<li>‘产品特点：持久保温、容量大。高级不锈钢保温杯，适合户外使用。’</li>
-<li>‘蓝牙耳机 - 特点：续航时间长、音质清晰。这款耳机支持降噪功能，非常适合长时间使用。’”</li>
-</ol>
-<p><strong>GPT 输出：</strong></p>
-<ol>
-<li>符合要求。首句包含产品名称“超轻便旅行包”，列出三个特点（防水、防撕裂、容量大），描述简洁完整。</li>
-<li>不符合要求。产品名称未在首句，且只列出了两个特点，描述也不够清晰。</li>
-<li>符合要求。首句包含产品名称“蓝牙耳机”，列出两个特点（续航时间长、音质清晰），描述简洁完整。</li>
-</ol>
-</blockquote>
-</li>
-<li><p>对结果的数据结构提出要求，如 HTML、JSON</p>
-<blockquote>
-<p>指令：请帮我分析以下语料，并以JSON数组的格式返回数据，JSON包含两个 key，一个是产品名称，一个是产品特点 语料： ‘超轻便旅行包 - 特点：防水、防撕裂、容量大。这款旅行包设计简洁，适合各种旅行场合。’ ‘产品特点：持久保温、容量大。高级不锈钢保温杯，适合户外使用。’ ‘蓝牙耳机 - 特点：续航时间长、音质清晰。这款耳机支持降噪功能，非常适合长时间使用。’” &#x2F;&#x2F; 语料沿用上一案例</p>
-<p><strong>GPT 输出：</strong></p>
-<p><img src="https://p.ipic.vip/1r1hr8.png"></p>
-</blockquote>
-</li>
-<li><p>使用分隔符——防止对语料内容的误解影响结果</p>
-<blockquote>
-<p>“下面是一个营销文案的示例，请根据此示例为我们的新产品编写一条类似的文案。</p>
-<p>示例： ‘这个冬天，使用我们的高级保湿霜，保持肌肤水润有光泽。不管天气多么寒冷，都能给您带来如春天般的滋润体验。’</p>
-<p>新产品信息：</p>
-<p>产品名称：全天候防护润唇膏</p>
-<p>主要卖点：长效保湿，防晒防干裂</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="给模型时间思考"><a href="#给模型时间思考" class="headerlink" title="给模型时间思考"></a>给模型时间思考</h3><ul>
-<li><p>引导模型给出自己的解决方案</p>
-<blockquote>
-<p>“请为一个智能手表撰写一个简短的产品描述，格式如下：</p>
-<ul>
-<li>产品名称：Apple Watch Series 7</li>
-<li>主要功能：心率监测、GPS 跟踪、全天候显示</li>
-<li>产品描述：Apple Watch Series 7 是一款功能丰富的智能手表，具备心率监测、GPS 跟踪和全天候显示，助您时刻掌握健康数据。”</li>
-</ul>
-</blockquote>
-</li>
-<li><p>明确回复的步骤、格式，防止模型跳过部分内容</p>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/08/15/DeepLearning-AI-ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B02-%E5%86%99%E6%8C%87%E7%A4%BA%E7%9A%84%E4%B8%A4%E5%A4%A7%E5%85%B3%E9%94%AE%E5%8E%9F%E5%88%99/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
