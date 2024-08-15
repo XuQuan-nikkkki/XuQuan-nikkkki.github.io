@@ -19,31 +19,34 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"xuquan.site","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="之前写过express的基本路由。实际项目中会有多个页面，这时会将页面文件统一放到一个指定文件夹内，通过中间件实现指定文件夹在浏览器端被直接读取。express-static中间件是express框架实现这一功能的方式。">
+    <meta name="description" content="模型的局限性模型会给出看似真实的回答  重新生成之后：     主打一个情绪价值，你说得对 解决方案 让模型找出相关信息 让模型基于相关信息回答  我问了 GPT 如何防止防止看似真实的答案，GPT 自己给了我一些建议：  “我听说GPT有时候会给出看似真实的答案，我要如何避免这种情况呢” 为了避免 GPT 给出看似真实但实际上可能不准确的答案，你可以采取以下几种方法：  明确提出要求： 在向 G">
 <meta property="og:type" content="article">
-<meta property="og:title" content="express学习笔记： express-static文件静态管理">
-<meta property="og:url" content="https://xuquan.site/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%20express-static%E6%96%87%E4%BB%B6%E9%9D%99%E6%80%81%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:title" content="DeepLearning.AI: ChatGPT Prompt Engineering for Developers 笔记3: 模型的局限性">
+<meta property="og:url" content="https://xuquan.site/2024/08/15/DeepLearning-AI-ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B03-%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/index.html">
 <meta property="og:site_name" content="Nikkkki&#39;s Notes">
-<meta property="og:description" content="之前写过express的基本路由。实际项目中会有多个页面，这时会将页面文件统一放到一个指定文件夹内，通过中间件实现指定文件夹在浏览器端被直接读取。express-static中间件是express框架实现这一功能的方式。">
+<meta property="og:description" content="模型的局限性模型会给出看似真实的回答  重新生成之后：     主打一个情绪价值，你说得对 解决方案 让模型找出相关信息 让模型基于相关信息回答  我问了 GPT 如何防止防止看似真实的答案，GPT 自己给了我一些建议：  “我听说GPT有时候会给出看似真实的答案，我要如何避免这种情况呢” 为了避免 GPT 给出看似真实但实际上可能不准确的答案，你可以采取以下几种方法：  明确提出要求： 在向 G">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9240001-4923c284622f6f88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="article:published_time" content="2018-06-06T16:38:36.000Z">
-<meta property="article:modified_time" content="2018-08-12T03:40:32.000Z">
+<meta property="og:image" content="https://p.ipic.vip/ssjml4.png">
+<meta property="og:image" content="https://p.ipic.vip/0srert.png">
+<meta property="og:image" content="https://p.ipic.vip/ssdnov.png">
+<meta property="og:image" content="https://p.ipic.vip/zymxmz.png">
+<meta property="og:image" content="https://p.ipic.vip/k26i7l.png">
+<meta property="article:published_time" content="2024-08-15T08:19:41.000Z">
+<meta property="article:modified_time" content="2024-08-15T08:27:42.842Z">
 <meta property="article:author" content="Xu Quan（Nikkkki）">
-<meta property="article:tag" content="express">
-<meta property="article:tag" content="node.js">
+<meta property="article:tag" content="Learning_Notes, ChatGPT">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9240001-4923c284622f6f88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="https://p.ipic.vip/ssjml4.png">
 
 
-<link rel="canonical" href="https://xuquan.site/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%20express-static%E6%96%87%E4%BB%B6%E9%9D%99%E6%80%81%E7%AE%A1%E7%90%86/">
+<link rel="canonical" href="https://xuquan.site/2024/08/15/DeepLearning-AI-ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B03-%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuquan.site/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%20express-static%E6%96%87%E4%BB%B6%E9%9D%99%E6%80%81%E7%AE%A1%E7%90%86/","path":"2018/06/07/写给小白的express学习笔记1： express-static文件静态管理/","title":"express学习笔记： express-static文件静态管理"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuquan.site/2024/08/15/DeepLearning-AI-ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B03-%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/","path":"2024/08/15/DeepLearning-AI-ChatGPT-Prompt-Engineering-for-Developers-笔记3-模型的局限性/","title":"DeepLearning.AI: ChatGPT Prompt Engineering for Developers 笔记3: 模型的局限性"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>express学习笔记： express-static文件静态管理 | Nikkkki's Notes</title>
+<title>DeepLearning.AI: ChatGPT Prompt Engineering for Developers 笔记3: 模型的局限性 | Nikkkki's Notes</title>
   
 
 
@@ -102,7 +105,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -115,6 +118,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">模型的局限性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.1.</span> <span class="nav-text">解决方案</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -178,7 +182,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%20express-static%E6%96%87%E4%BB%B6%E9%9D%99%E6%80%81%E7%AE%A1%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="https://xuquan.site/2024/08/15/DeepLearning-AI-ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B03-%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -191,12 +195,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="express学习笔记： express-static文件静态管理 | Nikkkki's Notes">
+      <meta itemprop="name" content="DeepLearning.AI: ChatGPT Prompt Engineering for Developers 笔记3: 模型的局限性 | Nikkkki's Notes">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          express学习笔记： express-static文件静态管理
+          DeepLearning.AI: ChatGPT Prompt Engineering for Developers 笔记3: 模型的局限性
         </h1>
 
         <div class="post-meta-container">
@@ -206,28 +210,13 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2018-06-07 00:38:36" itemprop="dateCreated datePublished" datetime="2018-06-07T00:38:36+08:00">2018-06-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2018-08-12 11:40:32" itemprop="dateModified" datetime="2018-08-12T11:40:32+08:00">2018-08-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
+      <time title="创建时间：2024-08-15 16:19:41 / 修改时间：16:27:42" itemprop="dateCreated datePublished" datetime="2024-08-15T16:19:41+08:00">2024-08-15</time>
     </span>
 
   
-    <span id="/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%20express-static%E6%96%87%E4%BB%B6%E9%9D%99%E6%80%81%E7%AE%A1%E7%90%86/" class="post-meta-item leancloud_visitors" data-flag-title="express学习笔记： express-static文件静态管理" title="阅读次数">
+    <span id="/2024/08/15/DeepLearning-AI-ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B03-%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/" class="post-meta-item leancloud_visitors" data-flag-title="DeepLearning.AI: ChatGPT Prompt Engineering for Developers 笔记3: 模型的局限性" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -242,8 +231,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84express%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%EF%BC%9A%20express-static%E6%96%87%E4%BB%B6%E9%9D%99%E6%80%81%E7%AE%A1%E7%90%86/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/07/写给小白的express学习笔记1： express-static文件静态管理/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2024/08/15/DeepLearning-AI-ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B03-%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/08/15/DeepLearning-AI-ChatGPT-Prompt-Engineering-for-Developers-笔记3-模型的局限性/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -256,20 +245,46 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>之前写过<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/57c8ccc62b5c">express的基本路由</a>。<br>实际项目中会有多个页面，这时会将页面文件统一放到一个指定文件夹内，通过中间件实现指定文件夹在浏览器端被直接读取。<code>express-static</code>中间件是express框架实现这一功能的方式。</p>
-<span id="more"></span>
-
-
-
+    <div class="post-body" itemprop="articleBody"><h2 id="模型的局限性"><a href="#模型的局限性" class="headerlink" title="模型的局限性"></a>模型的局限性</h2><p>模型会给出看似真实的回答</p>
+<p><img src="https://p.ipic.vip/ssjml4.png"></p>
+<p>重新生成之后：</p>
+<p><img src="https://p.ipic.vip/0srert.png"></p>
+<p><img src="https://p.ipic.vip/ssdnov.png"></p>
+<p><img src="https://p.ipic.vip/zymxmz.png"></p>
+<p><img src="https://p.ipic.vip/k26i7l.png"></p>
+<p>主打一个情绪价值，你说得对</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ol>
+<li>让模型找出相关信息</li>
+<li>让模型基于相关信息回答</li>
+</ol>
+<p>我问了 GPT 如何防止防止看似真实的答案，GPT 自己给了我一些建议：</p>
+<blockquote>
+<p>“我听说GPT有时候会给出看似真实的答案，我要如何避免这种情况呢”</p>
+<p>为了避免 GPT 给出看似真实但实际上可能不准确的答案，你可以采取以下几种方法：</p>
 <ol>
-<li><p>需要提前下载中间件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i express-static -S</span><br></pre></td></tr></table></figure>
+<li><p><strong>明确提出要求</strong>：</p>
+<p>在向 GPT 提问时，明确要求其只提供已知的信息或提出其不确定的部分。例如，你可以使用类似以下的指令：</p>
+<ol>
+<li>“如果你不确定答案，请告诉我。”</li>
+<li>“请仅根据你已知的事实回答这个问题。”</li>
+</ol>
 </li>
-<li><p>使用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.引入express和express-static模块</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&quot;express&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> expressStatic = <span class="title function_">requier</span>(<span class="string">&quot;express-static&quot;</span>);</span><br><span class="line"><span class="comment">//2. 创建服务器</span></span><br><span class="line"><span class="keyword">let</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="comment">//3. 指定文件夹</span></span><br><span class="line"><span class="comment">//浏览器可以浏览当前文件目录下的&#x27;「resouce」文件夹</span></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">expressStatic</span>(__dirname + <span class="string">&#x27;/resource&#x27;</span>));</span><br><span class="line"><span class="comment">//4. 服务器监听</span></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">9000</span>);</span><br></pre></td></tr></table></figure>
-<p>核心就是这一句<br><img src="https://upload-images.jianshu.io/upload_images/9240001-4923c284622f6f88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="文件托管"></p>
+<li><p><strong>要求参考来源</strong>：</p>
+<p>当你向 GPT 提出需要事实支持的问题时，要求其提供参考来源。如果 GPT 无法提供明确的来源，说明该信息可能不准确。</p>
+</li>
+<li><p><strong>细分问题</strong>：</p>
+<p>将问题细化，避免复杂的、模棱两可的问题。这样可以减少 GPT 编造答案的可能性。例如，将一个大问题拆分成几个具体的小问题。</p>
+</li>
+<li><p><strong>询问概率或不确定性</strong>：</p>
+<p>询问 GPT 对于某个答案的信心程度，或明确要求其指出某个回答中的不确定性。</p>
+</li>
+<li><p><strong>验证信息</strong>：</p>
+<p>如果可能的话，将 GPT 提供的信息与其他可信来源进行对比，尤其是当你需要作出重要决策或使用该信息进行进一步操作时。</p>
 </li>
 </ol>
+<p>通过这些方法，你可以更好地过滤和验证 GPT 提供的信息，减少获取虚假或不准确信息的风险。</p>
+</blockquote>
+<p>这一点上 Gemini 在交互上有一点做的很好，它主动提供了通过 Google 搜索回答内容来判定内容是否有依据的按钮。</p>
 
     </div>
 
@@ -279,21 +294,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/express/" rel="tag"># express</a>
-              <a href="/tags/node-js/" rel="tag"># node.js</a>
+              <a href="/tags/Learning-Notes-ChatGPT/" rel="tag"># Learning_Notes, ChatGPT</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2018/06/06/Mac%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="prev" title="Mac添加自定义快捷键">
-                  <i class="fa fa-angle-left"></i> Mac添加自定义快捷键
+                <a href="/2024/08/15/DeepLearning-AI-ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B02-%E5%86%99%E6%8C%87%E7%A4%BA%E7%9A%84%E4%B8%A4%E5%A4%A7%E5%85%B3%E9%94%AE%E5%8E%9F%E5%88%99/" rel="prev" title="DeepLearning.AI: ChatGPT Prompt Engineering for Developers 笔记2: 写指示的两大关键原则">
+                  <i class="fa fa-angle-left"></i> DeepLearning.AI: ChatGPT Prompt Engineering for Developers 笔记2: 写指示的两大关键原则
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2018/06/07/%E5%86%99%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84Node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B013%EF%BC%9Anet%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="next" title="Node.js学习笔记：net模块构建服务器">
-                  Node.js学习笔记：net模块构建服务器 <i class="fa fa-angle-right"></i>
+                <a href="/2024/08/15/DeepLearning-AI-ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B04-%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD/" rel="next" title="DeepLearning.AI: ChatGPT Prompt Engineering for Developers 笔记4: 主要功能">
+                  DeepLearning.AI: ChatGPT Prompt Engineering for Developers 笔记4: 主要功能 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
