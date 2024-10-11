@@ -14,7 +14,7 @@
 <meta property="og:description" content="这部分习题难度不大，复习和巩固了很多数据结构基础部分提到的处理字符串和数组的方法，但是有些平时容易觉得自己明白的内容还是有很多迷惑人的地方，容易让习题出错。 我按照习题的顺序来梳理出现的知识点（以下是我自己的解法，可能不是最优方法），另外附加几个我觉得重点辨析在最后面：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-07-05T16:38:36.000Z">
-<meta property="article:modified_time" content="2024-10-11T06:37:36.111Z">
+<meta property="article:modified_time" content="2024-10-11T07:08:52.130Z">
 <meta property="article:author" content="Xu Quan（Nikkkki）">
 <meta property="article:tag" content="freecodecamp">
 <meta property="article:tag" content="Algorithm">
@@ -151,7 +151,7 @@
       
     <div class="article-category">
         <i class="fa-solid fa-archive"></i>
-        <a class="category-link" href="/categories/%E5%88%B7%E9%A2%98/">刷题</a>
+        <a class="category-link" href="/categories/FreeCodeCamp/">FreeCodeCamp</a>
     </div>
 
 
@@ -173,11 +173,11 @@
 
 <h4 id="Introduction-to-Basic-Algorithm-Scripting"><a href="#Introduction-to-Basic-Algorithm-Scripting" class="headerlink" title="Introduction to Basic Algorithm Scripting"></a><a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting">Introduction to Basic Algorithm Scripting</a></h4><hr>
 <ol>
-<li><strong>摄氏度、华氏度换算</strong> <a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/convert-celsius-to-fahrenheit">Convert Celsius to Fahrenheit</a><br> 这题很简单，会初中的一元一次方程就能写出来 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">convertToF</span>(<span class="params">celsius</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> fahrenheit = celsius * <span class="number">9</span>/<span class="number">5</span> + <span class="number">32</span>;</span><br><span class="line">  <span class="keyword">return</span> fahrenheit;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">convertToF</span>(<span class="number">30</span>);</span><br></pre></td></tr></table></figure></li>
+<li><strong>摄氏度、华氏度换算</strong> <a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/convert-celsius-to-fahrenheit">Convert Celsius to Fahrenheit</a><br>  这题很简单，会初中的一元一次方程就能写出来 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">convertToF</span>(<span class="params">celsius</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> fahrenheit = celsius * <span class="number">9</span>/<span class="number">5</span> + <span class="number">32</span>;</span><br><span class="line">  <span class="keyword">return</span> fahrenheit;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">convertToF</span>(<span class="number">30</span>);</span><br></pre></td></tr></table></figure></li>
 </ol>
 <hr>
 <ol start="2">
-<li><p><strong>字符串逆序处理</strong> <a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/reverse-a-string">Reverse a String</a><br> 这题的目的是将字符串的顺序倒过来，可以联想到数组的<code>.reverse()</code>方法。所以解题方法是：</p>
+<li><p><strong>字符串逆序处理</strong> <a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/reverse-a-string">Reverse a String</a><br>  这题的目的是将字符串的顺序倒过来，可以联想到数组的<code>.reverse()</code>方法。所以解题方法是：</p>
 <ol>
 <li>字符串转数组 <code>string.split(&quot;&quot;)</code>;</li>
 <li>数组逆序 <code>array.reverse()</code>;</li>
@@ -187,7 +187,7 @@
 </ol>
 <hr>
 <ol start="3">
-<li><p><strong>求阶乘</strong> <a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/factorialize-a-number">Factorialize a Number</a><br> 阶乘是高中知识了吧，我记得表达式应该是num！，表示1*2*3*…*n。所以这一题我用的是</p>
+<li><p><strong>求阶乘</strong> <a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/factorialize-a-number">Factorialize a Number</a><br>  阶乘是高中知识了吧，我记得表达式应该是num！，表示1*2*3*…*n。所以这一题我用的是</p>
 <ol>
 <li>for循环，让变量i从1开始递增，并且让结果一开始为1</li>
 <li>每一个i都与result想乘<code>result *= i</code></li>
@@ -196,7 +196,7 @@
 </ol>
 <hr>
 <ol start="4">
-<li><p><strong>查找字符串句子中最长的单词</strong> <a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/find-the-longest-word-in-a-string">Find the Longest Word in a String</a><br> 这题很容易在一开始的时候想到要两两比较，但是这样实在有些麻烦，而且效率也很低，要不停判断两个字符串的长度。我用的方法是：</p>
+<li><p><strong>查找字符串句子中最长的单词</strong> <a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/find-the-longest-word-in-a-string">Find the Longest Word in a String</a><br>  这题很容易在一开始的时候想到要两两比较，但是这样实在有些麻烦，而且效率也很低，要不停判断两个字符串的长度。我用的方法是：</p>
 <ol>
 <li>把字符串转化成由单词组成的数组<code>string.split(&quot; &quot;)</code></li>
 <li>用<code>array.sort()</code>方法来对数组进行排序，排序规则是单词长度由长到短排列</li>
@@ -206,7 +206,7 @@
 </ol>
 <hr>
 <ol start="5">
-<li><p><strong>查找数组中最大的数组</strong> <a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/return-largest-numbers-in-arrays">Return Largest Numbers in Arrays</a><br> 这题和上一题的核心思路是一样的，不过这一题的参数数组是一个二维数组，需要将数组里的每个数组元素找出来，组成新的数组，所以比上一题多了一步。<br> 思路：</p>
+<li><p><strong>查找数组中最大的数组</strong> <a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/return-largest-numbers-in-arrays">Return Largest Numbers in Arrays</a><br>  这题和上一题的核心思路是一样的，不过这一题的参数数组是一个二维数组，需要将数组里的每个数组元素找出来，组成新的数组，所以比上一题多了一步。<br>  思路：</p>
 <ol>
 <li>获取参数数组中的每一个数组元素，并获取其中最大的数字</li>
 <li>将这个数组添加到新数组中</li>
@@ -222,7 +222,7 @@
 </ol>
 <hr>
 <ol start="6">
-<li><p><strong>验证元素的结尾字符串</strong> <a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/confirm-the-ending">Confirm the Ending</a><br> 这题给了两个参数，一个str字符串，一个target字符串，需要验证str字符串是否以target字符串结尾。题干里也说了，这个函数最简单的验证方法是用字符串的<code>endsWith()</code>函数，但是这里需要我们用除了<code>endsWith()</code>函数之外的方法。这里我提供两个思路作为参考。</p>
+<li><p><strong>验证元素的结尾字符串</strong> <a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/confirm-the-ending">Confirm the Ending</a><br>  这题给了两个参数，一个str字符串，一个target字符串，需要验证str字符串是否以target字符串结尾。题干里也说了，这个函数最简单的验证方法是用字符串的<code>endsWith()</code>函数，但是这里需要我们用除了<code>endsWith()</code>函数之外的方法。这里我提供两个思路作为参考。</p>
 <p> 第一个思路是获取str字符串的最后几位（位数和target参数的长度相等），然后和target字符串比较，看是否相等。这里有两个实现方法：</p>
 <ol>
 <li>用字符串的<code>string.slice(start, end)</code>方法来获取字符串的最后几位，可以知道end对应的索引就是字符串的长度（即字符串的最后一位再多一位，因为slice函数取到end位，但不包含end位），start即str字符串长度减去target字符串长度；然后将这一部分字符串与target比较</li>
@@ -247,12 +247,12 @@
 </ol>
 <hr>
 <ol start="7">
-<li><p><strong>重复字符串</strong><a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/repeat-a-string-repeat-a-string">Repeat a String Repeat a String</a><br> 这题和求阶乘的思路也差不多，就是用<code>for</code>循环来重复参数<code>num</code>次，每次在结果<code>result</code>字符串中添加一次参数<code>str</code>。这里需要注意的一个小坑是，我刚开始想要图方便，想的是让<code>for</code>循环中的<code>i</code>从1开始循环，这样直接在参数<code>str</code>后面添加<code>str</code>就好了，但是这里的一个坑是这样<code>str</code>在每次添加之后都变成了新的字符串，这样添加出来的字符串重复次数会超过<code>num</code>要求的次数。</p>
+<li><p><strong>重复字符串</strong><a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/repeat-a-string-repeat-a-string">Repeat a String Repeat a String</a><br>  这题和求阶乘的思路也差不多，就是用<code>for</code>循环来重复参数<code>num</code>次，每次在结果<code>result</code>字符串中添加一次参数<code>str</code>。这里需要注意的一个小坑是，我刚开始想要图方便，想的是让<code>for</code>循环中的<code>i</code>从1开始循环，这样直接在参数<code>str</code>后面添加<code>str</code>就好了，但是这里的一个坑是这样<code>str</code>在每次添加之后都变成了新的字符串，这样添加出来的字符串重复次数会超过<code>num</code>要求的次数。</p>
  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">repeatStringNumTimes</span>(<span class="params">str, num</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="keyword">if</span>(num &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    result = <span class="string">&quot;&quot;</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num; i ++) &#123;</span><br><span class="line">      result += str;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">repeatStringNumTimes</span>(<span class="string">&quot;abc&quot;</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure></li>
 </ol>
 <hr>
 <ol start="8">
-<li><p><strong>截取字符串</strong><a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/truncate-a-string">Truncate a String</a><br> 这题的要求是给定两个参数<code>str</code>和<code>num</code>，如果<code>num</code>大于或等于<code>str</code>的长度，则直接返回<code>str</code>，如果<code>num</code>小于<code>str</code>的长度，则截取<code>str</code>的前<code>num</code>位，并加上<code>...</code>。</p>
+<li><p><strong>截取字符串</strong><a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/truncate-a-string">Truncate a String</a><br>  这题的要求是给定两个参数<code>str</code>和<code>num</code>，如果<code>num</code>大于或等于<code>str</code>的长度，则直接返回<code>str</code>，如果<code>num</code>小于<code>str</code>的长度，则截取<code>str</code>的前<code>num</code>位，并加上<code>...</code>。</p>
 <p> 这里我的做法是</p>
 <ol>
 <li>对<code>num</code>与<code>str</code>的长度做判断，将结果分为两种状况，即<code>num</code>大于等于<code>str.length</code>和<code>num</code>小于<code>str.length</code>，这里的一个小技巧是<em>两种结果返回的都是<code>str</code>，只不过小于的状况下，<code>str</code>会有变化，这样可以只判断<code>num &lt; str.length</code>，总之都是<code>return str</code>，这样可以省略一步判断，让代码更简洁</em></li>
@@ -267,7 +267,7 @@
 </ol>
 <hr>
 <ol start="10">
-<li><strong>判断元素是否为布尔值类型</strong><a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/boo-who">Boo who</a><br>  这题需要判断给的参数是不是布尔值，用<code>typeof</code>就可以获得参数的类型</li>
+<li><strong>判断元素是否为布尔值类型</strong><a target="_blank" rel="noopener" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting/boo-who">Boo who</a><br>   这题需要判断给的参数是不是布尔值，用<code>typeof</code>就可以获得参数的类型</li>
 </ol>
    <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">booWho</span>(<span class="params">bool</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> bool === <span class="string">&quot;boolean&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">booWho</span>(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
 
@@ -527,7 +527,7 @@
     Copyright &copy;
     
     
-    2016-2024
+    2018-2024
     Xu Quan（Nikkkki）
   </div>
   <div class="footer-right">
