@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="大语言模型是什么LLM(Large Language Model) 大语言模型是一种以其实现通用语言生成和其他自然语言处理任务（例如分类）的能力而闻名的语言模型。 LLMs 通过在计算密集型自监督和半监督训练过程中从文本文档中学习统计关系来获得这些能力。简单来说，就是让电脑学会“说话”和“理解”人类的语言。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型">
+<meta property="og:url" content="https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="大语言模型是什么LLM(Large Language Model) 大语言模型是一种以其实现通用语言生成和其他自然语言处理任务（例如分类）的能力而闻名的语言模型。 LLMs 通过在计算密集型自监督和半监督训练过程中从文本文档中学习统计关系来获得这些能力。简单来说，就是让电脑学会“说话”和“理解”人类的语言。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-08T07:50:07.000Z">
+<meta property="article:modified_time" content="2024-10-11T04:36:38.556Z">
+<meta property="article:author" content="Xu Quan（Nikkkki）">
+<meta property="article:tag" content="ChatGPT">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/2024/08/15/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-2/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/2024/04/04/%E5%BC%80%E5%8F%91Project-1-Alfred-Workflow-%E5%85%8D%E8%B4%B9%E7%BF%BB%E8%AF%91/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&text=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&title=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&is_video=false&description=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型&body=Check out this article: https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&title=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&title=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&title=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&title=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&name=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型&description=&lt;h2 id=&#34;大语言模型是什么&#34;&gt;&lt;a href=&#34;#大语言模型是什么&#34; class=&#34;headerlink&#34; title=&#34;大语言模型是什么&#34;&gt;&lt;/a&gt;大语言模型是什么&lt;/h2&gt;&lt;p&gt;LLM(Large Language Model) 大语言模型是一种以其实现通用语言生成和其他自然语言处理任务（例如分类）的能力而闻名的语言模型。 LLMs 通过在计算密集型自监督和半监督训练过程中从文本文档中学习统计关系来获得这些能力。简单来说，就是让电脑学会“说话”和“理解”人类的语言。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&t=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">大语言模型是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%A4%E7%A7%8D%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">大语言模型的两种类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Base-LLM-%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">1. Base LLM 基础模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Instruction-Tuned-LLM-%E6%8C%87%E4%BB%A4%E8%B0%83%E4%BC%98%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">2. Instruction Tuned LLM 指令调优模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AF%B9%E6%AF%94%E6%A1%88%E4%BE%8B"><span class="toc-number">2.3.</span> <span class="toc-text">3. 对比案例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B-1%EF%BC%9A"><span class="toc-number">2.3.1.</span> <span class="toc-text">案例 1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B-2%EF%BC%9A"><span class="toc-number">2.3.2.</span> <span class="toc-text">案例 2：</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Xu Quan（Nikkkki）</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-08-08T07:50:07.000Z" class="dt-published" itemprop="datePublished">2024-08-08</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/ChatGPT/" rel="tag">ChatGPT</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="大语言模型是什么"><a href="#大语言模型是什么" class="headerlink" title="大语言模型是什么"></a>大语言模型是什么</h2><p>LLM(Large Language Model) 大语言模型是一种以其实现通用语言生成和其他自然语言处理任务（例如分类）的能力而闻名的语言模型。 LLMs 通过在计算密集型自监督和半监督训练过程中从文本文档中学习统计关系来获得这些能力。简单来说，就是让电脑学会“说话”和“理解”人类的语言。</p>
+<span id="more"></span>
+
+<h2 id="大语言模型的两种类型"><a href="#大语言模型的两种类型" class="headerlink" title="大语言模型的两种类型"></a>大语言模型的两种类型</h2><h3 id="1-Base-LLM-基础模型"><a href="#1-Base-LLM-基础模型" class="headerlink" title="1. Base LLM 基础模型"></a>1. Base LLM 基础模型</h3><ul>
+<li>它通过大量的文本数据进行训练，学习各种语言模式和知识。它能做很多事情，比如回答问题、生成文本、翻译语言等等</li>
+<li>Base LLM 有一个小缺点：它有时不太懂得如何按我们想要的方式去回答问题。因为它只是学会了语言的模式，而没有特别针对如何听从指令进行训练</li>
+<li>GPT 3 就是 Base LLM</li>
+</ul>
+<h3 id="2-Instruction-Tuned-LLM-指令调优模型"><a href="#2-Instruction-Tuned-LLM-指令调优模型" class="headerlink" title="2. Instruction Tuned LLM 指令调优模型"></a>2. Instruction Tuned LLM 指令调优模型</h3><ul>
+<li>在 Base LLM 的基础上，进一步进行了特别训练，让它学会更好地理解和执行人类的指令</li>
+<li>简单来说，Instruction-Tuned LLM 就像是一个经过特别培训的助手，它不仅能理解你的问题，还能更准确地按照你的要求去回答</li>
+<li>GPT 4 就是 Instruction Tuned LLM</li>
+</ul>
+<h3 id="3-对比案例"><a href="#3-对比案例" class="headerlink" title="3. 对比案例"></a>3. 对比案例</h3><h4 id="案例-1："><a href="#案例-1：" class="headerlink" title="案例 1："></a>案例 1：</h4><blockquote>
+<p>“给我推荐一本适合初学者的英语学习书籍”</p>
+</blockquote>
+<ul>
+<li><p>Base LLM：</p>
+<blockquote>
+<p>有很多英语学习书籍，你可以尝试《新概念英语》或者《剑桥英语》。这些书都很不错。</p>
+</blockquote>
+</li>
+<li><p>Instruction Tuned LLM：</p>
+<blockquote>
+<p>我推荐《English Grammar in Use》这本书。这是一本非常适合初学者的英语语法书，由 Raymond Murphy 编写，内容简单易懂，配有大量练习题，帮助你巩固所学知识。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="案例-2："><a href="#案例-2：" class="headerlink" title="案例 2："></a>案例 2：</h4><blockquote>
+<p>“请给我一个巧克力蛋糕的简单食谱”</p>
+</blockquote>
+<ul>
+<li><p>Base LLM：</p>
+<blockquote>
+<p>巧克力蛋糕的食谱很多，你可以在网上找到各种不同的版本。基本的做法是使用面粉、糖、鸡蛋、巧克力和黄油。</p>
+</blockquote>
+</li>
+<li><p>Instruction Tuned LLM：</p>
+<blockquote>
+<p>当然，这里有一个简单的巧克力蛋糕食谱：</p>
+<ul>
+<li>预热烤箱至180°C。</li>
+<li>在一个碗里混合200克面粉、200克糖和50克可可粉。</li>
+<li>加入3个鸡蛋、150克融化的黄油和100毫升牛奶，搅拌均匀。</li>
+<li>倒入烤盘，烘烤约25-30分钟，直到插入蛋糕中心的牙签干净取出。</li>
+<li>让蛋糕冷却后享用。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>通过以上对比案例，我们可以看到 Instruction-Tuned LLM 相比 Base LLM 能更好地理解问题，并提供更具体和实用的回答。这就是为什么我们现在使用的 ChatGPT 比以前的版本更强大、更贴心的原因。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">大语言模型是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%A4%E7%A7%8D%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">大语言模型的两种类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Base-LLM-%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">1. Base LLM 基础模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Instruction-Tuned-LLM-%E6%8C%87%E4%BB%A4%E8%B0%83%E4%BC%98%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">2. Instruction Tuned LLM 指令调优模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AF%B9%E6%AF%94%E6%A1%88%E4%BE%8B"><span class="toc-number">2.3.</span> <span class="toc-text">3. 对比案例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B-1%EF%BC%9A"><span class="toc-number">2.3.1.</span> <span class="toc-text">案例 1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B-2%EF%BC%9A"><span class="toc-number">2.3.2.</span> <span class="toc-text">案例 2：</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&text=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&title=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&is_video=false&description=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型&body=Check out this article: https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&title=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&title=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&title=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&title=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&name=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型&description=&lt;h2 id=&#34;大语言模型是什么&#34;&gt;&lt;a href=&#34;#大语言模型是什么&#34; class=&#34;headerlink&#34; title=&#34;大语言模型是什么&#34;&gt;&lt;/a&gt;大语言模型是什么&lt;/h2&gt;&lt;p&gt;LLM(Large Language Model) 大语言模型是一种以其实现通用语言生成和其他自然语言处理任务（例如分类）的能力而闻名的语言模型。 LLMs 通过在计算密集型自监督和半监督训练过程中从文本文档中学习统计关系来获得这些能力。简单来说，就是让电脑学会“说话”和“理解”人类的语言。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://xuquan.site/2024/08/08/ChatGPT-Prompt-Engineering-for-Developers-%E7%AC%94%E8%AE%B0-1/&t=ChatGPT Prompt Engineering for Developers 笔记-1: 大语言模型的概念 &amp; 类型"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    Xu Quan（Nikkkki）
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
