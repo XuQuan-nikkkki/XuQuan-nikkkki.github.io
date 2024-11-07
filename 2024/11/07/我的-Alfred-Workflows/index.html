@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="最近格式化了电脑，由于之前没有备份，格式化之后只能一点一点重新把电脑调回好用的状态。这篇记录一下对我来说好用的 Workflow 们。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的 Alfred Workflows">
+<meta property="og:url" content="https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/index.html">
+<meta property="og:site_name" content="Nikkkki&#39;s Notes">
+<meta property="og:description" content="最近格式化了电脑，由于之前没有备份，格式化之后只能一点一点重新把电脑调回好用的状态。这篇记录一下对我来说好用的 Workflow 们。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-07T15:32:23.000Z">
+<meta property="article:modified_time" content="2024-11-07T16:06:58.280Z">
+<meta property="article:author" content="Xu Quan（Nikkkki）">
+<meta property="article:tag" content="Alfred">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>我的 Alfred Workflows</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/2024/11/07/%E8%A7%A3%E5%86%B3-Zsh-Command-not-found-%E7%9A%84%E9%97%AE%E9%A2%98/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&text=我的 Alfred Workflows"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&title=我的 Alfred Workflows"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&is_video=false&description=我的 Alfred Workflows"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=我的 Alfred Workflows&body=Check out this article: https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&title=我的 Alfred Workflows"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&title=我的 Alfred Workflows"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&title=我的 Alfred Workflows"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&title=我的 Alfred Workflows"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&name=我的 Alfred Workflows&description=&lt;p&gt;最近格式化了电脑，由于之前没有备份，格式化之后只能一点一点重新把电脑调回好用的状态。这篇记录一下对我来说好用的 Workflow 们。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&t=我的 Alfred Workflows"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#atop-System-Monitoring-and-Process-Management"><span class="toc-number">1.</span> <span class="toc-text">atop: System Monitoring and Process Management</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Browser-Tabs"><span class="toc-number">2.</span> <span class="toc-text">Browser Tabs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Color-Picker"><span class="toc-number">3.</span> <span class="toc-text">Color Picker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Currency-Converter"><span class="toc-number">4.</span> <span class="toc-text">Currency Converter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Epoch-Converter"><span class="toc-number">5.</span> <span class="toc-text">Epoch Converter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Homebrew"><span class="toc-number">6.</span> <span class="toc-text">Homebrew</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Link-Clean"><span class="toc-number">7.</span> <span class="toc-text">Link Clean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lorem-ipsum"><span class="toc-number">8.</span> <span class="toc-text">Lorem ipsum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Open-Chrome-Profile"><span class="toc-number">9.</span> <span class="toc-text">Open Chrome Profile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PDF-Split"><span class="toc-number">10.</span> <span class="toc-text">PDF Split</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#placeholder-image"><span class="toc-number">11.</span> <span class="toc-text">placeholder image</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Quick-File-Access"><span class="toc-number">12.</span> <span class="toc-text">Quick File Access</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Switch-Appearance"><span class="toc-number">13.</span> <span class="toc-text">Switch Appearance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Wikipedia-Suggest"><span class="toc-number">14.</span> <span class="toc-text">Wikipedia Suggest</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Word-and-character-count"><span class="toc-number">15.</span> <span class="toc-text">Word and character count</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        我的 Alfred Workflows
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Xu Quan（Nikkkki）</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-11-07T15:32:23.000Z" class="dt-published" itemprop="datePublished">2024-11-07</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7%E7%AE%B1/">工具箱</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Alfred/" rel="tag">Alfred</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>最近格式化了电脑，由于之前没有备份，格式化之后只能一点一点重新把电脑调回好用的状态。这篇记录一下对我来说好用的 Workflow 们。</p>
+<span id="more"></span>
+
+<h3 id="atop-System-Monitoring-and-Process-Management"><a href="#atop-System-Monitoring-and-Process-Management" class="headerlink" title="atop: System Monitoring and Process Management"></a>atop: System Monitoring and Process Management</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://alfred.app/workflows/chrisgrieser/atop/">https://alfred.app/workflows/chrisgrieser/atop/</a></li>
+<li>可以方便地查看、终止进程，替代了原来的 <code>kill process</code>，且响应速度明显比 <code>kill process</code> 快</li>
+<li>可以查看、切换蓝牙设备的链接状态，替代了原来的 <code>Dentle</code></li>
+<li>还可以测网速，查看和修改 DNS 信息等等，总之非常全能</li>
+</ul>
+<h3 id="Browser-Tabs"><a href="#Browser-Tabs" class="headerlink" title="Browser Tabs"></a>Browser Tabs</h3><ul>
+<li>可以通过快捷键切换浏览器的 tabs，支持了主流的浏览器，比如 safari、chrome、vivaldi、arc、edge</li>
+<li>我的主流浏览器还是 chrome，但会搭配 arc 在不同场景下使用</li>
+<li>Browser Tabs 最方便的地方在于有时候打开了 n 个标签页，挨个去查看寻找比较麻烦，<code>chrome tabs</code> 命令会直接把打开的标签页都罗列出来，直接选择就可以定位到了</li>
+<li>同时搭配 alfred 的 browser bookmark 功能，可以快速定位书签页，非常方便</li>
+</ul>
+<h3 id="Color-Picker"><a href="#Color-Picker" class="headerlink" title="Color Picker"></a>Color Picker</h3><ul>
+<li>原来使用的取色器是 Sip，后来用 iShot 截图之后也可以通过快捷键截图，但操作起来不算特别顺滑，只是够用</li>
+<li>Color Picker 的主要功能就是取色，用 <code>cp</code> 命令唤起，非常快捷，取色结果支持 Hex、RGB、HSL</li>
+</ul>
+<h3 id="Currency-Converter"><a href="#Currency-Converter" class="headerlink" title="Currency Converter"></a>Currency Converter</h3><ul>
+<li>因为经常要买国外的服务，非常需要汇率换算，这个 Workflow 就是用来算汇率的</li>
+<li><code>cur</code> 命令唤起后，输入金额 + 币种，比如 22.9 USD，再输入想换算的币种，比如 CNY，就会自动算出结果</li>
+</ul>
+<h3 id="Epoch-Converter"><a href="#Epoch-Converter" class="headerlink" title="Epoch Converter"></a>Epoch Converter</h3><ul>
+<li>日期与时间戳换算，debug 的时候用</li>
+</ul>
+<h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h3><ul>
+<li>可以下载、卸载应用，比较方便的点是查看包有没有下载</li>
+</ul>
+<h3 id="Link-Clean"><a href="#Link-Clean" class="headerlink" title="Link Clean"></a>Link Clean</h3><ul>
+<li>用来去除 URL 中的 search params</li>
+</ul>
+<h3 id="Lorem-ipsum"><a href="#Lorem-ipsum" class="headerlink" title="Lorem ipsum"></a>Lorem ipsum</h3><ul>
+<li><code>lipsum</code> + 数字可以生成数字字母&#x2F;个词&#x2F;句子&#x2F;段落，在排版占位的时候很有用</li>
+</ul>
+<h3 id="Open-Chrome-Profile"><a href="#Open-Chrome-Profile" class="headerlink" title="Open Chrome Profile"></a>Open Chrome Profile</h3><ul>
+<li>切换 chrome 的账号</li>
+<li>因为我现在有两个账号，不同的账号有不同的书签，这个 workflow 可以非常方便地切换</li>
+</ul>
+<h3 id="PDF-Split"><a href="#PDF-Split" class="headerlink" title="PDF Split"></a>PDF Split</h3><ul>
+<li>输入文件名 + 页码可以拆分 PDF</li>
+<li>因为现在用到 AI 比较多，有时候需要 AI 帮忙分析文章，如果一本书内容太多，可以先拆分成章节</li>
+</ul>
+<h3 id="placeholder-image"><a href="#placeholder-image" class="headerlink" title="placeholder image"></a>placeholder image</h3><ul>
+<li>输入宽高可以生成固定尺寸的占位图</li>
+</ul>
+<h3 id="Quick-File-Access"><a href="#Quick-File-Access" class="headerlink" title="Quick File Access"></a>Quick File Access</h3><ul>
+<li>通过快捷键查看最近的文件、Download 路径下的文件等等</li>
+</ul>
+<h3 id="Switch-Appearance"><a href="#Switch-Appearance" class="headerlink" title="Switch Appearance"></a>Switch Appearance</h3><ul>
+<li>快速切换暗色&#x2F;亮色模式</li>
+</ul>
+<h3 id="Wikipedia-Suggest"><a href="#Wikipedia-Suggest" class="headerlink" title="Wikipedia Suggest"></a>Wikipedia Suggest</h3><ul>
+<li>快速搜维基百科</li>
+</ul>
+<h3 id="Word-and-character-count"><a href="#Word-and-character-count" class="headerlink" title="Word and character count"></a>Word and character count</h3><ul>
+<li>选中文本后计算文本的字数</li>
+<li>小红书笔记限制标题不能超过 20 个字，这个 Workflow 是专门用来计算标题字数的</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#atop-System-Monitoring-and-Process-Management"><span class="toc-number">1.</span> <span class="toc-text">atop: System Monitoring and Process Management</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Browser-Tabs"><span class="toc-number">2.</span> <span class="toc-text">Browser Tabs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Color-Picker"><span class="toc-number">3.</span> <span class="toc-text">Color Picker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Currency-Converter"><span class="toc-number">4.</span> <span class="toc-text">Currency Converter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Epoch-Converter"><span class="toc-number">5.</span> <span class="toc-text">Epoch Converter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Homebrew"><span class="toc-number">6.</span> <span class="toc-text">Homebrew</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Link-Clean"><span class="toc-number">7.</span> <span class="toc-text">Link Clean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lorem-ipsum"><span class="toc-number">8.</span> <span class="toc-text">Lorem ipsum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Open-Chrome-Profile"><span class="toc-number">9.</span> <span class="toc-text">Open Chrome Profile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PDF-Split"><span class="toc-number">10.</span> <span class="toc-text">PDF Split</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#placeholder-image"><span class="toc-number">11.</span> <span class="toc-text">placeholder image</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Quick-File-Access"><span class="toc-number">12.</span> <span class="toc-text">Quick File Access</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Switch-Appearance"><span class="toc-number">13.</span> <span class="toc-text">Switch Appearance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Wikipedia-Suggest"><span class="toc-number">14.</span> <span class="toc-text">Wikipedia Suggest</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Word-and-character-count"><span class="toc-number">15.</span> <span class="toc-text">Word and character count</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&text=我的 Alfred Workflows"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&title=我的 Alfred Workflows"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&is_video=false&description=我的 Alfred Workflows"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=我的 Alfred Workflows&body=Check out this article: https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&title=我的 Alfred Workflows"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&title=我的 Alfred Workflows"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&title=我的 Alfred Workflows"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&title=我的 Alfred Workflows"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&name=我的 Alfred Workflows&description=&lt;p&gt;最近格式化了电脑，由于之前没有备份，格式化之后只能一点一点重新把电脑调回好用的状态。这篇记录一下对我来说好用的 Workflow 们。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://xuquan.site/2024/11/07/%E6%88%91%E7%9A%84-Alfred-Workflows/&t=我的 Alfred Workflows"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2018-2024
+    Xu Quan（Nikkkki）
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
